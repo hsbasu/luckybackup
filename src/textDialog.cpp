@@ -4,7 +4,7 @@
 ===============================================================================================================================
 ===============================================================================================================================
      This file is part of "luckyBackup" project
-     Copyright 2008-2011, Loukas Avgeriou
+     Copyright 2008-2012, Loukas Avgeriou
      luckyBackup is distributed under the terms of the GNU General Public License
      luckyBackup is free software: you can redistribute it and/or modify
      it under the terms of the GNU General Public License as published by
@@ -171,82 +171,82 @@ textDialog::textDialog (const QString type, const QString ReplaceInput, QWidget 
 // --------------------------------okay pressed------------------------------------------------
 void textDialog::okay()
 {
-	GoOn = 1;
-	userInput = uiT.lineEdit_userInput -> text();
-	
-	// Do not perform any further actions for the following categories:
-	if ((Type == "password") || (Type == "passphrase"))
-	{
-		close();
-		return;
-	}
-	if (Type == "ProfileDescription")
-	{
-		userInput = uiT.textEdit_userInput -> toPlainText();
-		close();
-		return;
-	}
+    GoOn = 1;
+    userInput = uiT.lineEdit_userInput -> text();
+    
+    // Do not perform any further actions for the following categories:
+    if ((Type == "password") || (Type == "passphrase"))
+    {
+        close();
+        return;
+    }
+    if (Type == "ProfileDescription")
+    {
+        userInput = uiT.textEdit_userInput -> toPlainText();
+        close();
+        return;
+    }
 
-	//remove trailing or starting whitespaces and invalid characters
-	QStringList invalid;
-	invalid << "`" << "!" << "@" << "#" << "$" << "%" << "%" << "^" << "&" << "*" << "(" << ")" << "+" << "=" << "{" << "[" << "}"
-		<< "]" << ":" << ";" << "\"" << "'" << "|" << "\\" << "<" << "," << ">" << "?" << "/";
-	for (int count=0; count<invalid.size(); ++count)
-		userInput.replace(invalid.at(count),"");
-	
-	while ( (userInput.endsWith(" ")) || (userInput.endsWith(".")) )
-		userInput.chop(1);
-	while ( (userInput.startsWith(".")) || (userInput.startsWith(" ")) )
-		userInput.remove(0,1);
+    //remove trailing or starting whitespaces and invalid characters
+    QStringList invalid;
+    invalid << "`" << "!" << "@" << "#" << "$" << "%" << "%" << "^" << "&" << "*" << "(" << ")" << "+" << "=" << "{" << "[" << "}"
+        << "]" << ":" << ";" << "\"" << "'" << "|" << "\\" << "<" << "," << ">" << "?" << "/";
+    for (int count=0; count<invalid.size(); ++count)
+        userInput.replace(invalid.at(count),"");
+    
+    while ( (userInput.endsWith(" ")) || (userInput.endsWith(".")) )
+        userInput.chop(1);
+    while ( (userInput.startsWith(".")) || (userInput.startsWith(" ")) )
+        userInput.remove(0,1);
 
-	if (userInput == "")
-		GoOn = 2;
+    if (userInput == "")
+        GoOn = 2;
 
-	if (userInput == profileName)
-		GoOn = 3;
-	
-	if (uiT.checkBox_select -> isChecked())		//"Do not show this again check box
-		GoOn = 4;
-	close();
+    if (userInput == profileName)
+        GoOn = 3;
+    
+    if (uiT.checkBox_select -> isChecked())		//"Do not show this again check box
+        GoOn = 4;
+    close();
 }
 // --------------------------------cancel pressed------------------------------------------------
 void textDialog::cancel()
 {
-	//GoOn == 0
-	if (Type == "ValidateDialog")
-	{
-		QString source, dest, Command_Clipboard;
-	
-		//copy command to clipboard		
-		TextPassed = TextPassed.right(TextPassed.size()-TextPassed.indexOf("<font color=red>")); 	//remove all irrelevant text
-		source = TextPassed.right(TextPassed.size()-TextPassed.indexOf("<font color=magenta>"));	//copy source & dest inside QString source
-		TextPassed.remove(source);																	//remove source & dest from whole command
-		dest = source.right(source.size()-source.lastIndexOf("<font color=magenta>"));				//copy dest inside QString dest
-		source.remove(dest);																		//remove dest from source
+    //GoOn == 0
+    if (Type == "ValidateDialog")
+    {
+        QString source, dest, Command_Clipboard;
+    
+        //copy command to clipboard		
+        TextPassed = TextPassed.right(TextPassed.size()-TextPassed.indexOf("<font color=red>")); 	//remove all irrelevant text
+        source = TextPassed.right(TextPassed.size()-TextPassed.indexOf("<font color=magenta>"));	//copy source & dest inside QString source
+        TextPassed.remove(source);																	//remove source & dest from whole command
+        dest = source.right(source.size()-source.lastIndexOf("<font color=magenta>"));				//copy dest inside QString dest
+        source.remove(dest);																		//remove dest from source
 
-		source.remove("<font color=magenta>",Qt::CaseSensitive);
-		source.remove("</font>",Qt::CaseSensitive);
-		source.remove("<br>",Qt::CaseSensitive);
-		if (source.endsWith(" "))
-			source.chop(1);
-		source.replace(" ","\\ ");																	//replace whitespaces with " \"
+        source.remove("<font color=magenta>",Qt::CaseSensitive);
+        source.remove("</font>",Qt::CaseSensitive);
+        source.remove("<br>",Qt::CaseSensitive);
+        if (source.endsWith(" "))
+            source.chop(1);
+        source.replace(" ","\\ ");																	//replace whitespaces with " \"
 
-		dest.remove("<font color=magenta>",Qt::CaseSensitive);
-		dest.remove("</font>",Qt::CaseSensitive);
-		dest.remove("<br>",Qt::CaseSensitive);
-		dest.replace(" ","\\ ");	
-		
-		Command_Clipboard = TextPassed + source + " " + dest;
-		Command_Clipboard.remove("<font color=red>",Qt::CaseSensitive);
-		Command_Clipboard.remove("<font color=blue>",Qt::CaseSensitive);
-		Command_Clipboard.remove("</font>",Qt::CaseSensitive);
-		Command_Clipboard.remove("<br>",Qt::CaseSensitive);
-		
-		QClipboard *clipboard = QApplication::clipboard();
-		clipboard->setText(Command_Clipboard);
-	}
-	else
-		close();
+        dest.remove("<font color=magenta>",Qt::CaseSensitive);
+        dest.remove("</font>",Qt::CaseSensitive);
+        dest.remove("<br>",Qt::CaseSensitive);
+        dest.replace(" ","\\ ");	
+        
+        Command_Clipboard = TextPassed + source + " " + dest;
+        Command_Clipboard.remove("<font color=red>",Qt::CaseSensitive);
+        Command_Clipboard.remove("<font color=blue>",Qt::CaseSensitive);
+        Command_Clipboard.remove("</font>",Qt::CaseSensitive);
+        Command_Clipboard.remove("<br>",Qt::CaseSensitive);
+        
+        QClipboard *clipboard = QApplication::clipboard();
+        clipboard->setText(Command_Clipboard);
+    }
+    else
+        close();
 }
 
 void textDialog::closeEvent(QCloseEvent *event)

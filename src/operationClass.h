@@ -4,7 +4,7 @@
 ===============================================================================================================================
 ===============================================================================================================================
      This file is part of "luckyBackup" project
-     Copyright 2008-2011, Loukas Avgeriou
+     Copyright 2008-2012, Loukas Avgeriou
      luckyBackup is distributed under the terms of the GNU General Public License
      luckyBackup is free software: you can redistribute it and/or modify
      it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@
  project version    : Please see "main.cpp" for project version
 
  developer          : luckyb 
- last modified      : 30 Jan 2011
+ last modified      : 06 Feb 2012
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -52,11 +52,13 @@ class operation
             itsIncludeModeNormal = FALSE;
             itsByPassWARNING = FALSE;
             itsCloneWARNING = TRUE;
+            itsRepeatOnFail = 0;
             itsKeepSnapshots = 1;
             itsSnapshotsList.clear();
             itsOptionsFATntfs = FALSE;
             itsIncludeFromFile = FALSE;
             itsExcludeFromFile = FALSE;
+            itsExcludeGVFS = FALSE;
             itsExecuteBeforeList.clear();
             itsExecuteBeforeListState.clear();
             itsExecuteAfterList.clear();
@@ -79,6 +81,7 @@ class operation
         bool GetPerform () const                {return itsPerform;}
         bool GetByPassWARNING () const          {return itsByPassWARNING;}
         bool GetCloneWARNING () const           {return itsCloneWARNING;}
+        int GetRepeatOnFail() const             {return itsRepeatOnFail;}
 
         QDateTime GetLastExecutionTime() const  {return itsLastExecutionTime;}
         int GetLastExecutionErrors() const      {return itsLastExecutionErrors;}
@@ -106,6 +109,7 @@ class operation
         bool GetExcludeLostFound() const        {return itsExcludeLostFound;}
         bool GetExcludeSystem() const           {return itsExcludeSystem;}
         bool GetExcludeTrash() const            {return itsExcludeTrash;}
+        bool GetExcludeGVFS() const             {return itsExcludeGVFS;}
         int GetExcludeListSize () const         {return itsExcludeList.size();}
         QString GetExcludeListItem (int itemPosition) const {return itsExcludeList.value(itemPosition);}
 
@@ -163,6 +167,7 @@ class operation
         void SetPerform(bool perform)                       {itsPerform = perform;}
         void SetByPassWARNING(bool ByPassWARNING)           {itsByPassWARNING = ByPassWARNING;}
         void SetCloneWARNING(bool CloneWARNING)             {itsCloneWARNING = CloneWARNING;}
+        void SetRepeatOnFail(int RepeatOnFail)              {itsRepeatOnFail = RepeatOnFail;}
 
         // last execution time & errors
         void SetLastExecutionTime(QDateTime lastTime)       {itsLastExecutionTime = lastTime;}
@@ -198,7 +203,7 @@ class operation
         // Exclude boolean
         void SetExclude()                      { if ( ((itsExcludeFromFile) && !(itsExcludeFile=="")) || (itsExcludeTemp)||(itsExcludeCache)||(itsExcludeBackup)||
                                     (itsExcludeMount)||(itsExcludeLostFound)||(itsExcludeSystem)||
-                                    (itsExcludeTrash)||(itsExcludeList.size()>0) )
+                                    (itsExcludeTrash)||(itsExcludeGVFS)||(itsExcludeList.size()>0) )
                                         itsExclude = TRUE;
                                     else     itsExclude = FALSE; }
         // Exclude templates
@@ -209,6 +214,7 @@ class operation
         void SetExcludeLostFound(bool ExcludeLostFound)     { itsExcludeLostFound = ExcludeLostFound;}
         void SetExcludeSystem(bool ExcludeSystem)           { itsExcludeSystem = ExcludeSystem;}
         void SetExcludeTrash(bool ExcludeTrash)             { itsExcludeTrash = ExcludeTrash;}
+        void SetExcludeGVFS(bool ExcludeGVFS)               { itsExcludeGVFS = ExcludeGVFS;}
         // Exclude from file
         void SetExcludeFromFile(bool ExcludeFromFile)       { itsExcludeFromFile = ExcludeFromFile;}
         void SetExcludeFile(QString ExcludeFile)            { itsExcludeFile = ExcludeFile;}
@@ -277,6 +283,7 @@ class operation
         bool itsPerform;
         bool itsByPassWARNING;
         bool itsCloneWARNING;
+        int itsRepeatOnFail;
         QDateTime itsLastExecutionTime;
         int itsLastExecutionErrors;
         QStringList itsSnapshotsList;
@@ -299,6 +306,7 @@ class operation
         bool itsExcludeLostFound;
         bool itsExcludeSystem;
         bool itsExcludeTrash;
+        bool itsExcludeGVFS;
         bool itsExcludeFromFile;
         QString itsExcludeFile;
         QStringList itsExcludeList;

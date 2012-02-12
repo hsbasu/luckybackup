@@ -4,7 +4,7 @@
 ===============================================================================================================================
 ===============================================================================================================================
      This file is part of "luckyBackup" project
-     Copyright 2008-2010, Loukas Avgeriou
+     Copyright 2008-2012, Loukas Avgeriou
      luckyBackup is distributed under the terms of the GNU General Public License
      luckyBackup is free software: you can redistribute it and/or modify
      it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@
  project version	: Please see "main.cpp" for project version
 
  developer 		: luckyb 
- last modified 	: 09 October 2008
+ last modified 	: 12 January 2012
 ===============================================================================================================================
 ===============================================================================================================================*/
 
@@ -37,17 +37,18 @@
 
 class helpBrowser : public QDialog
 {
-	Q_OBJECT
-	
-	public:
-		helpBrowser (QUrl, QWidget *parent=0);
+    Q_OBJECT
+    
+    public:
+        helpBrowser (QUrl, QWidget *parent=0);
+        
+        void scrollToChapter(QString chapter)                     {uiB.browser -> scrollToAnchor(chapter);}
 
-	private slots:
-		void okay();
+    private slots:
+        void okay();
 
-	private:
-		Ui::helpBrowser uiB;
-
+    private:
+        Ui::helpBrowser uiB;
 }; 
 
 #endif

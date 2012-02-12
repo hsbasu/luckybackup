@@ -4,7 +4,7 @@
 ===============================================================================================================================
 ===============================================================================================================================
      This file is part of "luckyBackup" project
-     Copyright 2008-2011, Loukas Avgeriou
+     Copyright 2008-2012, Loukas Avgeriou
      luckyBackup is distributed under the terms of the GNU General Public License
      luckyBackup is free software: you can redistribute it and/or modify
      it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@
  project version	: Please see "main.cpp" for project version
 
  developer          : luckyb 
- last modified      : 09 Feb 2011
+ last modified      : 01 Feb 2012
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -76,6 +76,7 @@ class luckyBackupWindow : public QMainWindow
         void help();		//SLOT: open "help" popup when action selected
         void about();		//SLOT: open "about" popup when action selected
         void setToolbarAttrs();	//SLOT: sets the toolbar attributes
+        void setWinPaths(); //SLOT: sets the rsync and ssh paths for windows
 
         void setLanguage(QAction *);	//SLOT: Change the application language
 
@@ -127,11 +128,13 @@ class luckyBackupWindow : public QMainWindow
         QToolBar *profileComboToolbar;
         QToolBar *profileStartToolbar;
         QToolBar *shutdownToolbar;
+        QToolBar *errorsToolbar;
         QAction *visibleProfileToolbar;
         QAction *visibleProfileComboToolbar;
         QAction *visibleProfileStartToolbar;
         QAction *actionLockToolbars;
         QAction *actionVisibleToolbarText;
+        QAction *actionSetWinPaths;
         QStringList deletedTaskNames;
         bool saveOrNot;
         
@@ -149,13 +152,15 @@ class luckyBackupWindow : public QMainWindow
         void createActions();           // create all actions
         void createProfileCombo();      // fill the profile combo box with existing profile names
         bool saveSettings();            //saves various luckybackup settings such as the default profile
-        bool loadSettings();            //loads various luckybackup settings such as the default profile
+        bool loadSettings();            //loads various luckybackup settings such as the default profile - text mode
+        bool loadSettingsQV();          //loads various luckybackup settings such as the default profile - data mode
         void InitializeVariables();     //initializes all variables
         bool arrangeLogSnap(bool,QString,QString);//Rename-delete-copy logs & snaps when a profile/task is renamed, deleted,duplicated
 
         QString defaultLanguage;        // holds the app's default language
         QString TransDir;               // holds the actual translation directory path
         QUrl helpURL;                   // holds the actual manual path as a QUrl
+        QString manualChapter;          // holds the specific chapter of the manual. changes depending on which window is open
         QUrl licenseURL;                // holds the actual license path as a QUrl
         int mainWindowWidth;            // holds the main window width in pixels
         int mainWindowHeight;           // holds the main window height in pixels
@@ -165,19 +170,20 @@ class luckyBackupWindow : public QMainWindow
         bool IsVisibleProfileStartToolbar; // holds the visible state of the profile start toolbar
         bool IsVisibleToolbarText;      // holds the visible state of the toolbar text
         bool IsVisibleInfoWindow;       // holds the visible state of the info window
+        bool showOnlyErrors;            //This becomes true if the user selects to only display errors at the commands output window
 
         //inside execute.cpp-----------------------------------------------------
-        void executeNOW();	//start the execution of commands (rsync & others)
-        void setNowDoing();	//Display sth in the Now Doing textBrowser
-        void executeRsync();	//execute qprocess "rsync" with Arguments
-        void swapGUI(QString);		//swaps the gui mode from normal to execute
-        int errorCount;		//used for next/previous error button
-        bool firstScroll;	//used for next/previous error button
-        bool NOWexecuting;	//becomes true if a profile execution is running
-        bool guiModeNormal;	//becomes true when the gui is in normnal mode
-        bool ABORTpressed;	//becomes true if the abort button is pressed
-        void finishUp();	// finish up some stuff when all tasks finish either normally or aborted
-        void shutDownSystem(); // shutdown the system if the relevant button is pressed
+        void executeNOW();      //start the execution of commands (rsync & others)
+        void setNowDoing();     //Display sth in the Now Doing textBrowser
+        void executeRsync();    //execute qprocess "rsync" with Arguments
+        void swapGUI(QString);  //swaps the gui mode from normal to execute
+        int errorCount;         //used for next/previous error button
+        bool firstScroll;       //used for next/previous error button
+        bool NOWexecuting;      //becomes true if a profile execution is running
+        bool guiModeNormal;     //becomes true when the gui is in normnal mode
+        bool ABORTpressed;      //becomes true if the abort button is pressed
+        void finishUp();        // finish up some stuff when all tasks finish either normally or aborted
+        void shutDownSystem();  // shutdown the system if the relevant button is pressed
         
         //Progress bar variables
         int progress_total;	//Maximum value of progress
@@ -206,6 +212,8 @@ class luckyBackupWindow : public QMainWindow
         bool StopTaskExecution; // becomes true if we want to stop task execution
         bool ProcReportedError;      //becomes true if any process reports an error (eg failed to start)
         bool DestCreateFail;		// This will become TRUE if destination does not exist and cannot be created
+        int repeatOnFailMax;   // This is equal to the number of times a command will run when it fails
+        int repeatOnFailTry;        // This is the current run of a command
         int currentBefore;		//count variable for commands to be executed before task
         int currentAfter;		//count variable for commands to be executed before task
         void executeBeforeTask();	//function to start execution of pre-task commands

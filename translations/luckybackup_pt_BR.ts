@@ -102,7 +102,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/global.cpp" line="+894"/>
+        <location filename="../src/global.cpp" line="+1063"/>
         <source>The task list is empty</source>
         <translation type="unfinished">A lista de tarefas está vazia</translation>
     </message>
@@ -148,7 +148,13 @@
         <translation type="unfinished">Por favor, desmarque as caixas de inclusão apropriada ou altere todos os tipos de tarefas  para outros que &apos;&lt;b&gt;contenham o diretório de Backup&lt;/b&gt;&apos; ou utilize &apos;contenham o diretório de Backup&apos; em conjunto com a opção &apos;&lt;b&gt;Incluir apenas&lt;/b&gt;&apos;, antes de prosseguir</translation>
     </message>
     <message>
-        <location line="+603"/>
+        <location line="+591"/>
+        <source>Command re-run due to failure</source>
+        <comment>This means that a specific command is run for once more because it failed the first time</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+63"/>
         <source>execution of task</source>
         <comment>Full phrase: execution of task: &lt;TASKNAME&gt; finished because of pre/post task command execution error</comment>
         <translation type="unfinished">Execução de tarefa</translation>
@@ -165,7 +171,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+100"/>
+        <location line="+11"/>
+        <source>Backing-up profile, logfiles and snapshot data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+93"/>
         <source>Could not open the logfile</source>
         <translation type="unfinished">Não foi possível abrir o arquivo de registro</translation>
     </message>
@@ -175,7 +186,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+63"/>
         <source>The specified command is probably not installed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -407,7 +418,7 @@
         <translation type="obsolete">Concluído</translation>
     </message>
     <message>
-        <location line="-477"/>
+        <location line="-500"/>
         <source>pre-task execution of command</source>
         <comment>Full phrase: pre-task execution of command: &lt;COMMAND&gt; starting</comment>
         <translation type="unfinished">Pré-execução de comando da tarefa</translation>
@@ -419,7 +430,7 @@
         <translation type="unfinished">Iniciando</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+9"/>
         <source>post-task execution of command</source>
         <comment>Full phrase: post-task execution of command: &lt;COMMAND&gt; starting</comment>
         <translation type="unfinished">Pós-execução de comando da tarefa</translation>
@@ -630,7 +641,7 @@
         <translation>Tradutor da interface para Grego e testador valioso</translation>
     </message>
     <message>
-        <location line="+35"/>
+        <location line="+41"/>
         <source>Pavel Fric</source>
         <translation>Pavel Fric</translation>
     </message>
@@ -651,7 +662,7 @@
         <translation>Tradutor da interface para Alemão</translation>
     </message>
     <message>
-        <location line="-51"/>
+        <location line="-57"/>
         <source>rpm packager, valuable tester and remote connections advisor</source>
         <translation>Empacotador rpm, testador valioso e conselheiro de conexões remotas</translation>
     </message>
@@ -671,7 +682,7 @@
         <translation>Marcos Del Puerto Garcia</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+9"/>
         <source>Jack Fink</source>
         <translation>Jack Fink</translation>
     </message>
@@ -701,13 +712,13 @@
         <translation>Mantenedor do pacote para o Mandriva (repositório contrib oficial)</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+14"/>
         <source>Stergios Prosiniklis</source>
         <translation>Stergios Prosiniklis</translation>
     </message>
     <message>
-        <location line="-48"/>
-        <location line="+49"/>
+        <location line="-54"/>
+        <location line="+55"/>
         <source>Greek manual translator</source>
         <translation>Tradutor do manual para Grego</translation>
     </message>
@@ -727,7 +738,7 @@
         <translation>Tradutor da interface para Português do Brasil</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+11"/>
         <source>Raffaele</source>
         <translation>Raffaele</translation>
     </message>
@@ -738,12 +749,22 @@
         <translation>Tradutor da interface para Italiano</translation>
     </message>
     <message>
-        <location line="-69"/>
+        <location line="-78"/>
         <source>Valuable advisor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+26"/>
+        <location line="+23"/>
+        <source>Bruce Marriner</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>port to MS Windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
         <source>Elbert Pol</source>
         <translation>Elbert Pol</translation>
     </message>
@@ -768,12 +789,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+3"/>
+        <source>Jason E. Hale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Free BSD package maintainer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>ex Fedora package maintainer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+23"/>
+        <source>AurÃ©lien Merckel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>French gui translator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
         <source>Kenny Verstraete</source>
         <translation>Kenny Verstraete</translation>
     </message>
@@ -833,6 +874,26 @@
         <translation>Tradutor da interface para Sueco</translation>
     </message>
     <message>
+        <location line="+2"/>
+        <source>Roger CalvÃ³</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Catalan gui translator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>TomÃ¡Å¡ Vadina</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Slovak gui translator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+5"/>
         <source>fri13</source>
         <translation>fri13</translation>
@@ -858,7 +919,17 @@
         <translation>Testador valioso &amp; especialista em tempestade de ideias</translation>
     </message>
     <message>
-        <location line="+37"/>
+        <location line="+2"/>
+        <source>Yuri Vidal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>backupwhenidle python script developer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+36"/>
         <source>no money</source>
         <translation>Nenhum dinheiro</translation>
     </message>
@@ -912,7 +983,7 @@
         <translation type="obsolete">Tradutor da interface para Finlandês e designer da versão 0.2.2 da interface</translation>
     </message>
     <message>
-        <location line="-63"/>
+        <location line="-65"/>
         <source>Javi Romero</source>
         <translation>Javi Romero</translation>
     </message>
@@ -921,7 +992,7 @@
         <translation type="obsolete">Designer da versão 0.2.2 da interface (não o culpe pela bagunça da versão 0.2.1)</translation>
     </message>
     <message>
-        <location line="-87"/>
+        <location line="-102"/>
         <source>Dimitris Kalamaras</source>
         <translation>Dimitris Kalamaras</translation>
     </message>
@@ -931,7 +1002,7 @@
         <translation>Se não fosse por ele e seus tutoriais, eu nunca teria começado este projeto</translation>
     </message>
     <message>
-        <location line="+102"/>
+        <location line="+119"/>
         <source>...to all users of the </source>
         <translation>...a todos os usuários dos</translation>
     </message>
@@ -1027,7 +1098,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Acordo de &amp;Licença</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="-127"/>
+        <location filename="../src/about.cpp" line="-144"/>
         <source>Arch linux package/pkgbuild official maintainer (AUR)</source>
         <translation>Mantenedor oficial do pacote/construção do pacote para Arch Linux</translation>
     </message>
@@ -1073,12 +1144,12 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Tradutor da interface para Dinamarquês</translation>
     </message>
     <message>
-        <location line="+38"/>
+        <location line="+44"/>
         <source>Marcio Moraes</source>
         <translation>Márcio Moraes</translation>
     </message>
     <message>
-        <location line="+12"/>
+        <location line="+15"/>
         <source>Denis Skorski</source>
         <translation>Denis Skorski</translation>
     </message>
@@ -1088,12 +1159,12 @@ p, li { white-space: pre-wrap; }
         <translation>Tradutor da interface para Russo e testador valioso</translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+33"/>
         <source>v0.3 gui designer</source>
         <translation>Designer da interface versão 0.3</translation>
     </message>
     <message>
-        <location line="-37"/>
+        <location line="-46"/>
         <source>Julien Cynober</source>
         <translation>Julien Cynober</translation>
     </message>
@@ -1103,12 +1174,12 @@ p, li { white-space: pre-wrap; }
         <translation>Tradutor da interface para Francês e valioso acessor de empacotamento (e não apenas)</translation>
     </message>
     <message>
-        <location line="+39"/>
+        <location line="+48"/>
         <source>v.0.3 gui designer</source>
         <translation>Designer da interface versão 0.3</translation>
     </message>
     <message>
-        <location line="+35"/>
+        <location line="+37"/>
         <source>Could not locate the license file</source>
         <translation>Não foi possível localizar o arquivo de licença</translation>
     </message>
@@ -1118,7 +1189,7 @@ p, li { white-space: pre-wrap; }
         <translation>Acordo de &amp;Licença</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="-164"/>
+        <location filename="../src/about.cpp" line="-181"/>
         <source>luckyBackup is distributed under the terms of the &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU General Public License&lt;/a&gt;</source>
         <comment>Please leave the tags &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt; &amp; &lt;/a&gt; intact and surrounding the GNU General Public License !!</comment>
         <translation>luckyBackup é distribuído sob os termos da &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;Licença Pública Geral GNU&lt;/a&gt;</translation>
@@ -1130,22 +1201,22 @@ p, li { white-space: pre-wrap; }
         <translation>É &lt;b&gt;software livre&lt;/b&gt;: você pode redistribuir e/ou modificar sob os termos da Licença Pública Geral GNU como publicado pela Fundação do Software Livre, versão 3 da Licença.</translation>
     </message>
     <message>
-        <location line="+66"/>
+        <location line="+72"/>
         <source>Thomas Janssen</source>
         <translation>Thomas Janssen</translation>
     </message>
     <message>
-        <location line="-2"/>
+        <location line="-5"/>
         <source>Fedora package maintainer (official repo)</source>
         <translation>Mantenedor do pacote para Fedora</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+14"/>
         <source>Karsten Jaschultowski</source>
         <translation>Karsten Jaschultowski</translation>
     </message>
     <message>
-        <location line="+15"/>
+        <location line="+18"/>
         <source>Francesco Braile</source>
         <translation>Francesco Braile</translation>
     </message>
@@ -1170,7 +1241,7 @@ p, li { white-space: pre-wrap; }
         <translation>Tradutor da interface para Turco</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+20"/>
         <source>Tito Poquito</source>
         <translation>Tito Poquito</translation>
     </message>
@@ -1180,7 +1251,7 @@ p, li { white-space: pre-wrap; }
         <translation>Mantenedor do pacote para Slackware ((Repositório SlackBuilds)</translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location line="+23"/>
         <source>...my other half, &lt;b&gt;Dimitra&lt;/b&gt; that bears with me all these times that this project is under development</source>
         <translation>...minha outra metade, &lt;b&gt;Dimitra&lt;/b&gt; que me aturou e atura enquanto este projeto está em desenvolvimento</translation>
     </message>
@@ -1213,7 +1284,7 @@ sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</translati
     </message>
     <message>
         <location line="+9"/>
-        <location line="+182"/>
+        <location line="+204"/>
         <location line="+14"/>
         <source>Use default</source>
         <extracomment>This means &quot;use the default value for this field&quot;
@@ -1224,7 +1295,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <translation>Usar padrão</translation>
     </message>
     <message>
-        <location line="-183"/>
+        <location line="-205"/>
         <source>Arguments</source>
         <translation>Argumentos</translation>
     </message>
@@ -1243,7 +1314,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <translation>%l arquivo de registro</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+17"/>
         <source>%d date</source>
         <translation>%d data</translation>
     </message>
@@ -1268,7 +1339,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <translation>%t para:</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+17"/>
         <source>%s subject:</source>
         <translation>%s assunto:</translation>
     </message>
@@ -1277,17 +1348,47 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <translation type="obsolete">%v servidor smtp</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="-108"/>
+        <source>Enter the sender of the message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+26"/>
+        <source>%c logfile.tar.gz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+72"/>
+        <source>Enter the recipient of the message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>Enter the subject of the message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
         <source>%v smtp server:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+7"/>
+        <source>Enter the smtp server used to send the message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
         <source>%b body:</source>
         <translation>%b mensagem:</translation>
     </message>
     <message>
-        <location line="+63"/>
+        <location line="+10"/>
+        <source>Enter the body of the message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+56"/>
         <source>Send an email right now to test the provided arguments</source>
         <translation>Enviar um e-mail agora para testar os argumentos fornecidos</translation>
     </message>
@@ -1463,7 +1564,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>luckyBackupWindow</name>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="+188"/>
+        <location filename="../src/luckybackupwindow.cpp" line="+197"/>
         <source>English</source>
         <comment>Do not translate this. Enter here the language of the translation in native characters instead. This is how your translation will appear under the &apos;language&apos; menu.</comment>
         <translation>Português do Brasil</translation>
@@ -1497,10 +1598,8 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">O perfil que você está tentando abrir não é uma versão válida para luckyBackup</translation>
     </message>
     <message>
-        <location line="+331"/>
-        <location line="+299"/>
         <source>profile</source>
-        <translation>Perfil</translation>
+        <translation type="obsolete">Perfil</translation>
     </message>
     <message>
         <source>The operations list is empty</source>
@@ -1523,7 +1622,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">&amp;Idioma</translation>
     </message>
     <message>
-        <location filename="../ui/luckybackupwindow.ui" line="+873"/>
+        <location filename="../ui/luckybackupwindow.ui" line="+883"/>
         <source>&amp;Profile</source>
         <translation>&amp;Perfil</translation>
     </message>
@@ -1656,7 +1755,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">SAIR</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="+349"/>
+        <location filename="../src/functions.cpp" line="+365"/>
         <source>English</source>
         <translation>Português (Brasil)</translation>
     </message>
@@ -1690,7 +1789,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Você tem certeza que deseja remover a seguinte operação ?</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="+244"/>
+        <location filename="../src/luckybackupwindow.cpp" line="+913"/>
         <source>Would you like to also remove:</source>
         <translation>Você gostaria também de remover :</translation>
     </message>
@@ -1767,8 +1866,8 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Por favor, dê uma boa olhada nas seguintes mensagens</translation>
     </message>
     <message>
-        <location filename="../src/executenow.cpp" line="+1127"/>
-        <location filename="../src/functions.cpp" line="+242"/>
+        <location filename="../src/executenow.cpp" line="+1228"/>
+        <location filename="../src/functions.cpp" line="+257"/>
         <location line="+65"/>
         <source>WARNING</source>
         <translation>AVISO</translation>
@@ -1864,7 +1963,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Essa operação será &lt;font color=blue&gt;&lt;b&gt;pulada&lt;/b&gt;&lt;/font&gt; para proteger seu backup de dados (se houver!!)</translation>
     </message>
     <message>
-        <location filename="../ui/luckybackupwindow.ui" line="-834"/>
+        <location filename="../ui/luckybackupwindow.ui" line="-844"/>
         <source>luckyBackup</source>
         <translation>luckyBackup</translation>
     </message>
@@ -1909,12 +2008,17 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location line="+631"/>
+        <location line="+211"/>
+        <source>CheckBox</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+430"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Bitstream Vera Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1922,8 +2026,8 @@ p, li { white-space: pre-wrap; }
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Bitstream Vera Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1941,7 +2045,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Ctrl+L</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="-365"/>
+        <location filename="../src/functions.cpp" line="-386"/>
         <source>F1</source>
         <translation>F1</translation>
     </message>
@@ -1955,7 +2059,7 @@ p, li { white-space: pre-wrap; }
         <translation>CTRL+X</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="-124"/>
+        <location filename="../src/functions.cpp" line="-132"/>
         <source>&amp;Profile</source>
         <comment>This is a top menu item</comment>
         <translation>&amp;Perfil</translation>
@@ -2048,7 +2152,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Idioma</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+9"/>
         <source>&amp;Help</source>
         <comment>This is a top menu item</comment>
         <translation>&amp;Ajuda</translation>
@@ -2071,7 +2175,7 @@ p, li { white-space: pre-wrap; }
         <translation>Perfil atual</translation>
     </message>
     <message>
-        <location filename="../src/executenow.cpp" line="-700"/>
+        <location filename="../src/executenow.cpp" line="-793"/>
         <location filename="../src/functions.cpp" line="+2"/>
         <source>Task list</source>
         <comment>task list label</comment>
@@ -2089,7 +2193,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Cancelar AGORA</translation>
     </message>
     <message>
-        <location filename="../src/executenow.cpp" line="-56"/>
+        <location filename="../src/executenow.cpp" line="-59"/>
         <source>commands output</source>
         <comment>output window label</comment>
         <translation>Saída de comandos</translation>
@@ -2101,7 +2205,7 @@ p, li { white-space: pre-wrap; }
         <translation>Rsync e pré/pós saída de comandos de tarefas é exibida aqui</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+59"/>
         <location filename="../src/functions.cpp" line="+1"/>
         <source>List of all the available tasks</source>
         <comment>task list tooltip - line1</comment>
@@ -2115,7 +2219,7 @@ p, li { white-space: pre-wrap; }
         <translation>Utilizar o &apos;incluir checkboxes&apos; para incluir ou não uma tarefa selecionada</translation>
     </message>
     <message>
-        <location line="+34"/>
+        <location line="+35"/>
         <source>Execution of profile</source>
         <comment>full phrase: &apos;Execution of profile &lt;PROFILENAME&gt; finished&apos;</comment>
         <translation>Execução de perfil</translation>
@@ -2127,9 +2231,9 @@ p, li { white-space: pre-wrap; }
         <translation>Concluído</translation>
     </message>
     <message>
-        <location line="-145"/>
-        <location line="+147"/>
-        <location line="+657"/>
+        <location line="-149"/>
+        <location line="+151"/>
+        <location line="+749"/>
         <location line="+21"/>
         <location line="+25"/>
         <location line="+1"/>
@@ -2137,7 +2241,7 @@ p, li { white-space: pre-wrap; }
         <translation>Modo de simulação</translation>
     </message>
     <message>
-        <location line="-700"/>
+        <location line="-792"/>
         <source>Could not update last execution time of tasks</source>
         <translation>Não foi possível atualizar a última execução decorrida das tarefas</translation>
     </message>
@@ -2164,7 +2268,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Restaurar</translation>
     </message>
     <message>
-        <location line="-191"/>
+        <location line="-195"/>
         <source>execution of profile:</source>
         <comment>tray message - execution of profile: &lt;PROFILENAME&gt; in progress...</comment>
         <translation>Execução de perfil:</translation>
@@ -2176,7 +2280,7 @@ p, li { white-space: pre-wrap; }
         <translation>em progresso...</translation>
     </message>
     <message>
-        <location line="+365"/>
+        <location line="+373"/>
         <source>Removed all older snapshots data</source>
         <translation>Removido todos os dados antigos do registro instantâneo</translation>
     </message>
@@ -2186,7 +2290,7 @@ p, li { white-space: pre-wrap; }
         <translation>Falha ao remove todos os dados antigos do resgistro instantâneo</translation>
     </message>
     <message>
-        <location line="+324"/>
+        <location line="+408"/>
         <source>Failed to start</source>
         <comment>this refers to a process</comment>
         <translation type="unfinished">Falhou ao iniciar</translation>
@@ -2222,7 +2326,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">Erro desconhecido</translation>
     </message>
     <message>
-        <location line="+89"/>
+        <location line="+93"/>
         <location line="+5"/>
         <location line="+6"/>
         <location line="+21"/>
@@ -2316,7 +2420,7 @@ p, li { white-space: pre-wrap; }
         <translation>Arquivos de registros, foram criados sob o diretório:</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="+19"/>
+        <location filename="../src/functions.cpp" line="+21"/>
         <source>Done</source>
         <translation>Terminado</translation>
     </message>
@@ -2343,7 +2447,7 @@ p, li { white-space: pre-wrap; }
         <translation>A execução das tarefas foram violentamente terminadas pelo usuário</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="-18"/>
+        <location filename="../src/functions.cpp" line="-20"/>
         <source>Move the highlighted task up, by one position</source>
         <comment>button tooltip</comment>
         <translation>Mover a tarefa selecionada para cima, uma posição</translation>
@@ -2367,7 +2471,7 @@ p, li { white-space: pre-wrap; }
         <translation>Pular para o erro anterior</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+4"/>
         <source>Task</source>
         <comment>task groupbox (add, remove, modify buttons) label</comment>
         <translation>Tarefa</translation>
@@ -2485,7 +2589,7 @@ p, li { white-space: pre-wrap; }
         <translation>Minimiza a jenela para a área de notificação</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="-278"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-344"/>
         <source>You have asked for a RESTORE task to be created</source>
         <comment>&apos;create restore&apos; message line 1/4</comment>
         <translation>Você pediu por uma tarefa de RESTAURAÇÃO a ser criada</translation>
@@ -2509,16 +2613,16 @@ p, li { white-space: pre-wrap; }
         <translation>Verifique especialmente &apos;Nome da tarefa&apos;, &apos;origem&apos;, &apos;destino&apos; &amp; o checkbox &apos;descartar arquivos mais recentes no destino&apos; (avançado)</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="+176"/>
-        <location filename="../src/luckybackupwindow.cpp" line="-463"/>
+        <location filename="../src/functions.cpp" line="+193"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-424"/>
         <location line="+70"/>
         <location line="+14"/>
         <location line="+56"/>
-        <location line="+65"/>
-        <location line="+59"/>
+        <location line="+85"/>
         <location line="+14"/>
-        <location line="+317"/>
-        <location line="+271"/>
+        <location line="+230"/>
+        <location line="+155"/>
+        <location line="+269"/>
         <source>ERROR</source>
         <translation>ERRO</translation>
     </message>
@@ -2578,26 +2682,26 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+10"/>
-        <location line="+55"/>
+        <location line="+59"/>
         <source>scheduled</source>
         <comment>this refers to a profile</comment>
         <translation>Agendado</translation>
     </message>
     <message>
-        <location line="-50"/>
-        <location line="+55"/>
+        <location line="-54"/>
+        <location line="+59"/>
         <source>YES</source>
         <translation>SIM</translation>
     </message>
     <message>
-        <location line="-53"/>
-        <location line="+55"/>
+        <location line="-57"/>
+        <location line="+59"/>
         <source>NO</source>
         <translation>NÃO</translation>
     </message>
     <message>
-        <location line="-47"/>
-        <location line="+55"/>
+        <location line="-51"/>
+        <location line="+59"/>
         <source>Description</source>
         <translation>Descrição</translation>
     </message>
@@ -2691,7 +2795,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">foi modificado</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+19"/>
         <source>Would you like to save it before proceeding ?</source>
         <translation>Você gostaria de salvá-lo antes de prosseguir ?</translation>
     </message>
@@ -2711,7 +2815,7 @@ p, li { white-space: pre-wrap; }
         <translation>Você gostaria de prosseguir mesmo assim ?</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="-1103"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-1150"/>
         <source>super user</source>
         <comment>super user is the root user</comment>
         <translation>Super usuário</translation>
@@ -2722,56 +2826,56 @@ p, li { white-space: pre-wrap; }
         <translation>Modo super usuário</translation>
     </message>
     <message>
-        <location line="+80"/>
+        <location line="+88"/>
         <source>Welcome to</source>
         <comment>full phrase: &apos;Welcome to luckyBackup&apos;</comment>
         <translation>Bem-vindo ao</translation>
     </message>
     <message>
-        <location line="+129"/>
+        <location line="+141"/>
         <source>Failed to create new profile</source>
         <comment>full phrase: &apos;Failed to create new profile &lt;PROFILENAME&gt;&apos;</comment>
         <translation>Falha ao criar o novo perfil</translation>
     </message>
     <message>
         <location line="+2"/>
-        <location line="+546"/>
+        <location line="+566"/>
         <source>The name you have entered contains only invalid characters</source>
         <translation>O nome que você digitou contém apenas caracteres inválidos</translation>
     </message>
     <message>
-        <location line="-532"/>
+        <location line="-552"/>
         <location line="+70"/>
-        <location line="+195"/>
+        <location line="+156"/>
         <source>Profile</source>
         <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; already exists&apos;</comment>
         <translation>Perfil</translation>
     </message>
     <message>
-        <location line="-264"/>
+        <location line="-225"/>
         <location line="+70"/>
-        <location line="+195"/>
+        <location line="+156"/>
         <source>already exists</source>
         <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; already exists&apos;</comment>
         <translation>já existe</translation>
     </message>
     <message>
-        <location line="-264"/>
+        <location line="-225"/>
         <location line="+70"/>
-        <location line="+195"/>
+        <location line="+156"/>
         <source>Would you like to replace it ?</source>
         <translation>Você gostaria de substitui-lo ?</translation>
     </message>
     <message>
-        <location line="-255"/>
+        <location line="-216"/>
         <location line="+70"/>
-        <location line="+194"/>
+        <location line="+155"/>
         <source>Failed to replace profile</source>
         <comment>full phrase: &apos;Failed to replace profile &lt;PROFILENAME&gt;&apos;</comment>
         <translation>Falha ao substituir o perfil</translation>
     </message>
     <message>
-        <location line="-232"/>
+        <location line="-193"/>
         <location line="+52"/>
         <source>Failed to rename profile</source>
         <comment>full phrase: &apos;Failed to rename profile &lt;PROFILENAME&gt;&apos;</comment>
@@ -2876,37 +2980,32 @@ p, li { white-space: pre-wrap; }
         <translation>definido como padrão</translation>
     </message>
     <message>
-        <location line="+12"/>
         <source>Export Profile</source>
         <comment>this is a dialog title</comment>
-        <translation>Exportar Perfil</translation>
+        <translation type="obsolete">Exportar Perfil</translation>
     </message>
     <message>
-        <location line="+12"/>
         <source>Failed to export profile</source>
         <comment>full phrase: &apos;Failed to export profile &lt;PROFILENAME&gt; as &lt;FILENAME&gt;&apos;</comment>
-        <translation>Falha ao exportar o perfil</translation>
+        <translation type="obsolete">Falha ao exportar o perfil</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>as</source>
         <comment>full phrase: &apos;Failed to export profile &lt;PROFILENAME&gt; as &lt;FILENAME&gt;&apos;</comment>
-        <translation>como</translation>
+        <translation type="obsolete">como</translation>
     </message>
     <message>
-        <location line="+8"/>
         <source>Profile</source>
         <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; exported successfully as &lt;FILENAME&gt;&apos;</comment>
-        <translation>Perfil</translation>
+        <translation type="obsolete">Perfil</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>exported successfully as</source>
         <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; exported successfully as &lt;FILENAME&gt;&apos;</comment>
-        <translation>exportado com sucesso como</translation>
+        <translation type="obsolete">exportado com sucesso como</translation>
     </message>
     <message>
-        <location line="+78"/>
+        <location line="+75"/>
         <source>All relevant files (logs etc) have also been duplicated</source>
         <translation>Todos os arquivos (logs etc) relevantes também têm sido duplicados</translation>
     </message>
@@ -2928,20 +3027,56 @@ p, li { white-space: pre-wrap; }
         <translation>definida para</translation>
     </message>
     <message>
-        <location line="+169"/>
+        <location line="+171"/>
+        <source>Select export directory</source>
+        <comment>this is a dialog title for selecting a directory to export a profile to</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Failed to export profile</source>
+        <comment>full phrase: &apos;Failed to export profile &lt;PROFILENAME&gt; to &lt;DIRNAME&gt;&apos;</comment>
+        <translation type="unfinished">Falha ao exportar o perfil</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>to</source>
+        <comment>full phrase: &apos;Failed to export profile &lt;PROFILENAME&gt; to &lt;DIRNAME&gt;&apos;</comment>
+        <translation type="unfinished">para</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Profile</source>
+        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; exported successfully to &lt;DIRNAME&gt;&apos;</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>exported successfully to</source>
+        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; exported successfully to &lt;DIRNAME&gt;&apos;</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
         <source>Import Profile</source>
         <comment>this is a dialog title</comment>
         <translation>Importar Perfil</translation>
     </message>
     <message>
-        <location line="+26"/>
-        <location line="+24"/>
+        <location line="+13"/>
+        <location line="+29"/>
+        <location line="+33"/>
         <source>Failed to import profile</source>
         <comment>full phrase: &apos;Failed to import profile &lt;PROFILENAME&gt;&apos;</comment>
         <translation>Falha ao importar o perfil</translation>
     </message>
     <message>
-        <location line="-11"/>
+        <location line="-60"/>
+        <source>The directory you have selected does not contain valid profile data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+43"/>
         <source>Profile</source>
         <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; imported successfully as &lt;NEWPROFILENAME&gt; and added at the profile list&apos;</comment>
         <translation>Perfil</translation>
@@ -2965,22 +3100,42 @@ p, li { white-space: pre-wrap; }
         <translation>e adicionado na lista de perfil</translation>
     </message>
     <message>
-        <location line="+57"/>
+        <location line="+3"/>
+        <source>Errors occured during snapshots and logfiles transfer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Errors occured during snapshots transfer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Errors occured during logfiles transfer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Errors occured during the profile file transfer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+52"/>
         <source>Could not locate the file</source>
         <comment>full phrase: &apos;Could not locate the file &lt;FILENAME&gt;&apos;</comment>
         <translation>Não foi possível localizar o arquivo</translation>
     </message>
     <message>
-        <location line="-243"/>
+        <location line="-311"/>
         <location line="+64"/>
-        <location line="+219"/>
+        <location line="+285"/>
         <source>You have reached the maximum limit of supported tasks</source>
         <translation>Você atingiu o limite máximo de tarefas suportadas</translation>
     </message>
     <message>
-        <location line="-282"/>
+        <location line="-348"/>
         <location line="+64"/>
-        <location line="+219"/>
+        <location line="+285"/>
         <source>You have to remove a task if you wish to add another !!</source>
         <translation>Você tem que remover uma tarefa se você quiser adicionar outra !!</translation>
     </message>
@@ -3127,19 +3282,19 @@ p, li { white-space: pre-wrap; }
         <translation>F5</translation>
     </message>
     <message>
-        <location filename="../src/executenow.cpp" line="-750"/>
+        <location filename="../src/executenow.cpp" line="-842"/>
         <source>Aborting: Please wait for all processes to be killed</source>
         <translation>Cancelando: Por favor, aguarde por todos os processos serem finalizados</translation>
     </message>
     <message>
-        <location line="+127"/>
+        <location line="+129"/>
         <source>Removing old snapshots and logfiles of task</source>
         <comment>info message displayed during ...data removal
 Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comment>
         <translation>Removendo registro instantâneo antigo e arquivo de log de tarefa</translation>
     </message>
     <message>
-        <location line="+85"/>
+        <location line="+87"/>
         <location line="+12"/>
         <source>Removing</source>
         <translation>Removendo</translation>
@@ -3151,7 +3306,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>falhou ao remover</translation>
     </message>
     <message>
-        <location line="+293"/>
+        <location line="+377"/>
         <source>Unknown error</source>
         <translation>Erro desconhecido</translation>
     </message>
@@ -3176,7 +3331,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation type="obsolete">Ler erro</translation>
     </message>
     <message>
-        <location line="+125"/>
+        <location line="+129"/>
         <source>calculating</source>
         <comment>info message displayed during ...calculations</comment>
         <translation>calculando</translation>
@@ -3214,7 +3369,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>O sistema será desligado em 1 minuto</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="-525"/>
+        <location filename="../src/functions.cpp" line="-555"/>
         <source>&amp;Refresh</source>
         <comment>This is a top &apos;Profile&apos; menu action</comment>
         <translation>&amp;Atualizar</translation>
@@ -3390,7 +3545,29 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>&amp;Barra de ferramentas</translation>
     </message>
     <message>
-        <location line="+26"/>
+        <location line="+4"/>
+        <source>Set paths</source>
+        <comment>This is a top menu action</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Set paths for rsync and ssh commands</source>
+        <comment>This is a top menu action tooltip</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>quiet mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Only show errors and important messages during window update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
         <source>Run</source>
         <comment>start button label</comment>
         <translation>Executar</translation>
@@ -3450,13 +3627,25 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Mostrar informações da janela</translation>
     </message>
     <message>
-        <location line="+278"/>
+        <location line="+295"/>
         <source>profile </source>
         <comment>information window message. Full phrase is: &apos;profile &lt;PROFILENAME&gt; is not valid for luckybackup version:X.Y&apos;. BEWARE of the whitespace in the end</comment>
         <translation>perfil</translation>
     </message>
     <message>
-        <location line="+70"/>
+        <location line="+52"/>
+        <source>The task list is empty</source>
+        <translation type="unfinished">A lista de tarefas está vazia</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <location line="+95"/>
+        <source>Use the &quot;add&quot; button on the right to get started</source>
+        <comment>Please keep the add word inside quotes</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-73"/>
         <source>default profile</source>
         <comment>Information window message. Full phrase: &apos;default profile &lt;PROFILENAME&gt; could not be saved&apos;.</comment>
         <translation>perfil padrão</translation>
@@ -3480,7 +3669,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>não pôde ser criado</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+21"/>
         <source>Profile</source>
         <comment>Question dialog message. Full phrase: &apos;profile &lt;PROFILENAME&gt; is modified&apos;</comment>
         <translation>Perfil</translation>
@@ -3504,13 +3693,13 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>não pôde ser salvo</translation>
     </message>
     <message>
-        <location line="-31"/>
+        <location line="-32"/>
         <source>profile</source>
         <comment>Information window message. Full phrase: &apos;profile &lt;PROFILENAME&gt; could not be created&apos;.</comment>
         <translation>Perfil</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="-729"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-795"/>
         <source>Failed to duplicate profile</source>
         <comment>full phrase: &apos;Failed to duplicate profile &lt;PROFILENAME&gt;&apos;</comment>
         <translation>Falha ao duplicar perfil</translation>
@@ -3550,7 +3739,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Por favor, selecione um tarefa primeiro</translation>
     </message>
     <message>
-        <location line="+163"/>
+        <location line="+230"/>
         <source>Hide information window</source>
         <comment>hide/show information window button tooltip</comment>
         <translation>Ocultar informações da janela</translation>
@@ -3562,7 +3751,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Mostrar informações da janela</translation>
     </message>
     <message>
-        <location line="+379"/>
+        <location line="+378"/>
         <source>Manage Task</source>
         <comment>This is a top &apos;Task&apos; menu action</comment>
         <translation>Gerenciador de Tarefas</translation>
@@ -3579,7 +3768,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>&amp;Tarefas</translation>
     </message>
     <message>
-        <location filename="../src/executenow.cpp" line="-462"/>
+        <location filename="../src/executenow.cpp" line="-574"/>
         <source>Successfuly created destination directory</source>
         <translation>Diretório de destino criado com êxito</translation>
     </message>
@@ -4253,7 +4442,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+16"/>
         <location line="+73"/>
-        <location line="+2481"/>
+        <location line="+2548"/>
         <source>browse localy</source>
         <translation>Navegar localmente</translation>
     </message>
@@ -4262,7 +4451,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Definir o diretório de destino</translation>
     </message>
     <message>
-        <location line="-2528"/>
+        <location line="-2595"/>
         <location line="+31"/>
         <source>Enter the full path of the destination directory (eg /media/backups/SiduxHome/)</source>
         <translation>Digite o caminho completo do diretório de destino (ex.: /media/backups/SiduxHome/)</translation>
@@ -4277,13 +4466,13 @@ p, li { white-space: pre-wrap; }
         <translation>Excluir</translation>
     </message>
     <message>
-        <location line="+417"/>
+        <location line="+454"/>
         <location line="+31"/>
         <source>Exclude list</source>
         <translation>Lista de exclusão</translation>
     </message>
     <message>
-        <location line="-400"/>
+        <location line="-437"/>
         <source>Exclude all temp folders (**/*tmp*/)</source>
         <translation>Excluir todas as pastas temporárias (**/*tmp*/)</translation>
     </message>
@@ -4319,7 +4508,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Pastas montadas</translation>
     </message>
     <message>
-        <location line="+204"/>
+        <location line="+154"/>
         <source>Exclude all &quot;lost+found&quot; folders (**/lost+found*/)</source>
         <translation>Excluir todas as pastas &quot;lost+found&quot; (**/lost+found*/)</translation>
     </message>
@@ -4329,7 +4518,7 @@ p, li { white-space: pre-wrap; }
         <translation>lost+found</translation>
     </message>
     <message>
-        <location line="-130"/>
+        <location line="-80"/>
         <source>Exclude system folders /var, /proc, /dev &amp; /sys (/var/**, /proc/**, /dev/**, /sys/**)</source>
         <translation>Excluir as pastas do sistema /var, /proc, /dev &amp; /sys (/var/**, /proc/**, /dev/**, /sys/**)</translation>
     </message>
@@ -4338,7 +4527,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Sistema</translation>
     </message>
     <message>
-        <location line="+74"/>
+        <location line="+111"/>
         <source>Exclude all user&apos;s trash folders (**/*Trash*/, **/*trash*/)</source>
         <translation>Excluir todas as pastas trash do usuário (**/*Trash*/, **/*trash*/)</translation>
     </message>
@@ -4353,29 +4542,29 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+3"/>
-        <location line="+362"/>
+        <location line="+366"/>
         <location line="+1161"/>
         <location line="+279"/>
-        <location line="+275"/>
+        <location line="+301"/>
         <source>remove</source>
         <translation>Remover</translation>
     </message>
     <message>
-        <location line="-2166"/>
+        <location line="-2196"/>
         <source>Add exclusion as entered in the next field</source>
         <translation>Adicionar exclusão como digitado no próximo campo</translation>
     </message>
     <message>
         <location line="+3"/>
-        <location line="+367"/>
+        <location line="+371"/>
         <location line="+1161"/>
         <location line="+279"/>
-        <location line="+275"/>
+        <location line="+301"/>
         <source>add</source>
         <translation>Adicionar</translation>
     </message>
     <message>
-        <location line="-2150"/>
+        <location line="-2180"/>
         <source>Enter here file, folder or pattern and then press the &quot;add&quot; button to add it to the exclude list
 * - matches any non-empty component (it stops at slashes)
 ** - matches anything, including slashes
@@ -4400,7 +4589,7 @@ caminho / - corresponde apenas diretórios, sem arquivos regulares, links simbó
         <translation type="obsolete">Opções</translation>
     </message>
     <message>
-        <location line="+1378"/>
+        <location line="+1382"/>
         <source>Do not backup source files that are newer on the destination 
 (--update)</source>
         <translation>Não fazer backup dos arquivos de origem que são mais recentes no destino
@@ -4444,7 +4633,7 @@ caminho / - corresponde apenas diretórios, sem arquivos regulares, links simbó
 (-tgo)</translation>
     </message>
     <message>
-        <location line="-1754"/>
+        <location line="-1795"/>
         <source>Define the type of this task:
 1. Backup the Source directory, inside Destination (see also &quot;Do NOT create directory&quot; box)
 2. Synchronize Source &amp; Destination, keeping the most recent files at both of them</source>
@@ -4473,61 +4662,73 @@ caminho / - corresponde apenas diretórios, sem arquivos regulares, links simbó
         <translation>Digite uma descrição da tarefa</translation>
     </message>
     <message>
-        <location line="+507"/>
-        <location line="+419"/>
+        <location line="+321"/>
+        <source>Exclude all user&apos;s .gvfs folders (**/.gvfs/)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+223"/>
+        <location line="+423"/>
         <location line="+1104"/>
         <location line="+279"/>
-        <location line="+275"/>
+        <location line="+301"/>
         <source>Edit highlighted inclusion</source>
         <translation>Editar inclusão destacada</translation>
     </message>
     <message>
-        <location line="-2074"/>
-        <location line="+419"/>
+        <location line="-2104"/>
+        <location line="+423"/>
         <location line="+1104"/>
         <location line="+279"/>
-        <location line="+275"/>
+        <location line="+301"/>
         <source>edit</source>
         <translation>Editar</translation>
     </message>
     <message>
-        <location line="-2063"/>
-        <location line="+419"/>
+        <location line="-2093"/>
+        <location line="+423"/>
         <location line="+1104"/>
         <location line="+279"/>
-        <location line="+275"/>
+        <location line="+301"/>
         <source>Move highlighted inclusion up</source>
         <translation>Mover inclusão destacada para cima</translation>
     </message>
     <message>
-        <location line="-2074"/>
-        <location line="+419"/>
+        <location line="-2104"/>
+        <location line="+423"/>
         <location line="+1104"/>
         <location line="+279"/>
-        <location line="+275"/>
+        <location line="+301"/>
         <source>move up</source>
         <translation>Mover para cima</translation>
     </message>
     <message>
-        <location line="-2063"/>
-        <location line="+419"/>
+        <location line="-2093"/>
+        <location line="+423"/>
         <location line="+1104"/>
         <location line="+279"/>
-        <location line="+275"/>
+        <location line="+301"/>
         <source>Move highlighted inclusion down</source>
         <translation>Mover inclusão destacada para baixo</translation>
     </message>
     <message>
-        <location line="-2074"/>
-        <location line="+419"/>
+        <location line="-2104"/>
+        <location line="+423"/>
         <location line="+1104"/>
         <location line="+279"/>
-        <location line="+275"/>
+        <location line="+301"/>
         <source>move down</source>
         <translation>Mover para baixo</translation>
     </message>
     <message>
-        <location line="-1052"/>
+        <location line="-2001"/>
+        <source>Include ONLY this list of patterns. Nothing more.
+Please refer to the manual for better understanding of include rules.
+This will disable the exclude feature.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+923"/>
         <source>Preserve ownership, times</source>
         <translation>Preservar proprietário, datas</translation>
     </message>
@@ -4627,12 +4828,12 @@ AVISO: Todos os arquivos serão incluídos na hora da transferência !!
         <translation type="obsolete">Incluir apenas essa lista de diretórios, arquivos ou padrões</translation>
     </message>
     <message>
-        <location line="-1359"/>
+        <location line="-1362"/>
         <source>Only Include</source>
         <translation>Incluir apenas</translation>
     </message>
     <message>
-        <location line="+136"/>
+        <location line="+139"/>
         <location line="+28"/>
         <source>Include list</source>
         <translation>Lista de inclusão</translation>
@@ -4766,7 +4967,7 @@ Note que você tem que fazer todas as ações necessárias para uma conexão rem
         <translation>Digite a porta que gostaria de usar para a conexão ssh (deixe em branco para a porta padrão)</translation>
     </message>
     <message>
-        <location line="+1313"/>
+        <location line="+1342"/>
         <source>Check this to clone source to destination
 Leave unchecked to create an extra directory inside destination</source>
         <translation>Marque esta para clonar a origem para o destino
@@ -4856,7 +5057,7 @@ Desmarque para criar um diretório extra dentro do destino</translation>
         <translation type="obsolete">Você já adicionou esse comando</translation>
     </message>
     <message>
-        <location filename="../ui/modifyDialog.ui" line="-3141"/>
+        <location filename="../ui/modifyDialog.ui" line="-3211"/>
         <source>Task properties</source>
         <translation>Propriedades da tarefa</translation>
     </message>
@@ -4931,12 +5132,12 @@ Desmarque para criar um diretório extra dentro do destino</translation>
     </message>
     <message>
         <location line="+18"/>
-        <location line="+1509"/>
+        <location line="+1550"/>
         <source>Templates</source>
         <translation>Modelos</translation>
     </message>
     <message>
-        <location line="-1476"/>
+        <location line="-1517"/>
         <source>Temporary folders</source>
         <translation>Pastas temporárias</translation>
     </message>
@@ -4961,7 +5162,7 @@ Desmarque para criar um diretório extra dentro do destino</translation>
         <translation>Pastas cache</translation>
     </message>
     <message>
-        <location line="+37"/>
+        <location line="+74"/>
         <source>Trash</source>
         <translation>Lixo</translation>
     </message>
@@ -4972,7 +5173,7 @@ Desmarque para criar um diretório extra dentro do destino</translation>
     </message>
     <message>
         <location line="+39"/>
-        <location line="+367"/>
+        <location line="+371"/>
         <source>launch the pattern editor</source>
         <translation>Lançar o editor padrão</translation>
     </message>
@@ -5078,7 +5279,7 @@ Se você não tem ideia do que significa isso, deixá-los intocados !!</translat
     </message>
     <message>
         <location line="+59"/>
-        <location line="+275"/>
+        <location line="+301"/>
         <source>Add command as entered in the field beside</source>
         <translation>Adicionar comando como digitado no campo ao lado</translation>
     </message>
@@ -5087,14 +5288,14 @@ Se você não tem ideia do que significa isso, deixá-los intocados !!</translat
         <translation type="obsolete">Executar a lista de comandos antes da tarefa</translation>
     </message>
     <message>
-        <location line="-228"/>
-        <location line="+275"/>
+        <location line="-254"/>
+        <location line="+301"/>
         <source>Command list</source>
         <translation>Lista de comandos</translation>
     </message>
     <message>
-        <location line="-241"/>
-        <location line="+275"/>
+        <location line="-267"/>
+        <location line="+301"/>
         <source>Remove highlighted command from list</source>
         <translation>Remover o comando selecionado da lista</translation>
     </message>
@@ -5402,36 +5603,36 @@ ATENÇÃO: verificar isto, se você realmente sabe o que está fazendo</translat
         <translation>Você já adicionou esta opção</translation>
     </message>
     <message>
-        <location filename="../ui/modifyDialog.ui" line="-1854"/>
+        <location filename="../ui/modifyDialog.ui" line="-1884"/>
         <source>Read exclude patterns from file</source>
         <translation>Ler padrões incluir do arquivo</translation>
     </message>
     <message>
         <location line="+3"/>
-        <location line="+311"/>
+        <location line="+315"/>
         <source>Read file:</source>
         <translation>Ler arquivo:</translation>
     </message>
     <message>
-        <location line="-301"/>
-        <location line="+311"/>
+        <location line="-305"/>
+        <location line="+315"/>
         <source>filename</source>
         <translation>Nome do arquivo</translation>
     </message>
     <message>
-        <location line="-301"/>
-        <location line="+311"/>
+        <location line="-305"/>
+        <location line="+315"/>
         <source>browse</source>
         <translation>Procurar</translation>
     </message>
     <message>
-        <location line="-308"/>
-        <location line="+311"/>
+        <location line="-312"/>
+        <location line="+315"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location line="-293"/>
+        <location line="-297"/>
         <source>Include</source>
         <translation>Incluir</translation>
     </message>
@@ -5451,14 +5652,13 @@ ATENÇÃO: verificar isto, se você realmente sabe o que está fazendo</translat
         <translation>Modo:</translation>
     </message>
     <message>
-        <location line="+7"/>
         <source>Include ONLY this list of patterns. Nothing more.
 Please refer to the manual for better understanding of include rules.</source>
-        <translation>Incluir APENAS esta lista de padrões. Nada mais.
+        <translation type="obsolete">Incluir APENAS esta lista de padrões. Nada mais.
 Por favor, consulte o manual para melhor entendimento das regras de inclusão.</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+22"/>
         <source>Do not exclude this list of patterns.
 Please refer to the manual for better understanding of include rules.</source>
         <translation>Não excluir isto da lista de padrões.
@@ -5470,7 +5670,7 @@ Por favor, consulte o manual para melhor entendimento das regras de exclusão.</
         <translation>Incluir normal</translation>
     </message>
     <message>
-        <location line="+216"/>
+        <location line="+219"/>
         <source>Read include patterns from file</source>
         <translation>Ler padões incluir do arquivo</translation>
     </message>
@@ -5496,7 +5696,18 @@ Permissões e proprietários dos dados NÃO serão preservados.
         <translation>Destino é FAT/NTFS</translation>
     </message>
     <message>
-        <location line="+829"/>
+        <location line="+531"/>
+        <location line="+10"/>
+        <source>Repeat any command that fails, x times</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-7"/>
+        <source>Repeat on fail:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+321"/>
         <location line="+22"/>
         <source>Set the total number of backup snapshots to keep</source>
         <translation>Definir o número total de backup dos registros instantâneos a serem mantidos</translation>
@@ -5512,17 +5723,17 @@ Permissões e proprietários dos dados NÃO serão preservados.
     <message>
         <location filename="../src/patternEditor.cpp" line="+44"/>
         <location line="+89"/>
-        <location line="+152"/>
+        <location line="+155"/>
         <source>directory :</source>
         <translation>Diretório:</translation>
     </message>
     <message>
-        <location line="-142"/>
+        <location line="-145"/>
         <source>Select file</source>
         <translation>Selecionar arquivo</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+9"/>
         <source>Please choose a file within the source</source>
         <translation>Por favor, escolha um arquivo dentro da origem</translation>
     </message>
@@ -5532,7 +5743,7 @@ Permissões e proprietários dos dados NÃO serão preservados.
         <translation>Selecionar diretório</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+15"/>
         <source>Please choose a directory within the source</source>
         <translation>Por favor, escola um diretório dentro da origem</translation>
     </message>
@@ -5970,17 +6181,18 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Arquivo</translation>
     </message>
     <message>
-        <location filename="../src/scheduleDialog.cpp" line="+122"/>
+        <location filename="../src/scheduleDialog.cpp" line="+137"/>
+        <location line="+78"/>
         <source>Starting from scratch</source>
         <translation>Começando do zero</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+104"/>
         <source>Unable to create schedule file</source>
         <translation>Não foi possível criar arquivo de agendamento</translation>
     </message>
     <message>
-        <location line="+67"/>
+        <location line="+30"/>
         <source>You have reached the maximum limit of supported scheduled profiles</source>
         <translation>Você atingiu o limite máximo suportado de perfis agendados</translation>
     </message>
@@ -6466,8 +6678,8 @@ de acordo com os &quot;Detalhes da agenda do perfil&quot;</translation>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/scheduleDialog.cpp" line="-382"/>
-        <location line="+177"/>
+        <location filename="../src/scheduleDialog.cpp" line="-340"/>
+        <location line="+135"/>
         <location line="+40"/>
         <source>No schedules are declared !!</source>
         <translation>Nenhum agendamento foi declarado !!</translation>
@@ -6734,19 +6946,21 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#aa0000;&quot;&gt;Agendando execução do perfil&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/scheduleDialog.cpp" line="-496"/>
+        <location filename="../src/scheduleDialog.cpp" line="-526"/>
+        <location line="+78"/>
         <source>The existent schedule file is not a valid luckyBackup v.</source>
         <comment>v is for version</comment>
         <translation>O arquivo de agendamento existente não é uma versão válida para luckyBackup.</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="-77"/>
+        <location line="+78"/>
         <source> file</source>
         <comment>BEWARE of the whitespace before file</comment>
         <translation> arquivo</translation>
     </message>
     <message>
-        <location line="+83"/>
+        <location line="+78"/>
         <source>You have made changes without clicking the cronIT button</source>
         <translation>Você fez alterações sem clicar no botão cronIT</translation>
     </message>
@@ -6756,7 +6970,7 @@ p, li { white-space: pre-wrap; }
         <translation>Tem certeza que deseja fechar a janela de agendamento?</translation>
     </message>
     <message>
-        <location line="+77"/>
+        <location line="+34"/>
         <source>Your crontab is updated successfully</source>
         <translation>Seu crontab foi atualizado com sucesso</translation>
     </message>
@@ -6902,6 +7116,79 @@ p, li { white-space: pre-wrap; }
         <location line="+1"/>
         <source>Yes</source>
         <translation>Sim</translation>
+    </message>
+</context>
+<context>
+    <name>winDialog</name>
+    <message>
+        <location filename="../ui/winDialog.ui" line="+17"/>
+        <source>luckyBackup</source>
+        <translation type="unfinished">luckyBackup</translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>declaration of paths</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>rsync:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the rsync command</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <location line="+64"/>
+        <source>browse loacly</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-47"/>
+        <location line="+64"/>
+        <source>Use default value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-46"/>
+        <source>ssh</source>
+        <translation type="unfinished">ssh</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the ssh command</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+58"/>
+        <source>Okay</source>
+        <translation type="unfinished">Ok</translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Cancelar</translation>
+    </message>
+    <message>
+        <location filename="../src/winDialog.cpp" line="+102"/>
+        <source>Select rsync command</source>
+        <comment>file selection dialog title</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <location line="+6"/>
+        <source>Executable Files (*.exe)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-1"/>
+        <source>Select ssh command</source>
+        <comment>file selection dialog title</comment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

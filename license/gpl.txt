@@ -1,4 +1,4 @@
-		(C) 2008-2010, Loukas Avgeriou
+		(C) 2008-2012, Loukas Avgeriou
 
 This program is distributed under the terms of the GPL v3.
 

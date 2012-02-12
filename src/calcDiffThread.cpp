@@ -4,7 +4,7 @@
 ===============================================================================================================================
 ===============================================================================================================================
      This file is part of "luckyBackup" project
-     Copyright 2008-2011, Loukas Avgeriou
+     Copyright 2008-2012, Loukas Avgeriou
      luckyBackup is distributed under the terms of the GNU General Public License
      luckyBackup is free software: you can redistribute it and/or modify
      it under the terms of the GNU General Public License as published by
@@ -108,7 +108,7 @@ void CalcDiffThread::run ()
         bool removed = FALSE;
         while (countDirEntries < removedFiles.size())
         {
-            if ( (destFile == removedFiles.at(countDirEntries)) || ((destFile+"/") == removedFiles.at(countDirEntries)) )
+            if ( (destFile == removedFiles.at(countDirEntries)) || ((destFile+SLASH) == removedFiles.at(countDirEntries)) )
             {
                 removed = TRUE;
                 returnDirContents.removeAt(countReturnEntries);

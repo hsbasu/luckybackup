@@ -102,7 +102,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/global.cpp" line="+894"/>
+        <location filename="../src/global.cpp" line="+1063"/>
         <source>The task list is empty</source>
         <translation type="unfinished">Popis zadataka je prazan </translation>
     </message>
@@ -148,7 +148,7 @@
         <translation type="unfinished">Molimo da otkačite odgovarajući potvrdni okvir ili promijenite sve tipove zadataka kako ne bi bile &apos;&lt;b&gt; Backup dir sadržaja &lt;/b&gt;&apos;(sp)(sp) ili koristite &apos;Backup dir sadržaje&apos; zajedno sa &apos;&lt;b&gt; Samo uključiti &lt;/b &gt; &apos;opciju, prije nastavka</translation>
     </message>
     <message>
-        <location line="+603"/>
+        <location line="+654"/>
         <source>execution of task</source>
         <comment>Full phrase: execution of task: &lt;TASKNAME&gt; finished because of pre/post task command execution error</comment>
         <translation type="unfinished"></translation>
@@ -165,7 +165,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+100"/>
+        <location line="+11"/>
+        <source>Backing-up profile, logfiles and snapshot data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+93"/>
         <source>Could not open the logfile</source>
         <translation type="unfinished">Ne mogu otvoriti logfile</translation>
     </message>
@@ -175,7 +180,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+63"/>
         <source>The specified command is probably not installed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -407,7 +412,7 @@
         <translation type="unfinished">Želim &lt;font color=red&gt;&lt;b&gt;NOT SKIP&lt;/b&gt;&lt;/font&gt; ovaj zadatak jer si aktivirao &quot;by-pass WARNING&quot; opciju</translation>
     </message>
     <message>
-        <location line="-430"/>
+        <location line="-453"/>
         <source>pre-task execution of command</source>
         <comment>Full phrase: pre-task execution of command: &lt;COMMAND&gt; starting</comment>
         <translation type="unfinished">naredba prije izvršavanja zadatka</translation>
@@ -420,6 +425,12 @@
     </message>
     <message>
         <location line="+4"/>
+        <source>Command re-run due to failure</source>
+        <comment>This means that a specific command is run for once more because it failed the first time</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
         <source>post-task execution of command</source>
         <comment>Full phrase: post-task execution of command: &lt;COMMAND&gt; starting</comment>
         <translation type="unfinished">naredba nakon izvršavanja zadatka</translation>
@@ -674,7 +685,7 @@
         <translation>Ubuntu održavatelj paketa (launchpad PPA)</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+29"/>
         <source>Pavel Fric</source>
         <translation>Pavel Fric</translation>
     </message>
@@ -695,7 +706,7 @@
         <translation>Njemački gui prevodilac</translation>
     </message>
     <message>
-        <location line="+47"/>
+        <location line="+56"/>
         <source>fri13</source>
         <translation>fri13</translation>
     </message>
@@ -712,7 +723,7 @@
         <translation type="obsolete">Danski gui prevodilac</translation>
     </message>
     <message>
-        <location line="-45"/>
+        <location line="-54"/>
         <source>Sergio Gameiro</source>
         <translation>Sergio Gameiro</translation>
     </message>
@@ -728,7 +739,7 @@
         <translation>Marcio Moraes</translation>
     </message>
     <message>
-        <location line="+12"/>
+        <location line="+15"/>
         <source>Denis Skorski</source>
         <translation>Denis Skorski</translation>
     </message>
@@ -738,7 +749,7 @@
         <translation>Ruski gui prevodilac i vrijedni ispitivač</translation>
     </message>
     <message>
-        <location line="+26"/>
+        <location line="+32"/>
         <source>Javi Romero</source>
         <translation>Javi Romero</translation>
     </message>
@@ -748,7 +759,7 @@
         <translation>v0.3 gui dizajner</translation>
     </message>
     <message>
-        <location line="-37"/>
+        <location line="-46"/>
         <source>Julien Cynober</source>
         <translation>Julien Cynober</translation>
     </message>
@@ -758,7 +769,7 @@
         <translation>Francuski gui prevodilac i dragocjen savjetnik za pakete (i to nije sve)</translation>
     </message>
     <message>
-        <location line="-52"/>
+        <location line="-58"/>
         <source>Dimitris Kalamaras</source>
         <translation>Dimitris Kalamaras</translation>
     </message>
@@ -768,7 +779,7 @@
         <translation>da nije njega i njegovog podučavanja, ja nikad nebi započeo ovaj projekat</translation>
     </message>
     <message>
-        <location line="+102"/>
+        <location line="+119"/>
         <source>...to all users of the </source>
         <translation>... svim korisnicima</translation>
     </message>
@@ -845,12 +856,12 @@ p, li { white-space: pre-wrap; }
 &amp;Ugovor o licenci</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="-120"/>
+        <location filename="../src/about.cpp" line="-137"/>
         <source>Marcos Del Puerto Garcia</source>
         <translation>Marcos Del Puerto Garcia</translation>
     </message>
     <message>
-        <location line="+57"/>
+        <location line="+66"/>
         <source>Kenny Verstraete</source>
         <translation>Kenny Verstraete</translation>
     </message>
@@ -860,7 +871,7 @@ p, li { white-space: pre-wrap; }
         <translation>Holandski gui prevodilac</translation>
     </message>
     <message>
-        <location line="-72"/>
+        <location line="-81"/>
         <source>rpm packager, valuable tester and remote connections advisor</source>
         <translation>rpm packager, vrijedni ispitivač i savjetnik za udaljene konekcije</translation>
     </message>
@@ -875,7 +886,7 @@ p, li { white-space: pre-wrap; }
         <translation>Debian upravitelj paketa</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+20"/>
         <source>Jack Fink</source>
         <translation>Jack Fink</translation>
     </message>
@@ -905,7 +916,7 @@ p, li { white-space: pre-wrap; }
         <translation>Mandriva upravitelj paketa</translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+38"/>
         <source>Raffaele</source>
         <translation>Raffaele</translation>
     </message>
@@ -931,7 +942,7 @@ p, li { white-space: pre-wrap; }
         <translation>Prevodilac arapskog gui-a</translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location line="+27"/>
         <source>v.0.3 gui designer</source>
         <translation>v 0.3 gui dizajner</translation>
     </message>
@@ -940,17 +951,17 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Carsten</translation>
     </message>
     <message>
-        <location line="-22"/>
+        <location line="-28"/>
         <source>Majed Sahli</source>
         <translation>Majed Sahli</translation>
     </message>
     <message>
-        <location line="-33"/>
+        <location line="-36"/>
         <source>Stergios Prosiniklis</source>
         <translation>Stergios Prosiniklis</translation>
     </message>
     <message>
-        <location line="-21"/>
+        <location line="-24"/>
         <source>Elbert Pol</source>
         <translation type="unfinished"></translation>
     </message>
@@ -960,18 +971,28 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-28"/>
-        <location line="+49"/>
+        <location line="-31"/>
+        <location line="+55"/>
         <source>Greek manual translator</source>
         <translation>grčki prevodilac upustva</translation>
     </message>
     <message>
-        <location line="-48"/>
+        <location line="-54"/>
         <source>Valuable advisor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+23"/>
+        <source>Bruce Marriner</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>port to MS Windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
         <source>Dimitris Stasinopoulos</source>
         <translation type="unfinished"></translation>
     </message>
@@ -986,12 +1007,32 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+3"/>
+        <source>Jason E. Hale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Free BSD package maintainer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>ex Fedora package maintainer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+41"/>
+        <location line="+23"/>
+        <source>AurÃ©lien Merckel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>French gui translator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+20"/>
         <source>Adrian Murariu</source>
         <translation>Adrian Murariu</translation>
     </message>
@@ -1021,6 +1062,26 @@ p, li { white-space: pre-wrap; }
         <translation>Prevodilac švedskog gui-a</translation>
     </message>
     <message>
+        <location line="+2"/>
+        <source>Roger CalvÃ³</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Catalan gui translator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>TomÃ¡Å¡ Vadina</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Slovak gui translator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+11"/>
         <source>Michele Dall&apos;Arno</source>
         <translation type="unfinished"></translation>
@@ -1041,7 +1102,17 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+37"/>
+        <location line="+2"/>
+        <source>Yuri Vidal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>backupwhenidle python script developer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+36"/>
         <source>no money</source>
         <translation>bez novca</translation>
     </message>
@@ -1113,7 +1184,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Support</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="-188"/>
+        <location filename="../src/about.cpp" line="-205"/>
         <source>luckyBackup is distributed under the terms of the &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU General Public License&lt;/a&gt;</source>
         <comment>Please leave the tags &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt; &amp; &lt;/a&gt; intact and surrounding the GNU General Public License !!</comment>
         <translation>luckyBackup je distribuisan pod uslovima &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU General Public</translation>
@@ -1125,22 +1196,22 @@ p, li { white-space: pre-wrap; }
         <translation>ovo je &lt;b&gt;slobodan program&lt;b&gt;: možete ga redistribuirati i/ili mijenjati pod uvjetima GNU Opšte javne licence kao što je objavila Slobodna Softverska fondacia, verzije 3 licence.</translation>
     </message>
     <message>
-        <location line="+66"/>
+        <location line="+72"/>
         <source>Thomas Janssen</source>
         <translation>Thomas Janssen</translation>
     </message>
     <message>
-        <location line="-2"/>
+        <location line="-5"/>
         <source>Fedora package maintainer (official repo)</source>
         <translation>Fedora upravitelj paketa (oficjalni rep.)</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+14"/>
         <source>Karsten Jaschultowski</source>
         <translation>Karsten Jaschultowski</translation>
     </message>
     <message>
-        <location line="+15"/>
+        <location line="+18"/>
         <source>Francesco Braile</source>
         <translation>Francesco Braile</translation>
     </message>
@@ -1165,7 +1236,7 @@ p, li { white-space: pre-wrap; }
         <translation>Prevodilac turskog gui-a</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+20"/>
         <source>Tito Poquito</source>
         <translation>Tito Poquito</translation>
     </message>
@@ -1175,7 +1246,7 @@ p, li { white-space: pre-wrap; }
         <translation>slackware upravitelj paketa (slackware rep.)</translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location line="+23"/>
         <source>...my other half, &lt;b&gt;Dimitra&lt;/b&gt; that bears with me all these times that this project is under development</source>
         <translation>... mojoj drugoj polovici, &lt;b&gt; Dimitra &lt;/b&gt; koja je sa mnom prošla sav ovaj put u razvoju ovog projekta</translation>
     </message>
@@ -1206,7 +1277,7 @@ sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</source>
     </message>
     <message>
         <location line="+9"/>
-        <location line="+182"/>
+        <location line="+204"/>
         <location line="+14"/>
         <source>Use default</source>
         <extracomment>This means &quot;use the default value for this field&quot;
@@ -1217,7 +1288,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-183"/>
+        <location line="-205"/>
         <source>Arguments</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1227,8 +1298,18 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+26"/>
+        <location line="+7"/>
+        <source>Enter the sender of the message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+19"/>
         <source>%l logfile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>%c logfile.tar.gz</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1257,22 +1338,42 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+7"/>
+        <source>Enter the recipient of the message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
         <source>%s subject:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+7"/>
+        <source>Enter the subject of the message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
         <source>%v smtp server:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+7"/>
+        <source>Enter the smtp server used to send the message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
         <source>%b body:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+63"/>
+        <location line="+10"/>
+        <source>Enter the body of the message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+56"/>
         <source>Send an email right now to test the provided arguments</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1440,7 +1541,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>luckyBackupWindow</name>
     <message>
-        <location filename="../src/functions.cpp" line="+169"/>
+        <location filename="../src/functions.cpp" line="+171"/>
         <source>&amp;Profile</source>
         <comment>This is a top menu item</comment>
         <translation>&amp;Profil</translation>
@@ -1533,7 +1634,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Jezik</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+9"/>
         <source>&amp;Help</source>
         <comment>This is a top menu item</comment>
         <translation>&amp;Pomoć</translation>
@@ -1556,7 +1657,7 @@ p, li { white-space: pre-wrap; }
         <translation>Trenutni profil</translation>
     </message>
     <message>
-        <location filename="../src/executenow.cpp" line="+186"/>
+        <location filename="../src/executenow.cpp" line="+194"/>
         <location filename="../src/functions.cpp" line="+2"/>
         <source>Task list</source>
         <comment>task list label</comment>
@@ -1595,7 +1696,7 @@ p, li { white-space: pre-wrap; }
         <translation>Pomjeri označeni zadatak za jednu poziciju prema dole</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+6"/>
         <source>Task</source>
         <comment>task groupbox (add, remove, modify buttons) label</comment>
         <translation>Zadatak</translation>
@@ -1699,7 +1800,7 @@ p, li { white-space: pre-wrap; }
         <translation>F1</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+62"/>
         <source>English</source>
         <translation>Bosanski</translation>
     </message>
@@ -1709,7 +1810,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;%1 %2</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="+784"/>
+        <location filename="../src/luckybackupwindow.cpp" line="+766"/>
         <source>You have asked for a RESTORE task to be created</source>
         <comment>&apos;create restore&apos; message line 1/4</comment>
         <translation>Vi zahtjevate da POVRATITE svoje odatke odnosno RESTORE </translation>
@@ -1733,16 +1834,16 @@ p, li { white-space: pre-wrap; }
         <translation>Bitna provjera&apos;ime zadatka&apos;, &apos;izvor&apos;, &apos;odredište&apos; &amp; &apos;preskočiti novije odredišne datoteke&apos; kvadratić (napredni)</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="+75"/>
-        <location filename="../src/luckybackupwindow.cpp" line="-463"/>
+        <location filename="../src/functions.cpp" line="+86"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-424"/>
         <location line="+70"/>
         <location line="+14"/>
         <location line="+56"/>
-        <location line="+65"/>
-        <location line="+59"/>
+        <location line="+85"/>
         <location line="+14"/>
-        <location line="+317"/>
-        <location line="+271"/>
+        <location line="+230"/>
+        <location line="+155"/>
+        <location line="+269"/>
         <source>ERROR</source>
         <translation>GREŠKA</translation>
     </message>
@@ -1802,7 +1903,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+25"/>
-        <location line="+55"/>
+        <location line="+59"/>
         <source>Description</source>
         <translation>Opis</translation>
     </message>
@@ -1819,7 +1920,7 @@ p, li { white-space: pre-wrap; }
         <translation>snimanje profila ...</translation>
     </message>
     <message>
-        <location filename="../src/executenow.cpp" line="+939"/>
+        <location filename="../src/executenow.cpp" line="+1032"/>
         <location filename="../src/functions.cpp" line="+4"/>
         <location line="+65"/>
         <source>WARNING</source>
@@ -1903,7 +2004,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Je izmjenjen</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+19"/>
         <source>Would you like to save it before proceeding ?</source>
         <translation>da li želite snimiti promjene prije zatvaranja  ?</translation>
     </message>
@@ -1923,7 +2024,7 @@ p, li { white-space: pre-wrap; }
         <translation>Da li ipak želite radnju izvršiti ?</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="-1022"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-1061"/>
         <source>Welcome to</source>
         <comment>full phrase: &apos;Welcome to luckyBackup&apos;</comment>
         <translation>Dobrodošli u</translation>
@@ -1935,50 +2036,50 @@ p, li { white-space: pre-wrap; }
         <translation>Bosanski</translation>
     </message>
     <message>
-        <location line="+109"/>
+        <location line="+121"/>
         <source>Failed to create new profile</source>
         <comment>full phrase: &apos;Failed to create new profile &lt;PROFILENAME&gt;&apos;</comment>
         <translation>Neuspješno kreiranje profila</translation>
     </message>
     <message>
         <location line="+2"/>
-        <location line="+546"/>
+        <location line="+566"/>
         <source>The name you have entered contains only invalid characters</source>
         <translation>Ime koje ste unijeli sadrži nevažeće znakove</translation>
     </message>
     <message>
-        <location line="-532"/>
+        <location line="-552"/>
         <location line="+70"/>
-        <location line="+195"/>
+        <location line="+156"/>
         <source>Profile</source>
         <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; already exists&apos;</comment>
         <translation>Profil</translation>
     </message>
     <message>
-        <location line="-264"/>
+        <location line="-225"/>
         <location line="+70"/>
-        <location line="+195"/>
+        <location line="+156"/>
         <source>already exists</source>
         <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; already exists&apos;</comment>
         <translation>Svakako postoji</translation>
     </message>
     <message>
-        <location line="-264"/>
+        <location line="-225"/>
         <location line="+70"/>
-        <location line="+195"/>
+        <location line="+156"/>
         <source>Would you like to replace it ?</source>
         <translation>Da li želiti da ih zamjenite novim ?</translation>
     </message>
     <message>
-        <location line="-255"/>
+        <location line="-216"/>
         <location line="+70"/>
-        <location line="+194"/>
+        <location line="+155"/>
         <source>Failed to replace profile</source>
         <comment>full phrase: &apos;Failed to replace profile &lt;PROFILENAME&gt;&apos;</comment>
         <translation>neuspješna zamjena profila</translation>
     </message>
     <message>
-        <location line="-232"/>
+        <location line="-193"/>
         <location line="+52"/>
         <source>Failed to rename profile</source>
         <comment>full phrase: &apos;Failed to rename profile &lt;PROFILENAME&gt;&apos;</comment>
@@ -2061,43 +2162,36 @@ p, li { white-space: pre-wrap; }
         <translation>vrati standardne Postavke</translation>
     </message>
     <message>
-        <location line="+12"/>
         <source>Export Profile</source>
         <comment>this is a dialog title</comment>
-        <translation>Eksportuj profil</translation>
+        <translation type="obsolete">Eksportuj profil</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <location line="+299"/>
         <source>profile</source>
-        <translation>profil</translation>
+        <translation type="obsolete">profil</translation>
     </message>
     <message>
-        <location line="-288"/>
         <source>Failed to export profile</source>
         <comment>full phrase: &apos;Failed to export profile &lt;PROFILENAME&gt; as &lt;FILENAME&gt;&apos;</comment>
-        <translation>neuspješno eksportovanje profila</translation>
+        <translation type="obsolete">neuspješno eksportovanje profila</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>as</source>
         <comment>full phrase: &apos;Failed to export profile &lt;PROFILENAME&gt; as &lt;FILENAME&gt;&apos;</comment>
-        <translation>kao</translation>
+        <translation type="obsolete">kao</translation>
     </message>
     <message>
-        <location line="+8"/>
         <source>Profile</source>
         <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; exported successfully as &lt;FILENAME&gt;&apos;</comment>
-        <translation>Profil</translation>
+        <translation type="obsolete">Profil</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>exported successfully as</source>
         <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; exported successfully as &lt;FILENAME&gt;&apos;</comment>
-        <translation>uspješno eksportovanje kao</translation>
+        <translation type="obsolete">uspješno eksportovanje kao</translation>
     </message>
     <message>
-        <location line="+78"/>
+        <location line="+75"/>
         <source>All relevant files (logs etc) have also been duplicated</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2119,20 +2213,56 @@ p, li { white-space: pre-wrap; }
         <translation>postaviti kao</translation>
     </message>
     <message>
-        <location line="+169"/>
+        <location line="+171"/>
+        <source>Select export directory</source>
+        <comment>this is a dialog title for selecting a directory to export a profile to</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Failed to export profile</source>
+        <comment>full phrase: &apos;Failed to export profile &lt;PROFILENAME&gt; to &lt;DIRNAME&gt;&apos;</comment>
+        <translation type="unfinished">neuspješno eksportovanje profila</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>to</source>
+        <comment>full phrase: &apos;Failed to export profile &lt;PROFILENAME&gt; to &lt;DIRNAME&gt;&apos;</comment>
+        <translation type="unfinished">prema</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Profile</source>
+        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; exported successfully to &lt;DIRNAME&gt;&apos;</comment>
+        <translation type="unfinished">Profil</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>exported successfully to</source>
+        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; exported successfully to &lt;DIRNAME&gt;&apos;</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
         <source>Import Profile</source>
         <comment>this is a dialog title</comment>
         <translation>Importuj Profil</translation>
     </message>
     <message>
-        <location line="+26"/>
-        <location line="+24"/>
+        <location line="+13"/>
+        <location line="+29"/>
+        <location line="+33"/>
         <source>Failed to import profile</source>
         <comment>full phrase: &apos;Failed to import profile &lt;PROFILENAME&gt;&apos;</comment>
         <translation>neuspješno importovanje profila</translation>
     </message>
     <message>
-        <location line="-11"/>
+        <location line="-60"/>
+        <source>The directory you have selected does not contain valid profile data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+43"/>
         <source>Profile</source>
         <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; imported successfully as &lt;NEWPROFILENAME&gt; and added at the profile list&apos;</comment>
         <translation>Profil</translation>
@@ -2156,20 +2286,40 @@ p, li { white-space: pre-wrap; }
         <translation>i dodaj na popisu liste profila</translation>
     </message>
     <message>
-        <location line="+57"/>
+        <location line="+3"/>
+        <source>Errors occured during snapshots and logfiles transfer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Errors occured during snapshots transfer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Errors occured during logfiles transfer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Errors occured during the profile file transfer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+52"/>
         <source>Could not locate the file</source>
         <comment>full phrase: &apos;Could not locate the file &lt;FILENAME&gt;&apos;</comment>
         <translation>File se ne može locirati</translation>
     </message>
     <message>
-        <location line="-243"/>
+        <location line="-311"/>
         <location line="+64"/>
-        <location line="+219"/>
+        <location line="+285"/>
         <source>You have reached the maximum limit of supported tasks</source>
         <translation>Dosegli ste maksimalno ograničenje podržanih zadataka</translation>
     </message>
     <message>
-        <location line="-543"/>
+        <location line="-570"/>
         <source>default profile</source>
         <comment>full phrase: &apos;default profile &lt;PROFILENAME&gt; renamed successfully to &lt;NEWPROFILENAME&gt;&apos;.</comment>
         <translation type="unfinished"></translation>
@@ -2191,9 +2341,9 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+247"/>
+        <location line="+208"/>
         <location line="+64"/>
-        <location line="+219"/>
+        <location line="+285"/>
         <source>You have to remove a task if you wish to add another !!</source>
         <translation>Morate izbrisati zadatak kako bi dodali drugi !!</translation>
     </message>
@@ -2285,12 +2435,17 @@ p, li { white-space: pre-wrap; }
         <translation>luckyBackup</translation>
     </message>
     <message>
-        <location line="+631"/>
+        <location line="+211"/>
+        <source>CheckBox</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+430"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Bitstream Vera Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2298,8 +2453,8 @@ p, li { white-space: pre-wrap; }
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Bitstream Vera Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2414,13 +2569,13 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Prekini</translation>
     </message>
     <message>
-        <location filename="../src/executenow.cpp" line="-997"/>
+        <location filename="../src/executenow.cpp" line="-1093"/>
         <source>commands output</source>
         <comment>output window label</comment>
         <translation>Izlazne naredbe</translation>
     </message>
     <message>
-        <location line="+92"/>
+        <location line="+96"/>
         <source>Execution of profile</source>
         <comment>full phrase: &apos;Execution of profile &lt;PROFILENAME&gt; finished&apos;</comment>
         <translation>Izvršenje profila</translation>
@@ -2432,9 +2587,9 @@ p, li { white-space: pre-wrap; }
         <translation>gotovo</translation>
     </message>
     <message>
-        <location line="-145"/>
-        <location line="+147"/>
-        <location line="+657"/>
+        <location line="-149"/>
+        <location line="+151"/>
+        <location line="+749"/>
         <location line="+21"/>
         <location line="+25"/>
         <location line="+1"/>
@@ -2442,7 +2597,7 @@ p, li { white-space: pre-wrap; }
         <translation>Simulaciski mod</translation>
     </message>
     <message>
-        <location line="-700"/>
+        <location line="-792"/>
         <source>Could not update last execution time of tasks</source>
         <translation>nije u mogućnost aktualizirati vrijeme zadnjeg izvršenog zadatka</translation>
     </message>
@@ -2457,7 +2612,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Prekini</translation>
     </message>
     <message>
-        <location line="+177"/>
+        <location line="+181"/>
         <source>Removed all older snapshots data</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2467,12 +2622,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+321"/>
+        <location line="+405"/>
         <source>Unknown error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+196"/>
+        <location line="+200"/>
         <location line="+4"/>
         <location line="+48"/>
         <location line="+4"/>
@@ -2500,7 +2655,7 @@ p, li { white-space: pre-wrap; }
         <translation>Proteklo vrijeme</translation>
     </message>
     <message>
-        <location line="-225"/>
+        <location line="-229"/>
         <source>Failed to start</source>
         <comment>this refers to a process</comment>
         <translation type="unfinished"></translation>
@@ -2536,7 +2691,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+90"/>
+        <location line="+94"/>
         <source>pre-task execution of command</source>
         <translation>naredba prije izvršavanja zadatka</translation>
     </message>
@@ -2626,7 +2781,7 @@ p, li { white-space: pre-wrap; }
         <translation>logfile je kreiran u direktorj:</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="-462"/>
+        <location filename="../src/functions.cpp" line="-484"/>
         <source>Done</source>
         <translation>Obavljeno</translation>
     </message>
@@ -2645,7 +2800,7 @@ p, li { white-space: pre-wrap; }
         <translation>zvršavanje zadaća je nasilno prekinut od strane korisnika</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="-16"/>
+        <location filename="../src/functions.cpp" line="-18"/>
         <source>jump to next error</source>
         <comment>button tooltip</comment>
         <translation>pređi na sljedeću grešku</translation>
@@ -2667,37 +2822,37 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">display - restore - delete existing backups of highlighted task</translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+33"/>
         <source>minimize to tray</source>
         <translation>Minimizuj u sistemsku traku</translation>
     </message>
     <message>
-        <location line="+276"/>
+        <location line="+293"/>
         <source>profile </source>
         <comment>information window message. Full phrase is: &apos;profile &lt;PROFILENAME&gt; is not valid for luckybackup version:X.Y&apos;. BEWARE of the whitespace in the end</comment>
         <translation>profil</translation>
     </message>
     <message>
         <location line="+32"/>
-        <location line="+55"/>
+        <location line="+59"/>
         <source>scheduled</source>
         <comment>this refers to a profile</comment>
         <translation>planirano</translation>
     </message>
     <message>
-        <location line="-50"/>
-        <location line="+55"/>
+        <location line="-54"/>
+        <location line="+59"/>
         <source>YES</source>
         <translation>Da</translation>
     </message>
     <message>
-        <location line="-53"/>
-        <location line="+55"/>
+        <location line="-57"/>
+        <location line="+59"/>
         <source>NO</source>
         <translation>Ne</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="-1248"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-1295"/>
         <source>super user</source>
         <comment>super user is the root user</comment>
         <translation>Super Korisnik</translation>
@@ -2713,7 +2868,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Standardno</translation>
     </message>
     <message>
-        <location line="+1025"/>
+        <location line="+1072"/>
         <source>Please select a task to manage first</source>
         <translation>Molim da odaberete zadatak prije  upravljanje istim</translation>
     </message>
@@ -2756,13 +2911,13 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Prekini</translation>
     </message>
     <message>
-        <location filename="../src/executenow.cpp" line="-864"/>
+        <location filename="../src/executenow.cpp" line="-960"/>
         <source>rsync and pre/post task commands output is displayed here</source>
         <comment>tooltip</comment>
         <translation>rsync i pre/post task povratne naredbe su prikazani ovdje</translation>
     </message>
     <message>
-        <location line="+134"/>
+        <location line="+138"/>
         <source>&amp;Minimize to tray</source>
         <comment>tray menu action</comment>
         <translation>&amp;smani u sistemsku traku</translation>
@@ -2774,7 +2929,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Povrati</translation>
     </message>
     <message>
-        <location line="-191"/>
+        <location line="-195"/>
         <source>execution of profile:</source>
         <comment>tray message - execution of profile: &lt;PROFILENAME&gt; in progress...</comment>
         <translation>izvršenje profila:</translation>
@@ -2786,24 +2941,24 @@ p, li { white-space: pre-wrap; }
         <translation>Izvršavam...</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="-369"/>
+        <location filename="../src/functions.cpp" line="-390"/>
         <source>minimizes the window to the tray area</source>
         <translation>smani prozor u sistemsku traku</translation>
     </message>
     <message>
-        <location filename="../src/executenow.cpp" line="+169"/>
+        <location filename="../src/executenow.cpp" line="+173"/>
         <source>Aborting: Please wait for all processes to be killed</source>
         <translation>Prekidam: Molim pričekaj kako bi sve procese bili zaustavljeni</translation>
     </message>
     <message>
-        <location line="+127"/>
+        <location line="+129"/>
         <source>Removing old snapshots and logfiles of task</source>
         <comment>info message displayed during ...data removal
 Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comment>
         <translation>Brisanje starog snapshota i logfile-a ovog zadatka</translation>
     </message>
     <message>
-        <location line="+85"/>
+        <location line="+87"/>
         <location line="+12"/>
         <source>Removing</source>
         <translation>Brišem</translation>
@@ -2820,7 +2975,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation type="obsolete">Korištenje udaljenu destinaciju. zadržati sve stare ispravne snapshot-ove</translation>
     </message>
     <message>
-        <location line="+418"/>
+        <location line="+506"/>
         <source>calculating</source>
         <comment>info message displayed during ...calculations</comment>
         <translation>izračunavam</translation>
@@ -2848,7 +3003,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>PREKID</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="-80"/>
+        <location filename="../src/functions.cpp" line="-88"/>
         <source>&amp;Refresh</source>
         <comment>This is a top &apos;Profile&apos; menu action</comment>
         <translation>&amp;Osvježi</translation>
@@ -3024,7 +3179,29 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>&amp;Ljestvica</translation>
     </message>
     <message>
-        <location line="+26"/>
+        <location line="+4"/>
+        <source>Set paths</source>
+        <comment>This is a top menu action</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Set paths for rsync and ssh commands</source>
+        <comment>This is a top menu action tooltip</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>quiet mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Only show errors and important messages during window update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
         <source>Run</source>
         <comment>start button label</comment>
         <translation>Pokreni</translation>
@@ -3084,7 +3261,19 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Prikaži prozor informacija</translation>
     </message>
     <message>
-        <location line="+348"/>
+        <location line="+347"/>
+        <source>The task list is empty</source>
+        <translation type="unfinished">Popis zadataka je prazan </translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <location line="+95"/>
+        <source>Use the &quot;add&quot; button on the right to get started</source>
+        <comment>Please keep the add word inside quotes</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-73"/>
         <source>default profile</source>
         <comment>Information window message. Full phrase: &apos;default profile &lt;PROFILENAME&gt; could not be saved&apos;.</comment>
         <translation type="unfinished"></translation>
@@ -3108,7 +3297,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation type="unfinished">ne može biti kreiran</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+21"/>
         <source>Profile</source>
         <comment>Question dialog message. Full phrase: &apos;profile &lt;PROFILENAME&gt; is modified&apos;</comment>
         <translation type="unfinished">Profil</translation>
@@ -3142,13 +3331,13 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation type="obsolete">Standardan</translation>
     </message>
     <message>
-        <location line="-31"/>
+        <location line="-32"/>
         <source>profile</source>
         <comment>Information window message. Full phrase: &apos;profile &lt;PROFILENAME&gt; could not be created&apos;.</comment>
         <translation>Profil</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="-729"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-795"/>
         <source>Failed to duplicate profile</source>
         <comment>full phrase: &apos;Failed to duplicate profile &lt;PROFILENAME&gt;&apos;</comment>
         <translation>Neuspješna duplikacija profila</translation>
@@ -3188,7 +3377,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Molim da prvo izabereš zadatak</translation>
     </message>
     <message>
-        <location line="+163"/>
+        <location line="+230"/>
         <source>Hide information window</source>
         <comment>hide/show information window button tooltip</comment>
         <translation>Odkloni prozor informacija</translation>
@@ -3200,7 +3389,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Prikaži prozor informacija</translation>
     </message>
     <message>
-        <location line="+379"/>
+        <location line="+378"/>
         <source>Manage Task</source>
         <comment>This is a top &apos;Task&apos; menu action</comment>
         <translation>Upravljaj Zatatkom</translation>
@@ -3221,7 +3410,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation type="obsolete">Dupli &amp;Zadatak</translation>
     </message>
     <message>
-        <location filename="../src/executenow.cpp" line="-338"/>
+        <location filename="../src/executenow.cpp" line="-450"/>
         <source>Successfuly created destination directory</source>
         <translation>Uspješno kreiran descinaciski direktorij</translation>
     </message>
@@ -3989,12 +4178,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+44"/>
         <location line="+73"/>
-        <location line="+2481"/>
+        <location line="+2548"/>
         <source>browse localy</source>
         <translation>Prikaži</translation>
     </message>
     <message>
-        <location line="-2528"/>
+        <location line="-2595"/>
         <location line="+31"/>
         <source>Enter the full path of the destination directory (eg /media/backups/SiduxHome/)</source>
         <translation>Unesite cijelu putanju odredišnog direktorija (npr  /media/backups/SiduxHome/)</translation>
@@ -4020,61 +4209,84 @@ p, li { white-space: pre-wrap; }
         <translation>upiši opis zadatka</translation>
     </message>
     <message>
-        <location line="+507"/>
-        <location line="+419"/>
+        <location line="+321"/>
+        <source>Exclude all user&apos;s .gvfs folders (**/.gvfs/)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+223"/>
+        <location line="+423"/>
         <location line="+1104"/>
         <location line="+279"/>
-        <location line="+275"/>
+        <location line="+301"/>
         <source>Edit highlighted inclusion</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2074"/>
-        <location line="+419"/>
+        <location line="-2104"/>
+        <location line="+423"/>
         <location line="+1104"/>
         <location line="+279"/>
-        <location line="+275"/>
+        <location line="+301"/>
         <source>edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2063"/>
-        <location line="+419"/>
+        <location line="-2093"/>
+        <location line="+423"/>
         <location line="+1104"/>
         <location line="+279"/>
-        <location line="+275"/>
+        <location line="+301"/>
         <source>Move highlighted inclusion up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2074"/>
-        <location line="+419"/>
+        <location line="-2104"/>
+        <location line="+423"/>
         <location line="+1104"/>
         <location line="+279"/>
-        <location line="+275"/>
+        <location line="+301"/>
         <source>move up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2063"/>
-        <location line="+419"/>
+        <location line="-2093"/>
+        <location line="+423"/>
         <location line="+1104"/>
         <location line="+279"/>
-        <location line="+275"/>
+        <location line="+301"/>
         <source>Move highlighted inclusion down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2074"/>
-        <location line="+419"/>
+        <location line="-2104"/>
+        <location line="+423"/>
         <location line="+1104"/>
         <location line="+279"/>
-        <location line="+275"/>
+        <location line="+301"/>
         <source>move down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+82"/>
+        <location line="-2001"/>
+        <source>Include ONLY this list of patterns. Nothing more.
+Please refer to the manual for better understanding of include rules.
+This will disable the exclude feature.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1724"/>
+        <location line="+10"/>
+        <source>Repeat any command that fails, x times</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-7"/>
+        <source>Repeat on fail:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+359"/>
         <source>Check this to clone source to destination
 Leave unchecked to create an extra directory inside destination</source>
         <translation type="unfinished"></translation>
@@ -4118,7 +4330,7 @@ Leave unchecked to create an extra directory inside destination</source>
         <translation type="obsolete">Kreiraj zadatak u svrhu povrata podataka</translation>
     </message>
     <message>
-        <location line="-2821"/>
+        <location line="-2891"/>
         <source>Exclude</source>
         <translation>Oduzmi</translation>
     </message>
@@ -4129,12 +4341,12 @@ Leave unchecked to create an extra directory inside destination</source>
     </message>
     <message>
         <location line="+18"/>
-        <location line="+1509"/>
+        <location line="+1550"/>
         <source>Templates</source>
         <translation>Templates</translation>
     </message>
     <message>
-        <location line="-1482"/>
+        <location line="-1523"/>
         <source>Exclude all temp folders (**/*tmp*/)</source>
         <translation>Isključi sve temp direktorije (**/*tmp*/)</translation>
     </message>
@@ -4184,7 +4396,7 @@ Leave unchecked to create an extra directory inside destination</source>
         <translation>cache direktorij</translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+68"/>
         <source>Exclude all user&apos;s trash folders (**/*Trash*/, **/*trash*/)</source>
         <translation>Isključi sve korisničke trash (korpa) direktorije (**/*Trash*/, **/*trash*/)</translation>
     </message>
@@ -4194,7 +4406,7 @@ Leave unchecked to create an extra directory inside destination</source>
         <translation>Korpa</translation>
     </message>
     <message>
-        <location line="+44"/>
+        <location line="-43"/>
         <source>Exclude all &quot;lost+found&quot; folders (**/lost+found*/)</source>
         <translation>Iskluči sve &quot;lost+found&quot; direktorije (**/lost+found*/)</translation>
     </message>
@@ -4204,7 +4416,7 @@ Leave unchecked to create an extra directory inside destination</source>
         <translation>lost+found</translation>
     </message>
     <message>
-        <location line="+19"/>
+        <location line="+106"/>
         <source>User Defined</source>
         <translation>Korisnik Definiše</translation>
     </message>
@@ -4215,15 +4427,15 @@ Leave unchecked to create an extra directory inside destination</source>
     </message>
     <message>
         <location line="+3"/>
-        <location line="+367"/>
+        <location line="+371"/>
         <location line="+1161"/>
         <location line="+279"/>
-        <location line="+275"/>
+        <location line="+301"/>
         <source>add</source>
         <translation>dodaj</translation>
     </message>
     <message>
-        <location line="-2064"/>
+        <location line="-2094"/>
         <location line="+31"/>
         <source>Exclude list</source>
         <translation>Lista oduzetog</translation>
@@ -4253,15 +4465,15 @@ posljednji / - odgovara samo direktorij, nije regularna datoteka, symlinks-u ili
     </message>
     <message>
         <location line="+3"/>
-        <location line="+362"/>
+        <location line="+366"/>
         <location line="+1161"/>
         <location line="+279"/>
-        <location line="+275"/>
+        <location line="+301"/>
         <source>remove</source>
         <translation>obriši</translation>
     </message>
     <message>
-        <location line="-1916"/>
+        <location line="-1945"/>
         <source>Only Include</source>
         <translation>Dodaj</translation>
     </message>
@@ -4270,7 +4482,7 @@ posljednji / - odgovara samo direktorij, nije regularna datoteka, symlinks-u ili
         <translation type="obsolete">Dodaj samo ovaj popis direktorija, datoteka ili uzoraka</translation>
     </message>
     <message>
-        <location line="+52"/>
+        <location line="+55"/>
         <source>Enter here file, folder or pattern and then press the &quot;add&quot; button to add it to the include list
 * - matches any non-empty component (it stops at slashes)
 ** - matches anything, including slashes
@@ -4525,7 +4737,7 @@ UPOZORENJE: Sve datoteke moraju biti uključene u prijenos!!
 (-tgo)</translation>
     </message>
     <message>
-        <location line="-1754"/>
+        <location line="-1795"/>
         <source>Define the type of this task:
 1. Backup the Source directory, inside Destination (see also &quot;Do NOT create directory&quot; box)
 2. Synchronize Source &amp; Destination, keeping the most recent files at both of them</source>
@@ -4537,7 +4749,7 @@ UPOZORENJE: Sve datoteke moraju biti uključene u prijenos!!
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1752"/>
+        <location line="+1793"/>
         <source>Preserve ownership, times</source>
         <translation>Sačuvaj prava, vrijeme</translation>
     </message>
@@ -4627,7 +4839,7 @@ UPOZORENJE: Sve datoteke moraju biti uključene u prijenos!!
     </message>
     <message>
         <location line="+59"/>
-        <location line="+275"/>
+        <location line="+301"/>
         <source>Add command as entered in the field beside</source>
         <translation>Dodajte naredbu u polju </translation>
     </message>
@@ -4636,14 +4848,14 @@ UPOZORENJE: Sve datoteke moraju biti uključene u prijenos!!
         <translation type="obsolete">Izvrši prije zadatka - Komandna lista</translation>
     </message>
     <message>
-        <location line="-228"/>
-        <location line="+275"/>
+        <location line="-254"/>
+        <location line="+301"/>
         <source>Command list</source>
         <translation>Komandna lista</translation>
     </message>
     <message>
-        <location line="-241"/>
-        <location line="+275"/>
+        <location line="-267"/>
+        <location line="+301"/>
         <source>Remove highlighted command from list</source>
         <translation>Ukloni odabrane naredbe iz liste</translation>
     </message>
@@ -4678,8 +4890,8 @@ UPOZORENJE: Sve datoteke moraju biti uključene u prijenos!!
         <translation type="obsolete">Jesi li siguran da zeliš da nastaviš??</translation>
     </message>
     <message>
-        <location line="-2066"/>
-        <location line="+367"/>
+        <location line="-2096"/>
+        <location line="+371"/>
         <source>launch the pattern editor</source>
         <translation>Pokreni šablonski editor</translation>
     </message>
@@ -4689,7 +4901,7 @@ UPOZORENJE: Sve datoteke moraju biti uključene u prijenos!!
         <translation>Izvrši dodatnih naredbi, prije ili poslije zadatak.</translation>
     </message>
     <message>
-        <location line="+271"/>
+        <location line="+297"/>
         <source>Execute the task even if it appears with a WARNING message
 Normally used when &quot;Execute Before&quot; commands can fix a warning (eg mount partitions)
 
@@ -4979,36 +5191,36 @@ PAŽNJA: Označi ovo samo ako stvarno znaš šta radiš</translation>
         <translation>Vi ste već dodali ovu opciju</translation>
     </message>
     <message>
-        <location filename="../ui/modifyDialog.ui" line="-1803"/>
+        <location filename="../ui/modifyDialog.ui" line="-1833"/>
         <source>Read exclude patterns from file</source>
         <translation>Očitaj iskljućujuči uzorke od datoteke</translation>
     </message>
     <message>
         <location line="+3"/>
-        <location line="+311"/>
+        <location line="+315"/>
         <source>Read file:</source>
         <translation>Očitaj datoteku:</translation>
     </message>
     <message>
-        <location line="-301"/>
-        <location line="+311"/>
+        <location line="-305"/>
+        <location line="+315"/>
         <source>filename</source>
         <translation>Ime datoteke</translation>
     </message>
     <message>
-        <location line="-301"/>
-        <location line="+311"/>
+        <location line="-305"/>
+        <location line="+315"/>
         <source>browse</source>
         <translation>Prikaži</translation>
     </message>
     <message>
-        <location line="-308"/>
-        <location line="+311"/>
+        <location line="-312"/>
+        <location line="+315"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location line="-293"/>
+        <location line="-297"/>
         <source>Include</source>
         <translation>Obuhvati</translation>
     </message>
@@ -5028,14 +5240,13 @@ PAŽNJA: Označi ovo samo ako stvarno znaš šta radiš</translation>
         <translation>Modus:</translation>
     </message>
     <message>
-        <location line="+7"/>
         <source>Include ONLY this list of patterns. Nothing more.
 Please refer to the manual for better understanding of include rules.</source>
-        <translation>Uključi samo ovaj popis obrazaca. i ništa više.
+        <translation type="obsolete">Uključi samo ovaj popis obrazaca. i ništa više.
 Molimo pogledaj priručnik za bolje razumijevanje pravila.</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+22"/>
         <source>Do not exclude this list of patterns.
 Please refer to the manual for better understanding of include rules.</source>
         <translation>Ne isključuje ovaj popis obrazaca.
@@ -5047,7 +5258,7 @@ Molimo pogledajte priručnik za bolje razumijevanje pravila.</translation>
         <translation>Normalno obuhvati</translation>
     </message>
     <message>
-        <location line="+216"/>
+        <location line="+219"/>
         <source>Read include patterns from file</source>
         <translation>Očitaj ukljućujuči uzorke od datoteke</translation>
     </message>
@@ -5073,7 +5284,7 @@ Podaci vlasništvo i prava neće biti sačuvani.
         <translation>Destinacija je FAT/NTFS</translation>
     </message>
     <message>
-        <location line="+829"/>
+        <location line="+855"/>
         <location line="+22"/>
         <source>Set the total number of backup snapshots to keep</source>
         <translation>Postavi totalni broj backup snapshot-ova kako bi zadržao</translation>
@@ -5095,17 +5306,17 @@ Nema efekta ako se udaljena destinacija već koristi.</translation>
     <message>
         <location filename="../src/patternEditor.cpp" line="+44"/>
         <location line="+89"/>
-        <location line="+152"/>
+        <location line="+155"/>
         <source>directory :</source>
         <translation>direktorij :</translation>
     </message>
     <message>
-        <location line="-142"/>
+        <location line="-145"/>
         <source>Select file</source>
         <translation>Odaberite datoteku</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+9"/>
         <source>Please choose a file within the source</source>
         <translation>Molimo odaberite datoteku u izvor</translation>
     </message>
@@ -5115,7 +5326,7 @@ Nema efekta ako se udaljena destinacija već koristi.</translation>
         <translation>Izaberi direktorij</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+15"/>
         <source>Please choose a directory within the source</source>
         <translation>Molimo odaberite direktorij u izvor</translation>
     </message>
@@ -5538,24 +5749,25 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Datoteka</translation>
     </message>
     <message>
-        <location filename="../src/scheduleDialog.cpp" line="+122"/>
+        <location filename="../src/scheduleDialog.cpp" line="+137"/>
+        <location line="+78"/>
         <source>Starting from scratch</source>
         <translation>Startaj</translation>
     </message>
     <message>
-        <location line="+59"/>
-        <location line="+177"/>
+        <location line="+53"/>
+        <location line="+135"/>
         <location line="+40"/>
         <source>No schedules are declared !!</source>
         <translation>Termini nisu zadani !!</translation>
     </message>
     <message>
-        <location line="-161"/>
+        <location line="-124"/>
         <source>Unable to create schedule file</source>
         <translation>Nemoguće je kreirati termin datoteku</translation>
     </message>
     <message>
-        <location line="+67"/>
+        <location line="+30"/>
         <source>You have reached the maximum limit of supported scheduled profiles</source>
         <translation>Dostigli ste maksimalan broj  mogućih profila</translation>
     </message>
@@ -6159,7 +6371,8 @@ p, li { white-space: pre-wrap; }
         <translation>-og</translation>
     </message>
     <message>
-        <location line="-453"/>
+        <location line="-483"/>
+        <location line="+78"/>
         <source> file</source>
         <comment>BEWARE of the whitespace before file</comment>
         <translation>Datoteka</translation>
@@ -6170,7 +6383,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">profil</translation>
     </message>
     <message>
-        <location line="+458"/>
+        <location line="+410"/>
         <source>th</source>
         <comment>as in 12th....19th day</comment>
         <translation>-og</translation>
@@ -6222,13 +6435,14 @@ p, li { white-space: pre-wrap; }
         <translation>Konsolni način rada</translation>
     </message>
     <message>
-        <location filename="../src/scheduleDialog.cpp" line="-465"/>
+        <location filename="../src/scheduleDialog.cpp" line="-495"/>
+        <location line="+78"/>
         <source>The existent schedule file is not a valid luckyBackup v.</source>
         <comment>v is for version</comment>
         <translation>Termin koji postoji nije validan luckyBackup-u.</translation>
     </message>
     <message>
-        <location line="+84"/>
+        <location line="+79"/>
         <source>You have made changes without clicking the cronIT button</source>
         <translation>Napravili ste izmjene a niste klikli na cronIT tastu</translation>
     </message>
@@ -6238,7 +6452,7 @@ p, li { white-space: pre-wrap; }
         <translation>Jesi li siguran da zeliš zatvoriti prozor termina ?</translation>
     </message>
     <message>
-        <location line="+77"/>
+        <location line="+34"/>
         <source>Your crontab is updated successfully</source>
         <translation>Tvoj crontab je uspješno aktueliziran</translation>
     </message>
@@ -6385,6 +6599,79 @@ p, li { white-space: pre-wrap; }
         <location line="+1"/>
         <source>Yes</source>
         <translation>Da</translation>
+    </message>
+</context>
+<context>
+    <name>winDialog</name>
+    <message>
+        <location filename="../ui/winDialog.ui" line="+17"/>
+        <source>luckyBackup</source>
+        <translation type="unfinished">luckyBackup</translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>declaration of paths</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>rsync:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the rsync command</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <location line="+64"/>
+        <source>browse loacly</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-47"/>
+        <location line="+64"/>
+        <source>Use default value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-46"/>
+        <source>ssh</source>
+        <translation type="unfinished">ssh</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the ssh command</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+58"/>
+        <source>Okay</source>
+        <translation type="unfinished">Ok</translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/winDialog.cpp" line="+102"/>
+        <source>Select rsync command</source>
+        <comment>file selection dialog title</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <location line="+6"/>
+        <source>Executable Files (*.exe)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-1"/>
+        <source>Select ssh command</source>
+        <comment>file selection dialog title</comment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

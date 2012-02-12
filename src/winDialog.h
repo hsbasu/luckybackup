@@ -1,5 +1,5 @@
-/* ---------------------------------- about.h ---------------------------------------------------------------------------
- header file used by about.cpp
+/* ---------------------------------- winDialog.h ---------------------------------------------------------------------------
+header file used by winDialog.cpp
 
 ===============================================================================================================================
 ===============================================================================================================================
@@ -23,41 +23,39 @@
  project version	: Please see "main.cpp" for project version
 
  developer 		: luckyb 
- last modified 		: 20 Nov 2009
+ last modified 	: 16 Jan 2012
 ===============================================================================================================================
 ===============================================================================================================================
 */
 
-#ifndef ABOUT_H
-#define ABOUT_H
+#ifndef WINDIALOG_H
+#define WINDIALOG_H
 
-#include "ui_about.h"
+#include "ui_winDialog.h"
 
 //==============================================================================================================
-//Declaration of aboutDialog class (this is the dialog displaying "about" information)
-
-class aboutDialog : public QDialog
+//Declaration of winDialog class
+class winDialog : public QDialog
 {
-	Q_OBJECT
-	
-	public:
-		aboutDialog (QUrl, QDialog *parent=0);
+    Q_OBJECT
+    
+    public:
+        winDialog (QWidget *parent=0);
+        QString modifySlashes(QString);  // function to change / to \ for OS2 & windows (normaly when file dialog is used)
 
-		void setTop();
-		void setAbout();
-		void setAuthor();
-		void setThanks();
-		void setLicense(QUrl);
-		void setSupport();
-		QString Text;
+    private slots:
+        void okay();
+        void cancel();
+        void browse(const int);     //SLOT to browse for a directory or file to use at the lineEdits
+        void useDefault(const int);     //SLOT to revert the lineEdits to their default values
 
-	private slots:
-		void okay();
+    private:
+        Ui::winDialog uiD;
 
-	private:
-		Ui::aboutDialog uiA;
+    protected:
+        void closeEvent(QCloseEvent*);
 }; 
 
 #endif
 
-// end of about.h ---------------------------------------------------------------------------
+// end of winDialog.h ---------------------------------------------------------------------------

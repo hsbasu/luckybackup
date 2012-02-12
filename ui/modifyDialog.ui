@@ -362,15 +362,15 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>278</width>
-                <height>112</height>
+                <width>582</width>
+                <height>239</height>
                </rect>
               </property>
               <attribute name="label">
                <string>Templates</string>
               </attribute>
               <layout class="QGridLayout" name="gridLayout_11">
-               <item row="0" column="0" colspan="2">
+               <item row="0" column="0">
                 <widget class="QCheckBox" name="checkBox_excludeTemp">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -444,7 +444,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="0" rowspan="2" colspan="3">
+               <item row="1" column="0">
                 <widget class="QCheckBox" name="checkBox_excludeBackup">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -487,7 +487,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="2" column="2">
+               <item row="1" column="2">
                 <widget class="QCheckBox" name="checkBox_excludeSystem">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -524,7 +524,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="4" column="0">
+               <item row="2" column="0">
                 <widget class="QCheckBox" name="checkBox_excludeCache">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -561,57 +561,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="5" column="0" colspan="3">
-                <widget class="QCheckBox" name="checkBox_excludeTrash">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <weight>50</weight>
-                   <bold>false</bold>
-                  </font>
-                 </property>
-                 <property name="cursor">
-                  <cursorShape>PointingHandCursor</cursorShape>
-                 </property>
-                 <property name="toolTip">
-                  <string>Exclude all user's trash folders (**/*Trash*/, **/*trash*/)</string>
-                 </property>
-                 <property name="layoutDirection">
-                  <enum>Qt::LeftToRight</enum>
-                 </property>
-                 <property name="text">
-                  <string>Trash</string>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="6" column="0" colspan="3">
-                <spacer name="verticalSpacer">
-                 <property name="orientation">
-                  <enum>Qt::Vertical</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>20</width>
-                   <height>2</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item row="4" column="2">
+               <item row="2" column="2">
                 <widget class="QCheckBox" name="checkBox_excludeLostFound">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -648,6 +598,93 @@
                  </property>
                 </widget>
                </item>
+               <item row="3" column="0">
+                <widget class="QCheckBox" name="checkBox_excludeTrash">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <weight>50</weight>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
+                 <property name="toolTip">
+                  <string>Exclude all user's trash folders (**/*Trash*/, **/*trash*/)</string>
+                 </property>
+                 <property name="layoutDirection">
+                  <enum>Qt::LeftToRight</enum>
+                 </property>
+                 <property name="text">
+                  <string>Trash</string>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="2">
+                <widget class="QCheckBox" name="checkBox_excludeGVFS">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <weight>50</weight>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
+                 <property name="toolTip">
+                  <string>Exclude all user's .gvfs folders (**/.gvfs/)</string>
+                 </property>
+                 <property name="layoutDirection">
+                  <enum>Qt::LeftToRight</enum>
+                 </property>
+                 <property name="text">
+                  <string notr="true">.gvfs</string>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <spacer name="verticalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>2</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
               </layout>
              </widget>
              <widget class="QWidget" name="exclude_user">
@@ -655,8 +692,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>187</width>
-                <height>222</height>
+                <width>214</width>
+                <height>215</height>
                </rect>
               </property>
               <attribute name="label">
@@ -989,13 +1026,14 @@ trailing / - only directory is matched, not regular files, symlinks or devices</
               <widget class="QRadioButton" name="radioButton_includeOnly">
                <property name="toolTip">
                 <string>Include ONLY this list of patterns. Nothing more.
-Please refer to the manual for better understanding of include rules.</string>
+Please refer to the manual for better understanding of include rules.
+This will disable the exclude feature.</string>
                </property>
                <property name="text">
                 <string>Only Include</string>
                </property>
                <property name="checked">
-                <bool>true</bool>
+                <bool>false</bool>
                </property>
               </widget>
              </item>
@@ -1007,6 +1045,9 @@ Please refer to the manual for better understanding of include rules.</string>
                </property>
                <property name="text">
                 <string>Normal Include</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
                </property>
               </widget>
              </item>
@@ -1799,14 +1840,14 @@ If you have no idea what these mean, leave them untouched !!</string>
               <bool>true</bool>
              </property>
              <property name="currentIndex">
-              <number>0</number>
+              <number>1</number>
              </property>
              <widget class="QWidget" name="page">
               <property name="geometry">
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>99</width>
+                <width>115</width>
                 <height>85</height>
                </rect>
               </property>
@@ -1871,7 +1912,7 @@ If you have no idea what these mean, leave them untouched !!</string>
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>381</width>
+                <width>453</width>
                 <height>133</height>
                </rect>
               </property>
@@ -2201,8 +2242,8 @@ Data ownership and permissions will NOT be preserved.
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>187</width>
-                <height>188</height>
+                <width>214</width>
+                <height>182</height>
                </rect>
               </property>
               <attribute name="label">
@@ -2450,15 +2491,15 @@ Data ownership and permissions will NOT be preserved.
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>207</width>
-                <height>213</height>
+                <width>249</width>
+                <height>238</height>
                </rect>
               </property>
               <attribute name="label">
                <string>Before</string>
               </attribute>
               <layout class="QGridLayout" name="gridLayout_17">
-               <item row="0" column="0">
+               <item row="0" column="0" colspan="2">
                 <layout class="QHBoxLayout" name="horizontalLayout_5">
                  <property name="spacing">
                   <number>1</number>
@@ -2519,7 +2560,7 @@ Data ownership and permissions will NOT be preserved.
                  </item>
                 </layout>
                </item>
-               <item row="0" column="1">
+               <item row="0" column="2" colspan="2">
                 <widget class="QPushButton" name="pushButton_executeBeforeAdd">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -2572,7 +2613,7 @@ Data ownership and permissions will NOT be preserved.
                  </property>
                 </widget>
                </item>
-               <item row="2" column="0" rowspan="6">
+               <item row="2" column="0" rowspan="7">
                 <widget class="QListWidget" name="listWidget_executeBefore">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -2600,7 +2641,7 @@ Data ownership and permissions will NOT be preserved.
                  </property>
                 </widget>
                </item>
-               <item row="2" column="1">
+               <item row="2" column="2" colspan="2">
                 <widget class="QPushButton" name="pushButton_executeBeforeRemove">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -2641,7 +2682,7 @@ Data ownership and permissions will NOT be preserved.
                  </property>
                 </widget>
                </item>
-               <item row="3" column="1">
+               <item row="3" column="2" colspan="2">
                 <widget class="QPushButton" name="pushButton_editExecuteBefore">
                  <property name="cursor">
                   <cursorShape>PointingHandCursor</cursorShape>
@@ -2658,7 +2699,7 @@ Data ownership and permissions will NOT be preserved.
                  </property>
                 </widget>
                </item>
-               <item row="4" column="1">
+               <item row="4" column="2" colspan="2">
                 <widget class="QPushButton" name="pushButton_moveUpExecuteBefore">
                  <property name="cursor">
                   <cursorShape>PointingHandCursor</cursorShape>
@@ -2675,7 +2716,7 @@ Data ownership and permissions will NOT be preserved.
                  </property>
                 </widget>
                </item>
-               <item row="5" column="1">
+               <item row="5" column="2" colspan="2">
                 <widget class="QPushButton" name="pushButton_moveDownExecuteBefore">
                  <property name="cursor">
                   <cursorShape>PointingHandCursor</cursorShape>
@@ -2692,7 +2733,7 @@ Data ownership and permissions will NOT be preserved.
                  </property>
                 </widget>
                </item>
-               <item row="6" column="1">
+               <item row="6" column="2" colspan="2">
                 <spacer name="verticalSpacer_8">
                  <property name="orientation">
                   <enum>Qt::Vertical</enum>
@@ -2705,7 +2746,33 @@ Data ownership and permissions will NOT be preserved.
                  </property>
                 </spacer>
                </item>
-               <item row="7" column="1">
+               <item row="7" column="1" colspan="2">
+                <widget class="QLabel" name="label_RepeatOnFail">
+                 <property name="toolTip">
+                  <string>Repeat any command that fails, x times</string>
+                 </property>
+                 <property name="text">
+                  <string>Repeat on fail:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="3">
+                <widget class="QSpinBox" name="spinBox_repeatOnFail">
+                 <property name="toolTip">
+                  <string>Repeat any command that fails, x times</string>
+                 </property>
+                 <property name="wrapping">
+                  <bool>false</bool>
+                 </property>
+                 <property name="specialValueText">
+                  <string/>
+                 </property>
+                 <property name="suffix">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="1" colspan="3">
                 <widget class="QCheckBox" name="checkBox_byPassWarning">
                  <property name="toolTip">
                   <string>Execute the task even if it appears with a WARNING message
@@ -2725,8 +2792,8 @@ ATTENTION: check this if you really know what you're doing</string>
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>187</width>
-                <height>188</height>
+                <width>214</width>
+                <height>183</height>
                </rect>
               </property>
               <attribute name="label">
@@ -3218,6 +3285,7 @@ Leave unchecked to create an extra directory inside destination</string>
   <tabstop>checkBox_excludeMount</tabstop>
   <tabstop>checkBox_excludeSystem</tabstop>
   <tabstop>checkBox_excludeLostFound</tabstop>
+  <tabstop>checkBox_excludeGVFS</tabstop>
   <tabstop>lineEdit_includeAdd</tabstop>
   <tabstop>toolButton_includeAddPattern</tabstop>
   <tabstop>listWidget_include</tabstop>
@@ -3256,6 +3324,50 @@ Leave unchecked to create an extra directory inside destination</string>
   <tabstop>pushButton_cancel</tabstop>
   <tabstop>scrollArea</tabstop>
   <tabstop>groupBox_remote</tabstop>
+  <tabstop>textEdit_Description</tabstop>
+  <tabstop>toolButton_excludeAddPattern</tabstop>
+  <tabstop>pushButton_editExclude</tabstop>
+  <tabstop>pushButton_moveUpExclude</tabstop>
+  <tabstop>pushButton_moveDownExclude</tabstop>
+  <tabstop>checkBox_excludeFile</tabstop>
+  <tabstop>lineEdit_excludeFile</tabstop>
+  <tabstop>toolButton_excludeFile</tabstop>
+  <tabstop>radioButton_includeOnly</tabstop>
+  <tabstop>radioButton_includeNormal</tabstop>
+  <tabstop>checkBox_includeFile</tabstop>
+  <tabstop>lineEdit_includeFile</tabstop>
+  <tabstop>toolButton_includeFile</tabstop>
+  <tabstop>pushButton_editInclude</tabstop>
+  <tabstop>pushButton_moveUpInclude</tabstop>
+  <tabstop>pushButton_moveDownInclude</tabstop>
+  <tabstop>radioButton_backendRsync</tabstop>
+  <tabstop>radioButton_backendRdiff</tabstop>
+  <tabstop>radioButton_backendRsnapshot</tabstop>
+  <tabstop>checkBox_FATntfs</tabstop>
+  <tabstop>pushButton_optionsAdd</tabstop>
+  <tabstop>pushButton_editOptions</tabstop>
+  <tabstop>pushButton_moveUpOptions</tabstop>
+  <tabstop>pushButton_moveDownOptions</tabstop>
+  <tabstop>lineEdit_executeBeforeAdd</tabstop>
+  <tabstop>toolButton_executeBeforeBrowse</tabstop>
+  <tabstop>pushButton_executeBeforeAdd</tabstop>
+  <tabstop>listWidget_executeBefore</tabstop>
+  <tabstop>pushButton_executeBeforeRemove</tabstop>
+  <tabstop>pushButton_editExecuteBefore</tabstop>
+  <tabstop>pushButton_moveUpExecuteBefore</tabstop>
+  <tabstop>pushButton_moveDownExecuteBefore</tabstop>
+  <tabstop>spinBox_repeatOnFail</tabstop>
+  <tabstop>checkBox_byPassWarning</tabstop>
+  <tabstop>lineEdit_executeAfterAdd</tabstop>
+  <tabstop>toolButton_executeAfterBrowse</tabstop>
+  <tabstop>pushButton_executeAfterAdd</tabstop>
+  <tabstop>listWidget_executeAfter</tabstop>
+  <tabstop>pushButton_executeAfterRemove</tabstop>
+  <tabstop>pushButton_editExecuteAfter</tabstop>
+  <tabstop>pushButton_moveUpExecuteAfter</tabstop>
+  <tabstop>pushButton_moveDownExecuteAfter</tabstop>
+  <tabstop>spinBox_snapshotsKeep</tabstop>
+  <tabstop>checkBox_backupContents</tabstop>
  </tabstops>
  <resources>
   <include location="../resources/luckybackup.qrc"/>
@@ -3562,6 +3674,22 @@ Leave unchecked to create an extra directory inside destination</string>
     <hint type="destinationlabel">
      <x>174</x>
      <y>280</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_includeOnly</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>toolBox_exclude</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>244</x>
+     <y>174</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>314</x>
+     <y>323</y>
     </hint>
    </hints>
   </connection>

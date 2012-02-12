@@ -1,28 +1,28 @@
 /* ---------------------------------- global.cpp ---------------------------------------------------------------------------
- file containing all variables & functions used globaly
+file containing all variables & functions used globaly
 
 ===============================================================================================================================
 ===============================================================================================================================
-     This file is part of "luckyBackup" project
-     Copyright 2008-2011, Loukas Avgeriou
-     luckyBackup is distributed under the terms of the GNU General Public License
-     luckyBackup is free software: you can redistribute it and/or modify
-     it under the terms of the GNU General Public License as published by
-     the Free Software Foundation, either version 3 of the License, or
-     (at your option) any later version.
- 
-     luckyBackup is distributed in the hope that it will be useful,
-     but WITHOUT ANY WARRANTY; without even the implied warranty of
-     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-     GNU General Public License for more details.
- 
-     You should have received a copy of the GNU General Public License
-     along with luckyBackup.  If not, see <http://www.gnu.org/licenses/>.
+    This file is part of "luckyBackup" project
+    Copyright 2008-2012, Loukas Avgeriou
+    luckyBackup is distributed under the terms of the GNU General Public License
+    luckyBackup is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
- project version    : Please see "main.cpp" for project version
+    luckyBackup is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
- developer          : luckyb 
- last modified      : 09 Jun 2011
+    You should have received a copy of the GNU General Public License
+    along with luckyBackup.  If not, see <http://www.gnu.org/licenses/>.
+
+project version    : Please see "main.cpp" for project version
+
+developer          : luckyb 
+last modified      : 05 Feb 2012
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -42,147 +42,190 @@ bool argumentsTest(int ArgsNo, char **arg)
     DryRun = FALSE;
     silentMode = FALSE;
     runImmediately = FALSE;
-	
-	if (ArgsNo == 1)		// if just luckybackup is given without argumets just run the gui
-		return TRUE;
+    
+    if (ArgsNo == 1)		// if just luckybackup is given without argumets just run the gui
+        return TRUE;
 
-	int NoOfArgs = ArgsNo-1;	//the number of arguments given minus the command luckybackup
-	string stdArgs[7] = { "-c",	"--no-questions",	"--skip-critical",	"--dry-run",	"--silent"};
-	bool argCheck = FALSE;	// if a specific argument is ok this becomes true
+    int NoOfArgs = ArgsNo-1;	//the number of arguments given minus the command luckybackup
+    string stdArgs[7] = { "-c",	"--no-questions",	"--skip-critical",	"--dry-run",	"--silent"};
+    bool argCheck = FALSE;	// if a specific argument is ok this becomes true
 
-	int count = 1;
-	while (count < NoOfArgs)
-	{
-		if (arg[count] == stdArgs[0])
-			{ console = TRUE; argCheck = TRUE; }
-		if (arg[count] == stdArgs[1])
-			{ NoQuestions = TRUE; console = TRUE; argCheck = TRUE; }
-		if (arg[count] == stdArgs[2])
-			{ SkipCritical = TRUE; argCheck = TRUE; }
-		if (arg[count] == stdArgs[3])
-			{ DryRun = TRUE; argCheck = TRUE; }
-		if (arg[count] == stdArgs[4])
-			{ silentMode = TRUE; argCheck = TRUE; }
-		if ((arg[count] == stdArgs[5]) || (arg[count] == stdArgs[6]))
+    int count = 1;
+    while (count < NoOfArgs)
+    {
+        if (arg[count] == stdArgs[0])
+            { console = TRUE; argCheck = TRUE; }
+        if (arg[count] == stdArgs[1])
+            { NoQuestions = TRUE; console = TRUE; argCheck = TRUE; }
+        if (arg[count] == stdArgs[2])
+            { SkipCritical = TRUE; argCheck = TRUE; }
+        if (arg[count] == stdArgs[3])
+            { DryRun = TRUE; argCheck = TRUE; }
+        if (arg[count] == stdArgs[4])
+            { silentMode = TRUE; argCheck = TRUE; }
+        if ((arg[count] == stdArgs[5]) || (arg[count] == stdArgs[6]))
         {
             // what was I thinking ???
         }
-		if (!argCheck)			// if the argument is unknown
-			{ help(); return FALSE;	}	
-		argCheck = FALSE;
-		count++;
-	}
-	
-	const char *profileNameChar = arg[NoOfArgs];	//const char* used cause argument in terminal is in utf-8 and this helps to convert it to QString
-	QString profileNameArg = arg[NoOfArgs];
-	if ( (profileNameArg == "--help") || (profileNameArg == "-h") )
-		{ help(); return FALSE;}
-	if ( (profileNameArg == "--version") || (profileNameArg == "-v") )
+        if (!argCheck)			// if the argument is unknown
+            { help(); return FALSE;	}	
+        argCheck = FALSE;
+        count++;
+    }
+    
+    const char *profileNameChar = arg[NoOfArgs];	//const char* used cause argument in terminal is in utf-8 and this helps to convert it to QString
+    QString profileNameArg = arg[NoOfArgs];
+    if ( (profileNameArg == "--help") || (profileNameArg == "-h") )
+        { help(); return FALSE;}
+    if ( (profileNameArg == "--version") || (profileNameArg == "-v") )
     {
         cout << "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
         cout << "     You are using luckyBackup version: " << appVersionString.toStdString() <<"\n";
         cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
         return FALSE;
     }
-	
-	//currentProfile = profileNameArg;	// currentProfile holds the full path+filename of the current profile
-	currentProfile = QString::fromUtf8(profileNameChar);	// currentProfile holds the full path+filename of the current profile
-    if (OS2running)
+    
+    //currentProfile = profileNameArg;	// currentProfile holds the full path+filename of the current profile
+    currentProfile = QString::fromUtf8(profileNameChar);	// currentProfile holds the full path+filename of the current profile
+    if ( notXnixRunning )
     {
         profileDir.replace("/",SLASH);
         profileNameArg.replace("/",SLASH);
         currentProfile.replace("/",SLASH);
     }
-	if (!profileNameArg.endsWith(".profile",Qt::CaseSensitive))
-		currentProfile.append(".profile");
-	if ( (!profileNameArg.startsWith(SLASH)) && (!OS2running) )
-		currentProfile.prepend(profileDir);
-    if ( (OS2running) && (!profileNameArg.contains(":\\")) )
+    if (!profileNameArg.endsWith(".profile",Qt::CaseSensitive))
+        currentProfile.append(".profile");
+    if ( (!profileNameArg.startsWith(SLASH)) && (!notXnixRunning) )
+        currentProfile.prepend(profileDir);
+    if ( (notXnixRunning) && (!profileNameArg.contains(":\\")) )
         currentProfile.prepend(profileDir);
     
-	//current profile QFile
-	profile.setFileName(currentProfile);
-	
-	//current profile's name (QString) - this just holds the profile name. No path & no extension
-	profileName = currentProfile;
-	profileName = profileName.right(profileName.size() - profileName.lastIndexOf(SLASH) - 1);
-	profileName.chop(8);
-	
-	runImmediately = TRUE;
-	return TRUE;	// all arguments ok
+    //current profile QFile
+    profile.setFileName(currentProfile);
+    
+    //current profile's name (QString) - this just holds the profile name. No path & no extension
+    profileName = currentProfile;
+    profileName = profileName.right(profileName.size() - profileName.lastIndexOf(SLASH) - 1);
+    profileName.chop(8);
+    
+    runImmediately = TRUE;
+    return TRUE;	// all arguments ok
+}
+
+// declareRsyncCommand===================================================================================================================
+// declares the rsync and ssh commands (full path for windows)
+void declareRsyncCommand()
+{
+    if (notXnixRunning)
+        {
+            if (WINrunning)
+            {
+                rsyncCommandPath    = rsyncDefaultWinCommand;                                     // This is the default rsync path that windows use
+                sshCommandPath      = sshDefaultWinCommand;                                       // This is the default ssh path that windows use
+            }
+            
+            if (OS2running)
+            {
+                rsyncCommandPath    = rsyncDefaultCommand;                                     // This is the default rsync path that OS2 use
+                sshCommandPath      = sshDefaultCommand;                                       // This is the default ssh path that OS2 use
+            }
+            
+            QFile settingsfile(settingsFile);
+            if (!settingsfile.open(QIODevice::ReadOnly))        //if the settings file cannot be opened
+            {
+                settingsfile.close();
+                return;
+            }
+            QTextStream in(&settingsfile);
+            QString SettingsLine="";             //temp variable to import the settings line by line
+            while ( !(SettingsLine.startsWith("[Settings_file_end]")) && (!in.atEnd()) )
+            {
+                SettingsLine = in.readLine();
+                if (SettingsLine.startsWith("win_rsync_path="))             rsyncCommandPath = SettingsLine.remove("win_rsync_path=");
+                if (SettingsLine.startsWith("win_ssh_path="))               sshCommandPath = SettingsLine.remove("win_ssh_path=");
+            }
+
+            settingsfile.close();
+        }
+        else        // normal *nix
+        {
+            rsyncCommandPath    = rsyncDefaultCommand;                                     // This is the default rsync command that *nix use
+            sshCommandPath      = sshDefaultCommand;                                       // This is the default ssh command that *nix use
+            
+        }
 }
 
 // loadCurrentProfile===================================================================================================================
 // loads an existing profile - non-gui call
 bool loadCurrentProfile()
 {
-	QString currentProfileUTF8 = QString(currentProfile.toUtf8());
-	
-	cout << "\n============================================================================================\n";
-	cout << "		Loading profile " << currentProfileUTF8.toStdString() << "\n";
-	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
-	
-	QString source, dest;
+    QString currentProfileUTF8 = QString(currentProfile.toUtf8());
+    
+    cout << "\n============================================================================================\n";
+    cout << "		Loading profile " << currentProfileUTF8.toStdString() << "\n";
+    cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
+    
+    QString source, dest;
 
-	//read the file and fill all arrays
-	int loadOK = loadProfile(currentProfileUTF8);	// try to load the currentProfile
-	if (loadOK == 1)		// if it cannot open
-	{
-		cout << "	** Unable to open profile : " << currentProfileUTF8.toStdString() << " **\n";
-		cout << "	" << profile.errorString().toStdString();
-		cout << "\n\n";
-		return FALSE;					//do nothing more
-	}
+    //read the file and fill all arrays
+    int loadOK = loadProfile(currentProfileUTF8);	// try to load the currentProfile
+    if (loadOK == 1)		// if it cannot open
+    {
+        cout << "	** Unable to open profile : " << currentProfileUTF8.toStdString() << " **\n";
+        cout << "	" << profile.errorString().toStdString();
+        cout << "\n\n";
+        return FALSE;					//do nothing more
+    }
 
-	if (loadOK == 2)			// if it is not a valid profile
-	{
-		cout << "	** The profile you are trying to open is not a valid luckyBackup v."
-		<< countStr.setNum(appVersion).toStdString() << " profile **\n\n";
-		return FALSE;	//do nothing more
-	}
+    if (loadOK == 2)			// if it is not a valid profile
+    {
+        cout << "	** The profile you are trying to open is not a valid luckyBackup v."
+        << countStr.setNum(appVersion).toStdString() << " profile **\n\n";
+        return FALSE;	//do nothing more
+    }
 
-	// if all went ok (profile loaded) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	
-	//append the profile description (CLI)
-	//if (profileDescription != "")
-	//	cout << "\n\n Profile description: \n" << (QString(profileDescription.toUtf8())).toStdString() <<"\n\n";
-	
-	currentOperation = 0;
-	while (currentOperation < TotalOperations)
-	{
-		source = Operation[currentOperation]->GetSource();
-		dest = Operation[currentOperation]->GetDestination();
-		
-		if ( (Operation[currentOperation] -> GetRemote()) && (Operation[currentOperation] -> GetRemoteSource()) )
-		{
-			if (Operation[currentOperation] -> GetRemoteModule())
-				source.prepend(":");
-			source.prepend((Operation[currentOperation] -> GetRemoteHost())+":");
-			if (Operation[currentOperation] -> GetRemoteUser()!="")
-				source.prepend((Operation[currentOperation] -> GetRemoteUser())+"@");
-		}
-	
-		if ( (Operation[currentOperation] -> GetRemote()) && (Operation[currentOperation] -> GetRemoteDestination()) )
-		{
-			if (Operation[currentOperation] -> GetRemoteModule())
-				dest.prepend(":");
-			dest.prepend((Operation[currentOperation] -> GetRemoteHost())+":");
-			if (Operation[currentOperation] -> GetRemoteUser()!="")
-				dest.prepend((Operation[currentOperation] -> GetRemoteUser())+"@");
-		}
-		cout << "\n* task name		: " << QString((Operation[currentOperation]->GetName()).toUtf8()).toStdString();
-		cout << "\n* source			: " << QString(source.toUtf8()).toStdString();
-		cout << "\n* destination			: " << QString(dest.toUtf8()).toStdString();
+    // if all went ok (profile loaded) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
+    //append the profile description (CLI)
+    //if (profileDescription != "")
+    //	cout << "\n\n Profile description: \n" << (QString(profileDescription.toUtf8())).toStdString() <<"\n\n";
+    
+    currentOperation = 0;
+    while (currentOperation < TotalOperations)
+    {
+        source = Operation[currentOperation]->GetSource();
+        dest = Operation[currentOperation]->GetDestination();
+        
+        if ( (Operation[currentOperation] -> GetRemote()) && (Operation[currentOperation] -> GetRemoteSource()) )
+        {
+            if (Operation[currentOperation] -> GetRemoteModule())
+                source.prepend(":");
+            source.prepend((Operation[currentOperation] -> GetRemoteHost())+":");
+            if (Operation[currentOperation] -> GetRemoteUser()!="")
+                source.prepend((Operation[currentOperation] -> GetRemoteUser())+"@");
+        }
+    
+        if ( (Operation[currentOperation] -> GetRemote()) && (Operation[currentOperation] -> GetRemoteDestination()) )
+        {
+            if (Operation[currentOperation] -> GetRemoteModule())
+                dest.prepend(":");
+            dest.prepend((Operation[currentOperation] -> GetRemoteHost())+":");
+            if (Operation[currentOperation] -> GetRemoteUser()!="")
+                dest.prepend((Operation[currentOperation] -> GetRemoteUser())+"@");
+        }
+        cout << "\n* task name		: " << QString((Operation[currentOperation]->GetName()).toUtf8()).toStdString();
+        cout << "\n* source			: " << QString(source.toUtf8()).toStdString();
+        cout << "\n* destination			: " << QString(dest.toUtf8()).toStdString();
 
-		if (Operation[currentOperation]->GetIncluded())
-			cout << "\n* This task is included\n";
-		else
-			cout << "\n* This task is NOT included\n";	
+        if (Operation[currentOperation]->GetIncluded())
+            cout << "\n* This task is included\n";
+        else
+            cout << "\n* This task is NOT included\n";	
 
-		currentOperation++;
-	}
-	cout << "\n\n			** Profile loaded successfuly ... **\n\n";
-	return TRUE;
+        currentOperation++;
+    }
+    cout << "\n\n			** Profile loaded successfuly ... **\n\n";
+    return TRUE;
 }
 
 // check_list===================================================================================================================
@@ -190,30 +233,30 @@ bool loadCurrentProfile()
 // calls global function checkTaskList()
 bool check_list()
 {
-	cout << "\n============================================================================================\n";
-	cout << "				Task list check \n";
-	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
+    cout << "\n============================================================================================\n";
+    cout << "				Task list check \n";
+    cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
 
 
 
-	cout << "\n* Checking if the task list is empty...					done";
-	cout << "\n* Checking if 2 connected tasks have been selected for execution...	done";
-	cout << "\n* Checking if no task is included...					done";
-	cout << "\n* Checking if 2 or more identical destination directories are declared\n  & 'Backup dir contents' is checked...					done\n";
+    cout << "\n* Checking if the task list is empty...					done";
+    cout << "\n* Checking if 2 connected tasks have been selected for execution...	done";
+    cout << "\n* Checking if no task is included...					done";
+    cout << "\n* Checking if 2 or more identical destination directories are declared\n  & 'Backup dir contents' is checked...					done\n";
 
-	checkTaskList();
+    checkTaskList();
 
-	if (ask)
-	{
-		cout << messageCLI.toStdString();;
-		return FALSE;
-	}
-	else
-	{
-		cout << "\n\n			** Task list looks ok... **\n";
-		return TRUE;
-	}
-	return TRUE;
+    if (ask)
+    {
+        cout << messageCLI.toStdString();;
+        return FALSE;
+    }
+    else
+    {
+        cout << "\n\n			** Task list looks ok... **\n";
+        return TRUE;
+    }
+    return TRUE;
 }
 
 // check_dirs===================================================================================================================
@@ -221,47 +264,47 @@ bool check_list()
 //This is called from the console
 bool check_dirs()
 {
-	cout << "\n============================================================================================\n";
-	cout << "				Directories check\n";
-	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
+    cout << "\n============================================================================================\n";
+    cout << "				Directories check\n";
+    cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
 
-	checkDeclaredDirs(FALSE);
+    checkDeclaredDirs(FALSE);
 
-	if (ask == FALSE)	//if all the dirs are ok prepend  this lines to the dialog message
-	{
-		CheckedDataCLI.prepend("\n		(Have in mind that checks are not performed for remote data)\n\n"
-		"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
-		CheckedDataCLI.prepend("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
-		"		All data declared apear to be ok - You are ready to go !!"
-		"\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
-	}
-	else			//else prepend the following
-	{
-		CheckedDataCLI.prepend("			Errors have been found\n"
-		"		Please have a good look at the following messages\n\n"
-		"	WARNING means that the task is NOT going to be performed\n"
-		"	CRITICAL means that the task is going to be performed normally\n\n"
-		"	If a directory is empty or does not exist,\n"
-		"	there is a possibility that you 've forgotten to mount a partition/drive\n	or have just mistyped a path !!\n"
-		"\n	BEWARE if a destination is empty or non-existent\n"
-		"	and it is not the first time you perform the specific task(s)\n\n"
-		"	Also have in mind that checks are not performed for remote data\n"
-		"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
+    if (ask == FALSE)	//if all the dirs are ok prepend  this lines to the dialog message
+    {
+        CheckedDataCLI.prepend("\n		(Have in mind that checks are not performed for remote data)\n\n"
+        "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+        CheckedDataCLI.prepend("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+        "		All data declared apear to be ok - You are ready to go !!"
+        "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
+    }
+    else			//else prepend the following
+    {
+        CheckedDataCLI.prepend("			Errors have been found\n"
+        "		Please have a good look at the following messages\n\n"
+        "	WARNING means that the task is NOT going to be performed\n"
+        "	CRITICAL means that the task is going to be performed normally\n\n"
+        "	If a directory is empty or does not exist,\n"
+        "	there is a possibility that you 've forgotten to mount a partition/drive\n	or have just mistyped a path !!\n"
+        "\n	BEWARE if a destination is empty or non-existent\n"
+        "	and it is not the first time you perform the specific task(s)\n\n"
+        "	Also have in mind that checks are not performed for remote data\n"
+        "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
 
-		CheckedDataCLI.prepend("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
-		"		Source & destination data check results"
-		"\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
-	}
+        CheckedDataCLI.prepend("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+        "		Source & destination data check results"
+        "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
+    }
 
-	cout << CheckedDataCLI.toStdString();
+    cout << CheckedDataCLI.toStdString();
 
-	cout <<"\n\n";
-	if (NothingToDo) //if there is nothing to Do anyway then just display a message
-	{
-		cout << "\n\n		** ..nothing to do !! **\n\n";
-		return FALSE;
-	}
-	return TRUE;
+    cout <<"\n\n";
+    if (NothingToDo) //if there is nothing to Do anyway then just display a message
+    {
+        cout << "\n\n		** ..nothing to do !! **\n\n";
+        return FALSE;
+    }
+    return TRUE;
 }
 
 // help===================================================================================================================
@@ -287,7 +330,7 @@ void help()
     cout << " * examples:\n";
     cout << " Execute luckybackup gui :\n";
     cout << " $ luckybackup\n\n";
-   
+
     cout << " Execute luckybackup in silent mode for profile '~/.luckyBackup/profiles/BackupHome.profile' :\n";
     cout << " $ luckybackup --silent ~/.luckyBackup/profiles/BackupHome.profile\n\n";
 
@@ -371,7 +414,7 @@ int loadProfile(QString profileToLoad)
         if (ProfileLine.startsWith("emailBody="))           emailBody.append("\n" + ProfileLine.remove("emailBody="));
     
     }
-    profileDescription.remove(0,1); //remove the first "\n" from the profileDescription as weel as the email body
+    profileDescription.remove(0,1); //remove the first "\n" from the profileDescription as well as the email body
     if (emailBody.startsWith("\n"))
         emailBody.remove(0,1); 
     
@@ -420,6 +463,7 @@ int loadProfile(QString profileToLoad)
             if (ProfileLine.startsWith("ExcludeLostFound="))		tempOp	-> SetExcludeLostFound(ProfileLine.remove("ExcludeLostFound=").toInt(&IntOk,10));
             if (ProfileLine.startsWith("ExcludeSystem="))			tempOp	-> SetExcludeSystem(ProfileLine.remove("ExcludeSystem=").toInt(&IntOk,10));
             if (ProfileLine.startsWith("ExcludeTrash="))			tempOp	-> SetExcludeTrash(ProfileLine.remove("ExcludeTrash=").toInt(&IntOk,10));
+            if (ProfileLine.startsWith("ExcludeGVFS="))             tempOp  -> SetExcludeGVFS(ProfileLine.remove("ExcludeGVFS=").toInt(&IntOk,10));
             if (ProfileLine.startsWith("ExcludeListItem="))			tempOp	-> AddExcludeListItem(ProfileLine.remove("ExcludeListItem="));
             tempOp	-> SetExclude();
         
@@ -429,14 +473,14 @@ int loadProfile(QString profileToLoad)
             if (ProfileLine.startsWith("IncludeFile="))				tempOp	-> SetIncludeFile(ProfileLine.remove("IncludeFile="));
             tempOp	-> SetInclude();
 
-            if (ProfileLine.startsWith("Remote="))				tempOp	-> SetRemote(ProfileLine.remove("Remote=").toInt(&IntOk,10));
+            if (ProfileLine.startsWith("Remote="))				    tempOp	-> SetRemote(ProfileLine.remove("Remote=").toInt(&IntOk,10));
             if (ProfileLine.startsWith("RemoteModule="))			tempOp	-> SetRemoteModule(ProfileLine.remove("RemoteModule=").toInt(&IntOk,10));
             if (ProfileLine.startsWith("RemoteDestination="))		tempOp	-> SetRemoteDestination(ProfileLine.remove("RemoteDestination=").toInt(&IntOk,10));
             if (ProfileLine.startsWith("RemoteSource="))			tempOp	-> SetRemoteSource(ProfileLine.remove("RemoteSource=").toInt(&IntOk,10));
-            if (ProfileLine.startsWith("RemoteSSH="))			tempOp	-> SetRemoteSSH(ProfileLine.remove("RemoteSSH=").toInt(&IntOk,10));
-            if (ProfileLine.startsWith("RemoteHost="))			tempOp	-> SetRemoteHost(ProfileLine.remove("RemoteHost="));
-            if (ProfileLine.startsWith("RemoteUser="))			tempOp	-> SetRemoteUser(ProfileLine.remove("RemoteUser="));
-            if (ProfileLine.startsWith("RemotePassword="))		tempOp	-> SetRemotePassword(ProfileLine.remove("RemotePassword="));
+            if (ProfileLine.startsWith("RemoteSSH="))			    tempOp	-> SetRemoteSSH(ProfileLine.remove("RemoteSSH=").toInt(&IntOk,10));
+            if (ProfileLine.startsWith("RemoteHost="))			    tempOp	-> SetRemoteHost(ProfileLine.remove("RemoteHost="));
+            if (ProfileLine.startsWith("RemoteUser="))			    tempOp	-> SetRemoteUser(ProfileLine.remove("RemoteUser="));
+            if (ProfileLine.startsWith("RemotePassword="))		    tempOp	-> SetRemotePassword(ProfileLine.remove("RemotePassword="));
             if (ProfileLine.startsWith("RemoteSSHPassword="))		tempOp	-> SetRemoteSSHPassword(ProfileLine.remove("RemoteSSHPassword="));
             if (ProfileLine.startsWith("RemoteSSHPort="))			tempOp	-> SetRemoteSSHPort((ProfileLine.remove("RemoteSSHPort=")).toInt(&IntOk,10));
 
@@ -444,10 +488,10 @@ int loadProfile(QString profileToLoad)
             if (ProfileLine.startsWith("OptionsDelete="))			tempOp	-> SetOptionsDelete(ProfileLine.remove("OptionsDelete=").toInt(&IntOk,10));
             if (ProfileLine.startsWith("OptionsRecurse="))			tempOp	-> SetOptionsRecurse(ProfileLine.remove("OptionsRecurse=").toInt(&IntOk,10));
             if (ProfileLine.startsWith("OptionsOwnership="))		tempOp	-> SetOptionsOwnership(ProfileLine.remove("OptionsOwnership=").toInt(&IntOk,10));
-            if (ProfileLine.startsWith("OptionsSymlinks="))		tempOp	-> SetOptionsSymlinks(ProfileLine.remove("OptionsSymlinks=").toInt(&IntOk,10));
+            if (ProfileLine.startsWith("OptionsSymlinks="))		    tempOp	-> SetOptionsSymlinks(ProfileLine.remove("OptionsSymlinks=").toInt(&IntOk,10));
             if (ProfileLine.startsWith("OptionsPermissions=")) 		tempOp	-> SetOptionsPermissions(ProfileLine.remove("OptionsPermissions=").toInt(&IntOk,10));
             if (ProfileLine.startsWith("OptionsDevices="))			tempOp	-> SetOptionsDevices(ProfileLine.remove("OptionsDevices=").toInt(&IntOk,10));
-            if (ProfileLine.startsWith("OptionsCVS="))			tempOp	-> SetOptionsCVS(ProfileLine.remove("OptionsCVS=").toInt(&IntOk,10));
+            if (ProfileLine.startsWith("OptionsCVS="))			    tempOp	-> SetOptionsCVS(ProfileLine.remove("OptionsCVS=").toInt(&IntOk,10));
             if (ProfileLine.startsWith("OptionsHardLinks="))		tempOp	-> SetOptionsHardLinks(ProfileLine.remove("OptionsHardLinks=").toInt(&IntOk,10));
             if (ProfileLine.startsWith("OptionsFATntfs="))			tempOp	-> SetOptionsFATntfs(ProfileLine.remove("OptionsFATntfs=").toInt(&IntOk,10));
             if (ProfileLine.startsWith("OptionsListItem="))			tempOp	-> AddOptionsListItem(ProfileLine.remove("OptionsListItem="));
@@ -478,10 +522,11 @@ int loadProfile(QString profileToLoad)
                 }
             }
             
-            if (ProfileLine.startsWith("ByPassWarning="))			tempOp	-> SetByPassWARNING(ProfileLine.remove("ByPassWarning=").toInt(&IntOk,10));
-            if (ProfileLine.startsWith("CloneWarning="))			tempOp	-> SetCloneWARNING(ProfileLine.remove("CloneWarning=").toInt(&IntOk,10));
+            if (ProfileLine.startsWith("ByPassWarning="))           tempOp	-> SetByPassWARNING(ProfileLine.remove("ByPassWarning=").toInt(&IntOk,10));
+            if (ProfileLine.startsWith("CloneWarning="))            tempOp	-> SetCloneWARNING(ProfileLine.remove("CloneWarning=").toInt(&IntOk,10));
+            if (ProfileLine.startsWith("RepeatOnFail="))            tempOp  -> SetRepeatOnFail((ProfileLine.remove("RepeatOnFail=")).toInt(&IntOk,10));
             //import include checkbox state
-            if (ProfileLine.startsWith("IncludeState="))			tempOp	-> SetIncluded((ProfileLine.remove("IncludeState=")).toInt(&IntOk,10));
+            if (ProfileLine.startsWith("IncludeState="))            tempOp	-> SetIncluded((ProfileLine.remove("IncludeState=")).toInt(&IntOk,10));
             
             if (!doNotReadNextLine)
                 ProfileLine = in.readLine();	// import the next line if it's not already imported
@@ -513,197 +558,197 @@ int loadProfile(QString profileToLoad)
 // loads an existing profile using qvariant then saves this profile as simple text
 int loadProfileQV(QString profileToLoad)
 {
-	int count;
-	profile.setFileName(profileToLoad);
+    int count;
+    profile.setFileName(profileToLoad);
 
-	if (!profile.open(QIODevice::ReadOnly))		//if the profile cannot be opened
-	{
-		profile.close();
-		return 1;
-	}
+    if (!profile.open(QIODevice::ReadOnly))		//if the profile cannot be opened
+    {
+        profile.close();
+        return 1;
+    }
 
-	QDataStream in(&profile);
-	in.setVersion(QDataStream::Qt_4_3);
+    QDataStream in(&profile);
+    in.setVersion(QDataStream::Qt_4_3);
 
-	QVariant v;					//we will import everything as QVariant using this temp variable
-	QString vString;				//temp variable to import "labels" of real data
-	QString tempAppName = "asxeto";
-	profileDescription = "";
-	double tempAppVersion=0;
-	in>>v;	if (v.toString()=="appName")
-		in >> v;	tempAppName = v.toString();	//input the application name & version--------------------------
-	in>>v;	if (v.toString()=="appVersion")
-		in >> v;	tempAppVersion = v.toDouble();
+    QVariant v;					//we will import everything as QVariant using this temp variable
+    QString vString;				//temp variable to import "labels" of real data
+    QString tempAppName = "asxeto";
+    profileDescription = "";
+    double tempAppVersion=0;
+    in>>v;	if (v.toString()=="appName")
+        in >> v;	tempAppName = v.toString();	//input the application name & version--------------------------
+    in>>v;	if (v.toString()=="appVersion")
+        in >> v;	tempAppVersion = v.toDouble();
 
-	if ( (tempAppName != appName) || (tempAppVersion < validProfileVersion) )//check if the file is a valid luckybackup profile
-	{
-		profile.close();
-		return 2;		//profile is not valid
-	}
+    if ( (tempAppName != appName) || (tempAppVersion < validProfileVersion) )//check if the file is a valid luckybackup profile
+    {
+        profile.close();
+        return 2;		//profile is not valid
+    }
 
-	in>>v;	if (v.toString()=="TotalOperations")
-		in >> v;	TotalOperations = v.toInt();	//input the size of the operations list
+    in>>v;	if (v.toString()=="TotalOperations")
+        in >> v;	TotalOperations = v.toInt();	//input the size of the operations list
 
-	currentOperation = 0;	vString="";
-	while (currentOperation < TotalOperations)
-	{
-		operation *tempOp = new operation;
+    currentOperation = 0;	vString="";
+    while (currentOperation < TotalOperations)
+    {
+        operation *tempOp = new operation;
 
-		in>>v;	vString = v.toString();	in >> v;	//input a label in vString and real data in v
-		while (vString != "operation end")
-		{
-			if (vString == "ProfileDescription")	profileDescription = v.toString();//input the profile description
-				
-			//cout << "\ntask: " <<currentOperation << "\nvString: " << vString.toStdString() << "\n";
-			if (vString == "Name")			tempOp	-> SetName(v.toString());
-			if (vString == "TaskDescription")	tempOp	-> SetDescription(v.toString());
-			if (vString == "Args")			tempOp	-> SetArgs(v.toStringList());
+        in>>v;	vString = v.toString();	in >> v;	//input a label in vString and real data in v
+        while (vString != "operation end")
+        {
+            if (vString == "ProfileDescription")	profileDescription = v.toString();//input the profile description
+                
+            //cout << "\ntask: " <<currentOperation << "\nvString: " << vString.toStdString() << "\n";
+            if (vString == "Name")			tempOp	-> SetName(v.toString());
+            if (vString == "TaskDescription")	tempOp	-> SetDescription(v.toString());
+            if (vString == "Args")			tempOp	-> SetArgs(v.toStringList());
 
-			if (vString == "ConnectRestore")	tempOp	-> SetConnectRestore(v.toString());
+            if (vString == "ConnectRestore")	tempOp	-> SetConnectRestore(v.toString());
 
-			if (vString == "LastExecutionTime")	tempOp	-> SetLastExecutionTime(v.toDateTime());
-			if (vString == "LastExecutionErrors")	tempOp	-> SetLastExecutionErrors(v.toInt());
-			if (vString == "KeepSnapshots")		tempOp	-> SetKeepSnapshots(v.toInt()); //see also "update the max.." few lines below
-			if (vString == "SnapshotsListSize")
-			{
-				int snapshotsListSize = v.toInt();
-				count = 0;
-				while ( count < snapshotsListSize)
-				{
-					in >> v;		// load the string SnapshotsListItem1,2....XX
-					in >> v; 		tempOp	-> AddSnapshotsListItem(v.toString());
-					count++;
-				}
-			}
+            if (vString == "LastExecutionTime")	tempOp	-> SetLastExecutionTime(v.toDateTime());
+            if (vString == "LastExecutionErrors")	tempOp	-> SetLastExecutionErrors(v.toInt());
+            if (vString == "KeepSnapshots")		tempOp	-> SetKeepSnapshots(v.toInt()); //see also "update the max.." few lines below
+            if (vString == "SnapshotsListSize")
+            {
+                int snapshotsListSize = v.toInt();
+                count = 0;
+                while ( count < snapshotsListSize)
+                {
+                    in >> v;		// load the string SnapshotsListItem1,2....XX
+                    in >> v; 		tempOp	-> AddSnapshotsListItem(v.toString());
+                    count++;
+                }
+            }
 
-			if (vString == "TypeDirContents")	tempOp	-> SetTypeDirContents(v.toBool());
-			if (vString == "TypeDirName")		tempOp	-> SetTypeDirName(v.toBool());
-			if (vString == "TypeSync")		tempOp	-> SetTypeSync(v.toBool());
-	
-			if (vString == "Source")		tempOp	-> SetSource(v.toString());
-			if (vString == "Destination")		tempOp	-> SetDestination(v.toString());
+            if (vString == "TypeDirContents")	tempOp	-> SetTypeDirContents(v.toBool());
+            if (vString == "TypeDirName")		tempOp	-> SetTypeDirName(v.toBool());
+            if (vString == "TypeSync")		tempOp	-> SetTypeSync(v.toBool());
+    
+            if (vString == "Source")		tempOp	-> SetSource(v.toString());
+            if (vString == "Destination")		tempOp	-> SetDestination(v.toString());
 
-			if (vString == "ExcludeTemp")		tempOp	-> SetExcludeTemp(v.toBool());
-			if (vString == "ExcludeFromFile")	tempOp	-> SetExcludeFromFile(v.toBool());
-			if (vString == "ExcludeFile")		tempOp	-> SetExcludeFile(v.toString());
-			if (vString == "ExcludeCache")		tempOp	-> SetExcludeCache(v.toBool());
-			if (vString == "ExcludeBackup")		tempOp	-> SetExcludeBackup(v.toBool());
-			if (vString == "ExcludeMount")		tempOp	-> SetExcludeMount(v.toBool());
-			if (vString == "ExcludeLostFound")	tempOp	-> SetExcludeLostFound(v.toBool());
-			if (vString == "ExcludeSystem")		tempOp	-> SetExcludeSystem(v.toBool());
-			if (vString == "ExcludeTrash")		tempOp	-> SetExcludeTrash(v.toBool());
-			if (vString == "ExcludeListSize")
-			{
-				int excludeListSize = v.toInt();
-				count = 0;
-				while ( count < excludeListSize)
-				{
-					in >> v; 		tempOp	-> AddExcludeListItem(v.toString());
-					count++;
-				}
-			}
-			tempOp	-> SetExclude();
+            if (vString == "ExcludeTemp")		tempOp	-> SetExcludeTemp(v.toBool());
+            if (vString == "ExcludeFromFile")	tempOp	-> SetExcludeFromFile(v.toBool());
+            if (vString == "ExcludeFile")		tempOp	-> SetExcludeFile(v.toString());
+            if (vString == "ExcludeCache")		tempOp	-> SetExcludeCache(v.toBool());
+            if (vString == "ExcludeBackup")		tempOp	-> SetExcludeBackup(v.toBool());
+            if (vString == "ExcludeMount")		tempOp	-> SetExcludeMount(v.toBool());
+            if (vString == "ExcludeLostFound")	tempOp	-> SetExcludeLostFound(v.toBool());
+            if (vString == "ExcludeSystem")		tempOp	-> SetExcludeSystem(v.toBool());
+            if (vString == "ExcludeTrash")		tempOp	-> SetExcludeTrash(v.toBool());
+            if (vString == "ExcludeListSize")
+            {
+                int excludeListSize = v.toInt();
+                count = 0;
+                while ( count < excludeListSize)
+                {
+                    in >> v; 		tempOp	-> AddExcludeListItem(v.toString());
+                    count++;
+                }
+            }
+            tempOp	-> SetExclude();
 
-			if (vString == "IncludeListSize")
-			{
-				int IncludeListSize = v.toInt();
-				count = 0;
-				while ( count < IncludeListSize)
-				{
-					in >> v; 		tempOp	-> AddIncludeListItem(v.toString());
-					count++;
-				}
-			}
-			if (vString == "IncludeModeNormal")	tempOp	-> SetIncludeModeNormal(v.toBool());
-			if (vString == "IncludeFromFile")	tempOp	-> SetIncludeFromFile(v.toBool());
-			if (vString == "IncludeFile")		tempOp	-> SetIncludeFile(v.toString());
-			tempOp	-> SetInclude();
+            if (vString == "IncludeListSize")
+            {
+                int IncludeListSize = v.toInt();
+                count = 0;
+                while ( count < IncludeListSize)
+                {
+                    in >> v; 		tempOp	-> AddIncludeListItem(v.toString());
+                    count++;
+                }
+            }
+            if (vString == "IncludeModeNormal")	tempOp	-> SetIncludeModeNormal(v.toBool());
+            if (vString == "IncludeFromFile")	tempOp	-> SetIncludeFromFile(v.toBool());
+            if (vString == "IncludeFile")		tempOp	-> SetIncludeFile(v.toString());
+            tempOp	-> SetInclude();
 
-			if (vString == "Remote")			tempOp	-> SetRemote(v.toBool());
-			if (vString == "RemoteModule")		tempOp	-> SetRemoteModule(v.toBool());
-			if (vString == "RemoteDestination")	tempOp	-> SetRemoteDestination(v.toBool());
-			if (vString == "RemoteSource")		tempOp	-> SetRemoteSource(v.toBool());
-			if (vString == "RemoteSSH")			tempOp	-> SetRemoteSSH(v.toBool());
-			if (vString == "RemoteHost")		tempOp	-> SetRemoteHost(v.toString());
-			if (vString == "RemoteUser")		tempOp	-> SetRemoteUser(v.toString());
-			if (vString == "RemotePassword")	tempOp	-> SetRemotePassword(v.toString());
-			if (vString == "RemoteSSHPassword")	tempOp	-> SetRemoteSSHPassword(v.toString());
-			if (vString == "RemoteSSHPort")		tempOp	-> SetRemoteSSHPort(v.toInt());
+            if (vString == "Remote")			tempOp	-> SetRemote(v.toBool());
+            if (vString == "RemoteModule")		tempOp	-> SetRemoteModule(v.toBool());
+            if (vString == "RemoteDestination")	tempOp	-> SetRemoteDestination(v.toBool());
+            if (vString == "RemoteSource")		tempOp	-> SetRemoteSource(v.toBool());
+            if (vString == "RemoteSSH")			tempOp	-> SetRemoteSSH(v.toBool());
+            if (vString == "RemoteHost")		tempOp	-> SetRemoteHost(v.toString());
+            if (vString == "RemoteUser")		tempOp	-> SetRemoteUser(v.toString());
+            if (vString == "RemotePassword")	tempOp	-> SetRemotePassword(v.toString());
+            if (vString == "RemoteSSHPassword")	tempOp	-> SetRemoteSSHPassword(v.toString());
+            if (vString == "RemoteSSHPort")		tempOp	-> SetRemoteSSHPort(v.toInt());
 
-			if (vString == "OptionsUpdate")		tempOp	-> SetOptionsUpdate(v.toBool());
-			if (vString == "OptionsDelete")		tempOp	-> SetOptionsDelete(v.toBool());
-			if (vString == "OptionsRecurse")	tempOp	-> SetOptionsRecurse(v.toBool());
-			if (vString == "OptionsOwnership")	tempOp	-> SetOptionsOwnership(v.toBool());
-			if (vString == "OptionsSymlinks")	tempOp	-> SetOptionsSymlinks(v.toBool());
-			if (vString == "OptionsPermissions") tempOp	-> SetOptionsPermissions(v.toBool());
-			if (vString == "OptionsDevices")	tempOp	-> SetOptionsDevices(v.toBool());
-			if (vString == "OptionsCVS")		tempOp	-> SetOptionsCVS(v.toBool());
-			if (vString == "OptionsHardLinks")	tempOp	-> SetOptionsHardLinks(v.toBool());
-			if (vString == "OptionsFATntfs")	tempOp	-> SetOptionsFATntfs(v.toBool());
-			if (vString == "OptionsListSize")
-			{
-				int OptionsListSize = v.toInt();
-				count = 0;
-				while ( count < OptionsListSize)
-				{
-					in >> v;			tempOp	-> AddOptionsListItem(v.toString());
-					count++;
-				}
-			}
-			if (vString == "ExecuteBeforeListSize")
-			{
-				int ExecuteBeforeListSize = v.toInt();
-				count = 0;
-				while ( count < ExecuteBeforeListSize)
-				{
-					in >> v;			tempOp	-> AddExecuteBeforeListItem(v.toString());
-					count++;
-				}
-			}
-			if (vString == "ExecuteAfterListSize")
-			{
-				int ExecuteAfterListSize = v.toInt();
-				count = 0;
-				while ( count < ExecuteAfterListSize)
-				{
-					in >> v;			tempOp	-> AddExecuteAfterListItem(v.toString());
-					count++;
-				}
-			}
-			if (vString == "ByPassWarning")		tempOp	-> SetByPassWARNING(v.toBool());
-			if (vString == "CloneWarning")		tempOp	-> SetCloneWARNING(v.toBool());
-			//import include checkbox state
-			if (vString == "IncludeState")		tempOp	-> SetIncluded(v.toBool());
-			in>>v;	vString = v.toString();
-			if (vString!="operation end")
-				in >> v;
-			else			// all properties have been loaded
-			{
-				// first fix some icompatibilities with older versions that did not save the following properties:
-				// 1. update the max "keep snapshots" number if it is < 1 (or not defined !!) or if the task is a sync task
-				if ((tempOp -> GetTypeSync()) || (tempOp -> GetKeepSnapshots() < 1) )
-					tempOp -> SetKeepSnapshots(1);
-				// 2. Add a snapshot if last executiontime exists but snapshot list is empty
-				QString LastTime = ( tempOp -> GetLastExecutionTime() ).toString("yyyyMMddhhmmss");
-				if ( !(LastTime == "") && (tempOp -> SnapshotsListIsEmpty()) )
-					tempOp -> AddSnapshotsListItem (LastTime);
+            if (vString == "OptionsUpdate")		tempOp	-> SetOptionsUpdate(v.toBool());
+            if (vString == "OptionsDelete")		tempOp	-> SetOptionsDelete(v.toBool());
+            if (vString == "OptionsRecurse")	tempOp	-> SetOptionsRecurse(v.toBool());
+            if (vString == "OptionsOwnership")	tempOp	-> SetOptionsOwnership(v.toBool());
+            if (vString == "OptionsSymlinks")	tempOp	-> SetOptionsSymlinks(v.toBool());
+            if (vString == "OptionsPermissions") tempOp	-> SetOptionsPermissions(v.toBool());
+            if (vString == "OptionsDevices")	tempOp	-> SetOptionsDevices(v.toBool());
+            if (vString == "OptionsCVS")		tempOp	-> SetOptionsCVS(v.toBool());
+            if (vString == "OptionsHardLinks")	tempOp	-> SetOptionsHardLinks(v.toBool());
+            if (vString == "OptionsFATntfs")	tempOp	-> SetOptionsFATntfs(v.toBool());
+            if (vString == "OptionsListSize")
+            {
+                int OptionsListSize = v.toInt();
+                count = 0;
+                while ( count < OptionsListSize)
+                {
+                    in >> v;			tempOp	-> AddOptionsListItem(v.toString());
+                    count++;
+                }
+            }
+            if (vString == "ExecuteBeforeListSize")
+            {
+                int ExecuteBeforeListSize = v.toInt();
+                count = 0;
+                while ( count < ExecuteBeforeListSize)
+                {
+                    in >> v;			tempOp	-> AddExecuteBeforeListItem(v.toString());
+                    count++;
+                }
+            }
+            if (vString == "ExecuteAfterListSize")
+            {
+                int ExecuteAfterListSize = v.toInt();
+                count = 0;
+                while ( count < ExecuteAfterListSize)
+                {
+                    in >> v;			tempOp	-> AddExecuteAfterListItem(v.toString());
+                    count++;
+                }
+            }
+            if (vString == "ByPassWarning")		tempOp	-> SetByPassWARNING(v.toBool());
+            if (vString == "CloneWarning")		tempOp	-> SetCloneWARNING(v.toBool());
+            //import include checkbox state
+            if (vString == "IncludeState")		tempOp	-> SetIncluded(v.toBool());
+            in>>v;	vString = v.toString();
+            if (vString!="operation end")
+                in >> v;
+            else			// all properties have been loaded
+            {
+                // first fix some icompatibilities with older versions that did not save the following properties:
+                // 1. update the max "keep snapshots" number if it is < 1 (or not defined !!) or if the task is a sync task
+                if ((tempOp -> GetTypeSync()) || (tempOp -> GetKeepSnapshots() < 1) )
+                    tempOp -> SetKeepSnapshots(1);
+                // 2. Add a snapshot if last executiontime exists but snapshot list is empty
+                QString LastTime = ( tempOp -> GetLastExecutionTime() ).toString("yyyyMMddhhmmss");
+                if ( !(LastTime == "") && (tempOp -> SnapshotsListIsEmpty()) )
+                    tempOp -> AddSnapshotsListItem (LastTime);
 
-				Operation[currentOperation] = tempOp;	// update the currentOperation
-			}
-		}
-		currentOperation++;
-	}
-	profile.close();
-	
-	//backup the original qvariant profile before replacing it with a plain text one
-	//create directory ~/.luckyBackup including folders "logs", "profiles", "schedule", snaps if they do not exist for the current user
-	QDir profilebackupdir(profileDir + "backups/");
-	if (!profilebackupdir.exists())
-		profilebackupdir.mkpath(profileDir + "backups/");
-	profile.copy(profileDir + "backups/" + profileName + ".profile" );
-	
-	saveProfile(profileToLoad);		//save the profile to text format
-	return 0;
+                Operation[currentOperation] = tempOp;	// update the currentOperation
+            }
+        }
+        currentOperation++;
+    }
+    profile.close();
+    
+    //backup the original qvariant profile before replacing it with a plain text one
+    //create directory ~/.luckyBackup including folders "logs", "profiles", "schedule", snaps if they do not exist for the current user
+    QDir profilebackupdir(profileDir + "backups/");
+    if (!profilebackupdir.exists())
+        profilebackupdir.mkpath(profileDir + "backups/");
+    profile.copy(profileDir + "backups/" + profileName + ".profile" );
+    
+    saveProfile(profileToLoad);		//save the profile to text format
+    return 0;
 }
 
 // saveProfile =====================================================================================================================================
@@ -804,6 +849,7 @@ bool saveProfile(QString profileToSave)
         out << "ExcludeLostFound="          << Operation[currentOperation] -> GetExcludeLostFound() << "\n";
         out << "ExcludeSystem="             << Operation[currentOperation] -> GetExcludeSystem() << "\n";
         out << "ExcludeTrash="              << Operation[currentOperation] -> GetExcludeTrash() << "\n";
+        out << "ExcludeGVFS="               << Operation[currentOperation] -> GetExcludeGVFS() << "\n";
         count = 0;
         while ( count < (Operation[currentOperation] -> GetExcludeListSize()) )
         {
@@ -865,6 +911,7 @@ bool saveProfile(QString profileToSave)
         }
         out << "ByPassWarning="             << Operation[currentOperation] -> GetByPassWARNING() << "\n";
         out << "CloneWarning="              << Operation[currentOperation] -> GetCloneWARNING() << "\n";
+        out << "RepeatOnFail="              << Operation[currentOperation] -> GetRepeatOnFail() << "\n";
         //export include state
         out << "IncludeState="              << Operation[currentOperation] -> GetIncluded() << "\n";
 
@@ -877,134 +924,256 @@ bool saveProfile(QString profileToSave)
     return TRUE;
 }
 
+
+// exportFullProfile ====================================================================================================================================
+//function to export the .profile file + logs + snaps to a location
+bool exportFullProfile(QString ExportPath, QString exportType)
+{
+    //we will export everything by using an rsync command
+    QProcess *exportProcess;    exportProcess  = new QProcess;      QStringList exportArgs;
+    exportArgs  << "-t" << "-r" << "--delete-after" << "--delete-excluded";      // standard rsync args
+    
+    if (exportType == "ExportOnlyTask")           // Only include the .profile file and logs and snaps for a specific task
+        exportArgs << "--include=" + profileName + ".profile" << "--include=/*/" + profileName + "-" + Operation[currentOperation] -> GetName() +"-*";
+    else                                    // Include the .profile file and all logs & snaps related to that
+        exportArgs << "--include=/*/" + profileName +"*";
+         
+    exportArgs << "--include=*/" << "--exclude=*" << "--prune-empty-dirs";  // "only include" rsync args
+          
+           
+    //also add all remote arguments exactly as used at normal backup
+    if (exportType == "ExportOnlyTask")
+    {
+        if ((Operation[currentOperation] -> GetRemoteDestination()) && (Operation[currentOperation] -> GetRemote()))
+        {
+            if ( Operation[currentOperation] -> GetRemotePassword() != "")
+                exportArgs.append("--password-file=" + ( Operation[currentOperation] -> GetRemotePassword()) );
+            if ( Operation[currentOperation] -> GetRemoteSSH())
+            {
+                if ( Operation[currentOperation] -> GetRemoteSSHPassword() != "")
+                    if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
+                        exportArgs.append("-e "+sshCommandPath+" -i " +  Operation[currentOperation] -> GetRemoteSSHPassword() +" -p " +
+                                    countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                    else
+                        exportArgs.append("-e "+sshCommandPath+" -i " +  Operation[currentOperation] -> GetRemoteSSHPassword());
+                else
+                    if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
+                        exportArgs.append("-e "+sshCommandPath+" -p " + countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                    else
+                        exportArgs.append("-e "+sshCommandPath);
+            }
+        }
+    }
+            
+    exportArgs.append(luckyBackupDir);      // The source is ~/.luckyBackup/
+    exportArgs.append(ExportPath);          // The destination is given by the user
+    
+    exportProcess -> start (rsyncCommandPath,exportArgs);
+    exportProcess -> waitForFinished();
+            
+    if (!(exportProcess -> exitCode() == 0))
+        return FALSE;
+
+    return TRUE;
+}
+
+// importFullProfile ====================================================================================================================================
+//function to import the .profile file + logs + snaps from a location to ~/.luckyBackup with the profilename given
+int importFullProfile(QString ImportPath,QString newProfileName)
+{
+    int returnThis = 0;
+    QString PathProfileName = ImportPath;
+    PathProfileName = PathProfileName.right(PathProfileName.size() - PathProfileName.lastIndexOf(SLASH) - 1);
+    if (PathProfileName.endsWith(".profile"))
+        PathProfileName.chop(8);
+    
+    // copy everything from the importFullProfile to ~/.luckyBackupDir
+    QDir dirToCopy;     QStringList dirToCopyContents;  QFile fileToCopy;   QList<QString>::iterator count;
+    
+    // import all .profile files from ImportPath/profiles
+    dirToCopy.setPath(ImportPath + SLASH + "profiles");
+    dirToCopyContents = dirToCopy.entryList(QStringList("*.profile"),QDir::Files, QDir::NoSort);
+    
+    if (dirToCopyContents.size() == 0)
+        return 1;
+    for (count = dirToCopyContents.begin(); count != dirToCopyContents.end(); ++count)
+    {
+        QString oldFileNamePart = *count;
+        oldFileNamePart = oldFileNamePart.right(oldFileNamePart.size() - oldFileNamePart.lastIndexOf(SLASH) - 1);
+        oldFileNamePart.chop(8);
+        oldFileNamePart.remove(0,PathProfileName.size());
+        
+        fileToCopy.setFileName(ImportPath + SLASH + "profiles" +SLASH +*count);
+        if ((!fileToCopy.copy(profileDir + newProfileName + oldFileNamePart + ".profile")) && (returnThis < 1))
+            return 1;
+    }
+
+    // import all .log files from ImportPath/logs
+    dirToCopy.setPath(ImportPath + SLASH + "logs");
+    dirToCopyContents = dirToCopy.entryList(QStringList("*.log"),QDir::Files, QDir::NoSort);
+
+    for (count = dirToCopyContents.begin(); count != dirToCopyContents.end(); ++count)
+    {
+        QString oldFileNamePart = *count;
+        oldFileNamePart = oldFileNamePart.right(oldFileNamePart.size() - oldFileNamePart.lastIndexOf(SLASH) - 1);
+        oldFileNamePart.chop(4);
+        oldFileNamePart.remove(0,PathProfileName.size());
+        
+        // TESTING
+        //QMessageBox::information(0, "LB","source= " +ImportPath + SLASH + "logs" +SLASH + *count + "<br><br>dest: " + logDir + newProfileName + oldFileNamePart + ".log<br><br>oldFileNamePar= "+oldFileNamePart);
+        
+        fileToCopy.setFileName(ImportPath + SLASH + "logs" +SLASH +*count);
+        if ((!fileToCopy.copy(logDir + newProfileName + oldFileNamePart + ".log")) && (returnThis < 10))
+            returnThis=returnThis+10;
+    }
+    
+    // import all changes.log files from ImportPath/snaps
+    dirToCopy.setPath(ImportPath + SLASH + "snaps");
+    dirToCopyContents = dirToCopy.entryList(QStringList("*.changes.log"),QDir::Files, QDir::NoSort);
+
+    for (count = dirToCopyContents.begin(); count != dirToCopyContents.end(); ++count)
+    {
+        QString oldFileNamePart = *count;
+        oldFileNamePart = oldFileNamePart.right(oldFileNamePart.size() - oldFileNamePart.lastIndexOf(SLASH) - 1);
+        oldFileNamePart.chop(12);
+        oldFileNamePart.remove(0,PathProfileName.size());
+        
+        fileToCopy.setFileName(ImportPath + SLASH + "snaps" +SLASH +*count);
+        if ((!fileToCopy.copy(snapChangesDir + newProfileName + oldFileNamePart + ".changes.log")) && (returnThis < 20))
+            returnThis=returnThis+20;
+    }
+    
+    return returnThis;
+}
+
 // checkTaskList =====================================================================================================================================
 // Checks if the Task list is ok to proceed
 bool checkTaskList()
 {
-	int count;
-	QString tempConnect="";
-	message="";
-	messageCLI="";
-	ask = FALSE;
-	NothingIncluded=TRUE;
+    int count;
+    QString tempConnect="";
+    message="";
+    messageCLI="";
+    ask = FALSE;
+    NothingIncluded=TRUE;
 
-	if (TotalOperations==0)						//check if the operations list is empty ------------------------------
-	{
-		message.append("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br><b>" +
-				QObject::tr("The task list is empty")+" !!</b><br>..."+
-			QObject::tr("nothing to start"));
-		messageCLI.append("\nThe task list is empty !!\n"
-			"nothing to start !!\n\n");
-		ask = TRUE;
-		return FALSE;
-	}
+    if (TotalOperations==0)						//check if the operations list is empty ------------------------------
+    {
+        message.append("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br><b>" +
+                QObject::tr("The task list is empty")+" !!</b><br>..."+
+            QObject::tr("nothing to start"));
+        messageCLI.append("\nThe task list is empty !!\n"
+            "nothing to start !!\n\n");
+        ask = TRUE;
+        return FALSE;
+    }
 
-	//first check if 2 connected operations have been selected for execution--------------------------------------------------------------
-	//set NothingInluded to FALSE if 1 or more operation is included
-	bool askTemp = FALSE;	QString dirNames="";	QString dirNamesCLI="";	currentOperation=0;
-	while  (currentOperation < TotalOperations)
-	{
-		if (Operation[currentOperation] -> GetIncluded())	//if the operations is "included"
-		{
-			NothingIncluded = FALSE;
+    //first check if 2 connected operations have been selected for execution--------------------------------------------------------------
+    //set NothingInluded to FALSE if 1 or more operation is included
+    bool askTemp = FALSE;	QString dirNames="";	QString dirNamesCLI="";	currentOperation=0;
+    while  (currentOperation < TotalOperations)
+    {
+        if (Operation[currentOperation] -> GetIncluded())	//if the operations is "included"
+        {
+            NothingIncluded = FALSE;
 
-			tempConnect = Operation[currentOperation] -> GetConnectRestore();
-			if (tempConnect != "")							//if it is connected to another operation
-			{
-				count = currentOperation+1;
-				while (count < TotalOperations)
-				{
-					if  ( (Operation[count]->GetName() == tempConnect)	//if 2 connected operations are both included
-					&& (Operation[count] -> GetIncluded()) )
-					{
-						dirNames.append("* " + Operation[currentOperation]->GetName() + "<br>* " + tempConnect + "<br>");
-						dirNamesCLI.append(Operation[currentOperation]->GetName() + "\n" + tempConnect + "\n\n");
-						askTemp = TRUE; ask=TRUE;
-						break;
-					}
-					count++;
-				}
-			}
-		}
-		currentOperation++;
-	}
-	if (askTemp)
-	{
-		message.append("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>" +
-				QObject::tr("You have included both of the following connected tasks:")+"<b><br>" + dirNames + 
-				"</b>" + QObject::tr("this is not allowed for obvious reasons")+" !!<br>"+
-				QObject::tr("Please <b>uncheck appropriate include boxes</b> before proceeding")+"... <br>");
-		messageCLI.append("\nYou have included both of the following connected tasks:\n" + QString(dirNamesCLI.toUtf8()) + 
-				"this is not allowed for obvious reasons !!\n"
-				"Please uncheck appropriate include boxes before proceeding...\n\n");
-	}
+            tempConnect = Operation[currentOperation] -> GetConnectRestore();
+            if (tempConnect != "")							//if it is connected to another operation
+            {
+                count = currentOperation+1;
+                while (count < TotalOperations)
+                {
+                    if  ( (Operation[count]->GetName() == tempConnect)	//if 2 connected operations are both included
+                    && (Operation[count] -> GetIncluded()) )
+                    {
+                        dirNames.append("* " + Operation[currentOperation]->GetName() + "<br>* " + tempConnect + "<br>");
+                        dirNamesCLI.append(Operation[currentOperation]->GetName() + "\n" + tempConnect + "\n\n");
+                        askTemp = TRUE; ask=TRUE;
+                        break;
+                    }
+                    count++;
+                }
+            }
+        }
+        currentOperation++;
+    }
+    if (askTemp)
+    {
+        message.append("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>" +
+                QObject::tr("You have included both of the following connected tasks:")+"<b><br>" + dirNames + 
+                "</b>" + QObject::tr("this is not allowed for obvious reasons")+" !!<br>"+
+                QObject::tr("Please <b>uncheck appropriate include boxes</b> before proceeding")+"... <br>");
+        messageCLI.append("\nYou have included both of the following connected tasks:\n" + QString(dirNamesCLI.toUtf8()) + 
+                "this is not allowed for obvious reasons !!\n"
+                "Please uncheck appropriate include boxes before proceeding...\n\n");
+    }
 
-	if ( (NothingIncluded) && (TotalOperations!=0) )		//if no checkboxes are selected show this message ---------------------
-	{
-		message.append("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br><b>"+
-			QObject::tr("You have not included any tasks")+" !!</b><br>"
-			"..." + QObject::tr("nothing to start"));
-		messageCLI.append("\nYou have not included any tasks !!\n\n"
-			"nothing to start !!\n\n");
-		ask = TRUE;
-		return FALSE;
-	}
+    if ( (NothingIncluded) && (TotalOperations!=0) )		//if no checkboxes are selected show this message ---------------------
+    {
+        message.append("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br><b>"+
+            QObject::tr("You have not included any tasks")+" !!</b><br>"
+            "..." + QObject::tr("nothing to start"));
+        messageCLI.append("\nYou have not included any tasks !!\n\n"
+            "nothing to start !!\n\n");
+        ask = TRUE;
+        return FALSE;
+    }
 
-	//check if 2 or more identical destination directories are decleared & "Backup dir contents" is checked -------------------------------
-	currentOperation=0;	askTemp = FALSE;	dirNames="";	dirNamesCLI="";
-	QString dest1="", dest2="";
-	//the following loop compares an included operation (currentoperation) with all the other included
-	//to check if they share the same destination
-	while  (currentOperation < TotalOperations)
-	{
-		dest1 = Operation[currentOperation] -> GetDestination();
-		if (dest1.endsWith(SLASH)) dest1.chop(1);
+    //check if 2 or more identical destination directories are decleared & "Backup dir contents" is checked -------------------------------
+    currentOperation=0;	askTemp = FALSE;	dirNames="";	dirNamesCLI="";
+    QString dest1="", dest2="";
+    //the following loop compares an included operation (currentoperation) with all the other included
+    //to check if they share the same destination
+    while  (currentOperation < TotalOperations)
+    {
+        dest1 = Operation[currentOperation] -> GetDestination();
+        if (dest1.endsWith(SLASH)) dest1.chop(1);
 
-		if (Operation[currentOperation] -> GetIncluded())
-		{
-			count = 0;
-			while (count < TotalOperations)
-			{
-				if (count == currentOperation) count++;
-				else
-				{
-					dest2 = Operation[count] -> GetDestination();
-					if (dest2.endsWith(SLASH)) dest2.chop(1);
-				
-				//if this operation's destination is identical to another one's which is included and is of type 'Backup dir contents'
-					if ( (Operation[count] -> GetIncluded()) 
-					&& ( dest1 == dest2 )
-					&& ( ((Operation[count] -> GetTypeDirContents()) && (!Operation[count] -> GetInclude())) ||
-					((Operation[currentOperation] -> GetTypeDirContents()) && (!Operation[currentOperation] -> GetInclude()))) )
-					{
-						dirNames.append("* " + Operation[currentOperation]->GetName() + "<br>");
-						dirNamesCLI.append(Operation[currentOperation]->GetName() + "\n");
-						askTemp = TRUE; ask=TRUE;
-						break;
-					}
-					count++;
-				}
-			}
-		}
-		currentOperation++;
-	}
-	if (askTemp)
-	{
-		message.append("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>" +
-				QObject::tr("The following included tasks <b>share the same destination directory</b> (all together or at groups) and at least one of them will backup the contents of a directory")+" :<br><b>"
-				+ dirNames +
-				"</b>" + QObject::tr("this will lead to one task canceling the other")+" !!<br>"+
-				QObject::tr("Please uncheck appropriate include boxes or change all task types to other than '<b>Backup dir contents</b>' "
-				" or use 'Backup dir contents' together with the '<b>Only include</b>' option, before proceeding")+"...");
+        if (Operation[currentOperation] -> GetIncluded())
+        {
+            count = 0;
+            while (count < TotalOperations)
+            {
+                if (count == currentOperation) count++;
+                else
+                {
+                    dest2 = Operation[count] -> GetDestination();
+                    if (dest2.endsWith(SLASH)) dest2.chop(1);
+                
+                //if this operation's destination is identical to another one's which is included and is of type 'Backup dir contents'
+                    if ( (Operation[count] -> GetIncluded()) 
+                    && ( dest1 == dest2 )
+                    && ( ((Operation[count] -> GetTypeDirContents()) && (!Operation[count] -> GetInclude())) ||
+                    ((Operation[currentOperation] -> GetTypeDirContents()) && (!Operation[currentOperation] -> GetInclude()))) )
+                    {
+                        dirNames.append("* " + Operation[currentOperation]->GetName() + "<br>");
+                        dirNamesCLI.append(Operation[currentOperation]->GetName() + "\n");
+                        askTemp = TRUE; ask=TRUE;
+                        break;
+                    }
+                    count++;
+                }
+            }
+        }
+        currentOperation++;
+    }
+    if (askTemp)
+    {
+        message.append("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>" +
+                QObject::tr("The following included tasks <b>share the same destination directory</b> (all together or at groups) and at least one of them will backup the contents of a directory")+" :<br><b>"
+                + dirNames +
+                "</b>" + QObject::tr("this will lead to one task canceling the other")+" !!<br>"+
+                QObject::tr("Please uncheck appropriate include boxes or change all task types to other than '<b>Backup dir contents</b>' "
+                " or use 'Backup dir contents' together with the '<b>Only include</b>' option, before proceeding")+"...");
 
-		messageCLI.append("\nThe following included tasks share the same destination directory (all together or at groups) and at least one of them will backup the contents of a directory :\n"
-				+ QString(dirNamesCLI.toUtf8()) +
-				"\nthis will lead to one task canceling the other !!\n"
-				"Please uncheck appropriate include boxes or change all task types to other than 'Backup dir contents'\n "
-				"or use 'Backup dir contents' together with the 'Only include' option, before proceeding...\n\n");
-	}
+        messageCLI.append("\nThe following included tasks share the same destination directory (all together or at groups) and at least one of them will backup the contents of a directory :\n"
+                + QString(dirNamesCLI.toUtf8()) +
+                "\nthis will lead to one task canceling the other !!\n"
+                "Please uncheck appropriate include boxes or change all task types to other than 'Backup dir contents'\n "
+                "or use 'Backup dir contents' together with the 'Only include' option, before proceeding...\n\n");
+    }
 
-	return TRUE;
+    return TRUE;
 }
 
 // checkDeclaredDirs =================================================================================================================================
@@ -1012,166 +1181,166 @@ bool checkTaskList()
 //If guiExec is TRUE this is called from the gui, otherwise from console
 bool checkDeclaredDirs(bool guiExec)
 {
-	ask=FALSE;
-	NothingToDo = TRUE;
+    ask=FALSE;
+    NothingToDo = TRUE;
 
-	QString source, dest;
+    QString source, dest;
 
-	currentOperation = 0;
-	CheckedData = "";
-	CheckedDataCLI = "";
-	while (currentOperation < TotalOperations)
-	{
-		Operation[currentOperation] -> SetOK(FALSE);
-		Operation[currentOperation] -> SetWARNING(FALSE);
-		Operation[currentOperation] -> SetCRITICAL(FALSE);
-		Operation[currentOperation] -> SetSourcePerms(FALSE);
-		Operation[currentOperation] -> SetDestPerms(FALSE);
+    currentOperation = 0;
+    CheckedData = "";
+    CheckedDataCLI = "";
+    while (currentOperation < TotalOperations)
+    {
+        Operation[currentOperation] -> SetOK(FALSE);
+        Operation[currentOperation] -> SetWARNING(FALSE);
+        Operation[currentOperation] -> SetCRITICAL(FALSE);
+        Operation[currentOperation] -> SetSourcePerms(FALSE);
+        Operation[currentOperation] -> SetDestPerms(FALSE);
         Operation[currentOperation] -> SetDestMounted(FALSE);
         Operation[currentOperation] -> SetSourceMounted(FALSE);
 
-		if (Operation[currentOperation] -> GetIncluded())	//if the operations is "included"
-		{
-			//first set  variables source & dest as well as itsPerform which will finaly decide if the task will be preformed
-			source = Operation[currentOperation] -> GetSource();
-			dest = Operation[currentOperation] -> GetDestination();
-			if (!guiExec)	//this is used for compatibility issues with console
-			{
-				source=QString(source.toUtf8());
-				dest=QString(dest.toUtf8());
-			}
-			Operation[currentOperation] -> SetIncluded(TRUE);
-			Operation[currentOperation] -> SetPerform(TRUE);	//this will change at the next commands
+        if (Operation[currentOperation] -> GetIncluded())	//if the operations is "included"
+        {
+            //first set  variables source & dest as well as itsPerform which will finaly decide if the task will be preformed
+            source = Operation[currentOperation] -> GetSource();
+            dest = Operation[currentOperation] -> GetDestination();
+            if (!guiExec)	//this is used for compatibility issues with console
+            {
+                source=QString(source.toUtf8());
+                dest=QString(dest.toUtf8());
+            }
+            Operation[currentOperation] -> SetIncluded(TRUE);
+            Operation[currentOperation] -> SetPerform(TRUE);	//this will change at the next commands
 
-			if ( (Operation[currentOperation] -> GetTypeDirContents()) || (Operation[currentOperation] -> GetTypeDirName()) )	
-				checkBackupDirs(source,dest);			//if the operation is of type "backup dir ...'
-			if (Operation[currentOperation] -> GetTypeSync())	//if the operation is of type "sync dirs'
-				checkSyncDirs(source,dest);
-		}
-		else
-		{
-			Operation[currentOperation] -> SetIncluded(FALSE);
-			Operation[currentOperation] -> SetPerform(FALSE);	
-		}
-		currentOperation++;
-	}
-	return TRUE;
+            if ( (Operation[currentOperation] -> GetTypeDirContents()) || (Operation[currentOperation] -> GetTypeDirName()) )	
+                checkBackupDirs(source,dest);			//if the operation is of type "backup dir ...'
+            if (Operation[currentOperation] -> GetTypeSync())	//if the operation is of type "sync dirs'
+                checkSyncDirs(source,dest);
+        }
+        else
+        {
+            Operation[currentOperation] -> SetIncluded(FALSE);
+            Operation[currentOperation] -> SetPerform(FALSE);	
+        }
+        currentOperation++;
+    }
+    return TRUE;
 }
 
 //===================================================================================================================================================
 //Check if the directories to be synced are empty or don't exist
 void checkSyncDirs(QString source, QString dest)
 {
-	Operation[currentOperation] -> SetOK(FALSE);
-	Operation[currentOperation] -> SetWARNING(FALSE);
-	Operation[currentOperation] -> SetCRITICAL(FALSE);
-	Operation[currentOperation] -> SetSourcePerms(FALSE);
-	Operation[currentOperation] -> SetDestPerms(FALSE);
+    Operation[currentOperation] -> SetOK(FALSE);
+    Operation[currentOperation] -> SetWARNING(FALSE);
+    Operation[currentOperation] -> SetCRITICAL(FALSE);
+    Operation[currentOperation] -> SetSourcePerms(FALSE);
+    Operation[currentOperation] -> SetDestPerms(FALSE);
     Operation[currentOperation] -> SetDestMounted(FALSE);
     Operation[currentOperation] -> SetSourceMounted(FALSE);
 
-	bool remoteSource = FALSE;
-	bool remoteDest = FALSE;
+    bool remoteSource = FALSE;
+    bool remoteDest = FALSE;
 
-	if ( (Operation[currentOperation] -> GetRemote()) && (Operation[currentOperation] -> GetRemoteSource()) )
-	{
-		if (Operation[currentOperation] -> GetRemoteModule())
-			source.prepend(":");
-		source.prepend((Operation[currentOperation] -> GetRemoteHost())+":");
-		if (Operation[currentOperation] -> GetRemoteUser()!="")
-			source.prepend((Operation[currentOperation] -> GetRemoteUser())+"@");
-		remoteSource = TRUE;
-	}
+    if ( (Operation[currentOperation] -> GetRemote()) && (Operation[currentOperation] -> GetRemoteSource()) )
+    {
+        if (Operation[currentOperation] -> GetRemoteModule())
+            source.prepend(":");
+        source.prepend((Operation[currentOperation] -> GetRemoteHost())+":");
+        if (Operation[currentOperation] -> GetRemoteUser()!="")
+            source.prepend((Operation[currentOperation] -> GetRemoteUser())+"@");
+        remoteSource = TRUE;
+    }
 
-	if ( (Operation[currentOperation] -> GetRemote()) && (Operation[currentOperation] -> GetRemoteDestination()) )
-	{
-		if (Operation[currentOperation] -> GetRemoteModule())
-			dest.prepend(":");
-		dest.prepend((Operation[currentOperation] -> GetRemoteHost())+":");
-		if (Operation[currentOperation] -> GetRemoteUser()!="")
-			dest.prepend((Operation[currentOperation] -> GetRemoteUser())+"@");
-		remoteDest = TRUE;
-	}
+    if ( (Operation[currentOperation] -> GetRemote()) && (Operation[currentOperation] -> GetRemoteDestination()) )
+    {
+        if (Operation[currentOperation] -> GetRemoteModule())
+            dest.prepend(":");
+        dest.prepend((Operation[currentOperation] -> GetRemoteHost())+":");
+        if (Operation[currentOperation] -> GetRemoteUser()!="")
+            dest.prepend((Operation[currentOperation] -> GetRemoteUser())+"@");
+        remoteDest = TRUE;
+    }
 
-	QFileInfo dirAFile(source);
-	QFileInfo dirBFile(dest);
-	QString currentOpNameCLI = QString((Operation[currentOperation] -> GetName())).toUtf8();
-	
-	//QString taskDescriptionCLI = QString((Operation[currentOperation] -> GetDescription())).toUtf8();
-	QString taskDescription = Operation[currentOperation] -> GetDescription();
-	taskDescription.replace("\n","<br>");
+    QFileInfo dirAFile(source);
+    QFileInfo dirBFile(dest);
+    QString currentOpNameCLI = QString((Operation[currentOperation] -> GetName())).toUtf8();
+    
+    //QString taskDescriptionCLI = QString((Operation[currentOperation] -> GetDescription())).toUtf8();
+    QString taskDescription = Operation[currentOperation] -> GetDescription();
+    taskDescription.replace("\n","<br>");
 
-	//If user does not have sufficient permissions for the dirA or dirB, skip it
-	if ( (dirAFile.exists()) && ((!dirAFile.isReadable()) || (!dirAFile.isExecutable())) && (!remoteSource) )
-	{
+    //If user does not have sufficient permissions for the dirA or dirB, skip it
+    if ( (dirAFile.exists()) && ((!dirAFile.isReadable()) || (!dirAFile.isExecutable())) && (!remoteSource) )
+    {
         setTextMessages(source,dest,remoteSource,remoteDest, "warning","sync","source-perms");
 
-		if (!Operation[currentOperation] -> GetByPassWARNING())
-			Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
-		else
-			NothingToDo = FALSE;
-		Operation[currentOperation] -> SetSourcePerms(TRUE);
-		ask=TRUE;	//ask the user if he/she wants to continue
-		return;
-	}
+        if (!Operation[currentOperation] -> GetByPassWARNING())
+            Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
+        else
+            NothingToDo = FALSE;
+        Operation[currentOperation] -> SetSourcePerms(TRUE);
+        ask=TRUE;	//ask the user if he/she wants to continue
+        return;
+    }
 
-	if ( (dirBFile.exists()) && ((!dirBFile.isReadable()) || (!dirBFile.isExecutable())) && (!remoteDest) )
-	{
+    if ( (dirBFile.exists()) && ((!dirBFile.isReadable()) || (!dirBFile.isExecutable())) && (!remoteDest) )
+    {
         setTextMessages(source,dest,remoteSource,remoteDest,"warning","sync","dest-perms");
 
-		ask=TRUE;	//ask the user if he/she wants to continue
-		if (!Operation[currentOperation] -> GetByPassWARNING())
-			Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
-		else
-			NothingToDo = FALSE;
-		Operation[currentOperation] -> SetDestPerms(TRUE);
-		return;
-	}
+        ask=TRUE;	//ask the user if he/she wants to continue
+        if (!Operation[currentOperation] -> GetByPassWARNING())
+            Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
+        else
+            NothingToDo = FALSE;
+        Operation[currentOperation] -> SetDestPerms(TRUE);
+        return;
+    }
 
-	QDir dirA (source);
-	QDir dirB (dest);
-	QStringList dirAList = dirA.entryList(QDir::AllEntries | QDir::Hidden | QDir::NoDotAndDotDot);
-	QStringList dirBList = dirB.entryList(QDir::AllEntries | QDir::Hidden | QDir::NoDotAndDotDot);
-	bool dirAIsEmpty, dirBIsEmpty;
-	if (dirAList.size() == 0)
-		dirAIsEmpty = TRUE;
-	else
-		dirAIsEmpty = FALSE;
-	if (dirBList.size() == 0)
-		dirBIsEmpty = TRUE;
-	else
-		dirBIsEmpty = FALSE;
+    QDir dirA (source);
+    QDir dirB (dest);
+    QStringList dirAList = dirA.entryList(QDir::AllEntries | QDir::Hidden | QDir::NoDotAndDotDot);
+    QStringList dirBList = dirB.entryList(QDir::AllEntries | QDir::Hidden | QDir::NoDotAndDotDot);
+    bool dirAIsEmpty, dirBIsEmpty;
+    if (dirAList.size() == 0)
+        dirAIsEmpty = TRUE;
+    else
+        dirAIsEmpty = FALSE;
+    if (dirBList.size() == 0)
+        dirBIsEmpty = TRUE;
+    else
+        dirBIsEmpty = FALSE;
 
     // Check if sync dirs A & B are under /media or /mnt and belong to a mountpoint ~~~~~~~~~~~~~~~~~~~~~~~~~~~
     Operation[currentOperation] -> SetDestMounted(checkMountPoint(dest));
     Operation[currentOperation] -> SetSourceMounted(checkMountPoint(source));
     
-	//Do directories exist and are not emty ??(skip remote)								->	[ Ok ]
-	if ( ( ((dirA.exists())  && !(dirAIsEmpty)) || (remoteSource) )
-	&& (((dirB.exists()) && !(dirBIsEmpty)) ||(remoteDest) ) )
-	{
+    //Do directories exist and are not emty ??(skip remote)								->	[ Ok ]
+    if ( ( ((dirA.exists())  && !(dirAIsEmpty)) || (remoteSource) )
+    && (((dirB.exists()) && !(dirBIsEmpty)) ||(remoteDest) ) )
+    {
         setTextMessages(source,dest,remoteSource,remoteDest,"okay","sync","okay");
 
-		NothingToDo = FALSE;
-		Operation[currentOperation] -> SetOK(TRUE);
-	}
-	
-	//is one or both sync dirs non-existent ??									    ->	[ WARNING ]
-	else if ( !(dirA.exists()) || !(dirB.exists()) )
-	{
+        NothingToDo = FALSE;
+        Operation[currentOperation] -> SetOK(TRUE);
+    }
+    
+    //is one or both sync dirs non-existent ??									    ->	[ WARNING ]
+    else if ( !(dirA.exists()) || !(dirB.exists()) )
+    {
         setTextMessages(source,dest,remoteSource,remoteDest,"warning","sync","sync-not-exist");
 
-		if (!Operation[currentOperation] -> GetByPassWARNING())
-			Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
-		else
-			NothingToDo = FALSE;
-		Operation[currentOperation] -> SetWARNING(TRUE);
-		ask=TRUE;
-	}
+        if (!Operation[currentOperation] -> GetByPassWARNING())
+            Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
+        else
+            NothingToDo = FALSE;
+        Operation[currentOperation] -> SetWARNING(TRUE);
+        ask=TRUE;
+    }
 
-	//Is one or both of the directories empty ??
-	else
-	{
+    //Is one or both of the directories empty ??
+    else
+    {
         // if it is NOT mounted under /media or /mnt                                            ->  [ WARNING ]
         if ( (!Operation[currentOperation] -> GetDestMounted()) || (!Operation[currentOperation] -> GetSourceMounted()) )
         {
@@ -1195,7 +1364,7 @@ void checkSyncDirs(QString source, QString dest)
                 NothingToDo = FALSE;
         }
         ask=TRUE;   //ask the user if he/she wants to continue
-	}
+    }
 
 }
 
@@ -1203,99 +1372,99 @@ void checkSyncDirs(QString source, QString dest)
 //Check if the source and destination backup directories are empty or don't exist
 void checkBackupDirs(QString source, QString dest)
 {
-	Operation[currentOperation] -> SetOK(FALSE);
-	Operation[currentOperation] -> SetWARNING(FALSE);
-	Operation[currentOperation] -> SetCRITICAL(FALSE);
-	Operation[currentOperation] -> SetSourcePerms(FALSE);
-	Operation[currentOperation] -> SetDestPerms(FALSE);
+    Operation[currentOperation] -> SetOK(FALSE);
+    Operation[currentOperation] -> SetWARNING(FALSE);
+    Operation[currentOperation] -> SetCRITICAL(FALSE);
+    Operation[currentOperation] -> SetSourcePerms(FALSE);
+    Operation[currentOperation] -> SetDestPerms(FALSE);
     Operation[currentOperation] -> SetDestMounted(FALSE);
     Operation[currentOperation] -> SetSourceMounted(FALSE);
 
-	bool remoteSource = FALSE;
-	bool remoteDest = FALSE;
+    bool remoteSource = FALSE;
+    bool remoteDest = FALSE;
 
-	//first check if a remote source or dest is used so that to skip checks
-	if ( (Operation[currentOperation] -> GetRemote()) && (Operation[currentOperation] -> GetRemoteSource()) )
-	{
-		if (Operation[currentOperation] -> GetRemoteModule())
-			source.prepend(":");
-		source.prepend((Operation[currentOperation] -> GetRemoteHost())+":");
-		if (Operation[currentOperation] -> GetRemoteUser()!="")
-			source.prepend((Operation[currentOperation] -> GetRemoteUser())+"@");
-		remoteSource = TRUE;
-	}
-	if ( (Operation[currentOperation] -> GetRemote()) && (Operation[currentOperation] -> GetRemoteDestination()) )
-	{
-		if (Operation[currentOperation] -> GetRemoteModule())
-			dest.prepend(":");
-		dest.prepend((Operation[currentOperation] -> GetRemoteHost())+":");
-		if (Operation[currentOperation] -> GetRemoteUser()!="")
-			dest.prepend((Operation[currentOperation] -> GetRemoteUser())+"@");
-		remoteDest = TRUE;
-	}
+    //first check if a remote source or dest is used so that to skip checks
+    if ( (Operation[currentOperation] -> GetRemote()) && (Operation[currentOperation] -> GetRemoteSource()) )
+    {
+        if (Operation[currentOperation] -> GetRemoteModule())
+            source.prepend(":");
+        source.prepend((Operation[currentOperation] -> GetRemoteHost())+":");
+        if (Operation[currentOperation] -> GetRemoteUser()!="")
+            source.prepend((Operation[currentOperation] -> GetRemoteUser())+"@");
+        remoteSource = TRUE;
+    }
+    if ( (Operation[currentOperation] -> GetRemote()) && (Operation[currentOperation] -> GetRemoteDestination()) )
+    {
+        if (Operation[currentOperation] -> GetRemoteModule())
+            dest.prepend(":");
+        dest.prepend((Operation[currentOperation] -> GetRemoteHost())+":");
+        if (Operation[currentOperation] -> GetRemoteUser()!="")
+            dest.prepend((Operation[currentOperation] -> GetRemoteUser())+"@");
+        remoteDest = TRUE;
+    }
 
-	//If user does not have sufficient permissions for the source or dest, skip it
-	QFileInfo destFile(dest);
-	QFileInfo sourceFile(source);
+    //If user does not have sufficient permissions for the source or dest, skip it
+    QFileInfo destFile(dest);
+    QFileInfo sourceFile(source);
 
-	if ( (sourceFile.exists()) && ((!sourceFile.isReadable()) || (!sourceFile.isExecutable())) && (!remoteSource) )
-	{
+    if ( (sourceFile.exists()) && ((!sourceFile.isReadable()) || (!sourceFile.isExecutable())) && (!remoteSource) )
+    {
         setTextMessages(source,dest,remoteSource,remoteDest,"warning","backup","source-perms");
 
-		if (!Operation[currentOperation] -> GetByPassWARNING())
-			Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
-		else
-			NothingToDo = FALSE;
+        if (!Operation[currentOperation] -> GetByPassWARNING())
+            Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
+        else
+            NothingToDo = FALSE;
 
-		ask=TRUE;	//ask the user if he/she wants to continue
-		Operation[currentOperation] -> SetSourcePerms(TRUE);
-		return;
-	}
+        ask=TRUE;	//ask the user if he/she wants to continue
+        Operation[currentOperation] -> SetSourcePerms(TRUE);
+        return;
+    }
 
-	if ( (destFile.exists()) && ((!destFile.isReadable()) || (!destFile.isExecutable())) && (!remoteDest) )
-	{
+    if ( (destFile.exists()) && ((!destFile.isReadable()) || (!destFile.isExecutable())) && (!remoteDest) )
+    {
         setTextMessages(source,dest,remoteSource,remoteDest,"warning","backup","dest-perms");
 
-		if (!Operation[currentOperation] -> GetByPassWARNING())
-			Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
-		else
-			NothingToDo = FALSE;
-		ask=TRUE;	//ask the user if he/she wants to continue
-		Operation[currentOperation] -> SetDestPerms(TRUE);
-		return;
-	}
+        if (!Operation[currentOperation] -> GetByPassWARNING())
+            Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
+        else
+            NothingToDo = FALSE;
+        ask=TRUE;	//ask the user if he/she wants to continue
+        Operation[currentOperation] -> SetDestPerms(TRUE);
+        return;
+    }
 
-	QDir sourceDir (source);
-	QDir destDir (dest);
-	QStringList sourceList = sourceDir.entryList(QDir::AllEntries | QDir::Hidden | QDir::NoDotAndDotDot);
-	QStringList destList = destDir.entryList(QDir::AllEntries | QDir::Hidden | QDir::NoDotAndDotDot);
-	bool SourceIsEmpty, DestIsEmpty;
-	if (sourceList.size() == 0)
-		SourceIsEmpty = TRUE;
-	else
-		SourceIsEmpty = FALSE;
-	if (destList.size() == 0)
-		DestIsEmpty = TRUE;
-	else
-		DestIsEmpty = FALSE;
+    QDir sourceDir (source);
+    QDir destDir (dest);
+    QStringList sourceList = sourceDir.entryList(QDir::AllEntries | QDir::Hidden | QDir::NoDotAndDotDot);
+    QStringList destList = destDir.entryList(QDir::AllEntries | QDir::Hidden | QDir::NoDotAndDotDot);
+    bool SourceIsEmpty, DestIsEmpty;
+    if (sourceList.size() == 0)
+        SourceIsEmpty = TRUE;
+    else
+        SourceIsEmpty = FALSE;
+    if (destList.size() == 0)
+        DestIsEmpty = TRUE;
+    else
+        DestIsEmpty = FALSE;
     
     // Check if source & dest are under /media or /mnt and belong to a mountpoint ~~~~~~~~~~~~~~~~~~~~~~~~~~~
     Operation[currentOperation] -> SetDestMounted(checkMountPoint(dest));
     Operation[currentOperation] -> SetSourceMounted(checkMountPoint(source));
 
-	//Does the source directory exist and it is not empty OR we're using remote source?? 
-	if  ( ((sourceDir.exists())  && !(SourceIsEmpty)) || (remoteSource) )
-	{
-		//Does the destination directory exist and it is not empty ?? 								->	[ Ok ]
-		if ( ((destDir.exists())  && !(DestIsEmpty)) || (remoteDest) )
-		{
+    //Does the source directory exist and it is not empty OR we're using remote source?? 
+    if  ( ((sourceDir.exists())  && !(SourceIsEmpty)) || (remoteSource) )
+    {
+        //Does the destination directory exist and it is not empty ?? 								->	[ Ok ]
+        if ( ((destDir.exists())  && !(DestIsEmpty)) || (remoteDest) )
+        {
             setTextMessages(source,dest,remoteSource,remoteDest,"okay","backup","okay");
-			
-			Operation[currentOperation] -> SetOK(TRUE);
-			NothingToDo = FALSE;
-		}
-		else //The destination directory does not exist or it is empty							
-		{
+            
+            Operation[currentOperation] -> SetOK(TRUE);
+            NothingToDo = FALSE;
+        }
+        else //The destination directory does not exist or it is empty							
+        {
             // A partition is NOT mounted under /media or /mnt                                     ->  [WARNING ]
             if (!Operation[currentOperation] -> GetDestMounted())
             {
@@ -1318,19 +1487,19 @@ void checkBackupDirs(QString source, QString dest)
                 if (SkipCritical)						// if a --skip-critical is given as argument
                     Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation
             }
-		}
-	}
-	else //The source directory does not exist or it is empty								->	[WARNING ]
-	{
+        }
+    }
+    else //The source directory does not exist or it is empty								->	[WARNING ]
+    {
         setTextMessages(source,dest,remoteSource,remoteDest,"warning","backup","source-not-exist");
 
-		if (!Operation[currentOperation] -> GetByPassWARNING())
-			Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
-		else
-			NothingToDo = FALSE;
-		Operation[currentOperation] -> SetWARNING(TRUE);
-		ask=TRUE;	//ask the user if he/she wants to continue
-	}
+        if (!Operation[currentOperation] -> GetByPassWARNING())
+            Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
+        else
+            NothingToDo = FALSE;
+        Operation[currentOperation] -> SetWARNING(TRUE);
+        ask=TRUE;	//ask the user if he/she wants to continue
+    }
 
 }
 
@@ -1338,289 +1507,344 @@ void checkBackupDirs(QString source, QString dest)
 //function to append "arguments" object at a given operation according to the fields of the modify window
 QStringList AppendArguments(operation *operationToAppend)
 {
-	QStringList arguments; int count;
-	int operationToAppendCurrentSnaps = operationToAppend -> GetSnapshotsListSize();	// this is the current number of snapshots
-	int operationToAppendMaxSnaps = operationToAppend -> GetKeepSnapshots();		// this is the max number of snapshots to keep
-	
-	arguments << "-h" << "--progress" << "--stats";	//These are the standard arguments used by rsync
+    QStringList arguments; int count;
+    int operationToAppendCurrentSnaps = operationToAppend -> GetSnapshotsListSize();	// this is the current number of snapshots
+    int operationToAppendMaxSnaps = operationToAppend -> GetKeepSnapshots();		// this is the max number of snapshots to keep
+    
+    arguments << "-h" << "--progress" << "--stats";	//These are the standard arguments used by rsync
 
-	//add rsync arguments	--------------------------------------------------------------------------------------------------
-	if (operationToAppend -> GetOptionsRecurse())		arguments.append("-r");
-	if (operationToAppend -> GetOptionsFATntfs())
-	{
-		arguments.append("-t");
-		arguments.append("--modify-window=1");
-	}
-	else
-	{
-		if (operationToAppend -> GetOptionsOwnership())		arguments.append("-tgo");
-		if (operationToAppend -> GetOptionsPermissions())	arguments.append("-p");
-	}
-	if (operationToAppend -> GetOptionsSymlinks())		arguments.append("-l");
-	if (operationToAppend -> GetOptionsDevices())		arguments.append("-D");
-	if (operationToAppend -> GetOptionsCVS())		arguments.append("-C");
-	if (operationToAppend -> GetOptionsHardLinks())		arguments.append("-H");
-	if (operationToAppend -> GetOptionsUpdate())		arguments.append("--update");
-	if (operationToAppend -> GetOptionsDelete())		arguments.append("--delete-after");
-	count =0;
-	while ( count < (operationToAppend -> GetOptionsListSize()) )
-	{
-		arguments.append(operationToAppend -> GetOptionsListItem(count));
-		count++;
-	}
-	
-	//add included items------------------------------------------------------------------------------
-	if (operationToAppend -> GetInclude())
-	{
-		// from file
-		if ( (operationToAppend -> GetIncludeFromFile()) && !(operationToAppend -> GetIncludeFile()=="") )
-			arguments.append("--include-from=" + (operationToAppend -> GetIncludeFile()) );
-		// from "only include" tab
-		count =0;
-		while ( count < (operationToAppend -> GetIncludeListSize()) )
-		{
-			arguments.append("--include=" + (operationToAppend -> GetIncludeListItem(count)) );
-			count++;
-		}
-		// if "Only Include" mode is used add the following
-		if (!operationToAppend -> GetIncludeModeNormal())
-		{
-			arguments.append("--include=*/");
-			arguments.append("--exclude=*");
-			arguments.append("--prune-empty-dirs");
-		}
-	}
-	
-	//add excluded items------------------------------------------------------------------------------
-	if (operationToAppend -> GetExclude())
-	{
-		if (operationToAppend -> GetOptionsDelete())	arguments.append("--delete-excluded");
-		if ( (operationToAppend -> GetExcludeFromFile()) && !(operationToAppend -> GetExcludeFile()=="") )
-			arguments.append("--exclude-from=" + (operationToAppend -> GetExcludeFile()) );
-		if (operationToAppend -> GetExcludeTemp())	arguments.append("--exclude=**/*tmp*/");
-		if (operationToAppend -> GetExcludeCache()){	arguments.append("--exclude=**/*cache*/");
-								arguments.append("--exclude=**/*Cache*/");}
-		if (operationToAppend -> GetExcludeBackup())	arguments.append("--exclude=**~");
-		if (operationToAppend -> GetExcludeMount()){	arguments.append("--exclude=/mnt/*/**");
-								arguments.append("--exclude=/media/*/**");}
-		if (operationToAppend -> GetExcludeLostFound())	arguments.append("--exclude=**/lost+found*/");
-		if (operationToAppend -> GetExcludeSystem()){	arguments.append("--exclude=/var/**");
-								arguments.append("--exclude=/proc/**");
-								arguments.append("--exclude=/dev/**");
-								arguments.append("--exclude=/sys/**");}
-		if (operationToAppend -> GetExcludeTrash()){	arguments.append("--exclude=**/*Trash*/");
-								arguments.append("--exclude=**/*trash*/");}
-	
-		//also read the custom exclude list
-		count =0;
-		while ( count < (operationToAppend -> GetExcludeListSize()) )
-		{
-			arguments.append("--exclude=" + (operationToAppend -> GetExcludeListItem(count)) );
-			count++;
-		}
-	}
+    //add rsync arguments	--------------------------------------------------------------------------------------------------
+    if (operationToAppend -> GetOptionsRecurse())		arguments.append("-r");
+    if (operationToAppend -> GetOptionsFATntfs())
+    {
+        arguments.append("-t");
+        arguments.append("--modify-window=1");
+    }
+    else
+    {
+        if (operationToAppend -> GetOptionsOwnership())		arguments.append("-tgo");
+        if (operationToAppend -> GetOptionsPermissions())	arguments.append("-p");
+    }
+    if (operationToAppend -> GetOptionsSymlinks())		arguments.append("-l");
+    if (operationToAppend -> GetOptionsDevices())		arguments.append("-D");
+    if (operationToAppend -> GetOptionsCVS())		arguments.append("-C");
+    if (operationToAppend -> GetOptionsHardLinks())		arguments.append("-H");
+    if (operationToAppend -> GetOptionsUpdate())		arguments.append("--update");
+    if (operationToAppend -> GetOptionsDelete())		arguments.append("--delete-after");
+    count =0;
+    while ( count < (operationToAppend -> GetOptionsListSize()) )
+    {
+        arguments.append(operationToAppend -> GetOptionsListItem(count));
+        count++;
+    }
+    
+    //add included items------------------------------------------------------------------------------
+    if (operationToAppend -> GetInclude())
+    {
+        // from file
+        if ( (operationToAppend -> GetIncludeFromFile()) && !(operationToAppend -> GetIncludeFile()=="") )
+            arguments.append("--include-from=" + (operationToAppend -> GetIncludeFile()) );
+        // from "only include" tab
+        count =0;
+        while ( count < (operationToAppend -> GetIncludeListSize()) )
+        {
+            arguments.append("--include=" + (operationToAppend -> GetIncludeListItem(count)) );
+            count++;
+        }
+        // if "Only Include" mode is used add the following
+        if (!operationToAppend -> GetIncludeModeNormal())
+        {
+            arguments.append("--include=*/");
+            arguments.append("--exclude=*");
+            arguments.append("--prune-empty-dirs");
+        }
+    }
+    
+    //add excluded items (unless "only include" is used)------------------------------------------------------------------------------
+    if ( (operationToAppend -> GetExclude()) && (operationToAppend -> GetIncludeModeNormal()) )
+    {
+        if (operationToAppend -> GetOptionsDelete())	arguments.append("--delete-excluded");
+        if ( (operationToAppend -> GetExcludeFromFile()) && !(operationToAppend -> GetExcludeFile()=="") )
+            arguments.append("--exclude-from=" + (operationToAppend -> GetExcludeFile()) );
+        if (operationToAppend -> GetExcludeTemp())	arguments.append("--exclude=**/*tmp*/");
+        if (operationToAppend -> GetExcludeCache()){	arguments.append("--exclude=**/*cache*/");
+                                arguments.append("--exclude=**/*Cache*/");}
+        if (operationToAppend -> GetExcludeBackup())	arguments.append("--exclude=**~");
+        if (operationToAppend -> GetExcludeMount()){	arguments.append("--exclude=/mnt/*/**");
+                                arguments.append("--exclude=/media/*/**");}
+        if (operationToAppend -> GetExcludeLostFound())	arguments.append("--exclude=**/lost+found*/");
+        if (operationToAppend -> GetExcludeSystem()){	arguments.append("--exclude=/var/**");
+                                arguments.append("--exclude=/proc/**");
+                                arguments.append("--exclude=/dev/**");
+                                arguments.append("--exclude=/sys/**");}
+        if (operationToAppend -> GetExcludeTrash()){	arguments.append("--exclude=**/*Trash*/");
+                                arguments.append("--exclude=**/*trash*/");}
+        if (operationToAppend -> GetExcludeGVFS()) {    arguments.append("--exclude=**/.gvfs/");}
+    
+        //also read the custom exclude list
+        count =0;
+        while ( count < (operationToAppend -> GetExcludeListSize()) )
+        {
+            arguments.append("--exclude=" + (operationToAppend -> GetExcludeListItem(count)) );
+            count++;
+        }
+    }
 
-	//set temp strings sourceString & destString accordingly if groupbox "remote" is checked--------------------------------------------
-	//also add -e ssh if "ssh" is checked & --password-file=FILE
-	// WARNING: if you change something here, also change it in executenow.cpp when removing older snapshopt data
-	QString sourceString, destString, remoteHost = "";	//temp strings
-	if (operationToAppend -> GetRemote())
-	{
-		if (operationToAppend -> GetRemoteUser() != "")	//append remote user@ if applicable to temp string
-			remoteHost.append(operationToAppend -> GetRemoteUser() + "@");
+    //set temp strings sourceString & destString accordingly if groupbox "remote" is checked--------------------------------------------
+    //also add -e ssh if "ssh" is checked & --password-file=FILE
+    // WARNING: if you change something here, also change it in executenow.cpp when removing older snapshopt data
+    QString sourceString, destString, remoteHost = "";	//temp strings
+    if (operationToAppend -> GetRemote())
+    {
+        if (operationToAppend -> GetRemoteUser() != "")	//append remote user@ if applicable to temp string
+            remoteHost.append(operationToAppend -> GetRemoteUser() + "@");
 
-		if (operationToAppend -> GetRemoteModule())	//append remote host: (or :: if it's a module) to temp string
-		{
-			remoteHost.append(operationToAppend -> GetRemoteHost() + "::");
-			//add --password-file=FILE if password file lineEdit is not empty
-			if (operationToAppend -> GetRemotePassword() != "")
-				arguments.append("--password-file=" + (operationToAppend -> GetRemotePassword()) );
-		}
-		else
-			remoteHost.append(operationToAppend -> GetRemoteHost() + ":");
+        if (operationToAppend -> GetRemoteModule())	//append remote host: (or :: if it's a module) to temp string
+        {
+            remoteHost.append(operationToAppend -> GetRemoteHost() + "::");
+            //add --password-file=FILE if password file lineEdit is not empty
+            if (operationToAppend -> GetRemotePassword() != "")
+                arguments.append("--password-file=" + (operationToAppend -> GetRemotePassword()) );
+        }
+        else
+            remoteHost.append(operationToAppend -> GetRemoteHost() + ":");
 
-		if (operationToAppend -> GetRemoteDestination())	//set temp source & destination strings
-		{	remoteHost.append(operationToAppend -> GetDestination());
-			destString = remoteHost;
-			sourceString 	= operationToAppend -> GetSource();}
-		else {	remoteHost.append(operationToAppend -> GetSource());
-			sourceString = remoteHost;
-			destString 	= operationToAppend -> GetDestination();}
+        if (operationToAppend -> GetRemoteDestination())	//set temp source & destination strings
+        {
+            remoteHost.append(operationToAppend -> GetDestination());
+            destString = remoteHost;
+            sourceString 	= operationToAppend -> GetSource();
+            if (WINrunning) // Bruce patch condition for winpaths~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            {
+                //fix source (chich is local)
+                QString drive;
+                drive = sourceString[0];
+                drive = drive.toLower();
+                sourceString = sourceString.replace(0,3,"/cygdrive/"+drive+"/").replace("\\","/");
+            }
+        }
+        else 
+        {
+            remoteHost.append(operationToAppend -> GetSource());
+            sourceString = remoteHost;
+            
+            destString 	= operationToAppend -> GetDestination();
+            if (WINrunning) // Bruce patch condition for winpaths~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            {
+                //fix destination (hich is local)
+                QString drive;
+                drive = destString[0];
+                drive = drive.toLower();
+                destString = destString.replace(0,3,"/cygdrive/"+drive+"/").replace("\\","/");
+            }
+        }
 
-		//add argument for ssh if the checkbox is checked & ssh keyfile
-		if (operationToAppend -> GetRemoteSSH())
-		{
-			if (operationToAppend -> GetRemoteSSHPassword() != "")
-				//arguments.append("-e \"ssh -i " + uiM.lineEdit_sshPassword -> text() + "\"");
-				if (operationToAppend -> GetRemoteSSHPort() != 0)
-					arguments.append("-e ssh -i " + operationToAppend -> GetRemoteSSHPassword() +
-							" -p " + countStr.setNum(operationToAppend -> GetRemoteSSHPort()) );
-				else
-					arguments.append("-e ssh -i " + operationToAppend -> GetRemoteSSHPassword());
-			else
-				if (operationToAppend -> GetRemoteSSHPort() != 0)
-					arguments.append("-e ssh -p " + countStr.setNum(operationToAppend -> GetRemoteSSHPort()) );
-				else
-					arguments.append("-e ssh");
-		}
-	}	
-	else		//Operate locally----------------------------------------------------------------------------------------
-	{
-		sourceString 	= operationToAppend -> GetSource();
-		destString 	= operationToAppend -> GetDestination();
-	}
+        //add argument for ssh if the checkbox is checked & ssh keyfile
+        if (operationToAppend -> GetRemoteSSH())
+        {
+            if (operationToAppend -> GetRemoteSSHPassword() != "")
+                //arguments.append("-e \"ssh -i " + uiM.lineEdit_sshPassword -> text() + "\"");
+                if (operationToAppend -> GetRemoteSSHPort() != 0)
+                    arguments.append("-e "+sshCommandPath+" -i " + operationToAppend -> GetRemoteSSHPassword() +
+                            " -p " + countStr.setNum(operationToAppend -> GetRemoteSSHPort()) );
+                else
+                    arguments.append("-e "+sshCommandPath+" -i " + operationToAppend -> GetRemoteSSHPassword());
+            else
+                if (operationToAppend -> GetRemoteSSHPort() != 0)
+                    arguments.append("-e "+sshCommandPath+" -p " + countStr.setNum(operationToAppend -> GetRemoteSSHPort()) );
+                else
+                    arguments.append("-e "+sshCommandPath);
+        }
+    }	
+    else		//Operate locally----------------------------------------------------------------------------------------
+    {
+        sourceString    = operationToAppend -> GetSource();
+        destString      = operationToAppend -> GetDestination();
+        
+        // Bruce patch condition for winpaths~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // convert path to cygwin paths, change any \ to / :)
+        if (WINrunning)
+        {
+            //fix source
+            QString drive;
+            drive = sourceString[0];
+            drive = drive.toLower();
+            sourceString = sourceString.replace(0,3,"/cygdrive/"+drive+"/").replace("\\","/");
 
-	//add snapshot arguments - do not perform this if the function is called when "validate" button pressed
-	//perform this if more than 1 snapshot is already made
-	if  ( (operationToAppendCurrentSnaps > 1) && (!validation) )
-	{
-		//fix source and dest for snapshots directory
-		QString snapSource=sourceString;	QString snapDest=destString;	//temp variables
-		
-        if ((snapDest.contains(":")) && (!OS2running) )// this is normal for a remote directory (not for OS/2: eg c:\)
-		{
-				snapDest = snapDest.right(snapDest.size()-snapDest.lastIndexOf(":")-1);	//this is the remote dest dir without the remote pc
-				snapDest = "";
-		}
+            //fix destination
+            drive = destString[0];
+            drive = drive.toLower();
+            destString = destString.replace(0,3,"/cygdrive/"+drive+"/").replace("\\","/");
+        }
+        // Bruce patch end ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+    }
+    //add snapshot arguments - do not perform this if the function is called when "validate" button pressed
+    //perform this if more than 1 snapshot is already made
+    if  ( (operationToAppendCurrentSnaps > 1) && (!validation) )
+    {
+        //fix source and dest for snapshots directory
+        QString snapSource=sourceString;	QString snapDest=destString;	//temp variables
+        
+        if ((snapDest.contains(":")) && (!notXnixRunning))// this is normal for a remote directory (not for OS/2 or win: eg c:\)
+        {
+                snapDest = snapDest.right(snapDest.size()-snapDest.lastIndexOf(":")-1);	//this is the remote dest dir without the remote pc
+                snapDest = "";
+        }
 
-		if (!snapSource.endsWith(SLASH))	// this means task is of type "backup dir by name"
-		{
-			QString sourceLast = snapSource;
-			if ((sourceLast.contains(":")) && (!OS2running) )	// this is normal for a remote directory (not for OS/2: eg c:\)
-				sourceLast = sourceLast.right(snapSource.size()-sourceLast.lastIndexOf(":")-1);	//this is the remote source dir without the remote pc
-			if (snapSource.contains(SLASH))	// this is normal for a directory unless it is remote
-				sourceLast = sourceLast.right(snapSource.size()-sourceLast.lastIndexOf(SLASH)-1);	//this is the lowest dir of source
-			snapSource.append(SLASH);
-			
-			snapDest.append(sourceLast + SLASH);
-		}
-		QString prevSnapDateTime = operationToAppend -> GetSnapshotsListItem(operationToAppendCurrentSnaps-2);
-		
-		QString prevSnapDir = snapDest + snapDefaultDir + prevSnapDateTime + SLASH;	// This is where the deleted files (== previous snapshot) will go
-		if (OS2running)
-            prevSnapDir.replace(SLASH,"/");
-		
-		// add arguments to backup files to be be deleted inside the snapshot direcotry
-		arguments.append("--backup");
-		arguments.append("--backup-dir=" + prevSnapDir);
+        if (!snapSource.endsWith(SLASH))	// this means task is of type "backup dir by name"
+        {
+            QString sourceLast = snapSource;
+            if ((sourceLast.contains(":")) && (!notXnixRunning) )	// this is normal for a remote directory (not for OS/2 or win: eg c:\)
+                sourceLast = sourceLast.right(snapSource.size()-sourceLast.lastIndexOf(":")-1);	//this is the remote source dir without the remote pc
+            if (snapSource.contains(SLASH))	// this is normal for a directory unless it is remote
+                sourceLast = sourceLast.right(snapSource.size()-sourceLast.lastIndexOf(SLASH)-1);	//this is the lowest dir of source
+            snapSource.append(SLASH);
+            
+            snapDest.append(sourceLast + SLASH);
+        }
+        QString prevSnapDateTime = operationToAppend -> GetSnapshotsListItem(operationToAppendCurrentSnaps-2);
+        
+        QString prevSnapDir = snapDest + snapDefaultDir + prevSnapDateTime + SLASH;	// This is where the deleted files (== previous snapshot) will go
+        if (notXnixRunning)
+            prevSnapDir.replace("/",SLASH);
+        
+        // add arguments to backup files to be be deleted inside the snapshot direcotry
+        arguments.append("--backup");
+        arguments.append("--backup-dir=" + prevSnapDir);
+    }
+    
+    // protect the snapshots directories from being deleted. Do nothing for older snapshots dirs
+    // This is outside the condition because the snapDefaultDir also contains the backup of the profile + logs + snaps
+    if (!validation)
+        arguments.append("--filter=protect " + snapDefaultDir);
+    
+    // keep snapshot changes files only for backup task types, not sync
+    if ( (!validation) && (operationToAppendMaxSnaps > 1) )
+    {
+        //Define a file to log new files transfered so that to exclude these when restoring previous snapshots
+        arguments.append("--log-file=" + snapchangesfilename);
+        arguments.append("--log-file-format=" + snapChangesString);
+    }
+    
+    //set source & destination according to sourceString & destString ---------------------------------------------------------
+    /*if (operationToAppend -> GetRemote())   // if this task uses remote escape the spaces with an escape character.
+    {
+        sourceString.replace(" ","\\ ");
+        destString.replace(" ","\\ ");
+    }*/
+    arguments.append(sourceString);
+    arguments.append(destString);
 
-		// protect the snapshots directories from being deleted. Do nothing for older snapshots dirs
-		arguments.append("--filter=protect " + snapDefaultDir);
-	}
-	
-	// keep snapshot changes files only for backup task types, not sync
-	if ( (!validation) && (operationToAppendMaxSnaps > 1) )
-	{
-		//Define a file to log new files transfered so that to exclude these when restoring previous snapshots
-		arguments.append("--log-file=" + snapchangesfilename);
-		arguments.append("--log-file-format=" + snapChangesString);
-	}
-	
-	//set source & destination according to sourceString & destString ---------------------------------------------------------
-	arguments.append(sourceString);
-	arguments.append(destString);
-
-	return arguments;
+    return arguments;
 }
 
 // logFileUpdate =====================================================================================================================================
 // Updates the current logfile with some string
 QString logFileUpdate(QString appendTYPE, QString appendTHIS, int currentPrePost)
 {
-	QTextStream out(&logfile);
-	QString dirA = Operation[currentOperation] -> GetSource();
-	QString dirB = Operation[currentOperation] -> GetDestination();
-	
-	if (appendTYPE == "pre-starting")
-		appendTHIS = "\n<font color=magenta>" +
-			QObject::tr("pre-task execution of command","Full phrase: pre-task execution of command: <COMMAND> starting")+
-			"	: <b>" + Operation[currentOperation] -> GetExecuteBeforeListItem(currentPrePost) +
-			"</b>, "+ QObject::tr("starting","Full phrase: pre-task execution of command: <COMMAND> starting")+"</font>\n";
+    QTextStream out(&logfile);
+    QString dirA = Operation[currentOperation] -> GetSource();
+    QString dirB = Operation[currentOperation] -> GetDestination();
+    
+    if (appendTYPE == "pre-starting")
+        appendTHIS = "\n<font color=magenta>" +
+            QObject::tr("pre-task execution of command","Full phrase: pre-task execution of command: <COMMAND> starting")+
+            "	: <b>" + Operation[currentOperation] -> GetExecuteBeforeListItem(currentPrePost) +
+            "</b>, "+ QObject::tr("starting","Full phrase: pre-task execution of command: <COMMAND> starting")+"</font>\n";
 
-	if (appendTYPE == "post-starting")
-		appendTHIS = "\n<font color=magenta>" +
-			QObject::tr("post-task execution of command","Full phrase: post-task execution of command: <COMMAND> starting")+
-			"	: <b>" + Operation[currentOperation] -> GetExecuteAfterListItem(currentPrePost) +
-			"</b>, "+QObject::tr("starting","Full phrase: post-task execution of command: <COMMAND> starting")+"</font>\n";
-	
-	if (appendTYPE == "rsync-starting-backup")
-		appendTHIS = "\n=====================================<br><font color=magenta>" +
-				QObject::tr("execution of task","Full phrase: execution of task: <TASKNAME> starting")+
-				"	: <b>" + Operation[currentOperation] -> GetName() +
-				"</b>, "+QObject::tr("starting","Full phrase: execution of task: <TASKNAME> starting")+"</font><br>"+
-				QObject::tr("Source","Full phrase: source: <SOURCE_NAME")+"	: <b><font color=blue>" + dirA +
-				"</font></b><br>"+QObject::tr("Destination","Full phrase: Destination: <DEST_NAME")+
-				"	: <b><font color=blue>" + dirB + "</font></b>\n";
+    if (appendTYPE == "repeat-on-fail")
+        appendTHIS = "\n<font color=cyan>&nbsp;&nbsp;&nbsp;&nbsp;-----| " +
+            QObject::tr("Command re-run due to failure","This means that a specific command is run for once more because it failed the first time")+
+                    " |-----</font>\n";
+            
+    if (appendTYPE == "post-starting")
+        appendTHIS = "\n<font color=magenta>" +
+            QObject::tr("post-task execution of command","Full phrase: post-task execution of command: <COMMAND> starting")+
+            "	: <b>" + Operation[currentOperation] -> GetExecuteAfterListItem(currentPrePost) +
+            "</b>, "+QObject::tr("starting","Full phrase: post-task execution of command: <COMMAND> starting")+"</font>\n";
+    
+    if (appendTYPE == "rsync-starting-backup")
+        appendTHIS = "\n=====================================<br><font color=magenta>" +
+                QObject::tr("execution of task","Full phrase: execution of task: <TASKNAME> starting")+
+                "	: <b>" + Operation[currentOperation] -> GetName() +
+                "</b>, "+QObject::tr("starting","Full phrase: execution of task: <TASKNAME> starting")+"</font><br>"+
+                QObject::tr("Source","Full phrase: source: <SOURCE_NAME")+"	: <b><font color=blue>" + dirA +
+                "</font></b><br>"+QObject::tr("Destination","Full phrase: Destination: <DEST_NAME")+
+                "	: <b><font color=blue>" + dirB + "</font></b>\n";
 
-	if (appendTYPE == "rsync-starting-syncAB")
-		appendTHIS = "\n=====================================<br><font color=magenta>" +
-				QObject::tr("execution of 1st part of task","Full phrase: execution of 1st part of task: <TASKNAME> starting")+
-				"	: <b>" + Operation[currentOperation] -> GetName() +
-				"</b>, "+QObject::tr("starting","Full phrase: execution of 1st part of task: <TASKNAME> starting")+"</font><br>"+
-				QObject::tr("Syncing","Full phrase: Syncing <DIR-A> to <DIR-B>")+"	: <b><font color=blue>" + dirA +
-				"</font></b><br>"+QObject::tr("to","Full phrase: Syncing <DIR-A> to <DIR-B>")+
-				"	: <b><font color=blue>" + dirB + "</font></b>\n";
-		
-	if (appendTYPE == "rsync-starting-syncBA")
-		appendTHIS = "\n=====================================<br><font color=magenta>" +
-				QObject::tr("execution of 2nd part of task","Full phrase: execution of 2nd part of task: <TASKNAME> starting")+
-				"	: <b>" + Operation[currentOperation] -> GetName() +
-				"</b>, "+QObject::tr("starting","Full phrase: execution of 2nd part of task: <TASKNAME> starting")+"</font><br>"+
-				QObject::tr("Syncing","Full phrase: Syncing <DIR-B> to <DIR-A>")+"	: <b><font color=blue>" + dirB +
-				"</font></b><br>"+QObject::tr("to","Full phrase: Syncing <DIR-B> to <DIR-A>")+"	: <b><font color=blue>" + dirA + "</font></b>\n";
+    if (appendTYPE == "rsync-starting-syncAB")
+        appendTHIS = "\n=====================================<br><font color=magenta>" +
+                QObject::tr("execution of 1st part of task","Full phrase: execution of 1st part of task: <TASKNAME> starting")+
+                "	: <b>" + Operation[currentOperation] -> GetName() +
+                "</b>, "+QObject::tr("starting","Full phrase: execution of 1st part of task: <TASKNAME> starting")+"</font><br>"+
+                QObject::tr("Syncing","Full phrase: Syncing <DIR-A> to <DIR-B>")+"	: <b><font color=blue>" + dirA +
+                "</font></b><br>"+QObject::tr("to","Full phrase: Syncing <DIR-A> to <DIR-B>")+
+                "	: <b><font color=blue>" + dirB + "</font></b>\n";
+        
+    if (appendTYPE == "rsync-starting-syncBA")
+        appendTHIS = "\n=====================================<br><font color=magenta>" +
+                QObject::tr("execution of 2nd part of task","Full phrase: execution of 2nd part of task: <TASKNAME> starting")+
+                "	: <b>" + Operation[currentOperation] -> GetName() +
+                "</b>, "+QObject::tr("starting","Full phrase: execution of 2nd part of task: <TASKNAME> starting")+"</font><br>"+
+                QObject::tr("Syncing","Full phrase: Syncing <DIR-B> to <DIR-A>")+"	: <b><font color=blue>" + dirB +
+                "</font></b><br>"+QObject::tr("to","Full phrase: Syncing <DIR-B> to <DIR-A>")+"	: <b><font color=blue>" + dirA + "</font></b>\n";
 
-	if (appendTYPE == "pre-finished")
-		appendTHIS = "\n<font color=magenta>" +
-			QObject::tr("pre-task execution of command","Full phrase: pre-task execution of COMMAND: <COMMANDNAME> finished")+
-			"	: <b>" + Operation[currentOperation] -> GetExecuteBeforeListItem(currentPrePost) +
-			"</b>, "+QObject::tr("finished","Full phrase: pre-task execution of COMMAND: <COMMANDNAME> finished")+"</font>\n";
-	
-	if (appendTYPE == "post-finished")
-		appendTHIS = "\n<font color=magenta>" +
-			QObject::tr("post-task execution of command","Full phrase: post-task execution of COMMAND: <COMMANDNAME> finished")+
-			"	: <b>" + Operation[currentOperation] -> GetExecuteAfterListItem(currentPrePost) +
-			"</b>, "+QObject::tr("finished","Full phrase: post-task execution of COMMAND: <COMMANDNAME> finished")+"</font><br>";
+    if (appendTYPE == "pre-finished")
+        appendTHIS = "\n<font color=magenta>" +
+            QObject::tr("pre-task execution of command","Full phrase: pre-task execution of COMMAND: <COMMANDNAME> finished")+
+            "	: <b>" + Operation[currentOperation] -> GetExecuteBeforeListItem(currentPrePost) +
+            "</b>, "+QObject::tr("finished","Full phrase: pre-task execution of COMMAND: <COMMANDNAME> finished")+"</font>\n";
+    
+    if (appendTYPE == "post-finished")
+        appendTHIS = "\n<font color=magenta>" +
+            QObject::tr("post-task execution of command","Full phrase: post-task execution of COMMAND: <COMMANDNAME> finished")+
+            "	: <b>" + Operation[currentOperation] -> GetExecuteAfterListItem(currentPrePost) +
+            "</b>, "+QObject::tr("finished","Full phrase: post-task execution of COMMAND: <COMMANDNAME> finished")+"</font><br>";
 
-	if (appendTYPE == "rsync-finished-sync1")
-		appendTHIS = "\n<font color=magenta>" +
-				QObject::tr("execution of 1st part of task","Full phrase: execution of 1st part of task: <TASKNAME> finished")+
-				"	: <b>" + Operation[currentOperation] -> GetName() +
-				"</b>, "+QObject::tr("finished","Full phrase: execution of 1st part of task: <TASKNAME> finished") +
-				"</font><br>=====================================<br>";
+    if (appendTYPE == "rsync-finished-sync1")
+        appendTHIS = "\n<font color=magenta>" +
+                QObject::tr("execution of 1st part of task","Full phrase: execution of 1st part of task: <TASKNAME> finished")+
+                "	: <b>" + Operation[currentOperation] -> GetName() +
+                "</b>, "+QObject::tr("finished","Full phrase: execution of 1st part of task: <TASKNAME> finished") +
+                "</font><br>=====================================<br>";
 
-	if (appendTYPE == "rsync-finished")
-		appendTHIS = "\n<font color=magenta>" +
-				QObject::tr("execution of task","Full phrase: execution of task: <TASKNAME> finished")+
-				"	: <b>" + Operation[currentOperation] -> GetName() +
-				"</b>, "+QObject::tr("finished","Full phrase: execution of task: <TASKNAME> finished") +
-				"</font>\n=====================================<br>";
-				
-	if (appendTYPE == "pre-task-exited-with-error")
-		appendTHIS = "\n<font color=magenta>" +
-				QObject::tr("execution of task","Full phrase: execution of task: <TASKNAME> finished because of pre/post task command execution error")+
-				"	: <b>" + Operation[currentOperation] -> GetName() +
-				"</b>, "+QObject::tr("finished because of pre/post task command execution error",
-						     "Full phrase: execution of task: <TASKNAME> finished because of pre/post task command execution error") +
-				"</font>\n=====================================<br>";
+    if (appendTYPE == "rsync-finished")
+        appendTHIS = "\n<font color=magenta>" +
+                QObject::tr("execution of task","Full phrase: execution of task: <TASKNAME> finished")+
+                "	: <b>" + Operation[currentOperation] -> GetName() +
+                "</b>, "+QObject::tr("finished","Full phrase: execution of task: <TASKNAME> finished") +
+                "</font>\n=====================================<br>";
+                
+    if (appendTYPE == "pre-task-exited-with-error")
+        appendTHIS = "\n<font color=magenta>" +
+                QObject::tr("execution of task","Full phrase: execution of task: <TASKNAME> finished because of pre/post task command execution error")+
+                "	: <b>" + Operation[currentOperation] -> GetName() +
+                "</b>, "+QObject::tr("finished because of pre/post task command execution error",
+                            "Full phrase: execution of task: <TASKNAME> finished because of pre/post task command execution error") +
+                "</font>\n=====================================<br>";
                 
     if (appendTYPE == "process-reported-error")
         appendTHIS = "<a name=\"error" + countStr.setNum(errorsFound) + "\"></a><font color=red>" + QObject::tr("The process reported an error") + ": \"" +
                         appendTHIS + "\"</font>\n";
 
-	if (appendTYPE == "rsync-standard")
-		appendTHIS = appendTHIS + "\n";
+    if (appendTYPE == "rsync-standard")
+        appendTHIS = appendTHIS + "\n";
 
-	if (appendTYPE == "rsync-error")
-		appendTHIS = "<a name=\"error" + countStr.setNum(errorsFound) + "\"></a><font color=red>" + appendTHIS + "</font>\n";
+    if (appendTYPE == "rsync-error")
+        appendTHIS = "<a name=\"error" + countStr.setNum(errorsFound) + "\"></a><font color=red>" + appendTHIS + "</font>\n";
+    
+    if (appendTYPE == "backup-profile")
+        appendTHIS = "\n<font color=cyan>&nbsp;&nbsp;&nbsp;&nbsp;-----| " +
+            QObject::tr("Backing-up profile, logfiles and snapshot data") + appendTHIS + " |-----</font><br>";
 
-	if (writeToLog)
-	{
-		if (console)	//this is used for console compatibility with utf-8
-			appendTHIS = QString(appendTHIS.toUtf8());
-		out << appendTHIS;
-	}
+    if (writeToLog)
+    {
+        if (console)	//this is used for console compatibility with utf-8
+            appendTHIS = QString(appendTHIS.toUtf8());
+        out << appendTHIS;
+    }
 
-	return appendTHIS;
+    return appendTHIS;
 }
 
 // checkMountPoint =====================================================================================================================================
@@ -1666,9 +1890,9 @@ QString sendEmailNow (bool testEmail)
     emailArgsExec.replaceInStrings("%s",emailSubject);          // %s subject
     emailArgsExec.replaceInStrings("%b",emailBody);             // %b body
     
-    // %l  logfile filename - Only do this is there exists a %l arguments because many file actions are involved
+    // %l or %c logfile filename - Only do this is there exists a %l or %c arguments because many file actions are involved
     bool stopEmail = FALSE;
-    if (emailArgsExec.contains("%l"))
+    if ( (emailArgsExec.contains("%l")) || (emailArgsExec.contains("%c")) )
     {
         QString argLog = logDir + profileName + emailLogString;
         QFile sendlogfile(argLog);
@@ -1717,6 +1941,20 @@ QString sendEmailNow (bool testEmail)
             sendlogfile.close();
         }
         
+        if (emailArgsExec.contains("%c"))  // if the argument %c is included, also compress the file
+        {
+            // Execute the tar command
+            QString compressCommand="tar", compressExtension=".tar.gz";
+            QStringList compressArgs;
+            compressArgs << "-C" << logDir << "-cvzf" << argLog + compressExtension << profileName + emailLogString;
+            //compressArgs << "-cvzf" << argLog + compressExtension << argLog + emailLogString; // this adds the full path of the logfile inside the tar.gz
+            QProcess *compressProcess;                         compressProcess = new QProcess;
+            compressProcess -> setProcessChannelMode(QProcess::MergedChannels);
+            compressProcess -> start (compressCommand,compressArgs);
+            compressProcess -> waitForFinished(10000);
+            emailArgsExec.replaceInStrings("%c",argLog+compressExtension);
+        }
+            
         emailArgsExec.replaceInStrings("%l",argLog);
     }
     
@@ -1749,7 +1987,7 @@ QString sendEmailNow (bool testEmail)
     QProcess *emailProcess;                         emailProcess = new QProcess;
     emailProcess -> setProcessChannelMode(QProcess::MergedChannels);
     emailProcess -> start (emailCommandExec,emailArgsExec);
-    emailProcess -> waitForFinished(5000);
+    emailProcess -> waitForFinished(10000);
     
     // Build the return string ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     QString errorOccured = emailProcess -> errorString();

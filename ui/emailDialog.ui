@@ -111,7 +111,7 @@ sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</string>
       <item row="1" column="1" colspan="2">
        <widget class="QLineEdit" name="lineEdit_arg_from">
         <property name="toolTip">
-         <string/>
+         <string>Enter the sender of the message</string>
         </property>
        </widget>
       </item>
@@ -131,6 +131,13 @@ sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</string>
           </property>
           <property name="text">
            <string>%l logfile</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_arg_logfile_compressed">
+          <property name="text">
+           <string>%c logfile.tar.gz</string>
           </property>
          </widget>
         </item>
@@ -200,7 +207,11 @@ sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</string>
        </widget>
       </item>
       <item row="2" column="1" colspan="2">
-       <widget class="QLineEdit" name="lineEdit_arg_to"/>
+       <widget class="QLineEdit" name="lineEdit_arg_to">
+        <property name="toolTip">
+         <string>Enter the recipient of the message</string>
+        </property>
+       </widget>
       </item>
       <item row="3" column="0">
        <widget class="QLabel" name="label_arg_subject">
@@ -213,7 +224,11 @@ sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</string>
        </widget>
       </item>
       <item row="3" column="1">
-       <widget class="QLineEdit" name="lineEdit_arg_subject"/>
+       <widget class="QLineEdit" name="lineEdit_arg_subject">
+        <property name="toolTip">
+         <string>Enter the subject of the message</string>
+        </property>
+       </widget>
       </item>
       <item row="4" column="0">
        <widget class="QLabel" name="label_arg_smtp">
@@ -226,7 +241,11 @@ sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</string>
        </widget>
       </item>
       <item row="4" column="1" colspan="2">
-       <widget class="QLineEdit" name="lineEdit_arg_smtp"/>
+       <widget class="QLineEdit" name="lineEdit_arg_smtp">
+        <property name="toolTip">
+         <string>Enter the smtp server used to send the message</string>
+        </property>
+       </widget>
       </item>
       <item row="5" column="0">
        <widget class="QLabel" name="label_arg_body">
@@ -242,6 +261,9 @@ sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</string>
        <widget class="QTextBrowser" name="textBrowser_arg_body">
         <property name="cursor" stdset="0">
          <cursorShape>IBeamCursor</cursorShape>
+        </property>
+        <property name="toolTip">
+         <string>Enter the body of the message</string>
         </property>
         <property name="textInteractionFlags">
          <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse|Qt::TextBrowserInteraction|Qt::TextEditable|Qt::TextEditorInteraction|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>

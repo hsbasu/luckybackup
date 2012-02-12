@@ -6,7 +6,7 @@ error("Use the qmake include with Qt4.4 or greater, on Debian that is qmake-qt4"
 
 QMAKE_STRIP = echo
 
-VERSION = 0.4.6
+VERSION = 0.4.7
 
 target.path = /usr/bin
 TARGET = luckybackup
@@ -81,7 +81,8 @@ HEADERS	= src/operationClass.h \
     src/readLogFile.h \
     src/patternEditor.h \
     src/manageWizard.h \
-    src/helpBrowser.h
+    src/helpBrowser.h \
+    src/winDialog.h
 
 FORMS 	= ui/luckybackupwindow.ui \
     ui/modifyDialog.ui \
@@ -93,7 +94,8 @@ FORMS 	= ui/luckybackupwindow.ui \
     ui/textDialog.ui \
     ui/patternEditor.ui \
     ui/manageWizard.ui \
-    ui/logDialog.ui
+    ui/logDialog.ui \
+    ui/winDialog.ui
 
 SOURCES	= src/modifyDialog.cpp \
     src/helpBrowser.cpp \
@@ -111,24 +113,28 @@ SOURCES	= src/modifyDialog.cpp \
     src/readLogFile.cpp \
     src/patternEditor.cpp \
     src/manageWizard.cpp \
+    src/winDialog.cpp \
     src/luckybackupwindow.cpp \
     src/main.cpp
  
 RESOURCES = resources/luckybackup.qrc
 
-TRANSLATIONS = translations/luckybackup_en.ts \
-    translations/luckybackup_el.ts \
-    translations/luckybackup_es.ts \
+TRANSLATIONS = translations/luckybackup_ara.ts \
+    translations/luckybackup_bs.ts \
+    translations/luckybackup_ca.ts \
     translations/luckybackup_cs.ts \
-    translations/luckybackup_pt_BR.ts \
     translations/luckybackup_de.ts \
-    translations/luckybackup_ru.ts \
+    translations/luckybackup_el.ts \
+    translations/luckybackup_en.ts \
+    translations/luckybackup_es.ts \
     translations/luckybackup_fr.ts \
     translations/luckybackup_it.ts \
-    translations/luckybackup_bs.ts \
-    translations/luckybackup_ara.ts \
-    translations/luckybackup_ro.ts \
     translations/luckybackup_nl.ts \
+    translations/luckybackup_pt_BR.ts \
+    translations/luckybackup_ro.ts \
+    translations/luckybackup_ru.ts \
+    translations/luckybackup_sk.ts \
     translations/luckybackup_sl.ts \
     translations/luckybackup_sv.ts \
     translations/luckybackup_tr.ts
+

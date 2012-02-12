@@ -102,7 +102,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/global.cpp" line="+894"/>
+        <location filename="../src/global.cpp" line="+1063"/>
         <source>The task list is empty</source>
         <translation>Seznam úkolů je prázdný</translation>
     </message>
@@ -148,7 +148,13 @@
         <translation>Zrušte, prosím, označení fajfkou příslušného zařazovacího políčka, nebo změňte všechny typy úkolů na jiný než &apos;&lt;b&gt;Zálohovat obsah adresáře&lt;/b&gt;&apos;, nebo použijte &apos;Zálohovat obsah adresáře&apos; společně s volbou  &apos;&lt;b&gt;Pouze zařadit&lt;/b&gt;&apos;, předtím, než budete pokračovat</translation>
     </message>
     <message>
-        <location line="+603"/>
+        <location line="+591"/>
+        <source>Command re-run due to failure</source>
+        <comment>This means that a specific command is run for once more because it failed the first time</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+63"/>
         <source>execution of task</source>
         <comment>Full phrase: execution of task: &lt;TASKNAME&gt; finished because of pre/post task command execution error</comment>
         <translation>Vykonání úkolu</translation>
@@ -165,7 +171,12 @@
         <translation>Proces nahlásil chybu</translation>
     </message>
     <message>
-        <location line="+100"/>
+        <location line="+11"/>
+        <source>Backing-up profile, logfiles and snapshot data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+93"/>
         <source>Could not open the logfile</source>
         <translation>Soubor se zápisem nebyl otevřen</translation>
     </message>
@@ -175,7 +186,7 @@
         <translation>Soubor se zápisem neexistuje</translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+63"/>
         <source>The specified command is probably not installed</source>
         <translation>Zadaný příkaz pravděpodobně není nainstalován</translation>
     </message>
@@ -363,7 +374,7 @@
         <translation type="obsolete">Tento úkol&lt;font color=red&gt;&lt;b&gt;bude přeskočen&lt;/b&gt;&lt;/font&gt;, aby byla chráněna vaše záložní data (jsou-li jaká)</translation>
     </message>
     <message>
-        <location line="-477"/>
+        <location line="-500"/>
         <source>pre-task execution of command</source>
         <comment>Full phrase: pre-task execution of command: &lt;COMMAND&gt; starting</comment>
         <translation>Vykonání příkazu před úkolem</translation>
@@ -375,7 +386,7 @@
         <translation>se spouští</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+9"/>
         <source>post-task execution of command</source>
         <comment>Full phrase: post-task execution of command: &lt;COMMAND&gt; starting</comment>
         <translation>Vykonání příkazu po úkolu</translation>
@@ -651,7 +662,7 @@
         <translation>Marcos Del Puerto Garcia</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+9"/>
         <source>Jack Fink</source>
         <translation>Jack Fink</translation>
     </message>
@@ -681,7 +692,7 @@
         <translation>Správce balíčku pro Mandrivu (veřejný sklad balíčků Contrib)</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+11"/>
         <source>Pavel Fric</source>
         <translation>Pavel Fric</translation>
     </message>
@@ -691,8 +702,8 @@
         <translation>Stergios Prosiniklis</translation>
     </message>
     <message>
-        <location line="-48"/>
-        <location line="+49"/>
+        <location line="-54"/>
+        <location line="+55"/>
         <source>Greek manual translator</source>
         <translation>Překladatel grafického uživatelského rozhraní do řečtiny</translation>
     </message>
@@ -701,7 +712,7 @@
         <translation type="obsolete">Carsten</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+23"/>
         <source>Raffaele</source>
         <translation>Raffaele</translation>
     </message>
@@ -712,7 +723,7 @@
         <translation>Překladatel grafického uživatelského rozhraní do italštiny</translation>
     </message>
     <message>
-        <location line="-96"/>
+        <location line="-105"/>
         <source>luckyBackup is distributed under the terms of the &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU General Public License&lt;/a&gt;</source>
         <comment>Please leave the tags &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt; &amp; &lt;/a&gt; intact and surrounding the GNU General Public License !!</comment>
         <translation>luckyBackup je šířen za podmínek &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU General Public License&lt;/a&gt;</translation>
@@ -724,7 +735,7 @@
         <translation>Je to &lt;b&gt;svobodný program&lt;/b&gt;: můžete jej šířit a/nebo upravovat za podmínek GNU General Public License tak, jak jsou zveřejněny Free Software Foundation, verze 3 Licence.</translation>
     </message>
     <message>
-        <location line="+51"/>
+        <location line="+54"/>
         <source>Elbert Pol</source>
         <translation>Elbert Pol</translation>
     </message>
@@ -734,39 +745,59 @@
         <translation>Přenos na OS/2</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+17"/>
         <source>Thomas Janssen</source>
         <translation>Thomas Janssen</translation>
     </message>
     <message>
-        <location line="-2"/>
+        <location line="-5"/>
         <source>Fedora package maintainer (official repo)</source>
         <translation>Správce balíčku pro Fedoru (veřejný sklad)</translation>
     </message>
     <message>
-        <location line="-39"/>
+        <location line="-42"/>
         <source>Valuable advisor</source>
-        <translation type="unfinished"></translation>
+        <translation>Cenný poradce</translation>
     </message>
     <message>
-        <location line="+32"/>
-        <source>Dimitris Stasinopoulos</source>
+        <location line="+23"/>
+        <source>Bruce Marriner</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Puppy pet &amp; sfs maintainer</source>
+        <source>port to MS Windows</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Dimitris Stasinopoulos</source>
+        <translation>Dimitris Stasinopoulos</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Puppy pet &amp; sfs maintainer</source>
+        <translation>Živitel štěňátka a správce sfs</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Michael J Gruber</source>
+        <translation>Michael J Gruber</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Jason E. Hale</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+4"/>
-        <source>ex Fedora package maintainer</source>
+        <location line="+1"/>
+        <source>Free BSD package maintainer</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>ex Fedora package maintainer</source>
+        <translation>Bývalý správce balíčku Fedora</translation>
     </message>
     <message>
         <location line="+8"/>
@@ -775,6 +806,16 @@
     </message>
     <message>
         <location line="+15"/>
+        <source>AurÃ©lien Merckel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>French gui translator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Francesco Braile</source>
         <translation>Francesco Braile</translation>
     </message>
@@ -860,6 +901,26 @@
     </message>
     <message>
         <location line="+2"/>
+        <source>Roger CalvÃ³</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Catalan gui translator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>TomÃ¡Å¡ Vadina</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Slovak gui translator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Javi Romero</source>
         <translation>Javi Romero</translation>
     </message>
@@ -894,7 +955,17 @@
         <translation>Cenný zkoušeč a odborník na hledání nových nápadů</translation>
     </message>
     <message>
-        <location line="+37"/>
+        <location line="+2"/>
+        <source>Yuri Vidal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>backupwhenidle python script developer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+36"/>
         <source>no money</source>
         <translation>Žádné peníze</translation>
     </message>
@@ -948,7 +1019,7 @@
         <translation type="obsolete">Dizajnér grafického rozhraní verze 0.2.2 (neobviňujte jej kvůli nepořádku v současné verzi 0.2.1)</translation>
     </message>
     <message>
-        <location line="-150"/>
+        <location line="-167"/>
         <source>Dimitris Kalamaras</source>
         <translation>Dimitris Kalamaras</translation>
     </message>
@@ -958,7 +1029,7 @@
         <translation>Kdyby nebylo jeho a jeho návodů, nikdy bych nezačal s tímto projektem</translation>
     </message>
     <message>
-        <location line="+102"/>
+        <location line="+119"/>
         <source>...to all users of the </source>
         <translation>...všem uživatelům</translation>
     </message>
@@ -1046,7 +1117,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+24"/>
         <source>&amp;Thanks to</source>
-        <translation>&amp;Poděkování patří</translation>
+        <translation>&amp;Poděkování</translation>
     </message>
     <message>
         <source>&amp;Licence Agreement</source>
@@ -1058,7 +1129,7 @@ p, li { white-space: pre-wrap; }
         <translation>Fórům pro jejich podporu.</translation>
     </message>
     <message>
-        <location line="-76"/>
+        <location line="-87"/>
         <source>Czech gui translator</source>
         <translation>Překladatel grafického uživatelského rozhraní do češtiny</translation>
     </message>
@@ -1074,12 +1145,12 @@ p, li { white-space: pre-wrap; }
         <translation>Překladatel grafického uživatelského rozhraní do němčiny</translation>
     </message>
     <message>
-        <location line="+47"/>
+        <location line="+56"/>
         <source>fri13</source>
         <translation>fri13</translation>
     </message>
     <message>
-        <location line="-45"/>
+        <location line="-54"/>
         <source>Sergio Gameiro</source>
         <translation>Sergio Gameiro</translation>
     </message>
@@ -1090,7 +1161,7 @@ p, li { white-space: pre-wrap; }
         <translation>Překladatel grafického uživatelského rozhraní do portugalštiny</translation>
     </message>
     <message>
-        <location line="-62"/>
+        <location line="-68"/>
         <source>Arch linux package/pkgbuild official maintainer (AUR)</source>
         <translation>Oficiální správce (AUR) balíčku/pkgbuild pro Arch linux</translation>
     </message>
@@ -1151,12 +1222,12 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Překladatel grafického uživatelského rozhraní do dánštiny</translation>
     </message>
     <message>
-        <location line="+38"/>
+        <location line="+44"/>
         <source>Marcio Moraes</source>
         <translation>Marcio Moraes</translation>
     </message>
     <message>
-        <location line="+12"/>
+        <location line="+15"/>
         <source>Denis Skorski</source>
         <translation>Denis Skorski</translation>
     </message>
@@ -1166,12 +1237,12 @@ p, li { white-space: pre-wrap; }
         <translation>Překladatel grafického uživatelského rozhraní do ruštiny a cenný testér</translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+33"/>
         <source>v0.3 gui designer</source>
         <translation>Návrhář grafického uživatelského rozhraní v. 0.3</translation>
     </message>
     <message>
-        <location line="-37"/>
+        <location line="-46"/>
         <source>Julien Cynober</source>
         <translation>Julien Cynober</translation>
     </message>
@@ -1181,12 +1252,12 @@ p, li { white-space: pre-wrap; }
         <translation>Překladatel grafického uživatelského rozhraní do francouštiny a cenný rádce pro balení (a nejen to)</translation>
     </message>
     <message>
-        <location line="+39"/>
+        <location line="+48"/>
         <source>v.0.3 gui designer</source>
         <translation>Návrhář grafického uživatelského rozhraní v. 0.3</translation>
     </message>
     <message>
-        <location line="+35"/>
+        <location line="+37"/>
         <source>Could not locate the license file</source>
         <translation>Soubor s licencí nelze najít</translation>
     </message>
@@ -1229,7 +1300,7 @@ sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</translati
     </message>
     <message>
         <location line="+9"/>
-        <location line="+182"/>
+        <location line="+204"/>
         <location line="+14"/>
         <source>Use default</source>
         <extracomment>This means &quot;use the default value for this field&quot;
@@ -1240,7 +1311,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <translation>Použít výchozí</translation>
     </message>
     <message>
-        <location line="-183"/>
+        <location line="-205"/>
         <source>Arguments</source>
         <translation>Argumenty</translation>
     </message>
@@ -1259,7 +1330,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <translation>%l soubor se zápisem</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+17"/>
         <source>%d date</source>
         <translation>%d datum</translation>
     </message>
@@ -1284,7 +1355,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <translation>%t do:</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+17"/>
         <source>%s subject:</source>
         <translation>%s předmět:</translation>
     </message>
@@ -1293,17 +1364,47 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <translation type="obsolete">%v smtp server</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="-108"/>
+        <source>Enter the sender of the message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+26"/>
+        <source>%c logfile.tar.gz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+72"/>
+        <source>Enter the recipient of the message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>Enter the subject of the message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
         <source>%v smtp server:</source>
         <translation>%v smtp server:</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+7"/>
+        <source>Enter the smtp server used to send the message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
         <source>%b body:</source>
         <translation>%b tělo:</translation>
     </message>
     <message>
-        <location line="+63"/>
+        <location line="+10"/>
+        <source>Enter the body of the message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+56"/>
         <source>Send an email right now to test the provided arguments</source>
         <translation>Poslat elektronický dopis hned teď, aby se vyzkoušely poskytnuté argumenty</translation>
     </message>
@@ -1680,12 +1781,40 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location line="+631"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location line="+211"/>
+        <source>CheckBox</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+430"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Bitstream Vera Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1693,8 +1822,8 @@ p, li { white-space: pre-wrap; }
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Bitstream Vera Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1721,7 +1850,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Ctrl+L</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="+293"/>
+        <location filename="../src/functions.cpp" line="+303"/>
         <source>F1</source>
         <translation>F1</translation>
     </message>
@@ -1760,7 +1889,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">&amp;O aplikaci</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="+56"/>
+        <location filename="../src/functions.cpp" line="+62"/>
         <source>English</source>
         <translation>Čeština</translation>
     </message>
@@ -1773,13 +1902,11 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">&amp;Ukončit</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="+519"/>
-        <location line="+299"/>
         <source>profile</source>
-        <translation>Profil</translation>
+        <translation type="obsolete">Profil</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="+2"/>
+        <location line="+2"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
@@ -1848,7 +1975,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Jste si jistý, že chcete odstranit následující operaci?</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="+244"/>
+        <location filename="../src/luckybackupwindow.cpp" line="+1110"/>
         <source>Would you like to also remove:</source>
         <translation>Rád byste také odstranil:</translation>
     </message>
@@ -1921,8 +2048,8 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Prosím, dobře si prohlédněte následující sdělení</translation>
     </message>
     <message>
-        <location filename="../src/executenow.cpp" line="+1127"/>
-        <location filename="../src/functions.cpp" line="+242"/>
+        <location filename="../src/executenow.cpp" line="+1228"/>
+        <location filename="../src/functions.cpp" line="+257"/>
         <location line="+65"/>
         <source>WARNING</source>
         <translation>VAROVÁNÍ</translation>
@@ -2026,7 +2153,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Aktualizace ukazatele průběhu nebude realistická</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="-874"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-913"/>
         <source>English</source>
         <comment>Do not translate this. Enter here the language of the translation in native characters instead. This is how your translation will appear under the &apos;language&apos; menu.</comment>
         <translation>Čeština</translation>
@@ -2036,7 +2163,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">&lt;font color=blue&gt;Přeskočím&lt;/font&gt; tuto operaci z tohoto důvodu</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="-489"/>
+        <location filename="../src/functions.cpp" line="-518"/>
         <source>&amp;Profile</source>
         <comment>This is a top menu item</comment>
         <translation>&amp;Profil</translation>
@@ -2129,7 +2256,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Jazyk</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+9"/>
         <source>&amp;Help</source>
         <comment>This is a top menu item</comment>
         <translation>&amp;Nápověda</translation>
@@ -2152,7 +2279,7 @@ p, li { white-space: pre-wrap; }
         <translation>Nynější profil</translation>
     </message>
     <message>
-        <location filename="../src/executenow.cpp" line="-700"/>
+        <location filename="../src/executenow.cpp" line="-793"/>
         <location filename="../src/functions.cpp" line="+2"/>
         <source>Task list</source>
         <comment>task list label</comment>
@@ -2170,7 +2297,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Předčasně ukončit NYNÍ</translation>
     </message>
     <message>
-        <location filename="../src/executenow.cpp" line="-56"/>
+        <location filename="../src/executenow.cpp" line="-59"/>
         <source>commands output</source>
         <comment>output window label</comment>
         <translation>Výstup příkazů</translation>
@@ -2182,7 +2309,7 @@ p, li { white-space: pre-wrap; }
         <translation>Výstup příkazů rsync a před/po úkolů se zobrazuje zde</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+59"/>
         <location filename="../src/functions.cpp" line="+1"/>
         <source>List of all the available tasks</source>
         <comment>task list tooltip - line1</comment>
@@ -2196,7 +2323,7 @@ p, li { white-space: pre-wrap; }
         <translation>Použijte &quot;zařadit zaškrtávací políčka&quot; pro zařazení, nebo nezařazení vybraného úkolu</translation>
     </message>
     <message>
-        <location line="+34"/>
+        <location line="+35"/>
         <source>Execution of profile</source>
         <comment>full phrase: &apos;Execution of profile &lt;PROFILENAME&gt; finished&apos;</comment>
         <translation>Vykonání profilu</translation>
@@ -2208,9 +2335,9 @@ p, li { white-space: pre-wrap; }
         <translation>Hotovo</translation>
     </message>
     <message>
-        <location line="-145"/>
-        <location line="+147"/>
-        <location line="+657"/>
+        <location line="-149"/>
+        <location line="+151"/>
+        <location line="+749"/>
         <location line="+21"/>
         <location line="+25"/>
         <location line="+1"/>
@@ -2223,13 +2350,13 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">ZRUŠIT</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="+18"/>
+        <location filename="../src/functions.cpp" line="+20"/>
         <source>Stop the execution of running tasks NOW</source>
         <comment>Abort button tooltip</comment>
         <translation>Zastavit vykonávání běžících úkolů NYNÍ</translation>
     </message>
     <message>
-        <location filename="../src/executenow.cpp" line="-700"/>
+        <location filename="../src/executenow.cpp" line="-792"/>
         <source>Could not update last execution time of tasks</source>
         <translation>Nepodařilo se obnovit čas posledního vykonání úkolů</translation>
     </message>
@@ -2261,7 +2388,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Obnovit</translation>
     </message>
     <message>
-        <location line="+175"/>
+        <location line="+179"/>
         <source>Removed all older snapshots data</source>
         <translation>Odstraněna všechna starší data snímku</translation>
     </message>
@@ -2288,7 +2415,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Používá se vzdálený cíl. Všechny staré snímky jsou zachovávány nedotčené</translation>
     </message>
     <message>
-        <location line="+194"/>
+        <location line="+170"/>
         <source>Successfuly created destination directory</source>
         <translation>Cílový adresář úspěšně vytvořen</translation>
     </message>
@@ -2298,7 +2425,7 @@ p, li { white-space: pre-wrap; }
         <translation>Cílový adresář se nepodařilo vytvořit</translation>
     </message>
     <message>
-        <location line="+244"/>
+        <location line="+356"/>
         <source>transferring files</source>
         <translation>Přenáší se soubory</translation>
     </message>
@@ -2308,7 +2435,7 @@ p, li { white-space: pre-wrap; }
         <translation>Zrušeno</translation>
     </message>
     <message>
-        <location line="-928"/>
+        <location line="-1024"/>
         <source>execution of profile:</source>
         <comment>tray message - execution of profile: &lt;PROFILENAME&gt; in progress...</comment>
         <translation>Vykonání profilu:</translation>
@@ -2320,14 +2447,14 @@ p, li { white-space: pre-wrap; }
         <translation>Probíhá...</translation>
     </message>
     <message>
-        <location line="+296"/>
+        <location line="+302"/>
         <source>Removing old snapshots and logfiles of task</source>
         <comment>info message displayed during ...data removal
 Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comment>
         <translation>Odstraňují se staré snímky a soubory se zápisy k úkolu</translation>
     </message>
     <message>
-        <location line="+392"/>
+        <location line="+478"/>
         <source>Unknown error</source>
         <translation>Neznámá chyba</translation>
     </message>
@@ -2352,7 +2479,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation type="obsolete">Chyba při čtení</translation>
     </message>
     <message>
-        <location line="+102"/>
+        <location line="+106"/>
         <location line="+5"/>
         <location line="+6"/>
         <location line="+21"/>
@@ -2419,7 +2546,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Zdroj</translation>
     </message>
     <message>
-        <location line="-139"/>
+        <location line="-143"/>
         <source>Failed to start</source>
         <comment>this refers to a process</comment>
         <translation>Nepodařilo se spustit</translation>
@@ -2455,7 +2582,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Neznámá chyba</translation>
     </message>
     <message>
-        <location line="+112"/>
+        <location line="+116"/>
         <source>calculating</source>
         <comment>info message displayed during ...calculations</comment>
         <translation>Počítá se</translation>
@@ -2541,7 +2668,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Vykonání úkolů bylo násilně přerušeno uživatelem</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="-18"/>
+        <location filename="../src/functions.cpp" line="-20"/>
         <source>Move the highlighted task up, by one position</source>
         <comment>button tooltip</comment>
         <translation>Přesunout zvýrazněný úkol nahoru o jednu pozici</translation>
@@ -2565,7 +2692,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Skočit k předchozí chybě</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+4"/>
         <source>Task</source>
         <comment>task groupbox (add, remove, modify buttons) label</comment>
         <translation>Úkol</translation>
@@ -2683,7 +2810,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Zmenšit okno do oblasti panelu</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="+596"/>
+        <location filename="../src/luckybackupwindow.cpp" line="+569"/>
         <source>You have asked for a RESTORE task to be created</source>
         <comment>&apos;create restore&apos; message line 1/4</comment>
         <translation>Zažádal jste o to, aby byl vytvořen úkol OBNOVIT</translation>
@@ -2707,7 +2834,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Obzvláště zkontrolujte zaškrtávací okénka &quot;Název úkolu&quot;, &quot;Zdroj&quot;, &quot;Cíl&quot; &amp; &quot;Přeskočit novější soubory cíle&quot; (pokročilé volby)</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="-80"/>
+        <location filename="../src/functions.cpp" line="-88"/>
         <source>&amp;Refresh</source>
         <comment>This is a top &apos;Profile&apos; menu action</comment>
         <translation>&amp;Obnovit</translation>
@@ -2840,7 +2967,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     </message>
     <message>
         <location line="+1"/>
-        <location filename="../src/luckybackupwindow.cpp" line="+503"/>
+        <location filename="../src/luckybackupwindow.cpp" line="+569"/>
         <source>Manage &amp;Backup</source>
         <comment>This is a top &apos;Task&apos; menu action</comment>
         <translation>Spravovat &amp;zálohu</translation>
@@ -2883,7 +3010,29 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>&amp;Nástrojové pruhy</translation>
     </message>
     <message>
-        <location line="+26"/>
+        <location line="+4"/>
+        <source>Set paths</source>
+        <comment>This is a top menu action</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Set paths for rsync and ssh commands</source>
+        <comment>This is a top menu action tooltip</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>quiet mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Only show errors and important messages during window update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
         <source>Run</source>
         <comment>start button label</comment>
         <translation>Spustit</translation>
@@ -2904,7 +3053,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <location line="+1"/>
         <source>Dry</source>
         <comment>simulation checkbox label. Translate this as &apos;simulation&apos;</comment>
-        <translation>Zkušební</translation>
+        <translation>Zkouška</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2937,16 +3086,16 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Ukázat okno s informacemi</translation>
     </message>
     <message>
-        <location line="+179"/>
-        <location filename="../src/luckybackupwindow.cpp" line="-967"/>
+        <location line="+196"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-994"/>
         <location line="+70"/>
         <location line="+14"/>
         <location line="+56"/>
-        <location line="+65"/>
-        <location line="+59"/>
+        <location line="+85"/>
         <location line="+14"/>
-        <location line="+317"/>
-        <location line="+271"/>
+        <location line="+230"/>
+        <location line="+155"/>
+        <location line="+269"/>
         <source>ERROR</source>
         <translation>CHYBA</translation>
     </message>
@@ -2982,7 +3131,19 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Profil </translation>
     </message>
     <message>
-        <location line="+70"/>
+        <location line="+52"/>
+        <source>The task list is empty</source>
+        <translation type="unfinished">Seznam úkolů je prázdný</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <location line="+95"/>
+        <source>Use the &quot;add&quot; button on the right to get started</source>
+        <comment>Please keep the add word inside quotes</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-73"/>
         <source>default profile</source>
         <comment>Information window message. Full phrase: &apos;default profile &lt;PROFILENAME&gt; could not be saved&apos;.</comment>
         <translation>Výchozí profil</translation>
@@ -3006,7 +3167,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>se nepodařilo vytvořit</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+21"/>
         <source>Profile</source>
         <comment>Question dialog message. Full phrase: &apos;profile &lt;PROFILENAME&gt; is modified&apos;</comment>
         <translation>Profil</translation>
@@ -3040,7 +3201,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation type="obsolete">Výchozí </translation>
     </message>
     <message>
-        <location line="-31"/>
+        <location line="-32"/>
         <source>profile</source>
         <comment>Information window message. Full phrase: &apos;profile &lt;PROFILENAME&gt; could not be created&apos;.</comment>
         <translation>Profil</translation>
@@ -3051,7 +3212,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation type="obsolete">Profil</translation>
     </message>
     <message>
-        <location line="-136"/>
+        <location line="-140"/>
         <source>is not valid for</source>
         <comment>information window message. Full phrase is: &apos;profile &lt;PROFILENAME&gt; is not valid for luckybackup version:X.Y</comment>
         <translation>není platným pro</translation>
@@ -3076,26 +3237,26 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     </message>
     <message>
         <location line="+10"/>
-        <location line="+55"/>
+        <location line="+59"/>
         <source>scheduled</source>
         <comment>this refers to a profile</comment>
         <translation>Zařazeno do rozvrhu prací</translation>
     </message>
     <message>
-        <location line="-50"/>
-        <location line="+55"/>
+        <location line="-54"/>
+        <location line="+59"/>
         <source>YES</source>
         <translation>ANO</translation>
     </message>
     <message>
-        <location line="-53"/>
-        <location line="+55"/>
+        <location line="-57"/>
+        <location line="+59"/>
         <source>NO</source>
         <translation>NE</translation>
     </message>
     <message>
-        <location line="-47"/>
-        <location line="+55"/>
+        <location line="-51"/>
+        <location line="+59"/>
         <source>Description</source>
         <translation>Popis</translation>
     </message>
@@ -3189,7 +3350,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation type="obsolete">je upraven</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+19"/>
         <source>Would you like to save it before proceeding ?</source>
         <translation>Chtěl byste jej uložit předtím, než se bude pokračovat?</translation>
     </message>
@@ -3209,7 +3370,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Chtěl byste přesto pokračovat?</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="-1103"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-1150"/>
         <source>super user</source>
         <comment>super user is the root user</comment>
         <translation>Superuživatel</translation>
@@ -3220,56 +3381,56 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Režim superuživatele</translation>
     </message>
     <message>
-        <location line="+80"/>
+        <location line="+88"/>
         <source>Welcome to</source>
         <comment>full phrase: &apos;Welcome to luckyBackup&apos;</comment>
         <translation>Vítejte v</translation>
     </message>
     <message>
-        <location line="+129"/>
+        <location line="+141"/>
         <source>Failed to create new profile</source>
         <comment>full phrase: &apos;Failed to create new profile &lt;PROFILENAME&gt;&apos;</comment>
         <translation>Nepodařilo se vytvořit nový profil</translation>
     </message>
     <message>
         <location line="+2"/>
-        <location line="+546"/>
+        <location line="+566"/>
         <source>The name you have entered contains only invalid characters</source>
         <translation>Název, který jste zadal, obsahuje jen neplatné znaky</translation>
     </message>
     <message>
-        <location line="-532"/>
+        <location line="-552"/>
         <location line="+70"/>
-        <location line="+195"/>
+        <location line="+156"/>
         <source>Profile</source>
         <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; already exists&apos;</comment>
         <translation>Profil</translation>
     </message>
     <message>
-        <location line="-264"/>
+        <location line="-225"/>
         <location line="+70"/>
-        <location line="+195"/>
+        <location line="+156"/>
         <source>already exists</source>
         <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; already exists&apos;</comment>
         <translation>již existuje</translation>
     </message>
     <message>
-        <location line="-264"/>
+        <location line="-225"/>
         <location line="+70"/>
-        <location line="+195"/>
+        <location line="+156"/>
         <source>Would you like to replace it ?</source>
         <translation>Chtěl byste jej nahradit?</translation>
     </message>
     <message>
-        <location line="-255"/>
+        <location line="-216"/>
         <location line="+70"/>
-        <location line="+194"/>
+        <location line="+155"/>
         <source>Failed to replace profile</source>
         <comment>full phrase: &apos;Failed to replace profile &lt;PROFILENAME&gt;&apos;</comment>
         <translation>Nepodařilo se nahradit profil</translation>
     </message>
     <message>
-        <location line="-232"/>
+        <location line="-193"/>
         <location line="+52"/>
         <source>Failed to rename profile</source>
         <comment>full phrase: &apos;Failed to rename profile &lt;PROFILENAME&gt;&apos;</comment>
@@ -3374,37 +3535,32 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>byl nastaven jako výchozí</translation>
     </message>
     <message>
-        <location line="+12"/>
         <source>Export Profile</source>
         <comment>this is a dialog title</comment>
-        <translation>Export profilu</translation>
+        <translation type="obsolete">Export profilu</translation>
     </message>
     <message>
-        <location line="+12"/>
         <source>Failed to export profile</source>
         <comment>full phrase: &apos;Failed to export profile &lt;PROFILENAME&gt; as &lt;FILENAME&gt;&apos;</comment>
-        <translation>Nepodařilo se exportovat profil</translation>
+        <translation type="obsolete">Nepodařilo se exportovat profil</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>as</source>
         <comment>full phrase: &apos;Failed to export profile &lt;PROFILENAME&gt; as &lt;FILENAME&gt;&apos;</comment>
-        <translation>jako</translation>
+        <translation type="obsolete">jako</translation>
     </message>
     <message>
-        <location line="+8"/>
         <source>Profile</source>
         <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; exported successfully as &lt;FILENAME&gt;&apos;</comment>
-        <translation>Profil</translation>
+        <translation type="obsolete">Profil</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>exported successfully as</source>
         <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; exported successfully as &lt;FILENAME&gt;&apos;</comment>
-        <translation>byl úspěšně exportován jako</translation>
+        <translation type="obsolete">byl úspěšně exportován jako</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+17"/>
         <source>Failed to duplicate profile</source>
         <comment>full phrase: &apos;Failed to duplicate profile &lt;PROFILENAME&gt;&apos;</comment>
         <translation>Nepodařilo se zdvojit profil</translation>
@@ -3466,20 +3622,56 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Vyberte, prosím, první úkol</translation>
     </message>
     <message>
-        <location line="+85"/>
+        <location line="+87"/>
+        <source>Select export directory</source>
+        <comment>this is a dialog title for selecting a directory to export a profile to</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Failed to export profile</source>
+        <comment>full phrase: &apos;Failed to export profile &lt;PROFILENAME&gt; to &lt;DIRNAME&gt;&apos;</comment>
+        <translation type="unfinished">Nepodařilo se exportovat profil</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>to</source>
+        <comment>full phrase: &apos;Failed to export profile &lt;PROFILENAME&gt; to &lt;DIRNAME&gt;&apos;</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Profile</source>
+        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; exported successfully to &lt;DIRNAME&gt;&apos;</comment>
+        <translation type="unfinished">Profil</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>exported successfully to</source>
+        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; exported successfully to &lt;DIRNAME&gt;&apos;</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
         <source>Import Profile</source>
         <comment>this is a dialog title</comment>
         <translation>Zavedení profilu</translation>
     </message>
     <message>
-        <location line="+26"/>
-        <location line="+24"/>
+        <location line="+13"/>
+        <location line="+29"/>
+        <location line="+33"/>
         <source>Failed to import profile</source>
         <comment>full phrase: &apos;Failed to import profile &lt;PROFILENAME&gt;&apos;</comment>
         <translation>Nepodařilo se zavést profil</translation>
     </message>
     <message>
-        <location line="-11"/>
+        <location line="-60"/>
+        <source>The directory you have selected does not contain valid profile data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+43"/>
         <source>Profile</source>
         <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; imported successfully as &lt;NEWPROFILENAME&gt; and added at the profile list&apos;</comment>
         <translation>Profil</translation>
@@ -3503,7 +3695,27 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>a přidán do seznamu profilů</translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+3"/>
+        <source>Errors occured during snapshots and logfiles transfer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Errors occured during snapshots transfer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Errors occured during logfiles transfer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Errors occured during the profile file transfer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+26"/>
         <source>Hide information window</source>
         <comment>hide/show information window button tooltip</comment>
         <translation>Skrýt okno s informacemi</translation>
@@ -3515,15 +3727,15 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Ukázat okno s informacemi</translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+17"/>
         <source>Could not locate the file</source>
         <comment>full phrase: &apos;Could not locate the file &lt;FILENAME&gt;&apos;</comment>
         <translation>Soubor nelze najít</translation>
     </message>
     <message>
-        <location line="-243"/>
+        <location line="-311"/>
         <location line="+64"/>
-        <location line="+219"/>
+        <location line="+285"/>
         <source>You have reached the maximum limit of supported tasks</source>
         <translation>Dosáhl jste nejvyšší možné meze podporovaných úkolů</translation>
     </message>
@@ -3533,9 +3745,9 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation type="obsolete">Výchozí </translation>
     </message>
     <message>
-        <location line="-282"/>
+        <location line="-348"/>
         <location line="+64"/>
-        <location line="+219"/>
+        <location line="+285"/>
         <source>You have to remove a task if you wish to add another !!</source>
         <translation>Musíte odstranit úkol, pokud si přejete přidat další!</translation>
     </message>
@@ -3653,7 +3865,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/luckybackupwindow.ui" line="-237"/>
         <source>Information window</source>
-        <translation>Okno s informacemi</translation>
+        <translation>Informace</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -4667,7 +4879,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/modifyDialog.ui" line="+230"/>
         <location line="+73"/>
-        <location line="+2481"/>
+        <location line="+2548"/>
         <source>browse localy</source>
         <translation>Procházet místně</translation>
     </message>
@@ -4681,18 +4893,18 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Přidejte kterýkoli adresář, soubor nebo vzor, který má být vyloučen z operace</translation>
     </message>
     <message>
-        <location filename="../ui/modifyDialog.ui" line="-2435"/>
+        <location filename="../ui/modifyDialog.ui" line="-2502"/>
         <source>Exclude</source>
         <translation>Vyloučení</translation>
     </message>
     <message>
-        <location line="+417"/>
+        <location line="+454"/>
         <location line="+31"/>
         <source>Exclude list</source>
         <translation>Seznam vyloučených</translation>
     </message>
     <message>
-        <location line="-400"/>
+        <location line="-437"/>
         <source>Exclude all temp folders (**/*tmp*/)</source>
         <translation>Vyloučit všechny složky s dočasnými soubory (**/*tmp*/)</translation>
     </message>
@@ -4728,7 +4940,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Složky určené pro připojování zařízení</translation>
     </message>
     <message>
-        <location line="+204"/>
+        <location line="+154"/>
         <source>Exclude all &quot;lost+found&quot; folders (**/lost+found*/)</source>
         <translation>Vyloučit všechny &quot;ztracené+nalezené&quot; složky (**/lost+found*/)</translation>
     </message>
@@ -4738,7 +4950,7 @@ p, li { white-space: pre-wrap; }
         <translation>Ztracené+nalezené</translation>
     </message>
     <message>
-        <location line="-130"/>
+        <location line="-80"/>
         <source>Exclude system folders /var, /proc, /dev &amp; /sys (/var/**, /proc/**, /dev/**, /sys/**)</source>
         <translation>Vyloučit systémové složky /var, /proc, /dev &amp; /sys (/var/**, /proc/**, /dev/**, /sys/**)</translation>
     </message>
@@ -4747,7 +4959,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Systém</translation>
     </message>
     <message>
-        <location line="+74"/>
+        <location line="+111"/>
         <source>Exclude all user&apos;s trash folders (**/*Trash*/, **/*trash*/)</source>
         <translation>Vyloučit všechny uživatelovy složky na smetí (**/*Trash*/, **/*trash*/)</translation>
     </message>
@@ -4762,19 +4974,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+3"/>
-        <location line="+362"/>
+        <location line="+366"/>
         <location line="+1161"/>
         <location line="+279"/>
-        <location line="+275"/>
+        <location line="+301"/>
         <source>remove</source>
         <translation>Odstranit</translation>
     </message>
     <message>
-        <location line="-2163"/>
-        <location line="+367"/>
+        <location line="-2193"/>
+        <location line="+371"/>
         <location line="+1161"/>
         <location line="+279"/>
-        <location line="+275"/>
+        <location line="+301"/>
         <source>add</source>
         <translation>Přidat</translation>
     </message>
@@ -4787,7 +4999,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Volby</translation>
     </message>
     <message>
-        <location line="-772"/>
+        <location line="-798"/>
         <source>Do not backup source files that are newer on the destination 
 (--update)</source>
         <translation>Nezálohovat zdrojové soubory, které jsou v cíli novější
@@ -4831,7 +5043,7 @@ Musí být vybrán &quot;Záchrana do adresářů&quot;
 (-tgo)</translation>
     </message>
     <message>
-        <location line="-1754"/>
+        <location line="-1795"/>
         <source>Define the type of this task:
 1. Backup the Source directory, inside Destination (see also &quot;Do NOT create directory&quot; box)
 2. Synchronize Source &amp; Destination, keeping the most recent files at both of them</source>
@@ -4860,61 +5072,66 @@ Musí být vybrán &quot;Záchrana do adresářů&quot;
         <translation>Napište popis úkolu</translation>
     </message>
     <message>
-        <location line="+507"/>
-        <location line="+419"/>
+        <location line="+321"/>
+        <source>Exclude all user&apos;s .gvfs folders (**/.gvfs/)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+223"/>
+        <location line="+423"/>
         <location line="+1104"/>
         <location line="+279"/>
-        <location line="+275"/>
+        <location line="+301"/>
         <source>Edit highlighted inclusion</source>
         <translation>Upravit zvýrazněná zařazení</translation>
     </message>
     <message>
-        <location line="-2074"/>
-        <location line="+419"/>
+        <location line="-2104"/>
+        <location line="+423"/>
         <location line="+1104"/>
         <location line="+279"/>
-        <location line="+275"/>
+        <location line="+301"/>
         <source>edit</source>
         <translation>Upravit</translation>
     </message>
     <message>
-        <location line="-2063"/>
-        <location line="+419"/>
+        <location line="-2093"/>
+        <location line="+423"/>
         <location line="+1104"/>
         <location line="+279"/>
-        <location line="+275"/>
+        <location line="+301"/>
         <source>Move highlighted inclusion up</source>
         <translation>Posunout zvýrazněná zařazení nahoru</translation>
     </message>
     <message>
-        <location line="-2074"/>
-        <location line="+419"/>
+        <location line="-2104"/>
+        <location line="+423"/>
         <location line="+1104"/>
         <location line="+279"/>
-        <location line="+275"/>
+        <location line="+301"/>
         <source>move up</source>
         <translation>Posunout nahoru</translation>
     </message>
     <message>
-        <location line="-2063"/>
-        <location line="+419"/>
+        <location line="-2093"/>
+        <location line="+423"/>
         <location line="+1104"/>
         <location line="+279"/>
-        <location line="+275"/>
+        <location line="+301"/>
         <source>Move highlighted inclusion down</source>
         <translation>Posunout zvýrazněná zařazení dolů</translation>
     </message>
     <message>
-        <location line="-2074"/>
-        <location line="+419"/>
+        <location line="-2104"/>
+        <location line="+423"/>
         <location line="+1104"/>
         <location line="+279"/>
-        <location line="+275"/>
+        <location line="+301"/>
         <source>move down</source>
         <translation>Posunout dolů</translation>
     </message>
     <message>
-        <location line="-2004"/>
+        <location line="-2034"/>
         <source>Include</source>
         <translation>Zařazení</translation>
     </message>
@@ -4934,14 +5151,13 @@ Musí být vybrán &quot;Záchrana do adresářů&quot;
         <translation>Režim:</translation>
     </message>
     <message>
-        <location line="+7"/>
         <source>Include ONLY this list of patterns. Nothing more.
 Please refer to the manual for better understanding of include rules.</source>
-        <translation>Zařadit POUZE tento seznam vzorů. Nic víc.
+        <translation type="obsolete">Zařadit POUZE tento seznam vzorů. Nic víc.
 Projděte si, prosím, návod kvůli lepšímu porozumění zařazovacích pravidel.</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+22"/>
         <source>Do not exclude this list of patterns.
 Please refer to the manual for better understanding of include rules.</source>
         <translation>Nevylučovat tento seznam vzorů.
@@ -4953,7 +5169,7 @@ Projděte si, prosím, návod kvůli lepšímu porozumění zařazovacích pravi
         <translation>Obvyklé zařazení</translation>
     </message>
     <message>
-        <location line="+901"/>
+        <location line="+904"/>
         <source>Preserve ownership, times</source>
         <translation>Zachovat vlastnictví a časové údaje</translation>
     </message>
@@ -5017,7 +5233,18 @@ VAROVÁNÍ: Všechny soubory musí být zařazeny v řadě souborů určených k
         <translation>Zachovat tvrdé odkazy</translation>
     </message>
     <message>
-        <location line="+891"/>
+        <location line="+558"/>
+        <location line="+10"/>
+        <source>Repeat any command that fails, x times</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-7"/>
+        <source>Repeat on fail:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+359"/>
         <source>Check this to clone source to destination
 Leave unchecked to create an extra directory inside destination</source>
         <translation>Toto zaškrtnout pro klonování zdroje do cíle
@@ -5029,7 +5256,7 @@ Ponechejte nezaškrtnuté pro vytvoření adresáře navíc v cíli</translation
         <translation>NEVYTVÁŘET adresář navíc</translation>
     </message>
     <message>
-        <location line="-926"/>
+        <location line="-955"/>
         <source>Ignore files using a similar algorithm to CVS 
 (-C)</source>
         <translation>Nevšímat si souborů, které používají algoritmus podobný CVS
@@ -5065,12 +5292,12 @@ Ponechejte nezaškrtnuté pro vytvoření adresáře navíc v cíli</translation
         <translation type="obsolete">Zahrnout pouze tento seznam adresářů, souborů nebo vzorů</translation>
     </message>
     <message>
-        <location line="-1359"/>
+        <location line="-1362"/>
         <source>Only Include</source>
         <translation>Pouze zařazené</translation>
     </message>
     <message>
-        <location line="+136"/>
+        <location line="+139"/>
         <location line="+28"/>
         <source>Include list</source>
         <translation>Seznam zařazených</translation>
@@ -5133,7 +5360,14 @@ Ponechejte nezaškrtnuté pro vytvoření adresáře navíc v cíli</translation
         <translation>Použít vzdálený hostitelský počítač pro cíl dat.</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="-371"/>
+        <source>Include ONLY this list of patterns. Nothing more.
+Please refer to the manual for better understanding of include rules.
+This will disable the exclude feature.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+374"/>
         <source>destination</source>
         <translation>Cíl</translation>
     </message>
@@ -5180,7 +5414,7 @@ Povšimněte si, že musíte udělat všechny akce, které jsou potřeba pro ssh
         <translation>Zadejte port (bránu), kterou byste rád použil pro ssh připojení (opusťte prázdné v případě výchozího portu (brány))</translation>
     </message>
     <message>
-        <location line="+1278"/>
+        <location line="+1304"/>
         <location line="+22"/>
         <source>Set the total number of backup snapshots to keep</source>
         <translation>Nastavit celkový počet zálohovacích snímků, které se mají uchovat</translation>
@@ -5197,7 +5431,7 @@ Has no effect if remote destination is used.</source>
 Nemá účinek, pokud je používán vzdálený cíl.</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+59"/>
         <source>Advanced</source>
         <translation>Rozšířené volby</translation>
     </message>
@@ -5230,12 +5464,12 @@ Nemá účinek, pokud je používán vzdálený cíl.</translation>
         <translation>Zrušit</translation>
     </message>
     <message>
-        <location line="-2425"/>
+        <location line="-2458"/>
         <source>Add exclusion as entered in the next field</source>
         <translation>Přidat vyloučení, jak bylo zadáno, do dalšího pole</translation>
     </message>
     <message>
-        <location line="+367"/>
+        <location line="+371"/>
         <source>Add inclusion as entered in the next field</source>
         <translation>Přidat zařazení, jak bylo zadáno, do dalšího pole</translation>
     </message>
@@ -5244,7 +5478,7 @@ Nemá účinek, pokud je používán vzdálený cíl.</translation>
         <translation type="obsolete">Přesně zdrojový adresář</translation>
     </message>
     <message>
-        <location line="-929"/>
+        <location line="-970"/>
         <location line="+31"/>
         <source>Enter the full path of the source directory (eg /home/luckyb/)</source>
         <translation>Zadejte celou cestu ke zdrojovému adresáři (např. /home/luckyb/)</translation>
@@ -5260,7 +5494,7 @@ Nemá účinek, pokud je používán vzdálený cíl.</translation>
         <translation>Zadejte celou cestu k cílovému adresáři (např. /media/backups/SiduxHome/)</translation>
     </message>
     <message>
-        <location line="+393"/>
+        <location line="+430"/>
         <source>Enter here file, folder or pattern and then press the &quot;add&quot; button to add it to the exclude list
 * - matches any non-empty component (it stops at slashes)
 ** - matches anything, including slashes
@@ -5277,7 +5511,7 @@ začíná na / - vzor je ukotven k zvláštnímu místu v hierarchii souborů (n
 jsoucí za / - odpovídá pouze adresáři, ne řádným souborům, symbolickým odkazům nebo zařízením</translation>
     </message>
     <message>
-        <location line="+367"/>
+        <location line="+371"/>
         <source>Enter here file, folder or pattern and then press the &quot;add&quot; button to add it to the include list
 * - matches any non-empty component (it stops at slashes)
 ** - matches anything, including slashes
@@ -5426,7 +5660,7 @@ jsoucí za / - odpovídá pouze adresáři, ne řádným souborům, symbolickým
         <translation type="obsolete">Tento příkaz jste již přidal</translation>
     </message>
     <message>
-        <location filename="../ui/modifyDialog.ui" line="-1018"/>
+        <location filename="../ui/modifyDialog.ui" line="-1059"/>
         <source>Task properties</source>
         <translation>Vlastnosti úkolu</translation>
     </message>
@@ -5501,12 +5735,12 @@ jsoucí za / - odpovídá pouze adresáři, ne řádným souborům, symbolickým
     </message>
     <message>
         <location line="+18"/>
-        <location line="+1509"/>
+        <location line="+1550"/>
         <source>Templates</source>
         <translation>Šablony</translation>
     </message>
     <message>
-        <location line="-1476"/>
+        <location line="-1517"/>
         <source>Temporary folders</source>
         <translation>Složky s dočasnými soubory</translation>
     </message>
@@ -5531,7 +5765,7 @@ jsoucí za / - odpovídá pouze adresáři, ne řádným souborům, symbolickým
         <translation>Složky vyrovnávací paměti</translation>
     </message>
     <message>
-        <location line="+37"/>
+        <location line="+74"/>
         <source>Trash</source>
         <translation>Smetí</translation>
     </message>
@@ -5542,36 +5776,36 @@ jsoucí za / - odpovídá pouze adresáři, ne řádným souborům, symbolickým
     </message>
     <message>
         <location line="+39"/>
-        <location line="+367"/>
+        <location line="+371"/>
         <source>launch the pattern editor</source>
         <translation>Spustit editor vzorů</translation>
     </message>
     <message>
-        <location line="-155"/>
+        <location line="-159"/>
         <source>Read exclude patterns from file</source>
         <translation>Císt vylučovací vzorce ze souboru</translation>
     </message>
     <message>
         <location line="+3"/>
-        <location line="+311"/>
+        <location line="+315"/>
         <source>Read file:</source>
         <translation>Číst soubor:</translation>
     </message>
     <message>
-        <location line="-301"/>
-        <location line="+311"/>
+        <location line="-305"/>
+        <location line="+315"/>
         <source>filename</source>
         <translation>Název souboru</translation>
     </message>
     <message>
-        <location line="-301"/>
-        <location line="+311"/>
+        <location line="-305"/>
+        <location line="+315"/>
         <source>browse</source>
         <translation>Procházet</translation>
     </message>
     <message>
-        <location line="-308"/>
-        <location line="+311"/>
+        <location line="-312"/>
+        <location line="+315"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -5703,7 +5937,7 @@ Vlastnická práva k datům a oprávnění NEBUDOU zachována.
     </message>
     <message>
         <location line="+59"/>
-        <location line="+275"/>
+        <location line="+301"/>
         <source>Add command as entered in the field beside</source>
         <translation>Přidat příkaz tak, jak byl zadán, do pole hned vedle</translation>
     </message>
@@ -5712,14 +5946,14 @@ Vlastnická práva k datům a oprávnění NEBUDOU zachována.
         <translation type="obsolete">Vykonat před úkolem - seznam s příkazy</translation>
     </message>
     <message>
-        <location line="-228"/>
-        <location line="+275"/>
+        <location line="-254"/>
+        <location line="+301"/>
         <source>Command list</source>
         <translation>Seznam s příkazy</translation>
     </message>
     <message>
-        <location line="-241"/>
-        <location line="+275"/>
+        <location line="-267"/>
+        <location line="+301"/>
         <source>Remove highlighted command from list</source>
         <translation>Odstranit zvýrazněný příkaz ze seznamu</translation>
     </message>
@@ -5759,17 +5993,17 @@ POZOR: zaškrtněte tuto volbu jen v případě, že jste si opravdu vědom toho
     <message>
         <location filename="../src/patternEditor.cpp" line="+44"/>
         <location line="+89"/>
-        <location line="+152"/>
+        <location line="+155"/>
         <source>directory :</source>
         <translation>Adresář:</translation>
     </message>
     <message>
-        <location line="-142"/>
+        <location line="-145"/>
         <source>Select file</source>
         <translation>Vybrat soubor</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+9"/>
         <source>Please choose a file within the source</source>
         <translation>Vyberte, prosím, soubor uvnitř zdroje</translation>
     </message>
@@ -5779,7 +6013,7 @@ POZOR: zaškrtněte tuto volbu jen v případě, že jste si opravdu vědom toho
         <translation>Vybrat adresář</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+15"/>
         <source>Please choose a directory within the source</source>
         <translation>Vyberte, prosím, adresář uvnitř zdroje</translation>
     </message>
@@ -6221,7 +6455,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Vybrat soubor</translation>
     </message>
     <message>
-        <location filename="../src/scheduleDialog.cpp" line="+549"/>
+        <location filename="../src/scheduleDialog.cpp" line="+594"/>
         <location line="+38"/>
         <source>day</source>
         <translation>Den</translation>
@@ -6642,23 +6876,25 @@ podle &quot;Podrobnosti rozvrhu prací naplánovaných v profilu&quot;</translat
         <translation type="obsolete">Soubor</translation>
     </message>
     <message>
-        <location filename="../src/scheduleDialog.cpp" line="-441"/>
+        <location filename="../src/scheduleDialog.cpp" line="-471"/>
+        <location line="+78"/>
         <source>Starting from scratch</source>
         <translation>Začíná úplně od začátku</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-78"/>
+        <location line="+78"/>
         <source> file</source>
         <comment>BEWARE of the whitespace before file</comment>
         <translation> soubor</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+104"/>
         <source>Unable to create schedule file</source>
         <translation>Neschopen vytvořit soubor s rozvrhem prací</translation>
     </message>
     <message>
-        <location line="+67"/>
+        <location line="+30"/>
         <source>You have reached the maximum limit of supported scheduled profiles</source>
         <translation>Dosáhl jste nejvyšší možné meze podporovaných naplánovaných profilů</translation>
     </message>
@@ -6734,13 +6970,14 @@ podle &quot;Podrobnosti rozvrhu prací naplánovaných v profilu&quot;</translat
         <translation>každého měsíce</translation>
     </message>
     <message>
-        <location line="-470"/>
+        <location line="-500"/>
+        <location line="+78"/>
         <source>The existent schedule file is not a valid luckyBackup v.</source>
         <comment>v is for version</comment>
         <translation>Stávající soubor s rozvrhem prací není platný luckyBackup v.</translation>
     </message>
     <message>
-        <location line="+525"/>
+        <location line="+477"/>
         <source>Unable to create cron file</source>
         <translation>Neschopen vytvořit cron soubor</translation>
     </message>
@@ -6749,14 +6986,14 @@ podle &quot;Podrobnosti rozvrhu prací naplánovaných v profilu&quot;</translat
         <translation type="obsolete">Profil, který se pokoušíte otevřít, není platný luckyBackup v.</translation>
     </message>
     <message>
-        <location line="-465"/>
-        <location line="+177"/>
+        <location line="-423"/>
+        <location line="+135"/>
         <location line="+40"/>
         <source>No schedules are declared !!</source>
         <translation>Nebyl prohlášen žádný rozvrh prací!</translation>
     </message>
     <message>
-        <location line="-193"/>
+        <location line="-150"/>
         <source>You have made changes without clicking the cronIT button</source>
         <translation>Provedl jste změny, aniž byste klepl na tlačítko cronIT</translation>
     </message>
@@ -6766,7 +7003,7 @@ podle &quot;Podrobnosti rozvrhu prací naplánovaných v profilu&quot;</translat
         <translation>Jste si jist, že chcete zavřít dialog s rozvrhem prací?</translation>
     </message>
     <message>
-        <location line="+77"/>
+        <location line="+34"/>
         <source>Your crontab is updated successfully</source>
         <translation>Váš crontab je úspěšně obnoven</translation>
     </message>
@@ -7163,6 +7400,79 @@ p, li { white-space: pre-wrap; }
         <location filename="../ui/textDialog.ui" line="-27"/>
         <source>Okay</source>
         <translation>OK</translation>
+    </message>
+</context>
+<context>
+    <name>winDialog</name>
+    <message>
+        <location filename="../ui/winDialog.ui" line="+17"/>
+        <source>luckyBackup</source>
+        <translation type="unfinished">luckyBackup</translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>declaration of paths</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>rsync:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the rsync command</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <location line="+64"/>
+        <source>browse loacly</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-47"/>
+        <location line="+64"/>
+        <source>Use default value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-46"/>
+        <source>ssh</source>
+        <translation type="unfinished">ssh</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the ssh command</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+58"/>
+        <source>Okay</source>
+        <translation type="unfinished">OK</translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Zrušit</translation>
+    </message>
+    <message>
+        <location filename="../src/winDialog.cpp" line="+102"/>
+        <source>Select rsync command</source>
+        <comment>file selection dialog title</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <location line="+6"/>
+        <source>Executable Files (*.exe)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-1"/>
+        <source>Select ssh command</source>
+        <comment>file selection dialog title</comment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

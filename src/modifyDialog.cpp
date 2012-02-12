@@ -4,7 +4,7 @@ Display a dialog. Adds a new or modifies an existing operation
 ===============================================================================================================================
 ===============================================================================================================================
      This file is part of "luckyBackup" project
-     Copyright 2008-2011, Loukas Avgeriou
+     Copyright 2008-2012, Loukas Avgeriou
      luckyBackup is distributed under the terms of the GNU General Public License
      luckyBackup is free software: you can redistribute it and/or modify
      it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ Display a dialog. Adds a new or modifies an existing operation
  project version    : Please see "main.cpp" for project version
 
  developer          : luckyb 
- last modified      : 17 May 2011
+ last modified      : 06 Feb 2012
 
 ===============================================================================================================================
 ===============================================================================================================================
@@ -350,9 +350,9 @@ void modifyDialog::okayPressed()
                 tr("That is not allowed because '/' does not have an actual name","message box message - line2")+" !!<br>"
                 "..."+tr("Please check the relevant box before proceeding","message box message - line3")+"<br><br>");
     }
-    //same for OS2
+    //same for OS2 or win
     if (((uiM.lineEdit_source -> text()).endsWith(":\\")) && (uiM.comboBox_Type -> currentIndex()==0) && (!uiM.checkBox_backupContents -> isChecked())
-        && (OS2running) )
+        && (notXnixRunning) )
     {
         modifyOK = FALSE;
         message.append("<b>"+tr("ERROR","message box message - line1")+":</b> "+
@@ -470,7 +470,7 @@ void modifyDialog::commandPressed()
     dest=arguments[arguments.size()-1];
     while (count < arguments.size()-2)
     {
-        if (arguments[count].contains("-e ssh "))
+        if (arguments[count].contains("-e "+sshCommandPath+" "))
         {
             tempArgs.append("-e \"" + arguments[count].remove(0,3) + "\" ");
         }
@@ -1246,6 +1246,7 @@ operation *modifyDialog::fillOperationArray()
     pTask -> SetExcludeLostFound    ( uiM.checkBox_excludeLostFound -> isChecked() );
     pTask -> SetExcludeSystem    ( uiM.checkBox_excludeSystem -> isChecked() );
     pTask -> SetExcludeTrash    ( uiM.checkBox_excludeTrash -> isChecked() );
+    pTask -> SetExcludeGVFS     ( uiM.checkBox_excludeGVFS -> isChecked() );
 
     count = 0;    //read exclude list one by one
     while ( count < (uiM.listWidget_exclude -> count()) )
@@ -1259,7 +1260,7 @@ operation *modifyDialog::fillOperationArray()
     //set include groupbox & all the info in there -----------------------------------------------------------------------------
     pTask -> SetIncludeFromFile    ( uiM.checkBox_includeFile -> isChecked() );
     pTask -> SetIncludeFile        ( uiM.lineEdit_includeFile -> text() );
-    pTask -> SetIncludeModeNormal    ( uiM.radioButton_includeNormal -> isChecked() );
+    pTask -> SetIncludeModeNormal  ( uiM.radioButton_includeNormal -> isChecked() );
     count = 0;    //read include list one by one
     while ( count < (uiM.listWidget_include -> count()) )
     {
@@ -1320,7 +1321,8 @@ operation *modifyDialog::fillOperationArray()
         pTask -> AddExecuteAfterListItemState(tempState);
         count++;
     }
-    pTask -> SetByPassWARNING    ( uiM.checkBox_byPassWarning -> isChecked() );
+    pTask -> SetByPassWARNING   ( uiM.checkBox_byPassWarning -> isChecked() );
+    pTask -> SetRepeatOnFail    ( uiM.spinBox_repeatOnFail -> value() );
 
     //append aguments -----------------------------------------------------------------------------------------------------------
     pTask -> SetArgs ( AppendArguments(pTask) );
@@ -1349,20 +1351,21 @@ void modifyDialog::fillModifyWindow(operation *pTask)
     if (pTask -> GetTypeSync())
         uiM.comboBox_Type -> setCurrentIndex(1);
 
-    uiM.lineEdit_source         -> setText    (pTask -> GetSource() );
-    uiM.lineEdit_destination     -> setText    (pTask -> GetDestination() );
+    uiM.lineEdit_source             -> setText    (pTask -> GetSource() );
+    uiM.lineEdit_destination        -> setText    (pTask -> GetDestination() );
     
-    uiM.spinBox_snapshotsKeep    -> setValue    (pTask -> GetKeepSnapshots());
+    uiM.spinBox_snapshotsKeep       -> setValue    (pTask -> GetKeepSnapshots());
 
-    uiM.checkBox_excludeFile     -> setChecked    (pTask -> GetExcludeFromFile() );
-    uiM.lineEdit_excludeFile     -> setText    (pTask -> GetExcludeFile() );
-    uiM.checkBox_excludeTemp     -> setChecked    (pTask -> GetExcludeTemp() );
-    uiM.checkBox_excludeCache     -> setChecked    (pTask -> GetExcludeCache() );
-    uiM.checkBox_excludeBackup     -> setChecked    (pTask -> GetExcludeBackup() );
-    uiM.checkBox_excludeMount     -> setChecked    (pTask -> GetExcludeMount() );
-    uiM.checkBox_excludeLostFound     -> setChecked    (pTask -> GetExcludeLostFound() );
-    uiM.checkBox_excludeSystem     -> setChecked    (pTask -> GetExcludeSystem() );
-    uiM.checkBox_excludeTrash     -> setChecked    (pTask -> GetExcludeTrash() );
+    uiM.checkBox_excludeFile        -> setChecked    (pTask -> GetExcludeFromFile() );
+    uiM.lineEdit_excludeFile        -> setText    (pTask -> GetExcludeFile() );
+    uiM.checkBox_excludeTemp        -> setChecked    (pTask -> GetExcludeTemp() );
+    uiM.checkBox_excludeCache       -> setChecked    (pTask -> GetExcludeCache() );
+    uiM.checkBox_excludeBackup      -> setChecked    (pTask -> GetExcludeBackup() );
+    uiM.checkBox_excludeMount       -> setChecked    (pTask -> GetExcludeMount() );
+    uiM.checkBox_excludeLostFound   -> setChecked    (pTask -> GetExcludeLostFound() );
+    uiM.checkBox_excludeSystem      -> setChecked    (pTask -> GetExcludeSystem() );
+    uiM.checkBox_excludeTrash       -> setChecked    (pTask -> GetExcludeTrash() );
+    uiM.checkBox_excludeGVFS        -> setChecked    (pTask -> GetExcludeGVFS() );
     count=0;
     while ( count < (pTask -> GetExcludeListSize()) )
     {
@@ -1435,7 +1438,8 @@ void modifyDialog::fillModifyWindow(operation *pTask)
             uiM.listWidget_executeAfter -> currentItem() -> setCheckState(Qt::Unchecked);
         count++;
     }
-    uiM.checkBox_byPassWarning     -> setChecked    (pTask -> GetByPassWARNING() );
+    uiM.checkBox_byPassWarning      -> setChecked   ( pTask -> GetByPassWARNING() );
+    uiM.spinBox_repeatOnFail        -> setValue     ( pTask -> GetRepeatOnFail() );
 }
 
 // modifyTrailing ===========================================================================================================
@@ -1447,8 +1451,8 @@ void modifyDialog::modifyTrailing()
     QString sourceDir   = uiM.lineEdit_source -> text();
     QString destDir     = uiM.lineEdit_destination -> text();
     
-    // Check if a drive letter is declared at OS/2 (eg c:) and add a trailing slash
-    if (OS2running)
+    // Check if a drive letter is declared at OS/2 or win (eg c:) and add a trailing slash
+    if (notXnixRunning)
     {
         if (sourceDir.endsWith(":"))    sourceDir.append(SLASH);
         if (destDir.endsWith(":"))      destDir.append(SLASH);
@@ -1462,7 +1466,7 @@ void modifyDialog::modifyTrailing()
 
     if ((uiM.comboBox_Type -> currentIndex()==0) && (!uiM.checkBox_backupContents -> isChecked()))        //Directory by name
     {
-        if (OS2running) //OS2 uses normal slashes "\" not unix ones "/"
+        if (notXnixRunning) //OS2 & win uses normal slashes "\" not unix ones "/"
         {
             if ( (sourceDir.endsWith(SLASH)) && (!sourceDir.endsWith(":"+SLASH)) )      sourceDir.chop(1);
             if ( (!destDir.endsWith(SLASH)) && (destDir != "") )                        destDir.append(SLASH);
@@ -1494,7 +1498,7 @@ void modifyDialog::modifyTrailing()
 // function to change / to \ for OS2 (normaly when file dialog is used)
 QString modifyDialog::modifyOS2Slashes(QString pathToModify)
 {    
-    if (OS2running)
+    if (notXnixRunning)
         pathToModify.replace("/",SLASH);
     
     return pathToModify;

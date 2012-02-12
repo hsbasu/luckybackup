@@ -4,7 +4,7 @@
 ===============================================================================================================================
 ===============================================================================================================================
      This file is part of "luckyBackup" project
-     Copyright 2008-2011, Loukas Avgeriou
+     Copyright 2008-2012, Loukas Avgeriou
      luckyBackup is distributed under the terms of the GNU General Public License
      luckyBackup is free software: you can redistribute it and/or modify
      it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@
  project version    : Please see "main.cpp" for project version
 
  developer          : lucky
- last modified      : 01 Jun 2011
+ last modified      : 02 Feb 2012
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -35,8 +35,8 @@
 QString myHome = QDir::homePath();                          // user's home directory
 QString currentUser;                                        // will hold the current username (definition at luckybackupwindow.cpp)
 QString const appName = "luckyBackup";                      // application name
-double const appVersion = 0.46;                             // application version
-QString appVersionString = "0.4.6";                         // application version
+double const appVersion = 0.47;                             // application version
+QString appVersionString = "0.4.7";                         // application version
 double const validProfileVersion = 0.21;                    // profile version before this a profile won't be loaded
 double const validScheduleVersion = 0.34;                   // schedule version before this a schedule won't be loaded
 double const validSettingsVersion = 0.3;                    // Settings file valid version
@@ -111,6 +111,7 @@ bool GNOMErunning = FALSE;                                  // becomes true if d
 // functions ------------------------------------------------------------------------------------------------------------------------
 bool argumentsTest(int , char**);                           // checks the arguments given at command-line and returns true if everything is ok
 bool loadCurrentProfile();                                  //loads an already created profile
+void declareRsyncCommand();                                 // Declares the rsync & ssh commands (full path for windows)
 bool check_list();                                          //check the operations list
 bool check_dirs();                                          //check directories of declared profile data
 
@@ -120,6 +121,8 @@ void checkBackupDirs(QString, QString);                     // function to check
 int  loadProfile(QString);                                  // loads an existing profile - text mode
 int  loadProfileQV(QString);                                // loads an existing profile - data mode
 bool saveProfile(QString);                                  // saves an existing profile
+bool exportFullProfile(QString,QString);                    //function to export the .profile file + logs + snaps
+int importFullProfile(QString,QString);                     //function to import the .profile file + logs + snaps (whatever is available)
 bool checkTaskList();                                       // Checks if the Task list is ok to proceed
 bool checkDeclaredDirs(bool);                               // Check if the declared data are ok by calling checkBackupDirs or checkSyncDirs
 QStringList AppendArguments(operation*);                    // Set command's (normally rsync) arguments
@@ -145,12 +148,31 @@ QString emailDefaultBody    =   "Profile:      %p"
 QString emailDefaultCommand =   "sendemail -f %f -t %t -u %s -m %b -a %l -s %v";     // Holds the default email command
 QString sendEmailNow (bool);                                // Send an email after a profile run. bool is TRUE if called for testing purposes
 
+QString rsyncDefaultCommand = "rsync";                      // Holds the default rsync command
+QString sshDefaultCommand = "ssh";                          // Holds the default ssh command
+QString rsyncDefaultWinCommand = "c:\\cygwin\\bin\\rsync.exe"; // Holds the default rsync command for windows
+QString sshDefaultWinCommand = "c:\\cygwin\\bin\\ssh.exe";  // Holds the default ssh command for windows
+QString rsyncCommandPath;       // holds the full path of the rsync command for WINDOWS or just "rsync" for *nix
+QString sshCommandPath;         // holds the full path of the ssh command for WINDOWS or just "ssh" for *nix
+
 #ifdef Q_OS_OS2
 bool OS2running = TRUE;
-QString SLASH = "\\";
 #else
 bool OS2running = FALSE;
+#endif
+
+#ifdef Q_OS_WIN32
+bool WINrunning = TRUE;
+#else
+bool WINrunning = FALSE;
+#endif
+
+#if defined Q_OS_OS2 || defined Q_OS_WIN32
+QString SLASH = "\\";
+bool notXnixRunning=TRUE;
+#else
 QString SLASH = "/";
+bool notXnixRunning=FALSE;
 #endif
 
 #endif

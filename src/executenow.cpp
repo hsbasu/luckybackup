@@ -1,32 +1,32 @@
 /* ---------------------------------- executenow.cpp ---------------------------------------------------------------------------
- do everything that deals with commands (rsync & others) execution
+do everything that deals with commands (rsync & others) execution
 
 ===============================================================================================================================
 ===============================================================================================================================
-     This file is part of "luckyBackup" project
-     Copyright 2008-2011, Loukas Avgeriou
-     luckyBackup is distributed under the terms of the GNU General Public License
-     luckyBackup is free software: you can redistribute it and/or modify
-     it under the terms of the GNU General Public License as published by
-     the Free Software Foundation, either version 3 of the License, or
-     (at your option) any later version.
- 
-     luckyBackup is distributed in the hope that it will be useful,
-     but WITHOUT ANY WARRANTY; without even the implied warranty of
-     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-     GNU General Public License for more details.
- 
-     You should have received a copy of the GNU General Public License
-     along with luckyBackup.  If not, see <http://www.gnu.org/licenses/>.
+    This file is part of "luckyBackup" project
+    Copyright 2008-2012, Loukas Avgeriou
+    luckyBackup is distributed under the terms of the GNU General Public License
+    luckyBackup is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    luckyBackup is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with luckyBackup.  If not, see <http://www.gnu.org/licenses/>.
 
 
- project version	: Please see "main.cpp" for project version
+project version	: Please see "main.cpp" for project version
 
- developer          : luckyb 
- last modified      : 01 Jun 2011
+developer          : luckyb 
+last modified      : 08 Feb 2012
 ===============================================================================================================================
 ===============================================================================================================================
- ********************************** DO NOT FORGET TO CHANGE "commandline.cpp:rsyncIT()" ********************************************************
+********************************** DO NOT FORGET TO CHANGE "commandline.cpp:rsyncIT()" ********************************************************
 */
 
 QProcess *syncProcess;
@@ -36,6 +36,9 @@ QTime StartTime(0,0,0,0);	//find out elapsed time from these;
 // executes rsync (& other commands )and displays progress.
 void luckyBackupWindow::executeNOW ()
 {
+    //Variables initialization
+    // do NOT intitialise specific task variables here. Use the executeBeforeTask() function instead
+    
     NOWexecuting = TRUE;		//this is mainly used if the window close button (or alt+F4) is pressed
     ABORTpressed = FALSE;		//becomes true if abort button pressed
     //change gui to execute mode !!
@@ -64,6 +67,8 @@ void luckyBackupWindow::executeNOW ()
     currentAfter = 0;
     currentBefore = 0;
     errorCount = 0;			//errors found during task execution
+    repeatOnFailTry = 0;
+    repeatOnFailMax = 0;
 
     //initiate tray icon
     if (QSystemTrayIcon::isSystemTrayAvailable ())
@@ -103,7 +108,7 @@ void luckyBackupWindow::executeNOW ()
         minimizeTray();
         
     //rsync command & arguments initiation
-    command = "rsync";
+    command = rsyncCommandPath;
     rsyncArguments.clear();
     syncAB = TRUE;
 
@@ -163,10 +168,12 @@ void luckyBackupWindow::swapGUI(QString GUImode)
             ui.pushButton_minimizeToTray	-> setVisible (TRUE);
         else
             ui.pushButton_minimizeToTray	-> setVisible (FALSE);
+        errorsToolbar-> setVisible (TRUE);
         ui.pushButton_nextError	-> setVisible (TRUE);
         ui.pushButton_previousError	-> setVisible (TRUE);
         ui.pushButton_nextError	-> setEnabled (FALSE);
         ui.pushButton_previousError	-> setEnabled (FALSE);
+        ui.checkBox_onlyShowErrors -> setVisible (TRUE);
     }
     else		//change gui to normal mode !!
     {
@@ -178,6 +185,7 @@ void luckyBackupWindow::swapGUI(QString GUImode)
         ui.pushButton_minimizeToTray-> setVisible (FALSE);
         ui.pushButton_nextError     -> setVisible (FALSE);
         ui.pushButton_previousError -> setVisible (FALSE);
+        ui.checkBox_onlyShowErrors  -> setVisible (FALSE);
         
         ui.pushButton_start	-> setVisible (TRUE);
         ui.listWidget_operations -> setVisible (TRUE);
@@ -198,6 +206,7 @@ void luckyBackupWindow::swapGUI(QString GUImode)
         profileToolbar      -> setVisible (IsVisibleProfileToolbar);
         profileComboToolbar -> setEnabled (TRUE);
         shutdownToolbar     -> setVisible (FALSE);
+        errorsToolbar     -> setVisible (FALSE);
         ui.comboBox_profile -> setEnabled (TRUE);
         ui.groupBox_task    -> setVisible (TRUE);
         ui.checkBox_DryRun  -> setEnabled (TRUE);
@@ -209,48 +218,48 @@ void luckyBackupWindow::swapGUI(QString GUImode)
 // done button pressed=====================================================================================================
 void luckyBackupWindow::donePressed()
 {
-	ui.rsyncOutput -> setText("");
-	guiModeNormal = TRUE;
-	swapGUI("normal");
+    ui.rsyncOutput -> setText("");
+    guiModeNormal = TRUE;
+    swapGUI("normal");
 
-	if (QSystemTrayIcon::isSystemTrayAvailable ())	// this prevents a segfault when system tray is NOT available
-		LBtray -> hide();	// hide the tray icon
-	
-	refreshList(); //refresh the listWidget_operations
-	
-	InfoData = QDateTime::currentDateTime().toString(Qt::DefaultLocaleLongDate) + "<br>" +
-		tr("Execution of profile","full phrase: 'Execution of profile <PROFILENAME> finished'") +
-		" <b>" + profileName + "</b> " + tr("finished","full phrase: 'Execution of profile <PROFILENAME> finished'")+" !!<br>";
-	if (DryRun)
-		InfoData.append("(" + tr("simulation mode") +")");
-	else
-	{
-		if (!savedProfile)
-			InfoData.append(tr("Could not update last execution time of tasks") + "<br>" + profile.errorString());
-		else
-			InfoData.append(tr("Last execution time of tasks updated"));
-	}
-	ui.textBrowser_info -> setText(InfoData);
+    if (QSystemTrayIcon::isSystemTrayAvailable ())	// this prevents a segfault when system tray is NOT available
+        LBtray -> hide();	// hide the tray icon
+    
+    refreshList(); //refresh the listWidget_operations
+    
+    InfoData = QDateTime::currentDateTime().toString(Qt::DefaultLocaleLongDate) + "<br>" +
+        tr("Execution of profile","full phrase: 'Execution of profile <PROFILENAME> finished'") +
+        " <b>" + profileName + "</b> " + tr("finished","full phrase: 'Execution of profile <PROFILENAME> finished'")+" !!<br>";
+    if (DryRun)
+        InfoData.append("(" + tr("simulation mode") +")");
+    else
+    {
+        if (!savedProfile)
+            InfoData.append(tr("Could not update last execution time of tasks") + "<br>" + profile.errorString());
+        else
+            InfoData.append(tr("Last execution time of tasks updated"));
+    }
+    ui.textBrowser_info -> setText(InfoData);
 }
 // abort button pressed=====================================================================================================
 void luckyBackupWindow::abortPressed()
 {
-	//if (syncProcess->state() == QProcess::NotRunning)	//if syncProcess is not Running (done pressed)
+    //if (syncProcess->state() == QProcess::NotRunning)	//if syncProcess is not Running (done pressed)
 
-	// the next condition is used because for some wierd reason the abort button is presses multiple times
-	// if you launch LB, run a profile twice and abort both of them. The second run you abort, will emitt 2 abort clicked() signals !!!
-	if (ABORTpressed)
-		return;
+    // the next condition is used because for some wierd reason the abort button is presses multiple times
+    // if you launch LB, run a profile twice and abort both of them. The second run you abort, will emitt 2 abort clicked() signals !!!
+    if (ABORTpressed)
+        return;
 
-	ui.rsyncOutput->append("<br><br><font color=red>" + tr("Aborting: Please wait for all processes to be killed") + "...</font>");
-	ExecuteBefore = FALSE;
-	ExecuteAfter = FALSE;
-	ABORTpressed = TRUE;
-	
-	syncProcess -> kill();	//kill rsyncProcess
-	syncProcess -> waitForFinished();
+    ui.rsyncOutput->append("<br><br><font color=red>" + tr("Aborting: Please wait for all processes to be killed") + "...</font>");
+    ExecuteBefore = FALSE;
+    ExecuteAfter = FALSE;
+    ABORTpressed = TRUE;
+    
+    syncProcess -> kill();	//kill rsyncProcess
+    syncProcess -> waitForFinished();
 
-	setNowDoing ();		//update Nowdoing textBrowser
+    setNowDoing ();		//update Nowdoing textBrowser
 
 }
 
@@ -259,319 +268,298 @@ void luckyBackupWindow::abortPressed()
 // This is only called when system tray is available
 void luckyBackupWindow::createTrayIcon()
 {
-	//actions----------------------------------
-	LBtrayMenu = new QMenu(this);
-	actionAbort = new QAction(QIcon(":/luckyPrefix/abort.png"), tr("&Abort"), this);
-	minimizeToTray = new QAction(QIcon(":/luckyPrefix/window_minimize.png"), tr("&Minimize to tray","tray menu action"), this);
-	restoreFromTray = new QAction(QIcon(":/luckyPrefix/window_restore.png"), tr("&Restore","tray menu action"), this);
-	
-	connect( actionAbort, SIGNAL(triggered()), this, SLOT(abortPressed()));		//tray icon action ABORT
-	connect( minimizeToTray, SIGNAL(triggered()), this, SLOT(minimizeTray()));			//tray icon action minimize to Tray
-	connect( restoreFromTray, SIGNAL(triggered()), this, SLOT(restoreTray()));		//tray icon action restore from tray
-	
-	//context menu----------------------------
-	LBtrayMenu	-> addAction(minimizeToTray);
-	LBtrayMenu	-> addAction(minimizeToTray);
-	LBtrayMenu	-> addSeparator();
-	LBtrayMenu	-> addAction(actionAbort);
+    //actions----------------------------------
+    LBtrayMenu = new QMenu(this);
+    actionAbort = new QAction(QIcon(":/luckyPrefix/abort.png"), tr("&Abort"), this);
+    minimizeToTray = new QAction(QIcon(":/luckyPrefix/window_minimize.png"), tr("&Minimize to tray","tray menu action"), this);
+    restoreFromTray = new QAction(QIcon(":/luckyPrefix/window_restore.png"), tr("&Restore","tray menu action"), this);
+    
+    connect( actionAbort, SIGNAL(triggered()), this, SLOT(abortPressed()));		//tray icon action ABORT
+    connect( minimizeToTray, SIGNAL(triggered()), this, SLOT(minimizeTray()));			//tray icon action minimize to Tray
+    connect( restoreFromTray, SIGNAL(triggered()), this, SLOT(restoreTray()));		//tray icon action restore from tray
+    
+    //context menu----------------------------
+    LBtrayMenu	-> addAction(minimizeToTray);
+    LBtrayMenu	-> addAction(minimizeToTray);
+    LBtrayMenu	-> addSeparator();
+    LBtrayMenu	-> addAction(actionAbort);
 
-	//tray icon--------------------------------
-	LBtray = new QSystemTrayIcon(QIcon(":/luckyPrefix/luckybackup_96.png"),this);
-	LBtray -> setContextMenu(LBtrayMenu);
-	if (isMinimizedToTray == TRUE)
-	{
-		minimizeToTray 	-> setVisible(FALSE);
-		restoreFromTray	-> setVisible(TRUE);
-	}
-	else
-	{
-		minimizeToTray 	-> setVisible(TRUE);
-		restoreFromTray	-> setVisible(FALSE);
-	}
-	
-	//connect(trayIcon, SIGNAL(messageClicked()), this, SLOT(messageClicked()));
-	connect(LBtray, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
-		this, SLOT(LBtrayActivated(QSystemTrayIcon::ActivationReason)));
+    //tray icon--------------------------------
+    LBtray = new QSystemTrayIcon(QIcon(":/luckyPrefix/luckybackup_96.png"),this);
+    LBtray -> setContextMenu(LBtrayMenu);
+    if (isMinimizedToTray == TRUE)
+    {
+        minimizeToTray 	-> setVisible(FALSE);
+        restoreFromTray	-> setVisible(TRUE);
+    }
+    else
+    {
+        minimizeToTray 	-> setVisible(TRUE);
+        restoreFromTray	-> setVisible(FALSE);
+    }
+    
+    //connect(trayIcon, SIGNAL(messageClicked()), this, SLOT(messageClicked()));
+    connect(LBtray, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
+        this, SLOT(LBtrayActivated(QSystemTrayIcon::ActivationReason)));
 }
 
 // minimizeTray =============================================================================================================================
 // minimizes the gui to the tray
 void luckyBackupWindow::minimizeTray()
 {
-	if (QSystemTrayIcon::isSystemTrayAvailable ())
-	{
-		minimizeToTray 	-> setVisible(FALSE);
-		restoreFromTray	-> setVisible(TRUE);
-	}
-	isMinimizedToTray = TRUE;
-	this -> hide();
+    if (QSystemTrayIcon::isSystemTrayAvailable ())
+    {
+        minimizeToTray 	-> setVisible(FALSE);
+        restoreFromTray	-> setVisible(TRUE);
+    }
+    isMinimizedToTray = TRUE;
+    this -> hide();
 }
 // restoreTray =============================================================================================================================
 // restores the gui from the tray
 void luckyBackupWindow::restoreTray()
 {
-	if (QSystemTrayIcon::isSystemTrayAvailable ())
-	{
-		minimizeToTray 	-> setVisible(TRUE);
-		restoreFromTray	-> setVisible(FALSE);
-	}
-	isMinimizedToTray = FALSE;
-	this -> showNormal();
+    if (QSystemTrayIcon::isSystemTrayAvailable ())
+    {
+        minimizeToTray 	-> setVisible(TRUE);
+        restoreFromTray	-> setVisible(FALSE);
+    }
+    isMinimizedToTray = FALSE;
+    this -> showNormal();
 }
 // LBtrayActivated============================================================================================================
 // LB tray icon activated SLOT
 void luckyBackupWindow::LBtrayActivated(QSystemTrayIcon::ActivationReason reason)
 {
-	switch (reason)
-	{
-		case QSystemTrayIcon::Context:
-			break;
-		case QSystemTrayIcon::Trigger:
-			if (isMinimizedToTray == TRUE)
-				restoreTray();
-			else
-				minimizeTray();
-			break;
-		default:
-			;
-	}
-	
-	if (isMinimizedToTray == TRUE)
-	{
-		minimizeToTray 	-> setVisible(FALSE);
-		restoreFromTray	-> setVisible(TRUE);
-	}
-	else
-	{
-		minimizeToTray 	-> setVisible(TRUE);
-		restoreFromTray	-> setVisible(FALSE);
-	}
+    switch (reason)
+    {
+        case QSystemTrayIcon::Context:
+            break;
+        case QSystemTrayIcon::Trigger:
+            if (isMinimizedToTray == TRUE)
+                restoreTray();
+            else
+                minimizeTray();
+            break;
+        default:
+            ;
+    }
+    
+    if (isMinimizedToTray == TRUE)
+    {
+        minimizeToTray 	-> setVisible(FALSE);
+        restoreFromTray	-> setVisible(TRUE);
+    }
+    else
+    {
+        minimizeToTray 	-> setVisible(TRUE);
+        restoreFromTray	-> setVisible(FALSE);
+    }
 }
- //executes pre-task commands ===============================================================================================
+//executes pre-task commands ===============================================================================================
 void luckyBackupWindow::executeBeforeTask()
 {
-	if (ABORTpressed)		//better safe than sorry ;)
-		return;
-	
-	// logfile & older snapshots actions if real run is performed
-	if ( (!DryRun) && (currentBefore == 0) )
-	{
-		int maxSnaps = Operation[currentOperation] -> GetKeepSnapshots();	// this is the number of snapshots to keep
-		if (maxSnaps < 1)
-			maxSnaps = 1;
-		int currentSnaps = Operation[currentOperation] -> GetSnapshotsListSize();	// this is the current number of snapshots
-		if (currentSnaps < 1)
-			currentSnaps = 1;
-		
-		// first remove the older logfiles and snapshots if max keep snapshots is reached
-		
-		bool RemoteDestUsed = (Operation[currentOperation] -> GetRemoteDestination()) && (Operation[currentOperation] -> GetRemote());
-		if (currentSnaps >= maxSnaps)
-		{
-			outputInsert = "\n<font color=magenta>" +
-				tr("Removing old snapshots and logfiles of task","info message displayed during ...data removal\nFull phrase: Removing old snapshots and logfiles of task: <TASKNAME>") +
-				": <b>" + Operation[currentOperation] -> GetName() +
-				"</b></font><br>=====================================<br>";
-			ui.rsyncOutput->append(outputInsert);
-			
-			// **************Remove actual backup data ***************************************************
-				
-			// First calculate the folder where snapshots go
-			QStringList tempArguments = Operation[currentOperation] -> GetArgs();
-			QString tempSource = tempArguments[tempArguments.size()-2];
-			QString tempDestination = tempArguments[tempArguments.size()-1];
-			QString sourceLast = tempSource;
-			if (!tempSource.endsWith(SLASH))	// this means task is of type "backup dir by name"
-			{
-				if (sourceLast.contains(":"))	// this is normal for a remote directory
-					sourceLast = sourceLast.right(tempSource.size()-sourceLast.lastIndexOf(":")-1);	//this is the remote source dir without the remote pc
-				if (tempSource.contains(SLASH))	// this is normal for a directory unless it is remote
-					sourceLast = sourceLast.right(tempSource.size()-sourceLast.lastIndexOf(SLASH)-1);	//this is the lowest dir of source
-				
-				tempSource.append(SLASH);
-				tempDestination.append(sourceLast + SLASH);
-			}
-			tempDestination.append (snapDefaultDir);
-			
-			// increase the remove limit to include the source.size() if "backup dir by name" is used
-			if (Operation[currentOperation] -> GetTypeDirName())
-				removeCharLimit = 4 + sourceLast.size()+1;
-			else
-				removeCharLimit = 4;
-			
-			//we will delete the snapshots directory by using an rsync command with an empty source:
-			QProcess *rmProcess;
-			rmProcess  = new QProcess(this);
-			QStringList rmArgs;
-			rmArgs << "--progress" << "-r" << "--delete-after";
-			int snapToKeep = currentSnaps-maxSnaps + 1;
-			while ( snapToKeep < currentSnaps )
-			{
-				rmArgs.append("--filter=protect " + Operation[currentOperation] -> GetSnapshotsListItem(snapToKeep) + SLASH);
-				snapToKeep++;
-			}
-			
-			//also add all remote arguments exactly as used at normal backup
-			if (RemoteDestUsed)
-			{
-				if ( Operation[currentOperation] -> GetRemotePassword() != "")
-					rmArgs.append("--password-file=" + ( Operation[currentOperation] -> GetRemotePassword()) );
-				if ( Operation[currentOperation] -> GetRemoteSSH())
-				{
-					if ( Operation[currentOperation] -> GetRemoteSSHPassword() != "")
-						if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
-							rmArgs.append("-e ssh -i " +  Operation[currentOperation] -> GetRemoteSSHPassword() +" -p " +
-										countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
-						else
-							rmArgs.append("-e ssh -i " +  Operation[currentOperation] -> GetRemoteSSHPassword());
-					else
-						if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
-							rmArgs.append("-e ssh -p " + countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
-						else
-							rmArgs.append("-e ssh");
-				}
-			}
-			
-			rmArgs.append(snapEmptyDir);
-			rmArgs.append(tempDestination);
-			rmProcess -> start ("rsync",rmArgs);
-			rmProcess -> waitForFinished();
-			
-			if ((rmProcess -> exitCode()) == 0)
-				ui.rsyncOutput->append("\n" + tr("Removed all older snapshots data"));// +" " + tempDestination + Operation[currentOperation] -> GetSnapshotsListItem(0) + SLASH);
-			else
-				ui.rsyncOutput->append("\n" + tr("failed to remove all older snapshots data"));// +" " + tempDestination + Operation[currentOperation] -> GetSnapshotsListItem(0) + SLASH);
-			
-			//******************************************************
-		
-			count = 0;
-			while ( count < (currentSnaps -maxSnaps + 1 ) )
-			{
-				//remove the changes file ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-				snapchangesfilename = snapChangesDir + profileName + "-" + Operation[currentOperation] -> GetName() + "-" +
-							(Operation[currentOperation] -> GetSnapshotsListItem(0)) + ".changes.log";
-				snapfile.setFileName(snapchangesfilename);
-				if (snapfile.exists())
-				{
-					if (snapfile.remove())	// this is the old snapshot changes file
-						ui.rsyncOutput->append("\n" + tr("Removing") +" " + snapchangesfilename);
-					else 
-						ui.rsyncOutput->append("\n" + tr("failed to remove") +" " + snapchangesfilename);
-				}
-				
-				//remove the oldest logfile ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-				logfilename = logDir + profileName + "-" + Operation[currentOperation] -> GetName() + "-" +
-							(Operation[currentOperation] -> GetSnapshotsListItem(0)) + ".log";
-				logfile.setFileName(logfilename); // this is the old logfile
-				if (logfile.exists())
-				{
-					if (logfile.remove())
-						ui.rsyncOutput->append("\n" + tr("Removing") +" " + logfilename);
-					else
-						ui.rsyncOutput->append("\n" + tr("failed to remove") +" " + logfilename);
-				}
+    if (ABORTpressed)		//better safe than sorry ;)
+        return;
+    
+    repeatOnFailMax = Operation[currentOperation] -> GetRepeatOnFail();    // This holds the number of re-runs to try if the task fails for a reason
+    
+    // logfile & older snapshots actions if real run is performed
+    if ( (!DryRun) && (currentBefore == 0) && (repeatOnFailTry == 0) )
+    {
+        int maxSnaps = Operation[currentOperation] -> GetKeepSnapshots();	// this is the number of snapshots to keep
+        if (maxSnaps < 1)
+            maxSnaps = 1;
+        int currentSnaps = Operation[currentOperation] -> GetSnapshotsListSize();	// this is the current number of snapshots
+        if (currentSnaps < 1)
+            currentSnaps = 1;
+        
+        // first remove the older logfiles and snapshots if max keep snapshots is reached
+        
+        bool RemoteDestUsed = (Operation[currentOperation] -> GetRemoteDestination()) && (Operation[currentOperation] -> GetRemote());
+        if (currentSnaps >= maxSnaps)
+        {
+            outputInsert = "\n<font color=magenta>" +
+                tr("Removing old snapshots and logfiles of task","info message displayed during ...data removal\nFull phrase: Removing old snapshots and logfiles of task: <TASKNAME>") +
+                ": <b>" + Operation[currentOperation] -> GetName() +
+                "</b></font><br>=====================================<br>";
+            ui.rsyncOutput->append(outputInsert);
+            
+            // **************Remove actual backup data ***************************************************
+                
+            // First calculate the folder where snapshots go
+            QStringList tempArguments = Operation[currentOperation] -> GetArgs();
+            QString tempSource = tempArguments[tempArguments.size()-2];
+            QString tempDestination = tempArguments[tempArguments.size()-1];
+            QString sourceLast = tempSource;
+            if (!tempSource.endsWith(SLASH))	// this means task is of type "backup dir by name"
+            {
+                if (sourceLast.contains(":"))	// this is normal for a remote directory
+                    sourceLast = sourceLast.right(tempSource.size()-sourceLast.lastIndexOf(":")-1);	//this is the remote source dir without the remote pc
+                if (tempSource.contains(SLASH))	// this is normal for a directory unless it is remote
+                    sourceLast = sourceLast.right(tempSource.size()-sourceLast.lastIndexOf(SLASH)-1);	//this is the lowest dir of source
+                
+                tempSource.append(SLASH);
+                tempDestination.append(sourceLast + SLASH);
+            }
+            tempDestination.append (snapDefaultDir);
+            
+            // increase the remove limit to include the source.size() if "backup dir by name" is used
+            if (Operation[currentOperation] -> GetTypeDirName())
+                removeCharLimit = 4 + sourceLast.size()+1;
+            else
+                removeCharLimit = 4;
+            
+            //we will delete the snapshots directory by using an rsync command with an empty source:
+            QProcess *rmProcess;
+            rmProcess  = new QProcess(this);
+            QStringList rmArgs;
+            rmArgs << "--progress" << "-r" << "--delete-after";
+            int snapToKeep = currentSnaps-maxSnaps + 1;
+            while ( snapToKeep < currentSnaps )
+            {
+                rmArgs.append("--filter=protect " + Operation[currentOperation] -> GetSnapshotsListItem(snapToKeep) + SLASH);
+                snapToKeep++;
+            }
+            // protect the backup profile dir too
+            rmArgs.append("--filter=protect " + profileName + ".profile" + SLASH);
+            
+            //also add all remote arguments exactly as used at normal backup
+            if (RemoteDestUsed)
+            {
+                if ( Operation[currentOperation] -> GetRemotePassword() != "")
+                    rmArgs.append("--password-file=" + ( Operation[currentOperation] -> GetRemotePassword()) );
+                if ( Operation[currentOperation] -> GetRemoteSSH())
+                {
+                    if ( Operation[currentOperation] -> GetRemoteSSHPassword() != "")
+                        if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
+                            rmArgs.append("-e "+sshCommandPath+" -i " +  Operation[currentOperation] -> GetRemoteSSHPassword() +" -p " +
+                                        countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                        else
+                            rmArgs.append("-e "+sshCommandPath+" -i " +  Operation[currentOperation] -> GetRemoteSSHPassword());
+                    else
+                        if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
+                            rmArgs.append("-e "+sshCommandPath+" -p " + countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                        else
+                            rmArgs.append("-e "+sshCommandPath);
+                }
+            }
+            
+            rmArgs.append(snapEmptyDir);
+            rmArgs.append(tempDestination);
+            rmProcess -> start (command,rmArgs);
+            rmProcess -> waitForFinished();
+            
+            if ((rmProcess -> exitCode()) == 0)
+                ui.rsyncOutput->append("\n" + tr("Removed all older snapshots data"));// +" " + tempDestination + Operation[currentOperation] -> GetSnapshotsListItem(0) + SLASH);
+            else
+                ui.rsyncOutput->append("\n" + tr("failed to remove all older snapshots data"));// +" " + tempDestination + Operation[currentOperation] -> GetSnapshotsListItem(0) + SLASH);
+            
+            //******************************************************
+        
+            count = 0;
+            while ( count < (currentSnaps -maxSnaps + 1 ) )
+            {
+                //remove the changes file ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                snapchangesfilename = snapChangesDir + profileName + "-" + Operation[currentOperation] -> GetName() + "-" +
+                            (Operation[currentOperation] -> GetSnapshotsListItem(0)) + ".changes.log";
+                snapfile.setFileName(snapchangesfilename);
+                if (snapfile.exists())
+                {
+                    if (snapfile.remove())	// this is the old snapshot changes file
+                        ui.rsyncOutput->append("\n" + tr("Removing") +" " + snapchangesfilename);
+                    else 
+                        ui.rsyncOutput->append("\n" + tr("failed to remove") +" " + snapchangesfilename);
+                }
+                
+                //remove the oldest logfile ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                logfilename = logDir + profileName + "-" + Operation[currentOperation] -> GetName() + "-" +
+                            (Operation[currentOperation] -> GetSnapshotsListItem(0)) + ".log";
+                logfile.setFileName(logfilename); // this is the old logfile
+                if (logfile.exists())
+                {
+                    if (logfile.remove())
+                        ui.rsyncOutput->append("\n" + tr("Removing") +" " + logfilename);
+                    else
+                        ui.rsyncOutput->append("\n" + tr("failed to remove") +" " + logfilename);
+                }
 
-				//remove the oldest snapshot (0) from the list
-				Operation[currentOperation] -> RemoveSnapshotsListItem (0);
-				count++;
-			}
-		}
+                //remove the oldest snapshot (0) from the list
+                Operation[currentOperation] -> RemoveSnapshotsListItem (0);
+                count++;
+            }
+        }
 
-		//set the current date and time as the operation's last execution date-time
-		Operation[currentOperation] -> SetLastExecutionTime (QDateTime::currentDateTime());
-		
-		// add a new snapshot with the last execution date-time
-		Operation[currentOperation] ->
-					AddSnapshotsListItem ((Operation[currentOperation] -> GetLastExecutionTime()).toString("yyyyMMddhhmmss"));
-		currentSnaps = Operation[currentOperation] -> GetSnapshotsListSize();	// update the current number of snapshots
-		
-		// set a new changes file. This has a tag of the previous snapshot will include changes made to this snapshot
-		snapchangesfilename = snapChangesDir + profileName + "-" + Operation[currentOperation] -> GetName() + "-" +
-					(Operation[currentOperation] -> GetSnapshotsListItem(currentSnaps - 1)) + ".changes.log";
-		snapfile.setFileName(snapchangesfilename);
-		
-		// set a new logfile
-		logfilename = logDir + profileName + "-" + Operation[currentOperation] -> GetName() + "-" +
-			( Operation[currentOperation] -> GetSnapshotsListItem(currentSnaps - 1) ) + ".log";
-		logfile.setFileName(logfilename); // this is the logfile
-		if (logfile.open(QIODevice::WriteOnly | QIODevice::Text))	//create a new log file
-			writeToLog = TRUE;				//& if it's ok set this to TRUE
-		else
-			writeToLog = FALSE;
-	}
+        //set the current date and time as the operation's last execution date-time
+        Operation[currentOperation] -> SetLastExecutionTime (QDateTime::currentDateTime());
+        
+        // add a new snapshot with the last execution date-time
+        Operation[currentOperation] ->
+                    AddSnapshotsListItem ((Operation[currentOperation] -> GetLastExecutionTime()).toString("yyyyMMddhhmmss"));
+        currentSnaps = Operation[currentOperation] -> GetSnapshotsListSize();	// update the current number of snapshots
+        
+        // set a new changes file. This has a tag of the previous snapshot will include changes made to this snapshot
+        snapchangesfilename = snapChangesDir + profileName + "-" + Operation[currentOperation] -> GetName() + "-" +
+                    (Operation[currentOperation] -> GetSnapshotsListItem(currentSnaps - 1)) + ".changes.log";
+        snapfile.setFileName(snapchangesfilename);
+        
+        // set a new logfile
+        logfilename = logDir + profileName + "-" + Operation[currentOperation] -> GetName() + "-" +
+            ( Operation[currentOperation] -> GetSnapshotsListItem(currentSnaps - 1) ) + ".log";
+        logfile.setFileName(logfilename); // this is the logfile
+        if (logfile.open(QIODevice::WriteOnly | QIODevice::Text))	//create a new log file
+            writeToLog = TRUE;				//& if it's ok set this to TRUE
+        else
+            writeToLog = FALSE;
+    }
 
-	errorCount = 0;		// task starts, so set this to 0 no matter dry or real run
+    errorCount = 0;		// task starts, so set this to 0 no matter dry or real run
 
-	// execute commands before task -----------------------------------------------------------------------------------------------------
-	//if there are no (more) pre-task commands to be executed || the previous pre-task command exited with an error
-	if ( (Operation[currentOperation] -> GetExecuteBeforeListSize() == currentBefore) || (StopTaskExecution) )
-	{
-		currentBefore = 0;
-		ExecuteBefore=FALSE;
+    // execute commands before task -----------------------------------------------------------------------------------------------------
+    // if there are no (more) pre-task commands to be executed || 
+                        // the previous pre-task command exited with an error(all repeatOnFail runs) and the stop checkbox is checked
+    if ( (Operation[currentOperation] -> GetExecuteBeforeListSize() == currentBefore) || (StopTaskExecution) )
+    {
+        currentBefore = 0;
+        ExecuteBefore=FALSE;
+        repeatOnFailTry = 0;
 
-		executeRsync();
-	}
-	else
-	{
-		ExecuteBefore=TRUE;
-		ExecuteBeforeExitedError = FALSE;
+        executeRsync();
+    }
+    else
+    {
+        ExecuteBefore=TRUE;
+        ExecuteBeforeExitedError = FALSE;
         StopTaskExecution = FALSE;
         ProcReportedError = FALSE;      // This might change as soon as syncprocess will start ()
-		outputInsert = logFileUpdate("pre-starting","",currentBefore);
+        outputInsert = logFileUpdate("pre-starting","",currentBefore);
 
-		ui.rsyncOutput->append(outputInsert);
+        ui.rsyncOutput->append(outputInsert);
 
-		syncProcess -> start (Operation[currentOperation] -> GetExecuteBeforeListItem(currentBefore));
-		syncProcess -> waitForStarted(5000);
+        syncProcess -> start (Operation[currentOperation] -> GetExecuteBeforeListItem(currentBefore));
+        syncProcess -> waitForStarted(5000);
         
         // The reason for the below jump is that when a process reports an error it does not emit finished() signals neither std output/errors
         if (ProcReportedError)
             procFinished();
-	}
+    }
 }
 
- //executes post-task commands ===============================================================================================
+//executes post-task commands ===============================================================================================
 void luckyBackupWindow::executeAfterTask()
 {
-	if (ABORTpressed)		//better safe than sorry :)
-		return;
-	
-	// execute commands after task -----------------------------------------------------------------------------------------------------
-	//if there are no (more) post-task commands to be executed or we are here because a pre/post-task command exited with an error or destination could not be created
-	if ( (Operation[currentOperation] -> GetExecuteAfterListSize() == currentAfter) || (DestCreateFail) || (StopTaskExecution) )
-	{
-		if (!DryRun)
-		{
-			logfile.close();	//close the logfile first (will create a new one for the next task)
-			Operation[currentOperation] -> SetLastExecutionErrors (errorCount);	// update the last execution errors
-			
-			// strip unused lines from the snapshot changes file ~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
-			QString filesAdded = "", snapLine = "";
-			if (snapfile.open(QIODevice::ReadOnly | QIODevice::Text))
-			{
-				ui.rsyncOutput->append(".");
-				QTextStream in(&snapfile);
-				while (!in.atEnd())
-				{
-					snapLine = in.readLine();
-					if (snapLine.contains("+++++++", Qt::CaseInsensitive))
-					{
-						snapLine = snapLine.right(snapLine.size()-snapLine.lastIndexOf("[LB]")-removeCharLimit) + "\n";
-						filesAdded.append(snapLine);
-					}
-				}
-				snapfile.close();
-                filesAdded.remove("[LB]", Qt::CaseSensitive);        // just to make sure cause sometimes there are [LB]'s left
-			}
-
-			if (snapfile.open(QIODevice::WriteOnly))
-			{
-				ui.rsyncOutput->append(".");
-				QTextStream out(&snapfile);
-				out << filesAdded;
-				snapfile.close();
-			}
-		}
+    if (ABORTpressed)		//better safe than sorry :)
+        return;
+    
+    // execute commands after task -----------------------------------------------------------------------------------------------------
+    //if there are no (more) post-task commands to be executed or we are here because a pre/post-task command exited with an error or destination could not be created
+    if ( (Operation[currentOperation] -> GetExecuteAfterListSize() == currentAfter)|| (DestCreateFail) || (StopTaskExecution) )
+    {
+        if (!DryRun)
+        {
+            logfile.close();	//close the logfile first (will create a new one for the next task)
+            Operation[currentOperation] -> SetLastExecutionErrors (errorCount);	// update the last execution errors
+        }
 
         currentAfter = 0;
         ExecuteAfter=FALSE;
@@ -610,80 +598,81 @@ void luckyBackupWindow::executeAfterTask()
 //executes rsync  ===============================================================================================
 void luckyBackupWindow::executeRsync()
 {
-	if (ABORTpressed)		//better safe than sorry :)
-		return;
-	
-	if (StopTaskExecution)	// if a pre-task command exited with an error do not do anything
-	{
-		procFinished();
-		return;
-	}
+    if (ABORTpressed)		//better safe than sorry :)
+        return;
+    
+    if (StopTaskExecution)	// if a pre-task command exited with an error do not do anything
+    {
+        procFinished();
+        return;
+    }
 
-	sync = Operation[currentOperation] -> GetTypeSync();		//set sync variable according to checkstate of radiobutton operation type
-	rsyncArguments = AppendArguments(Operation[currentOperation]);	//set rsync arguments
-	
-	bool RemoteDestUsed = (Operation[currentOperation] -> GetRemoteDestination()) && (Operation[currentOperation] -> GetRemote()); // Is remote dest used ?
+    sync = Operation[currentOperation] -> GetTypeSync();		//set sync variable according to checkstate of radiobutton operation type
+    rsyncArguments = AppendArguments(Operation[currentOperation]);	//set rsync arguments
+    
+    bool RemoteDestUsed = (Operation[currentOperation] -> GetRemoteDestination()) && (Operation[currentOperation] -> GetRemote()); // Is remote dest used ?
 
-	if (DryRun)
-		rsyncArguments.insert(rsyncArguments.size()-2,"--dry-run");
+    if (DryRun)
+        rsyncArguments.insert(rsyncArguments.size()-2,"--dry-run");
 
-	dirA = rsyncArguments[rsyncArguments.size()-2];
-	dirB = rsyncArguments[rsyncArguments.size()-1];
-	
-	if (sync)	//execute rsync for syncing 2 dirs
-	{
-		if (syncAB)	//execute rsync A -> B
-			syncAB = FALSE;
+    dirA = rsyncArguments[rsyncArguments.size()-2];
+    dirB = rsyncArguments[rsyncArguments.size()-1];
+    
+    if (sync)	//execute rsync for syncing 2 dirs
+    {
+        if (syncAB)	//execute rsync A -> B
+            syncAB = FALSE;
 
-		else		//execute rsync B -> A
-		{
-			rsyncArguments.removeLast();
-			rsyncArguments.removeLast();
-			rsyncArguments.append(dirB);	// set SyncDirA & SyncDirB as Arguments
-			rsyncArguments.append(dirA);
-			syncAB = TRUE;
-		}
-	}
+        else		//execute rsync B -> A
+        {
+            rsyncArguments.removeLast();
+            rsyncArguments.removeLast();
+            rsyncArguments.append(dirB);	// set SyncDirA & SyncDirB as Arguments
+            rsyncArguments.append(dirA);
+            syncAB = TRUE;
+        }
+    }
 
-	//display a couple of lines to inticate start of task
-	if ((sync) && (!syncAB))
-		outputInsert = logFileUpdate("rsync-starting-syncAB", "", 0);
+    //display a couple of lines to inticate start of task
+    if ((sync) && (!syncAB))
+        outputInsert = logFileUpdate("rsync-starting-syncAB", "", 0);
 
-	if ((sync) && (syncAB))
-		outputInsert = logFileUpdate("rsync-starting-syncBA", "", 0);
+    if ((sync) && (syncAB))
+        outputInsert = logFileUpdate("rsync-starting-syncBA", "", 0);
 
-	DestCreateFail = FALSE;	 // This will become TRUE if destination does not exist and cannot be created
-	if (!sync)
-	{
-		outputInsert = logFileUpdate("rsync-starting-backup", "", 0);
-		
-		// Create the destination if it does not exist
-		QDir destCreate (dirB);
-		if ( (!destCreate.exists()) && (!RemoteDestUsed) ) // local use ONLY
-		{
-			if (destCreate.mkpath(dirB))
-				outputInsert.append(logFileUpdate("rsync-standard", "<br>" + tr("Successfuly created destination directory"), 0));
-			else
-			{
-				outputInsert.append(logFileUpdate("rsync-error", "<br>" +tr("Failed to create destination directory"), 0));
-				ui.rsyncOutput->append(outputInsert);
-				DestCreateFail = TRUE;
-				errorsFound++;
-				errorCount++;
-				procFinished();	// Do not proceed any further
-				return;
-			}
-		}
-	}
+    DestCreateFail = FALSE;	 // This will become TRUE if destination does not exist and cannot be created
+    
+    if (!sync)
+    {
+        outputInsert = logFileUpdate("rsync-starting-backup", "", 0);
+        
+        // Create the destination if it does not exist
+        QDir destCreate (dirB);
+        if ( (!destCreate.exists()) && (!RemoteDestUsed) ) // local use ONLY
+        {
+            if (destCreate.mkpath(dirB))
+                outputInsert.append(logFileUpdate("rsync-standard", "<br>" + tr("Successfuly created destination directory"), 0));
+            else
+            {
+                outputInsert.append(logFileUpdate("rsync-error", "<br>" +tr("Failed to create destination directory"), 0));
+                ui.rsyncOutput->append(outputInsert);
+                DestCreateFail = TRUE;
+                errorsFound++;
+                errorCount++;
+                procFinished();	// Do not proceed any further
+                return;
+            }
+        }
+    }
 
-	ui.rsyncOutput->append(outputInsert);
-	//set the progressbar to 0
-	ui.OperationProgress -> setRange(0,100);
-	ui.OperationProgress -> setValue (0);
+    ui.rsyncOutput->append(outputInsert);
+    //set the progressbar to 0
+    ui.OperationProgress -> setRange(0,100);
+    ui.OperationProgress -> setValue (0);
     
     ProcReportedError = FALSE;      // This might change as soon as syncprocess will start ()
 
-	syncProcess -> start (command,rsyncArguments);	// execute rsync command with rsyncArguments
+    syncProcess -> start (command,rsyncArguments);	// execute rsync command with rsyncArguments
     
     // The reason for the below jump is that when a process reports an error it does not emit finished() signals neither std output/errors
     if (ProcReportedError)
@@ -693,67 +682,175 @@ void luckyBackupWindow::executeRsync()
 //when rsyncProcess emits finished signal execute another RsyncProcess if any left====================================================================
 void luckyBackupWindow::procFinished()
 {
-	if (ABORTpressed) //this is to prevent segmentation fault when abort button pressed
-		return;
+    if (ABORTpressed) //this is to prevent segmentation fault when abort button pressed
+        return;
 
-	if (ExecuteBefore)		// if the pre-task execution command (process) finished
-	{
-		outputInsert = logFileUpdate("pre-finished", "", currentBefore);
-		ui.rsyncOutput->append(outputInsert);
-        // if the pre-task command exited with an error AND the box is checked
-		if ( ((syncProcess -> exitCode() != 0) || (ProcReportedError)) && (Operation[currentOperation] -> GetExecuteBeforeListItemState(currentBefore) == TRUE) )
+    if (ExecuteBefore)		// if the pre-task execution command (process) finished
+    {
+        outputInsert = logFileUpdate("pre-finished", "", currentBefore);
+        ui.rsyncOutput->append(outputInsert);
+        
+        // set this for a successful run of a command. They might change if there was an error
+        ExecuteBeforeExitedError = FALSE;
+        StopTaskExecution = FALSE;
+            
+        // if the pre-task command exited with an error
+        if ((syncProcess -> exitCode() != 0) || (ProcReportedError))
         {
-            StopTaskExecution = TRUE;
-			ExecuteBeforeExitedError = TRUE;
+            ExecuteBeforeExitedError = TRUE;
+            
+            if (repeatOnFailTry == repeatOnFailMax) // if the last run of the command just ended
+            {
+                if (Operation[currentOperation] -> GetExecuteBeforeListItemState(currentBefore) == TRUE)
+                    StopTaskExecution = TRUE;
+                repeatOnFailTry = 0;    // reset the runs counter for a specific command
+                currentBefore++;    //go to the next pre-task execution command
+            }
+            else
+            {
+                outputInsert = logFileUpdate("repeat-on-fail", "", currentBefore);
+                ui.rsyncOutput->append(outputInsert);
+                repeatOnFailTry++;  // re-run this command, do not proceed to the next one
+            }
         }
-		else
+        else        // if the process was successful, go to the next one
         {
-			ExecuteBeforeExitedError = FALSE;
-            StopTaskExecution = FALSE;
+            currentBefore++;    //go to the next pre-task execution command
+            repeatOnFailTry = 0;    // it should already be 0, but ...you never know
         }
-		currentBefore++; 	//go to the next pre-task execution command 
-		executeBeforeTask();	//and executeBeforeTask again
 
-		return;
-	}
+        executeBeforeTask();    //and executeBeforeTask again
 
-	if (ExecuteAfter)		// if the post-task execution command (process) finished
-	{
-		outputInsert = logFileUpdate("post-finished", "", currentAfter);
-		ui.rsyncOutput->append(outputInsert);
-        // if the post-task command exited with an error AND the box is checked
-        if ( ((syncProcess -> exitCode() != 0) || (ProcReportedError)) && (Operation[currentOperation] -> GetExecuteAfterListItemState(currentAfter) == TRUE) )
+        return;
+    }
+
+    if (ExecuteAfter)		// if the post-task execution command (process) finished
+    {
+        outputInsert = logFileUpdate("post-finished", "", currentAfter);
+        ui.rsyncOutput->append(outputInsert);
+        
+        // set this for a successful run of a command. They might change if there was an error
+        StopTaskExecution = FALSE;
+        
+        // if the post-task command exited with an error
+        if ((syncProcess -> exitCode() != 0) || (ProcReportedError))
+        {    
+            if (repeatOnFailTry == repeatOnFailMax) // if the last run of the command just ended
+            {
+                if (Operation[currentOperation] -> GetExecuteAfterListItemState(currentAfter) == TRUE)
+                    StopTaskExecution = TRUE;
+                repeatOnFailTry = 0;     //rest the counter for a specific command
+                currentAfter++;    //go to the next pre-task execution command
+            }
+            else
+            {
+                outputInsert = logFileUpdate("repeat-on-fail", "", currentAfter);
+                ui.rsyncOutput->append(outputInsert);
+                repeatOnFailTry++;  // re-run this command, do not proceed to the next one
+            }
+        }
+        else        // if the process was successful, go to the next one
+            currentAfter++;    //go to the next post-task execution command
+
+        executeAfterTask();		//and executeAfterTask again
+        return;
+    }
+
+    //display a couple of lines to indicate end of task
+    if (StopTaskExecution)
+        outputInsert = logFileUpdate("pre-task-exited-with-error", "", 0);
+    else
+    {
+        if (!DryRun)
         {
-            StopTaskExecution = TRUE;
-            outputInsert = logFileUpdate("pre-task-exited-with-error", "", 0);
-            ui.rsyncOutput->append(outputInsert);
+            // strip unused lines from the snapshot changes file ~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+            QString filesAdded = "", snapLine = "";
+            if (snapfile.open(QIODevice::ReadOnly | QIODevice::Text))
+            {
+                ui.rsyncOutput->append(".");
+                QTextStream in(&snapfile);
+                while (!in.atEnd())
+                {
+                    snapLine = in.readLine();
+                    if (snapLine.contains("+++++++", Qt::CaseInsensitive))
+                    {
+                        snapLine = snapLine.right(snapLine.size()-snapLine.lastIndexOf("[LB]")-removeCharLimit) + "\n";
+                        filesAdded.append(snapLine);
+                    }
+                }
+                snapfile.close();
+                filesAdded.remove("[LB]", Qt::CaseSensitive);        // just to make sure cause sometimes there are [LB]'s left
+            }
+            if (snapfile.open(QIODevice::WriteOnly))
+            {
+                ui.rsyncOutput->append(".");
+                QTextStream out(&snapfile);
+                out << filesAdded;
+                snapfile.close();
+            }
+        }
+            
+        if ((!sync) || ((sync) && (syncAB)) )
+        {
+            // Backup profile + logs + snaps to destination ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            
+            QString exportProfileDir = "";  QString sourceLast=Operation[currentOperation] -> GetSource();
+            //calculate the last folder of source
+            if (!sourceLast.endsWith(SLASH))    // this means task is of type "backup dir by name"
+            {
+                if ((sourceLast.contains(":")) && (!notXnixRunning) )   // this is normal for a remote directory (not for OS/2 or win: eg c:\)
+                    sourceLast = sourceLast.right(sourceLast.size()-sourceLast.lastIndexOf(":")-1); //this is the remote source dir without the remote pc
+                if (sourceLast.contains(SLASH)) // this is normal for a directory unless it is remote
+                    sourceLast = sourceLast.right(sourceLast.size()-sourceLast.lastIndexOf(SLASH)-1);   //this is the lowest dir of source
+            }
+            else
+                sourceLast = "";
+            
+            if (!rsyncArguments.isEmpty())      //rsyncArguments is calculated at executeRsync()
+                exportProfileDir = rsyncArguments.last() + sourceLast + SLASH + snapDefaultDir + profileName + ".profile" + SLASH;
+            
+            //QMessageBox::information(this, "LB",exportProfileDir);    //TESTING
+            
+            outputInsert = "";
+            
+            // If this is a backup task && not a dryrun
+            if ((exportFullProfile(exportProfileDir,"ExportOnlyTask")) && (!sync) && (!DryRun) && (!rsyncArguments.isEmpty()))
+                outputInsert = logFileUpdate("backup-profile", " -> Ok", currentAfter);
+            else
+                outputInsert = logFileUpdate("backup-profile", " -> Fail", currentAfter);
+            
+            outputInsert.append(logFileUpdate("rsync-finished", "", 0));
         }
         else
-            StopTaskExecution = FALSE;
-		currentAfter++; 		//go to the next post-task execution command 
+            outputInsert = logFileUpdate("rsync-finished-sync1", "", 0);
+    }
+    
+    ui.rsyncOutput->append(outputInsert);
+    
+    /* If there is an error repeat the rsync command. Errors:
+                                5 - Error starting client-server protocol
+                                12 - Error in rsync protocol data stream
+                                23 - Partial transfer due to error -> I took this out
+                                30 - Timeout in data send/receive 
+                                35 - Timeout waiting for daemon connection
+                                255 - unexplained error */
+    if ((repeatOnFailTry < repeatOnFailMax) &&
+          ( (syncProcess -> exitCode()==30) || (syncProcess -> exitCode()==35) || (syncProcess -> exitCode()==255) ||
+            (syncProcess -> exitCode()==12) || (syncProcess -> exitCode()==5) || (ProcReportedError) ))
+    {
+        outputInsert = logFileUpdate("repeat-on-fail", "", 0);
+        ui.rsyncOutput->append(outputInsert);
+        repeatOnFailTry++;
+        executeRsync();
+        return;
+    }
+    else
+        repeatOnFailTry = 0;    // reset the runs counter
 
-		executeAfterTask();		//and executeAfterTask again
-		return;
-	}
-
-	//display a couple of lines to indicate end of task
-	if (StopTaskExecution)
-		outputInsert = logFileUpdate("pre-task-exited-with-error", "", 0);
-	else
-	{
-		if ((!sync) || ((sync) && (syncAB)) )
-			outputInsert = logFileUpdate("rsync-finished", "", 0);
-
-		else
-			outputInsert = logFileUpdate("rsync-finished-sync1", "", 0);
-	}
-	
-	ui.rsyncOutput->append(outputInsert);
-
-	if ( (sync) && (!syncAB) )	//sync A->B is finished. Do the opposite now before proceeding to next included operation or post-task commands
-		executeRsync();
-	else
-		executeAfterTask();	//execute post-task commands (if any)
+    if ( (sync) && (!syncAB) )	//sync A->B is finished. Do the opposite now before proceeding to next included operation or post-task commands
+        executeRsync();
+    else
+        executeAfterTask();	//execute post-task commands (if any)
 }
 
 // A process reported an error (eg failed to start or crashed etc)
@@ -786,173 +883,177 @@ void luckyBackupWindow::procError()
 //update dialog with new data (text - progressbar) - also update logfile =======================================================================
 void luckyBackupWindow::appendRsyncOutput()
 {
-	if (ABORTpressed)		//better safe than sorry :)
-		return;
-	
-	setNowDoing ();		//update Nowdoing textBrowser
-	
-	//update textBrowser ------------------------------------------------------------------------------------------------------
-	QTextCodec *codec = QTextCodec::codecForName("UTF-8");
-	outputString = codec->toUnicode(syncProcess -> readAllStandardOutput());
-	outputError = codec->toUnicode(syncProcess -> readAllStandardError());
+    if (ABORTpressed)		//better safe than sorry :)
+        return;
+    
+    setNowDoing ();		//update Nowdoing textBrowser
+    
+    //update textBrowser ------------------------------------------------------------------------------------------------------
+    QTextCodec *codec = QTextCodec::codecForName("UTF-8");
+    outputString = codec->toUnicode(syncProcess -> readAllStandardOutput());
+    outputError = codec->toUnicode(syncProcess -> readAllStandardError());
 
-	ui.rsyncOutput->append(outputString);
-	logFileUpdate("rsync-standard", outputString, 0);
-	
-	if (outputError !="")
-	{
-		errorsFound++;
-		errorCount++;
-		ui.rsyncOutput->append(logFileUpdate("rsync-error", outputError, 0));
-	}
-	
-	//update progressbar--------------------------------------------------------------------------------------------------------
-	bool ok;
-	if (outputString.contains("to-check"))	//we will calculate how many files have been proccessed so far
-	{
-		//DoneToTotal_Ref & DoneToTotal_String hold a e.g. "17/84"
-		QStringRef DoneToTotal_Ref = outputString.midRef(outputString.indexOf("check=")+6,outputString.indexOf(")")-outputString.indexOf("check=")-6);
-		QString DoneToTotal_String = DoneToTotal_Ref.toString();
+    //if (!showOnlyErrors)
+    if (!ui.checkBox_onlyShowErrors -> isChecked())
+        ui.rsyncOutput->append(outputString);
+    
+    
+    logFileUpdate("rsync-standard", outputString, 0);
+    
+    if (outputError !="")
+    {
+        errorsFound++;
+        errorCount++;
+        ui.rsyncOutput->append(logFileUpdate("rsync-error", outputError, 0));
+    }
+    
+    //update progressbar--------------------------------------------------------------------------------------------------------
+    bool ok;
+    if (outputString.contains("to-check"))	//we will calculate how many files have been proccessed so far
+    {
+        //DoneToTotal_Ref & DoneToTotal_String hold a e.g. "17/84"
+        QStringRef DoneToTotal_Ref = outputString.midRef(outputString.indexOf("check=")+6,outputString.indexOf(")")-outputString.indexOf("check=")-6);
+        QString DoneToTotal_String = DoneToTotal_Ref.toString();
 
-		//Total no files
-		QStringRef ref_temp = DoneToTotal_String.rightRef(DoneToTotal_String.size() - DoneToTotal_String.indexOf("/") -1);
-		QString string_temp = ref_temp.toString();
-		progress_total = string_temp.toInt(&ok,10);
-		ui.OperationProgress -> setRange(0,progress_total);	//set the range of the progressbar to the no of files to consider
+        //Total no files
+        QStringRef ref_temp = DoneToTotal_String.rightRef(DoneToTotal_String.size() - DoneToTotal_String.indexOf(SLASH) -1);
+        QString string_temp = ref_temp.toString();
+        progress_total = string_temp.toInt(&ok,10);
+        ui.OperationProgress -> setRange(0,progress_total);	//set the range of the progressbar to the no of files to consider
 
-		//No of files processed so far
-		ref_temp = DoneToTotal_String.leftRef(DoneToTotal_String.indexOf("/"));
-		string_temp = ref_temp.toString();
-		progress_done = string_temp.toInt(&ok,10);
-		progress_done = progress_total - progress_done;
-		ui.OperationProgress -> setValue (progress_done);	//set the current progressbar value 
-	}
-	if (outputString.contains("speedup is"))	//the process has finished, so if we're back fill it to 100%
-	{
-		ui.OperationProgress -> setRange(0,100);
-		ui.OperationProgress -> setValue (100);
-	}
-	if (outputString.contains("building file list"))
-	{
-		calculating = TRUE;
-		transferring = FALSE;
-		deleting = FALSE;
-	}
-	if (outputString.contains("files to consider"))
-	{
-		calculating = FALSE;
-		transferring = TRUE;
-		deleting = FALSE;
-	}
-	if (outputString.contains("deleting"))
-	{
-		calculating = FALSE;
-		transferring = FALSE;
-		deleting = TRUE;
-	}
+        //No of files processed so far
+        ref_temp = DoneToTotal_String.leftRef(DoneToTotal_String.indexOf(SLASH));
+        string_temp = ref_temp.toString();
+        progress_done = string_temp.toInt(&ok,10);
+        progress_done = progress_total - progress_done;
+        ui.OperationProgress -> setValue (progress_done);	//set the current progressbar value 
+    }
+    if (outputString.contains("speedup is"))	//the process has finished, so if we're back fill it to 100%
+    {
+        ui.OperationProgress -> setRange(0,100);
+        ui.OperationProgress -> setValue (100);
+    }
+    if (outputString.contains("building file list"))
+    {
+        calculating = TRUE;
+        transferring = FALSE;
+        deleting = FALSE;
+    }
+    if (outputString.contains("files to consider"))
+    {
+        calculating = FALSE;
+        transferring = TRUE;
+        deleting = FALSE;
+    }
+    if (outputString.contains("deleting"))
+    {
+        calculating = FALSE;
+        transferring = FALSE;
+        deleting = TRUE;
+    }
 }
 
 //updates Now Doing textBrowser ===============================================================================================================
 void luckyBackupWindow::setNowDoing()
- {
-	//calculate elapsed time since all operations start
-	QTime DifTime(0,0,0,0);
-	int elapsedMsec = StartTime.elapsed();
-	DifTime = DifTime.addMSecs(elapsedMsec);
-	
-	if ( (currentOperation < TotalOperations) && (!ABORTpressed) )
-	{
-		if (ExecuteBefore)
-			nowDoingText = 	"<p align=\"center\">"+tr("Elapsed time")+" : <b><font color=red>" + DifTime.toString("hh:mm:ss") +
-					"</font></b><br>"+tr("pre-task execution of command")+"	: <b>" +
-					Operation[currentOperation] -> GetExecuteBeforeListItem(currentBefore) + "</b>";
+{
+    //calculate elapsed time since all operations start
+    QTime DifTime(0,0,0,0);
+    int elapsedMsec = StartTime.elapsed();
+    DifTime = DifTime.addMSecs(elapsedMsec);
+    
+    if ( (currentOperation < TotalOperations) && (!ABORTpressed) )
+    {
+        if (ExecuteBefore)
+            nowDoingText = 	"<p align=\"center\">"+tr("Elapsed time")+" : <b><font color=red>" + DifTime.toString("hh:mm:ss") +
+                    "</font></b><br>"+tr("pre-task execution of command")+"	: <b>" +
+                    Operation[currentOperation] -> GetExecuteBeforeListItem(currentBefore) + "</b>";
 
-		if (ExecuteAfter)
-			nowDoingText = 	"<p align=\"center\">"+tr("Elapsed time")+" : <b><font color=red>" + DifTime.toString("hh:mm:ss") +
-					"</font></b><br>"+tr("post-task execution of command")+"	: <b>" +
-					Operation[currentOperation] -> GetExecuteAfterListItem(currentAfter) + "</b>";
+        if (ExecuteAfter)
+            nowDoingText = 	"<p align=\"center\">"+tr("Elapsed time")+" : <b><font color=red>" + DifTime.toString("hh:mm:ss") +
+                    "</font></b><br>"+tr("post-task execution of command")+"	: <b>" +
+                    Operation[currentOperation] -> GetExecuteAfterListItem(currentAfter) + "</b>";
 
-		if ( (sync) && (!ExecuteAfter) && (!ExecuteBefore) )	//if a sync operation is executed
-		{
-			nowDoingText = 	"<p align=\"center\">"+tr("Elapsed time")+" : <b><font color=red>" + DifTime.toString("hh:mm:ss") +
-					"</font></b><br>"+tr("Now performing task")+"	: <b>" + Operation[currentOperation] -> GetName() +
-					"</b>";
+        if ( (sync) && (!ExecuteAfter) && (!ExecuteBefore) )	//if a sync operation is executed
+        {
+            nowDoingText = 	"<p align=\"center\">"+tr("Elapsed time")+" : <b><font color=red>" + DifTime.toString("hh:mm:ss") +
+                    "</font></b><br>"+tr("Now performing task")+"	: <b>" + Operation[currentOperation] -> GetName() +
+                    "</b>";
 
-			if (DryRun)
-				nowDoingText.append(" <b><font color=magenta>(" + tr("simulation mode") + ")</font>");
+            if (DryRun)
+                nowDoingText.append(" <b><font color=magenta>(" + tr("simulation mode") + ")</font>");
 
-			nowDoingText.append("</p>");
-			nowDoingText.append(tr("Directory")+" A	: <b><font color=blue>" + dirA +
-					"</font></b><br>"+tr("Directory")+" B	: <b><font color=blue>" + dirB + "</font></b><br>");
-			
-			if (calculating)
-				nowDoingText.append(tr("calculating","info message displayed during ...calculations")+": " + outputString);
-			if (transferring)
-				nowDoingText.append(tr("transferring files","info message displayed during ...file transfers")+": " + outputString);
-			if (deleting)
-				nowDoingText.append(tr("deleting files","info message displayed during ...file deletions")+": " + outputString);
-		}
+            nowDoingText.append("</p>");
+            nowDoingText.append(tr("Directory")+" A	: <b><font color=blue>" + dirA +
+                    "</font></b><br>"+tr("Directory")+" B	: <b><font color=blue>" + dirB + "</font></b><br>");
+            
+            if (calculating)
+                nowDoingText.append(tr("calculating","info message displayed during ...calculations")+": " + outputString);
+            if (transferring)
+                nowDoingText.append(tr("transferring files","info message displayed during ...file transfers")+": " + outputString);
+            if (deleting)
+                nowDoingText.append(tr("deleting files","info message displayed during ...file deletions")+": " + outputString);
+        }
 
-		if ( (!sync) && (!ExecuteAfter) && (!ExecuteBefore) ) //if a backup operation is executed
-		{
-			nowDoingText = 	"<p align=\"center\">"+tr("Elapsed time")+" : <b><font color=red>" + DifTime.toString("hh:mm:ss") +
-					"</font></b><br>"+tr("Now performing task")+"	: <b>" + Operation[currentOperation] -> GetName() +
-					"</b>";
+        if ( (!sync) && (!ExecuteAfter) && (!ExecuteBefore) ) //if a backup operation is executed
+        {
+            nowDoingText = 	"<p align=\"center\">"+tr("Elapsed time")+" : <b><font color=red>" + DifTime.toString("hh:mm:ss") +
+                    "</font></b><br>"+tr("Now performing task")+"	: <b>" + Operation[currentOperation] -> GetName() +
+                    "</b>";
 
-			if (DryRun)
-				nowDoingText.append(" <b><font color=magenta>(" + tr("simulation mode") + ")</font>");
+            if (DryRun)
+                nowDoingText.append(" <b><font color=magenta>(" + tr("simulation mode") + ")</font>");
 
-			nowDoingText.append("</p>");
-			nowDoingText.append(tr("Source")+"	: <b><font color=blue>" + dirA +
-					"</font></b><br>"+tr("Destination")+"	: <b><font color=blue>" + dirB + "</font></b><br>");
+            nowDoingText.append("</p>");
+            nowDoingText.append(tr("Source")+"	: <b><font color=blue>" + dirA +
+                    "</font></b><br>"+tr("Destination")+"	: <b><font color=blue>" + dirB + "</font></b><br>");
 
-			if (calculating)
-				nowDoingText.append(tr("calculating")+": " + outputString);
-			if (transferring)
-				nowDoingText.append(tr("transferring files")+": " + outputString);
-			if (deleting)
-				nowDoingText.append(tr("deleting files")+": " + outputString);
-		}
-	}
-	
-	if ( (currentOperation == TotalOperations) && (!ABORTpressed))	//if all operations finished normally - not aborted
-	{
-		NOWexecuting = FALSE;		//this is mainly used if the window close button (or alt+F4) is pressed
+            if (calculating)
+                nowDoingText.append(tr("calculating")+": " + outputString);
+            if (transferring)
+                nowDoingText.append(tr("transferring files")+": " + outputString);
+            if (deleting)
+                nowDoingText.append(tr("deleting files")+": " + outputString);
+        }
+    }
+    
+    if ( (currentOperation == TotalOperations) && (!ABORTpressed))	//if all operations finished normally - not aborted
+    {
+        NOWexecuting = FALSE;		//this is mainly used if the window close button (or alt+F4) is pressed
 
-		nowDoingText = 	"<p align=\"center\">"+tr("Elapsed time")+" : <b><font color=red>" + DifTime.toString("hh:mm:ss") +
-				"</font></b><br>========================================="
-				"<b><br><font color=blue>"+tr("All tasks completed")+" </font></b>";
-		trayMessage =	tr("All tasks completed");
-		if (DryRun)
-		{
-			nowDoingText.append(" <b><font color=magenta>(" + tr("simulation mode") + ")</b></font>");
-			trayMessage.append(" (" + tr("simulation mode") + ")");
-		}
-		if (errorsFound == 0)
-		{
-			nowDoingText.append("<br><font color=green>" + tr("No errors found") + "</font><br>");
-			trayMessage.append("\n" + tr("No errors found"));
-		}
-		else
-		{
-			nowDoingText.append("<br><font color=green>" + tr("errors found") + ": " + countStr.setNum(errorsFound) +"</font><br>");
-			trayMessage.append("\n" + tr("errors found"));
+        nowDoingText = 	"<p align=\"center\">"+tr("Elapsed time")+" : <b><font color=red>" + DifTime.toString("hh:mm:ss") +
+                "</font></b><br>========================================="
+                "<b><br><font color=blue>"+tr("All tasks completed")+" </font></b>";
+        trayMessage =	tr("All tasks completed");
+        if (DryRun)
+        {
+            nowDoingText.append(" <b><font color=magenta>(" + tr("simulation mode") + ")</b></font>");
+            trayMessage.append(" (" + tr("simulation mode") + ")");
+        }
+        if (errorsFound == 0)
+        {
+            nowDoingText.append("<br><font color=green>" + tr("No errors found") + "</font><br>");
+            trayMessage.append("\n" + tr("No errors found"));
+        }
+        else
+        {
+            nowDoingText.append("<br><font color=green>" + tr("errors found") + ": " + countStr.setNum(errorsFound) +"</font><br>");
+            trayMessage.append("\n" + tr("errors found"));
 
-			// initialize jump to next error button 
-			firstScroll=TRUE;
-			errorCount = 0;
-			ui.pushButton_nextError	-> setEnabled (TRUE);
-		}
-		if (!DryRun)
-			nowDoingText.append(tr("logfile(s) have been created under directory: ")+ logDir +"<br>");
-		nowDoingText.append("=========================================</p>");
-		ui.AbortButton -> setVisible (FALSE);
-		ui.DoneButton -> setVisible (TRUE);
-		ui.pushButton_minimizeToTray	-> setVisible (FALSE);
-		
-		//update tray baloon
-		if ( (QSystemTrayIcon::isSystemTrayAvailable ()) && (QSystemTrayIcon::supportsMessages ()) )
-		{
+            // initialize jump to next error button 
+            firstScroll=TRUE;
+            errorCount = 0;
+            ui.pushButton_nextError	-> setEnabled (TRUE);
+        }
+        if (!DryRun)
+            nowDoingText.append(tr("logfile(s) have been created under directory: ")+ logDir +"<br>");
+        nowDoingText.append("=========================================</p>");
+        ui.AbortButton -> setVisible (FALSE);
+        ui.DoneButton -> setVisible (TRUE);
+        ui.pushButton_minimizeToTray	-> setVisible (FALSE);
+        
+        //update tray baloon
+        if ( (QSystemTrayIcon::isSystemTrayAvailable ()) && (QSystemTrayIcon::supportsMessages ()) )
+        {
             if (KDErunning)
             {
                 QProcess *dialogProcess;    dialogProcess = new QProcess(this);
@@ -962,49 +1063,49 @@ void luckyBackupWindow::setNowDoing()
             }
             else
                 LBtray -> showMessage (appName + " - " + tr("execution of profile:") + " " + profileName + " " + tr("finished") , trayMessage, 
-													QSystemTrayIcon::Information,3000);
-			actionAbort	-> setVisible(FALSE);
-		}
+                                                    QSystemTrayIcon::Information,3000);
+            actionAbort	-> setVisible(FALSE);
+        }
 
-		finishUp();
+        finishUp();
         
         // bring the system down if the relevant button is pressed
         if (ui.pushButton_shutdown -> isChecked())
             shutDownSystem();
-		
-		if ( (silentMode) && (isMinimizedToTray == TRUE) )		// if --silent is given as argument and the gui is not shown exit the app
-		{
-			//delay the app exit for 3 seconds
-			QTime StartSleep(0,0,0,0);
-			StartSleep.start();
-			int elapsedSleepMsec = 0;
+        
+        if ( (silentMode) && (isMinimizedToTray == TRUE) )		// if --silent is given as argument and the gui is not shown exit the app
+        {
+            //delay the app exit for 3 seconds
+            QTime StartSleep(0,0,0,0);
+            StartSleep.start();
+            int elapsedSleepMsec = 0;
 
-			while (elapsedSleepMsec < 3000)
-				elapsedSleepMsec = StartSleep.elapsed();
-			
-			exit(0);	//quit
-		}
-	}
-	
-	if (ABORTpressed)	//if operations were terminated by user
-	{
-		NOWexecuting = FALSE;		//this is mainly used if the window close button (or alt+F4) is pressed
-		nowDoingText = 	"<p align=\"center\">"+tr("Elapsed time")+" : <b><font color=red>" + DifTime.toString("hh:mm:ss") +
-				"</font></b><br>========================================="
-				"<br><b><font color=blue>"+tr("Execution of tasks were terminated violently by user")+"</font></b><br>";
-		trayMessage = 	tr("Execution of tasks were terminated violently by user");
-		
-		if (!DryRun)
-			nowDoingText.append(tr("logfile(s) have been created under directory: ")+ logDir +"<br>");
-		nowDoingText.append("=========================================</p>");
-		ui.AbortButton -> setVisible (FALSE);
-		ui.DoneButton -> setVisible (TRUE);
-		ui.pushButton_minimizeToTray	-> setVisible (FALSE);
-		ui.rsyncOutput->append("<br><font color=red><b>" + tr("ABORTED") + " !!</b></font>");
-		
-		//update tray baloon
-		if ( (QSystemTrayIcon::isSystemTrayAvailable ()) && (QSystemTrayIcon::supportsMessages ()) )
-		{
+            while (elapsedSleepMsec < 3000)
+                elapsedSleepMsec = StartSleep.elapsed();
+            
+            exit(0);	//quit
+        }
+    }
+    
+    if (ABORTpressed)	//if operations were terminated by user
+    {
+        NOWexecuting = FALSE;		//this is mainly used if the window close button (or alt+F4) is pressed
+        nowDoingText = 	"<p align=\"center\">"+tr("Elapsed time")+" : <b><font color=red>" + DifTime.toString("hh:mm:ss") +
+                "</font></b><br>========================================="
+                "<br><b><font color=blue>"+tr("Execution of tasks were terminated violently by user")+"</font></b><br>";
+        trayMessage = 	tr("Execution of tasks were terminated violently by user");
+        
+        if (!DryRun)
+            nowDoingText.append(tr("logfile(s) have been created under directory: ")+ logDir +"<br>");
+        nowDoingText.append("=========================================</p>");
+        ui.AbortButton -> setVisible (FALSE);
+        ui.DoneButton -> setVisible (TRUE);
+        ui.pushButton_minimizeToTray	-> setVisible (FALSE);
+        ui.rsyncOutput->append("<br><font color=red><b>" + tr("ABORTED") + " !!</b></font>");
+        
+        //update tray baloon
+        if ( (QSystemTrayIcon::isSystemTrayAvailable ()) && (QSystemTrayIcon::supportsMessages ()) )
+        {
             if (KDErunning)
             {
                 QProcess *dialogProcess;    dialogProcess = new QProcess(this);
@@ -1014,69 +1115,69 @@ void luckyBackupWindow::setNowDoing()
             }
             else
                 LBtray -> showMessage (appName + " - " + tr("execution of profile:") + " " + profileName + " " + tr("finished") , trayMessage, 
-															QSystemTrayIcon::Information,3000);
-			actionAbort	-> setVisible(FALSE);
-		}
+                                                            QSystemTrayIcon::Information,3000);
+            actionAbort	-> setVisible(FALSE);
+        }
 
-		if  (errorsFound > 0)// initialize jump to next error button 
-		{
-			firstScroll=TRUE;
-			ui.pushButton_nextError	-> setEnabled (TRUE);
-		}
+        if  (errorsFound > 0)// initialize jump to next error button 
+        {
+            firstScroll=TRUE;
+            ui.pushButton_nextError	-> setEnabled (TRUE);
+        }
 
-		finishUp();
-		if (!DryRun)
-		{
-			// strip unused lines from the snapshot changes file ~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
-			QString filesAdded = "", snapLine = "";
-			if (snapfile.open(QIODevice::ReadOnly | QIODevice::Text))
-			{
-				QTextStream in(&snapfile);
-				while (!in.atEnd())
-				{
-					snapLine = in.readLine();
-					if (snapLine.contains("+++++++", Qt::CaseInsensitive))
-					{
-						snapLine = snapLine.right(snapLine.size()-snapLine.lastIndexOf("[LB]")-removeCharLimit) + "\n";
-						filesAdded.append(snapLine);
-					}
-				}
-				snapfile.close();
+        finishUp();
+        if (!DryRun)
+        {
+            // strip unused lines from the snapshot changes file ~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+            QString filesAdded = "", snapLine = "";
+            if (snapfile.open(QIODevice::ReadOnly | QIODevice::Text))
+            {
+                QTextStream in(&snapfile);
+                while (!in.atEnd())
+                {
+                    snapLine = in.readLine();
+                    if (snapLine.contains("+++++++", Qt::CaseInsensitive))
+                    {
+                        snapLine = snapLine.right(snapLine.size()-snapLine.lastIndexOf("[LB]")-removeCharLimit) + "\n";
+                        filesAdded.append(snapLine);
+                    }
+                }
+                snapfile.close();
                 filesAdded.remove("[LB]", Qt::CaseSensitive);    // just to make sure cause sometimes there are [LB]'s left
-			}
-			if (snapfile.open(QIODevice::WriteOnly))
-			{
-				QTextStream out(&snapfile);
-				out << filesAdded;
-				snapfile.close();
-			}
-		}
-		
-		if ( (silentMode) && (isMinimizedToTray == TRUE) )		// if --silent is given as argument and the gui is not shown, exit the app
-			exit(0);	//quit
-	}
-	ui.nowDoing -> setText (nowDoingText);
- }
+            }
+            if (snapfile.open(QIODevice::WriteOnly))
+            {
+                QTextStream out(&snapfile);
+                out << filesAdded;
+                snapfile.close();
+            }
+        }
+        
+        if ( (silentMode) && (isMinimizedToTray == TRUE) )		// if --silent is given as argument and the gui is not shown, exit the app
+            exit(0);	//quit
+    }
+    ui.nowDoing -> setText (nowDoingText);
+}
 
 // function finishUp=====================================================================================================
 // finish up some stuff when all tasks finish either normally or aborted
 void luckyBackupWindow::finishUp()
 {
-	if (!DryRun)
-	{
-		//save the profile to update last execution times & no of errors
-		if (!saveProfile(currentProfile))
+    if (!DryRun)
+    {
+        //save the profile to update last execution times & no of errors
+        if (!saveProfile(currentProfile))
         {
-			savedProfile = FALSE;
+            savedProfile = FALSE;
             ui.actionSave -> setEnabled(TRUE);
         }
-		else
+        else
         {
-			savedProfile = TRUE;			//change profile status to "saved"
-			ui.actionSave -> setEnabled(FALSE);
+            savedProfile = TRUE;			//change profile status to "saved"
+            ui.actionSave -> setEnabled(FALSE);
         }
-			
-		logfile.close();			// close the logfile
+            
+        logfile.close();			// close the logfile
         
         // send an email
         if ( (!ABORTpressed) && (!emailNever) )
@@ -1084,7 +1185,7 @@ void luckyBackupWindow::finishUp()
             bool send = TRUE;
             if ( ((emailError) && (errorsFound == 0))   // do not send if the condition "error" is checked and there are no errors
                     ||
-                 ((emailSchedule) && (!silentMode)) )  // do not send if the condition "scheduled" is checked and profile is not run in silent mode
+                ((emailSchedule) && (!silentMode)) )  // do not send if the condition "scheduled" is checked and profile is not run in silent mode
                 
                 send = FALSE;
             
@@ -1098,12 +1199,12 @@ void luckyBackupWindow::finishUp()
                 ui.rsyncOutput->append(sendEmailNow(FALSE));
             }
         }
-	}
-	
-	shutdownToolbar-> setEnabled (FALSE);
+    }
+    
+    shutdownToolbar-> setEnabled (FALSE);
 
-	// TESTING-TESTING-TESTING-TESTING-TESTING-TESTING
-	//QMessageBox::information(this, "LB","QtextDocument title= **" + ui.rsyncOutput->documentTitle() +"**");
+    // TESTING-TESTING-TESTING-TESTING-TESTING-TESTING
+    //QMessageBox::information(this, "LB","QtextDocument title= **" + ui.rsyncOutput->documentTitle() +"**");
 }
 
 // function shutDownSystem=====================================================================================================
@@ -1141,31 +1242,31 @@ void luckyBackupWindow::shutDownSystem()
 // previous error button pressed=====================================================================================================
 void luckyBackupWindow::previousErrorJump()
 {
-	errorCount--;		//decrease the current error by one
+    errorCount--;		//decrease the current error by one
 
-	if (errorCount == 0 )		// if the current error is the first within the logfile disable the previous button
-		ui.pushButton_previousError -> setEnabled(FALSE);
-	
-	if (errorCount < errorsFound-1)	//if the current error is less than the last one within the logfile enable the next button
-		ui.pushButton_nextError -> setEnabled(TRUE);
-	
-	ui.rsyncOutput -> scrollToAnchor("error" + countStr.setNum(errorCount+1));
+    if (errorCount == 0 )		// if the current error is the first within the logfile disable the previous button
+        ui.pushButton_previousError -> setEnabled(FALSE);
+    
+    if (errorCount < errorsFound-1)	//if the current error is less than the last one within the logfile enable the next button
+        ui.pushButton_nextError -> setEnabled(TRUE);
+    
+    ui.rsyncOutput -> scrollToAnchor("error" + countStr.setNum(errorCount+1));
 }
 
 // next error button pressed=====================================================================================================
 void luckyBackupWindow::nextErrorJump()
 {
-	if (!firstScroll)
-		errorCount++;	// increase the current error by one
-	firstScroll = FALSE;
-	
-	if (errorCount == errorsFound-1)		// If the current error is the last within the logfile disable the next button
-		ui.pushButton_nextError -> setEnabled(FALSE);
-	
-	if (errorCount > 0)				// if the current error is greater than the first one within the logfile enable the previous button
-		ui.pushButton_previousError -> setEnabled(TRUE);
-	
-	ui.rsyncOutput -> scrollToAnchor("error" + countStr.setNum(errorCount+1));
+    if (!firstScroll)
+        errorCount++;	// increase the current error by one
+    firstScroll = FALSE;
+    
+    if (errorCount == errorsFound-1)		// If the current error is the last within the logfile disable the next button
+        ui.pushButton_nextError -> setEnabled(FALSE);
+    
+    if (errorCount > 0)				// if the current error is greater than the first one within the logfile enable the previous button
+        ui.pushButton_previousError -> setEnabled(TRUE);
+    
+    ui.rsyncOutput -> scrollToAnchor("error" + countStr.setNum(errorCount+1));
 }
 // end of executenow.cpp ---------------------------------------------------------------------------
 

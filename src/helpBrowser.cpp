@@ -4,7 +4,7 @@
 //===============================================================================================================================
 //===============================================================================================================================
 //     This file is part of "luckyBackup" project
-//     Copyright 2008-2010, Loukas Avgeriou
+//     Copyright 2008-2012, Loukas Avgeriou
 //     luckyBackup is distributed under the terms of the GNU General Public License
 //     luckyBackup is free software: you can redistribute it and/or modify
 //     it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@
 // project version	: Please see "main.cpp" for project version
 
 // developer 		: luckyb 
-// last modified 	: 03 April 2009
+// last modified 	: 17 Jan 2012
 //===============================================================================================================================
 //===============================================================================================================================
 
@@ -32,18 +32,18 @@
 // Displays a simple dialog for browsing manual/index.html
 helpBrowser::helpBrowser (QUrl helpUrl, QWidget *parent) : QDialog (parent)
 {
-	uiB.setupUi(this);
-	//connect okay pushButton SLOTs ----------------
-	connect ( uiB.button_ok, SIGNAL( clicked() ), this, SLOT( okay() ) );
-	uiB.browser -> setOpenLinks(TRUE);
-	uiB.browser -> setOpenExternalLinks(FALSE);
-	uiB.browser -> setSource(helpUrl);
+    uiB.setupUi(this);
+    //connect okay pushButton SLOTs ----------------
+    connect ( uiB.button_ok, SIGNAL( clicked() ), this, SLOT( okay() ) );
+    uiB.browser -> setOpenLinks(TRUE);
+    uiB.browser -> setOpenExternalLinks(FALSE);
+    uiB.browser -> setSource(helpUrl);
 }
 // SLOTS-------------------------------------------------------------------------------------
 // --------------------------------okay pressed------------------------------------------------
 void helpBrowser::okay()
 {
-	close();
+    close();
 }
 
 // end of helpBrowser.cpp ---------------------------------------------------------------------------

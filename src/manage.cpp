@@ -4,7 +4,7 @@
 ===============================================================================================================================
 ===============================================================================================================================
      This file is part of "luckyBackup" project
-     Copyright 2008-2011, Loukas Avgeriou
+     Copyright 2008-2012, Loukas Avgeriou
      luckyBackup is distributed under the terms of the GNU General Public License
      luckyBackup is free software: you can redistribute it and/or modify
      it under the terms of the GNU General Public License as published by
@@ -27,9 +27,9 @@
 ===============================================================================================================================
 */
 #include "manage.h"
+
 #include "logDialog.cpp"
 #include "manageWizard.cpp"
-
 #include "calcDiffThread.cpp"
 
 // class manageDialog Constructor=================================================================================================
@@ -51,7 +51,7 @@ manageDialog::manageDialog (QDialog *parent) : QDialog (parent)
 	if (!source.endsWith(SLASH))	// this means task is of type "backup dir by name"
 	{
 		sourceLast = source;
-		if ( (sourceLast.contains(":")) && (!OS2running) )	// this is normal for a remote directory - non OS2
+		if ( (sourceLast.contains(":")) && (!notXnixRunning) )	// this is normal for a remote directory - non OS2 or win
 			sourceLast = sourceLast.right(source.size()-sourceLast.lastIndexOf(":")-1);	//this is the remote source dir without the remote pc
 		if (source.contains(SLASH))	// this is normal for a directory unless it is remote
 			sourceLast = sourceLast.right(source.size()-sourceLast.lastIndexOf(SLASH)-1);	//this is the lowest dir of source

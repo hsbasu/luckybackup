@@ -102,7 +102,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/global.cpp" line="+1063"/>
+        <location filename="../src/global.cpp" line="+1067"/>
         <source>The task list is empty</source>
         <translation>La tâches est vide</translation>
     </message>
@@ -148,7 +148,7 @@
         <translation>Veuillez décocher les cases appropriées ou changer tous les types de tâches pour autre chose que &apos;&lt;b&gt;Sauvegader le contenu des répertoires&lt;/b&gt;&apos; ou utiliser &apos;Sauvegader le contenu des répertoires&apos; avec l&apos;option &apos;&lt;b&gt;Inclure seulement&lt;/b&gt;&apos; activée, avant de procéder</translation>
     </message>
     <message>
-        <location line="+591"/>
+        <location line="+593"/>
         <source>Command re-run due to failure</source>
         <comment>This means that a specific command is run for once more because it failed the first time</comment>
         <translation type="unfinished"></translation>
@@ -704,7 +704,7 @@
         <translation>Traduction en allemand</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+59"/>
         <source>fri13</source>
         <translation>fri13</translation>
     </message>
@@ -721,7 +721,7 @@
         <translation type="obsolete">Traduction en danois</translation>
     </message>
     <message>
-        <location line="-54"/>
+        <location line="-57"/>
         <source>Sergio Gameiro</source>
         <translation>Sergio Gameiro</translation>
     </message>
@@ -747,7 +747,7 @@
         <translation>Traducteur en russe et testeur précieux</translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+35"/>
         <source>Javi Romero</source>
         <translation>Javi Romero</translation>
     </message>
@@ -757,7 +757,7 @@
         <translation>Design de la version 0.3 de l&apos;interface</translation>
     </message>
     <message>
-        <location line="-46"/>
+        <location line="-49"/>
         <source>Julien Cynober</source>
         <translation>Julien Cynober</translation>
     </message>
@@ -838,7 +838,12 @@
         <translation>Traducteur de l&apos;interface graphique en italien</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="-7"/>
+        <source>Aurelien Merckel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+15"/>
         <source>Subhi Honaco</source>
         <translation>Subhi Honaco</translation>
     </message>
@@ -868,12 +873,22 @@
         <translation>Traduction en roumain de l&apos;interface graphique</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+14"/>
+        <source>Roger Calvo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Tomas Vadina</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
         <source>v.0.3 gui designer</source>
         <translation>designer de l&apos;interface v. 0.3</translation>
     </message>
     <message>
-        <location line="-106"/>
+        <location line="-109"/>
         <source>Dimitris Kalamaras</source>
         <translation>Dimitris Kalamaras</translation>
     </message>
@@ -965,12 +980,7 @@
         <translation>Karsten Jaschultowski</translation>
     </message>
     <message>
-        <location line="+15"/>
-        <source>AurÃ©lien Merckel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+16"/>
         <source>French gui translator</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1020,23 +1030,23 @@
         <translation>Traduction de l&apos;interface en suédois</translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Roger CalvÃ³</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>Catalan gui translator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location line="+3"/>
+        <source>Slovak gui translator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+2"/>
-        <source>TomÃ¡Å¡ Vadina</source>
+        <source>Rivo Zangov</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Slovak gui translator</source>
+        <source>Estonian gui translator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1228,7 +1238,7 @@ p, li { white-space: pre-wrap; }
         <translation>Accord de &amp;licence</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="-161"/>
+        <location filename="../src/about.cpp" line="-164"/>
         <source>Marcos Del Puerto Garcia</source>
         <translation>Marcos Del Puerto Garcia</translation>
     </message>
@@ -1243,7 +1253,7 @@ p, li { white-space: pre-wrap; }
         <translation>Traduction en néerlandais</translation>
     </message>
     <message>
-        <location line="+59"/>
+        <location line="+62"/>
         <source>...my other half, &lt;b&gt;Dimitra&lt;/b&gt; that bears with me all these times that this project is under development</source>
         <translation>...mon autre moitié, &lt;b&gt;Dimitra&lt;/b&gt; qui me soutient malgré tout le temps que je consacre au développement de ce projet</translation>
     </message>
@@ -4523,12 +4533,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+44"/>
         <location line="+73"/>
-        <location line="+2548"/>
+        <location line="+2607"/>
         <source>browse localy</source>
         <translation>Parcourir localement</translation>
     </message>
     <message>
-        <location line="-2595"/>
+        <location line="-2654"/>
         <location line="+31"/>
         <source>Enter the full path of the destination directory (eg /media/backups/SiduxHome/)</source>
         <translation>Entrez le chemin complet vers le répertoire de destination (ex : /media/backups/SiduxHome/)</translation>
@@ -4561,59 +4571,59 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+223"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Edit highlighted inclusion</source>
         <translation>Modifier l&apos;inclusion mise en évidence</translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>edit</source>
         <translation>Editer</translation>
     </message>
     <message>
-        <location line="-2093"/>
+        <location line="-2152"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion up</source>
         <translation>Monter l&apos;inclusion mise en évidence en haut</translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move up</source>
         <translation>déplacer au dessus</translation>
     </message>
     <message>
-        <location line="-2093"/>
+        <location line="-2152"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion down</source>
         <translation>Descendre l&apos;inclusion mise en évidence</translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move down</source>
         <translation>déplacer en dessous</translation>
     </message>
     <message>
-        <location line="-2078"/>
+        <location line="-2137"/>
         <source>Read exclude patterns from file</source>
         <translation>Lire les motifs d&apos;exclusion depuis le fichier</translation>
     </message>
@@ -4687,12 +4697,12 @@ Veuillez vous référer au manuel pour une meilleure compréhension des règles 
     <message>
         <location line="+303"/>
         <location line="+149"/>
-        <location line="+832"/>
+        <location line="+891"/>
         <source>browse locally</source>
         <translation>Parcourir localement</translation>
     </message>
     <message>
-        <location line="-568"/>
+        <location line="-627"/>
         <source>Delete files on the destination that don&apos;t exist on the source
 . &quot;Recurse into directories&quot; has to be selected 
 (--delete-after &amp; --delete-excluded if &quot;Exclude&quot; is used)</source>
@@ -4715,7 +4725,7 @@ La propriété et les permissions des données NE seront PAS préservées.
         <translation>La destination est FAT/NTFS</translation>
     </message>
     <message>
-        <location line="+531"/>
+        <location line="+590"/>
         <location line="+10"/>
         <source>Repeat any command that fails, x times</source>
         <translation type="unfinished"></translation>
@@ -4787,7 +4797,7 @@ Sans effet si une destination distante est utilisée.</translation>
         <translation type="obsolete">Créer aussi une tâche de restauration</translation>
     </message>
     <message>
-        <location line="-2891"/>
+        <location line="-2950"/>
         <source>Exclude</source>
         <translation>Exclure</translation>
     </message>
@@ -4885,14 +4895,14 @@ Sans effet si une destination distante est utilisée.</translation>
     <message>
         <location line="+3"/>
         <location line="+371"/>
-        <location line="+1161"/>
+        <location line="+1220"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>add</source>
         <translation>Ajouter</translation>
     </message>
     <message>
-        <location line="-2094"/>
+        <location line="-2153"/>
         <location line="+31"/>
         <source>Exclude list</source>
         <translation>Liste d&apos;exclusion</translation>
@@ -4928,14 +4938,14 @@ un motif terminé par / - équivaut seulement au répertoire ; les fichiers rég
     <message>
         <location line="+3"/>
         <location line="+366"/>
-        <location line="+1161"/>
+        <location line="+1220"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>remove</source>
         <translation>Retirer</translation>
     </message>
     <message>
-        <location line="-1945"/>
+        <location line="-2004"/>
         <source>Only Include</source>
         <translation>Inclure seulement</translation>
     </message>
@@ -5253,7 +5263,36 @@ This will disable the exclude feature.</source>
         <translation>Ignorer des fichiers comme le ferait CVS</translation>
     </message>
     <message>
-        <location line="+83"/>
+        <location line="+76"/>
+        <source>With this option rsync will transfer numeric group and user IDs
+rather than using user and group names
+and mapping them at both ends.
+(--numeric-ids)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Use numeric group and user IDs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location line="+22"/>
+        <source>This tells the receiving side to attempt super-user activities
+even if the receiving rsync wasn’t run by the super-user.
+These activities include:
+preserving users via the --owner option
+preserving all groups (not just the current user’s groups) via the --groups option
+and copying devices via the --devices option.
+(--super)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Attempt super-user activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+29"/>
         <source>User defined</source>
         <translation>Défini par l&apos;utilisateur</translation>
     </message>

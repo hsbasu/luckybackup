@@ -9,6 +9,7 @@ Version 0.4.7 :
 * Added a "repeat-on-fail" feature for running tasks
 * Added "quite mode" during run, to only display errors and important messages
 * Added the ".gvfs" folder as an exclude template
+* Added "--super" and "--numeric-ids" as command options templates
 * Changed the global settings file from Qvariant to simple text
 * Changed the schedule file from Qvariant to simple text
 * Changed the profile import/export feature so that logs and snapshot data are included too

@@ -102,7 +102,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/global.cpp" line="+1063"/>
+        <location filename="../src/global.cpp" line="+1067"/>
         <source>The task list is empty</source>
         <translation type="unfinished">Görev listesi boş</translation>
     </message>
@@ -148,7 +148,7 @@
         <translation type="unfinished">Lütfen ilerlemeden önce uygun içerme kutularındaki işareti kaldırınız ya da tüm görev türlerini &apos;&lt;b&gt;Dizin içeriklerini yedekle&lt;/b&gt;&apos;den başka birine değiştiriniz  veya &apos;Dizin içeriklerini yedekle&apos; ile &apos;&lt;b&gt;Yalnızca içer&lt;/b&gt;&apos; seçeneğini birlikte kullanın</translation>
     </message>
     <message>
-        <location line="+591"/>
+        <location line="+593"/>
         <source>Command re-run due to failure</source>
         <comment>This means that a specific command is run for once more because it failed the first time</comment>
         <translation type="unfinished"></translation>
@@ -868,7 +868,12 @@
         <translation>İtalyanca gui çevirmeni</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="-7"/>
+        <source>Aurelien Merckel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
         <source>Denis Skorski</source>
         <translation>Denis Skorski</translation>
     </message>
@@ -918,7 +923,17 @@
         <translation>Romence gui çevirmeni</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+14"/>
+        <source>Roger Calvo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Tomas Vadina</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>Javi Romero</source>
         <translation>Javi Romero</translation>
     </message>
@@ -938,7 +953,7 @@
         <translation>v.0.3 gui tasarımcısı</translation>
     </message>
     <message>
-        <location line="-106"/>
+        <location line="-109"/>
         <source>Dimitris Kalamaras</source>
         <translation>Dimitris Kalamaras</translation>
     </message>
@@ -970,12 +985,7 @@
         <translation>Karsten Jaschultowski</translation>
     </message>
     <message>
-        <location line="+15"/>
-        <source>AurÃ©lien Merckel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+16"/>
         <source>French gui translator</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1025,23 +1035,23 @@
         <translation>İsveçce gui çevirmeni</translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Roger CalvÃ³</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>Catalan gui translator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location line="+3"/>
+        <source>Slovak gui translator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+2"/>
-        <source>TomÃ¡Å¡ Vadina</source>
+        <source>Rivo Zangov</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Slovak gui translator</source>
+        <source>Estonian gui translator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4534,13 +4544,13 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+44"/>
         <location line="+73"/>
-        <location line="+2548"/>
+        <location line="+2607"/>
         <source>browse localy</source>
         <translatorcomment>typo: localy should be locally</translatorcomment>
         <translation>yerele göz at</translation>
     </message>
     <message>
-        <location line="-2595"/>
+        <location line="-2654"/>
         <location line="+31"/>
         <source>Enter the full path of the destination directory (eg /media/backups/SiduxHome/)</source>
         <translation>Hedef dizininin tam yolunu (ör: /media/backups/SiduxHome/) girin</translation>
@@ -4551,7 +4561,7 @@ p, li { white-space: pre-wrap; }
         <translation>Hedef :</translation>
     </message>
     <message>
-        <location line="+2817"/>
+        <location line="+2876"/>
         <location line="+22"/>
         <source>Set the total number of backup snapshots to keep</source>
         <translation>Tutulacak toplam yedek şipşaklarını belirleyiniz</translation>
@@ -4601,7 +4611,7 @@ Eğer uzak hedef kullanılıyorsa etkisi yoktur.</translation>
         <translation type="obsolete">Geri yükleme amaçlı bir görev de oluştur</translation>
     </message>
     <message>
-        <location line="-2891"/>
+        <location line="-2950"/>
         <source>Exclude</source>
         <translation>Hariç tut</translation>
     </message>
@@ -4699,14 +4709,14 @@ Eğer uzak hedef kullanılıyorsa etkisi yoktur.</translation>
     <message>
         <location line="+3"/>
         <location line="+371"/>
-        <location line="+1161"/>
+        <location line="+1220"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>add</source>
         <translation>ekle</translation>
     </message>
     <message>
-        <location line="-2094"/>
+        <location line="-2153"/>
         <location line="+31"/>
         <source>Exclude list</source>
         <translation>Hariç tut listesi</translation>
@@ -4742,14 +4752,14 @@ izleyen / - yalnızca dizin eşleşir, dosya, simgesel link ya da aygıtlar değ
     <message>
         <location line="+3"/>
         <location line="+366"/>
-        <location line="+1161"/>
+        <location line="+1220"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>remove</source>
         <translation>sil</translation>
     </message>
     <message>
-        <location line="-1945"/>
+        <location line="-2004"/>
         <source>Only Include</source>
         <translation>Yalnızca şunu İçer</translation>
     </message>
@@ -4929,12 +4939,12 @@ Lütfen içerme kurallarını daha iyi anlamak için el kitabına başvurun.</tr
     <message>
         <location line="+22"/>
         <location line="+149"/>
-        <location line="+832"/>
+        <location line="+891"/>
         <source>browse locally</source>
         <translation>yerele göz at</translation>
     </message>
     <message>
-        <location line="-958"/>
+        <location line="-1017"/>
         <source>rsync password file:</source>
         <translation>rsync parola dosyası:</translation>
     </message>
@@ -5048,7 +5058,36 @@ UYARI: Aktarım kümesinde tüm dosyalar içerilmelidir !!
         <translation>Sert bağları koru</translation>
     </message>
     <message>
-        <location line="+558"/>
+        <location line="+49"/>
+        <source>With this option rsync will transfer numeric group and user IDs
+rather than using user and group names
+and mapping them at both ends.
+(--numeric-ids)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Use numeric group and user IDs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location line="+22"/>
+        <source>This tells the receiving side to attempt super-user activities
+even if the receiving rsync wasn’t run by the super-user.
+These activities include:
+preserving users via the --owner option
+preserving all groups (not just the current user’s groups) via the --groups option
+and copying devices via the --devices option.
+(--super)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Attempt super-user activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+531"/>
         <location line="+10"/>
         <source>Repeat any command that fails, x times</source>
         <translation type="unfinished"></translation>
@@ -5078,7 +5117,7 @@ Leave unchecked to create an extra directory inside destination</source>
 (--delete-after &amp; --delete-excluded eğer &quot;Hariç tut&quot; işaretliyse)</translation>
     </message>
     <message>
-        <location line="-1131"/>
+        <location line="-1190"/>
         <source>Delete files on the destination</source>
         <translation>Hedefteki dosyaları sil</translation>
     </message>
@@ -5148,59 +5187,59 @@ Leave unchecked to create an extra directory inside destination</source>
     <message>
         <location line="+223"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Edit highlighted inclusion</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2093"/>
+        <location line="-2152"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2093"/>
+        <location line="-2152"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2001"/>
+        <location line="-2060"/>
         <source>Include ONLY this list of patterns. Nothing more.
 Please refer to the manual for better understanding of include rules.
 This will disable the exclude feature.</source>
@@ -5262,7 +5301,7 @@ Veri aidiyeti ve izinler korunmayacaktır.
         <translation>Hedef FAT/NTFS&apos;tir</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+88"/>
         <source>User defined</source>
         <translation>Kullanıcı tanımlı</translation>
     </message>

@@ -172,7 +172,7 @@ void aboutDialog::setThanks()
         "<b>" + tr("Julien Cynober") + "</b><br>" +
         tr("French gui translator and valuable packing advisor (and not only)") + "<br><br>"
         
-        "<b>" + tr("Aurélien Merckel") + "</b><br>" +
+        "<b>" + tr("Aurelien Merckel") + "</b><br>" +
         tr("French gui translator") + "<br><br>"
 
         "<b>" + tr("Francesco Braile") + "</b><br>" +
@@ -208,11 +208,14 @@ void aboutDialog::setThanks()
         "<b>" + tr("Fredrik Holmgren") + "</b><br>" +
         tr("Swedish gui translator") + "<br><br>"
         
-        "<b>" + tr("Roger Calvó") + "</b><br>" +
+        "<b>" + tr("Roger Calvo") + "</b><br>" +
         tr("Catalan gui translator") + "<br><br>"
         
-        "<b>" + tr("Tomáš Vadina") + "</b><br>" +
+        "<b>" + tr("Tomas Vadina") + "</b><br>" +
         tr("Slovak gui translator") + "<br><br>"
+        
+        "<b>" + tr("Rivo Zangov") + "</b><br>" +
+        tr("Estonian gui translator") + "<br><br>"
         
         "<b>" + tr("Javi Romero") + "</b><br>" +
         tr("v0.3 gui designer") + "<br><br>"

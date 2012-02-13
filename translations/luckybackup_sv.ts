@@ -102,7 +102,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/global.cpp" line="+1063"/>
+        <location filename="../src/global.cpp" line="+1067"/>
         <source>The task list is empty</source>
         <translation>Aktivitetslistan är tom</translation>
     </message>
@@ -148,7 +148,7 @@
         <translation>Vänligen avmarkera lämplig kryssruta eller ändra alla aktiviteternas typ till annat än &apos;&lt;b&gt;Säkerhetskopiera kataloginnehåll&lt;/b&gt;&apos; eller använd &apos;Säkerhetskopiera kataloginnehåll&apos; tillsammans med alternativet &apos;&lt;b&gt;Inkludera endast&lt;/b&gt;&apos; innan du fortsätter</translation>
     </message>
     <message>
-        <location line="+591"/>
+        <location line="+593"/>
         <source>Command re-run due to failure</source>
         <comment>This means that a specific command is run for once more because it failed the first time</comment>
         <translation type="unfinished"></translation>
@@ -758,7 +758,22 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location line="-5"/>
+        <location line="+24"/>
+        <source>Aurelien Merckel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+36"/>
+        <source>Roger Calvo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Tomas Vadina</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-68"/>
         <source>Fedora package maintainer (official repo)</source>
         <translation>Underhållare av Fedora-paketet (official repo)</translation>
     </message>
@@ -871,12 +886,7 @@ p, li { white-space: pre-wrap; }
         <translation>Fransk GUI-översättare och värdefull paketeringsrådgivare (och inte bara)</translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>AurÃ©lien Merckel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>French gui translator</source>
         <translation type="unfinished"></translation>
     </message>
@@ -987,23 +997,23 @@ p, li { white-space: pre-wrap; }
         <translation>Svensk GUI-översättare</translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Roger CalvÃ³</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>Catalan gui translator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location line="+3"/>
+        <source>Slovak gui translator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+2"/>
-        <source>TomÃ¡Å¡ Vadina</source>
+        <source>Rivo Zangov</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Slovak gui translator</source>
+        <source>Estonian gui translator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3651,12 +3661,12 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding &apos;start&apos; t
     <message>
         <location line="+44"/>
         <location line="+73"/>
-        <location line="+2548"/>
+        <location line="+2607"/>
         <source>browse localy</source>
         <translation>bläddra lokalt</translation>
     </message>
     <message>
-        <location line="-2595"/>
+        <location line="-2654"/>
         <location line="+31"/>
         <source>Enter the full path of the destination directory (eg /media/backups/SiduxHome/)</source>
         <translation>Ange hela sökvägen för destinationskatalogen (t. ex. /media/backups/SiduxHome/)</translation>
@@ -3808,14 +3818,14 @@ efterföljande / - endast katalogen matchas, inte filer, mjuka länkar eller dev
     <message>
         <location line="+3"/>
         <location line="+371"/>
-        <location line="+1161"/>
+        <location line="+1220"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>add</source>
         <translation>lägg till</translation>
     </message>
     <message>
-        <location line="-2094"/>
+        <location line="-2153"/>
         <location line="+31"/>
         <source>Exclude list</source>
         <translation>Exkluderalista</translation>
@@ -3828,68 +3838,68 @@ efterföljande / - endast katalogen matchas, inte filer, mjuka länkar eller dev
     <message>
         <location line="+3"/>
         <location line="+366"/>
-        <location line="+1161"/>
+        <location line="+1220"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>remove</source>
         <translation>radera</translation>
     </message>
     <message>
-        <location line="-2093"/>
+        <location line="-2152"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Edit highlighted inclusion</source>
         <translation>Redigera markerad inkludering</translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>edit</source>
         <translation>redigera</translation>
     </message>
     <message>
-        <location line="-2093"/>
+        <location line="-2152"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion up</source>
         <translation>Flytta upp markerad inkludering</translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move up</source>
         <translation>flytta upp</translation>
     </message>
     <message>
-        <location line="-2093"/>
+        <location line="-2152"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion down</source>
         <translation>Flytta ner markerad inkludering</translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move down</source>
         <translation>flytta ner</translation>
     </message>
     <message>
-        <location line="-2078"/>
+        <location line="-2137"/>
         <source>Read exclude patterns from file</source>
         <translation>Läs uteslutningsmönster från fil</translation>
     </message>
@@ -4061,12 +4071,12 @@ efterföljande / - endast katalogen matchas, inte filer, mjuka länkar eller dev
     <message>
         <location line="+22"/>
         <location line="+149"/>
-        <location line="+832"/>
+        <location line="+891"/>
         <source>browse locally</source>
         <translation>bläddra lokalt</translation>
     </message>
     <message>
-        <location line="-958"/>
+        <location line="-1017"/>
         <source>rsync password file:</source>
         <translation>Lösenordsfil för rsync:</translation>
     </message>
@@ -4159,7 +4169,36 @@ Om du inte förstår innebörden av dessa så låt dem vara orörda !!</translat
         <translation>Bevara ägare, tider</translation>
     </message>
     <message>
-        <location line="+801"/>
+        <location line="+292"/>
+        <source>With this option rsync will transfer numeric group and user IDs
+rather than using user and group names
+and mapping them at both ends.
+(--numeric-ids)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Use numeric group and user IDs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location line="+22"/>
+        <source>This tells the receiving side to attempt super-user activities
+even if the receiving rsync wasn’t run by the super-user.
+These activities include:
+preserving users via the --owner option
+preserving all groups (not just the current user’s groups) via the --groups option
+and copying devices via the --devices option.
+(--super)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Attempt super-user activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+531"/>
         <location line="+10"/>
         <source>Repeat any command that fails, x times</source>
         <translation type="unfinished"></translation>
@@ -4190,7 +4229,7 @@ Lämna okryssad för att skapa en extra katalog inuti destinationen</translation
 (--delete-after och --delete-excluded om &quot;Exkludera&quot; ör ikryssad)</translation>
     </message>
     <message>
-        <location line="-1131"/>
+        <location line="-1190"/>
         <source>Delete files on the destination</source>
         <translation>Radera filer vid destinationen</translation>
     </message>
@@ -4295,7 +4334,7 @@ Data ownership and permissions will NOT be preserved.
         <translation>Destinationen är av FAT-NTFS-typ</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+88"/>
         <source>User defined</source>
         <translation>Användardefinierat</translation>
     </message>
@@ -4320,7 +4359,7 @@ Data ownership and permissions will NOT be preserved.
         <translation>Lägg till rsync-alternativ som angetts i textfältet bredvid</translation>
     </message>
     <message>
-        <location line="-2162"/>
+        <location line="-2221"/>
         <source>Define the type of this task:
 1. Backup the Source directory, inside Destination (see also &quot;Do NOT create directory&quot; box)
 2. Synchronize Source &amp; Destination, keeping the most recent files at both of them</source>
@@ -4350,7 +4389,7 @@ This will disable the exclude feature.</source>
 (--delete-after och --delete-excluded om &quot;Exkludera&quot; är ikryssad)</translation>
     </message>
     <message>
-        <location line="+351"/>
+        <location line="+410"/>
         <source>options list</source>
         <translation>Alternativlista</translation>
     </message>

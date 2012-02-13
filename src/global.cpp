@@ -22,7 +22,7 @@ file containing all variables & functions used globaly
 project version    : Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 05 Feb 2012
+last modified      : 13 Feb 2012
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -494,6 +494,8 @@ int loadProfile(QString profileToLoad)
             if (ProfileLine.startsWith("OptionsCVS="))			    tempOp	-> SetOptionsCVS(ProfileLine.remove("OptionsCVS=").toInt(&IntOk,10));
             if (ProfileLine.startsWith("OptionsHardLinks="))		tempOp	-> SetOptionsHardLinks(ProfileLine.remove("OptionsHardLinks=").toInt(&IntOk,10));
             if (ProfileLine.startsWith("OptionsFATntfs="))			tempOp	-> SetOptionsFATntfs(ProfileLine.remove("OptionsFATntfs=").toInt(&IntOk,10));
+            if (ProfileLine.startsWith("OptionsSuper="))            tempOp  -> SetOptionsSuper(ProfileLine.remove("OptionsSuper=").toInt(&IntOk,10));
+            if (ProfileLine.startsWith("OptionsNumericIDs="))       tempOp  -> SetOptionsNumericIDs(ProfileLine.remove("OptionsNumericIDs=").toInt(&IntOk,10));
             if (ProfileLine.startsWith("OptionsListItem="))			tempOp	-> AddOptionsListItem(ProfileLine.remove("OptionsListItem="));
             
             if (ProfileLine.startsWith("ExecuteBeforeListItem="))
@@ -889,6 +891,8 @@ bool saveProfile(QString profileToSave)
         out << "OptionsCVS="                << Operation[currentOperation] -> GetOptionsCVS() << "\n";
         out << "OptionsHardLinks="          << Operation[currentOperation] -> GetOptionsHardLinks() << "\n";
         out << "OptionsFATntfs="            << Operation[currentOperation] -> GetOptionsFATntfs() << "\n";
+        out << "OptionsSuper="              << Operation[currentOperation] -> GetOptionsSuper() << "\n";
+        out << "OptionsNumericIDs="         << Operation[currentOperation] -> GetOptionsNumericIDs() << "\n";
         count = 0;
         while ( count < (Operation[currentOperation] -> GetOptionsListSize()) )
         {
@@ -1514,7 +1518,7 @@ QStringList AppendArguments(operation *operationToAppend)
     arguments << "-h" << "--progress" << "--stats";	//These are the standard arguments used by rsync
 
     //add rsync arguments	--------------------------------------------------------------------------------------------------
-    if (operationToAppend -> GetOptionsRecurse())		arguments.append("-r");
+    if (operationToAppend -> GetOptionsRecurse())           arguments.append("-r");
     if (operationToAppend -> GetOptionsFATntfs())
     {
         arguments.append("-t");
@@ -1522,15 +1526,17 @@ QStringList AppendArguments(operation *operationToAppend)
     }
     else
     {
-        if (operationToAppend -> GetOptionsOwnership())		arguments.append("-tgo");
-        if (operationToAppend -> GetOptionsPermissions())	arguments.append("-p");
+        if (operationToAppend -> GetOptionsOwnership())     arguments.append("-tgo");
+        if (operationToAppend -> GetOptionsPermissions())   arguments.append("-p");
     }
-    if (operationToAppend -> GetOptionsSymlinks())		arguments.append("-l");
-    if (operationToAppend -> GetOptionsDevices())		arguments.append("-D");
-    if (operationToAppend -> GetOptionsCVS())		arguments.append("-C");
-    if (operationToAppend -> GetOptionsHardLinks())		arguments.append("-H");
-    if (operationToAppend -> GetOptionsUpdate())		arguments.append("--update");
-    if (operationToAppend -> GetOptionsDelete())		arguments.append("--delete-after");
+    if (operationToAppend -> GetOptionsSymlinks())          arguments.append("-l");
+    if (operationToAppend -> GetOptionsDevices())           arguments.append("-D");
+    if (operationToAppend -> GetOptionsCVS())               arguments.append("-C");
+    if (operationToAppend -> GetOptionsHardLinks())         arguments.append("-H");
+    if (operationToAppend -> GetOptionsSuper())             arguments.append("--super");
+    if (operationToAppend -> GetOptionsNumericIDs())        arguments.append("--numeric-ids");
+    if (operationToAppend -> GetOptionsUpdate())            arguments.append("--update");
+    if (operationToAppend -> GetOptionsDelete())            arguments.append("--delete-after");
     count =0;
     while ( count < (operationToAppend -> GetOptionsListSize()) )
     {

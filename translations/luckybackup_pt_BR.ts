@@ -102,7 +102,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/global.cpp" line="+1063"/>
+        <location filename="../src/global.cpp" line="+1067"/>
         <source>The task list is empty</source>
         <translation type="unfinished">A lista de tarefas está vazia</translation>
     </message>
@@ -148,7 +148,7 @@
         <translation type="unfinished">Por favor, desmarque as caixas de inclusão apropriada ou altere todos os tipos de tarefas  para outros que &apos;&lt;b&gt;contenham o diretório de Backup&lt;/b&gt;&apos; ou utilize &apos;contenham o diretório de Backup&apos; em conjunto com a opção &apos;&lt;b&gt;Incluir apenas&lt;/b&gt;&apos;, antes de prosseguir</translation>
     </message>
     <message>
-        <location line="+591"/>
+        <location line="+593"/>
         <source>Command re-run due to failure</source>
         <comment>This means that a specific command is run for once more because it failed the first time</comment>
         <translation type="unfinished"></translation>
@@ -804,12 +804,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+23"/>
-        <source>AurÃ©lien Merckel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+24"/>
         <source>French gui translator</source>
         <translation type="unfinished"></translation>
     </message>
@@ -874,23 +869,23 @@
         <translation>Tradutor da interface para Sueco</translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Roger CalvÃ³</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>Catalan gui translator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location line="+3"/>
+        <source>Slovak gui translator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+2"/>
-        <source>TomÃ¡Å¡ Vadina</source>
+        <source>Rivo Zangov</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Slovak gui translator</source>
+        <source>Estonian gui translator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -992,7 +987,7 @@
         <translation type="obsolete">Designer da versão 0.2.2 da interface (não o culpe pela bagunça da versão 0.2.1)</translation>
     </message>
     <message>
-        <location line="-102"/>
+        <location line="-105"/>
         <source>Dimitris Kalamaras</source>
         <translation>Dimitris Kalamaras</translation>
     </message>
@@ -1002,7 +997,7 @@
         <translation>Se não fosse por ele e seus tutoriais, eu nunca teria começado este projeto</translation>
     </message>
     <message>
-        <location line="+119"/>
+        <location line="+122"/>
         <source>...to all users of the </source>
         <translation>...a todos os usuários dos</translation>
     </message>
@@ -1098,7 +1093,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Acordo de &amp;Licença</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="-144"/>
+        <location filename="../src/about.cpp" line="-147"/>
         <source>Arch linux package/pkgbuild official maintainer (AUR)</source>
         <translation>Mantenedor oficial do pacote/construção do pacote para Arch Linux</translation>
     </message>
@@ -1159,12 +1154,12 @@ p, li { white-space: pre-wrap; }
         <translation>Tradutor da interface para Russo e testador valioso</translation>
     </message>
     <message>
-        <location line="+33"/>
+        <location line="+36"/>
         <source>v0.3 gui designer</source>
         <translation>Designer da interface versão 0.3</translation>
     </message>
     <message>
-        <location line="-46"/>
+        <location line="-49"/>
         <source>Julien Cynober</source>
         <translation>Julien Cynober</translation>
     </message>
@@ -1174,7 +1169,7 @@ p, li { white-space: pre-wrap; }
         <translation>Tradutor da interface para Francês e valioso acessor de empacotamento (e não apenas)</translation>
     </message>
     <message>
-        <location line="+48"/>
+        <location line="+51"/>
         <source>v.0.3 gui designer</source>
         <translation>Designer da interface versão 0.3</translation>
     </message>
@@ -1189,7 +1184,7 @@ p, li { white-space: pre-wrap; }
         <translation>Acordo de &amp;Licença</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="-181"/>
+        <location filename="../src/about.cpp" line="-184"/>
         <source>luckyBackup is distributed under the terms of the &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU General Public License&lt;/a&gt;</source>
         <comment>Please leave the tags &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt; &amp; &lt;/a&gt; intact and surrounding the GNU General Public License !!</comment>
         <translation>luckyBackup é distribuído sob os termos da &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;Licença Pública Geral GNU&lt;/a&gt;</translation>
@@ -1216,7 +1211,12 @@ p, li { white-space: pre-wrap; }
         <translation>Karsten Jaschultowski</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+15"/>
+        <source>Aurelien Merckel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Francesco Braile</source>
         <translation>Francesco Braile</translation>
     </message>
@@ -1241,7 +1241,17 @@ p, li { white-space: pre-wrap; }
         <translation>Tradutor da interface para Turco</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+8"/>
+        <source>Roger Calvo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Tomas Vadina</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+12"/>
         <source>Tito Poquito</source>
         <translation>Tito Poquito</translation>
     </message>
@@ -4442,7 +4452,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+16"/>
         <location line="+73"/>
-        <location line="+2548"/>
+        <location line="+2607"/>
         <source>browse localy</source>
         <translation>Navegar localmente</translation>
     </message>
@@ -4451,7 +4461,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Definir o diretório de destino</translation>
     </message>
     <message>
-        <location line="-2595"/>
+        <location line="-2654"/>
         <location line="+31"/>
         <source>Enter the full path of the destination directory (eg /media/backups/SiduxHome/)</source>
         <translation>Digite o caminho completo do diretório de destino (ex.: /media/backups/SiduxHome/)</translation>
@@ -4543,28 +4553,28 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+3"/>
         <location line="+366"/>
-        <location line="+1161"/>
+        <location line="+1220"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>remove</source>
         <translation>Remover</translation>
     </message>
     <message>
-        <location line="-2196"/>
+        <location line="-2255"/>
         <source>Add exclusion as entered in the next field</source>
         <translation>Adicionar exclusão como digitado no próximo campo</translation>
     </message>
     <message>
         <location line="+3"/>
         <location line="+371"/>
-        <location line="+1161"/>
+        <location line="+1220"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>add</source>
         <translation>Adicionar</translation>
     </message>
     <message>
-        <location line="-2180"/>
+        <location line="-2239"/>
         <source>Enter here file, folder or pattern and then press the &quot;add&quot; button to add it to the exclude list
 * - matches any non-empty component (it stops at slashes)
 ** - matches anything, including slashes
@@ -4669,59 +4679,59 @@ caminho / - corresponde apenas diretórios, sem arquivos regulares, links simbó
     <message>
         <location line="+223"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Edit highlighted inclusion</source>
         <translation>Editar inclusão destacada</translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>edit</source>
         <translation>Editar</translation>
     </message>
     <message>
-        <location line="-2093"/>
+        <location line="-2152"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion up</source>
         <translation>Mover inclusão destacada para cima</translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move up</source>
         <translation>Mover para cima</translation>
     </message>
     <message>
-        <location line="-2093"/>
+        <location line="-2152"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion down</source>
         <translation>Mover inclusão destacada para baixo</translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move down</source>
         <translation>Mover para baixo</translation>
     </message>
     <message>
-        <location line="-2001"/>
+        <location line="-2060"/>
         <source>Include ONLY this list of patterns. Nothing more.
 Please refer to the manual for better understanding of include rules.
 This will disable the exclude feature.</source>
@@ -4804,7 +4814,7 @@ AVISO: Todos os arquivos serão incluídos na hora da transferência !!
         <translation>Ignorar os arquivos similar ao CVS</translation>
     </message>
     <message>
-        <location line="+194"/>
+        <location line="+253"/>
         <source>Extra rsync options list</source>
         <translation>Lista extra de opções do rsync</translation>
     </message>
@@ -4828,7 +4838,7 @@ AVISO: Todos os arquivos serão incluídos na hora da transferência !!
         <translation type="obsolete">Incluir apenas essa lista de diretórios, arquivos ou padrões</translation>
     </message>
     <message>
-        <location line="-1362"/>
+        <location line="-1421"/>
         <source>Only Include</source>
         <translation>Incluir apenas</translation>
     </message>
@@ -4967,7 +4977,7 @@ Note que você tem que fazer todas as ações necessárias para uma conexão rem
         <translation>Digite a porta que gostaria de usar para a conexão ssh (deixe em branco para a porta padrão)</translation>
     </message>
     <message>
-        <location line="+1342"/>
+        <location line="+1401"/>
         <source>Check this to clone source to destination
 Leave unchecked to create an extra directory inside destination</source>
         <translation>Marque esta para clonar a origem para o destino
@@ -5057,7 +5067,7 @@ Desmarque para criar um diretório extra dentro do destino</translation>
         <translation type="obsolete">Você já adicionou esse comando</translation>
     </message>
     <message>
-        <location filename="../ui/modifyDialog.ui" line="-3211"/>
+        <location filename="../ui/modifyDialog.ui" line="-3270"/>
         <source>Task properties</source>
         <translation>Propriedades da tarefa</translation>
     </message>
@@ -5244,7 +5254,36 @@ Se você não tem ideia do que significa isso, deixá-los intocados !!</translat
         <translation>rsnapshot</translation>
     </message>
     <message>
-        <location line="+348"/>
+        <location line="+341"/>
+        <source>With this option rsync will transfer numeric group and user IDs
+rather than using user and group names
+and mapping them at both ends.
+(--numeric-ids)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Use numeric group and user IDs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location line="+22"/>
+        <source>This tells the receiving side to attempt super-user activities
+even if the receiving rsync wasn’t run by the super-user.
+These activities include:
+preserving users via the --owner option
+preserving all groups (not just the current user’s groups) via the --groups option
+and copying devices via the --devices option.
+(--super)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Attempt super-user activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+29"/>
         <source>User defined</source>
         <translation>Definifo pelo usuário</translation>
     </message>
@@ -5603,7 +5642,7 @@ ATENÇÃO: verificar isto, se você realmente sabe o que está fazendo</translat
         <translation>Você já adicionou esta opção</translation>
     </message>
     <message>
-        <location filename="../ui/modifyDialog.ui" line="-1884"/>
+        <location filename="../ui/modifyDialog.ui" line="-1943"/>
         <source>Read exclude patterns from file</source>
         <translation>Ler padrões incluir do arquivo</translation>
     </message>
@@ -5677,12 +5716,12 @@ Por favor, consulte o manual para melhor entendimento das regras de exclusão.</
     <message>
         <location line="+303"/>
         <location line="+149"/>
-        <location line="+832"/>
+        <location line="+891"/>
         <source>browse locally</source>
         <translation>Navegar localmente</translation>
     </message>
     <message>
-        <location line="-334"/>
+        <location line="-393"/>
         <source>Check this is you use a FAT/NTFS partition as destination.
 Data ownership and permissions will NOT be preserved.
 (-t --modify-window=1)</source>
@@ -5696,7 +5735,7 @@ Permissões e proprietários dos dados NÃO serão preservados.
         <translation>Destino é FAT/NTFS</translation>
     </message>
     <message>
-        <location line="+531"/>
+        <location line="+590"/>
         <location line="+10"/>
         <source>Repeat any command that fails, x times</source>
         <translation type="unfinished"></translation>

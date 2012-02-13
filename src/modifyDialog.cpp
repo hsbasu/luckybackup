@@ -23,7 +23,7 @@ Display a dialog. Adds a new or modifies an existing operation
  project version    : Please see "main.cpp" for project version
 
  developer          : luckyb 
- last modified      : 06 Feb 2012
+ last modified      : 13 Feb 2012
 
 ===============================================================================================================================
 ===============================================================================================================================
@@ -1271,28 +1271,30 @@ operation *modifyDialog::fillOperationArray()
     pTask -> SetInclude();
 
     //set remote groupbox & all the info in there -----------------------------------------------------------------------------
-    pTask -> SetRemote        ( uiM.groupBox_remote -> isChecked() );
-    pTask -> SetRemoteModule    ( uiM.checkBox_remoteModule -> isChecked() );
-    pTask -> SetRemoteDestination    ( uiM.radioButton_remoteDestination -> isChecked() );
-    pTask -> SetRemoteSource    ( uiM.radioButton_remoteSource -> isChecked() );
-    pTask -> SetRemoteHost        ( uiM.lineEdit_remoteHost -> text() );
-    pTask -> SetRemoteUser        ( uiM.lineEdit_remoteUser -> text() );
-    pTask -> SetRemotePassword    ( uiM.lineEdit_rsyncPassword -> text() );
-    pTask -> SetRemoteSSH        ( uiM.checkBox_ssh -> isChecked() );
-    pTask -> SetRemoteSSHPassword    ( uiM.lineEdit_sshPassword -> text() );
-    pTask -> SetRemoteSSHPort    ( (uiM.lineEdit_sshPort -> text()).toInt() );
+    pTask -> SetRemote              ( uiM.groupBox_remote -> isChecked() );
+    pTask -> SetRemoteModule        ( uiM.checkBox_remoteModule -> isChecked() );
+    pTask -> SetRemoteDestination   ( uiM.radioButton_remoteDestination -> isChecked() );
+    pTask -> SetRemoteSource        ( uiM.radioButton_remoteSource -> isChecked() );
+    pTask -> SetRemoteHost          ( uiM.lineEdit_remoteHost -> text() );
+    pTask -> SetRemoteUser          ( uiM.lineEdit_remoteUser -> text() );
+    pTask -> SetRemotePassword      ( uiM.lineEdit_rsyncPassword -> text() );
+    pTask -> SetRemoteSSH           ( uiM.checkBox_ssh -> isChecked() );
+    pTask -> SetRemoteSSHPassword   ( uiM.lineEdit_sshPassword -> text() );
+    pTask -> SetRemoteSSHPort       ( (uiM.lineEdit_sshPort -> text()).toInt() );
 
     //set rsync options checkboxes -----------------------------------------------------------------------------------------------
-    pTask -> SetOptionsUpdate    ( uiM.checkBox_update -> isChecked() );
+    pTask -> SetOptionsUpdate       ( uiM.checkBox_update -> isChecked() );
     pTask -> SetOptionsOwnership    ( uiM.checkBox_ownership -> isChecked() );
-    pTask -> SetOptionsSymlinks    ( uiM.checkBox_symlinks -> isChecked() );
-    pTask -> SetOptionsPermissions    ( uiM.checkBox_permissions -> isChecked() );
-    pTask -> SetOptionsDevices    ( uiM.checkBox_devices -> isChecked() );
-    pTask -> SetOptionsCVS        ( uiM.checkBox_cvs -> isChecked() );
+    pTask -> SetOptionsSymlinks     ( uiM.checkBox_symlinks -> isChecked() );
+    pTask -> SetOptionsPermissions  ( uiM.checkBox_permissions -> isChecked() );
+    pTask -> SetOptionsDevices      ( uiM.checkBox_devices -> isChecked() );
+    pTask -> SetOptionsCVS          ( uiM.checkBox_cvs -> isChecked() );
     pTask -> SetOptionsHardLinks    ( uiM.checkBox_hardLinks -> isChecked() );
-    pTask -> SetOptionsFATntfs    ( uiM.checkBox_FATntfs -> isChecked() );
-    pTask -> SetOptionsDelete    ( uiM.checkBox_deleteAfter -> isChecked() );
-    pTask -> SetOptionsRecurse    ( uiM.checkBox_recurse -> isChecked() );
+    pTask -> SetOptionsFATntfs      ( uiM.checkBox_FATntfs -> isChecked() );
+    pTask -> SetOptionsDelete       ( uiM.checkBox_deleteAfter -> isChecked() );
+    pTask -> SetOptionsRecurse      ( uiM.checkBox_recurse -> isChecked() );
+    pTask -> SetOptionsSuper        ( uiM.checkBox_super -> isChecked() );
+    pTask -> SetOptionsNumericIDs   ( uiM.checkBox_numericIDs -> isChecked() );
     count = 0;    //read options list one by one
     while ( count < (uiM.listWidget_options -> count()) )
     {
@@ -1369,45 +1371,47 @@ void modifyDialog::fillModifyWindow(operation *pTask)
     count=0;
     while ( count < (pTask -> GetExcludeListSize()) )
     {
-        uiM.listWidget_exclude    -> addItem    (pTask -> GetExcludeListItem(count));
+        uiM.listWidget_exclude      -> addItem    (pTask -> GetExcludeListItem(count));
         count++;
     }
 
-    uiM.checkBox_includeFile     -> setChecked    (pTask -> GetIncludeFromFile() );
+    uiM.checkBox_includeFile        -> setChecked    (pTask -> GetIncludeFromFile() );
     uiM.radioButton_includeNormal     -> setChecked    (pTask -> GetIncludeModeNormal() );
     uiM.radioButton_includeOnly     -> setChecked    (!pTask -> GetIncludeModeNormal() );
-    uiM.lineEdit_includeFile     -> setText        (pTask -> GetIncludeFile() );
+    uiM.lineEdit_includeFile        -> setText        (pTask -> GetIncludeFile() );
     count=0;
     while ( count < (pTask -> GetIncludeListSize()) )
     {
-        uiM.listWidget_include    -> addItem    (pTask -> GetIncludeListItem(count));
+        uiM.listWidget_include      -> addItem    (pTask -> GetIncludeListItem(count));
         count++;
     }
 
-    uiM.groupBox_remote         -> setChecked    (pTask -> GetRemote() );
-    uiM.checkBox_remoteModule    -> setChecked    (pTask -> GetRemoteModule() );
+    uiM.groupBox_remote             -> setChecked    (pTask -> GetRemote() );
+    uiM.checkBox_remoteModule       -> setChecked    (pTask -> GetRemoteModule() );
     uiM.radioButton_remoteDestination-> setChecked    (pTask -> GetRemoteDestination() );
-    uiM.radioButton_remoteSource     -> setChecked    (pTask -> GetRemoteSource() );
-    uiM.lineEdit_remoteHost     -> setText    (pTask -> GetRemoteHost() );
-    uiM.lineEdit_remoteUser     -> setText    (pTask -> GetRemoteUser() );
-    uiM.lineEdit_rsyncPassword     -> setText    (pTask -> GetRemotePassword() );
-    uiM.checkBox_ssh         -> setChecked    (pTask -> GetRemoteSSH() );
-    uiM.lineEdit_sshPassword     -> setText    (pTask -> GetRemoteSSHPassword() );
+    uiM.radioButton_remoteSource    -> setChecked    (pTask -> GetRemoteSource() );
+    uiM.lineEdit_remoteHost         -> setText    (pTask -> GetRemoteHost() );
+    uiM.lineEdit_remoteUser         -> setText    (pTask -> GetRemoteUser() );
+    uiM.lineEdit_rsyncPassword      -> setText    (pTask -> GetRemotePassword() );
+    uiM.checkBox_ssh                -> setChecked    (pTask -> GetRemoteSSH() );
+    uiM.lineEdit_sshPassword        -> setText    (pTask -> GetRemoteSSHPassword() );
     if (pTask -> GetRemoteSSHPort() == 0)
-        uiM.lineEdit_sshPort     -> setText    ("");
+        uiM.lineEdit_sshPort        -> setText    ("");
     else
-        uiM.lineEdit_sshPort     -> setText    (countStr.setNum(pTask -> GetRemoteSSHPort()) );
+        uiM.lineEdit_sshPort        -> setText    (countStr.setNum(pTask -> GetRemoteSSHPort()) );
 
-    uiM.checkBox_update         -> setChecked    (pTask -> GetOptionsUpdate() );
-    uiM.checkBox_deleteAfter     -> setChecked    (pTask -> GetOptionsDelete() );
-    uiM.checkBox_recurse         -> setChecked    (pTask -> GetOptionsRecurse() );
-    uiM.checkBox_ownership         -> setChecked    (pTask -> GetOptionsOwnership() );
-    uiM.checkBox_symlinks         -> setChecked    (pTask -> GetOptionsSymlinks() );
-    uiM.checkBox_permissions     -> setChecked    (pTask -> GetOptionsPermissions() );
-    uiM.checkBox_devices         -> setChecked    (pTask -> GetOptionsDevices() );
-    uiM.checkBox_cvs             -> setChecked    (pTask -> GetOptionsCVS() );
-    uiM.checkBox_hardLinks         -> setChecked    (pTask -> GetOptionsHardLinks() );
-    uiM.checkBox_FATntfs         -> setChecked    (pTask -> GetOptionsFATntfs() );
+    uiM.checkBox_update             -> setChecked    (pTask -> GetOptionsUpdate() );
+    uiM.checkBox_deleteAfter        -> setChecked    (pTask -> GetOptionsDelete() );
+    uiM.checkBox_recurse            -> setChecked    (pTask -> GetOptionsRecurse() );
+    uiM.checkBox_ownership          -> setChecked    (pTask -> GetOptionsOwnership() );
+    uiM.checkBox_symlinks           -> setChecked    (pTask -> GetOptionsSymlinks() );
+    uiM.checkBox_permissions        -> setChecked    (pTask -> GetOptionsPermissions() );
+    uiM.checkBox_devices            -> setChecked    (pTask -> GetOptionsDevices() );
+    uiM.checkBox_cvs                -> setChecked    (pTask -> GetOptionsCVS() );
+    uiM.checkBox_hardLinks          -> setChecked    (pTask -> GetOptionsHardLinks() );
+    uiM.checkBox_FATntfs            -> setChecked    (pTask -> GetOptionsFATntfs() );
+    uiM.checkBox_super              -> setChecked    (pTask -> GetOptionsSuper() );
+    uiM.checkBox_numericIDs         -> setChecked    (pTask -> GetOptionsNumericIDs() );
     count=0;
     while ( count < (pTask -> GetOptionsListSize()) )
     {

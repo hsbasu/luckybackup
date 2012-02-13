@@ -102,7 +102,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/global.cpp" line="+1063"/>
+        <location filename="../src/global.cpp" line="+1067"/>
         <source>The task list is empty</source>
         <translation>Zoznam úloh je prázdny</translation>
     </message>
@@ -148,7 +148,7 @@
         <translation>Prosím zrušte označenie príslušného boxu zahrnutia, alebo zmeňte všetky typy úloh na iné než &apos;&lt;b&gt;Zálohovať obsah priečinka&lt;/b&gt;&apos;  alebo použite &apos;Zálohovať obsah priečinka&apos; spolu s možnosťou &apos;&lt;b&gt;Iba zahrnúť&lt;/b&gt;&apos; pred vykonaním</translation>
     </message>
     <message>
-        <location line="+585"/>
+        <location line="+587"/>
         <source>pre-task execution of command</source>
         <comment>Full phrase: pre-task execution of command: &lt;COMMAND&gt; starting</comment>
         <translation>vykonanie príkazu pred úlohou</translation>
@@ -844,11 +844,21 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+2"/>
-        <source>AurÃ©lien Merckel</source>
+        <source>Aurelien Merckel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+36"/>
+        <source>Roger Calvo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Tomas Vadina</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-38"/>
         <source>French gui translator</source>
         <translation type="unfinished"></translation>
     </message>
@@ -959,23 +969,27 @@ p, li { white-space: pre-wrap; }
         <translation>Prekladateľ grafického rozhrania do švédčiny</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Roger CalvÃ³</source>
-        <translation>Roger CalvÃ³</translation>
+        <translation type="obsolete">Roger CalvÃ³</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>Catalan gui translator</source>
         <translation>Prekladateľ grafického rozhrania do katalánčiny</translation>
     </message>
     <message>
+        <location line="+3"/>
+        <source>Slovak gui translator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+2"/>
-        <source>TomÃ¡Å¡ Vadina</source>
+        <source>Rivo Zangov</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Slovak gui translator</source>
+        <source>Estonian gui translator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3462,12 +3476,12 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding &apos;start&apos; t
     <message>
         <location line="+44"/>
         <location line="+73"/>
-        <location line="+2548"/>
+        <location line="+2607"/>
         <source>browse localy</source>
         <translation>prechádzať miestne</translation>
     </message>
     <message>
-        <location line="-2595"/>
+        <location line="-2654"/>
         <location line="+31"/>
         <source>Enter the full path of the destination directory (eg /media/backups/SiduxHome/)</source>
         <translation>Zadajte celú cestu k cieľovému priečinku (napr. /media/backups/SiduxHome/)</translation>
@@ -3613,14 +3627,14 @@ trailing / - only directory is matched, not regular files, symlinks or devices</
     <message>
         <location line="+3"/>
         <location line="+371"/>
-        <location line="+1161"/>
+        <location line="+1220"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>add</source>
         <translation type="unfinished">pridať</translation>
     </message>
     <message>
-        <location line="-2094"/>
+        <location line="-2153"/>
         <location line="+31"/>
         <source>Exclude list</source>
         <translation type="unfinished"></translation>
@@ -3633,68 +3647,68 @@ trailing / - only directory is matched, not regular files, symlinks or devices</
     <message>
         <location line="+3"/>
         <location line="+366"/>
-        <location line="+1161"/>
+        <location line="+1220"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>remove</source>
         <translation type="unfinished">odstrániť</translation>
     </message>
     <message>
-        <location line="-2093"/>
+        <location line="-2152"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Edit highlighted inclusion</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2093"/>
+        <location line="-2152"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2093"/>
+        <location line="-2152"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2078"/>
+        <location line="-2137"/>
         <source>Read exclude patterns from file</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3860,12 +3874,12 @@ trailing / - only directory is matched, not regular files, symlinks or devices</
     <message>
         <location line="+22"/>
         <location line="+149"/>
-        <location line="+832"/>
+        <location line="+891"/>
         <source>browse locally</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-958"/>
+        <location line="-1017"/>
         <source>rsync password file:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4053,6 +4067,35 @@ Data ownership and permissions will NOT be preserved.
     <message>
         <location line="+5"/>
         <source>Destination is FAT/NTFS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>With this option rsync will transfer numeric group and user IDs
+rather than using user and group names
+and mapping them at both ends.
+(--numeric-ids)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Use numeric group and user IDs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location line="+22"/>
+        <source>This tells the receiving side to attempt super-user activities
+even if the receiving rsync wasn’t run by the super-user.
+These activities include:
+preserving users via the --owner option
+preserving all groups (not just the current user’s groups) via the --groups option
+and copying devices via the --devices option.
+(--super)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Attempt super-user activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -363,7 +363,7 @@
                 <x>0</x>
                 <y>0</y>
                 <width>582</width>
-                <height>239</height>
+                <height>258</height>
                </rect>
               </property>
               <attribute name="label">
@@ -692,8 +692,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>214</width>
-                <height>215</height>
+                <width>197</width>
+                <height>203</height>
                </rect>
               </property>
               <attribute name="label">
@@ -1847,7 +1847,7 @@ If you have no idea what these mean, leave them untouched !!</string>
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>115</width>
+                <width>110</width>
                 <height>85</height>
                </rect>
               </property>
@@ -1912,8 +1912,8 @@ If you have no idea what these mean, leave them untouched !!</string>
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>453</width>
-                <height>133</height>
+                <width>582</width>
+                <height>231</height>
                </rect>
               </property>
               <attribute name="label">
@@ -1955,7 +1955,7 @@ If you have no idea what these mean, leave them untouched !!</string>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="1">
+               <item row="0" column="2">
                 <widget class="QCheckBox" name="checkBox_deleteAfter">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -2020,7 +2020,7 @@ If you have no idea what these mean, leave them untouched !!</string>
                  </property>
                 </widget>
                </item>
-               <item row="1" column="1">
+               <item row="1" column="2">
                 <widget class="QCheckBox" name="checkBox_recurse">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -2078,7 +2078,7 @@ If you have no idea what these mean, leave them untouched !!</string>
                  </property>
                 </widget>
                </item>
-               <item row="2" column="1">
+               <item row="2" column="2">
                 <widget class="QCheckBox" name="checkBox_update">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -2142,7 +2142,7 @@ If you have no idea what these mean, leave them untouched !!</string>
                  </property>
                 </widget>
                </item>
-               <item row="3" column="1">
+               <item row="3" column="2">
                 <widget class="QCheckBox" name="checkBox_cvs">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -2195,7 +2195,7 @@ WARNING: All files have to be included in the transfer set !!
                  </property>
                 </widget>
                </item>
-               <item row="4" column="1">
+               <item row="4" column="2">
                 <widget class="QCheckBox" name="checkBox_FATntfs">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -2223,6 +2223,65 @@ Data ownership and permissions will NOT be preserved.
                 </widget>
                </item>
                <item row="5" column="0" colspan="2">
+                <widget class="QCheckBox" name="checkBox_numericIDs">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <weight>50</weight>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
+                 <property name="toolTip">
+                  <string>With this option rsync will transfer numeric group and user IDs
+rather than using user and group names
+and mapping them at both ends.
+(--numeric-ids)</string>
+                 </property>
+                 <property name="text">
+                  <string>Use numeric group and user IDs</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="2">
+                <widget class="QCheckBox" name="checkBox_super">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <weight>50</weight>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
+                 <property name="toolTip">
+                  <string>This tells the receiving side to attempt super-user activities
+even if the receiving rsync wasn’t run by the super-user.
+These activities include:
+preserving users via the --owner option
+preserving all groups (not just the current user’s groups) via the --groups option
+and copying devices via the --devices option.
+(--super)</string>
+                 </property>
+                 <property name="text">
+                  <string>Attempt super-user activities</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="1">
                 <spacer name="verticalSpacer_3">
                  <property name="orientation">
                   <enum>Qt::Vertical</enum>
@@ -2242,8 +2301,8 @@ Data ownership and permissions will NOT be preserved.
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>214</width>
-                <height>182</height>
+                <width>197</width>
+                <height>170</height>
                </rect>
               </property>
               <attribute name="label">
@@ -2491,8 +2550,8 @@ Data ownership and permissions will NOT be preserved.
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>249</width>
-                <height>238</height>
+                <width>582</width>
+                <height>258</height>
                </rect>
               </property>
               <attribute name="label">
@@ -2792,8 +2851,8 @@ ATTENTION: check this if you really know what you're doing</string>
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>214</width>
-                <height>183</height>
+                <width>197</width>
+                <height>172</height>
                </rect>
               </property>
               <attribute name="label">

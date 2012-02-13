@@ -102,7 +102,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/global.cpp" line="+1063"/>
+        <location filename="../src/global.cpp" line="+1067"/>
         <source>The task list is empty</source>
         <translation type="unfinished">Popis zadataka je prazan </translation>
     </message>
@@ -148,7 +148,7 @@
         <translation type="unfinished">Molimo da otkačite odgovarajući potvrdni okvir ili promijenite sve tipove zadataka kako ne bi bile &apos;&lt;b&gt; Backup dir sadržaja &lt;/b&gt;&apos;(sp)(sp) ili koristite &apos;Backup dir sadržaje&apos; zajedno sa &apos;&lt;b&gt; Samo uključiti &lt;/b &gt; &apos;opciju, prije nastavka</translation>
     </message>
     <message>
-        <location line="+654"/>
+        <location line="+656"/>
         <source>execution of task</source>
         <comment>Full phrase: execution of task: &lt;TASKNAME&gt; finished because of pre/post task command execution error</comment>
         <translation type="unfinished"></translation>
@@ -706,7 +706,7 @@
         <translation>Njemački gui prevodilac</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+59"/>
         <source>fri13</source>
         <translation>fri13</translation>
     </message>
@@ -723,7 +723,7 @@
         <translation type="obsolete">Danski gui prevodilac</translation>
     </message>
     <message>
-        <location line="-54"/>
+        <location line="-57"/>
         <source>Sergio Gameiro</source>
         <translation>Sergio Gameiro</translation>
     </message>
@@ -749,7 +749,7 @@
         <translation>Ruski gui prevodilac i vrijedni ispitivač</translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+35"/>
         <source>Javi Romero</source>
         <translation>Javi Romero</translation>
     </message>
@@ -759,7 +759,7 @@
         <translation>v0.3 gui dizajner</translation>
     </message>
     <message>
-        <location line="-46"/>
+        <location line="-49"/>
         <source>Julien Cynober</source>
         <translation>Julien Cynober</translation>
     </message>
@@ -779,7 +779,7 @@
         <translation>da nije njega i njegovog podučavanja, ja nikad nebi započeo ovaj projekat</translation>
     </message>
     <message>
-        <location line="+119"/>
+        <location line="+122"/>
         <source>...to all users of the </source>
         <translation>... svim korisnicima</translation>
     </message>
@@ -856,7 +856,7 @@ p, li { white-space: pre-wrap; }
 &amp;Ugovor o licenci</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="-137"/>
+        <location filename="../src/about.cpp" line="-140"/>
         <source>Marcos Del Puerto Garcia</source>
         <translation>Marcos Del Puerto Garcia</translation>
     </message>
@@ -916,7 +916,12 @@ p, li { white-space: pre-wrap; }
         <translation>Mandriva upravitelj paketa</translation>
     </message>
     <message>
-        <location line="+38"/>
+        <location line="+32"/>
+        <source>Aurelien Merckel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>Raffaele</source>
         <translation>Raffaele</translation>
     </message>
@@ -942,7 +947,7 @@ p, li { white-space: pre-wrap; }
         <translation>Prevodilac arapskog gui-a</translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+30"/>
         <source>v.0.3 gui designer</source>
         <translation>v 0.3 gui dizajner</translation>
     </message>
@@ -951,7 +956,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Carsten</translation>
     </message>
     <message>
-        <location line="-28"/>
+        <location line="-31"/>
         <source>Majed Sahli</source>
         <translation>Majed Sahli</translation>
     </message>
@@ -1022,12 +1027,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+23"/>
-        <source>AurÃ©lien Merckel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+24"/>
         <source>French gui translator</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1062,23 +1062,23 @@ p, li { white-space: pre-wrap; }
         <translation>Prevodilac švedskog gui-a</translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Roger CalvÃ³</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>Catalan gui translator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location line="+3"/>
+        <source>Slovak gui translator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+2"/>
-        <source>TomÃ¡Å¡ Vadina</source>
+        <source>Rivo Zangov</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Slovak gui translator</source>
+        <source>Estonian gui translator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1184,7 +1184,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Support</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="-205"/>
+        <location filename="../src/about.cpp" line="-208"/>
         <source>luckyBackup is distributed under the terms of the &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU General Public License&lt;/a&gt;</source>
         <comment>Please leave the tags &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt; &amp; &lt;/a&gt; intact and surrounding the GNU General Public License !!</comment>
         <translation>luckyBackup je distribuisan pod uslovima &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU General Public</translation>
@@ -1236,7 +1236,17 @@ p, li { white-space: pre-wrap; }
         <translation>Prevodilac turskog gui-a</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+8"/>
+        <source>Roger Calvo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Tomas Vadina</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+12"/>
         <source>Tito Poquito</source>
         <translation>Tito Poquito</translation>
     </message>
@@ -4178,12 +4188,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+44"/>
         <location line="+73"/>
-        <location line="+2548"/>
+        <location line="+2607"/>
         <source>browse localy</source>
         <translation>Prikaži</translation>
     </message>
     <message>
-        <location line="-2595"/>
+        <location line="-2654"/>
         <location line="+31"/>
         <source>Enter the full path of the destination directory (eg /media/backups/SiduxHome/)</source>
         <translation>Unesite cijelu putanju odredišnog direktorija (npr  /media/backups/SiduxHome/)</translation>
@@ -4216,66 +4226,95 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+223"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Edit highlighted inclusion</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2093"/>
+        <location line="-2152"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2093"/>
+        <location line="-2152"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2001"/>
+        <location line="-2060"/>
         <source>Include ONLY this list of patterns. Nothing more.
 Please refer to the manual for better understanding of include rules.
 This will disable the exclude feature.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1724"/>
+        <location line="+1215"/>
+        <source>With this option rsync will transfer numeric group and user IDs
+rather than using user and group names
+and mapping them at both ends.
+(--numeric-ids)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Use numeric group and user IDs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location line="+22"/>
+        <source>This tells the receiving side to attempt super-user activities
+even if the receiving rsync wasn’t run by the super-user.
+These activities include:
+preserving users via the --owner option
+preserving all groups (not just the current user’s groups) via the --groups option
+and copying devices via the --devices option.
+(--super)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Attempt super-user activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+531"/>
         <location line="+10"/>
         <source>Repeat any command that fails, x times</source>
         <translation type="unfinished"></translation>
@@ -4330,7 +4369,7 @@ Leave unchecked to create an extra directory inside destination</source>
         <translation type="obsolete">Kreiraj zadatak u svrhu povrata podataka</translation>
     </message>
     <message>
-        <location line="-2891"/>
+        <location line="-2950"/>
         <source>Exclude</source>
         <translation>Oduzmi</translation>
     </message>
@@ -4428,14 +4467,14 @@ Leave unchecked to create an extra directory inside destination</source>
     <message>
         <location line="+3"/>
         <location line="+371"/>
-        <location line="+1161"/>
+        <location line="+1220"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>add</source>
         <translation>dodaj</translation>
     </message>
     <message>
-        <location line="-2094"/>
+        <location line="-2153"/>
         <location line="+31"/>
         <source>Exclude list</source>
         <translation>Lista oduzetog</translation>
@@ -4466,14 +4505,14 @@ posljednji / - odgovara samo direktorij, nije regularna datoteka, symlinks-u ili
     <message>
         <location line="+3"/>
         <location line="+366"/>
-        <location line="+1161"/>
+        <location line="+1220"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>remove</source>
         <translation>obriši</translation>
     </message>
     <message>
-        <location line="-1945"/>
+        <location line="-2004"/>
         <source>Only Include</source>
         <translation>Dodaj</translation>
     </message>
@@ -4789,7 +4828,7 @@ UPOZORENJE: Sve datoteke moraju biti uključene u prijenos!!
         <translation>Preskoči datoteke CVS vrste</translation>
     </message>
     <message>
-        <location line="+83"/>
+        <location line="+142"/>
         <source>User defined</source>
         <translation>Korisnik definiše</translation>
     </message>
@@ -4890,13 +4929,13 @@ UPOZORENJE: Sve datoteke moraju biti uključene u prijenos!!
         <translation type="obsolete">Jesi li siguran da zeliš da nastaviš??</translation>
     </message>
     <message>
-        <location line="-2096"/>
+        <location line="-2155"/>
         <location line="+371"/>
         <source>launch the pattern editor</source>
         <translation>Pokreni šablonski editor</translation>
     </message>
     <message>
-        <location line="+1371"/>
+        <location line="+1430"/>
         <source>Execute extra commands, before or after the task.</source>
         <translation>Izvrši dodatnih naredbi, prije ili poslije zadatak.</translation>
     </message>
@@ -5191,7 +5230,7 @@ PAŽNJA: Označi ovo samo ako stvarno znaš šta radiš</translation>
         <translation>Vi ste već dodali ovu opciju</translation>
     </message>
     <message>
-        <location filename="../ui/modifyDialog.ui" line="-1833"/>
+        <location filename="../ui/modifyDialog.ui" line="-1892"/>
         <source>Read exclude patterns from file</source>
         <translation>Očitaj iskljućujuči uzorke od datoteke</translation>
     </message>
@@ -5265,12 +5304,12 @@ Molimo pogledajte priručnik za bolje razumijevanje pravila.</translation>
     <message>
         <location line="+303"/>
         <location line="+149"/>
-        <location line="+832"/>
+        <location line="+891"/>
         <source>browse locally</source>
         <translation>Prikaži lokaciju</translation>
     </message>
     <message>
-        <location line="-334"/>
+        <location line="-393"/>
         <source>Check this is you use a FAT/NTFS partition as destination.
 Data ownership and permissions will NOT be preserved.
 (-t --modify-window=1)</source>
@@ -5284,7 +5323,7 @@ Podaci vlasništvo i prava neće biti sačuvani.
         <translation>Destinacija je FAT/NTFS</translation>
     </message>
     <message>
-        <location line="+855"/>
+        <location line="+914"/>
         <location line="+22"/>
         <source>Set the total number of backup snapshots to keep</source>
         <translation>Postavi totalni broj backup snapshot-ova kako bi zadržao</translation>

@@ -102,7 +102,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/global.cpp" line="+1063"/>
+        <location filename="../src/global.cpp" line="+1067"/>
         <source>The task list is empty</source>
         <translation type="unfinished">Seznam nalog je prazen</translation>
     </message>
@@ -148,7 +148,7 @@
         <translation type="unfinished">Pred nadaljevanjem odizberite primerna vključna polja ali spremenite vrsto vseh nalog v drugo kot &apos;&lt;b&gt;Varnostna kopija vsebine mape&lt;/b&gt;&apos;  ali uporabite &apos;Varnostna kopija vsebine mape&apos; skupaj z možnostjo &apos;&lt;b&gt;Vključi le&lt;/b&gt;</translation>
     </message>
     <message>
-        <location line="+591"/>
+        <location line="+593"/>
         <source>Command re-run due to failure</source>
         <comment>This means that a specific command is run for once more because it failed the first time</comment>
         <translation type="unfinished"></translation>
@@ -810,7 +810,7 @@
         <translation>Prevajalec Grškega priročnika</translation>
     </message>
     <message>
-        <location line="+68"/>
+        <location line="+71"/>
         <source>Michele Dall&apos;Arno</source>
         <translation>Michele Dall&apos;Arno</translation>
     </message>
@@ -839,7 +839,7 @@
         <translation type="obsolete">Carsten</translation>
     </message>
     <message>
-        <location line="-86"/>
+        <location line="-89"/>
         <location line="+3"/>
         <source>German gui translator</source>
         <translation>Prevajalec uporabniškega vmesnika v nemščino</translation>
@@ -887,7 +887,12 @@
         <translation>Prevajalec uporabniškega vmesnika v italjanščino</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="-7"/>
+        <source>Aurelien Merckel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
         <source>Denis Skorski</source>
         <translation>Denis Skorski</translation>
     </message>
@@ -937,7 +942,17 @@
         <translation>Prevajalec uporabniškega vmesnika v romunščino</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+14"/>
+        <source>Roger Calvo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Tomas Vadina</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>Javi Romero</source>
         <translation>Javi Romero</translation>
     </message>
@@ -957,7 +972,7 @@
         <translation>oblikovalec uporabniškega vmesnika različice 0.3</translation>
     </message>
     <message>
-        <location line="-106"/>
+        <location line="-109"/>
         <source>Dimitris Kalamaras</source>
         <translation>Dimitris Kalamaras</translation>
     </message>
@@ -989,12 +1004,7 @@
         <translation>Karsten Jaschultowski</translation>
     </message>
     <message>
-        <location line="+15"/>
-        <source>AurÃ©lien Merckel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+16"/>
         <source>French gui translator</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1044,23 +1054,23 @@
         <translation>Prevajalec uporabniškega vmesnika v švedščino</translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Roger CalvÃ³</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>Catalan gui translator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location line="+3"/>
+        <source>Slovak gui translator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+2"/>
-        <source>TomÃ¡Å¡ Vadina</source>
+        <source>Rivo Zangov</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Slovak gui translator</source>
+        <source>Estonian gui translator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4495,12 +4505,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+44"/>
         <location line="+73"/>
-        <location line="+2548"/>
+        <location line="+2607"/>
         <source>browse localy</source>
         <translation>krajevno brskanje</translation>
     </message>
     <message>
-        <location line="-2595"/>
+        <location line="-2654"/>
         <location line="+31"/>
         <source>Enter the full path of the destination directory (eg /media/backups/SiduxHome/)</source>
         <translation>Vnos polne poti ciljne mape (na primer /media/varnostne_kopije/januar09/)</translation>
@@ -4511,7 +4521,7 @@ p, li { white-space: pre-wrap; }
         <translation>Cilj:</translation>
     </message>
     <message>
-        <location line="+2817"/>
+        <location line="+2876"/>
         <location line="+22"/>
         <source>Set the total number of backup snapshots to keep</source>
         <translation>Nastavite skupno število obdržanih postnetkov varnostnih kopij</translation>
@@ -4561,7 +4571,7 @@ Nima učinka, če je uporabljen oddaljen cilj.</translation>
         <translation type="obsolete">Ustvari tudi nalogo za namene OBNOVE</translation>
     </message>
     <message>
-        <location line="-2891"/>
+        <location line="-2950"/>
         <source>Exclude</source>
         <translation>Izključi</translation>
     </message>
@@ -4659,14 +4669,14 @@ Nima učinka, če je uporabljen oddaljen cilj.</translation>
     <message>
         <location line="+3"/>
         <location line="+371"/>
-        <location line="+1161"/>
+        <location line="+1220"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>add</source>
         <translation>dodaj</translation>
     </message>
     <message>
-        <location line="-2094"/>
+        <location line="-2153"/>
         <location line="+31"/>
         <source>Exclude list</source>
         <translation>Izključitveni seznam</translation>
@@ -4702,14 +4712,14 @@ sledeč / - sklada se le mapa, ne navadne datoteke, simbolne povezave ali naprav
     <message>
         <location line="+3"/>
         <location line="+366"/>
-        <location line="+1161"/>
+        <location line="+1220"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>remove</source>
         <translation>odstrani</translation>
     </message>
     <message>
-        <location line="-1945"/>
+        <location line="-2004"/>
         <source>Only Include</source>
         <translation>Vključi le</translation>
     </message>
@@ -4889,12 +4899,12 @@ Za boljše razumevanje pravil vključevanja si oglejte priročnik.</translation>
     <message>
         <location line="+22"/>
         <location line="+149"/>
-        <location line="+832"/>
+        <location line="+891"/>
         <source>browse locally</source>
         <translation>brskaj krajevno</translation>
     </message>
     <message>
-        <location line="-958"/>
+        <location line="-1017"/>
         <source>rsync password file:</source>
         <translation>Datoteka gesla rsync:</translation>
     </message>
@@ -5010,7 +5020,36 @@ OPOZORILO: Vse datoteke morajo biti vključene v prenosnem nizu !!
         <translation>Obdrži trde povezave</translation>
     </message>
     <message>
-        <location line="+558"/>
+        <location line="+49"/>
+        <source>With this option rsync will transfer numeric group and user IDs
+rather than using user and group names
+and mapping them at both ends.
+(--numeric-ids)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Use numeric group and user IDs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location line="+22"/>
+        <source>This tells the receiving side to attempt super-user activities
+even if the receiving rsync wasn’t run by the super-user.
+These activities include:
+preserving users via the --owner option
+preserving all groups (not just the current user’s groups) via the --groups option
+and copying devices via the --devices option.
+(--super)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Attempt super-user activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+531"/>
         <location line="+10"/>
         <source>Repeat any command that fails, x times</source>
         <translation type="unfinished"></translation>
@@ -5040,7 +5079,7 @@ Leave unchecked to create an extra directory inside destination</source>
 (--delete-after in --delete-excluded, če je obkljukan &quot;Izključi&quot;)</translation>
     </message>
     <message>
-        <location line="-1131"/>
+        <location line="-1190"/>
         <source>Delete files on the destination</source>
         <translation>Izbris ciljnih datotek</translation>
     </message>
@@ -5110,59 +5149,59 @@ Leave unchecked to create an extra directory inside destination</source>
     <message>
         <location line="+223"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Edit highlighted inclusion</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2093"/>
+        <location line="-2152"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2093"/>
+        <location line="-2152"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2001"/>
+        <location line="-2060"/>
         <source>Include ONLY this list of patterns. Nothing more.
 Please refer to the manual for better understanding of include rules.
 This will disable the exclude feature.</source>
@@ -5224,7 +5263,7 @@ Lastništvo podatkov in dovoljenja NE bodo ohranjena.
         <translation>Cilj je FAT/NTFS</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+88"/>
         <source>User defined</source>
         <translation>Uporabniško določeno</translation>
     </message>

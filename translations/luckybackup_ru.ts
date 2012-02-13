@@ -102,7 +102,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/global.cpp" line="+1063"/>
+        <location filename="../src/global.cpp" line="+1067"/>
         <source>The task list is empty</source>
         <translation type="unfinished">Список задач пуст</translation>
     </message>
@@ -148,7 +148,7 @@
         <translation type="unfinished">Пожалуйста, снимите соответствующие отметки или измените типы всех задач на отличный от &apos;&lt;b&gt;Архивировать содержимое директории&lt;/b&gt;&apos; или используйте &apos;Архивировать содержимое директории&apos; вместе с опцией &apos;&lt;b&gt;Только включать&lt;/b&gt;&apos; перед тем, как продолжить</translation>
     </message>
     <message>
-        <location line="+591"/>
+        <location line="+593"/>
         <source>Command re-run due to failure</source>
         <comment>This means that a specific command is run for once more because it failed the first time</comment>
         <translation type="unfinished"></translation>
@@ -676,7 +676,7 @@
         <translation>Переводчик интерфейса на немецкий</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+59"/>
         <source>fri13</source>
         <translation>fri13</translation>
     </message>
@@ -693,7 +693,7 @@
         <translation type="obsolete">Переводчик интерфейса на датский</translation>
     </message>
     <message>
-        <location line="-54"/>
+        <location line="-57"/>
         <source>Sergio Gameiro</source>
         <translation>Sergio Gameiro</translation>
     </message>
@@ -719,7 +719,7 @@
         <translation>Переводчик интерфейса на русский и ценный тестировщик</translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+35"/>
         <source>Javi Romero</source>
         <translation>Javi Romero</translation>
     </message>
@@ -729,7 +729,7 @@
         <translation>Дизайнер интерфейса v.0.3</translation>
     </message>
     <message>
-        <location line="-46"/>
+        <location line="-49"/>
         <source>Julien Cynober</source>
         <translation>Julien Cynober</translation>
     </message>
@@ -815,7 +815,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="-7"/>
+        <source>Aurelien Merckel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+12"/>
         <source>Kenny Verstraete</source>
         <translation>Kenny Verstraete</translation>
     </message>
@@ -855,12 +860,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+14"/>
+        <source>Roger Calvo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Tomas Vadina</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
         <source>v.0.3 gui designer</source>
         <translation>Дизайнер интерфейса v.0.3</translation>
     </message>
     <message>
-        <location line="-106"/>
+        <location line="-109"/>
         <source>Dimitris Kalamaras</source>
         <translation>Dimitris Kalamaras</translation>
     </message>
@@ -870,7 +885,7 @@
         <translation>Если бы не было его и его руководств, я бы никогда не начал этот проект</translation>
     </message>
     <message>
-        <location line="+119"/>
+        <location line="+122"/>
         <source>...to all users of the </source>
         <translation>... всем участникам </translation>
     </message>
@@ -1018,7 +1033,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Лицензионное соглашение</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="-205"/>
+        <location filename="../src/about.cpp" line="-208"/>
         <source>luckyBackup is distributed under the terms of the &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU General Public License&lt;/a&gt;</source>
         <comment>Please leave the tags &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt; &amp; &lt;/a&gt; intact and surrounding the GNU General Public License !!</comment>
         <translation type="unfinished"></translation>
@@ -1100,12 +1115,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+15"/>
-        <source>AurÃ©lien Merckel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+16"/>
         <source>French gui translator</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1155,23 +1165,23 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Roger CalvÃ³</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>Catalan gui translator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location line="+3"/>
+        <source>Slovak gui translator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+2"/>
-        <source>TomÃ¡Å¡ Vadina</source>
+        <source>Rivo Zangov</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Slovak gui translator</source>
+        <source>Estonian gui translator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3947,12 +3957,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+44"/>
         <location line="+73"/>
-        <location line="+2548"/>
+        <location line="+2607"/>
         <source>browse localy</source>
         <translation>Локальные файлы</translation>
     </message>
     <message>
-        <location line="-2595"/>
+        <location line="-2654"/>
         <location line="+31"/>
         <source>Enter the full path of the destination directory (eg /media/backups/SiduxHome/)</source>
         <translation>Введите полное имя директории Назначения (например, /media/backups/SiduxHome/)</translation>
@@ -3985,66 +3995,95 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+223"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Edit highlighted inclusion</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2093"/>
+        <location line="-2152"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2093"/>
+        <location line="-2152"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2001"/>
+        <location line="-2060"/>
         <source>Include ONLY this list of patterns. Nothing more.
 Please refer to the manual for better understanding of include rules.
 This will disable the exclude feature.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1724"/>
+        <location line="+1215"/>
+        <source>With this option rsync will transfer numeric group and user IDs
+rather than using user and group names
+and mapping them at both ends.
+(--numeric-ids)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Use numeric group and user IDs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location line="+22"/>
+        <source>This tells the receiving side to attempt super-user activities
+even if the receiving rsync wasn’t run by the super-user.
+These activities include:
+preserving users via the --owner option
+preserving all groups (not just the current user’s groups) via the --groups option
+and copying devices via the --devices option.
+(--super)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Attempt super-user activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+531"/>
         <location line="+10"/>
         <source>Repeat any command that fails, x times</source>
         <translation type="unfinished"></translation>
@@ -4099,7 +4138,7 @@ Leave unchecked to create an extra directory inside destination</source>
         <translation type="obsolete">Также создать задачу для восстановления</translation>
     </message>
     <message>
-        <location line="-2891"/>
+        <location line="-2950"/>
         <source>Exclude</source>
         <translation>Исключения</translation>
     </message>
@@ -4197,14 +4236,14 @@ Leave unchecked to create an extra directory inside destination</source>
     <message>
         <location line="+3"/>
         <location line="+371"/>
-        <location line="+1161"/>
+        <location line="+1220"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>add</source>
         <translation>Добавить</translation>
     </message>
     <message>
-        <location line="-2094"/>
+        <location line="-2153"/>
         <location line="+31"/>
         <source>Exclude list</source>
         <translation>Список исключений</translation>
@@ -4240,14 +4279,14 @@ trailing / - only directory is matched, not regular files, symlinks or devices</
     <message>
         <location line="+3"/>
         <location line="+366"/>
-        <location line="+1161"/>
+        <location line="+1220"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>remove</source>
         <translation>Удалить</translation>
     </message>
     <message>
-        <location line="-1945"/>
+        <location line="-2004"/>
         <source>Only Include</source>
         <translation>Только включения</translation>
     </message>
@@ -4564,7 +4603,7 @@ WARNING: All files have to be included in the transfer set !!
         <translation>Игнорировать файлы как это делает CVS</translation>
     </message>
     <message>
-        <location line="+83"/>
+        <location line="+142"/>
         <source>User defined</source>
         <translation>Определенные пользователем</translation>
     </message>
@@ -4940,7 +4979,7 @@ ATTENTION: check this if you really know what you&apos;re doing</source>
         <translation type="unfinished">Вы уже добавили эту опцию</translation>
     </message>
     <message>
-        <location filename="../ui/modifyDialog.ui" line="-1884"/>
+        <location filename="../ui/modifyDialog.ui" line="-1943"/>
         <source>Read exclude patterns from file</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5007,12 +5046,12 @@ Please refer to the manual for better understanding of include rules.</source>
     <message>
         <location line="+303"/>
         <location line="+149"/>
-        <location line="+832"/>
+        <location line="+891"/>
         <source>browse locally</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-334"/>
+        <location line="-393"/>
         <source>Check this is you use a FAT/NTFS partition as destination.
 Data ownership and permissions will NOT be preserved.
 (-t --modify-window=1)</source>
@@ -5024,7 +5063,7 @@ Data ownership and permissions will NOT be preserved.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+855"/>
+        <location line="+914"/>
         <location line="+22"/>
         <source>Set the total number of backup snapshots to keep</source>
         <translation type="unfinished"></translation>

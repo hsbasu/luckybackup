@@ -102,7 +102,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/global.cpp" line="+1063"/>
+        <location filename="../src/global.cpp" line="+1067"/>
         <source>The task list is empty</source>
         <translation>La llista de tasques és buida</translation>
     </message>
@@ -148,7 +148,7 @@
         <translation>Desmarqueu les caixes apropiades incloses o canvieu el tipus de tasques a altres que &apos;&lt;b&gt;Còpia de seguretat del contingut de la carpeta&lt;/b&gt;&apos;  o useu &apos;Còpia de seguretat del contingut de la carpeta&apos; junt amb l&apos;opció &apos;&lt;b&gt;Només inclou&lt;/b&gt; abans de procedir</translation>
     </message>
     <message>
-        <location line="+585"/>
+        <location line="+587"/>
         <source>pre-task execution of command</source>
         <comment>Full phrase: pre-task execution of command: &lt;COMMAND&gt; starting</comment>
         <translation>l&apos;execució de la pre-tasca de l&apos;ordre</translation>
@@ -764,7 +764,12 @@
         <translation>Traductor de la IGU a l&apos;italià</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="-7"/>
+        <source>Aurelien Merckel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
         <source>Denis Skorski</source>
         <translation>Denis Skorski</translation>
     </message>
@@ -814,7 +819,17 @@
         <translation>Traductor de la IGU al romanès</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+14"/>
+        <source>Roger Calvo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Tomas Vadina</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>Javi Romero</source>
         <translation>Javi Romero</translation>
     </message>
@@ -834,7 +849,7 @@
         <translation>Disenyador de la IGU v0.3</translation>
     </message>
     <message>
-        <location line="-106"/>
+        <location line="-109"/>
         <source>Dimitris Kalamaras</source>
         <translation>Dimitris Kalamaras</translation>
     </message>
@@ -844,12 +859,7 @@
         <translation>Si nos fos per ell i els seus tutorials mai no hauria començat aquest projecte</translation>
     </message>
     <message>
-        <location line="+59"/>
-        <source>AurÃ©lien Merckel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+60"/>
         <source>French gui translator</source>
         <translation type="unfinished"></translation>
     </message>
@@ -874,23 +884,23 @@
         <translation>Traductor de la IGU al suec</translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Roger CalvÃ³</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>Catalan gui translator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location line="+3"/>
+        <source>Slovak gui translator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+2"/>
-        <source>TomÃ¡Å¡ Vadina</source>
+        <source>Rivo Zangov</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Slovak gui translator</source>
+        <source>Estonian gui translator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1056,7 +1066,7 @@ p, li { white-space: pre-wrap; }
         <translation>Acord de &amp;llicència</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="-205"/>
+        <location filename="../src/about.cpp" line="-208"/>
         <source>luckyBackup is distributed under the terms of the &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU General Public License&lt;/a&gt;</source>
         <comment>Please leave the tags &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt; &amp; &lt;/a&gt; intact and surrounding the GNU General Public License !!</comment>
         <translation>luckyBackup es distribueix en els termes de la &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;Llicència Pública General GNU&lt;/a&gt;</translation>
@@ -1108,7 +1118,7 @@ p, li { white-space: pre-wrap; }
         <translation>Traductor de la IGU al turc</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+23"/>
         <source>Tito Poquito</source>
         <translation>Tito Poquito</translation>
     </message>
@@ -3472,12 +3482,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+44"/>
         <location line="+73"/>
-        <location line="+2548"/>
+        <location line="+2607"/>
         <source>browse localy</source>
         <translation>navega localment</translation>
     </message>
     <message>
-        <location line="-2595"/>
+        <location line="-2654"/>
         <location line="+31"/>
         <source>Enter the full path of the destination directory (eg /media/backups/SiduxHome/)</source>
         <translation>Escriviu el camí sencer de la carpeta destí (per exemple /media/backups/SiduxHome/)</translation>
@@ -3488,7 +3498,36 @@ p, li { white-space: pre-wrap; }
         <translation>Destí:</translation>
     </message>
     <message>
-        <location line="+2493"/>
+        <location line="+1984"/>
+        <source>With this option rsync will transfer numeric group and user IDs
+rather than using user and group names
+and mapping them at both ends.
+(--numeric-ids)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Use numeric group and user IDs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location line="+22"/>
+        <source>This tells the receiving side to attempt super-user activities
+even if the receiving rsync wasn’t run by the super-user.
+These activities include:
+preserving users via the --owner option
+preserving all groups (not just the current user’s groups) via the --groups option
+and copying devices via the --devices option.
+(--super)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Attempt super-user activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+531"/>
         <location line="+10"/>
         <source>Repeat any command that fails, x times</source>
         <translation type="unfinished"></translation>
@@ -3536,7 +3575,7 @@ Deixeu-ho sense marcar per crear una carpeta extra al destí</translation>
         <translation>Cancel·la</translation>
     </message>
     <message>
-        <location line="-2891"/>
+        <location line="-2950"/>
         <source>Exclude</source>
         <translation>Exclou</translation>
     </message>
@@ -3634,14 +3673,14 @@ Deixeu-ho sense marcar per crear una carpeta extra al destí</translation>
     <message>
         <location line="+3"/>
         <location line="+371"/>
-        <location line="+1161"/>
+        <location line="+1220"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>add</source>
         <translation>afegeix</translation>
     </message>
     <message>
-        <location line="-2094"/>
+        <location line="-2153"/>
         <location line="+31"/>
         <source>Exclude list</source>
         <translation>Llista d&apos;exclusions</translation>
@@ -3711,68 +3750,68 @@ trailing / - només coincideix la carpeta, no els fitxers normals, enllaços sim
     <message>
         <location line="+3"/>
         <location line="+366"/>
-        <location line="+1161"/>
+        <location line="+1220"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>remove</source>
         <translation>elimina</translation>
     </message>
     <message>
-        <location line="-2093"/>
+        <location line="-2152"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Edit highlighted inclusion</source>
         <translation>Edita les inclusions ressaltades</translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>edit</source>
         <translation>edita</translation>
     </message>
     <message>
-        <location line="-2093"/>
+        <location line="-2152"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion up</source>
         <translation>Mou les inclusions ressaltades amunt</translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move up</source>
         <translation>mou amunt</translation>
     </message>
     <message>
-        <location line="-2093"/>
+        <location line="-2152"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion down</source>
         <translation>Mou les inclusions ressaltades avall</translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move down</source>
         <translation>mou avall</translation>
     </message>
     <message>
-        <location line="-2001"/>
+        <location line="-2060"/>
         <source>Include ONLY this list of patterns. Nothing more.
 Please refer to the manual for better understanding of include rules.
 This will disable the exclude feature.</source>
@@ -4064,7 +4103,7 @@ AVÍS: Els fitxers han d&apos;estar inclosos en el conjunt de la transferència 
         <translation>Ignora els fitxers a la manera CVS</translation>
     </message>
     <message>
-        <location line="+83"/>
+        <location line="+142"/>
         <source>User defined</source>
         <translation>Definit per l&apos;usuari</translation>
     </message>
@@ -4416,7 +4455,7 @@ ATENCIÓ: marqueu-ho si realment sabeu el que esteu fent</translation>
         <translation>cancel·la l&apos;edició</translation>
     </message>
     <message>
-        <location filename="../ui/modifyDialog.ui" line="-1884"/>
+        <location filename="../ui/modifyDialog.ui" line="-1943"/>
         <source>Read exclude patterns from file</source>
         <translation>Llegeix els patrons exclosos del fitxer</translation>
     </message>
@@ -4490,12 +4529,12 @@ Adreceu-vos al manual per entendre millor les normes d&apos;inclusió.</translat
     <message>
         <location line="+303"/>
         <location line="+149"/>
-        <location line="+832"/>
+        <location line="+891"/>
         <source>browse locally</source>
         <translation>navega localment</translation>
     </message>
     <message>
-        <location line="-334"/>
+        <location line="-393"/>
         <source>Check this is you use a FAT/NTFS partition as destination.
 Data ownership and permissions will NOT be preserved.
 (-t --modify-window=1)</source>
@@ -4509,7 +4548,7 @@ Els propietaris i permisos no es conservaran.
         <translation>El destí és FAT/NTFS</translation>
     </message>
     <message>
-        <location line="+855"/>
+        <location line="+914"/>
         <location line="+22"/>
         <source>Set the total number of backup snapshots to keep</source>
         <translation>Seleccioneu el nombre total de captures d&apos;imatges de còpia de seguretat a conservar</translation>

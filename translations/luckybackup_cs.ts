@@ -102,7 +102,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/global.cpp" line="+1063"/>
+        <location filename="../src/global.cpp" line="+1067"/>
         <source>The task list is empty</source>
         <translation>Seznam úkolů je prázdný</translation>
     </message>
@@ -148,7 +148,7 @@
         <translation>Zrušte, prosím, označení fajfkou příslušného zařazovacího políčka, nebo změňte všechny typy úkolů na jiný než &apos;&lt;b&gt;Zálohovat obsah adresáře&lt;/b&gt;&apos;, nebo použijte &apos;Zálohovat obsah adresáře&apos; společně s volbou  &apos;&lt;b&gt;Pouze zařadit&lt;/b&gt;&apos;, předtím, než budete pokračovat</translation>
     </message>
     <message>
-        <location line="+591"/>
+        <location line="+593"/>
         <source>Command re-run due to failure</source>
         <comment>This means that a specific command is run for once more because it failed the first time</comment>
         <translation type="unfinished"></translation>
@@ -805,12 +805,7 @@
         <translation>Karsten Jaschultowski</translation>
     </message>
     <message>
-        <location line="+15"/>
-        <source>AurÃ©lien Merckel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+16"/>
         <source>French gui translator</source>
         <translation type="unfinished"></translation>
     </message>
@@ -900,23 +895,23 @@
         <translation>Překladatel grafického uživatelského rozhraní do švédštiny</translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Roger CalvÃ³</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>Catalan gui translator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location line="+3"/>
+        <source>Slovak gui translator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+2"/>
-        <source>TomÃ¡Å¡ Vadina</source>
+        <source>Rivo Zangov</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Slovak gui translator</source>
+        <source>Estonian gui translator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1019,7 +1014,7 @@
         <translation type="obsolete">Dizajnér grafického rozhraní verze 0.2.2 (neobviňujte jej kvůli nepořádku v současné verzi 0.2.1)</translation>
     </message>
     <message>
-        <location line="-167"/>
+        <location line="-170"/>
         <source>Dimitris Kalamaras</source>
         <translation>Dimitris Kalamaras</translation>
     </message>
@@ -1029,7 +1024,22 @@
         <translation>Kdyby nebylo jeho a jeho návodů, nikdy bych nezačal s tímto projektem</translation>
     </message>
     <message>
-        <location line="+119"/>
+        <location line="+59"/>
+        <source>Aurelien Merckel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+36"/>
+        <source>Roger Calvo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Tomas Vadina</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+24"/>
         <source>...to all users of the </source>
         <translation>...všem uživatelům</translation>
     </message>
@@ -1129,7 +1139,7 @@ p, li { white-space: pre-wrap; }
         <translation>Fórům pro jejich podporu.</translation>
     </message>
     <message>
-        <location line="-87"/>
+        <location line="-90"/>
         <source>Czech gui translator</source>
         <translation>Překladatel grafického uživatelského rozhraní do češtiny</translation>
     </message>
@@ -1145,12 +1155,12 @@ p, li { white-space: pre-wrap; }
         <translation>Překladatel grafického uživatelského rozhraní do němčiny</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+59"/>
         <source>fri13</source>
         <translation>fri13</translation>
     </message>
     <message>
-        <location line="-54"/>
+        <location line="-57"/>
         <source>Sergio Gameiro</source>
         <translation>Sergio Gameiro</translation>
     </message>
@@ -1237,12 +1247,12 @@ p, li { white-space: pre-wrap; }
         <translation>Překladatel grafického uživatelského rozhraní do ruštiny a cenný testér</translation>
     </message>
     <message>
-        <location line="+33"/>
+        <location line="+36"/>
         <source>v0.3 gui designer</source>
         <translation>Návrhář grafického uživatelského rozhraní v. 0.3</translation>
     </message>
     <message>
-        <location line="-46"/>
+        <location line="-49"/>
         <source>Julien Cynober</source>
         <translation>Julien Cynober</translation>
     </message>
@@ -1252,7 +1262,7 @@ p, li { white-space: pre-wrap; }
         <translation>Překladatel grafického uživatelského rozhraní do francouštiny a cenný rádce pro balení (a nejen to)</translation>
     </message>
     <message>
-        <location line="+48"/>
+        <location line="+51"/>
         <source>v.0.3 gui designer</source>
         <translation>Návrhář grafického uživatelského rozhraní v. 0.3</translation>
     </message>
@@ -4879,7 +4889,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/modifyDialog.ui" line="+230"/>
         <location line="+73"/>
-        <location line="+2548"/>
+        <location line="+2607"/>
         <source>browse localy</source>
         <translation>Procházet místně</translation>
     </message>
@@ -4893,7 +4903,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Přidejte kterýkoli adresář, soubor nebo vzor, který má být vyloučen z operace</translation>
     </message>
     <message>
-        <location filename="../ui/modifyDialog.ui" line="-2502"/>
+        <location filename="../ui/modifyDialog.ui" line="-2561"/>
         <source>Exclude</source>
         <translation>Vyloučení</translation>
     </message>
@@ -4975,16 +4985,16 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+3"/>
         <location line="+366"/>
-        <location line="+1161"/>
+        <location line="+1220"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>remove</source>
         <translation>Odstranit</translation>
     </message>
     <message>
-        <location line="-2193"/>
+        <location line="-2252"/>
         <location line="+371"/>
-        <location line="+1161"/>
+        <location line="+1220"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>add</source>
@@ -4999,7 +5009,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Volby</translation>
     </message>
     <message>
-        <location line="-798"/>
+        <location line="-857"/>
         <source>Do not backup source files that are newer on the destination 
 (--update)</source>
         <translation>Nezálohovat zdrojové soubory, které jsou v cíli novější
@@ -5079,59 +5089,59 @@ Musí být vybrán &quot;Záchrana do adresářů&quot;
     <message>
         <location line="+223"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Edit highlighted inclusion</source>
         <translation>Upravit zvýrazněná zařazení</translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>edit</source>
         <translation>Upravit</translation>
     </message>
     <message>
-        <location line="-2093"/>
+        <location line="-2152"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion up</source>
         <translation>Posunout zvýrazněná zařazení nahoru</translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move up</source>
         <translation>Posunout nahoru</translation>
     </message>
     <message>
-        <location line="-2093"/>
+        <location line="-2152"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion down</source>
         <translation>Posunout zvýrazněná zařazení dolů</translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move down</source>
         <translation>Posunout dolů</translation>
     </message>
     <message>
-        <location line="-2034"/>
+        <location line="-2093"/>
         <source>Include</source>
         <translation>Zařazení</translation>
     </message>
@@ -5233,7 +5243,7 @@ VAROVÁNÍ: Všechny soubory musí být zařazeny v řadě souborů určených k
         <translation>Zachovat tvrdé odkazy</translation>
     </message>
     <message>
-        <location line="+558"/>
+        <location line="+617"/>
         <location line="+10"/>
         <source>Repeat any command that fails, x times</source>
         <translation type="unfinished"></translation>
@@ -5256,7 +5266,7 @@ Ponechejte nezaškrtnuté pro vytvoření adresáře navíc v cíli</translation
         <translation>NEVYTVÁŘET adresář navíc</translation>
     </message>
     <message>
-        <location line="-955"/>
+        <location line="-1014"/>
         <source>Ignore files using a similar algorithm to CVS 
 (-C)</source>
         <translation>Nevšímat si souborů, které používají algoritmus podobný CVS
@@ -5268,7 +5278,7 @@ Ponechejte nezaškrtnuté pro vytvoření adresáře navíc v cíli</translation
         <translation>Nevšímat si souborů na způsob CVS</translation>
     </message>
     <message>
-        <location line="+194"/>
+        <location line="+253"/>
         <source>Extra rsync options list</source>
         <translation>Zvláštní seznam voleb rsync</translation>
     </message>
@@ -5292,7 +5302,7 @@ Ponechejte nezaškrtnuté pro vytvoření adresáře navíc v cíli</translation
         <translation type="obsolete">Zahrnout pouze tento seznam adresářů, souborů nebo vzorů</translation>
     </message>
     <message>
-        <location line="-1362"/>
+        <location line="-1421"/>
         <source>Only Include</source>
         <translation>Pouze zařazené</translation>
     </message>
@@ -5414,7 +5424,7 @@ Povšimněte si, že musíte udělat všechny akce, které jsou potřeba pro ssh
         <translation>Zadejte port (bránu), kterou byste rád použil pro ssh připojení (opusťte prázdné v případě výchozího portu (brány))</translation>
     </message>
     <message>
-        <location line="+1304"/>
+        <location line="+1363"/>
         <location line="+22"/>
         <source>Set the total number of backup snapshots to keep</source>
         <translation>Nastavit celkový počet zálohovacích snímků, které se mají uchovat</translation>
@@ -5464,7 +5474,7 @@ Nemá účinek, pokud je používán vzdálený cíl.</translation>
         <translation>Zrušit</translation>
     </message>
     <message>
-        <location line="-2458"/>
+        <location line="-2517"/>
         <source>Add exclusion as entered in the next field</source>
         <translation>Přidat vyloučení, jak bylo zadáno, do dalšího pole</translation>
     </message>
@@ -5836,12 +5846,12 @@ jsoucí za / - odpovídá pouze adresáři, ne řádným souborům, symbolickým
     <message>
         <location line="+197"/>
         <location line="+149"/>
-        <location line="+832"/>
+        <location line="+891"/>
         <source>browse locally</source>
         <translation>Procházet místně</translation>
     </message>
     <message>
-        <location line="-958"/>
+        <location line="-1017"/>
         <source>rsync password file:</source>
         <translation>Soubor s heslem rsync:</translation>
     </message>
@@ -5900,6 +5910,35 @@ Vlastnická práva k datům a oprávnění NEBUDOU zachována.
         <location line="+5"/>
         <source>Destination is FAT/NTFS</source>
         <translation>Cíl je FAT/NTFS</translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>With this option rsync will transfer numeric group and user IDs
+rather than using user and group names
+and mapping them at both ends.
+(--numeric-ids)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Use numeric group and user IDs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location line="+22"/>
+        <source>This tells the receiving side to attempt super-user activities
+even if the receiving rsync wasn’t run by the super-user.
+These activities include:
+preserving users via the --owner option
+preserving all groups (not just the current user’s groups) via the --groups option
+and copying devices via the --devices option.
+(--super)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Attempt super-user activities</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+29"/>

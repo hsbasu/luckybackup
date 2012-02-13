@@ -102,7 +102,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/global.cpp" line="+1063"/>
+        <location filename="../src/global.cpp" line="+1067"/>
         <source>The task list is empty</source>
         <translation type="unfinished">Lista de task-uri este goala</translation>
     </message>
@@ -148,7 +148,7 @@
         <translation type="unfinished">Deselctati casutele de includere corespunzatoare sau schimbati toate tipurile de task-uri in ceva diferit de &apos;&lt;b&gt;Arhivare continut director&lt;/b&gt;&apos;  sau utilizati &apos;Arhivare continut director&apos; impreuna cu optiunea &apos;&lt;b&gt;Doar include&lt;/b&gt;&apos;, inainte de a proceda</translation>
     </message>
     <message>
-        <location line="+591"/>
+        <location line="+593"/>
         <source>Command re-run due to failure</source>
         <comment>This means that a specific command is run for once more because it failed the first time</comment>
         <translation type="unfinished"></translation>
@@ -846,7 +846,12 @@
         <translation>Traducator in limba italiana a interfetei grafice</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="-7"/>
+        <source>Aurelien Merckel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
         <source>Denis Skorski</source>
         <translation>Denis Skorski</translation>
     </message>
@@ -886,7 +891,17 @@
         <translation>Traducator in limba araba a interfetei grafice</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+17"/>
+        <source>Roger Calvo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Tomas Vadina</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>Javi Romero</source>
         <translation>Javi Romero</translation>
     </message>
@@ -906,7 +921,7 @@
         <translation>Arhitect al interfetei grafice v.0.3</translation>
     </message>
     <message>
-        <location line="-106"/>
+        <location line="-109"/>
         <source>Dimitris Kalamaras</source>
         <translation>Dimitris Kalamaras</translation>
     </message>
@@ -916,7 +931,7 @@
         <translation>Daca nu ar fi fost el si ghidurile lui nu asi fi inceput niciodata acest proiect</translation>
     </message>
     <message>
-        <location line="+119"/>
+        <location line="+122"/>
         <source>...to all users of the </source>
         <translation>...tuturor utilizatorilor </translation>
     </message>
@@ -980,7 +995,7 @@
         <translation>Acord de &amp;Licentiere</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="-101"/>
+        <location filename="../src/about.cpp" line="-104"/>
         <source>Stergios Prosiniklis</source>
         <translation>Stergios Prosiniklis</translation>
     </message>
@@ -991,12 +1006,7 @@
         <translation>Traducator in limba greaca a manualului</translation>
     </message>
     <message>
-        <location line="+17"/>
-        <source>AurÃ©lien Merckel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+18"/>
         <source>French gui translator</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1031,23 +1041,23 @@
         <translation>Traducator in limba suedeza a interfetei grafice</translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Roger CalvÃ³</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>Catalan gui translator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location line="+3"/>
+        <source>Slovak gui translator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+2"/>
-        <source>TomÃ¡Å¡ Vadina</source>
+        <source>Rivo Zangov</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Slovak gui translator</source>
+        <source>Estonian gui translator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1153,7 +1163,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Suport</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="-205"/>
+        <location filename="../src/about.cpp" line="-208"/>
         <source>luckyBackup is distributed under the terms of the &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU General Public License&lt;/a&gt;</source>
         <comment>Please leave the tags &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt; &amp; &lt;/a&gt; intact and surrounding the GNU General Public License !!</comment>
         <translation>luckyBackup este distribuit potrivit termenilor din &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU General Public License&lt;/a&gt;</translation>
@@ -1205,7 +1215,7 @@ p, li { white-space: pre-wrap; }
         <translation>Translator in limba turca a GUI</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+23"/>
         <source>Tito Poquito</source>
         <translation>Tito Poquito</translation>
     </message>
@@ -4244,12 +4254,12 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding &apos;start transla
     <message>
         <location line="+44"/>
         <location line="+73"/>
-        <location line="+2548"/>
+        <location line="+2607"/>
         <source>browse localy</source>
         <translation>parcurge local</translation>
     </message>
     <message>
-        <location line="-2595"/>
+        <location line="-2654"/>
         <location line="+31"/>
         <source>Enter the full path of the destination directory (eg /media/backups/SiduxHome/)</source>
         <translation>Introduceti calea completa a directorului destinatie (de exemplu /home/luckyb/)</translation>
@@ -4282,66 +4292,95 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding &apos;start transla
     <message>
         <location line="+223"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Edit highlighted inclusion</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2093"/>
+        <location line="-2152"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2093"/>
+        <location line="-2152"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2104"/>
+        <location line="-2163"/>
         <location line="+423"/>
-        <location line="+1104"/>
+        <location line="+1163"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2001"/>
+        <location line="-2060"/>
         <source>Include ONLY this list of patterns. Nothing more.
 Please refer to the manual for better understanding of include rules.
 This will disable the exclude feature.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1724"/>
+        <location line="+1215"/>
+        <source>With this option rsync will transfer numeric group and user IDs
+rather than using user and group names
+and mapping them at both ends.
+(--numeric-ids)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Use numeric group and user IDs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location line="+22"/>
+        <source>This tells the receiving side to attempt super-user activities
+even if the receiving rsync wasn’t run by the super-user.
+These activities include:
+preserving users via the --owner option
+preserving all groups (not just the current user’s groups) via the --groups option
+and copying devices via the --devices option.
+(--super)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Attempt super-user activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+531"/>
         <location line="+10"/>
         <source>Repeat any command that fails, x times</source>
         <translation type="unfinished"></translation>
@@ -4396,7 +4435,7 @@ Leave unchecked to create an extra directory inside destination</source>
         <translation type="obsolete">Creeaza deasemeni un task cu scopul restaurarii</translation>
     </message>
     <message>
-        <location line="-2891"/>
+        <location line="-2950"/>
         <source>Exclude</source>
         <translation>Exclude</translation>
     </message>
@@ -4494,14 +4533,14 @@ Leave unchecked to create an extra directory inside destination</source>
     <message>
         <location line="+3"/>
         <location line="+371"/>
-        <location line="+1161"/>
+        <location line="+1220"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>add</source>
         <translation>adauga</translation>
     </message>
     <message>
-        <location line="-2094"/>
+        <location line="-2153"/>
         <location line="+31"/>
         <source>Exclude list</source>
         <translation>Lista de excludere</translation>
@@ -4537,14 +4576,14 @@ dir_name/*** - echivalent cu directorul si tot continutul lui
     <message>
         <location line="+3"/>
         <location line="+366"/>
-        <location line="+1161"/>
+        <location line="+1220"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>remove</source>
         <translation>sterge</translation>
     </message>
     <message>
-        <location line="-1945"/>
+        <location line="-2004"/>
         <source>Only Include</source>
         <translation>Include doar</translation>
     </message>
@@ -4861,7 +4900,7 @@ ATENTIE: Toate fisierele trebuiesc incluse in setul de transfer !!
         <translation>Ignora fisierele utilizand modul CSV</translation>
     </message>
     <message>
-        <location line="+83"/>
+        <location line="+142"/>
         <source>User defined</source>
         <translation>Definit de utilizator</translation>
     </message>
@@ -5240,7 +5279,7 @@ ATENTIE: validati optiunea doar daca stiti sigur ceea ce faceti</translation>
         <translation>Ati adaugat deja aceasta optiune</translation>
     </message>
     <message>
-        <location filename="../ui/modifyDialog.ui" line="-1833"/>
+        <location filename="../ui/modifyDialog.ui" line="-1892"/>
         <source>Read exclude patterns from file</source>
         <translation>Citeste filtrele de excludere din fisierul</translation>
     </message>
@@ -5276,12 +5315,12 @@ ATENTIE: validati optiunea doar daca stiti sigur ceea ce faceti</translation>
     <message>
         <location line="+303"/>
         <location line="+149"/>
-        <location line="+832"/>
+        <location line="+891"/>
         <source>browse locally</source>
         <translation>parcurge local</translation>
     </message>
     <message>
-        <location line="-334"/>
+        <location line="-393"/>
         <source>Check this is you use a FAT/NTFS partition as destination.
 Data ownership and permissions will NOT be preserved.
 (-t --modify-window=1)</source>
@@ -5295,7 +5334,7 @@ Proprietarul si drepturile fisierelor NU vor fi pastrate.
         <translation>Destinatia este FAT/NTFS</translation>
     </message>
     <message>
-        <location line="+855"/>
+        <location line="+914"/>
         <location line="+22"/>
         <source>Set the total number of backup snapshots to keep</source>
         <translation>Seteaza numarul total de snapshot-uri pastrate ale backup-ului</translation>
@@ -5306,7 +5345,7 @@ Proprietarul si drepturile fisierelor NU vor fi pastrate.
         <translation>Snapshot-uri de pastrat:</translation>
     </message>
     <message>
-        <location line="-2084"/>
+        <location line="-2143"/>
         <source>Include</source>
         <translation>Include</translation>
     </message>

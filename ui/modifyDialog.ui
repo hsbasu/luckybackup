@@ -3439,12 +3439,12 @@ Leave unchecked to create an extra directory inside destination</string>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>98</x>
-     <y>382</y>
+     <x>45</x>
+     <y>193</y>
     </hint>
     <hint type="destinationlabel">
-     <x>467</x>
-     <y>411</y>
+     <x>79</x>
+     <y>191</y>
     </hint>
    </hints>
   </connection>
@@ -3455,12 +3455,12 @@ Leave unchecked to create an extra directory inside destination</string>
    <slot>animateClick()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>139</x>
-     <y>221</y>
+     <x>58</x>
+     <y>191</y>
     </hint>
     <hint type="destinationlabel">
-     <x>400</x>
-     <y>220</y>
+     <x>211</x>
+     <y>193</y>
     </hint>
    </hints>
   </connection>
@@ -3471,12 +3471,12 @@ Leave unchecked to create an extra directory inside destination</string>
    <slot>animateClick()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>359</x>
-     <y>217</y>
+     <x>86</x>
+     <y>190</y>
     </hint>
     <hint type="destinationlabel">
-     <x>475</x>
-     <y>220</y>
+     <x>211</x>
+     <y>191</y>
     </hint>
    </hints>
   </connection>
@@ -3487,12 +3487,12 @@ Leave unchecked to create an extra directory inside destination</string>
    <slot>animateClick()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>228</x>
-     <y>210</y>
+     <x>40</x>
+     <y>166</y>
     </hint>
     <hint type="destinationlabel">
-     <x>409</x>
-     <y>211</y>
+     <x>176</x>
+     <y>165</y>
     </hint>
    </hints>
   </connection>
@@ -3503,12 +3503,12 @@ Leave unchecked to create an extra directory inside destination</string>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>98</x>
-     <y>382</y>
+     <x>45</x>
+     <y>193</y>
     </hint>
     <hint type="destinationlabel">
-     <x>150</x>
-     <y>411</y>
+     <x>62</x>
+     <y>191</y>
     </hint>
    </hints>
   </connection>
@@ -3519,12 +3519,12 @@ Leave unchecked to create an extra directory inside destination</string>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>467</x>
-     <y>302</y>
+     <x>74</x>
+     <y>195</y>
     </hint>
     <hint type="destinationlabel">
-     <x>175</x>
-     <y>331</y>
+     <x>51</x>
+     <y>193</y>
     </hint>
    </hints>
   </connection>
@@ -3535,12 +3535,12 @@ Leave unchecked to create an extra directory inside destination</string>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>467</x>
-     <y>302</y>
+     <x>74</x>
+     <y>195</y>
     </hint>
     <hint type="destinationlabel">
-     <x>467</x>
-     <y>331</y>
+     <x>74</x>
+     <y>193</y>
     </hint>
    </hints>
   </connection>
@@ -3551,12 +3551,12 @@ Leave unchecked to create an extra directory inside destination</string>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>98</x>
-     <y>382</y>
+     <x>45</x>
+     <y>193</y>
     </hint>
     <hint type="destinationlabel">
-     <x>150</x>
-     <y>382</y>
+     <x>62</x>
+     <y>193</y>
     </hint>
    </hints>
   </connection>
@@ -3567,12 +3567,12 @@ Leave unchecked to create an extra directory inside destination</string>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>98</x>
-     <y>382</y>
+     <x>45</x>
+     <y>193</y>
     </hint>
     <hint type="destinationlabel">
-     <x>496</x>
-     <y>382</y>
+     <x>96</x>
+     <y>193</y>
     </hint>
    </hints>
   </connection>
@@ -3583,12 +3583,12 @@ Leave unchecked to create an extra directory inside destination</string>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>98</x>
-     <y>382</y>
+     <x>45</x>
+     <y>193</y>
     </hint>
     <hint type="destinationlabel">
-     <x>496</x>
-     <y>410</y>
+     <x>96</x>
+     <y>191</y>
     </hint>
    </hints>
   </connection>
@@ -3599,12 +3599,12 @@ Leave unchecked to create an extra directory inside destination</string>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>467</x>
-     <y>302</y>
+     <x>74</x>
+     <y>195</y>
     </hint>
     <hint type="destinationlabel">
-     <x>496</x>
-     <y>330</y>
+     <x>96</x>
+     <y>193</y>
     </hint>
    </hints>
   </connection>
@@ -3615,12 +3615,12 @@ Leave unchecked to create an extra directory inside destination</string>
    <slot>animateClick()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>315</x>
-     <y>239</y>
+     <x>94</x>
+     <y>203</y>
     </hint>
     <hint type="destinationlabel">
-     <x>400</x>
-     <y>242</y>
+     <x>137</x>
+     <y>204</y>
     </hint>
    </hints>
   </connection>
@@ -3631,12 +3631,12 @@ Leave unchecked to create an extra directory inside destination</string>
    <slot>animateClick()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>334</x>
-     <y>265</y>
+     <x>58</x>
+     <y>192</y>
     </hint>
     <hint type="destinationlabel">
-     <x>404</x>
-     <y>274</y>
+     <x>211</x>
+     <y>193</y>
     </hint>
    </hints>
   </connection>
@@ -3647,12 +3647,12 @@ Leave unchecked to create an extra directory inside destination</string>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>96</x>
-     <y>472</y>
+     <x>105</x>
+     <y>358</y>
     </hint>
     <hint type="destinationlabel">
-     <x>378</x>
-     <y>472</y>
+     <x>180</x>
+     <y>359</y>
     </hint>
    </hints>
   </connection>
@@ -3663,12 +3663,12 @@ Leave unchecked to create an extra directory inside destination</string>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>96</x>
-     <y>472</y>
+     <x>105</x>
+     <y>358</y>
     </hint>
     <hint type="destinationlabel">
-     <x>605</x>
-     <y>472</y>
+     <x>210</x>
+     <y>360</y>
     </hint>
    </hints>
   </connection>
@@ -3679,12 +3679,12 @@ Leave unchecked to create an extra directory inside destination</string>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>80</x>
-     <y>481</y>
+     <x>47</x>
+     <y>187</y>
     </hint>
     <hint type="destinationlabel">
-     <x>614</x>
-     <y>481</y>
+     <x>109</x>
+     <y>187</y>
     </hint>
    </hints>
   </connection>
@@ -3695,12 +3695,12 @@ Leave unchecked to create an extra directory inside destination</string>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>80</x>
-     <y>481</y>
+     <x>47</x>
+     <y>187</y>
     </hint>
     <hint type="destinationlabel">
-     <x>371</x>
-     <y>481</y>
+     <x>79</x>
+     <y>187</y>
     </hint>
    </hints>
   </connection>
@@ -3711,12 +3711,12 @@ Leave unchecked to create an extra directory inside destination</string>
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>467</x>
-     <y>313</y>
+     <x>364</x>
+     <y>300</y>
     </hint>
     <hint type="destinationlabel">
-     <x>169</x>
-     <y>232</y>
+     <x>189</x>
+     <y>225</y>
     </hint>
    </hints>
   </connection>
@@ -3727,28 +3727,12 @@ Leave unchecked to create an extra directory inside destination</string>
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>472</x>
-     <y>388</y>
+     <x>369</x>
+     <y>300</y>
     </hint>
     <hint type="destinationlabel">
-     <x>174</x>
-     <y>280</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>radioButton_includeOnly</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>toolBox_exclude</receiver>
-   <slot>setDisabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>244</x>
-     <y>174</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>314</x>
-     <y>323</y>
+     <x>194</x>
+     <y>200</y>
     </hint>
    </hints>
   </connection>

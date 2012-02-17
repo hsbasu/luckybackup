@@ -30,7 +30,7 @@ last modified      : 01 Feb 2012
 // InitializeVariables =============================================================================================================================
 // variables initialization
 void luckyBackupWindow::InitializeVariables()
-{
+{    
     TotalOperations = 0;
     currentOperation=-1;
     NOWexecuting = FALSE;

@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.0" language="ca" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="ca" sourcelanguage="en" version="2.0">
 <context>
     <name>CalcDiffThread</name>
     <message>
@@ -148,7 +146,7 @@
         <translation>Desmarqueu les caixes apropiades incloses o canvieu el tipus de tasques a altres que &apos;&lt;b&gt;Còpia de seguretat del contingut de la carpeta&lt;/b&gt;&apos;  o useu &apos;Còpia de seguretat del contingut de la carpeta&apos; junt amb l&apos;opció &apos;&lt;b&gt;Només inclou&lt;/b&gt; abans de procedir</translation>
     </message>
     <message>
-        <location line="+587"/>
+        <location line="+593"/>
         <source>pre-task execution of command</source>
         <comment>Full phrase: pre-task execution of command: &lt;COMMAND&gt; starting</comment>
         <translation>l&apos;execució de la pre-tasca de l&apos;ordre</translation>
@@ -163,7 +161,7 @@
         <location line="+4"/>
         <source>Command re-run due to failure</source>
         <comment>This means that a specific command is run for once more because it failed the first time</comment>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;ordre s&apos;executa de nou per haver fallat</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -317,7 +315,7 @@
     <message>
         <location line="+11"/>
         <source>Backing-up profile, logfiles and snapshot data</source>
-        <translation type="unfinished"></translation>
+        <translation>S&apos;estan desant les còpies de seguretat dels perfils, dels registres i de les dades de la captura d&apos;imatge</translation>
     </message>
     <message>
         <location line="+93"/>
@@ -586,6 +584,16 @@
     </message>
     <message>
         <location line="+5"/>
+        <source>The indifex team</source>
+        <translation>L&apos;equip de indifex</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>for developing the wonderful transifex localization platform and providing it for free</source>
+        <translation>per desenvolupar la fantàstica plataforma de localització i facilitar-la gratuïtament</translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Stephan Kleine</source>
         <translation>Stephan Kleine</translation>
     </message>
@@ -617,12 +625,12 @@
     <message>
         <location line="+2"/>
         <source>Bruce Marriner</source>
-        <translation type="unfinished"></translation>
+        <translation>Bruce Marriner</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>port to MS Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>port a MS Windows</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -682,12 +690,12 @@
     <message>
         <location line="+3"/>
         <source>Jason E. Hale</source>
-        <translation type="unfinished"></translation>
+        <translation>Jason E. Hale</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Free BSD package maintainer</source>
-        <translation type="unfinished"></translation>
+        <translation>Mantenidor del paquet FreeBSD</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -710,8 +718,8 @@
         <translation>Stergios Prosiniklis</translation>
     </message>
     <message>
-        <location line="-54"/>
-        <location line="+55"/>
+        <location line="-57"/>
+        <location line="+58"/>
         <source>Greek manual translator</source>
         <translation>Traductor del manual al grec</translation>
     </message>
@@ -766,7 +774,7 @@
     <message>
         <location line="-7"/>
         <source>Aurelien Merckel</source>
-        <translation type="unfinished"></translation>
+        <translation>Aurelien Merckel</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -821,12 +829,12 @@
     <message>
         <location line="+14"/>
         <source>Roger Calvo</source>
-        <translation type="unfinished"></translation>
+        <translation>Roger Calvó</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Tomas Vadina</source>
-        <translation type="unfinished"></translation>
+        <translation>Tomas Vadina</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -849,7 +857,7 @@
         <translation>Disenyador de la IGU v0.3</translation>
     </message>
     <message>
-        <location line="-109"/>
+        <location line="-112"/>
         <source>Dimitris Kalamaras</source>
         <translation>Dimitris Kalamaras</translation>
     </message>
@@ -859,9 +867,9 @@
         <translation>Si nos fos per ell i els seus tutorials mai no hauria començat aquest projecte</translation>
     </message>
     <message>
-        <location line="+60"/>
+        <location line="+63"/>
         <source>French gui translator</source>
-        <translation type="unfinished"></translation>
+        <translation>Traductor de la IGU al Francès</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -886,22 +894,22 @@
     <message>
         <location line="+3"/>
         <source>Catalan gui translator</source>
-        <translation type="unfinished"></translation>
+        <translation>Traductor de la IGU al Català</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Slovak gui translator</source>
-        <translation type="unfinished"></translation>
+        <translation>Traductor de la IGU a l&apos;Eslovac</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Rivo Zangov</source>
-        <translation type="unfinished"></translation>
+        <translation>Rivo Zangov</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Estonian gui translator</source>
-        <translation type="unfinished"></translation>
+        <translation>Traductor de la IGU a l&apos;Estonià</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -926,12 +934,12 @@
     <message>
         <location line="+2"/>
         <source>Yuri Vidal</source>
-        <translation type="unfinished"></translation>
+        <translation>Yuri Vidal</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>backupwhenidle python script developer</source>
-        <translation type="unfinished"></translation>
+        <translation>desenvolupador de l&apos;script de python backupwhenidle</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -1037,7 +1045,7 @@
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;GRArial&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'GRArial'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -1066,7 +1074,7 @@ p, li { white-space: pre-wrap; }
         <translation>Acord de &amp;llicència</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="-208"/>
+        <location filename="../src/about.cpp" line="-211"/>
         <source>luckyBackup is distributed under the terms of the &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU General Public License&lt;/a&gt;</source>
         <comment>Please leave the tags &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt; &amp; &lt;/a&gt; intact and surrounding the GNU General Public License !!</comment>
         <translation>luckyBackup es distribueix en els termes de la &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;Llicència Pública General GNU&lt;/a&gt;</translation>
@@ -1078,7 +1086,7 @@ p, li { white-space: pre-wrap; }
         <translation>És &lt;b&gt;programari lliure&lt;/b&gt;: podeu redistribuïr-lo i/o modificar-lo en els termes de la Llicència Pública General GNU tal i com publica la Free Software Foundation, versió 3 de la llicència.</translation>
     </message>
     <message>
-        <location line="+72"/>
+        <location line="+75"/>
         <source>Thomas Janssen</source>
         <translation>Thomas Janssen</translation>
     </message>
@@ -1184,7 +1192,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
     <message>
         <location line="+7"/>
         <source>Enter the sender of the message</source>
-        <translation type="unfinished"></translation>
+        <translation>Escriviu l&apos;emissor del missatge</translation>
     </message>
     <message>
         <location line="+19"/>
@@ -1194,7 +1202,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
     <message>
         <location line="+7"/>
         <source>%c logfile.tar.gz</source>
-        <translation type="unfinished"></translation>
+        <translation>%c logfile.tar.gz</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1224,7 +1232,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
     <message>
         <location line="+7"/>
         <source>Enter the recipient of the message</source>
-        <translation type="unfinished"></translation>
+        <translation>Escriviu el receptor del missatge</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1234,7 +1242,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
     <message>
         <location line="+7"/>
         <source>Enter the subject of the message</source>
-        <translation type="unfinished"></translation>
+        <translation>Escriviu el títol del missatge</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1244,7 +1252,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
     <message>
         <location line="+7"/>
         <source>Enter the smtp server used to send the message</source>
-        <translation type="unfinished"></translation>
+        <translation>Escriviu el servidor smtp a usar en enviar el missatge</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1254,7 +1262,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
     <message>
         <location line="+10"/>
         <source>Enter the body of the message</source>
-        <translation type="unfinished"></translation>
+        <translation>Escriviu el cos del missatge</translation>
     </message>
     <message>
         <location line="+56"/>
@@ -1362,7 +1370,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Greek Arial&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Greek Arial'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -1436,13 +1444,13 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+35"/>
         <source>Execution of profile</source>
-        <comment>full phrase: &apos;Execution of profile &lt;PROFILENAME&gt; finished&apos;</comment>
+        <comment>full phrase: 'Execution of profile &lt;PROFILENAME&gt; finished'</comment>
         <translation>L&apos;execució del perfil</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>finished</source>
-        <comment>full phrase: &apos;Execution of profile &lt;PROFILENAME&gt; finished&apos;</comment>
+        <comment>full phrase: 'Execution of profile &lt;PROFILENAME&gt; finished'</comment>
         <translation>acabat</translation>
     </message>
     <message>
@@ -1649,13 +1657,13 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+1"/>
         <source>&amp;Handbook</source>
-        <comment>full phrase: &apos;luckyBackup Handbook&apos;</comment>
+        <comment>full phrase: 'luckyBackup Handbook'</comment>
         <translation>&amp;Manual</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;About</source>
-        <comment>full phrase: &apos;about luckyBackup&apos;</comment>
+        <comment>full phrase: 'about luckyBackup'</comment>
         <translation>&amp;Quant a</translation>
     </message>
     <message>
@@ -1666,7 +1674,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+3"/>
         <source>include</source>
-        <comment>label of &apos;include&apos; checkboxes</comment>
+        <comment>label of 'include' checkboxes</comment>
         <translation>inclou</translation>
     </message>
     <message>
@@ -1762,7 +1770,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+1"/>
         <source>Exit</source>
-        <comment>exit button tooltip. full phrase is: &apos;exit luckybackup&apos;</comment>
+        <comment>exit button tooltip. full phrase is: 'exit luckybackup'</comment>
         <translation>Surt</translation>
     </message>
     <message>
@@ -1799,25 +1807,25 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/luckybackupwindow.cpp" line="+766"/>
         <source>You have asked for a RESTORE task to be created</source>
-        <comment>&apos;create restore&apos; message line 1/4</comment>
+        <comment>'create restore' message line 1/4</comment>
         <translation>Heu demanat crear una tasca de RESTAURACIÓ</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Please have a good look at the following task properties dialog</source>
-        <comment>&apos;create restore&apos; message line 2/4</comment>
+        <comment>'create restore' message line 2/4</comment>
         <translation>Feu una bona ullada al diàleg de propietats de tasques a continuació</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>and change anything you wish before proceeding</source>
-        <comment>&apos;create restore&apos; message line 3/4</comment>
+        <comment>'create restore' message line 3/4</comment>
         <translation>i canvieu allò que desitgeu abans de prosseguir</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Especially check &apos;Task name&apos;, &apos;source&apos;, &apos;destination&apos; &amp; &apos;skip newer destination files&apos; checkbox (advanced)</source>
-        <comment>&apos;create restore&apos; message line 4/4</comment>
+        <comment>'create restore' message line 4/4</comment>
         <translation>Especialment comproveu el &apos;Nom de l a tasca&apos;, l&apos; &apos;origen&apos;, el &apos;destí&apos; i la caixa de comprovació &apos;omet els fitxers nous del destí&apos; (avançat)</translation>
     </message>
     <message>
@@ -1856,31 +1864,31 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="-7"/>
         <source>Unable to open profile</source>
-        <comment>information window message. full phrase is &apos;Unable to open profile &lt;PROFIENAME&gt;&apos;</comment>
+        <comment>information window message. full phrase is 'Unable to open profile &lt;PROFIENAME&gt;'</comment>
         <translation>No s&apos;ha pogut obrir el perfil</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>is not valid for</source>
-        <comment>information window message. Full phrase is: &apos;profile &lt;PROFILENAME&gt; is not valid for luckybackup version:X.Y</comment>
+        <comment>information window message. Full phrase is: 'profile &lt;PROFILENAME&gt; is not valid for luckybackup version:X.Y</comment>
         <translation>no és vàlid per</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>version:</source>
-        <comment>information window message. Full phrase is: &apos;profile &lt;PROFILENAME&gt; is not valid for luckybackup version:X.Y</comment>
+        <comment>information window message. Full phrase is: 'profile &lt;PROFILENAME&gt; is not valid for luckybackup version:X.Y</comment>
         <translation>versió:</translation>
     </message>
     <message>
         <location line="+21"/>
         <source>profile</source>
-        <comment>info window message. full phrase: &apos;profile &lt;PROFILENAME&gt; loaded successfully&apos;</comment>
+        <comment>info window message. full phrase: 'profile &lt;PROFILENAME&gt; loaded successfully'</comment>
         <translation>perfil</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>loaded successfully</source>
-        <comment>info window message. full phrase: &apos;profile &lt;PROFILENAME&gt; loaded successfully&apos;</comment>
+        <comment>info window message. full phrase: 'profile &lt;PROFILENAME&gt; loaded successfully'</comment>
         <translation>s&apos;ha carregat correctament</translation>
     </message>
     <message>
@@ -1930,25 +1938,25 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/functions.cpp" line="-63"/>
         <source>default profile</source>
-        <comment>Information window message. Full phrase: &apos;default profile &lt;PROFILENAME&gt; could not be saved&apos;.</comment>
+        <comment>Information window message. Full phrase: 'default profile &lt;PROFILENAME&gt; could not be saved'.</comment>
         <translation>perfil per defecte</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>profile</source>
-        <comment>Information window message. Full phrase: &apos;profile &lt;PROFILENAME&gt; could not be saved&apos;</comment>
+        <comment>Information window message. Full phrase: 'profile &lt;PROFILENAME&gt; could not be saved'</comment>
         <translation>perfil</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>profile</source>
-        <comment>Information window message. Full phrase: &apos;profile &lt;PROFILENAME&gt; saved successfully&apos;</comment>
+        <comment>Information window message. Full phrase: 'profile &lt;PROFILENAME&gt; saved successfully'</comment>
         <translation>perfil</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>saved successfully</source>
-        <comment>Information window message. Full phrase: &apos;profile &lt;PROFILENAME&gt; saved successfully&apos;</comment>
+        <comment>Information window message. Full phrase: 'profile &lt;PROFILENAME&gt; saved successfully'</comment>
         <translation>s&apos;ha desat correctament</translation>
     </message>
     <message>
@@ -1966,13 +1974,13 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+13"/>
         <source>profile</source>
-        <comment>Information window message. Full phrase: &apos;profile &lt;PROFILENAME&gt; created successfully&apos;</comment>
+        <comment>Information window message. Full phrase: 'profile &lt;PROFILENAME&gt; created successfully'</comment>
         <translation>perfil</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>created successfully</source>
-        <comment>Information window message. Full phrase: &apos;profile &lt;PROFILENAME&gt; created successfully&apos;</comment>
+        <comment>Information window message. Full phrase: 'profile &lt;PROFILENAME&gt; created successfully'</comment>
         <translation>s&apos;ha creat amb èxit</translation>
     </message>
     <message>
@@ -1999,19 +2007,19 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+88"/>
         <source>Welcome to</source>
-        <comment>full phrase: &apos;Welcome to luckyBackup&apos;</comment>
+        <comment>full phrase: 'Welcome to luckyBackup'</comment>
         <translation>Benvingut a</translation>
     </message>
     <message>
         <location line="+20"/>
         <source>English</source>
-        <comment>Do not translate this. Enter here the language of the translation in native characters instead. This is how your translation will appear under the &apos;language&apos; menu.</comment>
+        <comment>Do not translate this. Enter here the language of the translation in native characters instead. This is how your translation will appear under the 'language' menu.</comment>
         <translation>Català</translation>
     </message>
     <message>
         <location line="+121"/>
         <source>Failed to create new profile</source>
-        <comment>full phrase: &apos;Failed to create new profile &lt;PROFILENAME&gt;&apos;</comment>
+        <comment>full phrase: 'Failed to create new profile &lt;PROFILENAME&gt;'</comment>
         <translation>Ha fallat en crear el perfil nou</translation>
     </message>
     <message>
@@ -2025,7 +2033,7 @@ p, li { white-space: pre-wrap; }
         <location line="+70"/>
         <location line="+156"/>
         <source>Profile</source>
-        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; already exists&apos;</comment>
+        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; already exists'</comment>
         <translation>El perfil</translation>
     </message>
     <message>
@@ -2033,7 +2041,7 @@ p, li { white-space: pre-wrap; }
         <location line="+70"/>
         <location line="+156"/>
         <source>already exists</source>
-        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; already exists&apos;</comment>
+        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; already exists'</comment>
         <translation>ja existeix</translation>
     </message>
     <message>
@@ -2048,39 +2056,39 @@ p, li { white-space: pre-wrap; }
         <location line="+70"/>
         <location line="+155"/>
         <source>Failed to replace profile</source>
-        <comment>full phrase: &apos;Failed to replace profile &lt;PROFILENAME&gt;&apos;</comment>
+        <comment>full phrase: 'Failed to replace profile &lt;PROFILENAME&gt;'</comment>
         <translation>No s&apos;ha pogut substituir el perfil</translation>
     </message>
     <message>
         <location line="-193"/>
         <location line="+52"/>
         <source>Failed to rename profile</source>
-        <comment>full phrase: &apos;Failed to rename profile &lt;PROFILENAME&gt;&apos;</comment>
+        <comment>full phrase: 'Failed to rename profile &lt;PROFILENAME&gt;'</comment>
         <translation>No s&apos;ha pogut renanomenar el perfil</translation>
     </message>
     <message>
         <location line="-43"/>
         <location line="+56"/>
         <source>profile</source>
-        <comment>full phrase: &apos;profile &lt;PROFILENAME&gt; renamed successfully to &lt;NEWPROFILENAME&gt;&apos;</comment>
+        <comment>full phrase: 'profile &lt;PROFILENAME&gt; renamed successfully to &lt;NEWPROFILENAME&gt;'</comment>
         <translation>El perfil</translation>
     </message>
     <message>
         <location line="-54"/>
         <source>renamed successfully to</source>
-        <comment>full phrase: &apos;profile &lt;PROFILENAME&gt; renamed successfully to &lt;NEWPROFILENAME&gt;&apos;</comment>
+        <comment>full phrase: 'profile &lt;PROFILENAME&gt; renamed successfully to &lt;NEWPROFILENAME&gt;'</comment>
         <translation>s&apos;ha reanomenat correctament a</translation>
     </message>
     <message>
         <location line="+49"/>
         <source>default profile</source>
-        <comment>full phrase: &apos;default profile &lt;PROFILENAME&gt; renamed successfully to &lt;NEWPROFILENAME&gt;&apos;.</comment>
+        <comment>full phrase: 'default profile &lt;PROFILENAME&gt; renamed successfully to &lt;NEWPROFILENAME&gt;'.</comment>
         <translation>El perfil per defecte</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>renamed successfully to</source>
-        <comment>full phrase: &apos;(default) profile &lt;PROFILENAME&gt; renamed successfully to &lt;NEWPROFILENAME&gt;&apos;</comment>
+        <comment>full phrase: '(default) profile &lt;PROFILENAME&gt; renamed successfully to &lt;NEWPROFILENAME&gt;'</comment>
         <translation>s&apos;ha reanomenat correctament a</translation>
     </message>
     <message>
@@ -2096,37 +2104,37 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+15"/>
         <source>Are you sure you want to delete the default profile</source>
-        <comment>full phrase: &apos;Are you sure you want to delete the default profile: &lt;PROFILENAME&gt; ? (a new blank one, with the same name, will be created)&apos;</comment>
+        <comment>full phrase: 'Are you sure you want to delete the default profile: &lt;PROFILENAME&gt; ? (a new blank one, with the same name, will be created)'</comment>
         <translation>Esteu segur que voleu eliminar el perfil per defecte</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>a new blank one, with the same name, will be created</source>
-        <comment>full phrase: &apos;Are you sure you want to delete the default profile: &lt;PROFILENAME&gt; ? (a new blank one, with the same name, will be created)&apos;</comment>
+        <comment>full phrase: 'Are you sure you want to delete the default profile: &lt;PROFILENAME&gt; ? (a new blank one, with the same name, will be created)'</comment>
         <translation>se&apos;n crearà un de buit amb el mateix nom</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Are you sure you want to delete profile</source>
-        <comment>full phrase: &apos;Are you sure you want to delete profile: &lt;PROFILENAME&gt; ?&apos;</comment>
+        <comment>full phrase: 'Are you sure you want to delete profile: &lt;PROFILENAME&gt; ?'</comment>
         <translation>Esteu segur que voleu eliminar el perfil</translation>
     </message>
     <message>
         <location line="+13"/>
         <source>Failed to delete profile</source>
-        <comment>full phrase: &apos;Failed to delete profile &lt;PROFILENAME&gt;&apos;</comment>
+        <comment>full phrase: 'Failed to delete profile &lt;PROFILENAME&gt;'</comment>
         <translation>No s&apos;ha pogut eliminar el perfil</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Profile</source>
-        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; deleted successfully&apos;</comment>
+        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; deleted successfully'</comment>
         <translation>Perfil</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>deleted successfully</source>
-        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; deleted successfully&apos;</comment>
+        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; deleted successfully'</comment>
         <translation>s&apos;ha eliminat correctament</translation>
     </message>
     <message>
@@ -2142,43 +2150,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+26"/>
         <source>Profile</source>
-        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; set as default&apos;</comment>
+        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; set as default'</comment>
         <translation>Perfil</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>set as default</source>
-        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; set as default&apos;</comment>
+        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; set as default'</comment>
         <translation>s&apos;ha establert per defecte</translation>
-    </message>
-    <message>
-        <source>Export Profile</source>
-        <comment>this is a dialog title</comment>
-        <translation type="obsolete">Exporta perfil</translation>
-    </message>
-    <message>
-        <source>profile</source>
-        <translation type="obsolete">perfil</translation>
-    </message>
-    <message>
-        <source>Failed to export profile</source>
-        <comment>full phrase: &apos;Failed to export profile &lt;PROFILENAME&gt; as &lt;FILENAME&gt;&apos;</comment>
-        <translation type="obsolete">No s&apos;ha pogut exportar el perfil</translation>
-    </message>
-    <message>
-        <source>as</source>
-        <comment>full phrase: &apos;Failed to export profile &lt;PROFILENAME&gt; as &lt;FILENAME&gt;&apos;</comment>
-        <translation type="obsolete">com a</translation>
-    </message>
-    <message>
-        <source>Profile</source>
-        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; exported successfully as &lt;FILENAME&gt;&apos;</comment>
-        <translation type="obsolete">Perfil</translation>
-    </message>
-    <message>
-        <source>exported successfully as</source>
-        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; exported successfully as &lt;FILENAME&gt;&apos;</comment>
-        <translation type="obsolete">s&apos;ha exportat amb èxit com a</translation>
     </message>
     <message>
         <location line="+75"/>
@@ -2193,13 +2172,13 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+26"/>
         <source>The description of profile</source>
-        <comment>full phrase: &apos;The description of profile &lt;PROFILENAME&gt; set to: &lt;DESCRIPTION&gt;&apos;</comment>
+        <comment>full phrase: 'The description of profile &lt;PROFILENAME&gt; set to: &lt;DESCRIPTION&gt;'</comment>
         <translation>La descripció del perfil</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>set to</source>
-        <comment>full phrase: &apos;The description of profile &lt;PROFILENAME&gt; set to: &lt;DESCRIPTION&gt;&apos;</comment>
+        <comment>full phrase: 'The description of profile &lt;PROFILENAME&gt; set to: &lt;DESCRIPTION&gt;'</comment>
         <translation>s&apos;ha establert en</translation>
     </message>
     <message>
@@ -2213,37 +2192,37 @@ p, li { white-space: pre-wrap; }
         <location line="+29"/>
         <location line="+33"/>
         <source>Failed to import profile</source>
-        <comment>full phrase: &apos;Failed to import profile &lt;PROFILENAME&gt;&apos;</comment>
+        <comment>full phrase: 'Failed to import profile &lt;PROFILENAME&gt;'</comment>
         <translation>No s&apos;ha pogut importar el perfil</translation>
     </message>
     <message>
         <location line="-17"/>
         <source>Profile</source>
-        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; imported successfully as &lt;NEWPROFILENAME&gt; and added at the profile list&apos;</comment>
+        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; imported successfully as &lt;NEWPROFILENAME&gt; and added at the profile list'</comment>
         <translation>El perfil</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>imported successfully</source>
-        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; imported successfully as &lt;NEWPROFILENAME&gt; and added at the profile list&apos;</comment>
+        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; imported successfully as &lt;NEWPROFILENAME&gt; and added at the profile list'</comment>
         <translation>s&apos;ha importat correctament</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>as</source>
-        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; imported successfully as &lt;NEWPROFILENAME&gt; and added at the profile list&apos;</comment>
+        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; imported successfully as &lt;NEWPROFILENAME&gt; and added at the profile list'</comment>
         <translation>com a</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>and added at the profile list</source>
-        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; imported successfully as &lt;NEWPROFILENAME&gt; and added at the profile list&apos;</comment>
+        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; imported successfully as &lt;NEWPROFILENAME&gt; and added at the profile list'</comment>
         <translation>i s&apos;ha afegit a la llista de perfils</translation>
     </message>
     <message>
         <location line="+63"/>
         <source>Could not locate the file</source>
-        <comment>full phrase: &apos;Could not locate the file &lt;FILENAME&gt;&apos;</comment>
+        <comment>full phrase: 'Could not locate the file &lt;FILENAME&gt;'</comment>
         <translation>No s&apos;ha trobat el fitxer</translation>
     </message>
     <message>
@@ -2264,56 +2243,56 @@ p, li { white-space: pre-wrap; }
         <location line="-208"/>
         <source>Select export directory</source>
         <comment>this is a dialog title for selecting a directory to export a profile to</comment>
-        <translation type="unfinished"></translation>
+        <translation>Seleccioneu la carpeta d&apos;exportació</translation>
     </message>
     <message>
         <location line="+14"/>
         <source>Failed to export profile</source>
-        <comment>full phrase: &apos;Failed to export profile &lt;PROFILENAME&gt; to &lt;DIRNAME&gt;&apos;</comment>
-        <translation type="unfinished">No s&apos;ha pogut exportar el perfil</translation>
+        <comment>full phrase: 'Failed to export profile &lt;PROFILENAME&gt; to &lt;DIRNAME&gt;'</comment>
+        <translation>Ha fallat en exportar el perfil</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>to</source>
-        <comment>full phrase: &apos;Failed to export profile &lt;PROFILENAME&gt; to &lt;DIRNAME&gt;&apos;</comment>
-        <translation type="unfinished">amb</translation>
+        <comment>full phrase: 'Failed to export profile &lt;PROFILENAME&gt; to &lt;DIRNAME&gt;'</comment>
+        <translation>a</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Profile</source>
-        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; exported successfully to &lt;DIRNAME&gt;&apos;</comment>
-        <translation type="unfinished"></translation>
+        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; exported successfully to &lt;DIRNAME&gt;'</comment>
+        <translation>Perfil</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>exported successfully to</source>
-        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; exported successfully to &lt;DIRNAME&gt;&apos;</comment>
-        <translation type="unfinished"></translation>
+        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; exported successfully to &lt;DIRNAME&gt;'</comment>
+        <translation>s&apos;ha exportat correctament a</translation>
     </message>
     <message>
         <location line="+31"/>
         <source>The directory you have selected does not contain valid profile data</source>
-        <translation type="unfinished"></translation>
+        <translation>La carpeta que heu seleccionat no conté dades de perfil vàlides</translation>
     </message>
     <message>
         <location line="+53"/>
         <source>Errors occured during snapshots and logfiles transfer</source>
-        <translation type="unfinished"></translation>
+        <translation>S&apos;han produït errors durant la transferència de fitxers de captura d&apos;imatge i de registre</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Errors occured during snapshots transfer</source>
-        <translation type="unfinished"></translation>
+        <translation>S&apos;han produït errors durant la transferència de fitxers de captura d&apos;imatge</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Errors occured during logfiles transfer</source>
-        <translation type="unfinished"></translation>
+        <translation>S&apos;han produït errors durant la transferència de fitxers de registre</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Errors occured during the profile file transfer</source>
-        <translation type="unfinished"></translation>
+        <translation>S&apos;han produït errors durant la transferència de fitxers de perfil</translation>
     </message>
     <message>
         <location line="+123"/>
@@ -2378,49 +2357,25 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+33"/>
         <source>Task list of profile</source>
-        <comment>full phrase: &apos;Task list of profile &lt;PROFILENAME&gt; and &apos;profile&apos; drop-down list refreshed&apos;</comment>
+        <comment>full phrase: 'Task list of profile &lt;PROFILENAME&gt; and 'profile' drop-down list refreshed'</comment>
         <translation>La llista de tasques del perfil</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>and &apos;profile&apos; drop-down list</source>
-        <comment>full phrase: &apos;Task list of profile &lt;PROFILENAME&gt; and &apos;profile&apos; drop-down list refreshed&apos;</comment>
+        <comment>full phrase: 'Task list of profile &lt;PROFILENAME&gt; and 'profile' drop-down list refreshed'</comment>
         <translation>i la llista desplegable &apos;perfil&apos;</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>refreshed</source>
-        <comment>full phrase: &apos;Task list of profile &lt;PROFILENAME&gt; and &apos;profile&apos; drop-down list refreshed&apos;</comment>
+        <comment>full phrase: 'Task list of profile &lt;PROFILENAME&gt; and 'profile' drop-down list refreshed'</comment>
         <translation>s&apos;han actualitzat</translation>
     </message>
     <message>
         <location filename="../ui/luckybackupwindow.ui" line="+39"/>
         <source>luckyBackup</source>
         <translation>luckyBackup</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location line="+976"/>
@@ -2435,25 +2390,33 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="-396"/>
         <source>CheckBox</source>
-        <translation type="unfinished"></translation>
+        <translation>Caixa de selecció</translation>
     </message>
     <message>
         <location line="+430"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Bitstream Vera Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Bitstream Vera Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Bitstream Vera Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location line="+176"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Bitstream Vera Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Bitstream Vera Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Bitstream Vera Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location line="+27"/>
@@ -2571,97 +2534,97 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     <message>
         <location filename="../src/functions.cpp" line="-555"/>
         <source>&amp;Refresh</source>
-        <comment>This is a top &apos;Profile&apos; menu action</comment>
+        <comment>This is a top 'Profile' menu action</comment>
         <translation>&amp;Actualitza</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>De&amp;fault</source>
-        <comment>This is a top &apos;Profile&apos; menu action</comment>
+        <comment>This is a top 'Profile' menu action</comment>
         <translation>Per de&amp;fecte</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Set as Default</source>
-        <comment>This is a top &apos;Profile&apos; menu action tooltip</comment>
+        <comment>This is a top 'Profile' menu action tooltip</comment>
         <translation>Estableix per defecte</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;View/Edit Description</source>
-        <comment>This is a top &apos;Profile&apos; menu action</comment>
+        <comment>This is a top 'Profile' menu action</comment>
         <translation>&amp;Vista/Edició de descripció</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>View/Edit the profile description</source>
-        <comment>This is a top &apos;Profile&apos; menu action tooltip</comment>
+        <comment>This is a top 'Profile' menu action tooltip</comment>
         <translation>Vista/Edita la descripció del perfil</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>R&amp;ename</source>
-        <comment>This is a top &apos;Profile&apos; menu action</comment>
+        <comment>This is a top 'Profile' menu action</comment>
         <translation>&amp;Reanomena</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;Delete</source>
-        <comment>This is a top &apos;Profile&apos; menu action</comment>
+        <comment>This is a top 'Profile' menu action</comment>
         <translation>&amp;Elimina</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;New</source>
-        <comment>This is a top &apos;Profile&apos; menu action</comment>
+        <comment>This is a top 'Profile' menu action</comment>
         <translation>&amp;Nou</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;Save</source>
-        <comment>This is a top &apos;Profile&apos; menu action</comment>
+        <comment>This is a top 'Profile' menu action</comment>
         <translation>&amp;Desa</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>E&amp;xport</source>
-        <comment>This is a top &apos;Profile&apos; menu action</comment>
+        <comment>This is a top 'Profile' menu action</comment>
         <translation>E&amp;xporta</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;Import</source>
-        <comment>This is a top &apos;Profile&apos; menu action</comment>
+        <comment>This is a top 'Profile' menu action</comment>
         <translation>&amp;Importa</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>S&amp;chedule</source>
-        <comment>This is a top &apos;Profile&apos; menu action</comment>
+        <comment>This is a top 'Profile' menu action</comment>
         <translation>&amp;Programa</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>E&amp;mail</source>
-        <comment>This is a top &apos;Profile&apos; menu action</comment>
+        <comment>This is a top 'Profile' menu action</comment>
         <translation>&amp;Correu electrònic</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Email report after profile execution</source>
-        <comment>This is a top &apos;Profile&apos; menu action tooltip</comment>
+        <comment>This is a top 'Profile' menu action tooltip</comment>
         <translation>Correu electrònic després de l&apos;execució d&apos;un perfil</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;Quit</source>
-        <comment>This is a top &apos;Profile&apos; menu action</comment>
+        <comment>This is a top 'Profile' menu action</comment>
         <translation>&amp;Surt</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>D&amp;uplicate</source>
-        <comment>This is a top &apos;Profile&apos; menu action</comment>
+        <comment>This is a top 'Profile' menu action</comment>
         <translation>D&amp;uplica</translation>
     </message>
     <message>
@@ -2673,45 +2636,45 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     <message>
         <location line="+1"/>
         <source>&amp;Add</source>
-        <comment>This is a top &apos;Task&apos; menu action</comment>
+        <comment>This is a top 'Task' menu action</comment>
         <translation>&amp;Afegeix</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;Remove</source>
-        <comment>This is a top &apos;Task&apos; menu action</comment>
+        <comment>This is a top 'Task' menu action</comment>
         <translation>&amp;Elimina</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;Modify</source>
-        <comment>This is a top &apos;Task&apos; menu action</comment>
+        <comment>This is a top 'Task' menu action</comment>
         <translation>&amp;Modifica</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Create D&amp;uplicate task</source>
-        <comment>This is a top &apos;Task&apos; menu action</comment>
+        <comment>This is a top 'Task' menu action</comment>
         <translation>Crea una tasca d&amp;uplicada</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Create R&amp;estore task</source>
-        <comment>This is a top &apos;Task&apos; menu action</comment>
+        <comment>This is a top 'Task' menu action</comment>
         <translation>Crea una tasca de &amp;restauració</translation>
     </message>
     <message>
         <location line="+1"/>
         <location filename="../src/luckybackupwindow.cpp" line="-45"/>
         <source>Manage &amp;Backup</source>
-        <comment>This is a top &apos;Task&apos; menu action</comment>
+        <comment>This is a top 'Task' menu action</comment>
         <translation>&amp;Gestiona la còpia de seguretat</translation>
     </message>
     <message>
         <location line="+1"/>
         <location filename="../src/luckybackupwindow.cpp" line="+1"/>
         <source>display - restore - delete existing backups of highlighted task</source>
-        <comment>This is a top &apos;Task&apos; menu action tooltip</comment>
+        <comment>This is a top 'Task' menu action tooltip</comment>
         <translation>mostra - restaura - elimina les còpies de seguretat existents de les tasques ressaltades</translation>
     </message>
     <message>
@@ -2748,23 +2711,23 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <location line="+4"/>
         <source>Set paths</source>
         <comment>This is a top menu action</comment>
-        <translation type="unfinished"></translation>
+        <translation>Establir el camí</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Set paths for rsync and ssh commands</source>
         <comment>This is a top menu action tooltip</comment>
-        <translation type="unfinished"></translation>
+        <translation>Establiu el camí per les ordres rsync i ssh</translation>
     </message>
     <message>
         <location line="+17"/>
         <source>quiet mode</source>
-        <translation type="unfinished"></translation>
+        <translation>mode silenciós</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Only show errors and important messages during window update</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra només errors i missatges importants durant l&apos;actualització de la finestra</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -2793,13 +2756,13 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     <message>
         <location line="+1"/>
         <source>Dry</source>
-        <comment>simulation checkbox label. Translate this as &apos;simulation&apos;</comment>
+        <comment>simulation checkbox label. Translate this as 'simulation'</comment>
         <translation>Simulació</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>This will perform a &lt;b&gt;simulation run&lt;/b&gt; that doesn&apos;t make any changes (and produces mostly the same output as a real run)</source>
-        <comment>simulation checkbox tooltip - line1. Please leave tags &lt;b&gt; and &lt;/b&gt; intact and surrounding &apos;simulation run&apos;</comment>
+        <comment>simulation checkbox tooltip - line1. Please leave tags &lt;b&gt; and &lt;/b&gt; intact and surrounding 'simulation run'</comment>
         <translation>Això farà una &lt;b&gt;execució simulada&lt;/b&gt; que no fa cap canvi (i produeix gairebé la mateixa sortida que en una execució real)</translation>
     </message>
     <message>
@@ -2829,97 +2792,97 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     <message>
         <location line="+295"/>
         <source>profile </source>
-        <comment>information window message. Full phrase is: &apos;profile &lt;PROFILENAME&gt; is not valid for luckybackup version:X.Y&apos;. BEWARE of the whitespace in the end</comment>
+        <comment>information window message. Full phrase is: 'profile &lt;PROFILENAME&gt; is not valid for luckybackup version:X.Y'. BEWARE of the whitespace in the end</comment>
         <translation>el perfil</translation>
     </message>
     <message>
         <location line="+52"/>
         <source>The task list is empty</source>
-        <translation type="unfinished">La llista de tasques és buida</translation>
+        <translation>La llista de tasques està buida</translation>
     </message>
     <message>
         <location line="+0"/>
         <location line="+95"/>
         <source>Use the &quot;add&quot; button on the right to get started</source>
         <comment>Please keep the add word inside quotes</comment>
-        <translation type="unfinished"></translation>
+        <translation>Useu el botó a la dreta &quot;afegeix&quot; per començar</translation>
     </message>
     <message>
         <location line="-69"/>
         <source>could not be saved</source>
-        <comment>Information window message. Full phrase: &apos;(default) profile &lt;PROFILENAME&gt; could not be saved&apos;</comment>
+        <comment>Information window message. Full phrase: '(default) profile &lt;PROFILENAME&gt; could not be saved'</comment>
         <translation>no s&apos;ha pogut desar</translation>
     </message>
     <message>
         <location line="+61"/>
         <source>default profile</source>
-        <comment>Information window message. Full phrase: &apos;default profile &lt;PROFILENAME&gt; could not be created&apos;.</comment>
+        <comment>Information window message. Full phrase: 'default profile &lt;PROFILENAME&gt; could not be created'.</comment>
         <translation>El perfil per defecte</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>could not be created</source>
-        <comment>Information window message. Full phrase: &apos;(default) profile &lt;PROFILENAME&gt; could not be created&apos;</comment>
+        <comment>Information window message. Full phrase: '(default) profile &lt;PROFILENAME&gt; could not be created'</comment>
         <translation>no s&apos;ha pogut crear</translation>
     </message>
     <message>
         <location line="+21"/>
         <source>Profile</source>
-        <comment>Question dialog message. Full phrase: &apos;profile &lt;PROFILENAME&gt; is modified&apos;</comment>
+        <comment>Question dialog message. Full phrase: 'profile &lt;PROFILENAME&gt; is modified'</comment>
         <translation>El perfil</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>is modified</source>
-        <comment>Question dialog message. Full phrase: &apos;profile &lt;PROFILENAME&gt; is modified&apos;</comment>
+        <comment>Question dialog message. Full phrase: 'profile &lt;PROFILENAME&gt; is modified'</comment>
         <translation>s&apos;ha modificat</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>Profile</source>
-        <comment>Question dialog message. Full phrase: &apos;profile &lt;PROFILENAME&gt; could not be saved&apos;</comment>
+        <comment>Question dialog message. Full phrase: 'profile &lt;PROFILENAME&gt; could not be saved'</comment>
         <translation>El perfil</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>could not be saved</source>
-        <comment>Question dialog message. Full phrase: &apos;profile &lt;PROFILENAME&gt; could not be saved&apos;</comment>
+        <comment>Question dialog message. Full phrase: 'profile &lt;PROFILENAME&gt; could not be saved'</comment>
         <translation>no s&apos;ha pogut desar</translation>
     </message>
     <message>
         <location line="-32"/>
         <source>profile</source>
-        <comment>Information window message. Full phrase: &apos;profile &lt;PROFILENAME&gt; could not be created&apos;.</comment>
+        <comment>Information window message. Full phrase: 'profile &lt;PROFILENAME&gt; could not be created'.</comment>
         <translation>el perfil</translation>
     </message>
     <message>
         <location filename="../src/luckybackupwindow.cpp" line="-795"/>
         <source>Failed to duplicate profile</source>
-        <comment>full phrase: &apos;Failed to duplicate profile &lt;PROFILENAME&gt;&apos;</comment>
+        <comment>full phrase: 'Failed to duplicate profile &lt;PROFILENAME&gt;'</comment>
         <translation>No s&apos;ha pogut duplicar el perfil</translation>
     </message>
     <message>
         <location line="+41"/>
         <source>Failed to duplicate profile</source>
-        <comment>full phrase: &apos;Failed to duplicate profile &lt;PROFILENAME&gt; as &lt;FILENAME&gt;&apos;</comment>
+        <comment>full phrase: 'Failed to duplicate profile &lt;PROFILENAME&gt; as &lt;FILENAME&gt;'</comment>
         <translation>No s&apos;ha pogut duplicar el perfil</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>as</source>
-        <comment>full phrase: &apos;Failed to duplicate profile &lt;PROFILENAME&gt; as &lt;FILENAME&gt;&apos;</comment>
+        <comment>full phrase: 'Failed to duplicate profile &lt;PROFILENAME&gt; as &lt;FILENAME&gt;'</comment>
         <translation>com a</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>Profile</source>
-        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; duplicated successfully as &lt;FILENAME&gt;&apos;</comment>
+        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; duplicated successfully as &lt;FILENAME&gt;'</comment>
         <translation>el perfil</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>duplicated successfully as</source>
-        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; duplicated successfully as &lt;FILENAME&gt;&apos;</comment>
+        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; duplicated successfully as &lt;FILENAME&gt;'</comment>
         <translation>s&apos;ha duplicat amb èxit com a</translation>
     </message>
     <message>
@@ -2947,13 +2910,13 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     <message>
         <location line="+378"/>
         <source>Manage Task</source>
-        <comment>This is a top &apos;Task&apos; menu action</comment>
+        <comment>This is a top 'Task' menu action</comment>
         <translation>Gestió de tasques</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>display information regarding highlighted task</source>
-        <comment>This is a top &apos;Task&apos; menu action tooltip</comment>
+        <comment>This is a top 'Task' menu action tooltip</comment>
         <translation>mostra informació de la tasca ressaltada</translation>
     </message>
     <message>
@@ -3070,7 +3033,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     <message>
         <location line="+1"/>
         <source>View the logfile of the selected sync task</source>
-        <comment>&apos;view log&apos; pushbutton tooltip</comment>
+        <comment>'view log' pushbutton tooltip</comment>
         <translation>Mostra el fitxer de registre de la tasca se sincronització seleccionada</translation>
     </message>
     <message>
@@ -3176,7 +3139,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <location line="+1"/>
         <source>If the information above is correct, click &lt;b&gt;start&lt;/b&gt; to begin</source>
         <comment>information message - line2.
-Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding &apos;start&apos; translated</comment>
+Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start' translated</comment>
         <translation>Si la informació anterior és correcta, feu clic a &lt;b&gt;inici&lt;/b&gt; per començar</translation>
     </message>
     <message>
@@ -3313,7 +3276,7 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding &apos;start&apos; t
         <location line="+3"/>
         <source>If the information above is correct, click &lt;b&gt;start&lt;/b&gt; to begin</source>
         <comment>information message - line2.
-Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding &apos;start translated&apos;</comment>
+Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start translated'</comment>
         <translation>Si la informació anterior és correcta, feu clic a &lt;b&gt;inici&lt;/b&gt; per començar</translation>
     </message>
     <message>
@@ -3395,7 +3358,7 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding &apos;start transla
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;FreeSans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'FreeSans'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -3503,12 +3466,15 @@ p, li { white-space: pre-wrap; }
 rather than using user and group names
 and mapping them at both ends.
 (--numeric-ids)</source>
-        <translation type="unfinished"></translation>
+        <translation>Amb aquesta opció, rsync transferirà el grup numèric i les ID d&apos;usuari
+enlloc d&apos;usar els seu nom d&apos;usurai i de grup
+i es mapegen en ambdós finals.
+(--numeric-ids)</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Use numeric group and user IDs</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa ID d&apos;usuari i de grup numèrics</translation>
     </message>
     <message utf8="true">
         <location line="+22"/>
@@ -3519,23 +3485,29 @@ preserving users via the --owner option
 preserving all groups (not just the current user’s groups) via the --groups option
 and copying devices via the --devices option.
 (--super)</source>
-        <translation type="unfinished"></translation>
+        <translation>Això indica al receptor que intenti activitats de superusuari
+malgrat que el rsync receptor no s&apos;usi com a superusuari.
+Aquestes activitats inclouen:
+preservar els usuaris amb l&apos;opció --owner
+preservar els grups (no només els grups actuals d&apos;usuari) amb l&apos;opció --groups
+i còpia a dispositius amb l&apos;opció --devices.
+(--super)</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>Attempt super-user activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Intenta activitats de superusuari</translation>
     </message>
     <message>
         <location line="+531"/>
         <location line="+10"/>
         <source>Repeat any command that fails, x times</source>
-        <translation type="unfinished"></translation>
+        <translation>Repeteix qualsevol ordre que falli, x vegades</translation>
     </message>
     <message>
         <location line="-7"/>
         <source>Repeat on fail:</source>
-        <translation type="unfinished"></translation>
+        <translation>Repetició en fallar:</translation>
     </message>
     <message>
         <location line="+359"/>
@@ -3734,7 +3706,7 @@ trailing / - només coincideix la carpeta, no els fitxers normals, enllaços sim
     <message>
         <location line="+321"/>
         <source>Exclude all user&apos;s .gvfs folders (**/.gvfs/)</source>
-        <translation type="unfinished"></translation>
+        <translation>Exclou totes les carpetes .gvfs d&apos;usuari (**/.gvfs/)</translation>
     </message>
     <message>
         <location line="+77"/>
@@ -3815,7 +3787,9 @@ trailing / - només coincideix la carpeta, no els fitxers normals, enllaços sim
         <source>Include ONLY this list of patterns. Nothing more.
 Please refer to the manual for better understanding of include rules.
 This will disable the exclude feature.</source>
-        <translation type="unfinished"></translation>
+        <translation>Inclou només la llista de patrons. Res més.
+Sisplau adreceu-vos al manual per entendre millor les ordres d&apos;inclusió.
+Això desactivarà la característica d&apos;exclusió.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -3831,7 +3805,13 @@ This will disable the exclude feature.</source>
 trailing dir_name/*** - matches both the directory &amp; everything in it
 starting / - pattern is anchored to a particular spot in the hierarchy of the transfer (normaly this is the &quot;source&quot;)
 trailing / - only directory is matched, not regular files, symlinks or devices</source>
-        <translation></translation>
+        <translation>Escriviu aquí el fitxer, carpeta o patró i premeu el botó &quot;afegir&quot; per afegir-lo a la llista d&apos;inclusió
+* - coincideix qualsevol component no buit (s&apos;atura en les barres inclinades)
+** - coincideix qualsevol component no buit, incloent les barres inclinades
+? - coincideix qualsevol caràcter excepte una barra inclinada
+trailing carpeta/*** - coincideix tant la carpeta com el seu contingut
+starting / - el patró està ancorat en un punt en la gerarquia de transferència (normalment és l&apos;&quot;origen&quot;)
+trailing / - només coincideix la carpeta, ni fitxers regulars, ni enllaços simbòlics ni dispositius</translation>
     </message>
     <message>
         <location line="+65"/>
@@ -3992,7 +3972,7 @@ Si no sabeu el que significa, deixeu-ho com està !!</translation>
     </message>
     <message>
         <location line="+80"/>
-        <source>Delete files on the destination that don&apos;t exist on the source
+        <source>Delete files on the destination that don't exist on the source
 . &quot;Recurse into directories&quot; has to be selected 
 (--delete-after &amp; --delete-excluded if &quot;Exclude&quot; is used)</source>
         <translation>Elimina fitxers en el destí que no existeixen en l&apos;origen
@@ -4349,7 +4329,7 @@ ATENCIÓ: marqueu-ho si realment sabeu el que esteu fent</translation>
     <message>
         <location line="+2"/>
         <source>&lt;b&gt;Do not forget&lt;/b&gt; to define a directory at the &apos;exclude&apos; groupbox that will contain the destination</source>
-        <comment>message box message - line2. Please leave tag &lt;b&gt;,&lt;/b&gt; intact and surrounding &apos;do not forget&apos; translated</comment>
+        <comment>message box message - line2. Please leave tag &lt;b&gt;,&lt;/b&gt; intact and surrounding 'do not forget' translated</comment>
         <translation>&lt;b&gt;No us oblideu&lt;/b&gt; de definir una carpeta a la caixa de grup &apos;exclou&apos; contingui el destí</translation>
     </message>
     <message>
@@ -4502,12 +4482,6 @@ ATENCIÓ: marqueu-ho si realment sabeu el que esteu fent</translation>
         <location line="+3"/>
         <source>Mode:</source>
         <translation>Mode:</translation>
-    </message>
-    <message>
-        <source>Include ONLY this list of patterns. Nothing more.
-Please refer to the manual for better understanding of include rules.</source>
-        <translation type="obsolete">Inclou NOMÉS aquesta llista de patrons. Cap més.
-Adreceu-vos al manual per entendre millor les normes d&apos;inclusió.</translation>
     </message>
     <message>
         <location line="+22"/>
@@ -5049,73 +5023,73 @@ per exemple el contingut de la carpeta &quot;/media/music/Album/&quot;</translat
     <message>
         <location line="-22"/>
         <source>January</source>
-        <comment>full phrase: &apos;of January&apos;</comment>
+        <comment>full phrase: 'of January'</comment>
         <translation>gener</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>February</source>
-        <comment>full phrase: &apos;of February&apos;</comment>
+        <comment>full phrase: 'of February'</comment>
         <translation>febrer</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>March</source>
-        <comment>full phrase: &apos;of March&apos;</comment>
+        <comment>full phrase: 'of March'</comment>
         <translation>març</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>April</source>
-        <comment>full phrase: &apos;of April&apos;</comment>
+        <comment>full phrase: 'of April'</comment>
         <translation>abril</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>May</source>
-        <comment>full phrase: &apos;of May&apos;</comment>
+        <comment>full phrase: 'of May'</comment>
         <translation>maig</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>June</source>
-        <comment>full phrase: &apos;of June&apos;</comment>
+        <comment>full phrase: 'of June'</comment>
         <translation>juny</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>July</source>
-        <comment>full phrase: &apos;of July&apos;</comment>
+        <comment>full phrase: 'of July'</comment>
         <translation>juliol</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>August</source>
-        <comment>full phrase: &apos;of August&apos;</comment>
+        <comment>full phrase: 'of August'</comment>
         <translation>agost</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>September</source>
-        <comment>full phrase: &apos;of September&apos;</comment>
+        <comment>full phrase: 'of September'</comment>
         <translation>setembre</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>October</source>
-        <comment>full phrase: &apos;of October&apos;</comment>
+        <comment>full phrase: 'of October'</comment>
         <translation>octubre</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>November</source>
-        <comment>full phrase: &apos;of November&apos;</comment>
+        <comment>full phrase: 'of November'</comment>
         <translation>novembre</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>December</source>
-        <comment>full phrase: &apos;of December&apos;</comment>
+        <comment>full phrase: 'of December'</comment>
         <translation>desembre</translation>
     </message>
     <message>
@@ -5133,7 +5107,7 @@ per exemple el contingut de la carpeta &quot;/media/music/Album/&quot;</translat
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:10pt; font-weight:600; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'DejaVu Sans'; font-size:10pt; font-weight:600; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#aa0000;&quot;&gt;Profile execution scheduling&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -5653,72 +5627,72 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/winDialog.ui" line="+17"/>
         <source>luckyBackup</source>
-        <translation type="unfinished">luckyBackup</translation>
+        <translation>luckyBackup</translation>
     </message>
     <message>
         <location line="+28"/>
         <source>declaration of paths</source>
-        <translation type="unfinished"></translation>
+        <translation>desclaració de camins</translation>
     </message>
     <message>
         <location line="+20"/>
         <source>rsync:</source>
-        <translation type="unfinished"></translation>
+        <translation>rsync:</translation>
     </message>
     <message>
         <location line="+19"/>
         <source>Enter the full path of the rsync command</source>
-        <translation type="unfinished"></translation>
+        <translation>Escriviu el camí sencer de l&apos;ordre rsync</translation>
     </message>
     <message>
         <location line="+10"/>
         <location line="+64"/>
-        <source>browse loacly</source>
-        <translation type="unfinished"></translation>
+        <source>browse locally</source>
+        <translation>navega localment</translation>
     </message>
     <message>
         <location line="-47"/>
         <location line="+64"/>
         <source>Use default value</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa el valor predeterminat</translation>
     </message>
     <message>
         <location line="-46"/>
         <source>ssh</source>
-        <translation type="unfinished">ssh</translation>
+        <translation>ssh</translation>
     </message>
     <message>
         <location line="+19"/>
         <source>Enter the full path of the ssh command</source>
-        <translation type="unfinished"></translation>
+        <translation>Escriviu el camí sencer de l&apos;ordre ssh</translation>
     </message>
     <message>
         <location line="+58"/>
         <source>Okay</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>D&apos;acord</translation>
     </message>
     <message>
         <location line="+27"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <translation>Cancel·la</translation>
     </message>
     <message>
         <location filename="../src/winDialog.cpp" line="+102"/>
         <source>Select rsync command</source>
         <comment>file selection dialog title</comment>
-        <translation type="unfinished"></translation>
+        <translation>Seleccioneu l&apos;ordre rsync</translation>
     </message>
     <message>
         <location line="+1"/>
         <location line="+6"/>
         <source>Executable Files (*.exe)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fitxers executables (*.exe)</translation>
     </message>
     <message>
         <location line="-1"/>
         <source>Select ssh command</source>
         <comment>file selection dialog title</comment>
-        <translation type="unfinished"></translation>
+        <translation>Seleccioneu l&apos;ordre ssh</translation>
     </message>
 </context>
 </TS>

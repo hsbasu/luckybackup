@@ -148,7 +148,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+587"/>
+        <location line="+593"/>
         <source>pre-task execution of command</source>
         <comment>Full phrase: pre-task execution of command: &lt;COMMAND&gt; starting</comment>
         <translation type="unfinished"></translation>
@@ -586,6 +586,16 @@
     </message>
     <message>
         <location line="+5"/>
+        <source>The indifex team</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>for developing the wonderful transifex localization platform and providing it for free</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Stephan Kleine</source>
         <translation type="unfinished"></translation>
     </message>
@@ -710,8 +720,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-54"/>
-        <location line="+55"/>
+        <location line="-57"/>
+        <location line="+58"/>
         <source>Greek manual translator</source>
         <translation type="unfinished"></translation>
     </message>
@@ -849,7 +859,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-109"/>
+        <location line="-112"/>
         <source>Dimitris Kalamaras</source>
         <translation type="unfinished"></translation>
     </message>
@@ -859,7 +869,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+60"/>
+        <location line="+63"/>
         <source>French gui translator</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1062,7 +1072,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="-208"/>
+        <location filename="../src/about.cpp" line="-211"/>
         <source>luckyBackup is distributed under the terms of the &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU General Public License&lt;/a&gt;</source>
         <comment>Please leave the tags &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt; &amp; &lt;/a&gt; intact and surrounding the GNU General Public License !!</comment>
         <translation type="unfinished"></translation>
@@ -1074,7 +1084,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+72"/>
+        <location line="+75"/>
         <source>Thomas Janssen</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5546,7 +5556,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+10"/>
         <location line="+64"/>
-        <source>browse loacly</source>
+        <source>browse locally</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

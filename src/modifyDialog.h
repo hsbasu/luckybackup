@@ -22,7 +22,7 @@
  project version    : Please see "main.cpp" for project version
 
  developer          : luckyb 
- last modified      : 11 Feb 2011
+ last modified      : 17 Feb 2011
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -65,7 +65,8 @@ class modifyDialog : public QDialog
         void moveListItemDown(const int);   //SLOT to move an item from a list
         void browse(const int);		//SLOT to browse for a directory or file
         void getPattern(const int);	//SLOT to launch the pattern editor and insert the pattern to a lineEdit
-        void TaskTypeChanged(int);	// SLOT to act upon task type changes
+        void TaskTypeChanged(int);          // SLOT to act upon task type changes
+        void disableExcludeTab();           // SLOT that disables the exclude tab according to include settings
 
     private:
         Ui::modifyDialog uiM;

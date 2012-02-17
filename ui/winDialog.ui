@@ -91,7 +91,7 @@
         <cursorShape>PointingHandCursor</cursorShape>
        </property>
        <property name="toolTip">
-        <string>browse loacly</string>
+        <string>browse locally</string>
        </property>
        <property name="text">
         <string/>
@@ -155,7 +155,7 @@
         <cursorShape>PointingHandCursor</cursorShape>
        </property>
        <property name="toolTip">
-        <string>browse loacly</string>
+        <string>browse locally</string>
        </property>
        <property name="text">
         <string/>

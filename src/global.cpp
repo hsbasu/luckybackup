@@ -22,7 +22,7 @@ file containing all variables & functions used globaly
 project version    : Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 13 Feb 2012
+last modified      : 17 Feb 2012 (happy Valentine's day :P)
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -1544,6 +1544,7 @@ QStringList AppendArguments(operation *operationToAppend)
         count++;
     }
     
+    bool disableExclude=FALSE;
     //add included items------------------------------------------------------------------------------
     if (operationToAppend -> GetInclude())
     {
@@ -1563,11 +1564,12 @@ QStringList AppendArguments(operation *operationToAppend)
             arguments.append("--include=*/");
             arguments.append("--exclude=*");
             arguments.append("--prune-empty-dirs");
+            disableExclude=TRUE;
         }
     }
     
-    //add excluded items (unless "only include" is used)------------------------------------------------------------------------------
-    if ( (operationToAppend -> GetExclude()) && (operationToAppend -> GetIncludeModeNormal()) )
+    //add excluded items (unless "only include" is used and the include list is not empty)--------------------------------------------------------------
+    if ( (operationToAppend -> GetExclude()) && (!disableExclude) )
     {
         if (operationToAppend -> GetOptionsDelete())	arguments.append("--delete-excluded");
         if ( (operationToAppend -> GetExcludeFromFile()) && !(operationToAppend -> GetExcludeFile()=="") )
@@ -1619,10 +1621,16 @@ QStringList AppendArguments(operation *operationToAppend)
         {
             remoteHost.append(operationToAppend -> GetDestination());
             destString = remoteHost;
+            
             sourceString 	= operationToAppend -> GetSource();
             if (WINrunning) // Bruce patch condition for winpaths~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             {
-                //fix source (chich is local)
+                //fix destination (which is remote)
+                destString = destString.replace("\\","/");
+                if (destString.endsWith("//"))
+                    destString.chop(1);
+            
+                //fix source (which is local)
                 QString drive;
                 drive = sourceString[0];
                 drive = drive.toLower();
@@ -1637,7 +1645,12 @@ QStringList AppendArguments(operation *operationToAppend)
             destString 	= operationToAppend -> GetDestination();
             if (WINrunning) // Bruce patch condition for winpaths~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             {
-                //fix destination (hich is local)
+                //fix source (which is remote)
+                sourceString = sourceString.replace("\\","/");
+                if (sourceString.endsWith("//"))
+                    sourceString.chop(1);
+            
+                //fix destination (which is local)
                 QString drive;
                 drive = destString[0];
                 drive = drive.toLower();
@@ -1661,7 +1674,7 @@ QStringList AppendArguments(operation *operationToAppend)
                 else
                     arguments.append("-e "+sshCommandPath);
         }
-    }	
+    }
     else		//Operate locally----------------------------------------------------------------------------------------
     {
         sourceString    = operationToAppend -> GetSource();
@@ -1733,11 +1746,6 @@ QStringList AppendArguments(operation *operationToAppend)
     }
     
     //set source & destination according to sourceString & destString ---------------------------------------------------------
-    /*if (operationToAppend -> GetRemote())   // if this task uses remote escape the spaces with an escape character.
-    {
-        sourceString.replace(" ","\\ ");
-        destString.replace(" ","\\ ");
-    }*/
     arguments.append(sourceString);
     arguments.append(destString);
 

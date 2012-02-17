@@ -4,17 +4,13 @@
 	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
 	<TITLE>luckyBackup - backup and sync utility</TITLE>
 	<link rel="stylesheet" type="text/css" href="styles.css" />
-	<meta name="generator" content="Bluefish 2.0.3" >
+	<meta name="generator" content="Bluefish 2.2.0" >
 	<META NAME="CREATED" CONTENT="0;0">
 	<META NAME="CHANGEDBY" CONTENT="Loukas Avgeriou">
-	<META NAME="CHANGED" CONTENT="20090504;22030700">
+	<META NAME="CHANGED" CONTENT="20120216;22030700">
 	<META NAME="DESCRIPTION" CONTENT="luckyBackup is an application that backs-up and/or synchronizes any directories using the rsync tool.">
 	<META NAME="KEYWORDS" CONTENT="luckyBackup, luckybackup, backup, sync, synchronize, rsync, qt, c++">
 	<META NAME="Info 1" CONTENT="">
-	<META NAME="Info 2" CONTENT="">
-	<META NAME="Info 3" CONTENT="">
-	<META NAME="Info 4" CONTENT="">
-	<META NAME="CHANGEDBY" CONTENT="Loukas Avgeriou">
 	<STYLE TYPE="text/css">
 	<!--
 		TD P { color: #000000 }
@@ -30,7 +26,7 @@
   			 <div id="body" class="clear">
   			 <div id="content">
   			 
-			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~` START PASTE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ START PASTE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 
 			<P ALIGN=CENTER><IMG SRC="data/luckybackup_320.png" NAME="luckyBackup logo" ALT="luckyBackup logo" ALIGN=MIDDLE WIDTH=320 HEIGHT=296 BORDER=0>
@@ -138,6 +134,7 @@
 				<UL>
 					<LI><P ALIGN=LEFT><A HREF="#restore"><FONT FACE="FreeSans, sans-serif"><FONT SIZE=4><B>restore procedures</B></FONT></FONT></A></P>
 				</UL>
+				<P ALIGN=LEFT STYLE="margin-left: 75"><A HREF="#restoreProfiles"><FONT FACE="FreeSans, sans-serif"><FONT SIZE=3><B>restore profile</B></FONT></FONT></A></P>
 				<P ALIGN=LEFT STYLE="margin-left: 75"><A HREF="#restoreWizard"><FONT FACE="FreeSans, sans-serif"><FONT SIZE=3><B>manage wizard</B></FONT></FONT></A></P>
 				<P ALIGN=LEFT STYLE="margin-left: 75"><A HREF="#restoreTask"><FONT FACE="FreeSans, sans-serif"><FONT SIZE=3><B>separate task</B></FONT></FONT></A></P>
 				<UL>
@@ -904,8 +901,8 @@
 				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT FACE="FreeSans, sans-serif"><FONT SIZE=3><B>Export</B></FONT></FONT></P>
 				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm; font-weight: normal">
 				<FONT FACE="FreeSans, sans-serif"><FONT SIZE=3>You can export the
-				current profile with the same or different file name at any
-				location :</FONT></FONT></P>
+				current profile as a folder to any location.<br>
+				Together with the .profile file, luckybackup will also export all relevant snapshot and log data.</FONT></FONT></P>
 				<UL>
 					<LI><P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm; font-weight: normal">
 					<FONT FACE="FreeSans, sans-serif"><FONT SIZE=3>Select “Profile
@@ -937,7 +934,7 @@
 				that the <B>default directory </B>where profiles are located is
 				inside the user's home directory, under the folder
 				“<B>~/.luckyBackup/profiles</B>”.</FONT></FONT></P>
-				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><BR><BR>
+				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><BR><A NAME="MainProfileImport"></A><BR>
 				</P>
 				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT FACE="FreeSans, sans-serif"><FONT SIZE=3><B>Import</B></FONT></FONT></P>
 				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm; font-weight: normal">
@@ -961,7 +958,9 @@
 					<LI><P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm; font-weight: normal">
 					<FONT FACE="FreeSans, sans-serif"><FONT SIZE=3>Click the open
 					button to finish the procedure.</FONT></FONT></P>
-				</UL>
+					</UL>
+				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT FACE="FreeSans, sans-serif"><FONT SIZE=3>Together with the .profile file, luckybackup will also import all relevant snapshot and log data, if available.</FONT></FONT></P>
+				
 				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><BR><BR>
 				</P>
 				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT FACE="FreeSans, sans-serif"><FONT SIZE=3><B>Refresh</B></FONT></FONT></P>
@@ -1431,11 +1430,14 @@
 				part of the data transfer. It will be skipped.</FONT></P>
 								<P ALIGN=CENTER STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm; border: none; padding: 0cm; text-decoration: none">
 				<FONT COLOR="#000080"><IMG SRC="data/OperationPropertiesAdvancedEmpty1.png" NAME="TaskAdvanced1" ALIGN=BOTTOM BORDER=0></FONT></P>
+				<P><BR>
+				</P>
+				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT FACE="FreeSans, sans-serif"><b>NOTE</b> that the this feature will be disabled if you select the <A href="#OperationAdvancedOnlyInclude"><b>Only Include</b></a> option.</FONT></P>
 				<P><BR><BR>
 				</P>
 				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT FACE="FreeSans, sans-serif">The
 				Exclude tab is divided to:</FONT></P>
-				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><BR><BR>
+				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><BR><A NAME="OperationAdvancedExcludeTemplates"></A><BR>
 				</P>
 				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT COLOR="#000080"><FONT FACE="FreeSans, sans-serif"><B>1.
 				Templates</B></FONT></FONT></P>
@@ -1524,6 +1526,14 @@
 					<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm; text-decoration: none">
 					<FONT FACE="FreeSans, sans-serif">patterns used: <U>**/*trash*/</U>
 					&amp; <U>**/*Trash*/</U></FONT></P>
+					
+					<LI><P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm; text-decoration: none">
+					<FONT FACE="FreeSans, sans-serif">.gvfs</FONT></P>
+					<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm; text-decoration: none">
+					<FONT FACE="FreeSans, sans-serif">Directories named <B>.gvfs</B>.
+					Normally, these are hidden directories inside home folders.</FONT></P>
+					<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm; text-decoration: none">
+					<FONT FACE="FreeSans, sans-serif">pattern used: <U>**/.gvfs/</U></FONT></P>
 	
 				</UL>
 				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><BR><BR>
@@ -1534,7 +1544,7 @@
 				<P ALIGN=CENTER STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm; border: none; padding: 0cm; text-decoration: none">
 				<FONT COLOR="#000080"><IMG SRC="data/OperationProperties_ExcludeFull1.png" NAME="graphics27" ALIGN=BOTTOM BORDER=0></FONT></P>
 				<P ALIGN=CENTER STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm; border: none; padding: 0cm">
-				<BR><BR>
+				<BR><A NAME="OperationAdvancedExcludeUserDefined"></A><BR>
 				</P>
 				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT COLOR="#000080"><FONT FACE="FreeSans, sans-serif"><B>2.
 				User defined</B></FONT></FONT></P>
@@ -1689,10 +1699,10 @@
 				this directory structure</FONT></P>
 				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><BR>
 				</P>
-				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT FACE="FreeSans, sans-serif">Please
-				note, that everything that you declare here, <U>and only that</U>,
+				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT FACE="FreeSans, sans-serif">Everything that you declare here, <U>and only that</U>,
 				will be taken into consideration when performing data transfers
 				of the specific task and nothing more.</FONT></P>
+				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT FACE="FreeSans, sans-serif"><b>NOTE</b> that if you enable this option, the <A href="#OperationAdvancedExclude"><b>Exclude feature</b></a> will be disabled.</FONT></P>
 				<A NAME="OperationAdvancedNormalIncludeMode"></A>
 				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><BR><BR>
 				</P>
@@ -1835,7 +1845,7 @@
 				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><BR><BR>
 				</P>
 				<P ALIGN=CENTER STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><IMG SRC="data/OperationPropertiesAdvancedEmpty5.png" NAME="graphics33" ALIGN=BOTTOM BORDER=0></P>
-				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><BR><BR>
+				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><BR><A NAME="OperationAdvancedOptionsTemplates"></A><BR>
 				</P>
 			<!-- 	<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT COLOR="#000080"><FONT FACE="FreeSans, sans-serif"><B>backend</B></FONT></FONT></P>
 				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm; font-weight: normal">
@@ -2192,11 +2202,35 @@
 					 FAT/NTFS partitions should be mounted using the options "shortname=mixed" and "utf8=true" (if UTF8 file names are used) to avoid further errors.</FONT></DD>
 					
 
+					<DD>	<BR>	</DD>
+					
+					<UL>
+					<LI><P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm">
+					<FONT FACE="FreeSans, sans-serif"><B>Use numeric group & user IDs</B>
+					<SPAN STYLE="font-weight: normal">refers to:</SPAN></FONT></P>
+					<DT STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT FACE="FreeSans, sans-serif"><B>--numeric-ids</B></FONT></DT></UL>
+					<DD><FONT FACE="FreeSans, sans-serif">With this option rsync will transfer numeric group and user IDs rather than using user and group names and mapping them at both ends.
+ 					<br>By default rsync will use the username and groupname to determine what ownership to give files. The special uid 0 and the special group 0 are never mapped via user/group names even if the --numeric-ids option is not specified.</FONT></DD>
+ 
+					<DD>	<BR>	</DD>
+					
+					<UL>
+					<LI><P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm">
+					<FONT FACE="FreeSans, sans-serif"><B>Attempt super-user activities</B>
+					<SPAN STYLE="font-weight: normal">refers to:</SPAN></FONT></P>
+					<DT STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT FACE="FreeSans, sans-serif"><B>--super</B></FONT></DT></UL>
+					<DD><FONT FACE="FreeSans, sans-serif">This tells the receiving side to attempt super-user activities even if the receiving rsync wasn’t run by the super-user.<br>
+					These activities include: preserving users via the --owner option, preserving all groups (not just the current user’s groups) via the --groups option, and copying devices via the --devices option.<br>
+					This is useful for systems that allow such activities without being the super-user, and also for ensuring that you will get errors if the receiving side isn’t being run as the super-user.</FONT></DD>
+ 
+
 					<DL>					
 					<DD STYLE="margin-bottom: 0.5cm">
 					<BR><BR>
 					</DD></DL>
-				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm">
+					
+					
+				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><A NAME="OperationAdvancedOptionsUserDefined"></A>
 				<FONT COLOR="#000080"><FONT FACE="FreeSans, sans-serif"><B>User
 				defined options</B></FONT></FONT></P>
 				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT FACE="FreeSans, sans-serif"><B>Add</B></FONT></P>
@@ -2510,13 +2544,27 @@
 				</UL>
 				
 				<P ALIGN=LEFT STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm; border: none; padding: 0cm; font-weight: normal">
-				<A NAME="ByPassWarning"></A><BR><BR>
+				<A NAME="StopCheckBoxes"></A><BR><BR>
 				</P>
 				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT COLOR="#000080"><FONT FACE="FreeSans, sans-serif"><B>STOP check boxes</B></FONT></FONT></P>
 				<P ALIGN=LEFT STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm; border: none; padding: 0cm; font-weight: normal">
 				<FONT COLOR="#000000"><FONT FACE="FreeSans, sans-serif">On the left side of every command, there is a check-box available.<br>
 				Check this to stop the task execution if the command exits with an error.</font></font></p>
 				
+				<P><A NAME="RepeatOnFail"></A><BR><BR></P>
+				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT COLOR="#000080"><FONT FACE="FreeSans, sans-serif"><B>Repeat on Fail</B></FONT></FONT></P>
+              <P ALIGN=LEFT STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm; border: none; padding: 0cm; font-weight: normal">
+              <FONT COLOR="#000000"><FONT FACE="FreeSans, sans-serif">This option allows any command that fails, to run again. The re-run times number is set by using the spinbox.<br>
+              <b>command</b> is any pre-task, main rsync or post-task command.<br><br>
+              <b>fail</b>, when referring to pre or post task commands, means that the command exited with an exit status other than 0 (zero) or it completely failed to start.<br>
+				 When it refers to main rsync commands, a <b>fail</b> means that the command failed to start completely or it exited with one of the following errors:<br> 
+				 5 - Error starting client-server protocol<br>
+               12 - Error in rsync protocol data stream<br>
+               30 - Timeout in data send/receive<br>
+               35 - Timeout waiting for daemon connection<br>
+               255 - unexplained error<br>
+              </font></font></p>
+                
 				<P ALIGN=LEFT STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm; border: none; padding: 0cm; font-weight: normal">
 				<A NAME="ByPassWarning"></A><BR><BR>
 				</P>
@@ -3902,20 +3950,29 @@
 				really wish you to never come to that situation.</FONT></P>
 				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT FACE="FreeSans, sans-serif">But
 				if you do, then I hope that you backed up your data the very last
-				minute either by using this application or not :-)<br><br>
+				minute either by using this application or not :-)<br><br></FONT></P>
 				
-				luckybackup offers you 2 ways to restore your data:</FONT></P>
-				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><BR><BR></P>
-				
-				<A NAME="restoreWizard"></A>
+				<A NAME="restoreProfiles"></A>
 				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><BR><BR></P>				
-				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT COLOR="#000080"><FONT FACE="FreeSans, sans-serif"><B>restore wizard</B></FONT></FONT></P>
+				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT COLOR="#000080"><FONT FACE="FreeSans, sans-serif"><B>profiles restoration</B></FONT></FONT></P>
 				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT FACE="FreeSans, sans-serif">
-				This method is thoroughly described at the <a href="#manageMain">manage backup</a> - <a href="#manageRestore">restore chapter</a> of this manual.</FONT></P>				
+				As explained earlier, all profile, logs and snapshot data are stored inside the user's home directory, under <b>~/.luckyBackup/</b> <br>
+				It is essential to understand that all luckybackup automated restore procedures must make use of these data. Because of that importance, a backup of all task-related files is performed after each task finishes at the destination directory, under folder:<br>
+				<b>DESTINATION/.luckybackup-snaphots/PROFILENAME.profile/</b><br><br>
+				In case profile files, logs and snapshot data are lost for any reason from inside your home directory, you can always import them back by using the  <a href="#MainProfileImport"><b>import profile</b></a> procedure and navigating to the task's destination under <b>.luckybackup-snaphots/</b>.			
+				
+				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><BR><BR></P>	
+				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm">
+				<h3>ways to restore your data:</h3></P>
+				
+				<A NAME="restoreWizard"></A>			
+				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT COLOR="#000080"><FONT FACE="FreeSans, sans-serif"><B>1. restore wizard</B></FONT></FONT></P>
+				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT FACE="FreeSans, sans-serif">
+				This method is thoroughly described at the <a href="#manageMain">manage backup</a> - <a href="#manageRestore"> restore chapter</a> of this manual.</FONT></P>				
 				
 				<A NAME="restoreTask"></A>
 				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><BR><BR></P>
-				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT COLOR="#000080"><FONT FACE="FreeSans, sans-serif"><B>restore task</B></FONT></FONT></P>
+				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT COLOR="#000080"><FONT FACE="FreeSans, sans-serif"><B>2. restore task</B></FONT></FONT></P>
 				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT FACE="FreeSans, sans-serif">
 				The second restore procedure that luckyBackup utilizes is actually a normal
 				task that is created from the original one with some crucial

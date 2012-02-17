@@ -23,7 +23,7 @@ Display a dialog. Adds a new or modifies an existing operation
  project version    : Please see "main.cpp" for project version
 
  developer          : luckyb 
- last modified      : 13 Feb 2012
+ last modified      : 17 Feb 2012
 
 ===============================================================================================================================
 ===============================================================================================================================
@@ -65,6 +65,12 @@ modifyDialog::modifyDialog (int ItemNo, QDialog *parent) : QDialog (parent)
     connect(uiM.pushButton_command, SIGNAL( pressed() ), this, SLOT(commandPressed() ) );        //show command pushButton
     connect(uiM.comboBox_Type, SIGNAL( currentIndexChanged(int) ), this, SLOT(TaskTypeChanged(int) ) ); //Actions when task type combo changes (hide/show stuff)
 
+    //Connect all include tab stuff changes with the disableExcludeTab SLOT
+    connect (uiM.checkBox_includeFile, SIGNAL (stateChanged(int) ), this , SLOT(disableExcludeTab()));
+    connect (uiM.lineEdit_includeFile, SIGNAL (textChanged(QString) ), this , SLOT(disableExcludeTab()));
+    connect (uiM.radioButton_includeOnly, SIGNAL (toggled(bool)), this , SLOT(disableExcludeTab()));
+    connect (uiM.radioButton_includeNormal, SIGNAL (toggled(bool)), this , SLOT(disableExcludeTab()));
+    
     //Connect all add list items buttons with the addListItem SLOT
     //Map all the pushButton signals and transmit a different integer depending on the pushbutton
     QSignalMapper *signalMapper2 = new QSignalMapper(this);
@@ -172,6 +178,8 @@ modifyDialog::modifyDialog (int ItemNo, QDialog *parent) : QDialog (parent)
     
     if (ArrayPosition < TotalOperations)    //if modify is pressed fill the fields first with existing operation data
         fillModifyWindow(Operation[ArrayPosition]);
+    
+    disableExcludeTab();    // disable the exclude tab or nothing
     
     StdArguments << "-h" << "--progress" << "--stats";    //These are the standard arguments used by rsync
 
@@ -568,6 +576,7 @@ void modifyDialog::addListItem(const int type)
             {
                     uiM.listWidget_include -> addItem(text);
                     uiM.lineEdit_includeAdd -> clear();
+                    disableExcludeTab();    // disable the exclude tab or not
                     return;
             }
 
@@ -609,6 +618,7 @@ void modifyDialog::addListItem(const int type)
             else
                 uiM.listWidget_include -> addItem(text);
             uiM.lineEdit_includeAdd -> clear();
+            disableExcludeTab();    // disable the exclude tab or not
             break;
             
         //options list add button
@@ -804,6 +814,7 @@ void modifyDialog::removeListItem(const int type)
             if (selected < 0)                            //if nothing is selected do nothing
                 return;
             uiM.listWidget_include-> takeItem(selected);
+            disableExcludeTab();    // disable the exclude tab or not
             break;
         //options list remove button
         case 2:
@@ -1172,6 +1183,22 @@ void modifyDialog::TaskTypeChanged(int type)
         uiM.checkBox_backupContents -> setVisible(TRUE);
     }
 }
+// Include tab stuff  changed=====================================================================================================
+// Enable/disable the "exclude" tab
+void modifyDialog::disableExcludeTab()
+{
+    bool enableIt = TRUE;
+    
+    // conditions to disable the exclude tab
+    if ( ( (uiM.listWidget_include -> count() > 0) || 
+       ((uiM.checkBox_includeFile->isChecked()) && ((uiM.lineEdit_includeFile->text()).size() >0)) ) &&
+       (uiM.radioButton_includeOnly -> isChecked()) )
+       
+       enableIt = FALSE;
+
+    uiM.toolBox_exclude -> setEnabled (enableIt);
+}
+
 //===================================================================================================================================================
 //------------------------------------------------------------------FUNCTIONS------------------------------------------------------------------------
 //===================================================================================================================================================
@@ -1462,10 +1489,10 @@ void modifyDialog::modifyTrailing()
         if (destDir.endsWith(":"))      destDir.append(SLASH);
     }
 
-    if ((uiM.comboBox_Type -> currentIndex()==0) && (uiM.checkBox_backupContents -> isChecked()))    //Directory by contents
+    if ((uiM.comboBox_Type -> currentIndex()==0) && (uiM.checkBox_backupContents -> isChecked()))           //Directory by contents
     {
-        if ( (!sourceDir.endsWith(SLASH)) && (sourceDir != ""))     sourceDir.append(SLASH);
-        if ( (!destDir.endsWith(SLASH)) && (destDir != ""))         destDir.append(SLASH);
+            if ( (!sourceDir.endsWith(SLASH)) && (sourceDir != ""))     sourceDir.append(SLASH);
+            if ( (!destDir.endsWith(SLASH)) && (destDir != ""))         destDir.append(SLASH);
     }
 
     if ((uiM.comboBox_Type -> currentIndex()==0) && (!uiM.checkBox_backupContents -> isChecked()))        //Directory by name
@@ -1488,10 +1515,18 @@ void modifyDialog::modifyTrailing()
         if ( (!sourceDir.endsWith(SLASH)) && (sourceDir != ""))   sourceDir.append(SLASH);
         if ( (!destDir.endsWith(SLASH)) && (destDir != ""))       destDir.append(SLASH);
         
-        uiM.checkBox_deleteAfter     -> setChecked    (FALSE);
+        uiM.checkBox_deleteAfter    -> setChecked    (FALSE);
         uiM.checkBox_update         -> setChecked    (TRUE);
-        uiM.checkBox_ownership         -> setChecked    (TRUE);
+        uiM.checkBox_ownership      -> setChecked    (TRUE);
         uiM.checkBox_permissions    -> setChecked    (TRUE);
+    }
+    
+    if (WINrunning)     // some more adjustments for windows when the user wants to declare directly paths with "/" instead of "\" (normally for remote)
+    {      
+        if (sourceDir.contains("/"))    sourceDir.replace(SLASH,"/");
+        if (sourceDir.endsWith("//"))   sourceDir.chop(1);
+        if (destDir.contains("/"))      destDir.replace(SLASH,"/");
+        if (destDir.endsWith("//"))     destDir.chop(1);
     }
 
     uiM.lineEdit_source -> setText(sourceDir);

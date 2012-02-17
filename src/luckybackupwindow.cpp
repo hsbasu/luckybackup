@@ -161,10 +161,10 @@ luckyBackupWindow::luckyBackupWindow(QMainWindow *parent) : QMainWindow(parent)
     loadCurrentProfile();			// load the current (default or not ) profile - this is inside functions.cpp
 
 // *********************TESTING purposes message boxs ****************************************************************************
-//QMessageBox::information(this, "LB","CurrentProfile=" + currentProfile + "\ntotal tasks: " + countStr.setNum(TotalOperations));
-/*QString preRelease="8"; QString preDate="09 Feb 2012";
+/*QMessageBox::information(this, "LB","CurrentProfile=" + currentProfile + "\ntotal tasks: " + countStr.setNum(TotalOperations));
+QString preRelease="8"; QString preDate="09 Feb 2012";
 QString tempOSrunning="";if (OS2running) tempOSrunning="OS2";if (WINrunning) tempOSrunning="windows";if (!notXnixRunning) tempOSrunning="*nix";
-QMessageBox::warning(this, "luckybackup",       "This is a beta version of <b>luckyBackup</b><br>"
+QMessageBox::warning(this, "luckybackup",       "This is a testing version of <b>luckyBackup</b><br>"
                                                 "NOT to be used as an official release and NOT to be trusted for actual backups<br><br>"
                                                 "pre-release: <b>" + preRelease +"</b><br>version: <b>" + appVersionString + "</b><br>date: <b>"+preDate+
                                                  

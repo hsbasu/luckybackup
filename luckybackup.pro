@@ -127,6 +127,7 @@ TRANSLATIONS = translations/luckybackup_ara.ts \
     translations/luckybackup_el.ts \
     translations/luckybackup_en.ts \
     translations/luckybackup_es.ts \
+    translations/luckybackup_et.ts \
     translations/luckybackup_fr.ts \
     translations/luckybackup_it.ts \
     translations/luckybackup_nl.ts \

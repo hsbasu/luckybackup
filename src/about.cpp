@@ -22,7 +22,7 @@
         project version   : Please see "main.cpp" for project version
 
         developer         : luckyb 
-        last modified     : 11 Feb 2012
+        last modified     : 15 Feb 2012
       ===============================================================================================================================
       ===============================================================================================================================
 */
@@ -115,6 +115,9 @@ void aboutDialog::setThanks()
         "<b>" + tr("Dimitris Kalamaras") + "</b><br>(dimitris)<br>" +
         tr("If it wasn't him and his tutorials I would never have started this project") + "<br><br>"
         
+        "<b><a href=\"http://www.indifex.com/#team\" TARGET=\"_blank\">" + tr("The indifex team") + "</b></a><br>" +
+        tr("for developing the wonderful transifex localization platform and providing it for free") + "<br><br>"
+    
         "<b>" + tr("Stephan Kleine") + "</b><br>" +
         tr("OpenSUSE package maintainer (KDE4 Community repo) and valuable packing advisor") + "<br><br>"
 

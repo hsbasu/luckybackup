@@ -282,6 +282,12 @@ p, li { white-space: pre-wrap; }
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
+            <property name="toolTip">
+             <string>set this value to -1 for the schedule to occur every hour</string>
+            </property>
+            <property name="minimum">
+             <number>-1</number>
+            </property>
             <property name="maximum">
              <number>23</number>
             </property>

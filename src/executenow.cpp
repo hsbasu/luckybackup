@@ -23,7 +23,7 @@ do everything that deals with commands (rsync & others) execution
 project version	: Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 08 Feb 2012
+last modified      : 29 Feb 2012
 ===============================================================================================================================
 ===============================================================================================================================
 ********************************** DO NOT FORGET TO CHANGE "commandline.cpp:rsyncIT()" ********************************************************
@@ -397,7 +397,7 @@ void luckyBackupWindow::executeBeforeTask()
                 if (sourceLast.contains(":"))	// this is normal for a remote directory
                     sourceLast = sourceLast.right(tempSource.size()-sourceLast.lastIndexOf(":")-1);	//this is the remote source dir without the remote pc
                 if (tempSource.contains(SLASH))	// this is normal for a directory unless it is remote
-                    sourceLast = sourceLast.right(tempSource.size()-sourceLast.lastIndexOf(SLASH)-1);	//this is the lowest dir of source
+                    sourceLast = sourceLast.right(sourceLast.size()-sourceLast.lastIndexOf(SLASH)-1);	//this is the lowest dir of source
                 
                 tempSource.append(SLASH);
                 tempDestination.append(sourceLast + SLASH);
@@ -427,6 +427,7 @@ void luckyBackupWindow::executeBeforeTask()
             //also add all remote arguments exactly as used at normal backup
             if (RemoteDestUsed)
             {
+                rmArgs.append("--protect-args");
                 if ( Operation[currentOperation] -> GetRemotePassword() != "")
                     rmArgs.append("--password-file=" + ( Operation[currentOperation] -> GetRemotePassword()) );
                 if ( Operation[currentOperation] -> GetRemoteSSH())
@@ -685,6 +686,7 @@ void luckyBackupWindow::procFinished()
     if (ABORTpressed) //this is to prevent segmentation fault when abort button pressed
         return;
 
+    bool RemoteDestUsed = (Operation[currentOperation] -> GetRemoteDestination()) && (Operation[currentOperation] -> GetRemote()); // Is remote dest used ?
     if (ExecuteBefore)		// if the pre-task execution command (process) finished
     {
         outputInsert = logFileUpdate("pre-finished", "", currentBefore);
@@ -813,11 +815,21 @@ void luckyBackupWindow::procFinished()
             
             outputInsert = "";
             
-            // If this is a backup task && not a dryrun
-            if ((exportFullProfile(exportProfileDir,"ExportOnlyTask")) && (!sync) && (!DryRun) && (!rsyncArguments.isEmpty()))
-                outputInsert = logFileUpdate("backup-profile", " -> Ok", currentAfter);
-            else
-                outputInsert = logFileUpdate("backup-profile", " -> Fail", currentAfter);
+            // If this is a backup task && not a dryrun, backup profile data to destination
+            if ( (!sync) && (!DryRun) && (!rsyncArguments.isEmpty()) )
+            {
+                // Create the export path if it does not exist
+                // local use
+                QDir exportPathCreate (exportProfileDir);
+                if ( (!exportPathCreate.exists()) && (!RemoteDestUsed) )
+                    exportPathCreate.mkpath(exportProfileDir);
+                    
+                if (exportFullProfile(exportProfileDir,"ExportOnlyTask"))
+                    outputInsert = logFileUpdate("backup-profile", " -> Ok", currentAfter);
+                else
+                    outputInsert = logFileUpdate("backup-profile", " -> Fail", currentAfter);
+                
+            }
             
             outputInsert.append(logFileUpdate("rsync-finished", "", 0));
         }

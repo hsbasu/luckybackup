@@ -23,7 +23,7 @@
  project version    : Please see "main.cpp" for project version
 
  developer          : lucky
- last modified      : 02 Feb 2012
+ last modified      : 24 Feb 2012
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -130,6 +130,7 @@ bool writeToLog;                                            // if the log file i
 QString logFileUpdate(QString, QString, int);               // Update the logfile with some string
 bool checkMountPoint(QString);                              // Check if a path belongs to a mountpoint or is a mountpoint itself
 void setTextMessages (QString,QString,bool,bool,QString,QString,QString);// function to set text feedback for the user
+QString fixWinPathForRsync(QString,bool);                        // Fixes a windows path for rsync use
 
 QString emailCommand;
 bool    emailNever;

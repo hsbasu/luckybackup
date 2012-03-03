@@ -22,7 +22,7 @@
         project version   : Please see "main.cpp" for project version
 
         developer         : luckyb 
-        last modified     : 17 Feb 2012
+        last modified     : 01 Mar 2012
       ===============================================================================================================================
       ===============================================================================================================================
 */
@@ -184,6 +184,9 @@ void aboutDialog::setThanks()
         "<b>" + tr("Raffaele") + "</b><br>" +
         tr("Italian gui translator") + "<br><br>"
         
+        "<b>" + tr("pinguinofurioso") + "</b><br>" +
+        tr("Italian gui translator") + "<br><br>"
+        
         "<b>" + tr("Denis Skorski") + "</b><br>" + "<a href=\"http://fripohled.blogspot.com/\" TARGET=\"_blank\">fripohled.blogspot.com</a><br>" +
         tr("Russian gui translator and valuable tester") + "<br><br>"
 
@@ -237,6 +240,9 @@ void aboutDialog::setThanks()
 
         "<b>" + tr("Yuri Vidal") + "</b><br>" +
         tr("backupwhenidle python script developer") + "<br><br>" +
+
+        "<b>" + tr("Bjorn Rietdijk") + "</b><br>" +
+        tr("valuable OS/2 and windows tester") + "<br><br>" +
         
         tr("...to all users of the ")+
         "<br><a href=\"http://www.linuxinside.gr/\" target=\"_blank\">Linux Inside</a>, "
@@ -246,7 +252,7 @@ void aboutDialog::setThanks()
         "<a href=\"http://forum.hellug.gr/\" target=\"_blank\">hellug</a>, "
         "and <a href=\"http://www.kde-apps.org//\" target=\"_blank\">kde-apps.org</a><br>" +
         tr("forums for their support.") + "<br><br>" +
-        tr("Especially") + "<br>constantinos, promeneur, grigris, dannys,marios, Regenwald, flo, Ilias Paraponiaris, Takis Vounatsos, Lieven Tytgat, mathetes, Johan Linde, Chris Sylvester, Manos Nikiforakis, Giorgos Katsikatsos, Ray Ambrosi, Barry Jackson, Damien Cassou, Carsten, Daniele Soldati Chris (slam), Paul Chapman, kingfame, Giorgos 'jeff' Finikianakis, Shelby Williams, Felix, skevo, Philipp F, Christian Harms, Paul Hewlett, Tristan Gross, Fabian Muscariello, James Mohr, Julie Pierson, Peter, Michael Daffin and Bjorn Rietdijk<br>" +
+        tr("Especially") + "<br>constantinos, promeneur, grigris, dannys,marios, Regenwald, flo, Ilias Paraponiaris, Takis Vounatsos, Lieven Tytgat, mathetes, Johan Linde, Chris Sylvester, Manos Nikiforakis, Giorgos Katsikatsos, Ray Ambrosi, Barry Jackson, Damien Cassou, Carsten, Daniele Soldati Chris (slam), Paul Chapman, kingfame, Giorgos 'jeff' Finikianakis, Shelby Williams, Felix, skevo, Philipp F, Christian Harms, Paul Hewlett, Tristan Gross, Fabian Muscariello, James Mohr, Julie Pierson, Peter and Michael Daffin<br>" +
         tr("that contributed to this project one way or another") + "<br><br>" +
 
         tr("Last but no least") +":<br>"+

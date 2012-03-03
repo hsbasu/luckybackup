@@ -22,7 +22,7 @@ file containing all variables & functions used globaly
 project version    : Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 17 Feb 2012 (happy Valentine's day :P)
+last modified      : 03 Mar 2012
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -943,13 +943,13 @@ bool exportFullProfile(QString ExportPath, QString exportType)
         exportArgs << "--include=/*/" + profileName +"*";
          
     exportArgs << "--include=*/" << "--exclude=*" << "--prune-empty-dirs";  // "only include" rsync args
-          
            
     //also add all remote arguments exactly as used at normal backup
     if (exportType == "ExportOnlyTask")
     {
         if ((Operation[currentOperation] -> GetRemoteDestination()) && (Operation[currentOperation] -> GetRemote()))
         {
+            exportArgs << "--protect-args";
             if ( Operation[currentOperation] -> GetRemotePassword() != "")
                 exportArgs.append("--password-file=" + ( Operation[currentOperation] -> GetRemotePassword()) );
             if ( Operation[currentOperation] -> GetRemoteSSH())
@@ -967,14 +967,14 @@ bool exportFullProfile(QString ExportPath, QString exportType)
                         exportArgs.append("-e "+sshCommandPath);
             }
         }
-    }
-            
+    }    
+    
     exportArgs.append(luckyBackupDir);      // The source is ~/.luckyBackup/
     exportArgs.append(ExportPath);          // The destination is given by the user
     
     exportProcess -> start (rsyncCommandPath,exportArgs);
     exportProcess -> waitForFinished();
-            
+
     if (!(exportProcess -> exitCode() == 0))
         return FALSE;
 
@@ -1604,6 +1604,9 @@ QStringList AppendArguments(operation *operationToAppend)
     QString sourceString, destString, remoteHost = "";	//temp strings
     if (operationToAppend -> GetRemote())
     {
+        //append --protect-args because trouble is caused with spaces
+        arguments.append("--protect-args");
+        
         if (operationToAppend -> GetRemoteUser() != "")	//append remote user@ if applicable to temp string
             remoteHost.append(operationToAppend -> GetRemoteUser() + "@");
 
@@ -1625,16 +1628,8 @@ QStringList AppendArguments(operation *operationToAppend)
             sourceString 	= operationToAppend -> GetSource();
             if (WINrunning) // Bruce patch condition for winpaths~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             {
-                //fix destination (which is remote)
-                destString = destString.replace("\\","/");
-                if (destString.endsWith("//"))
-                    destString.chop(1);
-            
-                //fix source (which is local)
-                QString drive;
-                drive = sourceString[0];
-                drive = drive.toLower();
-                sourceString = sourceString.replace(0,3,"/cygdrive/"+drive+"/").replace("\\","/");
+                destString = fixWinPathForRsync(destString, TRUE);         //fix destination (which is remote)
+                sourceString =  fixWinPathForRsync(sourceString, FALSE);    //fix source (which is local)
             }
         }
         else 
@@ -1645,16 +1640,8 @@ QStringList AppendArguments(operation *operationToAppend)
             destString 	= operationToAppend -> GetDestination();
             if (WINrunning) // Bruce patch condition for winpaths~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             {
-                //fix source (which is remote)
-                sourceString = sourceString.replace("\\","/");
-                if (sourceString.endsWith("//"))
-                    sourceString.chop(1);
-            
-                //fix destination (which is local)
-                QString drive;
-                drive = destString[0];
-                drive = drive.toLower();
-                destString = destString.replace(0,3,"/cygdrive/"+drive+"/").replace("\\","/");
+                sourceString =  fixWinPathForRsync(sourceString, TRUE);     //fix source (which is remote)
+                destString = fixWinPathForRsync(destString, FALSE);        //fix destination (which is local)
             }
         }
 
@@ -1684,16 +1671,8 @@ QStringList AppendArguments(operation *operationToAppend)
         // convert path to cygwin paths, change any \ to / :)
         if (WINrunning)
         {
-            //fix source
-            QString drive;
-            drive = sourceString[0];
-            drive = drive.toLower();
-            sourceString = sourceString.replace(0,3,"/cygdrive/"+drive+"/").replace("\\","/");
-
-            //fix destination
-            drive = destString[0];
-            drive = drive.toLower();
-            destString = destString.replace(0,3,"/cygdrive/"+drive+"/").replace("\\","/");
+            sourceString =  fixWinPathForRsync(sourceString, FALSE);    //fix local source
+            destString =    fixWinPathForRsync(destString, FALSE);      //fix local destination
         }
         // Bruce patch end ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
     }
@@ -1716,7 +1695,7 @@ QStringList AppendArguments(operation *operationToAppend)
             if ((sourceLast.contains(":")) && (!notXnixRunning) )	// this is normal for a remote directory (not for OS/2 or win: eg c:\)
                 sourceLast = sourceLast.right(snapSource.size()-sourceLast.lastIndexOf(":")-1);	//this is the remote source dir without the remote pc
             if (snapSource.contains(SLASH))	// this is normal for a directory unless it is remote
-                sourceLast = sourceLast.right(snapSource.size()-sourceLast.lastIndexOf(SLASH)-1);	//this is the lowest dir of source
+                sourceLast = sourceLast.right(sourceLast.size()-sourceLast.lastIndexOf(SLASH)-1);	//this is the lowest dir of source
             snapSource.append(SLASH);
             
             snapDest.append(sourceLast + SLASH);
@@ -1752,6 +1731,30 @@ QStringList AppendArguments(operation *operationToAppend)
     return arguments;
 }
 
+// fixWinPathForRsync =====================================================================================================================================
+// Fixes a windows path for rsync use
+QString fixWinPathForRsync(QString fixTHIS, bool remotePATH)
+{
+    QString returnPATH = fixTHIS;
+    QChar drive = fixTHIS[0];
+    drive = drive.toLower();        // This is the windows drive letter eg C ..as in C:\ :P
+    
+    if (remotePATH)
+    {
+        returnPATH = returnPATH.replace("\\","/");
+        if (returnPATH.endsWith("//"))
+            returnPATH.chop(1);
+    }
+    else
+    {
+        if (fixTHIS.startsWith("\\\\"))    // this is probably a remote share
+            returnPATH = returnPATH.replace("\\","/");
+        else
+            returnPATH = returnPATH.replace(0,3,"/cygdrive/"+QString(drive)+"/").replace("\\","/");
+    }
+    
+    return returnPATH;
+}
 // logFileUpdate =====================================================================================================================================
 // Updates the current logfile with some string
 QString logFileUpdate(QString appendTYPE, QString appendTHIS, int currentPrePost)
@@ -1931,7 +1934,8 @@ QString sendEmailNow (bool testEmail)
                         
                         logfilename = logDir + QString(profileName.toUtf8()) + "-" + 
                                     QString((Operation[currentOperation] -> GetName()).toUtf8()) + "-" +
-                                    Operation[currentOperation] -> GetSnapshotsListItem(0) + ".log";
+                                    Operation[currentOperation] -> GetSnapshotsListItem(Operation[currentOperation]->GetSnapshotsListSize()-1) 
+                                    + ".log";
                         logfile.setFileName(logfilename);   // this is the last logfile
                         if (logfile.exists())
                         {

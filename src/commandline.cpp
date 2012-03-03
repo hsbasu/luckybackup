@@ -19,7 +19,7 @@
      You should have received a copy of the GNU General Public License
      along with luckyBackup.  If not,see <http://www.gnu.org/licenses/>.
  developer      : luckyb 
- last modified  : 08 Feb 2012
+ last modified  : 29 Feb 2012
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -110,6 +110,7 @@ void commandline::rsyncIT()
         if ( (Operation[currentOperation] -> GetPerform()) || (Operation[currentOperation] -> GetByPassWARNING()) )
         {
             bool RemoteDestUsed = (Operation[currentOperation] -> GetRemoteDestination()) && (Operation[currentOperation] -> GetRemote());
+            
             //update the last execution time + logfile actions ~~~~~~~~~~~~~~~~~~~~~
             if (!DryRun)
             {
@@ -139,7 +140,7 @@ void commandline::rsyncIT()
                         if (sourceLast.contains(":"))	// this is normal for a remote directory
                             sourceLast = sourceLast.right(tempSource.size()-sourceLast.lastIndexOf(":")-1);	//this is the remote source dir without the remote pc
                         if (tempSource.contains(SLASH))	// this is normal for a directory unless it is remote
-                            sourceLast = sourceLast.right(tempSource.size()-sourceLast.lastIndexOf(SLASH)-1);	//this is the lowest dir of source
+                            sourceLast = sourceLast.right(sourceLast.size()-sourceLast.lastIndexOf(SLASH)-1);	//this is the lowest dir of source
                         
                         tempSource.append(SLASH);
                         tempDestination.append(sourceLast + SLASH);
@@ -167,6 +168,7 @@ void commandline::rsyncIT()
                     //also add all remote arguments exactly as used at normal backup
                     if (RemoteDestUsed)
                     {
+                        rmArgs.append("--protect-args");
                         if ( Operation[currentOperation] -> GetRemotePassword() != "")
                             rmArgs.append("--password-file=" + ( Operation[currentOperation] -> GetRemotePassword()) );
                         if ( Operation[currentOperation] -> GetRemoteSSH())
@@ -489,15 +491,23 @@ void commandline::rsyncIT()
 
                             // Backup profile + logs + snaps to destination
                             // If this is a backup task && not a dryrun
-                            if ((exportFullProfile(exportProfileDir,"ExportOnlyTask")) && (!DryRun) && (!rsyncArguments.isEmpty()))
+                            if ( (!Operation[currentOperation] -> GetTypeSync()) && (!DryRun) && (!rsyncArguments.isEmpty()) )
                             {
-                                cout << "\n Backing-up profile, logfiles and snapshot data -> Ok";
-                                logFileUpdate("backup-profile", " -> Ok", 0);
-                            }
-                            else
-                            {
-                                cout << "\n Backing-up profile, logfiles and snapshot data -> FAILED";
-                                logFileUpdate("backup-profile", " -> Fail", 0);
+                                // Create the export path if it does not exist
+                                QDir exportPathCreate (exportProfileDir);
+                                if ( (!exportPathCreate.exists()) && (!RemoteDestUsed) ) // local use ONLY
+                                    exportPathCreate.mkpath(exportProfileDir);
+                                
+                                if (exportFullProfile(exportProfileDir,"ExportOnlyTask"))
+                                {
+                                    cout << "\n Backing-up profile, logfiles and snapshot data -> Ok\n";
+                                    logFileUpdate("backup-profile", " -> Ok", 0);
+                                }
+                                else
+                                {
+                                    cout << "\n Backing-up profile, logfiles and snapshot data -> FAILED\n";
+                                    logFileUpdate("backup-profile", " -> Fail", 0);
+                                }
                             }
                             
                             logFileUpdate("rsync-finished", "", 0);

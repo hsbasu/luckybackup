@@ -23,7 +23,7 @@ Display a dialog. Schedules profiles via cron
 project version    : Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 09 Feb 12
+last modified      : 01 Mar 12
 
 ===============================================================================================================================
 ===============================================================================================================================
@@ -578,12 +578,18 @@ QString scheduleDialog::scheduleText(QString name,int month,int monthday, int we
         return tempProfileName;
     }
     
-    
-    tempProfileName.append(tr("at")+" ");
-    if (hour < 10)
-        tempProfileName.append("0"+countStr.setNum(hour) + ":");
+    if (hour == -1) // this means every hour
+    {
+        tempProfileName.append(tr("hourly at minute ","full phrase: Execute profile <PROFILENAME> hourly at minute <MM>") + " ");
+    }
     else
-        tempProfileName.append(countStr.setNum(hour) + ":");
+    {
+        tempProfileName.append(tr("at")+" ");
+        if (hour < 10)
+            tempProfileName.append("0"+countStr.setNum(hour) + ":");
+        else
+            tempProfileName.append(countStr.setNum(hour) + ":");
+    }
     if (minute < 10) 
         tempProfileName.append("0"+countStr.setNum(minute));
     else
@@ -706,7 +712,10 @@ void scheduleDialog::createCron()
             else									// else append time-day eth
             {
                 ScheduleLine.append(countStr.setNum(Schedule[currentSchedule] -> GetMinute()) + " ");	//minute
-                ScheduleLine.append(countStr.setNum(Schedule[currentSchedule] -> GetHour()) + " ");	//hour
+                if (Schedule[currentSchedule] -> GetHour() == -1)
+                    ScheduleLine.append("* "); //hourly
+                else
+                    ScheduleLine.append(countStr.setNum(Schedule[currentSchedule] -> GetHour()) + " ");	//hour
                 if (Schedule[currentSchedule] -> GetMonthDay() == 0)					//Day of month
                     ScheduleLine.append("* ");
                 else

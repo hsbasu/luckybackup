@@ -22,7 +22,7 @@
  project version    : Please see "main.cpp" for project version
 
  developer          : luckyb 
- last modified      : 18 May 2011
+ last modified      : 29 Feb 2012
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -36,133 +36,136 @@
 // Displays the manage backups of a task dialog
 manageDialog::manageDialog (QDialog *parent) : QDialog (parent)
 {
-	// initialize variables
-	CurrentSnapshotString = "";
-	CurrentSnapshotDirectory = "";
-	CurrentSnapshotNo = 0;
-	
-	//first set string variables source, dest
-	QStringList arguments = Operation[currentOperation] -> GetArgs();
-	source = arguments[arguments.size()-2];
-	dest = arguments[arguments.size()-1];
-	sourceLast = "";
+    // initialize variables
+    CurrentSnapshotString = "";
+    CurrentSnapshotDirectory = "";
+    CurrentSnapshotNo = 0;
+    
+    //first set string variables source, dest
+    QStringList arguments = Operation[currentOperation] -> GetArgs();
+    source = arguments[arguments.size()-2];
+    dest = arguments[arguments.size()-1];
+    sourceLast = "";
 
-	//fix source and dest
-	if (!source.endsWith(SLASH))	// this means task is of type "backup dir by name"
-	{
-		sourceLast = source;
-		if ( (sourceLast.contains(":")) && (!notXnixRunning) )	// this is normal for a remote directory - non OS2 or win
-			sourceLast = sourceLast.right(source.size()-sourceLast.lastIndexOf(":")-1);	//this is the remote source dir without the remote pc
-		if (source.contains(SLASH))	// this is normal for a directory unless it is remote
-			sourceLast = sourceLast.right(source.size()-sourceLast.lastIndexOf(SLASH)-1);	//this is the lowest dir of source
-		
-		sourceLast.append(SLASH);
-		source.append(SLASH);
-		dest.append(sourceLast);
+    //fix source and dest
+    if (!source.endsWith(SLASH))	// this means task is of type "backup dir by name"
+    {
+        sourceLast = source;
+        if ( (sourceLast.contains(":")) && (!notXnixRunning) )	// this is normal for a remote directory - non OS2 or win
+            sourceLast = sourceLast.right(source.size()-sourceLast.lastIndexOf(":")-1);	//this is the remote source dir without the remote pc
+
+        if (source.contains(SLASH))	// this is normal for a directory unless it is remote
+            sourceLast = sourceLast.right(sourceLast.size()-sourceLast.lastIndexOf(SLASH)-1);	//this is the lowest dir of source
+        
+        
+        sourceLast.append(SLASH);
+        
+        source.append(SLASH);
+        dest.append(sourceLast);
         if (dest.endsWith(SLASH+SLASH))
             dest.chop(1);
-	}
+    }
 
-	uiG.setupUi(this);
-	
-	calcdiffthread = new CalcDiffThread(this);
-	abortCalcThread = FALSE;
-	connect( calcdiffthread, SIGNAL(updateViewer(const QString, const bool)), this, SLOT(refreshDifWindow(const QString &, const bool &)) );
-	connect( calcdiffthread, SIGNAL(terminated()), this, SLOT(calcDiffEnd()));
-	connect( calcdiffthread, SIGNAL(finished()), this, SLOT(calcDiffEnd()));
+    uiG.setupUi(this);
+    
+    calcdiffthread = new CalcDiffThread(this);
+    abortCalcThread = FALSE;
+    connect( calcdiffthread, SIGNAL(updateViewer(const QString, const bool)), this, SLOT(refreshDifWindow(const QString &, const bool &)) );
+    connect( calcdiffthread, SIGNAL(terminated()), this, SLOT(calcDiffEnd()));
+    connect( calcdiffthread, SIGNAL(finished()), this, SLOT(calcDiffEnd()));
 
-	//connect pushButton SLOTs ----------------
-	connect ( uiG.pushButton_cancel, SIGNAL( clicked() ), this, SLOT( cancel() ) );
-	connect ( uiG.pushButton_viewLog, SIGNAL( clicked() ), this, SLOT( logView() ) );
-	connect ( uiG.pushButton_restore, SIGNAL( clicked() ), this, SLOT( restoreBackup() ) );
-	connect ( uiG.pushButton_delete, SIGNAL( clicked() ), this, SLOT( deleteBackup() ) );
-	connect ( uiG.checkBox_viewSource, SIGNAL( clicked() ), this, SLOT( hideSourceStuff() ) );
-	connect ( uiG.listWidget_dates, SIGNAL( itemSelectionChanged() ), this, SLOT( SnapshotsListSelected() ) );
-	connect ( uiG.pushButton_calculate_diffs, SIGNAL ( clicked() ), this, SLOT ( calculateDifferences() ) );
-	
+    //connect pushButton SLOTs ----------------
+    connect ( uiG.pushButton_cancel, SIGNAL( clicked() ), this, SLOT( cancel() ) );
+    connect ( uiG.pushButton_viewLog, SIGNAL( clicked() ), this, SLOT( logView() ) );
+    connect ( uiG.pushButton_restore, SIGNAL( clicked() ), this, SLOT( restoreBackup() ) );
+    connect ( uiG.pushButton_delete, SIGNAL( clicked() ), this, SLOT( deleteBackup() ) );
+    connect ( uiG.checkBox_viewSource, SIGNAL( clicked() ), this, SLOT( hideSourceStuff() ) );
+    connect ( uiG.listWidget_dates, SIGNAL( itemSelectionChanged() ), this, SLOT( SnapshotsListSelected() ) );
+    connect ( uiG.pushButton_calculate_diffs, SIGNAL ( clicked() ), this, SLOT ( calculateDifferences() ) );
+    
 
-	//____________________Initial gui changes (these will remain the same for as long as the gui is visible)_______________
-	
-	// set the text to labels profile & task
-	uiG.label_profile -> setText (tr("profile")+ ": <font color = blue><b>" +profileName + "</b></font>");
-	uiG.label_task -> setText (tr("task") + ": <font color = blue><b>" + Operation[currentOperation] -> GetName() + "</b></font>");
-	
-	//resize the treeview headers
-	uiG.treeView_browser -> header() -> resizeSection(0,230);
-	uiG.treeView_source -> header() -> resizeSection(0,230);
-	uiG.treeView_browser -> header() -> resizeSection(1,80);
-	uiG.treeView_source -> header() -> resizeSection(1,80);
-	uiG.treeView_browser -> header() -> resizeSection(2,60);
-	uiG.treeView_source -> header() -> resizeSection(2,60);
-	uiG.treeView_browser -> header() -> resizeSection(3,100);
-	uiG.treeView_source -> header() -> resizeSection(3,100);
+    //____________________Initial gui changes (these will remain the same for as long as the gui is visible)_______________
+    
+    // set the text to labels profile & task
+    uiG.label_profile -> setText (tr("profile")+ ": <font color = blue><b>" +profileName + "</b></font>");
+    uiG.label_task -> setText (tr("task") + ": <font color = blue><b>" + Operation[currentOperation] -> GetName() + "</b></font>");
+    
+    //resize the treeview headers
+    uiG.treeView_browser -> header() -> resizeSection(0,230);
+    uiG.treeView_source -> header() -> resizeSection(0,230);
+    uiG.treeView_browser -> header() -> resizeSection(1,80);
+    uiG.treeView_source -> header() -> resizeSection(1,80);
+    uiG.treeView_browser -> header() -> resizeSection(2,60);
+    uiG.treeView_source -> header() -> resizeSection(2,60);
+    uiG.treeView_browser -> header() -> resizeSection(3,100);
+    uiG.treeView_source -> header() -> resizeSection(3,100);
 
-	// Set the lineEdits source & dest with real paths
-	uiG.lineEdit_destination -> setText(dest);
-	uiG.lineEdit_source	-> setText(source);
-	
-	(uiG.textBrowser_snapshot->document())->setMaximumBlockCount(50000);	// set maximum blocks to avoid freeze
-	
-	updateSnapshots();	// update the snapshots listWidget
-	SnapshotsListSelected(); //set currentSnapshotString & No. Will also call fixGui()
+    // Set the lineEdits source & dest with real paths
+    uiG.lineEdit_destination -> setText(dest);
+    uiG.lineEdit_source	-> setText(source);
+    
+    (uiG.textBrowser_snapshot->document())->setMaximumBlockCount(50000);	// set maximum blocks to avoid freeze
+    
+    updateSnapshots();	// update the snapshots listWidget
+    SnapshotsListSelected(); //set currentSnapshotString & No. Will also call fixGui()
 }
 // SLOTS-------------------------------------------------------------------------------------
 // --------------------------------cancel pressed------------------------------------------------
 void manageDialog::cancel()
 {
-	close();
+    close();
 }
 
 //do the same if the main window close button (or alt+F4) is pressed
- void manageDialog::closeEvent(QCloseEvent *event)
- {
-	// do not close the window if a calc thread is still running
-	if (calcdiffthread->isRunning())
-		event->ignore();
- }
+void manageDialog::closeEvent(QCloseEvent *event)
+{
+    // do not close the window if a calc thread is still running
+    if (calcdiffthread->isRunning())
+        event->ignore();
+}
 
 // SLOT logView =====================================================================================================================
 // Display the logfile
 void manageDialog::logView()
 {
-	QUrl logURL;
-	logURL.setScheme("file");
-	logURL.setUrl("Does_not_exist");
+    QUrl logURL;
+    logURL.setScheme("file");
+    logURL.setUrl("Does_not_exist");
 
-	//extract the logfilename from the dates listwidget
-	logfilename = CurrentSnapshotString;
-	logfilename.prepend(logDir + profileName + "-" + Operation[currentOperation] -> GetName() + "-");
-	logfilename.append(".log");	
-	
-	logfile.setFileName(logfilename); // this is the logfile of the item selected
-	if (logfile.exists())	//if the logfile exists
-		logURL.setUrl(logfilename);
+    //extract the logfilename from the dates listwidget
+    logfilename = CurrentSnapshotString;
+    logfilename.prepend(logDir + profileName + "-" + Operation[currentOperation] -> GetName() + "-");
+    logfilename.append(".log");	
+    
+    logfile.setFileName(logfilename); // this is the logfile of the item selected
+    if (logfile.exists())	//if the logfile exists
+        logURL.setUrl(logfilename);
 
-	logDialog logdialog (logURL);
-	logdialog.exec();
+    logDialog logdialog (logURL);
+    logdialog.exec();
 }
 
 // SLOT restoreBackup =====================================================================================================================
 // launch the restore wizard
 void manageDialog::restoreBackup()
 {
-	manageWizard restoreWizard("restoreBackup", source, dest, CurrentSnapshotNo);	//pass the number of the current row
-	restoreWizard.exec();
-	
-	fixGui();	// update the gui with new dirs data
+    manageWizard restoreWizard("restoreBackup", source, dest, CurrentSnapshotNo);	//pass the number of the current row
+    restoreWizard.exec();
+    
+    fixGui();	// update the gui with new dirs data
 }
 
 // SLOT deleteBackup =====================================================================================================================
 // Launch the delete backup wizard
 void manageDialog::deleteBackup()
 {
-	
-	// launch the delete backup wizard
-	manageWizard deleteWizard("deleteBackup", source, dest, CurrentSnapshotNo);
-	deleteWizard.exec();
+    
+    // launch the delete backup wizard
+    manageWizard deleteWizard("deleteBackup", source, dest, CurrentSnapshotNo);
+    deleteWizard.exec();
 
-	updateSnapshots();	// update the snapshots listwidget
-	SnapshotsListSelected(); // set a new currentSnapshot and update the gui
+    updateSnapshots();	// update the snapshots listwidget
+    SnapshotsListSelected(); // set a new currentSnapshot and update the gui
 }
 
 // fixGui  =====================================================================================================================
@@ -170,171 +173,171 @@ void manageDialog::deleteBackup()
 // also update treebrowsers with new snapshot data
 void manageDialog::fixGui()
 {
-	// these will become false if dest or source treebrowsers are to be hidden
-	bool destVisible = TRUE;
-	sourceVisible = TRUE;
+    // these will become false if dest or source treebrowsers are to be hidden
+    bool destVisible = TRUE;
+    sourceVisible = TRUE;
 
-	//Thesw will become false if relevant pushButtons have to be disabled
-	viewLogVisible = TRUE;
-	deleteVisible = TRUE;
-	restoreVisible = TRUE;
-	
-	syncTYPE = FALSE;	// This will become true if it is a sync task
-	
-	// Destination - Do all things needed to display the current snapshot only.
-	QDir CurrentSnapshotDir(CurrentSnapshotDirectory);
-	
-	// set the model of the treebrowsers (source & destination) sort by name & refresh to use new source & dest
-	//destination
-	QDirModel *d_model = new QDirModel;
-	d_model -> setFilter(QDir::AllDirs | QDir::NoDotAndDotDot | QDir::AllEntries | QDir::Hidden);
-	d_model -> setSorting(QDir::Name | QDir::DirsFirst | QDir::IgnoreCase | QDir::LocaleAware);
+    //Thesw will become false if relevant pushButtons have to be disabled
+    viewLogVisible = TRUE;
+    deleteVisible = TRUE;
+    restoreVisible = TRUE;
+    
+    syncTYPE = FALSE;	// This will become true if it is a sync task
+    
+    // Destination - Do all things needed to display the current snapshot only.
+    QDir CurrentSnapshotDir(CurrentSnapshotDirectory);
+    
+    // set the model of the treebrowsers (source & destination) sort by name & refresh to use new source & dest
+    //destination
+    QDirModel *d_model = new QDirModel;
+    d_model -> setFilter(QDir::AllDirs | QDir::NoDotAndDotDot | QDir::AllEntries | QDir::Hidden);
+    d_model -> setSorting(QDir::Name | QDir::DirsFirst | QDir::IgnoreCase | QDir::LocaleAware);
 
-	uiG.treeView_browser -> setModel(d_model);
-	uiG.treeView_browser -> sortByColumn (0, Qt::AscendingOrder);
-	//if (CurrentSnapshotDir.exists())
-	//	uiG.treeView_browser -> setRootIndex(d_model->index(CurrentSnapshotDirectory));
-	//else
-		uiG.treeView_browser -> setRootIndex(d_model->index(dest));
-	
-	//source
-	QDirModel *s_model = new QDirModel;
-	s_model -> setFilter(QDir::AllDirs | QDir::NoDotAndDotDot | QDir::AllEntries | QDir::Hidden);
-	s_model -> setSorting(QDir::Name | QDir::DirsFirst | QDir::IgnoreCase | QDir::LocaleAware);
-	uiG.treeView_source	-> setModel(s_model);
-	uiG.treeView_source 	-> sortByColumn (0, Qt::AscendingOrder);
-	uiG.treeView_source	-> setRootIndex(s_model->index(source));
-	
-	// if a snapshot is not selected 
-	if (CurrentSnapshotString == "")
-	{
-		viewLogVisible = FALSE;
-		deleteVisible = FALSE;
-		restoreVisible = FALSE;
+    uiG.treeView_browser -> setModel(d_model);
+    uiG.treeView_browser -> sortByColumn (0, Qt::AscendingOrder);
+    //if (CurrentSnapshotDir.exists())
+    //	uiG.treeView_browser -> setRootIndex(d_model->index(CurrentSnapshotDirectory));
+    //else
+        uiG.treeView_browser -> setRootIndex(d_model->index(dest));
+    
+    //source
+    QDirModel *s_model = new QDirModel;
+    s_model -> setFilter(QDir::AllDirs | QDir::NoDotAndDotDot | QDir::AllEntries | QDir::Hidden);
+    s_model -> setSorting(QDir::Name | QDir::DirsFirst | QDir::IgnoreCase | QDir::LocaleAware);
+    uiG.treeView_source	-> setModel(s_model);
+    uiG.treeView_source 	-> sortByColumn (0, Qt::AscendingOrder);
+    uiG.treeView_source	-> setRootIndex(s_model->index(source));
+    
+    // if a snapshot is not selected 
+    if (CurrentSnapshotString == "")
+    {
+        viewLogVisible = FALSE;
+        deleteVisible = FALSE;
+        restoreVisible = FALSE;
 
-		if (!Operation[currentOperation] -> GetTypeSync())
-		{
-			destVisible = FALSE;
-			uiG.label_destError -> setText("<font color=magenta>" + tr("Please select a snapshot from the list",
-										   "Information message") + "</font>");
-		}
-	}
-	
-	// if "not available" is selected
-	if (CurrentSnapshotString == "not available")
-		viewLogVisible = FALSE;	//disable the "view log" button
+        if (!Operation[currentOperation] -> GetTypeSync())
+        {
+            destVisible = FALSE;
+            uiG.label_destError -> setText("<font color=magenta>" + tr("Please select a snapshot from the list",
+                                        "Information message") + "</font>");
+        }
+    }
+    
+    // if "not available" is selected
+    if (CurrentSnapshotString == "not available")
+        viewLogVisible = FALSE;	//disable the "view log" button
 
-	// _______________________________ source & destination directories checks ____________________________________________
-	// ___________________________________________________________________________________________________________________
-	// check if source & destination exist or have read/enter permissions or are remote ----------------------------------
-	QFileInfo destFile(dest);
-	QFileInfo sourceFile(source);
-	bool sourceRemote = (Operation[currentOperation] -> GetRemote()) && (Operation[currentOperation] -> GetRemoteSource());
-	bool destRemote = (Operation[currentOperation] -> GetRemote()) && (Operation[currentOperation] -> GetRemoteDestination());
-	
-	if (sourceRemote)		// If remote is used for source
-	{
-		sourceVisible = FALSE;
-		uiG.label_sourceError -> setText("<font color=magenta>" + tr("Display of remote places is not supported",
-										   "Information message") + "</font>");
-	}
-	if (destRemote)			// If remote is used for destination
-	{
-		destVisible = FALSE;
-		
+    // _______________________________ source & destination directories checks ____________________________________________
+    // ___________________________________________________________________________________________________________________
+    // check if source & destination exist or have read/enter permissions or are remote ----------------------------------
+    QFileInfo destFile(dest);
+    QFileInfo sourceFile(source);
+    bool sourceRemote = (Operation[currentOperation] -> GetRemote()) && (Operation[currentOperation] -> GetRemoteSource());
+    bool destRemote = (Operation[currentOperation] -> GetRemote()) && (Operation[currentOperation] -> GetRemoteDestination());
+    
+    if (sourceRemote)		// If remote is used for source
+    {
+        sourceVisible = FALSE;
+        uiG.label_sourceError -> setText("<font color=magenta>" + tr("Display of remote places is not supported",
+                                        "Information message") + "</font>");
+    }
+    if (destRemote)			// If remote is used for destination
+    {
+        destVisible = FALSE;
+        
 // ********************** WARNING - Change this when you figure out a way to display/delete remote places *************************************
-		uiG.label_destError -> setText("<font color=magenta>" + tr("Display of remote places is not supported",
-										   "Information message") + "</font>");
-		deleteVisible = FALSE;		//disable the delete button
-	}
-	// If source does not exist (and is not remote)
-	if ((!sourceFile.exists()) && (!sourceRemote))
-	{
-		sourceVisible = FALSE;
-		uiG.label_sourceError -> setText("<font color=red>" + tr("This directory does not exist") + "</font>");
-	}
-	// If destination does not exist
-	if ((!destFile.exists()) && !(destRemote))
-	{
-		destVisible = FALSE;
-		uiG.label_destError -> setText("<font color=red>" + tr("This directory does not exist",
-										   "Information message") + "</font>");
-		if (CurrentSnapshotString == "not available")
-			deleteVisible = FALSE;	//disable the delete button
-		restoreVisible = FALSE;	//disable the restore button
-	}
-	// If source does not have read/enter permissions
-	if (((!sourceFile.isReadable()) || (!sourceFile.isExecutable())) && (!sourceRemote) && (sourceFile.exists()))
-	{
-		sourceVisible = FALSE;
-		uiG.label_sourceError -> setText("<font color=red>" + tr("I do not have sufficient permissions to read this directory",
-										   "Information message") + "</font>");
-		restoreVisible = FALSE;	//disable the restore button
-	}
-	// If destination does not have read/enter permissions
-	if (((!destFile.isReadable()) || (!destFile.isExecutable())) && (!destRemote) && (destFile.exists()))
-	{
-		destVisible = FALSE;
-		uiG.label_destError -> setText("<font color=red>" + tr("I do not have sufficient permissions to read this directory",
-										   "Information message") + "</font>");
-		deleteVisible = FALSE;		//disable the delete button
-		restoreVisible = FALSE;	//disable the restore button
-	}
+        uiG.label_destError -> setText("<font color=magenta>" + tr("Display of remote places is not supported",
+                                        "Information message") + "</font>");
+        deleteVisible = FALSE;		//disable the delete button
+    }
+    // If source does not exist (and is not remote)
+    if ((!sourceFile.exists()) && (!sourceRemote))
+    {
+        sourceVisible = FALSE;
+        uiG.label_sourceError -> setText("<font color=red>" + tr("This directory does not exist") + "</font>");
+    }
+    // If destination does not exist
+    if ((!destFile.exists()) && !(destRemote))
+    {
+        destVisible = FALSE;
+        uiG.label_destError -> setText("<font color=red>" + tr("This directory does not exist",
+                                        "Information message") + "</font>");
+        if (CurrentSnapshotString == "not available")
+            deleteVisible = FALSE;	//disable the delete button
+        restoreVisible = FALSE;	//disable the restore button
+    }
+    // If source does not have read/enter permissions
+    if (((!sourceFile.isReadable()) || (!sourceFile.isExecutable())) && (!sourceRemote) && (sourceFile.exists()))
+    {
+        sourceVisible = FALSE;
+        uiG.label_sourceError -> setText("<font color=red>" + tr("I do not have sufficient permissions to read this directory",
+                                        "Information message") + "</font>");
+        restoreVisible = FALSE;	//disable the restore button
+    }
+    // If destination does not have read/enter permissions
+    if (((!destFile.isReadable()) || (!destFile.isExecutable())) && (!destRemote) && (destFile.exists()))
+    {
+        destVisible = FALSE;
+        uiG.label_destError -> setText("<font color=red>" + tr("I do not have sufficient permissions to read this directory",
+                                        "Information message") + "</font>");
+        deleteVisible = FALSE;		//disable the delete button
+        restoreVisible = FALSE;	//disable the restore button
+    }
 
-	// _______________________________ source & destination directories checks END____________________________________________
-	// ___________________________________________________________________________________________________________________
-	
-	//if this is a "sync" task
-	if (Operation[currentOperation] -> GetTypeSync())
-	{
-		syncTYPE = TRUE;
-		uiG.label_destination -> setText (tr("sync dir A","full phrase: sync dir a: <DIRECTORY_A>")+ ": ");
-		uiG.label_source -> setText (tr("sync dir B","full phrase: sync dir a: <DIRECTORY_b>")+ ": ");
-		uiG.pushButton_viewLog -> setToolTip(tr("View the logfile of the selected sync task","'view log' pushbutton tooltip"));
-		deleteVisible = FALSE;
-		restoreVisible = FALSE;
-		uiG.checkBox_viewSource -> setVisible(FALSE);
-	}
+    // _______________________________ source & destination directories checks END____________________________________________
+    // ___________________________________________________________________________________________________________________
+    
+    //if this is a "sync" task
+    if (Operation[currentOperation] -> GetTypeSync())
+    {
+        syncTYPE = TRUE;
+        uiG.label_destination -> setText (tr("sync dir A","full phrase: sync dir a: <DIRECTORY_A>")+ ": ");
+        uiG.label_source -> setText (tr("sync dir B","full phrase: sync dir a: <DIRECTORY_b>")+ ": ");
+        uiG.pushButton_viewLog -> setToolTip(tr("View the logfile of the selected sync task","'view log' pushbutton tooltip"));
+        deleteVisible = FALSE;
+        restoreVisible = FALSE;
+        uiG.checkBox_viewSource -> setVisible(FALSE);
+    }
 
-	// hide or show the treebrowsers - textbrowser
-	uiG.textBrowser_snapshot -> setVisible (FALSE);
-	uiG.treeView_browser -> setVisible (destVisible);
-	uiG.label_destError -> setVisible (!destVisible);
-	hideSourceStuff();
-	
-	//enable/disable the pushbuttons
-	uiG.pushButton_viewLog -> setEnabled(viewLogVisible);
-	uiG.pushButton_calculate_diffs -> setEnabled(destVisible);
+    // hide or show the treebrowsers - textbrowser
+    uiG.textBrowser_snapshot -> setVisible (FALSE);
+    uiG.treeView_browser -> setVisible (destVisible);
+    uiG.label_destError -> setVisible (!destVisible);
+    hideSourceStuff();
+    
+    //enable/disable the pushbuttons
+    uiG.pushButton_viewLog -> setEnabled(viewLogVisible);
+    uiG.pushButton_calculate_diffs -> setEnabled(destVisible);
 
-	// Enable the delete button only for the first snapshot in list
-	if (CurrentSnapshotNo > 0)
-		deleteVisible = FALSE;
-	
-	uiG.pushButton_delete -> setEnabled(deleteVisible);
-	uiG.pushButton_restore -> setEnabled(restoreVisible);
+    // Enable the delete button only for the first snapshot in list
+    if (CurrentSnapshotNo > 0)
+        deleteVisible = FALSE;
+    
+    uiG.pushButton_delete -> setEnabled(deleteVisible);
+    uiG.pushButton_restore -> setEnabled(restoreVisible);
 }
 
 // hideSourceStuff  =====================================================================================================================
 // hides/shows the source treebrowser & label
 void manageDialog::hideSourceStuff()
 {
-	// Check the state of the "hide source" checkbox
-	bool boxState = uiG.checkBox_viewSource -> isChecked();
-	
-	if (boxState)
-	{
-		uiG.label_source -> setVisible(FALSE);
-		uiG.lineEdit_source -> setVisible(FALSE);
-		uiG.label_sourceError -> setVisible (FALSE);
-		uiG.treeView_source -> setVisible (FALSE);
-	}
-	else
-	{
-		uiG.label_source -> setVisible(TRUE);
-		uiG.lineEdit_source -> setVisible(TRUE);
-		uiG.treeView_source -> setVisible (sourceVisible);
-		uiG.label_sourceError -> setVisible (!sourceVisible);
-	}
+    // Check the state of the "hide source" checkbox
+    bool boxState = uiG.checkBox_viewSource -> isChecked();
+    
+    if (boxState)
+    {
+        uiG.label_source -> setVisible(FALSE);
+        uiG.lineEdit_source -> setVisible(FALSE);
+        uiG.label_sourceError -> setVisible (FALSE);
+        uiG.treeView_source -> setVisible (FALSE);
+    }
+    else
+    {
+        uiG.label_source -> setVisible(TRUE);
+        uiG.lineEdit_source -> setVisible(TRUE);
+        uiG.treeView_source -> setVisible (sourceVisible);
+        uiG.label_sourceError -> setVisible (!sourceVisible);
+    }
 }
 
 // SnapshotsListSelected  =====================================================================================================================
@@ -342,22 +345,22 @@ void manageDialog::hideSourceStuff()
 // Also sets QString CurrentSnapshotString at current snapshot, format YYYY
 void manageDialog::SnapshotsListSelected()
 {
-	CurrentSnapshotNo = uiG.listWidget_dates -> currentRow();
-	// if a snapshot is not selected 
-	if (CurrentSnapshotNo < 0)
-	{
-		CurrentSnapshotString = "";
-		CurrentSnapshotDirectory = "";
-	}
-	else
-	{
-		CurrentSnapshotString = Operation[currentOperation] -> GetSnapshotsListItem (CurrentSnapshotNo);
-		CurrentSnapshotDirectory = dest + snapDefaultDir + CurrentSnapshotString + SLASH + sourceLast;
-		if (CurrentSnapshotString == "")	// if there is no execution time of the current snapshot
-			CurrentSnapshotString = "not available";
-	}
+    CurrentSnapshotNo = uiG.listWidget_dates -> currentRow();
+    // if a snapshot is not selected 
+    if (CurrentSnapshotNo < 0)
+    {
+        CurrentSnapshotString = "";
+        CurrentSnapshotDirectory = "";
+    }
+    else
+    {
+        CurrentSnapshotString = Operation[currentOperation] -> GetSnapshotsListItem (CurrentSnapshotNo);
+        CurrentSnapshotDirectory = dest + snapDefaultDir + CurrentSnapshotString + SLASH + sourceLast;
+        if (CurrentSnapshotString == "")	// if there is no execution time of the current snapshot
+            CurrentSnapshotString = "not available";
+    }
 
-	fixGui();	// update the gui
+    fixGui();	// update the gui
 }
 
 // calculateDifferences() ========================================================================================

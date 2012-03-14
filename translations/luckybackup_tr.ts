@@ -102,282 +102,282 @@
     <message>
         <location filename="../src/global.cpp" line="+1067"/>
         <source>The task list is empty</source>
-        <translation type="unfinished"/>
+        <translation>Görev listesi boş</translation>
     </message>
     <message>
         <location line="+1"/>
         <location line="+51"/>
         <source>nothing to start</source>
-        <translation type="unfinished"/>
+        <translation>başlatacak bir şey yok</translation>
     </message>
     <message>
         <location line="-12"/>
         <source>You have included both of the following connected tasks:</source>
-        <translation type="unfinished"/>
+        <translation>Aşağıdaki her iki bağlantılı görevi içerdiniz:</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>this is not allowed for obvious reasons</source>
-        <translation type="unfinished"/>
+        <translation>bariz nedenlerden dolayı buna izin verilmez</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Please &lt;b&gt;uncheck appropriate include boxes&lt;/b&gt; before proceeding</source>
-        <translation type="unfinished"/>
+        <translation>Lütfen ilerlemeden önce &lt;b&gt;ilgili içerme kutularını temizleyiniz&lt;/b&gt;</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>You have not included any tasks</source>
-        <translation type="unfinished"/>
+        <translation>Hiç görev içermediniz</translation>
     </message>
     <message>
         <location line="+49"/>
         <source>The following included tasks &lt;b&gt;share the same destination directory&lt;/b&gt; (all together or at groups) and at least one of them will backup the contents of a directory</source>
-        <translation type="unfinished"/>
+        <translation>Aşağıdaki içerilmiş görevler &lt;b&gt;aynı hedef dizini paylaşmakta&lt;/b&gt; (hep birlikte ya da gruplar halinde) ve en azından bir tanesi bir dizin içeriğini yedekleyecek</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>this will lead to one task canceling the other</source>
-        <translation type="unfinished"/>
+        <translation>bu, bir görevin diğerini iptal etmesine yol açacak</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Please uncheck appropriate include boxes or change all task types to other than &apos;&lt;b&gt;Backup dir contents&lt;/b&gt;&apos;  or use &apos;Backup dir contents&apos; together with the &apos;&lt;b&gt;Only include&lt;/b&gt;&apos; option, before proceeding</source>
-        <translation type="unfinished"/>
+        <translation>Lütfen ilerlemeden önce ilgili içerme kutularını temizleyin ya da tüm görev türlerini &apos;&lt;b&gt;Dizin içeriğini yedekle&lt;/b&gt;&apos;den başka birine değiştirin veya &apos;Dizin içeriğini yedekle&apos; ile &apos;&lt;b&gt;Yalnızca içer&lt;/b&gt;&apos; seçeneğini birlikte kullanın</translation>
     </message>
     <message>
         <location line="+593"/>
         <source>pre-task execution of command</source>
         <comment>Full phrase: pre-task execution of command: &lt;COMMAND&gt; starting</comment>
-        <translation type="unfinished"/>
+        <translation>görev öncesi yürütülen komut</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>starting</source>
         <comment>Full phrase: pre-task execution of command: &lt;COMMAND&gt; starting</comment>
-        <translation type="unfinished"/>
+        <translation>başlıyor</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Command re-run due to failure</source>
         <comment>This means that a specific command is run for once more because it failed the first time</comment>
-        <translation type="unfinished"/>
+        <translation>Başarısızlıktan dolayı komut tekrar çalıştırılıyor</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>post-task execution of command</source>
         <comment>Full phrase: post-task execution of command: &lt;COMMAND&gt; starting</comment>
-        <translation type="unfinished"/>
+        <translation>görev sonrası yürütülen komut</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>starting</source>
         <comment>Full phrase: post-task execution of command: &lt;COMMAND&gt; starting</comment>
-        <translation type="unfinished"/>
+        <translation>başlıyor</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>execution of task</source>
         <comment>Full phrase: execution of task: &lt;TASKNAME&gt; starting</comment>
-        <translation type="unfinished"/>
+        <translation>görev yürütülüyor</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>starting</source>
         <comment>Full phrase: execution of task: &lt;TASKNAME&gt; starting</comment>
-        <translation type="unfinished"/>
+        <translation>başlıyor</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Source</source>
         <comment>Full phrase: source: &lt;SOURCE_NAME</comment>
-        <translation type="unfinished"/>
+        <translation>Kaynak</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Destination</source>
         <comment>Full phrase: Destination: &lt;DEST_NAME</comment>
-        <translation type="unfinished"/>
+        <translation>Hedef</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>execution of 1st part of task</source>
         <comment>Full phrase: execution of 1st part of task: &lt;TASKNAME&gt; starting</comment>
-        <translation type="unfinished"/>
+        <translation>görevin 1. bölümünün çalıştırılması</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>starting</source>
         <comment>Full phrase: execution of 1st part of task: &lt;TASKNAME&gt; starting</comment>
-        <translation type="unfinished"/>
+        <translation>başlıyor</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Syncing</source>
         <comment>Full phrase: Syncing &lt;DIR-A&gt; to &lt;DIR-B&gt;</comment>
-        <translation type="unfinished"/>
+        <translation>Eşzamanlanıyor</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>to</source>
         <comment>Full phrase: Syncing &lt;DIR-A&gt; to &lt;DIR-B&gt;</comment>
-        <translation type="unfinished"/>
+        <translation>şuna</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>execution of 2nd part of task</source>
         <comment>Full phrase: execution of 2nd part of task: &lt;TASKNAME&gt; starting</comment>
-        <translation type="unfinished"/>
+        <translation>görevin 2. bölümünün çalıştırılması</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>starting</source>
         <comment>Full phrase: execution of 2nd part of task: &lt;TASKNAME&gt; starting</comment>
-        <translation type="unfinished"/>
+        <translation>başlıyor</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Syncing</source>
         <comment>Full phrase: Syncing &lt;DIR-B&gt; to &lt;DIR-A&gt;</comment>
-        <translation type="unfinished"/>
+        <translation>Eşzamanlanıyor</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>to</source>
         <comment>Full phrase: Syncing &lt;DIR-B&gt; to &lt;DIR-A&gt;</comment>
-        <translation type="unfinished"/>
+        <translation>şuna</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>pre-task execution of command</source>
         <comment>Full phrase: pre-task execution of COMMAND: &lt;COMMANDNAME&gt; finished</comment>
-        <translation type="unfinished"/>
+        <translation>görev öncesi yürütülen komut</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>finished</source>
         <comment>Full phrase: pre-task execution of COMMAND: &lt;COMMANDNAME&gt; finished</comment>
-        <translation type="unfinished"/>
+        <translation>bitti</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>post-task execution of command</source>
         <comment>Full phrase: post-task execution of COMMAND: &lt;COMMANDNAME&gt; finished</comment>
-        <translation type="unfinished"/>
+        <translation>görev sonrası yürütülen komut</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>finished</source>
         <comment>Full phrase: post-task execution of COMMAND: &lt;COMMANDNAME&gt; finished</comment>
-        <translation type="unfinished"/>
+        <translation>bitti</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>execution of 1st part of task</source>
         <comment>Full phrase: execution of 1st part of task: &lt;TASKNAME&gt; finished</comment>
-        <translation type="unfinished"/>
+        <translation>görevin 1. bölümünün çalıştırılması</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>finished</source>
         <comment>Full phrase: execution of 1st part of task: &lt;TASKNAME&gt; finished</comment>
-        <translation type="unfinished"/>
+        <translation>bitti</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>execution of task</source>
         <comment>Full phrase: execution of task: &lt;TASKNAME&gt; finished</comment>
-        <translation type="unfinished"/>
+        <translation>görevin çalıştırılması</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>finished</source>
         <comment>Full phrase: execution of task: &lt;TASKNAME&gt; finished</comment>
-        <translation type="unfinished"/>
+        <translation>bitti</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>execution of task</source>
         <comment>Full phrase: execution of task: &lt;TASKNAME&gt; finished because of pre/post task command execution error</comment>
-        <translation type="unfinished"/>
+        <translation>görevin çalıştırılması</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>finished because of pre/post task command execution error</source>
         <comment>Full phrase: execution of task: &lt;TASKNAME&gt; finished because of pre/post task command execution error</comment>
-        <translation type="unfinished"/>
+        <translation>görev öncesi/sonrası komut yürütmede hata nedeniyle bitti</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>The process reported an error</source>
-        <translation type="unfinished"/>
+        <translation>Süreç hata rapor etti</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>Backing-up profile, logfiles and snapshot data</source>
-        <translation type="unfinished"/>
+        <translation>Profil, kayıt dosyaları ve şipşak veri yedekleniyor</translation>
     </message>
     <message>
         <location line="+93"/>
         <source>Could not open the logfile</source>
-        <translation type="unfinished"/>
+        <translation>Kayıt dosyası açılamıyor</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>The logfile does not exist</source>
-        <translation type="unfinished"/>
+        <translation>Kayıt dosyası mevcut değil</translation>
     </message>
     <message>
         <location line="+63"/>
         <source>The specified command is probably not installed</source>
-        <translation type="unfinished"/>
+        <translation>Belirtilen komut muhtemelen kurulmamış</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>The logfile could not be created</source>
-        <translation type="unfinished"/>
+        <translation>Kayıt dosyası oluşturulamadı</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>command:   </source>
-        <translation type="unfinished"/>
+        <translation>komut:</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>exit code: </source>
-        <translation type="unfinished"/>
+        <translation>çıkış kodu:</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>output:    </source>
-        <translation type="unfinished"/>
+        <translation>çıktı:</translation>
     </message>
     <message>
         <location line="+40"/>
         <source>Last execution time</source>
-        <translation type="unfinished"/>
+        <translation>Son yürütme zamanı</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>not available</source>
-        <translation type="unfinished"/>
+        <translation>mevcut değil</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>no errors</source>
-        <translation type="unfinished"/>
+        <translation>hata yok</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>errors found</source>
-        <translation type="unfinished"/>
+        <translation>hatalar saptandı</translation>
     </message>
     <message>
         <location line="+10"/>
         <location line="+44"/>
         <location line="+99"/>
         <source>status</source>
-        <translation type="unfinished"/>
+        <translation>durum</translation>
     </message>
     <message>
         <location line="-143"/>
@@ -1200,117 +1200,117 @@ This means &quot;use the default value for this field&quot;</extracomment>
     <message>
         <location line="+7"/>
         <source>%c logfile.tar.gz</source>
-        <translation type="unfinished"/>
+        <translation>%c logfile.tar.gz</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>%d date</source>
-        <translation type="unfinished"/>
+        <translation>%d tarih</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>%i time</source>
-        <translation type="unfinished"/>
+        <translation>%i saat</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>%p profile name</source>
-        <translation type="unfinished"/>
+        <translation>%p profil adı</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>%e No of errors</source>
-        <translation type="unfinished"/>
+        <translation>%e hata sayısı</translation>
     </message>
     <message>
         <location line="+25"/>
         <source>%t to:</source>
-        <translation type="unfinished"/>
+        <translation>%t şuna:</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Enter the recipient of the message</source>
-        <translation type="unfinished"/>
+        <translation>Mesajın alıcısını giriniz</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>%s subject:</source>
-        <translation type="unfinished"/>
+        <translation>%s konu:</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Enter the subject of the message</source>
-        <translation type="unfinished"/>
+        <translation>Mesajın konusunu giriniz</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>%v smtp server:</source>
-        <translation type="unfinished"/>
+        <translation>%v smtp sunucusu:</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Enter the smtp server used to send the message</source>
-        <translation type="unfinished"/>
+        <translation>Mesajı göndermek için kullanılan smtp sunucusunu giriniz</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>%b body:</source>
-        <translation type="unfinished"/>
+        <translation>%b metin:</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>Enter the body of the message</source>
-        <translation type="unfinished"/>
+        <translation>Mesajın metnini giriniz</translation>
     </message>
     <message>
         <location line="+56"/>
         <source>Send an email right now to test the provided arguments</source>
-        <translation type="unfinished"/>
+        <translation>Sunulan argümanları denemek için şu anda bir eposta gönder</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Test</source>
-        <translation type="unfinished"/>
+        <translation>Test</translation>
     </message>
     <message>
         <location line="+24"/>
         <source>Accept changes and close dialog</source>
-        <translation type="unfinished"/>
+        <translation>Değişiklikleri kabul et ve iletişim kutusunu kapat</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Okay</source>
-        <translation type="unfinished"/>
+        <translation>Tamam</translation>
     </message>
     <message>
         <location line="+27"/>
         <source>Close dialog</source>
-        <translation type="unfinished"/>
+        <translation>İletişim kutusunu kapat</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>İptal et</translation>
     </message>
     <message>
         <location line="+13"/>
         <source>Specify the conditions to send an email</source>
-        <translation type="unfinished"/>
+        <translation>Bir eposta gönderme koşullarını belirleyin</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Conditions</source>
-        <translation type="unfinished"/>
+        <translation>Koşullar</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>Only send when error(s) occured during a run</source>
-        <translation type="unfinished"/>
+        <translation>Yalnızca yürütme sırasında hata(lar) oluştuğunda gönder</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Error(s) occured</source>
-        <translation type="unfinished"/>
+        <translation>Hata(lar) oluştu</translation>
     </message>
     <message>
         <location line="+10"/>

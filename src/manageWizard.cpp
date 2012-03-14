@@ -22,7 +22,7 @@ Class to launch a wizard for restore, delete a backup
 project version    : Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 29 Feb 2012
+last modified      : 05 Mar 2012
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -52,10 +52,8 @@ manageWizard::manageWizard (QString type, QString SOURCE, QString DEST,  int sna
     if (Operation[currentOperation] -> GetTypeDirContents())
         sourceLast = "";
     else
-    {
-        sourceLast = source;
-        sourceLast = sourceLast.right(sourceLast.size()-sourceLast.lastIndexOf(SLASH,-2)-1);	//this is the lowest dir of source
-    }
+        sourceLast = calculateLastPath(source) + SLASH; // This is the lowest dir of the source
+        
     dest = DEST;		// the full path of the destination
     time = Operation[currentOperation] -> GetSnapshotsListItem(currentSnap);
     if (time == "")

@@ -17,6 +17,7 @@ Version 0.4.7 :
 * Fixed issue: email fetaure sent the oldest logfile instead of the newest one
 * Fixed issue: email feature reported "process timeout"
 * Fixed various issues when spaces are used at a remote path
+* Fixed issue: Creation of the snapshot directory at a remote destination when the max No. of snapshots was not reached
 * Fixed issue: wrong snapshot directory name when remote source was used
 * Updated manual
 

@@ -4,7 +4,7 @@
     <message>
         <location filename="../src/calcDiffThread.cpp" line="+61"/>
         <source>Scanning destination</source>
-        <translation type="unfinished"/>
+        <translation>Scan Verzweichnis</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -161,7 +161,7 @@
         <location line="+4"/>
         <source>Command re-run due to failure</source>
         <comment>This means that a specific command is run for once more because it failed the first time</comment>
-        <translation type="unfinished"/>
+        <translation>Kommando erneut ausführen wegen einem Fehler</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -315,7 +315,7 @@
     <message>
         <location line="+11"/>
         <source>Backing-up profile, logfiles and snapshot data</source>
-        <translation type="unfinished"/>
+        <translation>Sichere Profile, Logdateien und Schnappschuss Daten</translation>
     </message>
     <message>
         <location line="+93"/>
@@ -550,7 +550,7 @@
     <message>
         <location line="+2"/>
         <source>Valuable advisor</source>
-        <translation type="unfinished"/>
+        <translation>Wertvoller Beirat</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -585,12 +585,12 @@
     <message>
         <location line="+5"/>
         <source>The indifex team</source>
-        <translation type="unfinished"/>
+        <translation>Das indifex Team</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>for developing the wonderful transifex localization platform and providing it for free</source>
-        <translation type="unfinished"/>
+        <translation>für die Entwicklung der wundervollen Lokalisierungs-Plattform und kostenfreie Bereitstellung </translation>
     </message>
     <message>
         <location line="+2"/>
@@ -625,12 +625,12 @@
     <message>
         <location line="+2"/>
         <source>Bruce Marriner</source>
-        <translation type="unfinished"/>
+        <translation>Bruce Marriner</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>port to MS Windows</source>
-        <translation type="unfinished"/>
+        <translation>Portierung nach MS Windows</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -645,7 +645,7 @@
     <message>
         <location line="+2"/>
         <source>Elbert Pol</source>
-        <translation type="unfinished"/>
+        <translation>Elbert Pol</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -665,12 +665,12 @@
     <message>
         <location line="+2"/>
         <source>Dimitris Stasinopoulos</source>
-        <translation type="unfinished"/>
+        <translation>Dimitris Stasinopoulos</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Puppy pet &amp; sfs maintainer</source>
-        <translation type="unfinished"/>
+        <translation>Puppy pet &amp; sfs maintainer</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -685,22 +685,22 @@
     <message>
         <location line="+2"/>
         <source>Michael J Gruber</source>
-        <translation type="unfinished"/>
+        <translation>Michael J Gruber</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Jason E. Hale</source>
-        <translation type="unfinished"/>
+        <translation>Jason E. Hale</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Free BSD package maintainer</source>
-        <translation type="unfinished"/>
+        <translation>Free BSD Paket Verwalter</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>ex Fedora package maintainer</source>
-        <translation type="unfinished"/>
+        <translation>ex Fedora Paket Verwalter</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -774,7 +774,7 @@
     <message>
         <location line="-7"/>
         <source>Aurelien Merckel</source>
-        <translation type="unfinished"/>
+        <translation>Aurelien Merckel</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -829,12 +829,12 @@
     <message>
         <location line="+14"/>
         <source>Roger Calvo</source>
-        <translation type="unfinished"/>
+        <translation>Roger Calvo</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Tomas Vadina</source>
-        <translation type="unfinished"/>
+        <translation>Tomas Vadina</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -869,7 +869,7 @@
     <message>
         <location line="+63"/>
         <source>French gui translator</source>
-        <translation type="unfinished"/>
+        <translation>Übersetzer Französische GUI </translation>
     </message>
     <message>
         <location line="+29"/>
@@ -894,22 +894,22 @@
     <message>
         <location line="+3"/>
         <source>Catalan gui translator</source>
-        <translation type="unfinished"/>
+        <translation>Übersetzer Katalanische GUI</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Slovak gui translator</source>
-        <translation type="unfinished"/>
+        <translation>Übersetzer Slovakische GUI</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Rivo Zangov</source>
-        <translation type="unfinished"/>
+        <translation>Rivo Zangov</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Estonian gui translator</source>
-        <translation type="unfinished"/>
+        <translation>Übersetzer Estländische Version</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -924,7 +924,7 @@
     <message>
         <location line="+2"/>
         <source>Aphofis Scott</source>
-        <translation type="unfinished"/>
+        <translation>Aphofis Scott</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -934,12 +934,12 @@
     <message>
         <location line="+2"/>
         <source>Yuri Vidal</source>
-        <translation type="unfinished"/>
+        <translation>Yuri Vidal</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>backupwhenidle python script developer</source>
-        <translation type="unfinished"/>
+        <translation>backupwhenidle python script Entwickler</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -1192,7 +1192,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
     <message>
         <location line="+7"/>
         <source>Enter the sender of the message</source>
-        <translation type="unfinished"/>
+        <translation>Gebe den Sender der Nachricht ein</translation>
     </message>
     <message>
         <location line="+19"/>
@@ -1202,7 +1202,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
     <message>
         <location line="+7"/>
         <source>%c logfile.tar.gz</source>
-        <translation type="unfinished"/>
+        <translation>%c logfile.tar.gz</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1232,7 +1232,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
     <message>
         <location line="+7"/>
         <source>Enter the recipient of the message</source>
-        <translation type="unfinished"/>
+        <translation>Gebe den Empfänger der Nachricht ein</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1242,7 +1242,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
     <message>
         <location line="+7"/>
         <source>Enter the subject of the message</source>
-        <translation type="unfinished"/>
+        <translation>Gebe das Thema der Nachricht ein</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1252,7 +1252,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
     <message>
         <location line="+7"/>
         <source>Enter the smtp server used to send the message</source>
-        <translation type="unfinished"/>
+        <translation>Gebe den SMTP Server zum Senden der Nachricht ein</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1262,7 +1262,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
     <message>
         <location line="+10"/>
         <source>Enter the body of the message</source>
-        <translation type="unfinished"/>
+        <translation>Gebe den Text der Nachricht ein</translation>
     </message>
     <message>
         <location line="+56"/>
@@ -2243,56 +2243,56 @@ p, li { white-space: pre-wrap; }
         <location line="-208"/>
         <source>Select export directory</source>
         <comment>this is a dialog title for selecting a directory to export a profile to</comment>
-        <translation type="unfinished"/>
+        <translation>Wähle Export-Verzeichnis</translation>
     </message>
     <message>
         <location line="+14"/>
         <source>Failed to export profile</source>
         <comment>full phrase: 'Failed to export profile &lt;PROFILENAME&gt; to &lt;DIRNAME&gt;'</comment>
-        <translation type="unfinished"/>
+        <translation>Profil-Export fehlgeschlagen </translation>
     </message>
     <message>
         <location line="+2"/>
         <source>to</source>
         <comment>full phrase: 'Failed to export profile &lt;PROFILENAME&gt; to &lt;DIRNAME&gt;'</comment>
-        <translation type="unfinished"/>
+        <translation>nach</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Profile</source>
         <comment>full phrase: 'Profile &lt;PROFILENAME&gt; exported successfully to &lt;DIRNAME&gt;'</comment>
-        <translation type="unfinished"/>
+        <translation>Profil</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>exported successfully to</source>
         <comment>full phrase: 'Profile &lt;PROFILENAME&gt; exported successfully to &lt;DIRNAME&gt;'</comment>
-        <translation type="unfinished"/>
+        <translation>erfolgreich exportiert nach</translation>
     </message>
     <message>
         <location line="+31"/>
         <source>The directory you have selected does not contain valid profile data</source>
-        <translation type="unfinished"/>
+        <translation>Das von Ihnen gewählte Verzeichnis enthält keine gültigen Profil-Daten</translation>
     </message>
     <message>
         <location line="+53"/>
         <source>Errors occured during snapshots and logfiles transfer</source>
-        <translation type="unfinished"/>
+        <translation>Fehler aufgetreten beim Schnappschuss und Logdaten übertragen</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Errors occured during snapshots transfer</source>
-        <translation type="unfinished"/>
+        <translation>Fehler aufgetreten beim Schnappschuss übertragen</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Errors occured during logfiles transfer</source>
-        <translation type="unfinished"/>
+        <translation>Fehler aufgetreten beim Logdaten übertragen</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Errors occured during the profile file transfer</source>
-        <translation type="unfinished"/>
+        <translation>Fehler aufgetreten beim Profil-daten übertragen</translation>
     </message>
     <message>
         <location line="+123"/>
@@ -2390,7 +2390,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="-396"/>
         <source>CheckBox</source>
-        <translation type="unfinished"/>
+        <translation>CheckBox</translation>
     </message>
     <message>
         <location line="+430"/>
@@ -2399,7 +2399,11 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Bitstream Vera Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"/>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Bitstream Vera Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location line="+176"/>
@@ -2408,7 +2412,11 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Bitstream Vera Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"/>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Bitstream Vera Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location line="+27"/>
@@ -2703,23 +2711,23 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <location line="+4"/>
         <source>Set paths</source>
         <comment>This is a top menu action</comment>
-        <translation type="unfinished"/>
+        <translation>Setze Pfad</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Set paths for rsync and ssh commands</source>
         <comment>This is a top menu action tooltip</comment>
-        <translation type="unfinished"/>
+        <translation>Setze Pfad für rsync und ssh Kommandos</translation>
     </message>
     <message>
         <location line="+17"/>
         <source>quiet mode</source>
-        <translation type="unfinished"/>
+        <translation>Quiet Modus</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Only show errors and important messages during window update</source>
-        <translation type="unfinished"/>
+        <translation>Zeige nur Fehler und wichtige Nachrichten während der Windows-Aktualisierung</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -2790,14 +2798,14 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     <message>
         <location line="+52"/>
         <source>The task list is empty</source>
-        <translation type="unfinished"/>
+        <translation>Die Aufgaben-Liste ist leer</translation>
     </message>
     <message>
         <location line="+0"/>
         <location line="+95"/>
         <source>Use the &quot;add&quot; button on the right to get started</source>
         <comment>Please keep the add word inside quotes</comment>
-        <translation type="unfinished"/>
+        <translation>Verwende den &quot;Hinzu&quot; Knopf rechts um zu starten</translation>
     </message>
     <message>
         <location line="-69"/>
@@ -3458,12 +3466,15 @@ p, li { white-space: pre-wrap; }
 rather than using user and group names
 and mapping them at both ends.
 (--numeric-ids)</source>
-        <translation type="unfinished"/>
+        <translation>Mit dieser Option wird rsync Numerische Gruppen und Benutzer-IDs anstelle von Benutzer.- und Gruppennamen übertragen
+und mappe die auf beiden Seiten.
+(--numeric-ids)
+</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Use numeric group and user IDs</source>
-        <translation type="unfinished"/>
+        <translation>Benutzer Numerische Gruppe und Benutzer-IDs</translation>
     </message>
     <message utf8="true">
         <location line="+22"/>
@@ -3474,23 +3485,29 @@ preserving users via the --owner option
 preserving all groups (not just the current user’s groups) via the --groups option
 and copying devices via the --devices option.
 (--super)</source>
-        <translation type="unfinished"/>
+        <translation>Dies sagt, das die empfangene Seite  super-user Aktivitäten versucht
+selbst wenn der empfangene rsync nicht als super-user läuft.
+Diese Aktivitäten beinhalten:
+Beibehaltung des users via der --owner Option
+Beibehaltung aller Gruppen (nicht nur dei Gruppe des derzeitigen Benutzers) via der --groups Option
+und kopiere Geräte via der --devices Option.
+ (--super)</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>Attempt super-user activities</source>
-        <translation type="unfinished"/>
+        <translation>Versuche super-user Aktivitäten</translation>
     </message>
     <message>
         <location line="+531"/>
         <location line="+10"/>
         <source>Repeat any command that fails, x times</source>
-        <translation type="unfinished"/>
+        <translation>Wiederhole jedes Kommando welches fehlschlug, x mal</translation>
     </message>
     <message>
         <location line="-7"/>
         <source>Repeat on fail:</source>
-        <translation type="unfinished"/>
+        <translation>Wiederhole im Fehlerfall:</translation>
     </message>
     <message>
         <location line="+359"/>
@@ -3689,7 +3706,7 @@ Endend / - nur Verzeichnis passt, nicht reguläre Dateien, symlinks oder Geräte
     <message>
         <location line="+321"/>
         <source>Exclude all user&apos;s .gvfs folders (**/.gvfs/)</source>
-        <translation type="unfinished"/>
+        <translation>Alle user&apos;s .gvfs folders (**/.gvfs/) ausschliessen</translation>
     </message>
     <message>
         <location line="+77"/>
@@ -3770,7 +3787,9 @@ Endend / - nur Verzeichnis passt, nicht reguläre Dateien, symlinks oder Geräte
         <source>Include ONLY this list of patterns. Nothing more.
 Please refer to the manual for better understanding of include rules.
 This will disable the exclude feature.</source>
-        <translation type="unfinished"/>
+        <translation>Schliesse NUR die Liste der Pattern ein. Nicht mehr.
+Bitte für das bessere Verständnis der Beinhalten-Regeln das Manual einsehen.
+Dies wird die Ausnahmen-Funktion abschalten.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -3944,12 +3963,12 @@ Wenn Sie keine Idee haben was das bedeutet, lassen diese unberührt !!</translat
     <message>
         <location line="+13"/>
         <source>rdiff-backup</source>
-        <translation type="unfinished"/>
+        <translation>rdiff-backup</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>rsnapshot</source>
-        <translation type="unfinished"/>
+        <translation>rsnapshot</translation>
     </message>
     <message>
         <location line="+80"/>
@@ -5153,7 +5172,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+71"/>
         <source>:delay</source>
-        <translation type="unfinished"/>
+        <translation>:Verzögerung</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -5607,72 +5626,72 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/winDialog.ui" line="+17"/>
         <source>luckyBackup</source>
-        <translation type="unfinished"/>
+        <translation>luckyBackup</translation>
     </message>
     <message>
         <location line="+28"/>
         <source>declaration of paths</source>
-        <translation type="unfinished"/>
+        <translation>Deklaration der Pfade</translation>
     </message>
     <message>
         <location line="+20"/>
         <source>rsync:</source>
-        <translation type="unfinished"/>
+        <translation>rsync:</translation>
     </message>
     <message>
         <location line="+19"/>
         <source>Enter the full path of the rsync command</source>
-        <translation type="unfinished"/>
+        <translation>Gebe den volle Pfad zum rsync Kommando an</translation>
     </message>
     <message>
         <location line="+10"/>
         <location line="+64"/>
         <source>browse locally</source>
-        <translation type="unfinished"/>
+        <translation>browse lokal</translation>
     </message>
     <message>
         <location line="-47"/>
         <location line="+64"/>
         <source>Use default value</source>
-        <translation type="unfinished"/>
+        <translation>Benutze den Standard-Wert</translation>
     </message>
     <message>
         <location line="-46"/>
         <source>ssh</source>
-        <translation type="unfinished"/>
+        <translation>ssh</translation>
     </message>
     <message>
         <location line="+19"/>
         <source>Enter the full path of the ssh command</source>
-        <translation type="unfinished"/>
+        <translation>Gebe den volle Pfad zum ssh Kommando an</translation>
     </message>
     <message>
         <location line="+58"/>
         <source>Okay</source>
-        <translation type="unfinished"/>
+        <translation>Okay</translation>
     </message>
     <message>
         <location line="+27"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <location filename="../src/winDialog.cpp" line="+102"/>
         <source>Select rsync command</source>
         <comment>file selection dialog title</comment>
-        <translation type="unfinished"/>
+        <translation>Wähle rsync Kommando</translation>
     </message>
     <message>
         <location line="+1"/>
         <location line="+6"/>
         <source>Executable Files (*.exe)</source>
-        <translation type="unfinished"/>
+        <translation>Ausführbare Dateien (*.exe)</translation>
     </message>
     <message>
         <location line="-1"/>
         <source>Select ssh command</source>
         <comment>file selection dialog title</comment>
-        <translation type="unfinished"/>
+        <translation>Wähle ssh Kommando</translation>
     </message>
 </context>
 </TS>

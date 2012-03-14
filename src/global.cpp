@@ -22,7 +22,7 @@ file containing all variables & functions used globaly
 project version    : Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 03 Mar 2012
+last modified      : 05 Mar 2012
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -1692,10 +1692,7 @@ QStringList AppendArguments(operation *operationToAppend)
         if (!snapSource.endsWith(SLASH))	// this means task is of type "backup dir by name"
         {
             QString sourceLast = snapSource;
-            if ((sourceLast.contains(":")) && (!notXnixRunning) )	// this is normal for a remote directory (not for OS/2 or win: eg c:\)
-                sourceLast = sourceLast.right(snapSource.size()-sourceLast.lastIndexOf(":")-1);	//this is the remote source dir without the remote pc
-            if (snapSource.contains(SLASH))	// this is normal for a directory unless it is remote
-                sourceLast = sourceLast.right(sourceLast.size()-sourceLast.lastIndexOf(SLASH)-1);	//this is the lowest dir of source
+            sourceLast = calculateLastPath(sourceLast); // This is the lowest dir of the source
             snapSource.append(SLASH);
             
             snapDest.append(sourceLast + SLASH);
@@ -1731,6 +1728,23 @@ QStringList AppendArguments(operation *operationToAppend)
     return arguments;
 }
 
+// calculateLastPath =====================================================================================================================================
+// Calculates the last part of a path eg path=user@host:destination/path/here/ -> returns "here"
+QString calculateLastPath(QString origPath)
+{
+    QString returnPATH = origPath;
+    
+    if ( returnPATH.contains(":") )   // this is a remote directory eg user@host:directory/path
+        returnPATH = returnPATH.right(returnPATH.size()-returnPATH.lastIndexOf(":")-1); //this is the remote returnPATH dir without the remote pc ([user@]host:)
+            
+    if (returnPATH.endsWith(SLASH))
+        returnPATH.chop(1);
+    
+    if (returnPATH.contains(SLASH)) // this is normal for a directory unless it is remote
+        returnPATH = returnPATH.right(returnPATH.size()-returnPATH.lastIndexOf(SLASH)-1);   //this is the lowest dir of returnPATH
+                    
+    return returnPATH;
+}
 // fixWinPathForRsync =====================================================================================================================================
 // Fixes a windows path for rsync use
 QString fixWinPathForRsync(QString fixTHIS, bool remotePATH)
@@ -1755,6 +1769,7 @@ QString fixWinPathForRsync(QString fixTHIS, bool remotePATH)
     
     return returnPATH;
 }
+
 // logFileUpdate =====================================================================================================================================
 // Updates the current logfile with some string
 QString logFileUpdate(QString appendTYPE, QString appendTHIS, int currentPrePost)

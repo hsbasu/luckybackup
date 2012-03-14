@@ -585,12 +585,12 @@
     <message>
         <location line="+5"/>
         <source>The indifex team</source>
-        <translation type="unfinished"/>
+        <translation>Lidem z indifexu</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>for developing the wonderful transifex localization platform and providing it for free</source>
-        <translation type="unfinished"/>
+        <translation> za vývoj skvělého systému na správu překladů a jeho poskytování zdarma</translation>
     </message>
     <message>
         <location line="+2"/>

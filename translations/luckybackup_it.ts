@@ -4,7 +4,7 @@
     <message>
         <location filename="../src/calcDiffThread.cpp" line="+61"/>
         <source>Scanning destination</source>
-        <translation type="unfinished"/>
+        <translation>Scansione della destinazione</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -12,32 +12,32 @@
         <location line="+51"/>
         <location line="+3"/>
         <source>Please wait</source>
-        <translation type="unfinished"/>
+        <translation>Attendere prego</translation>
     </message>
     <message>
         <location line="-54"/>
         <source>Scanning snapshot</source>
-        <translation type="unfinished"/>
+        <translation>Scansione dello snapshot</translation>
     </message>
     <message>
         <location line="+51"/>
         <source>Scanning source</source>
-        <translation type="unfinished"/>
+        <translation>Scansione della sorgente</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Calculating differences</source>
-        <translation type="unfinished"/>
+        <translation>Calcolo delle differenze in corso</translation>
     </message>
     <message>
         <location line="+114"/>
         <source>Sync dir A &amp; B differences</source>
-        <translation type="unfinished"/>
+        <translation>Sincronizza le differenze tra le directory A e B</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Snapshot and source differences</source>
-        <translation type="unfinished"/>
+        <translation>Differenze tra sorgente e lo snapshot</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -52,49 +52,49 @@
     <message>
         <location line="+1"/>
         <source>The snapshot data will replace the source data during RESTORE</source>
-        <translation type="unfinished"/>
+        <translation>I dati dello snapshot rimpiazzeranno quelli della sorgente durante il RECUPERO</translation>
     </message>
     <message>
         <location line="+4"/>
         <location line="+15"/>
         <location line="+16"/>
         <source>Data amount is huge. Displaying only first entries</source>
-        <translation type="unfinished"/>
+        <translation>La quantità di dati è eccessiva. Vengono mostrati solo i primi termini</translation>
     </message>
     <message>
         <location line="-24"/>
         <source>Sync dir B data that do NOT exist at sync dir A</source>
-        <translation type="unfinished"/>
+        <translation>Sincronizzo i dati della directory B che NON esistono nella directory A</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Snapshot data that do NOT exist at the source</source>
-        <translation type="unfinished"/>
+        <translation>Dati dello snapshot che NON esitono nella sorgente</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>These will be transfered over at the source during RESTORE</source>
-        <translation type="unfinished"/>
+        <translation>Questi dati saranno trasferiti verso la sorgente durante il RIPRISTINO</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>Sync dir A data that do NOT exist at sync dir B</source>
-        <translation type="unfinished"/>
+        <translation>Sincronizzo i dati della directory A che NON esistono nella directory B</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Source data that do NOT exist at the snapshot</source>
-        <translation type="unfinished"/>
+        <translation>Dati della sorgente che NON esitono nello snapshot</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>These will be deleted during RESTORE only if you enable the option:</source>
-        <translation type="unfinished"/>
+        <translation>Questi dati saranno eliminato durante il RIPRISTINO solo se attivi l&apos;opzione:</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>delete existing source data that do not exist at the backup</source>
-        <translation type="unfinished"/>
+        <translation>cancella i dati della sorgente che non esistono nel backup</translation>
     </message>
 </context>
 <context>
@@ -102,406 +102,406 @@
     <message>
         <location filename="../src/global.cpp" line="+1067"/>
         <source>The task list is empty</source>
-        <translation type="unfinished"/>
+        <translation>La lista delle operazioni è vuota</translation>
     </message>
     <message>
         <location line="+1"/>
         <location line="+51"/>
         <source>nothing to start</source>
-        <translation type="unfinished"/>
+        <translation>niente da avviare</translation>
     </message>
     <message>
         <location line="-12"/>
         <source>You have included both of the following connected tasks:</source>
-        <translation type="unfinished"/>
+        <translation>Hai incluso entrambi i seguenti task connessi</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>this is not allowed for obvious reasons</source>
-        <translation type="unfinished"/>
+        <translation>questo non è permesso per ovvie ragioni</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Please &lt;b&gt;uncheck appropriate include boxes&lt;/b&gt; before proceeding</source>
-        <translation type="unfinished"/>
+        <translation>&lt;b&gt;Deseleziona i box inappropriati&lt;/b&gt; prima di procedere</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>You have not included any tasks</source>
-        <translation type="unfinished"/>
+        <translation>Non hai incluso nessun task</translation>
     </message>
     <message>
         <location line="+49"/>
         <source>The following included tasks &lt;b&gt;share the same destination directory&lt;/b&gt; (all together or at groups) and at least one of them will backup the contents of a directory</source>
-        <translation type="unfinished"/>
+        <translation>I seguenti task &lt;b&gt;hanno la stessa cartella di destinazione&lt;/b&gt; e solo uno di essi potrà essere eseguito correttamente</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>this will lead to one task canceling the other</source>
-        <translation type="unfinished"/>
+        <translation>questa azione comporterà che un task ne cancelli un altro</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Please uncheck appropriate include boxes or change all task types to other than &apos;&lt;b&gt;Backup dir contents&lt;/b&gt;&apos;  or use &apos;Backup dir contents&apos; together with the &apos;&lt;b&gt;Only include&lt;/b&gt;&apos; option, before proceeding</source>
-        <translation type="unfinished"/>
+        <translation>Deselezionare i task appropriati o cambiare il tipo di tutti i task in uno diverso da &apos;&lt;b&gt;Backup contenuto cartella&lt;/b&gt;&apos; o usare &quot;Backup contenuto cartella&quot; con l&apos;opzione &lt;b&gt;Includi solamente&lt;/b&gt;, prima di procedere</translation>
     </message>
     <message>
         <location line="+593"/>
         <source>pre-task execution of command</source>
         <comment>Full phrase: pre-task execution of command: &lt;COMMAND&gt; starting</comment>
-        <translation type="unfinished"/>
+        <translation>esecuzione del comando pre-task</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>starting</source>
         <comment>Full phrase: pre-task execution of command: &lt;COMMAND&gt; starting</comment>
-        <translation type="unfinished"/>
+        <translation>avvio in corso</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Command re-run due to failure</source>
         <comment>This means that a specific command is run for once more because it failed the first time</comment>
-        <translation type="unfinished"/>
+        <translation>Riesecuzione del comando a causa di un errore</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>post-task execution of command</source>
         <comment>Full phrase: post-task execution of command: &lt;COMMAND&gt; starting</comment>
-        <translation type="unfinished"/>
+        <translation>esecuzione del comando post-task</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>starting</source>
         <comment>Full phrase: post-task execution of command: &lt;COMMAND&gt; starting</comment>
-        <translation type="unfinished"/>
+        <translation>avvio in corso</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>execution of task</source>
         <comment>Full phrase: execution of task: &lt;TASKNAME&gt; starting</comment>
-        <translation type="unfinished"/>
+        <translation>esecuzione del task</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>starting</source>
         <comment>Full phrase: execution of task: &lt;TASKNAME&gt; starting</comment>
-        <translation type="unfinished"/>
+        <translation>avvio in corso</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Source</source>
         <comment>Full phrase: source: &lt;SOURCE_NAME</comment>
-        <translation type="unfinished"/>
+        <translation>Sorgente</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Destination</source>
         <comment>Full phrase: Destination: &lt;DEST_NAME</comment>
-        <translation type="unfinished"/>
+        <translation>Destinazione</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>execution of 1st part of task</source>
         <comment>Full phrase: execution of 1st part of task: &lt;TASKNAME&gt; starting</comment>
-        <translation type="unfinished"/>
+        <translation>esecuzione della prima parte del task</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>starting</source>
         <comment>Full phrase: execution of 1st part of task: &lt;TASKNAME&gt; starting</comment>
-        <translation type="unfinished"/>
+        <translation>avvio in corso</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Syncing</source>
         <comment>Full phrase: Syncing &lt;DIR-A&gt; to &lt;DIR-B&gt;</comment>
-        <translation type="unfinished"/>
+        <translation>Sincronizzazione in corso</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>to</source>
         <comment>Full phrase: Syncing &lt;DIR-A&gt; to &lt;DIR-B&gt;</comment>
-        <translation type="unfinished"/>
+        <translation>a</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>execution of 2nd part of task</source>
         <comment>Full phrase: execution of 2nd part of task: &lt;TASKNAME&gt; starting</comment>
-        <translation type="unfinished"/>
+        <translation>esecuzione della seconda parte del task</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>starting</source>
         <comment>Full phrase: execution of 2nd part of task: &lt;TASKNAME&gt; starting</comment>
-        <translation type="unfinished"/>
+        <translation>avvio in corso</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Syncing</source>
         <comment>Full phrase: Syncing &lt;DIR-B&gt; to &lt;DIR-A&gt;</comment>
-        <translation type="unfinished"/>
+        <translation>Sincronizzazione in corso</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>to</source>
         <comment>Full phrase: Syncing &lt;DIR-B&gt; to &lt;DIR-A&gt;</comment>
-        <translation type="unfinished"/>
+        <translation>a</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>pre-task execution of command</source>
         <comment>Full phrase: pre-task execution of COMMAND: &lt;COMMANDNAME&gt; finished</comment>
-        <translation type="unfinished"/>
+        <translation>esecuzione del comando pre-task</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>finished</source>
         <comment>Full phrase: pre-task execution of COMMAND: &lt;COMMANDNAME&gt; finished</comment>
-        <translation type="unfinished"/>
+        <translation>completato</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>post-task execution of command</source>
         <comment>Full phrase: post-task execution of COMMAND: &lt;COMMANDNAME&gt; finished</comment>
-        <translation type="unfinished"/>
+        <translation>esecuzione del comando post-task</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>finished</source>
         <comment>Full phrase: post-task execution of COMMAND: &lt;COMMANDNAME&gt; finished</comment>
-        <translation type="unfinished"/>
+        <translation>completato</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>execution of 1st part of task</source>
         <comment>Full phrase: execution of 1st part of task: &lt;TASKNAME&gt; finished</comment>
-        <translation type="unfinished"/>
+        <translation>esecuzione della prima parte del task</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>finished</source>
         <comment>Full phrase: execution of 1st part of task: &lt;TASKNAME&gt; finished</comment>
-        <translation type="unfinished"/>
+        <translation>completato</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>execution of task</source>
         <comment>Full phrase: execution of task: &lt;TASKNAME&gt; finished</comment>
-        <translation type="unfinished"/>
+        <translation>esecuzione delle operazioni</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>finished</source>
         <comment>Full phrase: execution of task: &lt;TASKNAME&gt; finished</comment>
-        <translation type="unfinished"/>
+        <translation>completato</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>execution of task</source>
         <comment>Full phrase: execution of task: &lt;TASKNAME&gt; finished because of pre/post task command execution error</comment>
-        <translation type="unfinished"/>
+        <translation>esecuzione delle operazioni</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>finished because of pre/post task command execution error</source>
         <comment>Full phrase: execution of task: &lt;TASKNAME&gt; finished because of pre/post task command execution error</comment>
-        <translation type="unfinished"/>
+        <translation>finito a causa dell&apos;errore nell&apos;esecuzione del comando pre/post-task</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>The process reported an error</source>
-        <translation type="unfinished"/>
+        <translation>Il processo ha riportato un errore</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>Backing-up profile, logfiles and snapshot data</source>
-        <translation type="unfinished"/>
+        <translation>Backup del profilo, dei file di log e dello snapshot in corso</translation>
     </message>
     <message>
         <location line="+93"/>
         <source>Could not open the logfile</source>
-        <translation type="unfinished"/>
+        <translation>Impossibile aprire il file di log</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>The logfile does not exist</source>
-        <translation type="unfinished"/>
+        <translation>Il file di log non esiste</translation>
     </message>
     <message>
         <location line="+63"/>
         <source>The specified command is probably not installed</source>
-        <translation type="unfinished"/>
+        <translation>Il comando specificato probabilmente non è installato</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>The logfile could not be created</source>
-        <translation type="unfinished"/>
+        <translation>Impossibile creare il file di log</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>command:   </source>
-        <translation type="unfinished"/>
+        <translation>comando:</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>exit code: </source>
-        <translation type="unfinished"/>
+        <translation>codice di uscita:</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>output:    </source>
-        <translation type="unfinished"/>
+        <translation>output:</translation>
     </message>
     <message>
         <location line="+40"/>
         <source>Last execution time</source>
-        <translation type="unfinished"/>
+        <translation>Orario dell&apos;ultima esecuzione</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>not available</source>
-        <translation type="unfinished"/>
+        <translation>non disponibile</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>no errors</source>
-        <translation type="unfinished"/>
+        <translation>nessun errore</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>errors found</source>
-        <translation type="unfinished"/>
+        <translation>trovati degli errori</translation>
     </message>
     <message>
         <location line="+10"/>
         <location line="+44"/>
         <location line="+99"/>
         <source>status</source>
-        <translation type="unfinished"/>
+        <translation>stato</translation>
     </message>
     <message>
         <location line="-143"/>
         <source>OK</source>
-        <translation type="unfinished"/>
+        <translation>OK</translation>
     </message>
     <message>
         <location line="+3"/>
         <location line="+19"/>
         <source>Sync directory</source>
-        <translation type="unfinished"/>
+        <translation>Directory della sincronizzazione</translation>
     </message>
     <message>
         <location line="-14"/>
         <location line="+91"/>
         <source>Source directory</source>
-        <translation type="unfinished"/>
+        <translation>Directory della sorgente</translation>
     </message>
     <message>
         <location line="-82"/>
         <location line="+19"/>
         <source>Using remote, check is skipped</source>
-        <translation type="unfinished"/>
+        <translation>In modalità remota, il check viene saltato</translation>
     </message>
     <message>
         <location line="-9"/>
         <location line="+87"/>
         <location line="+59"/>
         <source>Destination directory</source>
-        <translation type="unfinished"/>
+        <translation>Directory di destinazione</translation>
     </message>
     <message>
         <location line="-129"/>
         <source>WARNING</source>
-        <translation type="unfinished"/>
+        <translation>ATTENZIONE</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>I do not have the permission to read/enter sync directory A</source>
-        <translation type="unfinished"/>
+        <translation>Non ho i permessi necessari per entrare nella cartella A</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>I do not have the permission to read/enter the source directory</source>
-        <translation type="unfinished"/>
+        <translation>Non ho i permessi necessari per entrare nella cartella sorgente</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>I do not have the permission to read/enter sync directory B</source>
-        <translation type="unfinished"/>
+        <translation>Non ho i permessi necessari per entrare nella cartella B</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>I do not have the permission to read/enter the destination directory</source>
-        <translation type="unfinished"/>
+        <translation>Non ho i permessi necessari per entrare nella cartella di destinazione</translation>
     </message>
     <message>
         <location line="+9"/>
         <location line="+67"/>
         <source>Directory</source>
-        <translation type="unfinished"/>
+        <translation>Directory</translation>
     </message>
     <message>
         <location line="-65"/>
         <location line="+67"/>
         <source>and/or</source>
-        <translation type="unfinished"/>
+        <translation>e/o</translation>
     </message>
     <message>
         <location line="-64"/>
         <source>does not exist</source>
-        <translation type="unfinished"/>
+        <translation>non esiste</translation>
     </message>
     <message>
         <location line="+2"/>
         <location line="+30"/>
         <source>is not mounted</source>
-        <translation type="unfinished"/>
+        <translation>non è montato</translation>
     </message>
     <message>
         <location line="-15"/>
         <location line="+74"/>
         <source>is empty or does not exist</source>
-        <translation type="unfinished"/>
+        <translation>è vuoto o non esiste</translation>
     </message>
     <message>
         <location line="-45"/>
         <source>I will &lt;font color=red&gt;&lt;b&gt;NOT SKIP&lt;/b&gt;&lt;/font&gt; this task because you have enabled the &quot;by-pass WARNING&quot; option</source>
-        <translation type="unfinished"/>
+        <translation>&lt;font color=red&gt;&lt;b&gt;NON SALTERÒ&lt;/b&gt;&lt;/font&gt; questo task perchè hai abilitato l&apos;opzione &quot;by-pass WARNING&quot;</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>This task will be &lt;font color=red&gt;&lt;b&gt;skipped&lt;/b&gt;&lt;/font&gt;</source>
-        <translation type="unfinished"/>
+        <translation>Questo task verrà &lt;font color=red&gt;&lt;b&gt;saltato&lt;/b&gt;&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>CRITICAL</source>
-        <translation type="unfinished"/>
+        <translation>CRITICO</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>is empty</source>
-        <translation type="unfinished"/>
+        <translation>è vuoto</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>I will &lt;font color=orange&gt;&lt;b&gt;not skip&lt;/b&gt;&lt;/font&gt; this task. Synchronizing is going to be performed anyway</source>
-        <translation type="unfinished"/>
+        <translation>&lt;font color=orange&gt;&lt;b&gt;non salterò&lt;/b&gt;&lt;/font&gt; questo task. La sincronizzazione sta per essere effettutata comunque</translation>
     </message>
     <message>
         <location line="+25"/>
         <source>This task will &lt;font color=orange&gt;&lt;b&gt;not be skipped</source>
-        <translation type="unfinished"/>
+        <translation>Questo task &amp;lt;font color=orange&amp;gt;&amp;lt;b&amp;gt;non sarà saltato&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>The Destination Directory will be created if it doesn&apos;t exist and filled with new backup data</source>
-        <translation type="unfinished"/>
+        <translation>La cartella destinazione sarà creata se non esiste e riempita con i nuovi dati di backup</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>Task description</source>
-        <translation type="unfinished"/>
+        <translation>Descrizione dell&apos;operazione</translation>
     </message>
 </context>
 <context>
@@ -520,7 +520,7 @@
         <location line="+3"/>
         <location line="+22"/>
         <source>Loukas Avgeriou</source>
-        <translation type="unfinished"/>
+        <translation>Loukas Avgeriou</translation>
     </message>
     <message>
         <location line="-11"/>
@@ -540,7 +540,7 @@
     <message>
         <location line="+9"/>
         <source>Tom Tryfonidis</source>
-        <translation type="unfinished"/>
+        <translation>Tom Tryfonidis</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -550,12 +550,12 @@
     <message>
         <location line="+2"/>
         <source>Valuable advisor</source>
-        <translation type="unfinished"/>
+        <translation>Consulente di fiducia</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Yiorgos Kapellakis</source>
-        <translation type="unfinished"/>
+        <translation>Yiorgos Kapellakis</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -570,17 +570,17 @@
     <message>
         <location line="+1"/>
         <source>Debian package maintainer</source>
-        <translation type="unfinished"/>
+        <translation>Debian package maintainer</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Nikolas Poniros</source>
-        <translation type="unfinished"/>
+        <translation>Nikolas Poniros</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Greek gui translator and valuable tester</source>
-        <translation>Traduttore gredo e tester</translation>
+        <translation>Traduttore greco e tester</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -595,7 +595,7 @@
     <message>
         <location line="+2"/>
         <source>Stephan Kleine</source>
-        <translation type="unfinished"/>
+        <translation>Stephan Kleine</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -605,7 +605,7 @@
     <message>
         <location line="+2"/>
         <source>Marcos Del Puerto Garcia</source>
-        <translation type="unfinished"/>
+        <translation>Marcos Del Puerto Garcia</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -615,7 +615,7 @@
     <message>
         <location line="+2"/>
         <source>Savvas Radevic</source>
-        <translation type="unfinished"/>
+        <translation>Savvas Radevic</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -625,12 +625,12 @@
     <message>
         <location line="+2"/>
         <source>Bruce Marriner</source>
-        <translation type="unfinished"/>
+        <translation>Bruce Marriner</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>port to MS Windows</source>
-        <translation type="unfinished"/>
+        <translation>esporta per MS Windows</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -640,17 +640,17 @@
     <message>
         <location line="+1"/>
         <source>port to Mac OS X</source>
-        <translation type="unfinished"/>
+        <translation>esporta per Mac OS X</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Elbert Pol</source>
-        <translation type="unfinished"/>
+        <translation>Elbert Pol</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>port to OS/2</source>
-        <translation type="unfinished"/>
+        <translation>esporta per OS/2</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -660,17 +660,17 @@
     <message>
         <location line="+1"/>
         <source>Gentoo ebuild maintainer</source>
-        <translation type="unfinished"/>
+        <translation>Gentoo ebuild maintainer</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Dimitris Stasinopoulos</source>
-        <translation type="unfinished"/>
+        <translation>Dimitris Stasinopoulos</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Puppy pet &amp; sfs maintainer</source>
-        <translation type="unfinished"/>
+        <translation>Puppy pet &amp; sfs maintainer</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -680,32 +680,32 @@
     <message>
         <location line="+1"/>
         <source>Mandriva package maintainer (official contrib repo)</source>
-        <translation type="unfinished"/>
+        <translation>Mandriva package maintainer (official contrib repo)</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Michael J Gruber</source>
-        <translation type="unfinished"/>
+        <translation>Michael J Gruber</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Jason E. Hale</source>
-        <translation type="unfinished"/>
+        <translation>Jason E. Hale</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Free BSD package maintainer</source>
-        <translation type="unfinished"/>
+        <translation>Free BSD package maintainer</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>ex Fedora package maintainer</source>
-        <translation type="unfinished"/>
+        <translation>ex Fedora package maintainer</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Pavel Fric</source>
-        <translation type="unfinished"/>
+        <translation>Pavel Fric</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -721,7 +721,7 @@
         <location line="-57"/>
         <location line="+58"/>
         <source>Greek manual translator</source>
-        <translation type="unfinished"/>
+        <translation>Traduttore del manuale greco</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -732,12 +732,12 @@
     <message>
         <location line="-1"/>
         <source>Wilfried Schobel</source>
-        <translation type="unfinished"/>
+        <translation>Wilfried Schobel</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Sergio Gameiro</source>
-        <translation type="unfinished"/>
+        <translation>Sergio Gameiro</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -748,12 +748,12 @@
     <message>
         <location line="-1"/>
         <source>Marcio Moraes</source>
-        <translation type="unfinished"/>
+        <translation>Marcio Moraes</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Julien Cynober</source>
-        <translation type="unfinished"/>
+        <translation>Julien Cynober</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -769,17 +769,17 @@
         <location line="-2"/>
         <location line="+3"/>
         <source>Italian gui translator</source>
-        <translation type="unfinished"/>
+        <translation>Traduttore della GUI italiana</translation>
     </message>
     <message>
         <location line="-7"/>
         <source>Aurelien Merckel</source>
-        <translation type="unfinished"/>
+        <translation>Aurelien Merckel</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>Denis Skorski</source>
-        <translation type="unfinished"/>
+        <translation>Denis Skorski</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -789,7 +789,7 @@
     <message>
         <location line="+2"/>
         <source>Kenny Verstraete</source>
-        <translation type="unfinished"/>
+        <translation>Kenny Verstraete</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -804,7 +804,7 @@
     <message>
         <location line="+1"/>
         <source>Bosnian gui translator &amp; mandriva package maintainer</source>
-        <translation type="unfinished"/>
+        <translation>Mandriva package maintainer &amp; traduttore della gui Bosniaca</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -814,7 +814,7 @@
     <message>
         <location line="+1"/>
         <source>Arabic gui translator</source>
-        <translation type="unfinished"/>
+        <translation>Traduttore della GUI araba</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -824,22 +824,22 @@
     <message>
         <location line="+1"/>
         <source>Romanian gui translator</source>
-        <translation type="unfinished"/>
+        <translation>Traduttore della GUI rumena</translation>
     </message>
     <message>
         <location line="+14"/>
         <source>Roger Calvo</source>
-        <translation type="unfinished"/>
+        <translation>Roger Calvo</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Tomas Vadina</source>
-        <translation type="unfinished"/>
+        <translation>Tomas Vadina</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Javi Romero</source>
-        <translation type="unfinished"/>
+        <translation>Javi Romero</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -849,7 +849,7 @@
     <message>
         <location line="+2"/>
         <source>fri13</source>
-        <translation type="unfinished"/>
+        <translation>fri13</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -859,7 +859,7 @@
     <message>
         <location line="-112"/>
         <source>Dimitris Kalamaras</source>
-        <translation type="unfinished"/>
+        <translation>Dimitris Kalamaras</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -869,77 +869,77 @@
     <message>
         <location line="+63"/>
         <source>French gui translator</source>
-        <translation type="unfinished"/>
+        <translation>Traduttore della GUI francese</translation>
     </message>
     <message>
         <location line="+29"/>
         <source>Marvin Gomez</source>
-        <translation type="unfinished"/>
+        <translation>Marvin Gomez</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Spanish gui translator</source>
-        <translation type="unfinished"/>
+        <translation>Traduttore della GUI spagnola</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Fredrik Holmgren</source>
-        <translation type="unfinished"/>
+        <translation>Fredrik Holmgren</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Swedish gui translator</source>
-        <translation type="unfinished"/>
+        <translation>Traduttore della GUI svedese</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Catalan gui translator</source>
-        <translation type="unfinished"/>
+        <translation>Traduttore della GUI catalana</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Slovak gui translator</source>
-        <translation type="unfinished"/>
+        <translation>Traduttore della GUI slovacca</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Rivo Zangov</source>
-        <translation type="unfinished"/>
+        <translation>Rivo Zangov</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Estonian gui translator</source>
-        <translation type="unfinished"/>
+        <translation>Traduttore della GUI estone</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>Michele Dall&apos;Arno</source>
-        <translation type="unfinished"/>
+        <translation>Michele Dall&apos;Arno</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>special guest bug killer ;)</source>
-        <translation type="unfinished"/>
+        <translation>ospite speciale bug killer ;)</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Aphofis Scott</source>
-        <translation type="unfinished"/>
+        <translation>Aphofis Scott</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>valuable tester &amp; brainstorming specialist</source>
-        <translation type="unfinished"/>
+        <translation>tester di fiducia &amp; specialista di brainstorming</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Yuri Vidal</source>
-        <translation type="unfinished"/>
+        <translation>Yuri Vidal</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>backupwhenidle python script developer</source>
-        <translation type="unfinished"/>
+        <translation>sviluppatore del script python &quot;backupwhenidle&quot;</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -974,52 +974,52 @@
     <message>
         <location line="+11"/>
         <source>no money</source>
-        <translation type="unfinished"/>
+        <translation>niente soldi</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>If you like this app and would like to donate something to me personally, all you have to do is:</source>
-        <translation type="unfinished"/>
+        <translation>Se ti piace questa app e vorresti donarmi qualcosa personalmente, tutto quello che devi fare è:</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Give a thumbs up at:</source>
-        <translation type="unfinished"/>
+        <translation>Dai un pollice in su a:</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Vote good &amp; become a fan at:</source>
-        <translation type="unfinished"/>
+        <translation>Vota bene &amp; diventa un fan:</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>This is my reward :)</source>
-        <translation type="unfinished"/>
+        <translation>Questa è la mia ricompensa</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>money</source>
-        <translation type="unfinished"/>
+        <translation>soldi</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>I personally never had and never will accept money for this project.</source>
-        <translation type="unfinished"/>
+        <translation>Io personalmente non ho mai accettato soldi per questo progetto e non lo farò mai.</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Nevertheless, I decided to use luckyBackup to support people that really need financial help.</source>
-        <translation type="unfinished"/>
+        <translation>Nonostante tutto, ho deciso di usare luckyBackup per supportare gente che ha davvero bisogno di un aiuto economico.</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>So, please consider it seriously to donate money that will eventually be used for a good cause.</source>
-        <translation type="unfinished"/>
+        <translation>Quindi, per favore considera seriamente di donare soldi che saranno eventualmente usadi per una giusta causa.</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>donation link</source>
-        <translation type="unfinished"/>
+        <translation>link per la donazione</translation>
     </message>
     <message>
         <location filename="../ui/about.ui" line="+14"/>
@@ -1056,7 +1056,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="-12"/>
         <source>&amp;Support</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Supporto</translation>
     </message>
     <message>
         <location line="-72"/>
@@ -1077,63 +1077,63 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/about.cpp" line="-211"/>
         <source>luckyBackup is distributed under the terms of the &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU General Public License&lt;/a&gt;</source>
         <comment>Please leave the tags &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt; &amp; &lt;/a&gt; intact and surrounding the GNU General Public License !!</comment>
-        <translation type="unfinished"/>
+        <translation>luckyBackup viene distribuito sotto i termini della &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU General Public License&lt;/a&gt;</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>It is &lt;b&gt;free software&lt;/b&gt;: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License.</source>
         <comment>Please leave tags eg &lt;b&gt;, &lt;/b&gt; intact and surrounding the words they are suppossed to !!</comment>
-        <translation type="unfinished"/>
+        <translation>È &lt;b&gt;software gratuito&lt;/b&gt;: puoi ridistribuirlo e/o modificarlo sotto i termini GNU-GPL come pubblicato dalla Free Software Foundation, versione 3 della Licenza.</translation>
     </message>
     <message>
         <location line="+75"/>
         <source>Thomas Janssen</source>
-        <translation type="unfinished"/>
+        <translation>Thomas Janssen</translation>
     </message>
     <message>
         <location line="-5"/>
         <source>Fedora package maintainer (official repo)</source>
-        <translation type="unfinished"/>
+        <translation>Fedora package maintainer (official repo)</translation>
     </message>
     <message>
         <location line="+14"/>
         <source>Karsten Jaschultowski</source>
-        <translation type="unfinished"/>
+        <translation>Karsten Jaschultowski</translation>
     </message>
     <message>
         <location line="+18"/>
         <source>Francesco Braile</source>
-        <translation type="unfinished"/>
+        <translation>Francesco Braile</translation>
     </message>
     <message>
         <location line="+21"/>
         <source>Andrej Znidarsic</source>
-        <translation type="unfinished"/>
+        <translation>Andrej Znidarsic</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Slovenian gui translator</source>
-        <translation type="unfinished"/>
+        <translation>Traduttore della GUI slovena</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>E. Hakan Duran</source>
-        <translation type="unfinished"/>
+        <translation>E. Hakan Duran</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Turkish gui translator</source>
-        <translation type="unfinished"/>
+        <translation>Traduttore della GUI turca</translation>
     </message>
     <message>
         <location line="+23"/>
         <source>Tito Poquito</source>
-        <translation type="unfinished"/>
+        <translation>Tito Poquito</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>slackware package maintainer (SlackBuilds Repository)</source>
-        <translation type="unfinished"/>
+        <translation>slackware package maintainer (SlackBuilds Repository)</translation>
     </message>
     <message>
         <location line="+23"/>
@@ -1146,24 +1146,26 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/emailDialog.ui" line="+17"/>
         <source>luckyBackup - email</source>
-        <translation type="unfinished"/>
+        <translation>luckyBackup - email</translation>
     </message>
     <message>
         <location line="+35"/>
         <source>Email a report after profile execution</source>
-        <translation type="unfinished"/>
+        <translation>Invia il report via email dopo l&apos;esecuzione del profilo</translation>
     </message>
     <message>
         <location line="+17"/>
         <source>command:</source>
-        <translation type="unfinished"/>
+        <translation>comando:</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Enter the full command with arguments to run
 eg
 sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</source>
-        <translation type="unfinished"/>
+        <translation>Inserisci il comando completo con gli argomenti per avviare
+eg
+sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -1175,167 +1177,167 @@ sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</source>
 This means &quot;use the default value for this field&quot;
 ----------
 This means &quot;use the default value for this field&quot;</extracomment>
-        <translation type="unfinished"/>
+        <translation>Usa quello di default</translation>
     </message>
     <message>
         <location line="-205"/>
         <source>Arguments</source>
-        <translation type="unfinished"/>
+        <translation>Argomenti</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>%f from:</source>
-        <translation type="unfinished"/>
+        <translation>%f da:</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Enter the sender of the message</source>
-        <translation type="unfinished"/>
+        <translation>Inserisci il mittente del messaggio</translation>
     </message>
     <message>
         <location line="+19"/>
         <source>%l logfile</source>
-        <translation type="unfinished"/>
+        <translation>%l logfile</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>%c logfile.tar.gz</source>
-        <translation type="unfinished"/>
+        <translation>%c logfile.tar.gz</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>%d date</source>
-        <translation type="unfinished"/>
+        <translation>%d data</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>%i time</source>
-        <translation type="unfinished"/>
+        <translation>%i orario</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>%p profile name</source>
-        <translation type="unfinished"/>
+        <translation>%p nome del profilo</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>%e No of errors</source>
-        <translation type="unfinished"/>
+        <translation>%e numero degli errori</translation>
     </message>
     <message>
         <location line="+25"/>
         <source>%t to:</source>
-        <translation type="unfinished"/>
+        <translation>%t a:</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Enter the recipient of the message</source>
-        <translation type="unfinished"/>
+        <translation>Inserisci il destinatario del messaggio</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>%s subject:</source>
-        <translation type="unfinished"/>
+        <translation>%s oggetto:</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Enter the subject of the message</source>
-        <translation type="unfinished"/>
+        <translation>Inserisci l&apos;oggetto del messaggio</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>%v smtp server:</source>
-        <translation type="unfinished"/>
+        <translation>%v smtp server:</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Enter the smtp server used to send the message</source>
-        <translation type="unfinished"/>
+        <translation>Inserisci il server smtp usato per inviare il messaggio</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>%b body:</source>
-        <translation type="unfinished"/>
+        <translation>%b corpo:</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>Enter the body of the message</source>
-        <translation type="unfinished"/>
+        <translation>Inserisci il corpo del messaggio</translation>
     </message>
     <message>
         <location line="+56"/>
         <source>Send an email right now to test the provided arguments</source>
-        <translation type="unfinished"/>
+        <translation>Invia un&apos;email adesso per verificare gli argomenti forniti</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Test</source>
-        <translation type="unfinished"/>
+        <translation>Test</translation>
     </message>
     <message>
         <location line="+24"/>
         <source>Accept changes and close dialog</source>
-        <translation type="unfinished"/>
+        <translation>Accetta i cambiamenti e chiudi la finestra di dialogo</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Okay</source>
-        <translation type="unfinished"/>
+        <translation>OK</translation>
     </message>
     <message>
         <location line="+27"/>
         <source>Close dialog</source>
-        <translation type="unfinished"/>
+        <translation>Chiudi la finestra di dialogo</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>Cancella</translation>
     </message>
     <message>
         <location line="+13"/>
         <source>Specify the conditions to send an email</source>
-        <translation type="unfinished"/>
+        <translation>Specifica le condizioni per mandare un&apos;email</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Conditions</source>
-        <translation type="unfinished"/>
+        <translation>Condizioni</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>Only send when error(s) occured during a run</source>
-        <translation type="unfinished"/>
+        <translation>Invia solo se ci sono errori durante l&apos;esecuzione</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Error(s) occured</source>
-        <translation type="unfinished"/>
+        <translation>Ci sono degli errori</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>Only send when profile is scheduled to run</source>
-        <translation type="unfinished"/>
+        <translation>Invia solo se è stata programmata l&apos;esecuzione del profilo</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Profile is scheduled</source>
-        <translation type="unfinished"/>
+        <translation>Il profilo è programmato</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>Never send an email</source>
-        <translation type="unfinished"/>
+        <translation>Non inviare mai un&apos;email</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Never</source>
-        <translation type="unfinished"/>
+        <translation>Mai</translation>
     </message>
     <message>
         <location filename="../src/emailDialog.cpp" line="+124"/>
         <source>The command field is empty</source>
-        <translation type="unfinished"/>
+        <translation>La casella del comando è vuota</translation>
     </message>
 </context>
 <context>
@@ -1361,7 +1363,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
     <message>
         <location filename="../ui/logDialog.ui" line="+14"/>
         <source>luckyBackup - tasks execution progress</source>
-        <translation>luckyBackup - esecuzione dei task</translation>
+        <translation>luckyBackup - esecuzione delle operazioni</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1370,17 +1372,21 @@ This means &quot;use the default value for this field&quot;</extracomment>
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Greek Arial'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"/>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Greek Arial&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location line="+17"/>
         <source>previous error</source>
-        <translation type="unfinished"/>
+        <translation>errore precedente</translation>
     </message>
     <message>
         <location line="+14"/>
         <source>next error</source>
-        <translation type="unfinished"/>
+        <translation>prossimo errore</translation>
     </message>
     <message>
         <location line="+27"/>
@@ -1392,12 +1398,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/logDialog.cpp" line="-35"/>
         <source>loading logfile...</source>
-        <translation type="unfinished"/>
+        <translation>carico il file di log</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>wait</source>
-        <translation type="unfinished"/>
+        <translation>aspetta</translation>
     </message>
 </context>
 <context>
@@ -1406,40 +1412,40 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/executenow.cpp" line="+135"/>
         <source>commands output</source>
         <comment>output window label</comment>
-        <translation type="unfinished"/>
+        <translation>output dei comandi</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>rsync and pre/post task commands output is displayed here</source>
         <comment>tooltip</comment>
-        <translation type="unfinished"/>
+        <translation>l&apos;output di rsync e i comandi di pre/post task vengono mostrati qui</translation>
     </message>
     <message>
         <location line="+58"/>
         <location filename="../src/functions.cpp" line="+219"/>
         <source>Task list</source>
         <comment>task list label</comment>
-        <translation>Lista dei task</translation>
+        <translation>Lista delle operazioni</translation>
     </message>
     <message>
         <location line="+1"/>
         <location filename="../src/functions.cpp" line="+2"/>
         <source>List of all the available tasks</source>
         <comment>task list tooltip - line1</comment>
-        <translation>Lista di tutti i task disponibili</translation>
+        <translation>Lista di tutte le operazioni disponibili</translation>
     </message>
     <message>
         <location line="+1"/>
         <location filename="../src/functions.cpp" line="+1"/>
         <source>Use the &apos;include checkboxes&apos; to include or not a selected task</source>
         <comment>task list tooltip - line2</comment>
-        <translation>Usa i checkbox per includere o meno un task selezionato</translation>
+        <translation>Usa i checkbox per includere o meno un task</translation>
     </message>
     <message>
         <location line="+35"/>
         <source>Execution of profile</source>
         <comment>full phrase: 'Execution of profile &lt;PROFILENAME&gt; finished'</comment>
-        <translation type="unfinished"/>
+        <translation>esecuzione del profilo</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1460,56 +1466,56 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="-792"/>
         <source>Could not update last execution time of tasks</source>
-        <translation type="unfinished"/>
+        <translation>Non è possibile aggiornare la data dell&apos;ultima esecuzione del task</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Last execution time of tasks updated</source>
-        <translation type="unfinished"/>
+        <translation>Data dell&apos;ultima esecuzione del task aggiornata</translation>
     </message>
     <message>
         <location line="+33"/>
         <source>&amp;Abort</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Stop</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;Minimize to tray</source>
         <comment>tray menu action</comment>
-        <translation type="unfinished"/>
+        <translation>&amp;Minimizza</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;Restore</source>
         <comment>tray menu action</comment>
-        <translation type="unfinished"/>
+        <translation>&amp;Ripristina</translation>
     </message>
     <message>
         <location line="-195"/>
         <source>execution of profile:</source>
         <comment>tray message - execution of profile: &lt;PROFILENAME&gt; in progress...</comment>
-        <translation type="unfinished"/>
+        <translation>esecuzione del profilo:</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>in progress...</source>
         <comment>tray message - execution of profile: &lt;PROFILENAME&gt; in progress...</comment>
-        <translation type="unfinished"/>
+        <translation>in corso d&apos;opera...</translation>
     </message>
     <message>
         <location line="+373"/>
         <source>Removed all older snapshots data</source>
-        <translation type="unfinished"/>
+        <translation>Rimossi tutti i dati dei vecchi snapshot</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>failed to remove all older snapshots data</source>
-        <translation type="unfinished"/>
+        <translation>Rimozione di tutti i dati dei vecchi snapshot fallita</translation>
     </message>
     <message>
         <location line="+405"/>
         <source>Unknown error</source>
-        <translation type="unfinished"/>
+        <translation>errore sconosciuto</translation>
     </message>
     <message>
         <location line="+106"/>
@@ -1535,7 +1541,7 @@ p, li { white-space: pre-wrap; }
         <location line="+6"/>
         <location line="+21"/>
         <source>Now performing task</source>
-        <translation>Task in corso</translation>
+        <translation>Operazione in corso</translation>
     </message>
     <message>
         <location line="-14"/>
@@ -1556,12 +1562,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+182"/>
         <source>trying to send an email</source>
-        <translation type="unfinished"/>
+        <translation>cerco di inviare un&apos;email</translation>
     </message>
     <message>
         <location line="+31"/>
         <source>The system will shutdown in 1 minute</source>
-        <translation type="unfinished"/>
+        <translation>Il sistema si spegnerà entro un minuto</translation>
     </message>
     <message>
         <location line="-221"/>
@@ -1595,7 +1601,7 @@ p, li { white-space: pre-wrap; }
         <location line="+8"/>
         <location line="+51"/>
         <source>logfile(s) have been created under directory: </source>
-        <translation type="unfinished"/>
+        <translation>il file di log è stato creato nella cartella: </translation>
     </message>
     <message>
         <location filename="../src/functions.cpp" line="+21"/>
@@ -1608,7 +1614,7 @@ p, li { white-space: pre-wrap; }
         <location line="+48"/>
         <location line="+4"/>
         <source>execution of profile:</source>
-        <translation type="unfinished"/>
+        <translation>esecuzione del profilo:</translation>
     </message>
     <message>
         <location line="-56"/>
@@ -1687,19 +1693,19 @@ p, li { white-space: pre-wrap; }
         <location line="+1"/>
         <source>jump to next error</source>
         <comment>button tooltip</comment>
-        <translation type="unfinished"/>
+        <translation>salta al prossimo errore</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>jump to previous error</source>
         <comment>button tooltip</comment>
-        <translation type="unfinished"/>
+        <translation>salta all&apos;errore precedente</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Task</source>
         <comment>task groupbox (add, remove, modify buttons) label</comment>
-        <translation type="unfinished"/>
+        <translation>Task</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1776,17 +1782,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+6"/>
         <source>minimize to tray</source>
-        <translation type="unfinished"/>
+        <translation>minimizza nella barra</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>minimizes the window to the tray area</source>
-        <translation type="unfinished"/>
+        <translation>minimizza la finestra nella barra</translation>
     </message>
     <message>
         <location line="+43"/>
         <source>F1</source>
-        <translation type="unfinished"/>
+        <translation>F1</translation>
     </message>
     <message>
         <location line="+62"/>
@@ -1796,7 +1802,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+2"/>
         <source>&amp;%1 %2</source>
-        <translation type="unfinished"/>
+        <translation>&amp;%1 %2</translation>
     </message>
     <message>
         <location filename="../src/luckybackupwindow.cpp" line="+766"/>
@@ -1890,25 +1896,25 @@ p, li { white-space: pre-wrap; }
         <location line="+59"/>
         <source>scheduled</source>
         <comment>this refers to a profile</comment>
-        <translation type="unfinished"/>
+        <translation>programmata</translation>
     </message>
     <message>
         <location line="-54"/>
         <location line="+59"/>
         <source>YES</source>
-        <translation type="unfinished"/>
+        <translation>SÌ</translation>
     </message>
     <message>
         <location line="-57"/>
         <location line="+59"/>
         <source>NO</source>
-        <translation type="unfinished"/>
+        <translation>NO</translation>
     </message>
     <message>
         <location line="-51"/>
         <location line="+59"/>
         <source>Description</source>
-        <translation type="unfinished"/>
+        <translation>Descrizione</translation>
     </message>
     <message>
         <location line="-40"/>
@@ -1933,7 +1939,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/functions.cpp" line="-63"/>
         <source>default profile</source>
         <comment>Information window message. Full phrase: 'default profile &lt;PROFILENAME&gt; could not be saved'.</comment>
-        <translation type="unfinished"/>
+        <translation>profilo di default</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -1957,7 +1963,7 @@ p, li { white-space: pre-wrap; }
         <location line="+47"/>
         <source>creating default profile ...</source>
         <comment>Information window message</comment>
-        <translation>creazione in corso del profilo di default...</translation>
+        <translation>creazione del profilo di default in corso ...</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -1991,12 +1997,12 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/luckybackupwindow.cpp" line="-1150"/>
         <source>super user</source>
         <comment>super user is the root user</comment>
-        <translation type="unfinished"/>
+        <translation>super user</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>super user mode</source>
-        <translation type="unfinished"/>
+        <translation>modalità super-utente</translation>
     </message>
     <message>
         <location line="+88"/>
@@ -2077,23 +2083,23 @@ p, li { white-space: pre-wrap; }
         <location line="+49"/>
         <source>default profile</source>
         <comment>full phrase: 'default profile &lt;PROFILENAME&gt; renamed successfully to &lt;NEWPROFILENAME&gt;'.</comment>
-        <translation type="unfinished"/>
+        <translation>profilo di default</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>renamed successfully to</source>
         <comment>full phrase: '(default) profile &lt;PROFILENAME&gt; renamed successfully to &lt;NEWPROFILENAME&gt;'</comment>
-        <translation type="unfinished"/>
+        <translation>rinominato con successo in</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>All relevant files (logs etc) have also been updated</source>
-        <translation type="unfinished"/>
+        <translation>Tutti i file di rilievo (logs, etc...) sono stati aggiornati</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Failed to update all relevant files (logs etc)</source>
-        <translation type="unfinished"/>
+        <translation>Impossibile aggiornare tutti i file di rilievo (logs, etc...)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -2134,12 +2140,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+4"/>
         <source>All relevant files (logs etc) have also been deleted</source>
-        <translation type="unfinished"/>
+        <translation>Tutti i file di rilievo (logs, etc...) sono stati cancellati</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Failed to delete all relevant files (logs etc)</source>
-        <translation type="unfinished"/>
+        <translation>Impossibile cancellare tutti i file di rilievo (logs, etc...)</translation>
     </message>
     <message>
         <location line="+26"/>
@@ -2156,24 +2162,24 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+75"/>
         <source>All relevant files (logs etc) have also been duplicated</source>
-        <translation type="unfinished"/>
+        <translation>Tutti i file di rilievo (logs, etc...) sono stati duplicati</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Failed to duplicate all relevant files (logs etc)</source>
-        <translation type="unfinished"/>
+        <translation>Impossibile duplicare tutti i file di rilievo (logs, etc...)</translation>
     </message>
     <message>
         <location line="+26"/>
         <source>The description of profile</source>
         <comment>full phrase: 'The description of profile &lt;PROFILENAME&gt; set to: &lt;DESCRIPTION&gt;'</comment>
-        <translation type="unfinished"/>
+        <translation>Descrizione del profilo</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>set to</source>
         <comment>full phrase: 'The description of profile &lt;PROFILENAME&gt; set to: &lt;DESCRIPTION&gt;'</comment>
-        <translation type="unfinished"/>
+        <translation>imposta</translation>
     </message>
     <message>
         <location line="+212"/>
@@ -2237,56 +2243,56 @@ p, li { white-space: pre-wrap; }
         <location line="-208"/>
         <source>Select export directory</source>
         <comment>this is a dialog title for selecting a directory to export a profile to</comment>
-        <translation type="unfinished"/>
+        <translation>Seleziona la directory di esportazione</translation>
     </message>
     <message>
         <location line="+14"/>
         <source>Failed to export profile</source>
         <comment>full phrase: 'Failed to export profile &lt;PROFILENAME&gt; to &lt;DIRNAME&gt;'</comment>
-        <translation type="unfinished"/>
+        <translation>Impossibile esportare il profilo</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>to</source>
         <comment>full phrase: 'Failed to export profile &lt;PROFILENAME&gt; to &lt;DIRNAME&gt;'</comment>
-        <translation type="unfinished"/>
+        <translation>a</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Profile</source>
         <comment>full phrase: 'Profile &lt;PROFILENAME&gt; exported successfully to &lt;DIRNAME&gt;'</comment>
-        <translation type="unfinished"/>
+        <translation>Profilo</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>exported successfully to</source>
         <comment>full phrase: 'Profile &lt;PROFILENAME&gt; exported successfully to &lt;DIRNAME&gt;'</comment>
-        <translation type="unfinished"/>
+        <translation>esportato con successo in</translation>
     </message>
     <message>
         <location line="+31"/>
         <source>The directory you have selected does not contain valid profile data</source>
-        <translation type="unfinished"/>
+        <translation>La directory selezionata non contiene un profilo valido</translation>
     </message>
     <message>
         <location line="+53"/>
         <source>Errors occured during snapshots and logfiles transfer</source>
-        <translation type="unfinished"/>
+        <translation>C&apos;è stato un errore nel trasferimento degli snapshot e dei file di log</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Errors occured during snapshots transfer</source>
-        <translation type="unfinished"/>
+        <translation>C&apos;è stato un errore nel trasferimento degli snapshot</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Errors occured during logfiles transfer</source>
-        <translation type="unfinished"/>
+        <translation>C&apos;è stato un errore nel trasferimento dei file di log</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Errors occured during the profile file transfer</source>
-        <translation type="unfinished"/>
+        <translation>C&apos;è stato un errore nel trasferimento del file di profilo</translation>
     </message>
     <message>
         <location line="+123"/>
@@ -2311,7 +2317,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+51"/>
         <source>Please select a task to manage first</source>
-        <translation type="unfinished"/>
+        <translation>Seleziona un task da gestire</translation>
     </message>
     <message>
         <location line="+79"/>
@@ -2326,12 +2332,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+19"/>
         <source>current crontab &lt;font color=green&gt;updated successfully</source>
-        <translation type="unfinished"/>
+        <translation>Crontab corrente &lt;font color=green&gt;aggiornata con successo</translation>
     </message>
     <message>
         <location line="+15"/>
         <source>Email preferences have been &lt;font color=green&gt;updated successfully</source>
-        <translation type="unfinished"/>
+        <translation>Le preferenze delle email sono state &lt;font color=green&gt;aggiornate con successo</translation>
     </message>
     <message>
         <location line="+71"/>
@@ -2369,12 +2375,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/luckybackupwindow.ui" line="+39"/>
         <source>luckyBackup</source>
-        <translation type="unfinished"/>
+        <translation>luckyBackup</translation>
     </message>
     <message>
         <location line="+976"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished"/>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <location line="-369"/>
@@ -2384,7 +2390,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="-396"/>
         <source>CheckBox</source>
-        <translation type="unfinished"/>
+        <translation>CheckBox</translation>
     </message>
     <message>
         <location line="+430"/>
@@ -2393,7 +2399,11 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Bitstream Vera Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"/>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Bitstream Vera Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location line="+176"/>
@@ -2402,7 +2412,11 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Bitstream Vera Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"/>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Bitstream Vera Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location line="+27"/>
@@ -2412,513 +2426,513 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+45"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished"/>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <location line="+33"/>
         <source>Ctrl+X</source>
-        <translation type="unfinished"/>
+        <translation>Ctrl+X</translation>
     </message>
     <message>
         <location line="+33"/>
         <source>Ctrl+D</source>
-        <translation type="unfinished"/>
+        <translation>Ctrl+D</translation>
     </message>
     <message>
         <location line="+33"/>
         <source>F5</source>
-        <translation type="unfinished"/>
+        <translation>F5</translation>
     </message>
     <message>
         <location filename="../src/executenow.cpp" line="-974"/>
         <source>Aborting: Please wait for all processes to be killed</source>
-        <translation type="unfinished"/>
+        <translation>Annullato: Aspetta l&apos;interruzione di tutti i processi</translation>
     </message>
     <message>
         <location line="+129"/>
         <source>Removing old snapshots and logfiles of task</source>
         <comment>info message displayed during ...data removal
 Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comment>
-        <translation type="unfinished"/>
+        <translation>Rimozione dei vecchi snapshot e dei file di log dei task</translation>
     </message>
     <message>
         <location line="+87"/>
         <location line="+12"/>
         <source>Removing</source>
-        <translation type="unfinished"/>
+        <translation>Rimozione</translation>
     </message>
     <message>
         <location line="-10"/>
         <location line="+12"/>
         <source>failed to remove</source>
-        <translation type="unfinished"/>
+        <translation>rimozione fallita</translation>
     </message>
     <message>
         <location line="+380"/>
         <source>Failed to start</source>
         <comment>this refers to a process</comment>
-        <translation type="unfinished"/>
+        <translation>avvio fallito</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Crashed</source>
         <comment>this refers to a process</comment>
-        <translation type="unfinished"/>
+        <translation>crash</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Timed out</source>
         <comment>this refers to a process</comment>
-        <translation type="unfinished"/>
+        <translation>Tempo scaduto</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Write error</source>
         <comment>this refers to a process</comment>
-        <translation type="unfinished"/>
+        <translation>Scrivi l&apos;errore</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Read error</source>
         <comment>this refers to a process</comment>
-        <translation type="unfinished"/>
+        <translation>Leggi l&apos;errore</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Unknown error</source>
         <comment>this refers to a process</comment>
-        <translation type="unfinished"/>
+        <translation>Errore sconosciuto</translation>
     </message>
     <message>
         <location line="+116"/>
         <source>calculating</source>
         <comment>info message displayed during ...calculations</comment>
-        <translation type="unfinished"/>
+        <translation>calcolo in corso</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>transferring files</source>
         <comment>info message displayed during ...file transfers</comment>
-        <translation type="unfinished"/>
+        <translation>trasferimento file in corso</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>deleting files</source>
         <comment>info message displayed during ...file deletions</comment>
-        <translation type="unfinished"/>
+        <translation>cancellazione file in corso</translation>
     </message>
     <message>
         <location line="+19"/>
         <source>transferring files</source>
-        <translation type="unfinished"/>
+        <translation>trasferimento file in corso</translation>
     </message>
     <message>
         <location line="+91"/>
         <source>ABORTED</source>
-        <translation type="unfinished"/>
+        <translation>ANNULLATO</translation>
     </message>
     <message>
         <location filename="../src/functions.cpp" line="-555"/>
         <source>&amp;Refresh</source>
         <comment>This is a top 'Profile' menu action</comment>
-        <translation type="unfinished"/>
+        <translation>Ricarica</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>De&amp;fault</source>
         <comment>This is a top 'Profile' menu action</comment>
-        <translation type="unfinished"/>
+        <translation>Default</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Set as Default</source>
         <comment>This is a top 'Profile' menu action tooltip</comment>
-        <translation type="unfinished"/>
+        <translation>Imposta come di Default</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;View/Edit Description</source>
         <comment>This is a top 'Profile' menu action</comment>
-        <translation type="unfinished"/>
+        <translation>Vedi/Edita la descrizione</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>View/Edit the profile description</source>
         <comment>This is a top 'Profile' menu action tooltip</comment>
-        <translation type="unfinished"/>
+        <translation>Vedi/Edita la descrizione del profilo</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>R&amp;ename</source>
         <comment>This is a top 'Profile' menu action</comment>
-        <translation type="unfinished"/>
+        <translation>Rinomina</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;Delete</source>
         <comment>This is a top 'Profile' menu action</comment>
-        <translation type="unfinished"/>
+        <translation>Cancella</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;New</source>
         <comment>This is a top 'Profile' menu action</comment>
-        <translation type="unfinished"/>
+        <translation>Nuovo</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;Save</source>
         <comment>This is a top 'Profile' menu action</comment>
-        <translation type="unfinished"/>
+        <translation>Salva</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>E&amp;xport</source>
         <comment>This is a top 'Profile' menu action</comment>
-        <translation type="unfinished"/>
+        <translation>Esporta</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;Import</source>
         <comment>This is a top 'Profile' menu action</comment>
-        <translation type="unfinished"/>
+        <translation>Importa</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>S&amp;chedule</source>
         <comment>This is a top 'Profile' menu action</comment>
-        <translation type="unfinished"/>
+        <translation>Programma</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>E&amp;mail</source>
         <comment>This is a top 'Profile' menu action</comment>
-        <translation type="unfinished"/>
+        <translation>Email</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Email report after profile execution</source>
         <comment>This is a top 'Profile' menu action tooltip</comment>
-        <translation type="unfinished"/>
+        <translation>Rapporto tramite email dopo l&apos;esecuzione del profilo</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;Quit</source>
         <comment>This is a top 'Profile' menu action</comment>
-        <translation type="unfinished"/>
+        <translation>Chiudi</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>D&amp;uplicate</source>
         <comment>This is a top 'Profile' menu action</comment>
-        <translation type="unfinished"/>
+        <translation>Duplica</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>&amp;Task</source>
         <comment>This is a top menu action</comment>
-        <translation type="unfinished"/>
+        <translation>Task</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;Add</source>
         <comment>This is a top 'Task' menu action</comment>
-        <translation type="unfinished"/>
+        <translation>Aggiungi</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;Remove</source>
         <comment>This is a top 'Task' menu action</comment>
-        <translation type="unfinished"/>
+        <translation>Rimuovi</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;Modify</source>
         <comment>This is a top 'Task' menu action</comment>
-        <translation type="unfinished"/>
+        <translation>Modificap</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Create D&amp;uplicate task</source>
         <comment>This is a top 'Task' menu action</comment>
-        <translation type="unfinished"/>
+        <translation>Crea un task duplicato</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Create R&amp;estore task</source>
         <comment>This is a top 'Task' menu action</comment>
-        <translation type="unfinished"/>
+        <translation>Crea un task di ripristino</translation>
     </message>
     <message>
         <location line="+1"/>
         <location filename="../src/luckybackupwindow.cpp" line="-45"/>
         <source>Manage &amp;Backup</source>
         <comment>This is a top 'Task' menu action</comment>
-        <translation type="unfinished"/>
+        <translation>Gestisci il Backup</translation>
     </message>
     <message>
         <location line="+1"/>
         <location filename="../src/luckybackupwindow.cpp" line="+1"/>
         <source>display - restore - delete existing backups of highlighted task</source>
         <comment>This is a top 'Task' menu action tooltip</comment>
-        <translation type="unfinished"/>
+        <translation>mostra - ripristina - cancella backup esistenti dei task evidenziati</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Actions</source>
         <comment>This is a top menu action</comment>
-        <translation type="unfinished"/>
+        <translation>Azioni</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Current Profile</source>
         <comment>This is a top menu action</comment>
-        <translation type="unfinished"/>
+        <translation>Profilo corrente</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Lock</source>
         <comment>This is a top menu action. Refers to toolbars</comment>
-        <translation type="unfinished"/>
+        <translation>Blocca</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Show text under icons</source>
         <comment>This is a top menu action</comment>
-        <translation type="unfinished"/>
+        <translation>Mostra il testo sotto le icone</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>&amp;Toolbars</source>
         <comment>This is a top menu item</comment>
-        <translation type="unfinished"/>
+        <translation>Barre degli strumenti</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Set paths</source>
         <comment>This is a top menu action</comment>
-        <translation type="unfinished"/>
+        <translation>Imposta directory</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Set paths for rsync and ssh commands</source>
         <comment>This is a top menu action tooltip</comment>
-        <translation type="unfinished"/>
+        <translation>Imposta directory per rsync e ssh</translation>
     </message>
     <message>
         <location line="+17"/>
         <source>quiet mode</source>
-        <translation type="unfinished"/>
+        <translation>modalità silenziosa</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Only show errors and important messages during window update</source>
-        <translation type="unfinished"/>
+        <translation>Mostra gli errori e i messaggi importanti solo durante l&apos;aggiornamento della finestra</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>Run</source>
         <comment>start button label</comment>
-        <translation type="unfinished"/>
+        <translation>Avvia</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Abort</source>
         <comment>Abort button label</comment>
-        <translation type="unfinished"/>
+        <translation>Annulla</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Stop the execution of running tasks NOW</source>
         <comment>Abort button tooltip</comment>
-        <translation type="unfinished"/>
+        <translation>Blocca tutto ADESSO!!!</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Execution of tasks finished</source>
         <comment>Done button tooltip</comment>
-        <translation type="unfinished"/>
+        <translation>Esecuzione delle operazioni completata</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Dry</source>
         <comment>simulation checkbox label. Translate this as 'simulation'</comment>
-        <translation type="unfinished"/>
+        <translation>Simulazione</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>This will perform a &lt;b&gt;simulation run&lt;/b&gt; that doesn&apos;t make any changes (and produces mostly the same output as a real run)</source>
         <comment>simulation checkbox tooltip - line1. Please leave tags &lt;b&gt; and &lt;/b&gt; intact and surrounding 'simulation run'</comment>
-        <translation type="unfinished"/>
+        <translation>Questo avvierà una &lt;b&gt;simulazione&lt;/b&gt; che non farà nessuna modifica (e dà spesso lo stesso risultato di un vero processo)</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>shutdown</source>
         <comment>shutdown button label</comment>
-        <translation type="unfinished"/>
+        <translation>spegni</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Press down to shutdown the system when done</source>
         <comment>shutdown button tooltip</comment>
-        <translation type="unfinished"/>
+        <translation>Premi per spegnere il sistema quando è tutto finito</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Hide information window</source>
         <comment>show/hide information window button tooltip</comment>
-        <translation type="unfinished"/>
+        <translation>Nascondi la finestra delle informazioni</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Show information window</source>
         <comment>show/hide information window button tooltip</comment>
-        <translation type="unfinished"/>
+        <translation>Mostra la finestra delle informazioni</translation>
     </message>
     <message>
         <location line="+295"/>
         <source>profile </source>
         <comment>information window message. Full phrase is: 'profile &lt;PROFILENAME&gt; is not valid for luckybackup version:X.Y'. BEWARE of the whitespace in the end</comment>
-        <translation type="unfinished"/>
+        <translation>profilo</translation>
     </message>
     <message>
         <location line="+52"/>
         <source>The task list is empty</source>
-        <translation type="unfinished"/>
+        <translation>La lista dei task è vuota</translation>
     </message>
     <message>
         <location line="+0"/>
         <location line="+95"/>
         <source>Use the &quot;add&quot; button on the right to get started</source>
         <comment>Please keep the add word inside quotes</comment>
-        <translation type="unfinished"/>
+        <translation>Premi il tasto &quot;aggiungi&quot; sulla destra per iniziare</translation>
     </message>
     <message>
         <location line="-69"/>
         <source>could not be saved</source>
         <comment>Information window message. Full phrase: '(default) profile &lt;PROFILENAME&gt; could not be saved'</comment>
-        <translation type="unfinished"/>
+        <translation>non può essere salvato</translation>
     </message>
     <message>
         <location line="+61"/>
         <source>default profile</source>
         <comment>Information window message. Full phrase: 'default profile &lt;PROFILENAME&gt; could not be created'.</comment>
-        <translation type="unfinished"/>
+        <translation>profilo di default</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>could not be created</source>
         <comment>Information window message. Full phrase: '(default) profile &lt;PROFILENAME&gt; could not be created'</comment>
-        <translation type="unfinished"/>
+        <translation>non può essere creato</translation>
     </message>
     <message>
         <location line="+21"/>
         <source>Profile</source>
         <comment>Question dialog message. Full phrase: 'profile &lt;PROFILENAME&gt; is modified'</comment>
-        <translation type="unfinished"/>
+        <translation>Profilo</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>is modified</source>
         <comment>Question dialog message. Full phrase: 'profile &lt;PROFILENAME&gt; is modified'</comment>
-        <translation type="unfinished"/>
+        <translation>è stato modificato</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>Profile</source>
         <comment>Question dialog message. Full phrase: 'profile &lt;PROFILENAME&gt; could not be saved'</comment>
-        <translation type="unfinished"/>
+        <translation>Profilo</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>could not be saved</source>
         <comment>Question dialog message. Full phrase: 'profile &lt;PROFILENAME&gt; could not be saved'</comment>
-        <translation type="unfinished"/>
+        <translation>non può essere salvato</translation>
     </message>
     <message>
         <location line="-32"/>
         <source>profile</source>
         <comment>Information window message. Full phrase: 'profile &lt;PROFILENAME&gt; could not be created'.</comment>
-        <translation type="unfinished"/>
+        <translation>profilo</translation>
     </message>
     <message>
         <location filename="../src/luckybackupwindow.cpp" line="-795"/>
         <source>Failed to duplicate profile</source>
         <comment>full phrase: 'Failed to duplicate profile &lt;PROFILENAME&gt;'</comment>
-        <translation type="unfinished"/>
+        <translation>Impossibile duplicare il profilo</translation>
     </message>
     <message>
         <location line="+41"/>
         <source>Failed to duplicate profile</source>
         <comment>full phrase: 'Failed to duplicate profile &lt;PROFILENAME&gt; as &lt;FILENAME&gt;'</comment>
-        <translation type="unfinished"/>
+        <translation>Impossibile duplicare il profilo</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>as</source>
         <comment>full phrase: 'Failed to duplicate profile &lt;PROFILENAME&gt; as &lt;FILENAME&gt;'</comment>
-        <translation type="unfinished"/>
+        <translation>come</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>Profile</source>
         <comment>full phrase: 'Profile &lt;PROFILENAME&gt; duplicated successfully as &lt;FILENAME&gt;'</comment>
-        <translation type="unfinished"/>
+        <translation>Profilo</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>duplicated successfully as</source>
         <comment>full phrase: 'Profile &lt;PROFILENAME&gt; duplicated successfully as &lt;FILENAME&gt;'</comment>
-        <translation type="unfinished"/>
+        <translation>duplicato con successo come</translation>
     </message>
     <message>
         <location line="+52"/>
         <source>Please select a task to duplicate first</source>
-        <translation type="unfinished"/>
+        <translation>Per favore seleziona prima un task da duplicare</translation>
     </message>
     <message>
         <location line="+65"/>
         <source>Please select a task first</source>
-        <translation type="unfinished"/>
+        <translation>per favore seleziona prima un task</translation>
     </message>
     <message>
         <location line="+230"/>
         <source>Hide information window</source>
         <comment>hide/show information window button tooltip</comment>
-        <translation type="unfinished"/>
+        <translation>Nascondi la finestra delle informazioni</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>Show information window</source>
         <comment>hide/show information window button tooltip</comment>
-        <translation type="unfinished"/>
+        <translation>Mostra la finestra delle informazioni</translation>
     </message>
     <message>
         <location line="+378"/>
         <source>Manage Task</source>
         <comment>This is a top 'Task' menu action</comment>
-        <translation type="unfinished"/>
+        <translation>Gestisci task</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>display information regarding highlighted task</source>
         <comment>This is a top 'Task' menu action tooltip</comment>
-        <translation type="unfinished"/>
+        <translation>mostra informazioni circa il task selezionato</translation>
     </message>
     <message>
         <location filename="../ui/luckybackupwindow.ui" line="-122"/>
         <source>&amp;Task</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Task</translation>
     </message>
     <message>
         <location filename="../src/executenow.cpp" line="-450"/>
         <source>Successfuly created destination directory</source>
-        <translation type="unfinished"/>
+        <translation>Directory di destinazione creata con successo</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Failed to create destination directory</source>
-        <translation type="unfinished"/>
+        <translation>Impossibile creare la directory di destinazione</translation>
     </message>
 </context>
 <context>
@@ -2931,7 +2945,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     <message>
         <location line="+1"/>
         <source>task</source>
-        <translation type="unfinished"/>
+        <translation>task</translation>
     </message>
     <message>
         <location filename="../ui/manage.ui" line="+234"/>
@@ -2941,12 +2955,12 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     <message>
         <location line="+26"/>
         <source>Restore</source>
-        <translation type="unfinished"/>
+        <translation>Ripristina</translation>
     </message>
     <message>
         <location line="+23"/>
         <source>view log</source>
-        <translation type="unfinished"/>
+        <translation>vedi log</translation>
     </message>
     <message>
         <location line="-186"/>
@@ -2961,12 +2975,12 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     <message>
         <location line="+175"/>
         <source>hide source</source>
-        <translation type="unfinished"/>
+        <translation>nascondi sorgente</translation>
     </message>
     <message>
         <location line="-130"/>
         <source>Close this window</source>
-        <translation type="unfinished"/>
+        <translation>Chiudi questa finestra</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2977,109 +2991,109 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <location filename="../src/manage.cpp" line="+130"/>
         <source>Please select a snapshot from the list</source>
         <comment>Information message</comment>
-        <translation type="unfinished"/>
+        <translation>Per favore seleziona uno snapshot dalla lista</translation>
     </message>
     <message>
         <location line="+20"/>
         <location line="+8"/>
         <source>Display of remote places is not supported</source>
         <comment>Information message</comment>
-        <translation type="unfinished"/>
+        <translation>Impossibile mostrare le cartelle remote</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>This directory does not exist</source>
-        <translation type="unfinished"/>
+        <translation>Questa directory non esiste</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>This directory does not exist</source>
         <comment>Information message</comment>
-        <translation type="unfinished"/>
+        <translation>Questa directory non esiste</translation>
     </message>
     <message>
         <location line="+10"/>
         <location line="+8"/>
         <source>I do not have sufficient permissions to read this directory</source>
         <comment>Information message</comment>
-        <translation type="unfinished"/>
+        <translation>Non ho i permessi sufficienti per leggere questa directory</translation>
     </message>
     <message>
         <location line="+13"/>
         <source>sync dir A</source>
         <comment>full phrase: sync dir a: &lt;DIRECTORY_A&gt;</comment>
-        <translation type="unfinished"/>
+        <translation>sync dir A</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>sync dir B</source>
         <comment>full phrase: sync dir a: &lt;DIRECTORY_b&gt;</comment>
-        <translation type="unfinished"/>
+        <translation>sync dir B</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>View the logfile of the selected sync task</source>
         <comment>'view log' pushbutton tooltip</comment>
-        <translation type="unfinished"/>
+        <translation>Vedi il file di log del task selezionato</translation>
     </message>
     <message>
         <location line="+78"/>
         <source>Please wait until the thread is terminated</source>
-        <translation type="unfinished"/>
+        <translation>Per favore aspetta finchè il processo sarà terminato</translation>
     </message>
     <message>
         <location line="+24"/>
         <source>STOP</source>
-        <translation type="unfinished"/>
+        <translation>STOP</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Stop calculations NOW</source>
-        <translation type="unfinished"/>
+        <translation>Ferma i calcoli ADESSO</translation>
     </message>
     <message>
         <location line="+19"/>
         <source>Calculations terminated by user</source>
-        <translation type="unfinished"/>
+        <translation>Calcoli fermati dall&apos;utente</translation>
     </message>
     <message>
         <location line="+59"/>
         <location line="+12"/>
         <source>not available</source>
         <comment>refers to a date-time</comment>
-        <translation type="unfinished"/>
+        <translation>non disponibile</translation>
     </message>
     <message>
         <location filename="../ui/manage.ui" line="-159"/>
         <source>luckyBackup - manage backup</source>
-        <translation type="unfinished"/>
+        <translation>luckyBackup - gestisci backup</translation>
     </message>
     <message>
         <location line="+214"/>
         <source>Delete the selected snapshot and its logfile</source>
-        <translation type="unfinished"/>
+        <translation>Cancella lo snapshot selezionato ed il suo file di log</translation>
     </message>
     <message>
         <location line="+26"/>
         <source>Restore the selected snapshot</source>
-        <translation type="unfinished"/>
+        <translation>Ripristina lo snapshot selezionato</translation>
     </message>
     <message>
         <location line="+23"/>
         <source>View the logfile of the selected snapshot</source>
-        <translation type="unfinished"/>
+        <translation>Vedi il file di log dello snapshot selezionato</translation>
     </message>
     <message>
         <location line="+33"/>
         <location filename="../src/manage.cpp" line="-57"/>
         <source>Calculate the differences between the source and the selected snapshot</source>
-        <translation type="unfinished"/>
+        <translation>Calcola le differenze tra la sorgente e lo snapshot selezionato</translation>
     </message>
     <message>
         <location line="+3"/>
         <location filename="../src/manage.cpp" line="-1"/>
         <source>Calculate differences</source>
-        <translation type="unfinished"/>
+        <translation>Calcola le differenze</translation>
     </message>
 </context>
 <context>
@@ -3088,194 +3102,194 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <location filename="../src/manageWizard.cpp" line="+62"/>
         <source>not available</source>
         <comment>refers to a date-time</comment>
-        <translation type="unfinished"/>
+        <translation>non disponibile</translation>
     </message>
     <message>
         <location line="+346"/>
         <source>Delete backup</source>
         <comment>this is the title of a wizard</comment>
-        <translation type="unfinished"/>
+        <translation>Cancella il backup</translation>
     </message>
     <message>
         <location line="+1"/>
         <location line="+16"/>
         <source>Date &amp; time</source>
         <comment>simple label of the wizard gui</comment>
-        <translation type="unfinished"/>
+        <translation>Date &amp; ora</translation>
     </message>
     <message>
         <location line="-15"/>
         <source>Path</source>
         <comment>...is a directory path</comment>
-        <translation type="unfinished"/>
+        <translation>Percorso</translation>
     </message>
     <message>
         <location line="-279"/>
         <location line="+280"/>
         <source>WARNING</source>
-        <translation type="unfinished"/>
+        <translation>ATTENZIONE</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>You are about to delete backup data</source>
         <comment>information message - line1</comment>
-        <translation type="unfinished"/>
+        <translation>Stai per cancellare i dati di bacup</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>If the information above is correct, click &lt;b&gt;start&lt;/b&gt; to begin</source>
         <comment>information message - line2.
 Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start' translated</comment>
-        <translation type="unfinished"/>
+        <translation>Se le informazioni precedenti sono esatte premere &lt;b&gt;start&lt;b&gt; per iniziare</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>Restore backup</source>
         <comment>this is the title of a wizard</comment>
-        <translation type="unfinished"/>
+        <translation>Riprostina backup</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Backup path</source>
         <comment>...is the backup directory path</comment>
-        <translation type="unfinished"/>
+        <translation>Percorso di backup</translation>
     </message>
     <message>
         <location line="-194"/>
         <source>close</source>
-        <translation type="unfinished"/>
+        <translation>chiudi</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>Deleting snapshot logfile</source>
         <comment>info message displayed during ...logfile deletion</comment>
-        <translation type="unfinished"/>
+        <translation>Cancellazione del file di log dello snapshot in corso</translation>
     </message>
     <message>
         <location line="+28"/>
         <source>Updating list of snapshots</source>
         <comment>info message displayed during ...snaps list update</comment>
-        <translation type="unfinished"/>
+        <translation>Aggiornamento della lista degli snapshot in corso</translation>
     </message>
     <message>
         <location line="+22"/>
         <source>Aborted</source>
-        <translation type="unfinished"/>
+        <translation>Annullato</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Finished</source>
-        <translation type="unfinished"/>
+        <translation>Completato</translation>
     </message>
     <message>
         <location filename="../ui/manageWizard.ui" line="+240"/>
         <location filename="../src/manageWizard.cpp" line="+3"/>
         <location line="+227"/>
         <source>simulation</source>
-        <translation type="unfinished"/>
+        <translation>simulazione</translation>
     </message>
     <message>
         <location filename="../src/manageWizard.cpp" line="-222"/>
         <source>no errors</source>
-        <translation type="unfinished"/>
+        <translation>nessun errore</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>errors found</source>
-        <translation type="unfinished"/>
+        <translation>ci sono alcuni errori</translation>
     </message>
     <message>
         <location line="+212"/>
         <source>Restoring data: main trunk</source>
         <comment>info message displayed during ...data restoration</comment>
-        <translation type="unfinished"/>
+        <translation>Ripristino dati: tratto principale</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Restoring data: snapshot files</source>
         <comment>info message displayed during ...data restoration</comment>
-        <translation type="unfinished"/>
+        <translation>Ripristino dati: file dello snapshot</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>Deleting data</source>
         <comment>info message displayed during ...data deletion</comment>
-        <translation type="unfinished"/>
+        <translation>Cancellazione dei dati in corso</translation>
     </message>
     <message>
         <location filename="../ui/manageWizard.ui" line="-226"/>
         <source>luckyBackup - manage backup</source>
-        <translation type="unfinished"/>
+        <translation>luckyBackup - gestisci backup</translation>
     </message>
     <message>
         <location line="+182"/>
         <source>Jump to previous error</source>
-        <translation type="unfinished"/>
+        <translation>Salta all&apos;errore precedente</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>previous error</source>
-        <translation type="unfinished"/>
+        <translation>errore precedente</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>Jump to next error</source>
-        <translation type="unfinished"/>
+        <translation>Salta all&apos;errore successivo</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>next error</source>
-        <translation type="unfinished"/>
+        <translation>errore successivo</translation>
     </message>
     <message>
         <location line="+24"/>
         <source>This will perform a &lt;b&gt;simulation run&lt;/b&gt; that doesn&apos;t make any changes (and produces mostly the same output as a real run)</source>
-        <translation type="unfinished"/>
+        <translation>Questo avvierà una &lt;b&gt;simulazione&lt;/b&gt; che non farà nessuna modifica (e dà spesso lo stesso risultato di un vero processo)</translation>
     </message>
     <message>
         <location line="+14"/>
         <source>start</source>
-        <translation type="unfinished"/>
+        <translation>start</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>ABORT</source>
-        <translation type="unfinished"/>
+        <translation>ANNULLA</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>cancel</source>
-        <translation type="unfinished"/>
+        <translation>cancella</translation>
     </message>
     <message>
         <location filename="../src/manageWizard.cpp" line="-397"/>
         <source>The restore directory will become identical to the backup snapshot</source>
-        <translation type="unfinished"/>
+        <translation>La directory di ripristino diventerà identica allo snapshot di ripristino</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Existing backup files will replace the corresponding files at the restore directory</source>
         <comment>information message - line1.</comment>
-        <translation type="unfinished"/>
+        <translation>I file di backup esistenti rimpiazzeranno i corrispondenti file della directory di ripristino</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>If the information above is correct, click &lt;b&gt;start&lt;/b&gt; to begin</source>
         <comment>information message - line2.
 Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start translated'</comment>
-        <translation type="unfinished"/>
+        <translation>Se le informazioni precedenti sono esatte premere &lt;b&gt;start&lt;b&gt; per iniziare</translation>
     </message>
     <message>
         <location line="+113"/>
         <source>success</source>
         <comment>info message displayed after ...logfile deletion</comment>
-        <translation type="unfinished"/>
+        <translation>tutto ok</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>failed</source>
         <comment>info message displayed after ...logfile deletion</comment>
-        <translation type="unfinished"/>
+        <translation>fallito</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -3287,37 +3301,37 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start translated'<
         <location line="+7"/>
         <source>success</source>
         <comment>info message displayed after ...file deletion</comment>
-        <translation type="unfinished"/>
+        <translation>tutto ok</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>failed</source>
         <comment>info message displayed after ...file deletion</comment>
-        <translation type="unfinished"/>
+        <translation>fallito</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>success</source>
         <comment>info message displayed after ...snapshots list update</comment>
-        <translation type="unfinished"/>
+        <translation>tutto ok</translation>
     </message>
     <message>
         <location line="+73"/>
         <source>Select new restore directory</source>
         <comment>directory selection dialog title</comment>
-        <translation type="unfinished"/>
+        <translation>Seleziona la nuova directory di ripristino</translation>
     </message>
     <message>
         <location line="+81"/>
         <source>Restore path</source>
         <comment>...is the restore directory path</comment>
-        <translation type="unfinished"/>
+        <translation>Ripristina il percorso</translation>
     </message>
     <message>
         <location line="+116"/>
         <source>No snapshot specific data exist. Skipping...</source>
         <comment>info message displayed during ...data restoration/deletion</comment>
-        <translation type="unfinished"/>
+        <translation>Non esiste nessun file dello snapshot. Lo salto...</translation>
     </message>
     <message>
         <location filename="../ui/manageWizard.ui" line="-150"/>
@@ -3337,7 +3351,7 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start translated'<
     <message>
         <location line="+3"/>
         <source>change</source>
-        <translation type="unfinished"/>
+        <translation>cambia</translation>
     </message>
     <message>
         <location line="+14"/>
@@ -3346,7 +3360,11 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start translated'<
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'FreeSans'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"/>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;FreeSans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -3475,12 +3493,12 @@ and copying devices via the --devices option.
         <location line="+531"/>
         <location line="+10"/>
         <source>Repeat any command that fails, x times</source>
-        <translation type="unfinished"/>
+        <translation>Ripeti ogni comando che fallisce, x volte</translation>
     </message>
     <message>
         <location line="-7"/>
         <source>Repeat on fail:</source>
-        <translation type="unfinished"/>
+        <translation>Ripeti al fallimento:</translation>
     </message>
     <message>
         <location line="+359"/>
@@ -3491,7 +3509,7 @@ Leave unchecked to create an extra directory inside destination</source>
     <message>
         <location line="+4"/>
         <source>Do NOT create extra directory</source>
-        <translation type="unfinished"/>
+        <translation>NON creare altre directory</translation>
     </message>
     <message>
         <location line="+20"/>
@@ -3602,7 +3620,7 @@ Leave unchecked to create an extra directory inside destination</source>
     <message>
         <location line="+6"/>
         <source>lost+found</source>
-        <translation type="unfinished"/>
+        <translation>lost+found</translation>
     </message>
     <message>
         <location line="+106"/>
@@ -3656,27 +3674,27 @@ trailing / - corrisponde solo alla cartelle, sono esclusi file, link simbolici e
     <message>
         <location line="+6"/>
         <source>Backup Source inside Destination</source>
-        <translation type="unfinished"/>
+        <translation>Sorgente del backup dentro la Destinazione</translation>
     </message>
     <message>
         <location line="+174"/>
         <source>Description</source>
-        <translation type="unfinished"/>
+        <translation>Descrizione</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Task description</source>
-        <translation type="unfinished"/>
+        <translation>Descrizione del task</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Type a description of the task</source>
-        <translation type="unfinished"/>
+        <translation>Scrivi una descrizione del task</translation>
     </message>
     <message>
         <location line="+321"/>
         <source>Exclude all user&apos;s .gvfs folders (**/.gvfs/)</source>
-        <translation type="unfinished"/>
+        <translation>Escludi tutte le cartelle &quot;.gvfs&quot; (**/.gvfs/)</translation>
     </message>
     <message>
         <location line="+77"/>
@@ -3705,7 +3723,7 @@ trailing / - corrisponde solo alla cartelle, sono esclusi file, link simbolici e
         <location line="+279"/>
         <location line="+301"/>
         <source>Edit highlighted inclusion</source>
-        <translation type="unfinished"/>
+        <translation>Edita l&apos;inclusione evidenziata</translation>
     </message>
     <message>
         <location line="-2163"/>
@@ -3714,7 +3732,7 @@ trailing / - corrisponde solo alla cartelle, sono esclusi file, link simbolici e
         <location line="+279"/>
         <location line="+301"/>
         <source>edit</source>
-        <translation type="unfinished"/>
+        <translation>edit</translation>
     </message>
     <message>
         <location line="-2152"/>
@@ -3723,7 +3741,7 @@ trailing / - corrisponde solo alla cartelle, sono esclusi file, link simbolici e
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion up</source>
-        <translation type="unfinished"/>
+        <translation>Sposta su l&apos;inclusione evidenziata</translation>
     </message>
     <message>
         <location line="-2163"/>
@@ -3732,7 +3750,7 @@ trailing / - corrisponde solo alla cartelle, sono esclusi file, link simbolici e
         <location line="+279"/>
         <location line="+301"/>
         <source>move up</source>
-        <translation type="unfinished"/>
+        <translation>muovi su</translation>
     </message>
     <message>
         <location line="-2152"/>
@@ -3741,7 +3759,7 @@ trailing / - corrisponde solo alla cartelle, sono esclusi file, link simbolici e
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion down</source>
-        <translation type="unfinished"/>
+        <translation>Sposta giù l&apos;inclusione evidenziata</translation>
     </message>
     <message>
         <location line="-2163"/>
@@ -3750,7 +3768,7 @@ trailing / - corrisponde solo alla cartelle, sono esclusi file, link simbolici e
         <location line="+279"/>
         <location line="+301"/>
         <source>move down</source>
-        <translation type="unfinished"/>
+        <translation>muovi giù</translation>
     </message>
     <message>
         <location line="-2060"/>
@@ -3845,7 +3863,7 @@ trailing / - corrisponde solo alla cartelle, sono esclusi file, link simbolici e
     <message>
         <location line="+19"/>
         <source>@Host:</source>
-        <translation type="unfinished"/>
+        <translation>@Host:</translation>
     </message>
     <message>
         <location line="+19"/>
@@ -3880,7 +3898,7 @@ trailing / - corrisponde solo alla cartelle, sono esclusi file, link simbolici e
     <message>
         <location line="+3"/>
         <source>ssh</source>
-        <translation type="unfinished"/>
+        <translation>ssh</translation>
     </message>
     <message>
         <location line="+28"/>
@@ -3921,22 +3939,22 @@ Se non sai cosa significhi, non modificare nulla!!</translation>
     <message>
         <location line="+22"/>
         <source>backend</source>
-        <translation type="unfinished"/>
+        <translation>backend</translation>
     </message>
     <message>
         <location line="+24"/>
         <source>rsync</source>
-        <translation type="unfinished"/>
+        <translation>rsync</translation>
     </message>
     <message>
         <location line="+13"/>
         <source>rdiff-backup</source>
-        <translation type="unfinished"/>
+        <translation>rdiff-backup</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>rsnapshot</source>
-        <translation type="unfinished"/>
+        <translation>rsnapshot</translation>
     </message>
     <message>
         <location line="+80"/>
@@ -4127,7 +4145,7 @@ ATTENTION: check this if you really know what you&apos;re doing</source>
     <message>
         <location line="+6"/>
         <source>by-pass WARNING</source>
-        <translation type="unfinished"/>
+        <translation>by-pass ATTENZIONE</translation>
     </message>
     <message>
         <location line="+16"/>
@@ -4143,32 +4161,32 @@ ATTENTION: check this if you really know what you&apos;re doing</source>
         <location filename="../src/modifyDialog.cpp" line="-104"/>
         <source>Select source directory</source>
         <comment>file selection dialog title</comment>
-        <translation type="unfinished"/>
+        <translation>Seleziona la cartella sorgente</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Select destination directory</source>
         <comment>file selection dialog title</comment>
-        <translation type="unfinished"/>
+        <translation>Seleziona la cartella di destinazione</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Select rsync password file</source>
         <comment>file selection dialog title</comment>
-        <translation type="unfinished"/>
+        <translation>Seleziona un file di password rsync</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Select ssh keyfile</source>
         <comment>file selection dialog title</comment>
-        <translation type="unfinished"/>
+        <translation>Seleziona la chiave ssh</translation>
     </message>
     <message>
         <location line="+6"/>
         <location line="+6"/>
         <source>Select command to be executed</source>
         <comment>file selection dialog title</comment>
-        <translation type="unfinished"/>
+        <translation>Seleziona il comando da eseguire</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -4192,13 +4210,13 @@ ATTENTION: check this if you really know what you&apos;re doing</source>
         <location line="+40"/>
         <source>ERROR</source>
         <comment>message box message</comment>
-        <translation type="unfinished"/>
+        <translation>ERRORE</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Please specify the following before proceeding:</source>
         <comment>message box, message</comment>
-        <translation type="unfinished"/>
+        <translation>Specificare alcuni dati prima di proseguire:</translation>
     </message>
     <message>
         <location line="+14"/>
@@ -4209,13 +4227,13 @@ ATTENTION: check this if you really know what you&apos;re doing</source>
         <location line="+9"/>
         <source>ERROR</source>
         <comment>message box message - line1</comment>
-        <translation type="unfinished"/>
+        <translation>ERRORE</translation>
     </message>
     <message>
         <location line="-66"/>
         <source>That is not allowed because &apos;/&apos; does not have an actual name</source>
         <comment>message box message - line2</comment>
-        <translation type="unfinished"/>
+        <translation>Ciò non è permesso perché la cartella root &apos;/&apos; non ha un nome</translation>
     </message>
     <message>
         <location line="-300"/>
@@ -4257,37 +4275,37 @@ ATTENTION: check this if you really know what you&apos;re doing</source>
         <location line="+12"/>
         <source>The name of the task you requested already exists</source>
         <comment>message box message - line1</comment>
-        <translation type="unfinished"/>
+        <translation>Il nome del task è già esistente</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Please specify a different name before proceeding</source>
         <comment>message box message - line2</comment>
-        <translation type="unfinished"/>
+        <translation>Specifica un nome diverso prima di procedere</translation>
     </message>
     <message>
         <location line="+17"/>
         <source>The source you have declared is identical to the destination</source>
         <comment>message box message - line1</comment>
-        <translation type="unfinished"/>
+        <translation>Sorgente e destinazione coincidono</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Please modify at least one of them</source>
         <comment>message box message - line2</comment>
-        <translation type="unfinished"/>
+        <translation>Modificare almeno una tra quelle</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>WARNING</source>
         <comment>message box message - line1</comment>
-        <translation type="unfinished"/>
+        <translation>ATTENZIONE</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>You have declared a destination that is part of the source directory structure</source>
         <comment>message box message - line1</comment>
-        <translation type="unfinished"/>
+        <translation>Hai scelto una destinazione che si trova nella struttura della cartella sorgente</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -4311,55 +4329,55 @@ ATTENTION: check this if you really know what you&apos;re doing</source>
         <location line="+8"/>
         <source>&apos;Remote Host&apos; is checked, but no remote host name is declared</source>
         <comment>message box message - line2</comment>
-        <translation type="unfinished"/>
+        <translation>&quot;Host Remoto&quot; è selezionato, ma non è stato impostato nessun nome</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Please specify a remote host name</source>
         <comment>message box message - line3</comment>
-        <translation type="unfinished"/>
+        <translation>Specificare un nome per l&apos;host remoto</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Otherwise uncheck &apos;Remote Host&apos; to operate locally</source>
         <comment>message box message - line4</comment>
-        <translation type="unfinished"/>
+        <translation>Altrimenti deselezionare &apos;Host Remoto&apos; per lavorare in locale</translation>
     </message>
     <message>
         <location line="+64"/>
         <source>All declared fields of the task properties window seem to be ok</source>
         <comment>message box message first line</comment>
-        <translation type="unfinished"/>
+        <translation>Tutti i campi delle proprietà del task sembrano essere corretti</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Errors have been found</source>
         <comment>message box message first line</comment>
-        <translation type="unfinished"/>
+        <translation>Si sono verificati degli errori</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>command to be executed</source>
         <comment>full phrase: command to be executed: &lt;COMMAND&gt;</comment>
-        <translation type="unfinished"/>
+        <translation>comando da eseguire</translation>
     </message>
     <message>
         <location line="+40"/>
         <source>You have already added this exclude item</source>
         <comment>message box message</comment>
-        <translation type="unfinished"/>
+        <translation>Hai già aggiungo questo elemento da escludere</translation>
     </message>
     <message>
         <location line="+54"/>
         <source>You have already added this include item</source>
         <comment>message box message</comment>
-        <translation type="unfinished"/>
+        <translation>Hai già aggiungo questo elemento da includere</translation>
     </message>
     <message>
         <location line="+52"/>
         <source>You have already added this option</source>
         <comment>message box message</comment>
-        <translation type="unfinished"/>
+        <translation>Hai già aggiunto questa opzione</translation>
     </message>
     <message>
         <location line="+265"/>
@@ -4368,7 +4386,7 @@ ATTENTION: check this if you really know what you&apos;re doing</source>
         <location line="+25"/>
         <location line="+26"/>
         <source>done</source>
-        <translation type="unfinished"/>
+        <translation>fatto</translation>
     </message>
     <message>
         <location line="-100"/>
@@ -4377,7 +4395,7 @@ ATTENTION: check this if you really know what you&apos;re doing</source>
         <location line="+25"/>
         <location line="+26"/>
         <source>done editing</source>
-        <translation type="unfinished"/>
+        <translation>modifica completata</translation>
     </message>
     <message>
         <location line="-99"/>
@@ -4386,7 +4404,7 @@ ATTENTION: check this if you really know what you&apos;re doing</source>
         <location line="+25"/>
         <location line="+26"/>
         <source>cancel</source>
-        <translation type="unfinished"/>
+        <translation>cancella</translation>
     </message>
     <message>
         <location line="-100"/>
@@ -4395,7 +4413,7 @@ ATTENTION: check this if you really know what you&apos;re doing</source>
         <location line="+25"/>
         <location line="+26"/>
         <source>cancel editing</source>
-        <translation type="unfinished"/>
+        <translation>annulla modifica</translation>
     </message>
     <message>
         <location filename="../ui/modifyDialog.ui" line="-1943"/>
@@ -4406,30 +4424,30 @@ ATTENTION: check this if you really know what you&apos;re doing</source>
         <location line="+3"/>
         <location line="+315"/>
         <source>Read file:</source>
-        <translation type="unfinished"/>
+        <translation>Leggi il file:</translation>
     </message>
     <message>
         <location line="-305"/>
         <location line="+315"/>
         <source>filename</source>
-        <translation type="unfinished"/>
+        <translation>nome del file</translation>
     </message>
     <message>
         <location line="-305"/>
         <location line="+315"/>
         <source>browse</source>
-        <translation type="unfinished"/>
+        <translation>esplora</translation>
     </message>
     <message>
         <location line="-312"/>
         <location line="+315"/>
         <source>...</source>
-        <translation type="unfinished"/>
+        <translation>...</translation>
     </message>
     <message>
         <location line="-297"/>
         <source>Include</source>
-        <translation type="unfinished"/>
+        <translation>Includi</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -4444,7 +4462,7 @@ ATTENTION: check this if you really know what you&apos;re doing</source>
     <message>
         <location line="+3"/>
         <source>Mode:</source>
-        <translation type="unfinished"/>
+        <translation>Modalità:</translation>
     </message>
     <message>
         <location line="+22"/>
@@ -4479,7 +4497,7 @@ Data ownership and permissions will NOT be preserved.
     <message>
         <location line="+5"/>
         <source>Destination is FAT/NTFS</source>
-        <translation type="unfinished"/>
+        <translation>La destinazione è FAT/NTFS</translation>
     </message>
     <message>
         <location line="+914"/>
@@ -4490,7 +4508,7 @@ Data ownership and permissions will NOT be preserved.
     <message>
         <location line="-19"/>
         <source>Snapshots to keep:</source>
-        <translation type="unfinished"/>
+        <translation>Snapshots da mantenere:</translation>
     </message>
 </context>
 <context>
@@ -4515,7 +4533,7 @@ Data ownership and permissions will NOT be preserved.
     <message>
         <location line="+9"/>
         <source>Select directory</source>
-        <translation type="unfinished"/>
+        <translation>Scegli la directory</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -4525,7 +4543,7 @@ Data ownership and permissions will NOT be preserved.
     <message>
         <location line="+105"/>
         <source>file :</source>
-        <translation type="unfinished"/>
+        <translation>file :</translation>
     </message>
     <message>
         <location filename="../ui/patternEditor.ui" line="+23"/>
@@ -4557,7 +4575,7 @@ eg &quot;/media/music/album/song.mp3&quot;</source>
     <message>
         <location line="+4"/>
         <source>Specific file</source>
-        <translation type="unfinished"/>
+        <translation>Specifica file</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -4568,7 +4586,7 @@ eg &quot;/media/music/Album/&quot;</source>
     <message>
         <location line="+4"/>
         <source>Specific directory</source>
-        <translation type="unfinished"/>
+        <translation>Specifica directory</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -4595,12 +4613,12 @@ eg all the directories that are named as &quot;temp&quot;</source>
     <message>
         <location line="+50"/>
         <source>name</source>
-        <translation type="unfinished"/>
+        <translation>nome</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>starts with :</source>
-        <translation type="unfinished"/>
+        <translation>comincia con:</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -4610,7 +4628,7 @@ eg all the directories that are named as &quot;temp&quot;</source>
     <message>
         <location line="+7"/>
         <source>ends with :</source>
-        <translation type="unfinished"/>
+        <translation>finisce con:</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -4627,7 +4645,7 @@ eg to refer to all &quot;.txt&quot; files, enter
     <message>
         <location line="+7"/>
         <source>is exactly :</source>
-        <translation type="unfinished"/>
+        <translation>è esattamente:</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -4637,7 +4655,7 @@ eg to refer to all &quot;.txt&quot; files, enter
     <message>
         <location line="+7"/>
         <source>contains :</source>
-        <translation type="unfinished"/>
+        <translation>contiene:</translation>
     </message>
     <message>
         <location line="-392"/>
@@ -4692,7 +4710,7 @@ eg to refer to all &quot;.txt&quot; files, enter
     <message>
         <location line="+3"/>
         <source>reset</source>
-        <translation type="unfinished"/>
+        <translation>reset</translation>
     </message>
     <message>
         <location line="+33"/>
@@ -5106,12 +5124,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+40"/>
         <source>:</source>
-        <translation type="unfinished"/>
+        <translation>:</translation>
     </message>
     <message>
         <location line="+71"/>
         <source>:delay</source>
-        <translation type="unfinished"/>
+        <translation>:ritardo</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -5122,7 +5140,7 @@ p, li { white-space: pre-wrap; }
         <location line="+10"/>
         <source>min</source>
         <extracomment>means: minutes (time)</extracomment>
-        <translation type="unfinished"/>
+        <translation>min</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -5209,157 +5227,157 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+25"/>
         <source>1</source>
-        <translation type="unfinished"/>
+        <translation>1</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>2</source>
-        <translation type="unfinished"/>
+        <translation>2</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>3</source>
-        <translation type="unfinished"/>
+        <translation>3</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>4</source>
-        <translation type="unfinished"/>
+        <translation>4</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>5</source>
-        <translation type="unfinished"/>
+        <translation>5</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>6</source>
-        <translation type="unfinished"/>
+        <translation>6</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>7</source>
-        <translation type="unfinished"/>
+        <translation>7</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>8</source>
-        <translation type="unfinished"/>
+        <translation>8</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>9</source>
-        <translation type="unfinished"/>
+        <translation>9</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>10</source>
-        <translation type="unfinished"/>
+        <translation>10</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>11</source>
-        <translation type="unfinished"/>
+        <translation>11</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>12</source>
-        <translation type="unfinished"/>
+        <translation>12</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>13</source>
-        <translation type="unfinished"/>
+        <translation>13</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>14</source>
-        <translation type="unfinished"/>
+        <translation>14</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>15</source>
-        <translation type="unfinished"/>
+        <translation>15</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>16</source>
-        <translation type="unfinished"/>
+        <translation>16</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>17</source>
-        <translation type="unfinished"/>
+        <translation>17</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>18</source>
-        <translation type="unfinished"/>
+        <translation>18</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>19</source>
-        <translation type="unfinished"/>
+        <translation>19</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>20</source>
-        <translation type="unfinished"/>
+        <translation>20</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>21</source>
-        <translation type="unfinished"/>
+        <translation>21</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>22</source>
-        <translation type="unfinished"/>
+        <translation>22</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>23</source>
-        <translation type="unfinished"/>
+        <translation>23</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>24</source>
-        <translation type="unfinished"/>
+        <translation>24</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>25</source>
-        <translation type="unfinished"/>
+        <translation>25</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>26</source>
-        <translation type="unfinished"/>
+        <translation>26</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>27</source>
-        <translation type="unfinished"/>
+        <translation>27</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>28</source>
-        <translation type="unfinished"/>
+        <translation>28</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>29</source>
-        <translation type="unfinished"/>
+        <translation>29</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>30</source>
-        <translation type="unfinished"/>
+        <translation>30</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>31</source>
-        <translation type="unfinished"/>
+        <translation>31</translation>
     </message>
     <message>
         <location line="-485"/>
@@ -5403,7 +5421,7 @@ p, li { white-space: pre-wrap; }
         <location line="+78"/>
         <source> file</source>
         <comment>BEWARE of the whitespace before file</comment>
-        <translation type="unfinished"/>
+        <translation> file</translation>
     </message>
     <message>
         <location line="+78"/>
@@ -5444,17 +5462,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+3"/>
         <source>@ reboot</source>
-        <translation type="unfinished"/>
+        <translation>@ riavvio</translation>
     </message>
     <message>
         <location line="+480"/>
         <source>close this dialog</source>
-        <translation type="unfinished"/>
+        <translation>chiudi questo dialogo</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>close</source>
-        <translation type="unfinished"/>
+        <translation>chiudi</translation>
     </message>
     <message>
         <location line="+20"/>
@@ -5482,7 +5500,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+10"/>
         <source>Profile description :</source>
-        <translation type="unfinished"/>
+        <translation>Descrizione del profilo</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -5552,12 +5570,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+44"/>
         <source>No</source>
-        <translation type="unfinished"/>
+        <translation>No</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Yes</source>
-        <translation type="unfinished"/>
+        <translation>Sì</translation>
     </message>
 </context>
 <context>
@@ -5565,7 +5583,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/winDialog.ui" line="+17"/>
         <source>luckyBackup</source>
-        <translation type="unfinished"/>
+        <translation>luckyBackup</translation>
     </message>
     <message>
         <location line="+28"/>
@@ -5575,7 +5593,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+20"/>
         <source>rsync:</source>
-        <translation type="unfinished"/>
+        <translation>rsync:</translation>
     </message>
     <message>
         <location line="+19"/>
@@ -5592,12 +5610,12 @@ p, li { white-space: pre-wrap; }
         <location line="-47"/>
         <location line="+64"/>
         <source>Use default value</source>
-        <translation type="unfinished"/>
+        <translation>Usa il valore di default</translation>
     </message>
     <message>
         <location line="-46"/>
         <source>ssh</source>
-        <translation type="unfinished"/>
+        <translation>ssh</translation>
     </message>
     <message>
         <location line="+19"/>
@@ -5607,12 +5625,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+58"/>
         <source>Okay</source>
-        <translation type="unfinished"/>
+        <translation>OK</translation>
     </message>
     <message>
         <location line="+27"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>Cancella</translation>
     </message>
     <message>
         <location filename="../src/winDialog.cpp" line="+102"/>
@@ -5624,7 +5642,7 @@ p, li { white-space: pre-wrap; }
         <location line="+1"/>
         <location line="+6"/>
         <source>Executable Files (*.exe)</source>
-        <translation type="unfinished"/>
+        <translation>File eseguibili (*.exe)</translation>
     </message>
     <message>
         <location line="-1"/>

@@ -23,7 +23,7 @@
  project version    : Please see "main.cpp" for project version
 
  developer          : lucky
- last modified      : 24 Feb 2012
+ last modified      : 05 Mar 2012
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -131,6 +131,7 @@ QString logFileUpdate(QString, QString, int);               // Update the logfil
 bool checkMountPoint(QString);                              // Check if a path belongs to a mountpoint or is a mountpoint itself
 void setTextMessages (QString,QString,bool,bool,QString,QString,QString);// function to set text feedback for the user
 QString fixWinPathForRsync(QString,bool);                        // Fixes a windows path for rsync use
+QString calculateLastPath(QString);                         // Calculates the last part of a path eg path=user@host:destination\path\here -> returns "here"
 
 QString emailCommand;
 bool    emailNever;

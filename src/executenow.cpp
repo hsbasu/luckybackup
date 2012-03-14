@@ -23,7 +23,7 @@ do everything that deals with commands (rsync & others) execution
 project version	: Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 29 Feb 2012
+last modified      : 12 Mar 2012
 ===============================================================================================================================
 ===============================================================================================================================
 ********************************** DO NOT FORGET TO CHANGE "commandline.cpp:rsyncIT()" ********************************************************
@@ -377,6 +377,46 @@ void luckyBackupWindow::executeBeforeTask()
         // first remove the older logfiles and snapshots if max keep snapshots is reached
         
         bool RemoteDestUsed = (Operation[currentOperation] -> GetRemoteDestination()) && (Operation[currentOperation] -> GetRemote());
+        
+        // SNAPSHOTS REMOVAL - This is outside the (currentSnaps >= maxSnaps) condition, because it will eventually cause the snapshots directory to get created so that the profile will be backed up without problems later on
+        // First calculate the folder where snapshots go (tempDestination)
+        QStringList tempArguments = Operation[currentOperation] -> GetArgs();
+        QString tempSource = tempArguments[tempArguments.size()-2];
+        QString tempDestination = tempArguments[tempArguments.size()-1];
+        QString sourceLast = tempSource;
+        if (!tempSource.endsWith(SLASH))    // this means task is of type "backup dir by name"
+        {
+            sourceLast = calculateLastPath(sourceLast); // This is the lowest dir of the source
+            
+            tempSource.append(SLASH);
+            tempDestination.append(sourceLast + SLASH);
+        }
+        tempDestination.append (snapDefaultDir);
+        
+        QStringList remoteArgs; remoteArgs.clear();
+        //all remote arguments exactly as used at normal backup
+        if (RemoteDestUsed)
+        {
+            remoteArgs.append("--protect-args");
+            if ( Operation[currentOperation] -> GetRemotePassword() != "")
+                remoteArgs.append("--password-file=" + ( Operation[currentOperation] -> GetRemotePassword()) );
+            if ( Operation[currentOperation] -> GetRemoteSSH())
+            {
+                if ( Operation[currentOperation] -> GetRemoteSSHPassword() != "")
+                    if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
+                        remoteArgs.append("-e "+sshCommandPath+" -i " +  Operation[currentOperation] -> GetRemoteSSHPassword() +" -p " +
+                                    countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                    else
+                        remoteArgs.append("-e "+sshCommandPath+" -i " +  Operation[currentOperation] -> GetRemoteSSHPassword());
+                else
+                    if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
+                        remoteArgs.append("-e "+sshCommandPath+" -p " + countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                    else
+                        remoteArgs.append("-e "+sshCommandPath);
+            }
+        }
+        
+            
         if (currentSnaps >= maxSnaps)
         {
             outputInsert = "\n<font color=magenta>" +
@@ -386,24 +426,7 @@ void luckyBackupWindow::executeBeforeTask()
             ui.rsyncOutput->append(outputInsert);
             
             // **************Remove actual backup data ***************************************************
-                
-            // First calculate the folder where snapshots go
-            QStringList tempArguments = Operation[currentOperation] -> GetArgs();
-            QString tempSource = tempArguments[tempArguments.size()-2];
-            QString tempDestination = tempArguments[tempArguments.size()-1];
-            QString sourceLast = tempSource;
-            if (!tempSource.endsWith(SLASH))	// this means task is of type "backup dir by name"
-            {
-                if (sourceLast.contains(":"))	// this is normal for a remote directory
-                    sourceLast = sourceLast.right(tempSource.size()-sourceLast.lastIndexOf(":")-1);	//this is the remote source dir without the remote pc
-                if (tempSource.contains(SLASH))	// this is normal for a directory unless it is remote
-                    sourceLast = sourceLast.right(sourceLast.size()-sourceLast.lastIndexOf(SLASH)-1);	//this is the lowest dir of source
-                
-                tempSource.append(SLASH);
-                tempDestination.append(sourceLast + SLASH);
-            }
-            tempDestination.append (snapDefaultDir);
-            
+
             // increase the remove limit to include the source.size() if "backup dir by name" is used
             if (Operation[currentOperation] -> GetTypeDirName())
                 removeCharLimit = 4 + sourceLast.size()+1;
@@ -426,28 +449,12 @@ void luckyBackupWindow::executeBeforeTask()
             
             //also add all remote arguments exactly as used at normal backup
             if (RemoteDestUsed)
-            {
-                rmArgs.append("--protect-args");
-                if ( Operation[currentOperation] -> GetRemotePassword() != "")
-                    rmArgs.append("--password-file=" + ( Operation[currentOperation] -> GetRemotePassword()) );
-                if ( Operation[currentOperation] -> GetRemoteSSH())
-                {
-                    if ( Operation[currentOperation] -> GetRemoteSSHPassword() != "")
-                        if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
-                            rmArgs.append("-e "+sshCommandPath+" -i " +  Operation[currentOperation] -> GetRemoteSSHPassword() +" -p " +
-                                        countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
-                        else
-                            rmArgs.append("-e "+sshCommandPath+" -i " +  Operation[currentOperation] -> GetRemoteSSHPassword());
-                    else
-                        if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
-                            rmArgs.append("-e "+sshCommandPath+" -p " + countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
-                        else
-                            rmArgs.append("-e "+sshCommandPath);
-                }
-            }
+                //rmArgs.append(remoteArgs);  // use operator << instead of append to maintain compatiiblity with debian 5
+                rmArgs << remoteArgs;
             
             rmArgs.append(snapEmptyDir);
             rmArgs.append(tempDestination);
+            
             rmProcess -> start (command,rmArgs);
             rmProcess -> waitForFinished();
             
@@ -489,6 +496,30 @@ void luckyBackupWindow::executeBeforeTask()
                 Operation[currentOperation] -> RemoveSnapshotsListItem (0);
                 count++;
             }
+        }
+        else        // this is just to create the .snapDefaultDir if it does not to exist so as to copy profile data later...
+        {
+            //we will create the snapshots default directory by using an rsync command with an empty source without --delete option
+            QProcess *mkdirProcess;
+            mkdirProcess  = new QProcess(this);
+            QStringList mkdirArgs;      mkdirArgs.clear();
+            mkdirArgs << "--progress" << "-r";
+            
+            //add all remote arguments exactly as used at normal backup
+            if (RemoteDestUsed)
+                //mkdirArgs.append(remoteArgs);   // use operator << instead of append to maintain compatiiblity with debian 5
+                mkdirArgs << remoteArgs;
+            
+            mkdirArgs.append(snapEmptyDir);
+            mkdirArgs.append(tempDestination);
+            mkdirProcess -> start (command,mkdirArgs);
+            mkdirProcess -> waitForFinished();
+            
+            if ((mkdirProcess -> exitCode()) == 0)
+                ui.rsyncOutput->append("\n!!");
+            else
+                ui.rsyncOutput->append("\n!");
+            
         }
 
         //set the current date and time as the operation's last execution date-time
@@ -799,12 +830,7 @@ void luckyBackupWindow::procFinished()
             QString exportProfileDir = "";  QString sourceLast=Operation[currentOperation] -> GetSource();
             //calculate the last folder of source
             if (!sourceLast.endsWith(SLASH))    // this means task is of type "backup dir by name"
-            {
-                if ((sourceLast.contains(":")) && (!notXnixRunning) )   // this is normal for a remote directory (not for OS/2 or win: eg c:\)
-                    sourceLast = sourceLast.right(sourceLast.size()-sourceLast.lastIndexOf(":")-1); //this is the remote source dir without the remote pc
-                if (sourceLast.contains(SLASH)) // this is normal for a directory unless it is remote
-                    sourceLast = sourceLast.right(sourceLast.size()-sourceLast.lastIndexOf(SLASH)-1);   //this is the lowest dir of source
-            }
+                sourceLast = calculateLastPath(sourceLast); // This is the lowest dir of the source
             else
                 sourceLast = "";
             

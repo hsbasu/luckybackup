@@ -23,7 +23,7 @@
  project version    : Please see "main.cpp" for project version
 
  developer          : lucky
- last modified      : 05 Mar 2012
+ last modified      : 08 Oct 2012
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -35,8 +35,8 @@
 QString myHome = QDir::homePath();                          // user's home directory
 QString currentUser;                                        // will hold the current username (definition at luckybackupwindow.cpp)
 QString const appName = "luckyBackup";                      // application name
-double const appVersion = 0.47;                             // application version
-QString appVersionString = "0.4.7";                         // application version
+double const appVersion = 0.48;                             // application version
+QString appVersionString = "0.4.8";                         // application version
 double const validProfileVersion = 0.21;                    // profile version before this a profile won't be loaded
 double const validScheduleVersion = 0.34;                   // schedule version before this a schedule won't be loaded
 double const validSettingsVersion = 0.3;                    // Settings file valid version

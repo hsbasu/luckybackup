@@ -23,7 +23,7 @@ cpp file that does all stuff needed when a signal is transmitted (eg button pres
 project version	: Please see "main.cpp" for project version
 
 developer       : luckyb 
-last modified   : 10 Feb 2012
+last modified   : 16 Apr 2012
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -1237,7 +1237,7 @@ void luckyBackupWindow::start()
     {
         InfoData = "<font color=red><b>" + tr("ERROR") + "</b></font><br>" +
                 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br><b>" +
-                tr("You have only incuded tasks that are going to be skipped") + "</b><br>" +
+                tr("You have only included tasks that are going to be skipped") + "</b><br>" +
                 "..." + tr("nothing to do") +" !!";
         
         ui.textBrowser_info -> setText(InfoData);

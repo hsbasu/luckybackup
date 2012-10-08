@@ -23,7 +23,7 @@ do everything that deals with commands (rsync & others) execution
 project version	: Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 12 Mar 2012
+last modified      : 19 Sep 2012
 ===============================================================================================================================
 ===============================================================================================================================
 ********************************** DO NOT FORGET TO CHANGE "commandline.cpp:rsyncIT()" ********************************************************

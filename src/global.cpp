@@ -22,7 +22,7 @@ file containing all variables & functions used globaly
 project version    : Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 05 Mar 2012
+last modified      : 19 Sep 2012
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -1467,7 +1467,7 @@ void checkBackupDirs(QString source, QString dest)
             Operation[currentOperation] -> SetOK(TRUE);
             NothingToDo = FALSE;
         }
-        else //The destination directory does not exist or it is empty							
+        else //The destination directory does not exist or it is empty
         {
             // A partition is NOT mounted under /media or /mnt                                     ->  [WARNING ]
             if (!Operation[currentOperation] -> GetDestMounted())
@@ -1485,11 +1485,13 @@ void checkBackupDirs(QString source, QString dest)
                 setTextMessages(source,dest,remoteSource,remoteDest,"critical","backup","dest-not-exist");
 
                 ask=TRUE;	//ask the user if he/she wants to continue
-                NothingToDo = FALSE;
+
                 Operation[currentOperation] -> SetCRITICAL(TRUE);
                 
                 if (SkipCritical)						// if a --skip-critical is given as argument
                     Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation
+                else
+                    NothingToDo = FALSE;
             }
         }
     }

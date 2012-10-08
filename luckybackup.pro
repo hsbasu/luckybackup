@@ -6,7 +6,7 @@ error("Use the qmake include with Qt4.4 or greater, on Debian that is qmake-qt4"
 
 QMAKE_STRIP = echo
 
-VERSION = 0.4.7
+VERSION = 0.4.8
 
 target.path = /usr/bin
 TARGET = luckybackup
@@ -120,6 +120,7 @@ SOURCES	= src/modifyDialog.cpp \
 RESOURCES = resources/luckybackup.qrc
 
 TRANSLATIONS = translations/luckybackup_ara.ts \
+    translations/luckybackup_bg.ts \
     translations/luckybackup_bs.ts \
     translations/luckybackup_ca.ts \
     translations/luckybackup_cs.ts \
@@ -129,8 +130,10 @@ TRANSLATIONS = translations/luckybackup_ara.ts \
     translations/luckybackup_es.ts \
     translations/luckybackup_et.ts \
     translations/luckybackup_fr.ts \
+    translations/luckybackup_gl.ts \
     translations/luckybackup_it.ts \
     translations/luckybackup_nl.ts \
+    translations/luckybackup_pl.ts \
     translations/luckybackup_pt_BR.ts \
     translations/luckybackup_ro.ts \
     translations/luckybackup_ru.ts \

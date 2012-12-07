@@ -23,7 +23,7 @@ do everything that deals with commands (rsync & others) execution
 project version	: Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 19 Sep 2012
+last modified      : 10 Nov 2012
 ===============================================================================================================================
 ===============================================================================================================================
 ********************************** DO NOT FORGET TO CHANGE "commandline.cpp:rsyncIT()" ********************************************************
@@ -389,30 +389,55 @@ void luckyBackupWindow::executeBeforeTask()
             sourceLast = calculateLastPath(sourceLast); // This is the lowest dir of the source
             
             tempSource.append(SLASH);
-            tempDestination.append(sourceLast + SLASH);
+            if (WINrunning && RemoteDestUsed)
+                tempDestination.append(sourceLast + XnixSLASH);
+            else
+                tempDestination.append(sourceLast + SLASH);
         }
-        tempDestination.append (snapDefaultDir);
+        if (RemoteDestUsed && WINrunning)
+            tempDestination.append (snapDefaultDir.replace(SLASH,XnixSLASH));
+        else
+            tempDestination.append (snapDefaultDir);
         
         QStringList remoteArgs; remoteArgs.clear();
         //all remote arguments exactly as used at normal backup
         if (RemoteDestUsed)
         {
             remoteArgs.append("--protect-args");
-            if ( Operation[currentOperation] -> GetRemotePassword() != "")
+            //if ( Operation[currentOperation] -> GetRemotePassword() != "")
+            if ( Operation[currentOperation]-> GetRemoteModule() && Operation[currentOperation] -> GetRemotePassword() != "")
                 remoteArgs.append("--password-file=" + ( Operation[currentOperation] -> GetRemotePassword()) );
             if ( Operation[currentOperation] -> GetRemoteSSH())
             {
-                if ( Operation[currentOperation] -> GetRemoteSSHPassword() != "")
-                    if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
-                        remoteArgs.append("-e "+sshCommandPath+" -i " +  Operation[currentOperation] -> GetRemoteSSHPassword() +" -p " +
-                                    countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                if (WINrunning)
+                {
+                    if ( Operation[currentOperation] -> GetRemoteSSHPassword() != "")
+                        if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
+                          remoteArgs.append("-e '"+sshCommandPath+"' -i '" +  Operation[currentOperation] -> GetRemoteSSHPassword() +"' -p " +
+                                        countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                        else
+                          remoteArgs.append("-e '"+sshCommandPath+"' -i '" +  Operation[currentOperation] -> GetRemoteSSHPassword()+"'");
                     else
                         remoteArgs.append("-e "+sshCommandPath+" -i " +  Operation[currentOperation] -> GetRemoteSSHPassword());
+                        if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
+                          remoteArgs.append("-e '"+sshCommandPath+"' -p " + countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                        else
+                            remoteArgs.append("-e '"+sshCommandPath+"'");
+                }
                 else
-                    if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
-                        remoteArgs.append("-e "+sshCommandPath+" -p " + countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                {
+                    if ( Operation[currentOperation] -> GetRemoteSSHPassword() != "")
+                        if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
+                            remoteArgs.append("-e "+sshCommandPath+" -i " +  Operation[currentOperation] -> GetRemoteSSHPassword() +" -p " +
+                                        countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                        else
+                            remoteArgs.append("-e "+sshCommandPath+" -i " +  Operation[currentOperation] -> GetRemoteSSHPassword());
                     else
-                        remoteArgs.append("-e "+sshCommandPath);
+                        if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
+                            remoteArgs.append("-e "+sshCommandPath+" -p " + countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                        else
+                            remoteArgs.append("-e "+sshCommandPath);
+                }
             }
         }
         
@@ -441,11 +466,17 @@ void luckyBackupWindow::executeBeforeTask()
             int snapToKeep = currentSnaps-maxSnaps + 1;
             while ( snapToKeep < currentSnaps )
             {
-                rmArgs.append("--filter=protect " + Operation[currentOperation] -> GetSnapshotsListItem(snapToKeep) + SLASH);
+                if (WINrunning && RemoteDestUsed)
+                    rmArgs.append("--filter=protect " + Operation[currentOperation] -> GetSnapshotsListItem(snapToKeep) + XnixSLASH);
+                else
+                    rmArgs.append("--filter=protect " + Operation[currentOperation] -> GetSnapshotsListItem(snapToKeep) + SLASH);
                 snapToKeep++;
             }
             // protect the backup profile dir too
-            rmArgs.append("--filter=protect " + profileName + ".profile" + SLASH);
+            if (WINrunning && RemoteDestUsed)
+                rmArgs.append("--filter=protect " + profileName + ".profile" + XnixSLASH);
+            else
+                rmArgs.append("--filter=protect " + profileName + ".profile" + SLASH);
             
             //also add all remote arguments exactly as used at normal backup
             if (RemoteDestUsed)
@@ -503,7 +534,10 @@ void luckyBackupWindow::executeBeforeTask()
             QProcess *mkdirProcess;
             mkdirProcess  = new QProcess(this);
             QStringList mkdirArgs;      mkdirArgs.clear();
-            mkdirArgs << "--progress" << "-r";
+            if (WINrunning && RemoteDestUsed)
+                mkdirArgs << "--mkdir";
+            else
+                mkdirArgs << "--progress" << "-r";
             
             //add all remote arguments exactly as used at normal backup
             if (RemoteDestUsed)
@@ -835,7 +869,12 @@ void luckyBackupWindow::procFinished()
                 sourceLast = "";
             
             if (!rsyncArguments.isEmpty())      //rsyncArguments is calculated at executeRsync()
-                exportProfileDir = rsyncArguments.last() + sourceLast + SLASH + snapDefaultDir + profileName + ".profile" + SLASH;
+            {
+                if (WINrunning && RemoteDestUsed)
+                    exportProfileDir = rsyncArguments.last() + sourceLast + XnixSLASH + snapDefaultDir + profileName + ".profile" + XnixSLASH;
+                else
+                    exportProfileDir = rsyncArguments.last() + sourceLast + SLASH + snapDefaultDir + profileName + ".profile" + SLASH;
+            }
             
             //QMessageBox::information(this, "LB",exportProfileDir);    //TESTING
             

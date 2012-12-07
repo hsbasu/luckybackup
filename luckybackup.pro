@@ -37,6 +37,8 @@ INSTALLS += target menu debianmenu pixmap documentation manpage translations lic
 system(gzip -c manpage/luckybackup.8 > manpage/luckybackup.8.gz)
 QMAKE_CLEAN = Makefile $${TARGET} manpage/luckybackup.8.gz
 
+QT += network
+
 # Actions for specific distros ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 UNAMEA = $$system( uname -a )
 ISUBUNTU = $$find(UNAMEA, "ubuntu")
@@ -65,7 +67,14 @@ exists( /etc/SuSE-release ) {
     message( "Removing debian menu installation files..." )
     INSTALLS -= debianmenu
  }
+win32 {
+     message( "You are running windows" )
+ }
 
+macx {
+     message( "You are running OSX" )
+ }
+ 
 HEADERS	= src/operationClass.h \
     src/luckybackupwindow.h \
     src/modifyDialog.h \
@@ -82,8 +91,10 @@ HEADERS	= src/operationClass.h \
     src/patternEditor.h \
     src/manageWizard.h \
     src/helpBrowser.h \
-    src/winDialog.h
-
+    src/winDialog.h \
+    src/RsyncDirModel.h \
+    src/RsyncDirModel_p.h
+ 
 FORMS 	= ui/luckybackupwindow.ui \
     ui/modifyDialog.ui \
     ui/helpBrowser.ui \
@@ -115,10 +126,13 @@ SOURCES	= src/modifyDialog.cpp \
     src/manageWizard.cpp \
     src/winDialog.cpp \
     src/luckybackupwindow.cpp \
-    src/main.cpp
+    src/main.cpp \
+    src/RsyncDirModel.cpp \
+    src/RsyncDirModel_p.cpp
  
 RESOURCES = resources/luckybackup.qrc
 
+ 
 TRANSLATIONS = translations/luckybackup_ara.ts \
     translations/luckybackup_bg.ts \
     translations/luckybackup_bs.ts \

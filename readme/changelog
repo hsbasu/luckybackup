@@ -1,6 +1,13 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Version 0.4.8 :
+Version 0.4.8-rc2 :
+* Added vss support (windows)
+* Added support for nt-streams (windows)
+* Minor modifications to "modify task" dialog
+* View of remote places is now available through the "manage backup" dialog
+* Fixed issue: Checks of mount-points now include deeper levels in paths than /media/<1st-level>/ and /mnt/<1st-level>/
 * Fixed issue: Segmentation fault under certain circumstances, when --skip-critical is used as an argument and there exists one or more actual CRITICAL tasks.
+* Fixed issue: Confusion at task list when an item's box state changed.
+* Fixed issue: Default email options are now loaded when a new profile is created
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Version 0.4.7 :

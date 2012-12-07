@@ -22,7 +22,7 @@ file containing all functions for luckybackupwindow
 project version	: Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 01 Feb 2012
+last modified      : 27 Nov 2012
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -678,6 +678,11 @@ int luckyBackupWindow::createCurrentProfile()
     if (!profile.exists())			//if the currentProfile does not exist, try to create it
     {
         TotalOperations = 0;	//Set the Operations list size to 0
+        
+        //Set email default options
+        emailNever = 1;
+        emailSubject = emailDefaultSubject;
+        emailBody = emailDefaultBody;
 
         if (currentProfile == defaultProfile)
             createData.append("<font color=blue><b>" + tr("creating default profile ...","Information window message") + "</font></b><br>");

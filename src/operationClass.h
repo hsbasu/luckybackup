@@ -23,7 +23,7 @@
  project version    : Please see "main.cpp" for project version
 
  developer          : luckyb 
- last modified      : 13 Feb 2012
+ last modified      : 08 Nov 2012
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -145,6 +145,8 @@ class operation
         bool GetOptionsFATntfs() const          {return itsOptionsFATntfs;}
         bool GetOptionsSuper() const            {return itsOptionsSuper;}
         bool GetOptionsNumericIDs() const       {return itsOptionsNumericIDs;}
+        bool GetOptionsVss () const             {return itsOptionsVss;}
+        bool GetOptionsRestorent () const       {return itsOptionsRestorent;}
         int GetOptionsListSize () const         {return itsOptionsList.size();}
         QString GetOptionsListItem (int itemPosition) const {return itsOptionsList.value(itemPosition);}
 
@@ -265,6 +267,8 @@ class operation
         void SetOptionsFATntfs (bool OptionsFATntfs)        { itsOptionsFATntfs = OptionsFATntfs;}
         void SetOptionsSuper (bool OptionsSuper)            { itsOptionsSuper = OptionsSuper;}
         void SetOptionsNumericIDs (bool OptionsNumeriIDs)   { itsOptionsNumericIDs = OptionsNumeriIDs;}
+        void SetOptionsRestorent (bool Options)             { itsOptionsRestorent = Options;}
+        void SetOptionsVss (bool Options)                   { itsOptionsVss = Options;}
         // Command options list - user defined
         void AddOptionsListItem (QString itemText)          { itsOptionsList.append(itemText);}
 
@@ -346,6 +350,8 @@ class operation
         bool itsOptionsFATntfs;
         bool itsOptionsSuper;
         bool itsOptionsNumericIDs;
+        bool itsOptionsVss;
+        bool itsOptionsRestorent;
         QStringList itsOptionsList;
 
         QStringList itsExecuteBeforeList;

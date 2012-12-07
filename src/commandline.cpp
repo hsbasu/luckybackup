@@ -19,7 +19,7 @@
      You should have received a copy of the GNU General Public License
      along with luckyBackup.  If not,see <http://www.gnu.org/licenses/>.
  developer      : luckyb 
- last modified  : 12 Mar 2012
+ last modified  : 10 Nov 2012
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -117,35 +117,70 @@ void commandline::rsyncIT()
             QString tempSource = tempArguments[tempArguments.size()-2];
             QString tempDestination = tempArguments[tempArguments.size()-1];
             QString sourceLast = tempSource;
+            
+            // win stuff ~~~~~
+            QString tslash;
+            if ( (WINrunning) && (Operation[currentOperation] -> GetRemote()) )
+                tslash=XnixSLASH;
+            else
+                tslash=SLASH;
+
             if (!tempSource.endsWith(SLASH))    // this means task is of type "backup dir by name"
             {
                 sourceLast = calculateLastPath(sourceLast); // This is the lowest dir of the source
                 
                 tempSource.append(SLASH);
-                tempDestination.append(sourceLast + SLASH);
+                if (!WINrunning)
+                    tempDestination.append(sourceLast + SLASH);
+                else
+                    tempDestination.append(sourceLast + tslash);
             }
-            tempDestination.append (snapDefaultDir);
-                    
+                
+            if (WINrunning && RemoteDestUsed)
+                tempDestination.append (snapDefaultDir.replace("\\",XnixSLASH));
+            else
+                tempDestination.append (snapDefaultDir);
+            
             QStringList remoteArgs; remoteArgs.clear();
             //all remote arguments exactly as used at normal backup
             if (RemoteDestUsed)
             {
                 remoteArgs.append("--protect-args");
-                if ( Operation[currentOperation] -> GetRemotePassword() != "")
+                // if ( Operation[currentOperation] -> GetRemotePassword() != "")
+                if ( (Operation[currentOperation]-> GetRemoteModule()) && (Operation[currentOperation] -> GetRemotePassword() != "") )
                     remoteArgs.append("--password-file=" + ( Operation[currentOperation] -> GetRemotePassword()) );
                 if ( Operation[currentOperation] -> GetRemoteSSH())
                 {
-                    if ( Operation[currentOperation] -> GetRemoteSSHPassword() != "")
-                        if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
-                            remoteArgs.append("-e "+sshCommandPath+" -i " +  Operation[currentOperation] -> GetRemoteSSHPassword() +" -p " +
-                                        countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                    if (WINrunning)
+                    {
+                        if (
+                            Operation[currentOperation] -> GetRemoteSSHPassword() != "")
+                            if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
+                              remoteArgs.append("-e '"+sshCommandPath+"' -i '" +  Operation[currentOperation] -> GetRemoteSSHPassword() +"' -p " +
+                                            countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                            else
+                              remoteArgs.append("-e '"+sshCommandPath+"' -i '" +  Operation[currentOperation] -> GetRemoteSSHPassword()+"'");
                         else
-                            remoteArgs.append("-e "+sshCommandPath+" -i " +  Operation[currentOperation] -> GetRemoteSSHPassword());
+                            if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
+                              remoteArgs.append("-e '"+sshCommandPath+"' -p " + countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                            else
+                              remoteArgs.append("-e '"+sshCommandPath+"'");
+
+                    }
                     else
-                        if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
-                            remoteArgs.append("-e "+sshCommandPath+" -p " + countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                    {
+                        if ( Operation[currentOperation] -> GetRemoteSSHPassword() != "")
+                            if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
+                                remoteArgs.append("-e "+sshCommandPath+" -i " +  Operation[currentOperation] -> GetRemoteSSHPassword() +" -p " +
+                                            countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                            else
+                                remoteArgs.append("-e "+sshCommandPath+" -i " +  Operation[currentOperation] -> GetRemoteSSHPassword());
                         else
-                            remoteArgs.append("-e "+sshCommandPath);
+                            if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
+                                remoteArgs.append("-e "+sshCommandPath+" -p " + countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                            else
+                                remoteArgs.append("-e "+sshCommandPath);
+                    }
                 }
             }
                     
@@ -181,12 +216,18 @@ void commandline::rsyncIT()
                     rmArgs << "--progress" << "-r" << "--delete-after";
                     int snapToKeep = currentSnaps-maxSnaps + 1;
                     while ( snapToKeep < currentSnaps )
-                    {
-                        rmArgs.append("--filter=protect " + Operation[currentOperation] -> GetSnapshotsListItem(snapToKeep) + SLASH);
+                    {                            
+                        if (WINrunning && RemoteDestUsed)
+                            rmArgs.append("--filter=protect " + Operation[currentOperation] -> GetSnapshotsListItem(snapToKeep) + XnixSLASH);
+                        else
+                            rmArgs.append("--filter=protect " + Operation[currentOperation] -> GetSnapshotsListItem(snapToKeep) + SLASH);
                         snapToKeep++;
                     }
                     // protect the backup profile dir too
-                    rmArgs.append("--filter=protect " + profileName + ".profile" + SLASH);
+                    if (WINrunning && RemoteDestUsed)
+                        rmArgs.append("--filter=protect " + profileName + ".profile" + XnixSLASH);
+                    else
+                        rmArgs.append("--filter=protect " + profileName + ".profile" + SLASH);
                     
                     //also add all remote arguments exactly as used at normal backup
                     if (RemoteDestUsed)
@@ -243,7 +284,10 @@ void commandline::rsyncIT()
                     //we will create the snapshots default directory by using an rsync command with an empty source without --delete option
                     QProcess *mkdirProcess;     mkdirProcess  = new QProcess;
                     QStringList mkdirArgs;      mkdirArgs.clear();
-                    mkdirArgs << "--progress" << "-r";
+                    if (WINrunning && RemoteDestUsed)
+                        mkdirArgs << "--mkdir";
+                    else
+                        mkdirArgs << "--progress" << "-r";
                     
                     //add all remote arguments exactly as used at normal backup
                     if (RemoteDestUsed)
@@ -509,7 +553,12 @@ void commandline::rsyncIT()
                                 sourceLast = "";
             
                             if (!rsyncArguments.isEmpty())      //rsyncArguments is calculated at executeRsync()
-                                exportProfileDir = rsyncArguments.last() + sourceLast + SLASH + snapDefaultDir + profileName + ".profile" + SLASH;
+                            {
+                                if (WINrunning && RemoteDestUsed)
+                                    exportProfileDir = rsyncArguments.last() + sourceLast + XnixSLASH + snapDefaultDir + profileName + ".profile" + XnixSLASH;
+                                else
+                                    exportProfileDir = rsyncArguments.last() + sourceLast + SLASH + snapDefaultDir + profileName + ".profile" + SLASH;
+                            }
 
                             // Backup profile + logs + snaps to destination
                             // If this is a backup task && not a dryrun

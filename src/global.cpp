@@ -22,7 +22,7 @@ file containing all variables & functions used globaly
 project version    : Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 19 Sep 2012
+last modified      : 27 Nov 2012
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -297,7 +297,8 @@ bool check_dirs()
     }
 
     cout << CheckedDataCLI.toStdString();
-
+    //cout << CheckedDataCLI.toUtf8().constData();
+    
     cout <<"\n\n";
     if (NothingToDo) //if there is nothing to Do anyway then just display a message
     {
@@ -497,6 +498,8 @@ int loadProfile(QString profileToLoad)
             if (ProfileLine.startsWith("OptionsSuper="))            tempOp  -> SetOptionsSuper(ProfileLine.remove("OptionsSuper=").toInt(&IntOk,10));
             if (ProfileLine.startsWith("OptionsNumericIDs="))       tempOp  -> SetOptionsNumericIDs(ProfileLine.remove("OptionsNumericIDs=").toInt(&IntOk,10));
             if (ProfileLine.startsWith("OptionsListItem="))			tempOp	-> AddOptionsListItem(ProfileLine.remove("OptionsListItem="));
+            if (ProfileLine.startsWith("OptionsRestorent="))        tempOp  -> SetOptionsRestorent(ProfileLine.remove("OptionsRestorent=").toInt(&IntOk,10));
+            if (ProfileLine.startsWith("OptionsVss="))              tempOp  -> SetOptionsVss(ProfileLine.remove("OptionsVss=").toInt(&IntOk,10));
             
             if (ProfileLine.startsWith("ExecuteBeforeListItem="))
             {
@@ -677,16 +680,19 @@ int loadProfileQV(QString profileToLoad)
             if (vString == "RemoteSSHPassword")	tempOp	-> SetRemoteSSHPassword(v.toString());
             if (vString == "RemoteSSHPort")		tempOp	-> SetRemoteSSHPort(v.toInt());
 
-            if (vString == "OptionsUpdate")		tempOp	-> SetOptionsUpdate(v.toBool());
-            if (vString == "OptionsDelete")		tempOp	-> SetOptionsDelete(v.toBool());
-            if (vString == "OptionsRecurse")	tempOp	-> SetOptionsRecurse(v.toBool());
-            if (vString == "OptionsOwnership")	tempOp	-> SetOptionsOwnership(v.toBool());
-            if (vString == "OptionsSymlinks")	tempOp	-> SetOptionsSymlinks(v.toBool());
-            if (vString == "OptionsPermissions") tempOp	-> SetOptionsPermissions(v.toBool());
-            if (vString == "OptionsDevices")	tempOp	-> SetOptionsDevices(v.toBool());
-            if (vString == "OptionsCVS")		tempOp	-> SetOptionsCVS(v.toBool());
-            if (vString == "OptionsHardLinks")	tempOp	-> SetOptionsHardLinks(v.toBool());
-            if (vString == "OptionsFATntfs")	tempOp	-> SetOptionsFATntfs(v.toBool());
+            if (vString == "OptionsUpdate")		tempOp  -> SetOptionsUpdate(v.toBool());
+            if (vString == "OptionsDelete")		tempOp  -> SetOptionsDelete(v.toBool());
+            if (vString == "OptionsRecurse")	tempOp  -> SetOptionsRecurse(v.toBool());
+            if (vString == "OptionsOwnership")	tempOp  -> SetOptionsOwnership(v.toBool());
+            if (vString == "OptionsSymlinks")	tempOp  -> SetOptionsSymlinks(v.toBool());
+            if (vString == "OptionsPermissions") tempOp -> SetOptionsPermissions(v.toBool());
+            if (vString == "OptionsDevices")	tempOp  -> SetOptionsDevices(v.toBool());
+            if (vString == "OptionsCVS")		tempOp  -> SetOptionsCVS(v.toBool());
+            if (vString == "OptionsHardLinks")	tempOp  -> SetOptionsHardLinks(v.toBool());
+            if (vString == "OptionsFATntfs")	tempOp  -> SetOptionsFATntfs(v.toBool());
+            if (vString == "OptionsRestorent")  tempOp  -> SetOptionsRestorent(v.toBool());
+            if (vString == "OptionsVss")        tempOp  -> SetOptionsVss(v.toBool());
+
             if (vString == "OptionsListSize")
             {
                 int OptionsListSize = v.toInt();
@@ -893,6 +899,8 @@ bool saveProfile(QString profileToSave)
         out << "OptionsFATntfs="            << Operation[currentOperation] -> GetOptionsFATntfs() << "\n";
         out << "OptionsSuper="              << Operation[currentOperation] -> GetOptionsSuper() << "\n";
         out << "OptionsNumericIDs="         << Operation[currentOperation] -> GetOptionsNumericIDs() << "\n";
+        out << "OptionsRestorent="          << Operation[currentOperation] -> GetOptionsRestorent() << "\n";
+        out << "OptionsVss="                << Operation[currentOperation] -> GetOptionsVss() << "\n";
         count = 0;
         while ( count < (Operation[currentOperation] -> GetOptionsListSize()) )
         {
@@ -950,26 +958,49 @@ bool exportFullProfile(QString ExportPath, QString exportType)
         if ((Operation[currentOperation] -> GetRemoteDestination()) && (Operation[currentOperation] -> GetRemote()))
         {
             exportArgs << "--protect-args";
-            if ( Operation[currentOperation] -> GetRemotePassword() != "")
+            //if ( Operation[currentOperation] -> GetRemotePassword() != "")
+            if ( (Operation[currentOperation]-> GetRemoteModule()) && (Operation[currentOperation] -> GetRemotePassword() != "") )
                 exportArgs.append("--password-file=" + ( Operation[currentOperation] -> GetRemotePassword()) );
             if ( Operation[currentOperation] -> GetRemoteSSH())
             {
-                if ( Operation[currentOperation] -> GetRemoteSSHPassword() != "")
-                    if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
-                        exportArgs.append("-e "+sshCommandPath+" -i " +  Operation[currentOperation] -> GetRemoteSSHPassword() +" -p " +
-                                    countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                if (WINrunning)
+                {
+                    if ( Operation[currentOperation] -> GetRemoteSSHPassword() != "")
+                        if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
+                            exportArgs.append("-e '"+sshCommandPath+"' -i '" +  Operation[currentOperation] -> GetRemoteSSHPassword() +"' -p " +
+                                        countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                        else
+                            exportArgs.append("-e '"+sshCommandPath+"' -i '" +  Operation[currentOperation] -> GetRemoteSSHPassword()+"'");
                     else
-                        exportArgs.append("-e "+sshCommandPath+" -i " +  Operation[currentOperation] -> GetRemoteSSHPassword());
+                        if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
+                            exportArgs.append("-e '"+sshCommandPath+"' -p " + countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                        else
+                            exportArgs.append("-e '"+sshCommandPath+"'");
+                }
                 else
-                    if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
-                        exportArgs.append("-e "+sshCommandPath+" -p " + countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                {
+                    if ( Operation[currentOperation] -> GetRemoteSSHPassword() != "")
+                        if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
+                            exportArgs.append("-e "+sshCommandPath+" -i " +  Operation[currentOperation] -> GetRemoteSSHPassword() +" -p " +
+                                        countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                        else
+                            exportArgs.append("-e "+sshCommandPath+" -i " +  Operation[currentOperation] -> GetRemoteSSHPassword());
                     else
-                        exportArgs.append("-e "+sshCommandPath);
+                        if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
+                            exportArgs.append("-e "+sshCommandPath+" -p " + countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                        else
+                            exportArgs.append("-e "+sshCommandPath);
+                }
             }
         }
-    }    
+    }
     
     exportArgs.append(luckyBackupDir);      // The source is ~/.luckyBackup/
+    
+    //cycnet debemos comprobar que es windows y el destino es remoto
+    if (WINrunning && (Operation[currentOperation] -> GetRemoteDestination()) && (Operation[currentOperation] -> GetRemote()))
+        ExportPath.replace(SLASH,XnixSLASH);
+    
     exportArgs.append(ExportPath);          // The destination is given by the user
     
     exportProcess -> start (rsyncCommandPath,exportArgs);
@@ -1132,6 +1163,7 @@ bool checkTaskList()
     {
         dest1 = Operation[currentOperation] -> GetDestination();
         if (dest1.endsWith(SLASH)) dest1.chop(1);
+        if (WINrunning && dest1.endsWith(XnixSLASH)) dest1.chop(1);
 
         if (Operation[currentOperation] -> GetIncluded())
         {
@@ -1143,6 +1175,7 @@ bool checkTaskList()
                 {
                     dest2 = Operation[count] -> GetDestination();
                     if (dest2.endsWith(SLASH)) dest2.chop(1);
+                    if (WINrunning && dest2.endsWith(XnixSLASH))  dest2.chop(1);
                 
                 //if this operation's destination is identical to another one's which is included and is of type 'Backup dir contents'
                     if ( (Operation[count] -> GetIncluded()) 
@@ -1208,11 +1241,13 @@ bool checkDeclaredDirs(bool guiExec)
             //first set  variables source & dest as well as itsPerform which will finaly decide if the task will be preformed
             source = Operation[currentOperation] -> GetSource();
             dest = Operation[currentOperation] -> GetDestination();
+
             if (!guiExec)	//this is used for compatibility issues with console
             {
                 source=QString(source.toUtf8());
                 dest=QString(dest.toUtf8());
             }
+
             Operation[currentOperation] -> SetIncluded(TRUE);
             Operation[currentOperation] -> SetPerform(TRUE);	//this will change at the next commands
 
@@ -1529,7 +1564,18 @@ QStringList AppendArguments(operation *operationToAppend)
     else
     {
         if (operationToAppend -> GetOptionsOwnership())     arguments.append("-tgo");
-        if (operationToAppend -> GetOptionsPermissions())   arguments.append("-p");
+        if ((!WINrunning) && (operationToAppend -> GetOptionsPermissions()))   arguments.append("-p");
+        
+        if (WINrunning)
+        {
+            if (operationToAppend -> GetOptionsVss())   arguments.append("--vss");                      // this option is only visbile at windows 
+            if (operationToAppend -> GetOptionsRestorent())   arguments.append("--restore-nt-streams"); // this option is only visbile at windows 
+            if (operationToAppend -> GetOptionsPermissions())                                           // Windows ONLY: Do not use -p but --backup-nt-streams and --source-filter-tmp=
+            {
+                arguments.append("--source-filter-tmp="+QDir::tempPath());
+                arguments.append("--backup-nt-streams");
+            }
+        }
     }
     if (operationToAppend -> GetOptionsSymlinks())          arguments.append("-l");
     if (operationToAppend -> GetOptionsDevices())           arguments.append("-D");
@@ -1630,8 +1676,9 @@ QStringList AppendArguments(operation *operationToAppend)
             sourceString 	= operationToAppend -> GetSource();
             if (WINrunning) // Bruce patch condition for winpaths~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             {
-                destString = fixWinPathForRsync(destString, TRUE);         //fix destination (which is remote)
-                sourceString =  fixWinPathForRsync(sourceString, FALSE);    //fix source (which is local)
+                // Commented after Juan's patch
+                //destString = fixWinPathForRsync(destString, TRUE);         //fix destination (which is remote)
+                //sourceString =  fixWinPathForRsync(sourceString, FALSE);    //fix source (which is local)
             }
         }
         else 
@@ -1642,8 +1689,9 @@ QStringList AppendArguments(operation *operationToAppend)
             destString 	= operationToAppend -> GetDestination();
             if (WINrunning) // Bruce patch condition for winpaths~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             {
-                sourceString =  fixWinPathForRsync(sourceString, TRUE);     //fix source (which is remote)
-                destString = fixWinPathForRsync(destString, FALSE);        //fix destination (which is local)
+                // Commented after Juan's patch
+                //sourceString =  fixWinPathForRsync(sourceString, TRUE);     //fix source (which is remote)
+                //destString = fixWinPathForRsync(destString, FALSE);        //fix destination (which is local)
             }
         }
 
@@ -1651,17 +1699,45 @@ QStringList AppendArguments(operation *operationToAppend)
         if (operationToAppend -> GetRemoteSSH())
         {
             if (operationToAppend -> GetRemoteSSHPassword() != "")
+            {
                 //arguments.append("-e \"ssh -i " + uiM.lineEdit_sshPassword -> text() + "\"");
+            
+                // NOTE:  character ' is not used in linux due to QT comptibility issues. It works just fine without it. It is added at the "validate" dialog though for real CLI command pasting purposes!!  NOTE
+            
                 if (operationToAppend -> GetRemoteSSHPort() != 0)
-                    arguments.append("-e "+sshCommandPath+" -i " + operationToAppend -> GetRemoteSSHPassword() +
+                {
+                    if (WINrunning)
+                        arguments.append("-e '"+sshCommandPath+"' -i '" + operationToAppend -> GetRemoteSSHPassword() +
+                                        "' -p " + countStr.setNum(operationToAppend -> GetRemoteSSHPort()) );
+                    else 
+                        arguments.append("-e "+sshCommandPath+" -i " + operationToAppend -> GetRemoteSSHPassword() +
                             " -p " + countStr.setNum(operationToAppend -> GetRemoteSSHPort()) );
+                }
                 else
-                    arguments.append("-e "+sshCommandPath+" -i " + operationToAppend -> GetRemoteSSHPassword());
+                {
+                    if (WINrunning)
+                        arguments.append("-e '"+sshCommandPath+"' -i '" + operationToAppend -> GetRemoteSSHPassword()+"'");
+                    else
+                        arguments.append("-e "+sshCommandPath+" -i " + operationToAppend -> GetRemoteSSHPassword());
+                }
+            }
             else
+            {
                 if (operationToAppend -> GetRemoteSSHPort() != 0)
-                    arguments.append("-e "+sshCommandPath+" -p " + countStr.setNum(operationToAppend -> GetRemoteSSHPort()) );
+                {
+                    if (WINrunning)
+                        arguments.append("-e '"+sshCommandPath+"' -p " + countStr.setNum(operationToAppend -> GetRemoteSSHPort()) );
+                    else
+                        arguments.append("-e "+sshCommandPath+" -p " + countStr.setNum(operationToAppend -> GetRemoteSSHPort()) );
+                }
                 else
-                    arguments.append("-e "+sshCommandPath);
+                {
+                    if (WINrunning)
+                        arguments.append("-e '"+sshCommandPath+"'");
+                    else
+                        arguments.append("-e "+sshCommandPath);
+                }
+            }
         }
     }
     else		//Operate locally----------------------------------------------------------------------------------------
@@ -1673,8 +1749,9 @@ QStringList AppendArguments(operation *operationToAppend)
         // convert path to cygwin paths, change any \ to / :)
         if (WINrunning)
         {
-            sourceString =  fixWinPathForRsync(sourceString, FALSE);    //fix local source
-            destString =    fixWinPathForRsync(destString, FALSE);      //fix local destination
+            // Commented after Juan's patch
+            //sourceString =  fixWinPathForRsync(sourceString, FALSE);    //fix local source
+            //destString =    fixWinPathForRsync(destString, FALSE);      //fix local destination
         }
         // Bruce patch end ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
     }
@@ -1685,7 +1762,8 @@ QStringList AppendArguments(operation *operationToAppend)
         //fix source and dest for snapshots directory
         QString snapSource=sourceString;	QString snapDest=destString;	//temp variables
         
-        if ((snapDest.contains(":")) && (!notXnixRunning))// this is normal for a remote directory (not for OS/2 or win: eg c:\)
+        //if ( (snapDest.contains(":")) && (!notXnixRunning))// this is normal for a remote directory (not for OS/2 or win: eg c:\)
+        if ( ((snapDest.contains(":")) && (!notXnixRunning)) || (snapDest.contains(":") && WINrunning && operationToAppend -> GetRemote()) )// this is normal for a remote directory
         {
                 snapDest = snapDest.right(snapDest.size()-snapDest.lastIndexOf(":")-1);	//this is the remote dest dir without the remote pc
                 snapDest = "";
@@ -1697,14 +1775,20 @@ QStringList AppendArguments(operation *operationToAppend)
             sourceLast = calculateLastPath(sourceLast); // This is the lowest dir of the source
             snapSource.append(SLASH);
             
-            snapDest.append(sourceLast + SLASH);
+            if (WINrunning && operationToAppend -> GetRemote())
+                snapDest.append(sourceLast + XnixSLASH);
+            else
+                snapDest.append(sourceLast + SLASH);
         }
         QString prevSnapDateTime = operationToAppend -> GetSnapshotsListItem(operationToAppendCurrentSnaps-2);
         
         QString prevSnapDir = snapDest + snapDefaultDir + prevSnapDateTime + SLASH;	// This is where the deleted files (== previous snapshot) will go
-        if (notXnixRunning)
-            prevSnapDir.replace("/",SLASH);
         
+        if (WINrunning && operationToAppend -> GetRemote())
+            prevSnapDir.replace(SLASH,XnixSLASH);
+        else if (notXnixRunning)
+            prevSnapDir.replace("/",SLASH);
+
         // add arguments to backup files to be be deleted inside the snapshot direcotry
         arguments.append("--backup");
         arguments.append("--backup-dir=" + prevSnapDir);
@@ -1713,7 +1797,12 @@ QStringList AppendArguments(operation *operationToAppend)
     // protect the snapshots directories from being deleted. Do nothing for older snapshots dirs
     // This is outside the condition because the snapDefaultDir also contains the backup of the profile + logs + snaps
     if (!validation)
-        arguments.append("--filter=protect " + snapDefaultDir);
+    {
+        if (WINrunning && operationToAppend -> GetRemote())
+            arguments.append("--filter=protect " + snapDefaultDir.replace(SLASH,XnixSLASH));
+        else
+            arguments.append("--filter=protect " + snapDefaultDir);
+    }
     
     // keep snapshot changes files only for backup task types, not sync
     if ( (!validation) && (operationToAppendMaxSnaps > 1) )
@@ -1886,25 +1975,39 @@ QString logFileUpdate(QString appendTYPE, QString appendTHIS, int currentPrePost
 // Will also return TRUE for every path that does not start with /media or /mnt
 bool checkMountPoint(QString dirPath)
 {
+    bool returnTHISplease = TRUE;
+    
     if ( (dirPath.startsWith ("/media", Qt::CaseSensitive )) || (dirPath.startsWith ("/mnt", Qt::CaseSensitive )) )
     {
-        QString mountpoint = dirPath;
-        if (dirPath.startsWith ("/media", Qt::CaseSensitive ))
-            mountpoint = mountpoint.left(mountpoint.indexOf("/",7)+1);
-        if (dirPath.startsWith ("/mnt", Qt::CaseSensitive ))
-            mountpoint = mountpoint.left(mountpoint.indexOf("/",5)+1);
-            
-        QProcess *mountProcess;                         mountProcess = new QProcess;
-        QStringList mArgs;                              mArgs << mountpoint;
-        mountProcess -> start ("mountpoint",mArgs);     mountProcess -> waitForFinished();
+        if (!dirPath.endsWith(SLASH))
+            dirPath.append(SLASH);
+        int ROOTcounts = dirPath.count(SLASH) - 2;
         
-        // The following means that the given path belongs to a directory structure under /media or /mnt that is a mountpoint
-        if (mountProcess -> exitCode() == 0)
-            return TRUE;
-        else
-            return FALSE;
+        QString mountpoint = dirPath;
+        
+        int count = 0;
+        while (count < ROOTcounts)  // scan all directory depth one by one except /media or /mnt
+        {
+            QProcess *mountProcess;                         mountProcess = new QProcess;
+            QStringList mArgs;                              mArgs << mountpoint;
+            mountProcess -> start ("mountpoint",mArgs);     mountProcess -> waitForFinished();
+            
+            // The following means that the given path belongs to a directory structure under /media or /mnt that is a mountpoint
+            if (mountProcess -> exitCode() == 0)
+            {
+                returnTHISplease = TRUE;
+                count = ROOTcounts;         // Exit this loop and return true if mount point found
+            }
+            else
+                returnTHISplease = FALSE;
+            
+            mountpoint = mountpoint.left(mountpoint.lastIndexOf(SLASH,mountpoint.size()-2)+1);    // Cut the right part of the path
+            
+            count++;
+        }
     }
-    return TRUE;
+    
+    return returnTHISplease;
 }
 
 // sendEmailNow =====================================================================================================================================

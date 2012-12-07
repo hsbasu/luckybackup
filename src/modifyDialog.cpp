@@ -23,7 +23,7 @@ Display a dialog. Adds a new or modifies an existing operation
  project version    : Please see "main.cpp" for project version
 
  developer          : luckyb 
- last modified      : 17 Feb 2012
+ last modified      : 27 Nov 2012
 
 ===============================================================================================================================
 ===============================================================================================================================
@@ -53,9 +53,15 @@ modifyDialog::modifyDialog (int ItemNo, QDialog *parent) : QDialog (parent)
     uiM.label_executeAfterList -> setText ("<font color=red>" + comLabel + "</font>");
     
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    // Disable/hide stuff that is under testing/developement
-
-    uiM.toolBox_options         ->setItemEnabled (0,FALSE);    // different backend
+    // Various gui initialization
+    //uiM.toolBox_options         ->setItemEnabled (0,FALSE);    // different backend
+    
+    if (!WINrunning)
+    {
+        uiM.checkBox_vss        -> setVisible(FALSE);
+        uiM.checkBox_restorent  -> setVisible(FALSE);
+    }    
+    
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     //connections ----------------------------------------------------------------------------------------------------
@@ -176,6 +182,19 @@ modifyDialog::modifyDialog (int ItemNo, QDialog *parent) : QDialog (parent)
     connect (uiM.toolButton_includeAddPattern, SIGNAL (clicked() ), signalMapper4 , SLOT (map()));
     connect(signalMapper4, SIGNAL(mapped( const int)), this, SLOT( getPattern( const int) )  );
     
+    // ssh password file default value
+    // I do not consider this a good idea, because the default option should be a blank field (no ssh key file)
+    // If the user clicks the browse button , he/she will be transfered to the ~/.ssh dir as default
+    /*
+    if ( (uiM.lineEdit_sshPassword -> text() == "" ) && (!WINrunning) )
+    {
+        if (!WINrunning)
+            uiM.lineEdit_sshPassword -> setText( myHome + SLASH +".ssh" + SLASH +"id_rsa");
+        else
+            uiM.lineEdit_sshPassword -> setText(luckyBackupDir+"id_rsa");
+    }
+    */
+    
     if (ArrayPosition < TotalOperations)    //if modify is pressed fill the fields first with existing operation data
         fillModifyWindow(Operation[ArrayPosition]);
     
@@ -259,8 +278,10 @@ void modifyDialog::browse(const int type)
                 uiM.lineEdit_rsyncPassword -> setText(modifyOS2Slashes(newLineEdit));
             break;
         //ssh password file browse button
-        case 5:    newLineEdit = QFileDialog::getOpenFileName (this, tr("Select ssh keyfile",
-            "file selection dialog title"), myHome + SLASH +".ssh");
+        case 5:    if (!WINrunning)
+                newLineEdit = QFileDialog::getOpenFileName (this, tr("Select ssh keyfile", "file selection dialog title"), myHome + SLASH +".ssh");
+            else
+                newLineEdit = QFileDialog::getOpenFileName (this, tr("Select ssh keyfile", "file selection dialog title"), luckyBackupDir);        
             if (newLineEdit != "")    //if something is selected indeed
                 uiM.lineEdit_sshPassword -> setText(modifyOS2Slashes(newLineEdit));
             break;
@@ -1175,12 +1196,14 @@ void modifyDialog::TaskTypeChanged(int type)
         uiM.label_snapshotsKeep -> setVisible(FALSE);
         uiM.spinBox_snapshotsKeep -> setVisible(FALSE);
         uiM.checkBox_backupContents -> setVisible(FALSE);
+        uiM.checkBox_deleteAfter -> setEnabled (FALSE);
     }
     else
     {
         uiM.label_snapshotsKeep -> setVisible(TRUE);
         uiM.spinBox_snapshotsKeep -> setVisible(TRUE);
         uiM.checkBox_backupContents -> setVisible(TRUE);
+        uiM.checkBox_deleteAfter -> setEnabled (TRUE);
     }
 }
 // Include tab stuff  changed=====================================================================================================
@@ -1322,6 +1345,10 @@ operation *modifyDialog::fillOperationArray()
     pTask -> SetOptionsRecurse      ( uiM.checkBox_recurse -> isChecked() );
     pTask -> SetOptionsSuper        ( uiM.checkBox_super -> isChecked() );
     pTask -> SetOptionsNumericIDs   ( uiM.checkBox_numericIDs -> isChecked() );
+    
+    pTask -> SetOptionsRestorent    ( uiM.checkBox_restorent -> isChecked() );
+    pTask -> SetOptionsVss          ( uiM.checkBox_vss -> isChecked() );
+    
     count = 0;    //read options list one by one
     while ( count < (uiM.listWidget_options -> count()) )
     {
@@ -1371,14 +1398,19 @@ void modifyDialog::fillModifyWindow(operation *pTask)
     {
         uiM.comboBox_Type -> setCurrentIndex(0);
         uiM.checkBox_backupContents -> setCheckState(Qt::Checked);
+        uiM.checkBox_deleteAfter -> setEnabled (TRUE);
     }
     if (pTask -> GetTypeDirName())
     {
         uiM.comboBox_Type -> setCurrentIndex(0);
         uiM.checkBox_backupContents -> setCheckState(Qt::Unchecked);
+        uiM.checkBox_deleteAfter -> setEnabled (TRUE);
     }
     if (pTask -> GetTypeSync())
+    {
         uiM.comboBox_Type -> setCurrentIndex(1);
+        uiM.checkBox_deleteAfter -> setEnabled (FALSE);
+    }
 
     uiM.lineEdit_source             -> setText    (pTask -> GetSource() );
     uiM.lineEdit_destination        -> setText    (pTask -> GetDestination() );
@@ -1439,6 +1471,10 @@ void modifyDialog::fillModifyWindow(operation *pTask)
     uiM.checkBox_FATntfs            -> setChecked    (pTask -> GetOptionsFATntfs() );
     uiM.checkBox_super              -> setChecked    (pTask -> GetOptionsSuper() );
     uiM.checkBox_numericIDs         -> setChecked    (pTask -> GetOptionsNumericIDs() );
+    
+    uiM.checkBox_vss                -> setChecked    (pTask -> GetOptionsVss() );
+    uiM.checkBox_restorent          -> setChecked    (pTask -> GetOptionsRestorent() );
+    
     count=0;
     while ( count < (pTask -> GetOptionsListSize()) )
     {
@@ -1537,7 +1573,7 @@ void modifyDialog::modifyTrailing()
 // function to change / to \ for OS2 (normaly when file dialog is used)
 QString modifyDialog::modifyOS2Slashes(QString pathToModify)
 {    
-    if (notXnixRunning)
+    if ( (notXnixRunning) && !pathToModify.startsWith("/") )
         pathToModify.replace("/",SLASH);
     
     return pathToModify;

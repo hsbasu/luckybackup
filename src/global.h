@@ -23,7 +23,7 @@
  project version    : Please see "main.cpp" for project version
 
  developer          : lucky
- last modified      : 08 Oct 2012
+ last modified      : 08 Nov 2012
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -152,10 +152,18 @@ QString sendEmailNow (bool);                                // Send an email aft
 
 QString rsyncDefaultCommand = "rsync";                      // Holds the default rsync command
 QString sshDefaultCommand = "ssh";                          // Holds the default ssh command
-QString rsyncDefaultWinCommand = "c:\\cygwin\\bin\\rsync.exe"; // Holds the default rsync command for windows
-QString sshDefaultWinCommand = "c:\\cygwin\\bin\\ssh.exe";  // Holds the default ssh command for windows
+
+
+//QString rsyncDefaultWinCommand = "c:\\cygwin\\bin\\rsync.exe"; // Holds the default rsync command for windows
+//QString sshDefaultWinCommand = "c:\\cygwin\\bin\\ssh.exe";  // Holds the default ssh command for windows
+QString appPath = QApplication::applicationDirPath();       // This is used for windows app path
+QString rsyncDefaultWinCommand = appPath + "rsync-wrapper.exe"; // Holds the default rsync command for windows
+QString sshDefaultWinCommand = appPath + "ssh.exe";  // Holds the default ssh command for windows
+
 QString rsyncCommandPath;       // holds the full path of the rsync command for WINDOWS or just "rsync" for *nix
 QString sshCommandPath;         // holds the full path of the ssh command for WINDOWS or just "ssh" for *nix
+
+QString XnixSLASH = "/";        // holds the default Xnix slash which is /
 
 #ifdef Q_OS_OS2
 bool OS2running = TRUE;

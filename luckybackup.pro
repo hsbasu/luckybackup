@@ -93,7 +93,8 @@ HEADERS	= src/operationClass.h \
     src/helpBrowser.h \
     src/winDialog.h \
     src/RsyncDirModel.h \
-    src/RsyncDirModel_p.h
+    src/RsyncDirModel_p.h \
+    src/qdirdialog.h
  
 FORMS 	= ui/luckybackupwindow.ui \
     ui/modifyDialog.ui \
@@ -128,7 +129,8 @@ SOURCES	= src/modifyDialog.cpp \
     src/luckybackupwindow.cpp \
     src/main.cpp \
     src/RsyncDirModel.cpp \
-    src/RsyncDirModel_p.cpp
+    src/RsyncDirModel_p.cpp \
+    src/qdirdialog.cpp
  
 RESOURCES = resources/luckybackup.qrc
 

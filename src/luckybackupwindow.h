@@ -4,7 +4,7 @@
 ===============================================================================================================================
 ===============================================================================================================================
      This file is part of "luckyBackup" project
-     Copyright 2008-2012, Loukas Avgeriou
+     Copyright, Loukas Avgeriou
      luckyBackup is distributed under the terms of the GNU General Public License
      luckyBackup is free software: you can redistribute it and/or modify
      it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@
  project version	: Please see "main.cpp" for project version
 
  developer          : luckyb 
- last modified      : 30 Oct 2012
+ last modified      : 13 Jan 2013
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -101,6 +101,8 @@ class luckyBackupWindow : public QMainWindow
         void abortPressed();		//SLOT when button pressed( see also notYet)
         void donePressed();		//SLOT when done button pressed
         void appendRsyncOutput();	//Display o/p to textbrowser & update logfile
+        void appendRsyncVssOutput();
+        void appendRsyncVssOutput(int size);
         void procFinished();		//SLOT executed when syncProcess is finshed (will start a new syncProcess if any left)
         void procError();        // SLOT for when a process reports an error (eg: failed to start)
         

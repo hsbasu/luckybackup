@@ -4,7 +4,7 @@
       ===============================================================================================================================
       ===============================================================================================================================
         This file is part of "luckyBackup" project
-        Copyright 2008-2012, Loukas Avgeriou
+        Copyright, Loukas Avgeriou
         luckyBackup is distributed under the terms of the GNU General Public License
         luckyBackup is free software: you can redistribute it and/or modify
         it under the terms of the GNU General Public License as published by
@@ -171,6 +171,9 @@ void aboutDialog::setThanks()
 
         "<b>" + tr("Wilfried Schobel") + "</b><br>" +
         tr("German gui translator") + "<br><br>"
+        
+        "<b>" + tr("Thomas Glatt") + "</b><br>" +
+        tr("German gui translator") + "<br><br>"
 
         "<b>" + tr("Sergio Gameiro") + "</b><br>" +
         tr("Portuguese gui translator") + "<br><br>"
@@ -218,6 +221,9 @@ void aboutDialog::setThanks()
         tr("Romanian gui translator") + "<br><br>"
 
         "<b>" + tr("Andrej Znidarsic") + "</b><br>" +
+        tr("Slovenian gui translator") + "<br><br>"
+        
+        "<b>" + tr("mateju") + "</b><br>" +
         tr("Slovenian gui translator") + "<br><br>"
         
         "<b>" + tr("E. Hakan Duran") + "</b><br>" +

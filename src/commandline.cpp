@@ -4,7 +4,7 @@
 ===============================================================================================================================
 ===============================================================================================================================
      This file is part of "luckyBackup" project
-     Copyright 2008-2012, Loukas Avgeriou
+     Copyright, Loukas Avgeriou
      luckyBackup is distributed under the terms of the GNU General Public License
      luckyBackup is free software: you can redistribute it and/or modify
      it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
      You should have received a copy of the GNU General Public License
      along with luckyBackup.  If not,see <http://www.gnu.org/licenses/>.
  developer      : luckyb 
- last modified  : 10 Nov 2012
+ last modified  : 23 Feb 2013
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -94,6 +94,7 @@ void commandline::rsyncIT()
     //some useful variables-----------------------------------------------------------------------
     QProcess *syncProcess;	syncProcess = new QProcess;	//create a new qprocess (for rsync)
     QString command = rsyncCommandPath;	//command to be executed. Normally this is "rsync"
+    QString command2="";                // windows use
     QStringList rsyncArguments;	// This stringList holds all arguments for the rsync command
     QString dirA;			//holds the first dir to be synced
     QString dirB;			//holds the second dir to be synced
@@ -103,6 +104,19 @@ void commandline::rsyncIT()
     
     while (currentOperation < TotalOperations)
     {
+        if (WINrunning)
+        {
+            setAppDir(Operation[currentOperation] -> GetLuckyBackupDir());
+            pipeVssFile =  new QFile(Operation[currentOperation] -> GetTempPath()+"\\qt_tempvss"+QString::number(qrand() % (999998) + 1));
+            if (pipeVssFile->open(QIODevice::ReadWrite)){
+                pipeVssFile->close();
+            }
+            pipeVssErrFile =  new QFile(Operation[currentOperation] -> GetTempPath()+"\\qt_tempvsserr"+QString::number(qrand() % (999998) + 1));
+            if (pipeVssErrFile->open(QIODevice::ReadWrite)){
+                pipeVssErrFile->close();
+            }
+        }
+          
         //if --skip-critical is given as argument and the task is CRITICAL
         if ( (Operation[currentOperation] -> GetCRITICAL()) && (SkipCritical) )	
             Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation
@@ -116,11 +130,12 @@ void commandline::rsyncIT()
             QStringList tempArguments = Operation[currentOperation] -> GetArgs();
             QString tempSource = tempArguments[tempArguments.size()-2];
             QString tempDestination = tempArguments[tempArguments.size()-1];
+            QString tempDestinationOrig;
             QString sourceLast = tempSource;
             
             // win stuff ~~~~~
             QString tslash;
-            if ( (WINrunning) && (Operation[currentOperation] -> GetRemote()) )
+            if (WINrunning)
                 tslash=XnixSLASH;
             else
                 tslash=SLASH;
@@ -133,10 +148,10 @@ void commandline::rsyncIT()
                 if (!WINrunning)
                     tempDestination.append(sourceLast + SLASH);
                 else
-                    tempDestination.append(sourceLast + tslash);
+                    tempDestination.append(sourceLast.replace("\\",XnixSLASH) + tslash);
             }
-                
-            if (WINrunning && RemoteDestUsed)
+            
+            if (WINrunning)
                 tempDestination.append (snapDefaultDir.replace("\\",XnixSLASH));
             else
                 tempDestination.append (snapDefaultDir);
@@ -146,9 +161,8 @@ void commandline::rsyncIT()
             if (RemoteDestUsed)
             {
                 remoteArgs.append("--protect-args");
-                // if ( Operation[currentOperation] -> GetRemotePassword() != "")
                 if ( (Operation[currentOperation]-> GetRemoteModule()) && (Operation[currentOperation] -> GetRemotePassword() != "") )
-                    remoteArgs.append("--password-file=" + ( Operation[currentOperation] -> GetRemotePassword()) );
+                    remoteArgs.append("--password-file=" + ( Operation[currentOperation] -> GetRemotePassword()).replace("\\",XnixSLASH) );
                 if ( Operation[currentOperation] -> GetRemoteSSH())
                 {
                     if (WINrunning)
@@ -156,16 +170,15 @@ void commandline::rsyncIT()
                         if (
                             Operation[currentOperation] -> GetRemoteSSHPassword() != "")
                             if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
-                              remoteArgs.append("-e '"+sshCommandPath+"' -i '" +  Operation[currentOperation] -> GetRemoteSSHPassword() +"' -p " +
+                              remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\" -i \"" +  Operation[currentOperation] -> GetRemoteSSHPassword() + "\" -p " +
                                             countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
                             else
-                              remoteArgs.append("-e '"+sshCommandPath+"' -i '" +  Operation[currentOperation] -> GetRemoteSSHPassword()+"'");
+                              remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\" -i \"" +  Operation[currentOperation] -> GetRemoteSSHPassword() + "\"");
                         else
                             if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
-                              remoteArgs.append("-e '"+sshCommandPath+"' -p " + countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                              remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\" -p " + countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
                             else
-                              remoteArgs.append("-e '"+sshCommandPath+"'");
-
+                              remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\"");
                     }
                     else
                     {
@@ -194,6 +207,63 @@ void commandline::rsyncIT()
                 if (currentSnaps < 1)
                     currentSnaps = 1;
 
+                // Juan's patch ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                // this is just to create the .snapDefaultDir if it does not to exist so as to copy profile data later...
+
+                    //we will create the snapshots default directory by using an rsync command with an empty source without --delete option
+                    QProcess *mkdirProcess;     mkdirProcess  = new QProcess;
+                    QStringList mkdirArgs;      mkdirArgs.clear();
+
+                    //if (WINrunning && RemoteDestUsed)
+                    //  mkdirArgs << "--mkdir";
+                    //else
+                      mkdirArgs << "--progress" << "-r";
+                    //add all remote arguments exactly as used at normal backup
+                    if (RemoteDestUsed)
+                        mkdirArgs << remoteArgs;
+
+                    mkdirArgs.append(snapEmptyDir);
+                    mkdirArgs.append(tempDestinationOrig);
+                    if (WINrunning)
+                    {
+                        //bool createWinRsyncCommand(tempDirPath,QFile command1,QFile command2,bool vss,QString rsyncArgs,QString source,QString dest);
+                        command2=createWinRsyncCommand(Operation[currentOperation] -> GetTempPath(),false,mkdirArgs,false);
+                        if (command2=="")
+                            cout << "\nfailed to create bat file in mkdirProccess";
+                        else
+                            mkdirProcess -> start (command2);
+                    }
+                    else
+                      mkdirProcess -> start (command,mkdirArgs);
+                    mkdirProcess -> waitForFinished();
+
+                    if ((mkdirProcess -> exitCode()) == 0)
+                        cout << "\n!";
+                    else
+                        cout << "\n!mkdir error!";
+                    mkdirArgs.removeLast();
+                    mkdirArgs.append(tempDestination);
+//                    QTemporaryFile command1(QDir::tempPath()+"\\qt_tempXXXXXX.bat");
+//                    QTemporaryFile command2(QDir::tempPath()+"\\qt_tempXXXXXX.bat");
+                    if (WINrunning)
+                    {
+                        //bool createWinRsyncCommand(tempDirPath,QFile command1,QFile command2,bool vss,QString rsyncArgs,QString source,QString dest);
+                        command2=createWinRsyncCommand(Operation[currentOperation] -> GetTempPath(),false,mkdirArgs,false);
+                        if (command2=="")
+                            cout << "\nfailed to create bat file in rmProccess";
+                        else
+                            mkdirProcess -> start (command2);
+                    }
+                    else
+                       mkdirProcess -> start (command,mkdirArgs);
+                    mkdirProcess -> waitForFinished();
+
+                    if ((mkdirProcess -> exitCode()) == 0)
+                        cout << "\n!";
+                    else
+                        cout << "\n!mkdir error!";
+                // Juan's patch END~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                        
                 // first remove the older logfiles and snapshots if max keep snapshots is reached
                 if (currentSnaps >= maxSnaps)
                 {
@@ -217,14 +287,14 @@ void commandline::rsyncIT()
                     int snapToKeep = currentSnaps-maxSnaps + 1;
                     while ( snapToKeep < currentSnaps )
                     {                            
-                        if (WINrunning && RemoteDestUsed)
+                        if (WINrunning)
                             rmArgs.append("--filter=protect " + Operation[currentOperation] -> GetSnapshotsListItem(snapToKeep) + XnixSLASH);
                         else
                             rmArgs.append("--filter=protect " + Operation[currentOperation] -> GetSnapshotsListItem(snapToKeep) + SLASH);
                         snapToKeep++;
                     }
                     // protect the backup profile dir too
-                    if (WINrunning && RemoteDestUsed)
+                    if (WINrunning)
                         rmArgs.append("--filter=protect " + profileName + ".profile" + XnixSLASH);
                     else
                         rmArgs.append("--filter=protect " + profileName + ".profile" + SLASH);
@@ -235,9 +305,23 @@ void commandline::rsyncIT()
                     
                     rmArgs.append(snapEmptyDir);
                     rmArgs.append(tempDestination);
-            
-                    rmProcess -> start (command,rmArgs);
-                    rmProcess -> waitForFinished();
+                    if (WINrunning)
+                    {
+                        //bool createWinRsyncCommand(tempDirPath,QFile command1,QFile command2,bool vss,QString rsyncArgs,QString source,QString dest);
+                        command2=createWinRsyncCommand(Operation[currentOperation] -> GetTempPath(),false,rmArgs,false);
+                        if (command2=="")
+                            cout << "\nfailed to create bat file in rmProccess";
+                        else
+                        {
+                            rmProcess -> start (command2);
+                            rmProcess -> waitForFinished();
+                        }
+                    }
+                    else
+                    {
+                        rmProcess -> start (command,rmArgs);
+                        rmProcess -> waitForFinished();
+                    }
                     
                     if ((rmProcess -> exitCode()) == 0)
                         cout << "\nRemoved  all older snapshots data";// << QString((tempDestination + Operation[currentOperation] -> GetSnapshotsListItem(0) + SLASH).toUtf8()).toStdString();
@@ -279,12 +363,13 @@ void commandline::rsyncIT()
                         count++;
                     }
                 }
-                else        // this is just to create the .snapDefaultDir if it does not to exist so as to copy profile data later...
+                // the following is transfered in the very beginning of the actions for !DryRun,
+                /*else        // this is just to create the .snapDefaultDir if it does not to exist so as to copy profile data later...
                 {
                     //we will create the snapshots default directory by using an rsync command with an empty source without --delete option
                     QProcess *mkdirProcess;     mkdirProcess  = new QProcess;
                     QStringList mkdirArgs;      mkdirArgs.clear();
-                    if (WINrunning && RemoteDestUsed)
+                    if ( (WINrunning) && (RemoteDestUsed) )
                         mkdirArgs << "--mkdir";
                     else
                         mkdirArgs << "--progress" << "-r";
@@ -303,7 +388,7 @@ void commandline::rsyncIT()
                     else
                         cout << "\n!";
                     
-                }
+                }*/
 
                 //set the current date and time as the operation's last execution date-time
                 Operation[currentOperation] -> SetLastExecutionTime (QDateTime::currentDateTime());
@@ -333,7 +418,10 @@ void commandline::rsyncIT()
                     syncProcess -> setStandardErrorFile(logfilename, QIODevice::Append );
                 }
                 else
+                {
+                    cout << "\nError writting to log:" << QString(logfilename.toUtf8()).toStdString();
                     writeToLog = FALSE;
+                }
                 
                 // reset the error counter
                 errorCount = 0;		// Number of errors from one task (max value is 1)
@@ -487,7 +575,18 @@ void commandline::rsyncIT()
                                 logFileUpdate("repeat-on-fail","",count); //update the logfile
                             }
                     
-                            syncProcess -> start (command,rsyncArguments);
+                            if (WINrunning)
+                            {
+                                //bool createWinRsyncCommand(tempDirPath,QFile command1,QFile command2,bool vss,QString rsyncArgs,QString source,QString dest);
+                                command2=createWinRsyncCommand(Operation[currentOperation] -> GetTempPath(),Operation[currentOperation]->GetOptionsVss(),rsyncArguments,false);
+                                if (command2=="")
+                                    cout << "\nfailed to create bat file in syncProccess";
+                                else
+                                    syncProcess -> start (command2);
+                            }
+                            else
+                                syncProcess -> start (command,rsyncArguments);
+                            
                             //wait for the process to start and finish
                             if (syncProcess -> waitForStarted (-1))	// the "-1" arguments are used to avoid timing out
                             {
@@ -609,7 +708,17 @@ void commandline::rsyncIT()
                                 }
                             
                                 //syncProcess -> execute (command,rsyncArguments);	// execute rsync command with rsyncArguments B->A
-                                syncProcess -> start (command,rsyncArguments);	
+                                if (WINrunning)
+                                {
+                                    //bool createWinRsyncCommand(tempDirPath,QFile command1,QFile command2,bool vss,QString rsyncArgs,QString source,QString dest);
+                                        command2=createWinRsyncCommand(Operation[currentOperation] -> GetTempPath(),Operation[currentOperation]->GetOptionsVss(),rsyncArguments,false);
+                                    if (command2=="")
+                                        cout << "\nfailed to create bat file in rmProccess";
+                                    else
+                                        syncProcess -> start (command2);
+                                }
+                                else
+                                    syncProcess -> start (command,rsyncArguments);	
                                 if (syncProcess -> waitForStarted (-1))	// the "-1" arguments are used to avoid timing out
                                 {
                                     cout << "\nThe process started successfully\n";

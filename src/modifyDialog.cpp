@@ -4,7 +4,7 @@ Display a dialog. Adds a new or modifies an existing operation
 ===============================================================================================================================
 ===============================================================================================================================
      This file is part of "luckyBackup" project
-     Copyright 2008-2012, Loukas Avgeriou
+     Copyright, Loukas Avgeriou
      luckyBackup is distributed under the terms of the GNU General Public License
      luckyBackup is free software: you can redistribute it and/or modify
      it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ Display a dialog. Adds a new or modifies an existing operation
  project version    : Please see "main.cpp" for project version
 
  developer          : luckyb 
- last modified      : 27 Nov 2012
+ last modified      : 13 Jan 2013
 
 ===============================================================================================================================
 ===============================================================================================================================
@@ -55,12 +55,11 @@ modifyDialog::modifyDialog (int ItemNo, QDialog *parent) : QDialog (parent)
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // Various gui initialization
     //uiM.toolBox_options         ->setItemEnabled (0,FALSE);    // different backend
-    
     if (!WINrunning)
     {
         uiM.checkBox_vss        -> setVisible(FALSE);
         uiM.checkBox_restorent  -> setVisible(FALSE);
-    }    
+    }     
     
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1345,9 +1344,16 @@ operation *modifyDialog::fillOperationArray()
     pTask -> SetOptionsRecurse      ( uiM.checkBox_recurse -> isChecked() );
     pTask -> SetOptionsSuper        ( uiM.checkBox_super -> isChecked() );
     pTask -> SetOptionsNumericIDs   ( uiM.checkBox_numericIDs -> isChecked() );
-    
+    // windows related rsync options
     pTask -> SetOptionsRestorent    ( uiM.checkBox_restorent -> isChecked() );
     pTask -> SetOptionsVss          ( uiM.checkBox_vss -> isChecked() );
+    pTask -> SetTempPath(tempDirPath);
+    pTask -> SetLuckyBackupDir      (luckyBackupDir);
+    pTask -> SetVshadowDir          (vshadowDir);
+    pTask -> SetDosdevCommand       (dosdevCommand);
+    pTask -> SetCygpathCommand      (cygpathCommand);
+    pTask -> SetRsyncCommand        (rsyncCommandPath);
+    pTask -> SetSshCommand          (sshCommandPath);
     
     count = 0;    //read options list one by one
     while ( count < (uiM.listWidget_options -> count()) )

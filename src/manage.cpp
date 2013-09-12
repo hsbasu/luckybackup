@@ -22,7 +22,7 @@
  project version    : Please see "main.cpp" for project version
 
  developer          : luckyb 
- last modified      : 13 Jan 2013
+ last modified      : 11 Sep 2013
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -260,19 +260,20 @@ void manageDialog::fixGui()
         
         if ( Operation[currentOperation] -> GetRemoteSSH())
         {
+            QString sshOptions=(Operation[currentOperation] -> GetRemoteSSHOptions()).replace("\"","\\\"")+" -o \"StrictHostKeyChecking no\"  -o \"PasswordAuthentication no\" ";
             if (WINrunning)
             {
                 if ( Operation[currentOperation] -> GetRemoteSSHPassword() != "")
                     if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
-                        remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\" -i \"" +  Operation[currentOperation] -> GetRemoteSSHPassword() +"\" -p " +
+                        remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" "+sshOptions+" -i \"" +  Operation[currentOperation] -> GetRemoteSSHPassword() +"\" -p " +
                                     countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
                     else
-                        remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\" -i \"" +  Operation[currentOperation] -> GetRemoteSSHPassword()+"\"");
+                        remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" "+sshOptions+" -i \"" +  Operation[currentOperation] -> GetRemoteSSHPassword()+"\"");
                 else
                     if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
-                        remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\" -p " + countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                        remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" "+sshOptions+" -p " + countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
                     else
-                        remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\"");
+                        remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" "+sshOptions+"");
             }
             else
             {
@@ -320,19 +321,20 @@ void manageDialog::fixGui()
         
         if ( Operation[currentOperation] -> GetRemoteSSH())
         {
+            QString sshOptions=(Operation[currentOperation] -> GetRemoteSSHOptions()).replace("\"","\\\"")+" -o \"StrictHostKeyChecking no\"  -o \"PasswordAuthentication no\" ";
             if (WINrunning)
             {
                 if ( Operation[currentOperation] -> GetRemoteSSHPassword() != "")
                     if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
-                        remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\" -i \"" +  Operation[currentOperation] -> GetRemoteSSHPassword() +"\" -p " +
+                        remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" "+sshOptions+" -i \"" +  Operation[currentOperation] -> GetRemoteSSHPassword() +"\" -p " +
                                     countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
                     else
-                        remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\" -i \"" +  Operation[currentOperation] -> GetRemoteSSHPassword()+"\"");
+                        remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" "+sshOptions+" -i \"" +  Operation[currentOperation] -> GetRemoteSSHPassword()+"\"");
                 else
                     if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
-                        remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\" -p " + countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                        remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" "+sshOptions+" -p " + countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
                     else
-                        remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\"");
+                        remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" "+sshOptions+"");
             }
             else
             {

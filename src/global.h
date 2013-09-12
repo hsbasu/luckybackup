@@ -23,7 +23,7 @@
  project version    : Please see "main.cpp" for project version
 
  developer          : lucky
- last modified      : 23 Feb 2013
+ last modified      : 11 Sep 2013
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -158,17 +158,17 @@ QString sshDefaultCommand = "ssh";                          // Holds the default
 // WINDOWS related variables. Also search variables above for "WINDOWS use"
 //QString rsyncDefaultWinCommand = "c:\\cygwin\\bin\\rsync.exe"; // Holds the default rsync command for windows
 //QString sshDefaultWinCommand = "c:\\cygwin\\bin\\ssh.exe";    // Holds the default ssh command for windows
-QString appPath = QApplication::applicationDirPath();           // This is used for windows app path. It's also causing a ...
+QString appPath = QCoreApplication::applicationDirPath();           // This is used for windows app path. It's also causing a ...
                                                     //"QCoreApplication::applicationDirPath: Please instantiate the QApplication object first" WARNING message
-QString rsyncDefaultWinCommand = appPath.replace("/","\\") + "\\rsync.exe"; // Holds the default rsync command for windows
-QString sshDefaultWinCommand = appPath.replace("/","\\") + "\\ssh.exe";             // Holds the default ssh command for windows
+QString rsyncDefaultWinCommand = appPath+"/rsync.exe"; // Holds the default rsync command for windows
+QString sshDefaultWinCommand = appPath+"/ssh.exe";             // Holds the default ssh command for windows
 QString mapdrive="w";
-QString vshadowDir=             appPath.replace("/","\\");
-QString vshadowDefaultDir=      appPath.replace("/","\\");
-QString dosdevCommand=          appPath.replace("/","\\")+"\\dosdev.exe";
-QString dosdevDefaultCommand=   appPath.replace("/","\\")+"\\dosdev.exe";
-QString cygpathCommand=         appPath.replace("/","\\")+"\\cygpath.exe";
-QString cygpathDefaultCommand=  appPath.replace("/","\\")+"\\cygpath.exe";
+QString vshadowDir=             appPath;
+QString vshadowDefaultDir=      appPath;
+QString dosdevCommand=          appPath+"/dosdev.exe";
+QString dosdevDefaultCommand=   appPath+"/dosdev.exe";
+QString cygpathCommand=         appPath+"/cygpath.exe";
+QString cygpathDefaultCommand=  appPath+"/cygpath.exe";
 bool isTempDirPath=false;
 QString tempDirPath=QDir::tempPath();
 QString tempDefaultDirPath=QDir::tempPath();
@@ -192,8 +192,10 @@ QString XnixSLASH = "/";        // holds the default Xnix slash which is /
 
 #ifdef Q_OS_OS2
 bool OS2running = TRUE;
+QString SLASH = "\\";
 #else
 bool OS2running = FALSE;
+QString SLASH = "/";
 #endif
 
 #ifdef Q_OS_WIN32
@@ -203,13 +205,10 @@ bool WINrunning = FALSE;
 #endif
 
 #if defined Q_OS_OS2 || defined Q_OS_WIN32
-QString SLASH = "\\";
 bool notXnixRunning=TRUE;
 #else
-QString SLASH = "/";
 bool notXnixRunning=FALSE;
 #endif
-
 #endif
 
 // end of global.h--------------------------------------------------------------

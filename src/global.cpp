@@ -22,7 +22,7 @@ file containing all variables & functions used globaly
 project version    : Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 23 Feb 2013
+last modified      : 11 Sep 2013
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -97,7 +97,7 @@ bool argumentsTest(int ArgsNo, char **arg)
         currentProfile.append(".profile");
     if ( (!profileNameArg.startsWith(SLASH)) && (!notXnixRunning) )
         currentProfile.prepend(profileDir);
-    if ( (notXnixRunning) && (!profileNameArg.contains(":\\")) )
+    if ( (notXnixRunning) && (!profileNameArg.contains(":"+SLASH)) )
         currentProfile.prepend(profileDir);
     
     //current profile QFile
@@ -469,6 +469,8 @@ int loadProfile(QString profileToLoad)
             if (ProfileLine.startsWith("RemoteUser="))			    tempOp	-> SetRemoteUser(ProfileLine.remove("RemoteUser="));
             if (ProfileLine.startsWith("RemotePassword="))		    tempOp	-> SetRemotePassword(ProfileLine.remove("RemotePassword="));
             if (ProfileLine.startsWith("RemoteSSHPassword="))		tempOp	-> SetRemoteSSHPassword(ProfileLine.remove("RemoteSSHPassword="));
+            if (ProfileLine.startsWith("RemoteSSHPasswordStr="))    tempOp  -> SetRemoteSSHPasswordStr(ProfileLine.remove("RemoteSSHPasswordStr="));
+            if (ProfileLine.startsWith("RemoteSSHOptions="))        tempOp  -> SetRemoteSSHOptions(ProfileLine.remove("RemoteSSHOptions="));
             if (ProfileLine.startsWith("RemoteSSHPort="))			tempOp	-> SetRemoteSSHPort((ProfileLine.remove("RemoteSSHPort=")).toInt(&IntOk,10));
 
             if (ProfileLine.startsWith("OptionsUpdate="))			tempOp	-> SetOptionsUpdate(ProfileLine.remove("OptionsUpdate=").toInt(&IntOk,10));
@@ -674,6 +676,8 @@ int loadProfileQV(QString profileToLoad)
             if (vString == "RemoteUser")		tempOp	-> SetRemoteUser(v.toString());
             if (vString == "RemotePassword")	tempOp	-> SetRemotePassword(v.toString());
             if (vString == "RemoteSSHPassword")	tempOp	-> SetRemoteSSHPassword(v.toString());
+            if (vString == "RemoteSSHPasswordStr")  tempOp  -> SetRemoteSSHPasswordStr(v.toString());
+            if (vString == "RemoteSSHOptions")  tempOp  -> SetRemoteSSHOptions(v.toString());
             if (vString == "RemoteSSHPort")		tempOp	-> SetRemoteSSHPort(v.toInt());
 
             if (vString == "OptionsUpdate")		tempOp  -> SetOptionsUpdate(v.toBool());
@@ -881,6 +885,8 @@ bool saveProfile(QString profileToSave)
         out << "RemoteUser="                << Operation[currentOperation] -> GetRemoteUser() << "\n";
         out << "RemotePassword="            << Operation[currentOperation] -> GetRemotePassword() << "\n";
         out << "RemoteSSHPassword="         << Operation[currentOperation] -> GetRemoteSSHPassword() << "\n";
+        out << "RemoteSSHPasswordStr="      << Operation[currentOperation] -> GetRemoteSSHPasswordStr() << "\n";
+        out << "RemoteSSHOptions="          << Operation[currentOperation] -> GetRemoteSSHOptions() << "\n";            
         out << "RemoteSSHPort="             << Operation[currentOperation] -> GetRemoteSSHPort() << "\n";
 
         out << "OptionsUpdate="             << Operation[currentOperation] -> GetOptionsUpdate() << "\n";
@@ -969,19 +975,20 @@ bool exportFullProfile(QString ExportPath, QString exportType)
                 exportArgs.append("--password-file=" + ( Operation[currentOperation] -> GetRemotePassword()) );
             if ( Operation[currentOperation] -> GetRemoteSSH())
             {
+                QString sshOptions=(Operation[currentOperation] -> GetRemoteSSHOptions()).replace("\"","\\\"")+" -o \"StrictHostKeyChecking no\"  -o \"PasswordAuthentication no\" ";
                 if (WINrunning)
                 {
                     if ( Operation[currentOperation] -> GetRemoteSSHPassword() != "")
                         if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
-                            exportArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\" -i \"" +  Operation[currentOperation] -> GetRemoteSSHPassword() +"\" -p " +
+                            exportArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" "+sshOptions+" -i \"" +  Operation[currentOperation] -> GetRemoteSSHPassword() +"\" -p " +
                                         countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
                         else
-                            exportArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\" -i \"" +  Operation[currentOperation] -> GetRemoteSSHPassword()+"\"");
+                            exportArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" "+sshOptions+" -i \"" +  Operation[currentOperation] -> GetRemoteSSHPassword()+"\"");
                     else
                         if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
-                            exportArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\" -p " + countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                            exportArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" "+sshOptions+" -p " + countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
                         else
-                            exportArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\"");
+                            exportArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" "+sshOptions+"");
                 }
                 else
                 {
@@ -1356,6 +1363,8 @@ void checkSyncDirs(QString source, QString dest)
 
     QDir dirA (source);
     QDir dirB (dest);
+    
+    // WARNING The following 2 commands cause a "std::bad_alloc" crash when cloudfuse is used
     QStringList dirAList = dirA.entryList(QDir::AllEntries | QDir::Hidden | QDir::NoDotAndDotDot);
     QStringList dirBList = dirB.entryList(QDir::AllEntries | QDir::Hidden | QDir::NoDotAndDotDot);
     bool dirAIsEmpty, dirBIsEmpty;
@@ -1490,11 +1499,14 @@ void checkBackupDirs(QString source, QString dest)
         Operation[currentOperation] -> SetDestPerms(TRUE);
         return;
     }
-
+    
     QDir sourceDir (source);
     QDir destDir (dest);
+
+    // WARNING The following 2 commands cause a "std::bad_alloc" crash when cloudfuse is used
     QStringList sourceList = sourceDir.entryList(QDir::AllEntries | QDir::Hidden | QDir::NoDotAndDotDot);
     QStringList destList = destDir.entryList(QDir::AllEntries | QDir::Hidden | QDir::NoDotAndDotDot);
+
     bool SourceIsEmpty, DestIsEmpty;
     if (sourceList.size() == 0)
         SourceIsEmpty = TRUE;
@@ -1716,18 +1728,19 @@ QStringList AppendArguments(operation *operationToAppend)
         //add argument for ssh if the checkbox is checked & ssh keyfile
         if (operationToAppend -> GetRemoteSSH())
         {
+            QString sshOptions=(Operation[currentOperation] -> GetRemoteSSHOptions()).replace("\"","\\\"")+" -o \"StrictHostKeyChecking no\"  -o \"PasswordAuthentication no\" ";
             if (WINrunning)
             {
                 if (operationToAppend -> GetRemoteSSHPassword() != "")
                     if ( operationToAppend -> GetRemoteSSHPort() != 0 )
-                        arguments.append("-e \""+operationToAppend -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\" -i \"" +  operationToAppend -> GetRemoteSSHPassword() + "\" -p " + countStr.setNum( operationToAppend -> GetRemoteSSHPort()) );
+                        arguments.append("-e \""+operationToAppend -> GetSshCommand()+"\" "+sshOptions+" -i \"" +  operationToAppend -> GetRemoteSSHPassword() + "\" -p " + countStr.setNum( operationToAppend -> GetRemoteSSHPort()) );
                     else
-                        arguments.append("-e \""+operationToAppend -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\" -i \"" +  operationToAppend -> GetRemoteSSHPassword() + "\"");
+                        arguments.append("-e \""+operationToAppend -> GetSshCommand()+"\" "+sshOptions+" -i \"" +  operationToAppend -> GetRemoteSSHPassword() + "\"");
                 else
                     if ( operationToAppend -> GetRemoteSSHPort() != 0 )
-                        arguments.append("-e \""+operationToAppend -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\" -p " + countStr.setNum( operationToAppend -> GetRemoteSSHPort()) );
+                        arguments.append("-e \""+operationToAppend -> GetSshCommand()+"\" "+sshOptions+" -p " + countStr.setNum( operationToAppend -> GetRemoteSSHPort()) );
                     else
-                        arguments.append("-e \""+operationToAppend -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\"");
+                        arguments.append("-e \""+operationToAppend -> GetSshCommand()+"\" "+sshOptions+"");
             }
             else
             {
@@ -2032,7 +2045,7 @@ QString sendEmailNow (bool testEmail)
     // Form command to execute (first argument of emailCommand ) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     QString emailCommandExec = emailCommand.left(emailCommand.indexOf(" "));
     if (WINrunning)
-        emailCommandExec = luckyBackupDir+"\\"+emailCommandExec;
+        emailCommandExec = luckyBackupDir+SLASH+emailCommandExec;
     
     // Calculate arguments and command used from variables ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     QString emailArgs = emailCommand;   emailArgs.remove(emailCommandExec);
@@ -2436,7 +2449,7 @@ QString getMapdrive(){
     units << "w"<<"v"<<"u"<<"t"<<"s"<<"r"<<"q"<<"p"<<"z"<<"y"<<"x"<<"o"<<"n"<<"m"<<"l"<<"k"<<"j"<<"i";
     for (int i = 0; i < units.size(); ++i){
         mapdrive=units.at(i);
-        if (! QDir(units.at(i)+":\\").exists())
+        if (! QDir(units.at(i)+":"+SLASH).exists())
           break;
       }
     return mapdrive;
@@ -2444,14 +2457,62 @@ QString getMapdrive(){
 
 //Create execute command in windows ==================================================
 //Modify source and dest with cygpath and analyze vss
-QString createWinMkdirCommand(QString tempPath,bool vss,QStringList rsyncArgs,bool logGui=true)
-{
-  rsyncArgs << "";
-  return createWinRsyncCommand(tempPath,vss,rsyncArgs,logGui);
+QString createWinMkdirCommand(QString tempPath,bool vss,QStringList rsyncArgs,bool logGui=true){
+      rsyncArgs << "";
+      /*
+      //return createWinRsyncCommand(tempPath,vss,rsyncArgs,logGui);
+      QString logstring="";
+      //QFile command1(tempPath+"\\l1qt_temp"+QString::number(qrand() % (999998) + 1) +".bat");
+      QFile command2(tempPath+"l2qt_temp"+QString::number(qrand() % (999998) + 1) +".bat");
+      //QTemporaryFile setvar(tempPath+"\\qt_tempXXXXXX.bat");
+      QString dest=rsyncArgs.takeLast();
+      QString source=rsyncArgs.takeLast();
+      bool srcremote=false;
+      bool dstremote=false;
+      rsyncArgs.replaceInStrings("\"","\\\"");
+      QString args="\""+rsyncArgs.join("\" \"")+"\"";
+      args.replace("\"--vss\"","");
+      if (source.contains('@')||source.startsWith("\\\\")){
+          args.replace("\"--backup-nt-streams\"","");
+          vss=false;
+          srcremote=true;
+          //source=source.replace("\\","/");
+        }
+      if (dest.contains('@')||dest.startsWith("\\\\")){
+          args.replace("\"--restore-nt-streams\"","");
+          args.append(" \"--chmod=u=rwX\" ");
+          dstremote=true;
+          //dest=dest.replace("\\","/");
+        }
+      //source=fixWinPathForRsync(source,srcremote);
+      //dest=fixWinPathForRsync(dest,dstremote);
+      mapdrive=getMapdrive();
+      QTextStream outCommand2(&command2);
+      outCommand2 << "\n@ECHO OFF";
+      outCommand2 << "\nSET tdebug=y";
+      outCommand2 << "\nSET tdeleteshadows=y";
+      outCommand2 << "\nSET el=0";
+          if (!srcremote) outCommand2 << "\n\""+Operation[currentOperation] -> GetCygpathCommand()+"\" \""+source+"\"> "+tempPath+"\\_cygpath.tmp";
+          else outCommand2 << "\nECHO "+source+"> "+tempPath+"\\_cygpath.tmp";
+          outCommand2 << "\nSET /p source=< "+tempPath+"\\_cygpath.tmp";
+          if (!dstremote) outCommand2 << "\n\""+Operation[currentOperation] -> GetCygpathCommand()+"\" \""+dest+"/\"> "+tempPath+"\\_cygpath.tmp";
+          else outCommand2 << "\nECHO "+dest+"> "+tempPath+"\\_cygpath.tmp";
+          outCommand2 << "\nSET /p dest=< "+tempPath+"\\_cygpath.tmp";
+          outCommand2 << "\n \""+Operation[currentOperation] -> GetRsyncCommand()+"\" "+args+" \"%source%\" \"%dest%\" ";
+          outCommand2 << "\n  SET el=%ERRORLEVEL%";
+          outCommand2 << "\ndel "+tempPath+"/_cygpath.tmp 2>nul";
+
+      outCommand2 << "\n:ennd";
+      outCommand2 << "\nIF %el% neq 0 exit /b %el%";
+      //outCommand2 << "\ndel \""+command1.fileName().replace("/","\\")+"\"";
+      //outCommand2 << "\nstart \"rsync.bat\" /min cmd /C del \"%0\" >nul 2>&1";
+      outCommand2 << "\nECHO BACKUP OK";
+      QString ret=command2.fileName();
+      command2.close();
+      */
 }
 
-QString createWinRsyncCommand(QString tempPath,bool vss,QStringList rsyncArgs,bool logGui=true)
-{
+QString createWinRsyncCommand(QString tempPath,bool vss,QStringList rsyncArgs,bool logGui=true){
 //  QFile settingsfile(settingsFile);
 //  if (!settingsfile.open(QIODevice::WriteOnly))   // if the settings file cannot be saved (or fails to create)
 //  {
@@ -2461,23 +2522,34 @@ QString createWinRsyncCommand(QString tempPath,bool vss,QStringList rsyncArgs,bo
 
 //  showOnlyErrors = ui.checkBox_onlyShowErrors -> isChecked();
     QString logstring="";
-    QFile command1(tempPath+"\\l1qt_temp"+QString::number(qrand() % (999998) + 1) +".bat");
-    QFile command2(tempPath+"\\l2qt_temp"+QString::number(qrand() % (999998) + 1) +".bat");
-    QTemporaryFile setvar(tempPath+"\\qt_tempXXXXXX.bat");
+    QFile command1(tempPath+SLASH+"l1qt_temp"+QString::number(qrand() % (999998) + 1) +".bat");
+    QFile command2(tempPath+SLASH+"l2qt_temp"+QString::number(qrand() % (999998) + 1) +".bat");
+    QTemporaryFile setvar(tempPath+SLASH+"qt_tempXXXXXX.bat");
     QString dest=rsyncArgs.takeLast();
     QString source=rsyncArgs.takeLast();
-    rsyncArgs.replaceInStrings("\"","\\\"");
+    bool srcremote=false;
+    bool dstremote=false;
+    rsyncArgs.replaceInStrings("\"","\\\"");//double escape chars to include in bat
     QString args="\""+rsyncArgs.join("\" \"")+"\"";
     args.replace("\"--vss\"","");
-    if (source.contains('@')){
+    if (source.contains('@')||source.startsWith(SLASH+SLASH)){
         args.replace("\"--backup-nt-streams\"","");
         vss=false;
+        srcremote=true;
+        if (source.startsWith("\\\\"))
+            source="\\\\"+source;
+        //source=source.replace("\\","/");
       }
-
-    if (dest.contains('@')){
+    if (dest.contains('@')||dest.startsWith(SLASH+SLASH)){
         args.replace("\"--restore-nt-streams\"","");
         args.append(" \"--chmod=u=rwX\" ");
+        dstremote=true;
+        //dest=dest.replace("\\","/");
+        if (dest.startsWith("\\\\"))
+            dest="\\\\"+dest;
       }
+    //source=fixWinPathForRsync(source,srcremote);
+    //dest=fixWinPathForRsync(dest,dstremote);
     mapdrive=getMapdrive();
     if (vss) {
         doVss=1;
@@ -2517,12 +2589,14 @@ QString createWinRsyncCommand(QString tempPath,bool vss,QStringList rsyncArgs,bo
     outCommand1 << "\n\""+Operation[currentOperation] -> GetDosdevCommand()+"\" "+mapdrive+": %SHADOW_DEVICE_1%  >> \""+pipeVssFile->fileName()+"\" 2>> \""+pipeVssErrFile->fileName()+"\"";
     outCommand1 << "\n SET SOURCE="+source;
     if (vss) outCommand1 << "\n SET SOURCE="+mapdrive+"%SOURCE:~1%";
-    if (!source.contains('@')) outCommand1 << "\n\""+Operation[currentOperation] -> GetCygpathCommand()+"\" \"%SOURCE%\"> "+tempPath+"\\_cygpath.tmp";
-    else outCommand1 << "\nECHO "+source+"> "+tempPath+"\\_cygpath.tmp";
-    outCommand1 << "\nSET /p source=< "+tempPath+"\\_cygpath.tmp";
-    if (!dest.contains('@')) outCommand1 << "\n\""+Operation[currentOperation] -> GetCygpathCommand()+"\" \""+dest+"/\"> "+tempPath+"\\_cygpath.tmp";
-    else outCommand1 << "\nECHO "+dest+"> "+tempPath+"\\_cygpath.tmp";
-    outCommand1 << "\nSET /p dest=< "+tempPath+"\\_cygpath.tmp";
+    if (!source.contains('@')) outCommand1 << "\n\""+Operation[currentOperation] -> GetCygpathCommand()+"\" \"%SOURCE%\"> "+tempPath+SLASH+"_cygpath.tmp";
+    else outCommand1 << "\nECHO "+source+"> "+tempPath+SLASH+"_cygpath.tmp";
+    outCommand1 << "\nSET /p source=< "+tempPath+SLASH+"_cygpath.tmp";
+    if (!dest.contains('@')) outCommand1 << "\n\""+Operation[currentOperation] -> GetCygpathCommand()+"\" \""+dest+"/\"> "+tempPath+SLASH+"_cygpath.tmp";
+    else outCommand1 << "\nECHO "+dest+"> "+tempPath+SLASH+"_cygpath.tmp";
+    outCommand1 << "\nSET /p dest=< "+tempPath+SLASH+"_cygpath.tmp";
+    outCommand1 << "\nSET HOME="+luckyBackupDir;
+    outCommand1 << "\nSET CYGWIN=nodosfilewarning";
     outCommand1 << "\n\""+Operation[currentOperation] -> GetRsyncCommand()+"\" "+args+" \"!source!\" \"!dest!\"  >> \""+pipeVssFile->fileName()+"\" 2>> \""+pipeVssErrFile->fileName()+"\"";
     outCommand1 << "\nSET ACTERR=!ERRORLEVEL! ";
 
@@ -2552,73 +2626,74 @@ QString createWinRsyncCommand(QString tempPath,bool vss,QStringList rsyncArgs,bo
     outCommand2 << "\nSET el=0";
     //remove vss and
     if (vss){
-    outCommand2 << "\nFOR /F \"tokens=2* delims=[]\" %%A IN ('VER') DO FOR /F \"tokens=2,3 delims=. \" %%B IN (\"%%A\") DO SET WINVER=%%B.%%C";
-    outCommand2 << "\nSET WINBIT=x86&&IF \"%PROCESSOR_ARCHITECTURE%\" == \"AMD64\" (SET WINBIT=x64) ELSE IF \"%PROCESSOR_ARCHITEW6432%\" == \"AMD64\" SET WINBIT=x64";
-    outCommand2 << "\nIF %WINVER% LSS 5.1 (";
-    outCommand2 << "\n        ECHO Sorry, %this% cannot run under this version of Windows %WINVER%-%WINBIT%  " + logstring;
-    outCommand2 << "\n        SET el=12";
-    outCommand2 << "\n        GOTO :ennd";
-    outCommand2 << "\n)";
-    outCommand2 << "\nSET VSHADOWVER=%WINVER%";
-    outCommand2 << "\nIF %WINVER%==5.1 SET VSHADOWVER=xp&&SET WINBIT=x86";
-    outCommand2 << "\nIF %WINVER%==5.2 SET VSHADOWVER=2003&&SET WINBIT=x86";
-    outCommand2 << "\nIF %WINVER%==6.0 SET VSHADOWVER=2008";
-    outCommand2 << "\nIF %WINVER%==6.1 SET VSHADOWVER=2008-r2";
-    outCommand2 << "\nCD "+tempPath+"";
-    outCommand2 << "\n      IF NOT \"%tdeleteshadows%\"==\"y\" (";
-    outCommand2 << "\n              IF \"%tdebug%\"==\"y\" ECHO Skipping deletion of any existing shadow copies  " + logstring;
-    outCommand2 << "\n      ) ELSE (";
-    outCommand2 << "\n              IF \"%tdebug%\"==\"y\" ECHO About to delete any existing shadow copies  " + logstring;
-    outCommand2 << "\n              ECHO y|\""+Operation[currentOperation] -> GetVshadowDir()+"\\vshadow-%VSHADOWVER%-%WINBIT%.exe\" -da>nul";
-    outCommand2 << "\n              IF ERRORLEVEL 1 (";
-    outCommand2 << "\n                      IF \"%tdebug%\"==\"y\" ECHO Error occurred: testing for administrator permissions  " + logstring;
-    outCommand2 << "\n                      IF EXIST \"%windir%\\system32\\test\" RMDIR \"%windir%\\system32\\__test\" 2>nul";
-    outCommand2 << "\n                      VERIFY>NUL";
-    outCommand2 << "\n                      MKDIR \"%windir%\\system32\\test\" 2>nul";
-    outCommand2 << "\n                      IF ERRORLEVEL 1 (";
-    outCommand2 << "\n                              REM not running as administrator, this is cause of failure" + logstring;
-    outCommand2 << "\n                              IF \"%tdebug%\"==\"y\" ECHO No administrator permissions   " + logstring;
-    outCommand2 << "\n                              SET /A el=11";
-    outCommand2 << "\n                      ) ELSE (";
-    outCommand2 << "\n                              ECHO running as administrator, there is a problem with vshadow" + logstring;
-    outCommand2 << "\n                              RMDIR \"%windir%\\system32\\__test";
-    outCommand2 << "\n                              SET /A el=7";
-    outCommand2 << "\n                      )";
-    outCommand2 << "\n                      GOTO :endd";
-    outCommand2 << "\n              )";
-    outCommand2 << "\n              IF \"%tdebug%\"==\"y\" ECHO Deleted any existing shadow copies   " + logstring;
-    outCommand2 << "\n      )";
-    outCommand2 << "\n       \""+Operation[currentOperation] -> GetVshadowDir()+"\\vshadow-%VSHADOWVER%-%WINBIT%.exe\" -script=\""+setvar.fileName()+"\" -exec=\""+command1.fileName()+"\" "+source.left(1)+": ";
-    outCommand2 << "\n      SET el=%ERRORLEVEL%";
-    outCommand2 << "\n      del "+tempPath+"/_cygpath.tmp 2>nul";
-    //outCommand2 << "\ncall \""+setvar.fileName()+"\"";
-    //outCommand2 << "\n  \""+dosdevCommand+"\" "+mapdrive+": %SHADOW_DEVICE_1%  ";
-    //outCommand2 << "\n       \""+vshadowDir+"\\vshadow-%VSHADOWVER%-%WINBIT%.exe\" -ds=%SHADOW_ID_1%";
-    if (!logGui){
-      outCommand2 << "\nTYPE \""+pipeVssFile->fileName()+"\" ";
-      outCommand2 << "\nTYPE \""+pipeVssErrFile->fileName()+"\" 1>&2";
-      }
-      }
+        outCommand2 << "\nFOR /F \"tokens=2* delims=[]\" %%A IN ('VER') DO FOR /F \"tokens=2,3 delims=. \" %%B IN (\"%%A\") DO SET WINVER=%%B.%%C";
+        outCommand2 << "\nSET WINBIT=x86&&IF \"%PROCESSOR_ARCHITECTURE%\" == \"AMD64\" (SET WINBIT=x64) ELSE IF \"%PROCESSOR_ARCHITEW6432%\" == \"AMD64\" SET WINBIT=x64";
+        outCommand2 << "\nIF %WINVER% LSS 5.1 (";
+        outCommand2 << "\n        ECHO Sorry, %this% cannot run under this version of Windows %WINVER%-%WINBIT%  " + logstring;
+        outCommand2 << "\n        SET el=12";
+        outCommand2 << "\n        GOTO :ennd";
+        outCommand2 << "\n)";
+        outCommand2 << "\nSET VSHADOWVER=%WINVER%";
+        outCommand2 << "\nIF %WINVER%==5.1 SET VSHADOWVER=xp&&SET WINBIT=x86";
+        outCommand2 << "\nIF %WINVER%==5.2 SET VSHADOWVER=2003&&SET WINBIT=x86";
+        outCommand2 << "\nIF %WINVER%==6.0 SET VSHADOWVER=2008";
+        outCommand2 << "\nIF %WINVER%==6.1 SET VSHADOWVER=2008-r2";
+        outCommand2 << "\nCD "+tempPath+"";
+        outCommand2 << "\n      IF NOT \"%tdeleteshadows%\"==\"y\" (";
+        outCommand2 << "\n              IF \"%tdebug%\"==\"y\" ECHO Skipping deletion of any existing shadow copies  " + logstring;
+        outCommand2 << "\n      ) ELSE (";
+        outCommand2 << "\n              IF \"%tdebug%\"==\"y\" ECHO About to delete any existing shadow copies  " + logstring;
+        outCommand2 << "\n              ECHO y|\""+Operation[currentOperation] -> GetVshadowDir()+SLASH+"vshadow-%VSHADOWVER%-%WINBIT%.exe\" -da>nul";
+        outCommand2 << "\n              IF ERRORLEVEL 1 (";
+        outCommand2 << "\n                      IF \"%tdebug%\"==\"y\" ECHO Error occurred: testing for administrator permissions  " + logstring;
+        outCommand2 << "\n                      IF EXIST \"%windir%\\system32\\test\" RMDIR \"%windir%\\system32\\__test\" 2>nul";
+        outCommand2 << "\n                      VERIFY>NUL";
+        outCommand2 << "\n                      MKDIR \"%windir%\\system32\\test\" 2>nul";
+        outCommand2 << "\n                      IF ERRORLEVEL 1 (";
+        outCommand2 << "\n                              REM not running as administrator, this is cause of failure" + logstring;
+        outCommand2 << "\n                              IF \"%tdebug%\"==\"y\" ECHO No administrator permissions   " + logstring;
+        outCommand2 << "\n                              SET /A el=11";
+        outCommand2 << "\n                      ) ELSE (";
+        outCommand2 << "\n                              ECHO running as administrator, there is a problem with vshadow" + logstring;
+        outCommand2 << "\n                              RMDIR \"%windir%\\system32\\__test";
+        outCommand2 << "\n                              SET /A el=7";
+        outCommand2 << "\n                      )";
+        outCommand2 << "\n                      GOTO :endd";
+        outCommand2 << "\n              )";
+        outCommand2 << "\n              IF \"%tdebug%\"==\"y\" ECHO Deleted any existing shadow copies   " + logstring;
+        outCommand2 << "\n      )";
+        outCommand2 << "\n       \""+Operation[currentOperation] -> GetVshadowDir()+SLASH+"vshadow-%VSHADOWVER%-%WINBIT%.exe\" -script=\""+setvar.fileName()+"\" -exec=\""+command1.fileName()+"\" "+source.left(1)+": ";
+        outCommand2 << "\n      SET el=%ERRORLEVEL%";
+        outCommand2 << "\n      del "+tempPath+"/_cygpath.tmp 2>nul";
+        //outCommand2 << "\ncall \""+setvar.fileName()+"\"";
+        //outCommand2 << "\n  \""+dosdevCommand+"\" "+mapdrive+": %SHADOW_DEVICE_1%  ";
+        //outCommand2 << "\n       \""+vshadowDir+SLASH+"vshadow-%VSHADOWVER%-%WINBIT%.exe\" -ds=%SHADOW_ID_1%";
+        if (!logGui){
+          outCommand2 << "\nTYPE \""+pipeVssFile->fileName()+"\" ";
+          outCommand2 << "\nTYPE \""+pipeVssErrFile->fileName()+"\" 1>&2";
+          }
+    }
     else {
-        if (!source.contains('@')) outCommand2 << "\n\""+Operation[currentOperation] -> GetCygpathCommand()+"\" \""+source+"\"> "+tempPath+"\\_cygpath.tmp";
-        else outCommand2 << "\nECHO "+source+"> "+tempPath+"\\_cygpath.tmp";
-        outCommand2 << "\nSET /p source=< "+tempPath+"\\_cygpath.tmp";
-        if (!dest.contains('@')) outCommand2 << "\n\""+Operation[currentOperation] -> GetCygpathCommand()+"\" \""+dest+"/\"> "+tempPath+"\\_cygpath.tmp";
-        else outCommand2 << "\nECHO "+dest+"> "+tempPath+"\\_cygpath.tmp";
-        outCommand2 << "\nSET /p dest=< "+tempPath+"\\_cygpath.tmp";
+        if (!source.contains('@')) outCommand2 << "\n\""+Operation[currentOperation] -> GetCygpathCommand()+"\" \""+source+"\"> "+tempPath+SLASH+"_cygpath.tmp";
+        else outCommand2 << "\nECHO "+source+"> "+tempPath+SLASH+"_cygpath.tmp";
+        outCommand2 << "\nSET /p source=< "+tempPath+SLASH+"_cygpath.tmp";
+        if (!dest.contains('@')) outCommand2 << "\n\""+Operation[currentOperation] -> GetCygpathCommand()+"\" \""+dest+"/\"> "+tempPath+SLASH+"_cygpath.tmp";
+        else outCommand2 << "\nECHO "+dest+"> "+tempPath+SLASH+"_cygpath.tmp";
+        outCommand2 << "\nSET /p dest=< "+tempPath+SLASH+"_cygpath.tmp";
+        outCommand2 << "\nSET HOME="+luckyBackupDir;
+        outCommand2 << "\nSET CYGWIN=nodosfilewarning";
         outCommand2 << "\n \""+Operation[currentOperation] -> GetRsyncCommand()+"\" "+args+" \"%source%\" \"%dest%\" ";
         outCommand2 << "\n  SET el=%ERRORLEVEL%";
         outCommand2 << "\ndel "+tempPath+"/_cygpath.tmp 2>nul";
       }
     outCommand2 << "\n:ennd";
     outCommand2 << "\nIF %el% neq 0 exit /b %el%";
-    //outCommand2 << "\ndel \""+command1.fileName().replace("/","\\")+"\"";
+    //outCommand2 << "\ndel \""+command1.fileName().replace("/",SLASH+"")+"\"";
     //outCommand2 << "\nstart \"rsync.bat\" /min cmd /C del \"%0\" >nul 2>&1";
     outCommand2 << "\nECHO BACKUP OK";
     QString ret=command2.fileName();
     command2.close();
     return ret;
-
 }
 void setAppDir(QString s){
   luckyBackupDir = s;

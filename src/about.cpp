@@ -22,7 +22,7 @@
         project version   : Please see "main.cpp" for project version
 
         developer         : luckyb 
-        last modified     : 02 Oct 2012
+        last modified     : 12 Aug 2013
       ===============================================================================================================================
       ===============================================================================================================================
 */
@@ -65,7 +65,7 @@ void aboutDialog::setAbout()
         tr("using Qt4")+")" + "<br>" +
         tr("Backup & Sync Application")+"<br><br>"
 
-        "(C) 2008-2012,	"+
+        "(C) 2008-2013,	"+
         tr("Loukas Avgeriou") +"<br><br>"
 
         "web:<br>"
@@ -223,7 +223,7 @@ void aboutDialog::setThanks()
         "<b>" + tr("Andrej Znidarsic") + "</b><br>" +
         tr("Slovenian gui translator") + "<br><br>"
         
-        "<b>" + tr("mateju") + "</b><br>" +
+        "<b>" + tr("Matej Urbančič") + "</b><br>" +
         tr("Slovenian gui translator") + "<br><br>"
         
         "<b>" + tr("E. Hakan Duran") + "</b><br>" +
@@ -252,6 +252,12 @@ void aboutDialog::setThanks()
         
         "<b>" + tr("Manuel Meixide") + "</b><br>" +
         tr("Galician gui translator") + "<br><br>"
+        
+        "<b>" + tr("Roger Foss") + "</b><br>" +
+        tr("Norwegian gui translator") + "<br><br>"
+        
+        "<b>" + tr("Pin-hsien Li") + "</b><br>" +
+        tr("Chinese (Taiwan) gui translator") + "<br><br>"
         
         "<b>" + tr("Javi Romero") + "</b><br>" +
         tr("v0.3 gui designer") + "<br><br>"

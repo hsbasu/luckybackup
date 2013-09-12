@@ -23,7 +23,7 @@ do everything that deals with commands (rsync & others) execution
 project version	: Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 15 Jan 2013
+last modified      : 11 Sep 2013
 ===============================================================================================================================
 ===============================================================================================================================
 ********************************** DO NOT FORGET TO CHANGE "commandline.cpp:rsyncIT()" ********************************************************
@@ -102,13 +102,13 @@ void luckyBackupWindow::executeNOW ()
     {
         vssTimer= new QTimer(this);
 
-        pipeVssFile =  new QFile(tempDirPath+"\\qt_tempvss"+QString::number(qrand() % (999998) + 1));
+        pipeVssFile =  new QFile(tempDirPath+SLASH+"qt_tempvss"+QString::number(qrand() % (999998) + 1));
         if (pipeVssFile->open(QIODevice::ReadWrite)){
             pipeVssFile->close();
 //            if (pipeVssFile->open(QIODevice::ReadOnly | QIODevice::Text))
 //              connect(pipeVssFile,SIGNAL(readyRead()),this,SLOT(appendRsyncVssOutput()));
         }
-        pipeVssErrFile =  new QFile(tempDirPath+"\\qt_tempvsserr"+QString::number(qrand() % (999998) + 1));
+        pipeVssErrFile =  new QFile(tempDirPath+SLASH+"qt_tempvsserr"+QString::number(qrand() % (999998) + 1));
         if (pipeVssErrFile->open(QIODevice::ReadWrite)){
             pipeVssErrFile->close();
 //            if (pipeVssErrFile->open(QIODevice::ReadOnly | QIODevice::Text))
@@ -404,8 +404,9 @@ void luckyBackupWindow::executeBeforeTask()
         // First calculate the folder where snapshots go (tempDestination)
         QStringList tempArguments = Operation[currentOperation] -> GetArgs();
         QString tempSource = tempArguments[tempArguments.size()-2];
-        QString tempDestination = tempArguments[tempArguments.size()-1];
-        QString tempDestinationOrig;        // Windows use
+        QString tempDestination     = tempArguments[tempArguments.size()-1];
+        QString tempDestinationOrig = tempArguments[tempArguments.size()-1];
+        QString tempDestinationOrig2;
         QString sourceLast = tempSource;
         if (!tempSource.endsWith(SLASH))    // this means task is of type "backup dir by name"
         {
@@ -417,6 +418,7 @@ void luckyBackupWindow::executeBeforeTask()
             else
                 tempDestination.append(sourceLast + SLASH);
         }
+        tempDestinationOrig2=tempDestination;
         if (RemoteDestUsed && WINrunning)
             tempDestination.append (snapDefaultDir.replace(SLASH,XnixSLASH));
         else
@@ -432,19 +434,20 @@ void luckyBackupWindow::executeBeforeTask()
                 remoteArgs.append("--password-file=" + ( Operation[currentOperation] -> GetRemotePassword()) );
             if ( Operation[currentOperation] -> GetRemoteSSH())
             {
+                QString sshOptions=(Operation[currentOperation] -> GetRemoteSSHOptions()).replace("\"","\\\"")+" -o \"StrictHostKeyChecking no\"  -o \"PasswordAuthentication no\" ";
                 if (WINrunning)
                 {
                     if ( Operation[currentOperation] -> GetRemoteSSHPassword() != "")
                         if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
-                        remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\" -i \"" +  Operation[currentOperation] -> GetRemoteSSHPassword() +"\" -p " +
+                        remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" "+sshOptions+" -i \"" +  Operation[currentOperation] -> GetRemoteSSHPassword() +"\" -p " +
                                         countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
                         else
-                        remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\" -i \"" +  Operation[currentOperation] -> GetRemoteSSHPassword()+"\"");
+                        remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" "+sshOptions+" -i \"" +  Operation[currentOperation] -> GetRemoteSSHPassword()+"\"");
                     else
                         if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
-                        remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\" -p " + countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                        remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" "+sshOptions+" -p " + countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
                         else
-                            remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\"");
+                            remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" "+sshOptions+"");
                 }
                 else
                 {
@@ -513,6 +516,7 @@ void luckyBackupWindow::executeBeforeTask()
 
                 //bool createWinRsyncCommand(tempDirPath,QFile command1,QFile command2,bool vss,QString rsyncArgs,QString source,QString dest);
                 QString command2=createWinRsyncCommand(tempDirPath,false,rmArgs);
+                ui.rsyncOutput->append("\n"+command2);
                 if (command2=="")
                     cout << "\nfailed to create bat file in rmProccess";
                 else
@@ -581,13 +585,16 @@ void luckyBackupWindow::executeBeforeTask()
             mkdirArgs.append(snapEmptyDir);
             
             //rsync throws error if directory is not yet created, ..so create it first
+            
+            // Add the destination folder
             mkdirArgs.append(tempDestinationOrig);  // this is actually an empty argument
             if (WINrunning)
             {
                 //bool createWinRsyncCommand(tempDirPath,QFile command1,QFile command2,bool vss,QString rsyncArgs,QString source,QString dest);
-                    QString command2=createWinRsyncCommand(tempDirPath,false,mkdirArgs);
+                QString command2=createWinRsyncCommand(tempDirPath,false,mkdirArgs);
+                ui.rsyncOutput->append("\n"+command2);
                 if (command2=="")
-                    cout << "\nfailed to create bat file in rmProccess";
+                    cout << "\nfailed to create bat file in mkdirProccess";
                 else
                     mkdirProcess -> start (command2);
             }
@@ -601,13 +608,37 @@ void luckyBackupWindow::executeBeforeTask()
                 ui.rsyncOutput->append("\n!");
             mkdirArgs.removeLast(); //remove the tempDestinationOrig argument
             
+            // Add the destination folder [ + sourceLast +SLASH ]
+            mkdirArgs.append(tempDestinationOrig2);  // this is actually an empty argument
+            if (WINrunning)
+            {
+                //bool createWinRsyncCommand(tempDirPath,QFile command1,QFile command2,bool vss,QString rsyncArgs,QString source,QString dest);
+                    QString command2=createWinRsyncCommand(tempDirPath,false,mkdirArgs);
+                    ui.rsyncOutput->append("\n"+command2);
+                if (command2=="")
+                    cout << "\nfailed to create bat file in mkdirProccess";
+                else
+                    mkdirProcess -> start (command2);
+            }
+            else
+                mkdirProcess -> start (command,mkdirArgs);
+
+            mkdirProcess -> waitForFinished();
+            if ((mkdirProcess -> exitCode()) == 0)
+                ui.rsyncOutput->append("\n!!");
+            else
+                ui.rsyncOutput->append("\n!");
+            
+            // Add the destination folder [ + sourceLast +SLASH ] + snapDefaultDir
+            mkdirArgs.removeLast(); //remove the tempDestinationOrig2 argument
             mkdirArgs.append(tempDestination);
             if (WINrunning)
             {
                 //bool createWinRsyncCommand(tempDirPath,QFile command1,QFile command2,bool vss,QString rsyncArgs,QString source,QString dest);
                     QString command2=createWinRsyncCommand(tempDirPath,false,mkdirArgs);
+                    ui.rsyncOutput->append("\n"+command2);
                 if (command2=="")
-                    cout << "\nfailed to create bat file in rmProccess";
+                    cout << "\nfailed to create bat file in mkdirProccess";
                 else
                     mkdirProcess -> start (command2);
             }
@@ -807,6 +838,7 @@ void luckyBackupWindow::executeRsync()
     {
         //bool createWinRsyncCommand(tempDirPath,QFile command1,QFile command2,bool vss,QString rsyncArgs,QString source,QString dest);
         QString command2=createWinRsyncCommand(tempDirPath,Operation[currentOperation]->GetOptionsVss(),rsyncArguments);
+        ui.rsyncOutput->append("\n"+command2);
         if (command2=="")
             cout << "\nfailed to create bat file for vss";
         else

@@ -22,7 +22,7 @@ file containing all functions for luckybackupwindow
 project version	: Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 13 Nov 2013
+last modified      : 11 Sep 2013
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -204,7 +204,7 @@ void luckyBackupWindow::retranslateUi()
     languageMenu	    -> setTitle(tr("&Language","This is a top menu item"));
     toolbarsMenu	    -> setTitle(tr("&Toolbars","This is a top menu item"));
     
-    if (notXnixRunning)
+    if (WINrunning)
     {
         actionSetWinPaths -> setText(tr("Set paths","This is a top menu action"));
         actionSetWinPaths -> setToolTip(tr("Set paths for rsync and ssh commands","This is a top menu action tooltip"));
@@ -310,7 +310,7 @@ void luckyBackupWindow::createActions()
     actionVisibleToolbarText -> setCheckable(TRUE);
     actionVisibleToolbarText -> setChecked(IsVisibleToolbarText);
     
-    if (notXnixRunning)
+    if (WINrunning)
     {
         actionSetWinPaths = new QAction("Set paths",this);
         connect( actionSetWinPaths, SIGNAL(triggered()), this, SLOT(setWinPaths()));      //menu action set paths
@@ -379,7 +379,7 @@ void luckyBackupWindow::createMenus()
     }
     
     // Win-OS2 paths sub-menu -------------------------------------------------------------------------------
-    if (notXnixRunning)
+    if (WINrunning)
         settingsMenu -> addAction(actionSetWinPaths);
 }
 // createToolbar =============================================================================================================================
@@ -785,7 +785,7 @@ bool luckyBackupWindow::saveSettings()
     out << "Visible_info_window="           << IsVisibleInfoWindow << "\n";         //output the visibility state of the info window
     out << "Quite_mode_output="             << showOnlyErrors << "\n";              //output the quite mode state of the commands output window
     
-    if (notXnixRunning)
+    if (WINrunning)
     {
         out << "\n[settings_non_*nix]\n";
         out << "win_rsync_path="            << rsyncCommandPath << "\n";            //output the rsync path for windows or OS2

@@ -23,7 +23,7 @@ Display a dialog. Adds a new or modifies an existing operation
  project version    : Please see "main.cpp" for project version
 
  developer          : luckyb 
- last modified      : 13 Jan 2013
+ last modified      : 11 Sep 2013
 
 ===============================================================================================================================
 ===============================================================================================================================
@@ -55,10 +55,14 @@ modifyDialog::modifyDialog (int ItemNo, QDialog *parent) : QDialog (parent)
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // Various gui initialization
     //uiM.toolBox_options         ->setItemEnabled (0,FALSE);    // different backend
+    
+    //Disable some stuff when windows is NOT running
     if (!WINrunning)
     {
         uiM.checkBox_vss        -> setVisible(FALSE);
         uiM.checkBox_restorent  -> setVisible(FALSE);
+        uiM.lineEdit_sshPasswordStr -> setVisible(FALSE);
+        uiM.lineEdit_sshOptions -> setVisible(FALSE);
     }     
     
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1330,7 +1334,9 @@ operation *modifyDialog::fillOperationArray()
     pTask -> SetRemoteSSH           ( uiM.checkBox_ssh -> isChecked() );
     pTask -> SetRemoteSSHPassword   ( uiM.lineEdit_sshPassword -> text() );
     pTask -> SetRemoteSSHPort       ( (uiM.lineEdit_sshPort -> text()).toInt() );
-
+    pTask -> SetRemoteSSHPasswordStr( uiM.lineEdit_sshPasswordStr -> text());
+    pTask -> SetRemoteSSHOptions    ( uiM.lineEdit_sshOptions -> text());
+    
     //set rsync options checkboxes -----------------------------------------------------------------------------------------------
     pTask -> SetOptionsUpdate       ( uiM.checkBox_update -> isChecked() );
     pTask -> SetOptionsOwnership    ( uiM.checkBox_ownership -> isChecked() );
@@ -1460,6 +1466,8 @@ void modifyDialog::fillModifyWindow(operation *pTask)
     uiM.lineEdit_rsyncPassword      -> setText    (pTask -> GetRemotePassword() );
     uiM.checkBox_ssh                -> setChecked    (pTask -> GetRemoteSSH() );
     uiM.lineEdit_sshPassword        -> setText    (pTask -> GetRemoteSSHPassword() );
+    uiM.lineEdit_sshPasswordStr     -> setText    (pTask -> GetRemoteSSHPasswordStr() );
+    uiM.lineEdit_sshOptions         -> setText    (pTask -> GetRemoteSSHOptions() );
     if (pTask -> GetRemoteSSHPort() == 0)
         uiM.lineEdit_sshPort        -> setText    ("");
     else
@@ -1519,7 +1527,7 @@ void modifyDialog::fillModifyWindow(operation *pTask)
 // adds or removes a trailing "/" at the source & destination directory
 void modifyDialog::modifyTrailing()
 {   
-    // SLASH is "/" for *nix and "\\" for OS2
+    // SLASH is "/" for *nix and windows and "\\" for OS2
     
     QString sourceDir   = uiM.lineEdit_source -> text();
     QString destDir     = uiM.lineEdit_destination -> text();
@@ -1531,31 +1539,62 @@ void modifyDialog::modifyTrailing()
         if (destDir.endsWith(":"))      destDir.append(SLASH);
     }
 
-    if ((uiM.comboBox_Type -> currentIndex()==0) && (uiM.checkBox_backupContents -> isChecked()))           //Directory by contents
+    //Directory by contents - trailing slash at source & dest paths
+    if ((uiM.comboBox_Type -> currentIndex()==0) && (uiM.checkBox_backupContents -> isChecked()))
     {
-            if ( (!sourceDir.endsWith(SLASH)) && (sourceDir != ""))     sourceDir.append(SLASH);
-            if ( (!destDir.endsWith(SLASH)) && (destDir != ""))         destDir.append(SLASH);
+        if ( (!sourceDir.endsWith(XnixSLASH)) && (!sourceDir.endsWith(SLASH)) && (sourceDir != ""))
+        {
+            if (uiM.groupBox_remote -> isChecked() && uiM.radioButton_remoteSource -> isChecked())
+                sourceDir.append(XnixSLASH);
+            else
+                sourceDir.append(SLASH);
+        }
+        if ( (!destDir.endsWith(XnixSLASH)) &&(!destDir.endsWith(SLASH)) && (destDir != ""))
+        {
+            if (uiM.groupBox_remote -> isChecked() && uiM.radioButton_remoteDestination -> isChecked())
+                destDir.append(XnixSLASH);
+            else
+                destDir.append(SLASH);
+        }
     }
 
-    if ((uiM.comboBox_Type -> currentIndex()==0) && (!uiM.checkBox_backupContents -> isChecked()))        //Directory by name
+    //Directory by name - trailing slash only at  dest path not source
+    if ((uiM.comboBox_Type -> currentIndex()==0) && (!uiM.checkBox_backupContents -> isChecked()))
     {
-        if (notXnixRunning) //OS2 & win uses normal slashes "\" not unix ones "/"
+        if (notXnixRunning) //OS2 & win
         {
             if ( (sourceDir.endsWith(SLASH)) && (!sourceDir.endsWith(":"+SLASH)) )      sourceDir.chop(1);
-            if ( (!destDir.endsWith(SLASH)) && (destDir != "") )                        destDir.append(SLASH);
+            if ( (!destDir.endsWith(XnixSLASH)) && (!destDir.endsWith(SLASH)) && (destDir != "") )
+            {
+                if (uiM.groupBox_remote -> isChecked() && uiM.radioButton_remoteDestination -> isChecked())
+                    destDir.append(XnixSLASH);
+                else
+                    destDir.append(SLASH);
+            }
         }
-        else
+        else        //linux-unix
         {
             if ( (sourceDir.endsWith(SLASH)) && (sourceDir != SLASH) )            sourceDir.chop(1);
             if ( (!destDir.endsWith(SLASH)) && (destDir != "") )                  destDir.append(SLASH);
         }
     }
 
-    if (uiM.comboBox_Type -> currentIndex()==1)        //sync Directories
+    if (uiM.comboBox_Type -> currentIndex()==1)        //sync Directories - both paths have to have a trailing slash
     {
-       
-        if ( (!sourceDir.endsWith(SLASH)) && (sourceDir != ""))   sourceDir.append(SLASH);
-        if ( (!destDir.endsWith(SLASH)) && (destDir != ""))       destDir.append(SLASH);
+       if ((!sourceDir.endsWith(XnixSLASH)) && (!sourceDir.endsWith(SLASH)) && (sourceDir != ""))
+       {
+            if (uiM.groupBox_remote -> isChecked() && uiM.radioButton_remoteSource -> isChecked())
+                sourceDir.append(XnixSLASH);
+            else
+                sourceDir.append(SLASH);
+        }
+        if ( (!destDir.endsWith(XnixSLASH)) &&(!destDir.endsWith(SLASH)) && (destDir != ""))
+        {
+            if (uiM.groupBox_remote -> isChecked() && uiM.radioButton_remoteDestination -> isChecked())
+                destDir.append(XnixSLASH);
+            else
+                destDir.append(SLASH);
+        }
         
         uiM.checkBox_deleteAfter    -> setChecked    (FALSE);
         uiM.checkBox_update         -> setChecked    (TRUE);
@@ -1563,14 +1602,14 @@ void modifyDialog::modifyTrailing()
         uiM.checkBox_permissions    -> setChecked    (TRUE);
     }
     
-    if (WINrunning)     // some more adjustments for windows when the user wants to declare directly paths with "/" instead of "\" (normally for remote)
+    /*if (WINrunning)     // some more adjustments for windows when the user wants to declare directly paths with "/" instead of "\" (normally for remote)
     {      
         if (sourceDir.contains("/"))    sourceDir.replace(SLASH,"/");
         if (sourceDir.endsWith("//"))   sourceDir.chop(1);
         if (destDir.contains("/"))      destDir.replace(SLASH,"/");
         if (destDir.endsWith("//"))     destDir.chop(1);
-    }
-
+    }*/
+    
     uiM.lineEdit_source -> setText(sourceDir);
     uiM.lineEdit_destination -> setText(destDir);
 }

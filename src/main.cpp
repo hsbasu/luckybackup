@@ -22,7 +22,7 @@
     along with luckyBackup.  If not, see <http://www.gnu.org/licenses/>.
 
     developer       : luckyb 
-    last modified   : 16 Jan 2012
+    last modified   : 11 Sep 2013
     ===============================================================================================================================
     ===============================================================================================================================
 */
@@ -71,6 +71,20 @@ int main(int argc, char *argv[])
             appTranslator.load(QString("luckybackup_") + locale, systemTransDir);
         app.installTranslator(&appTranslator);
 
+        // windows related stuff
+        appPath = app.applicationDirPath();  // This is used for windows app path. It's also causing a ...
+                                             //"QCoreApplication::applicationDirPath: Please instantiate the QApplication object first" WARNING message
+        rsyncDefaultWinCommand = appPath+"/rsync.exe"; // Holds the default rsync command for windows
+        sshDefaultWinCommand = appPath+"/ssh.exe";             // Holds the default ssh command for windows
+        mapdrive="w";
+        vshadowDir=             appPath;
+        vshadowDefaultDir=      appPath;
+        dosdevCommand=          appPath+"/dosdev.exe";
+        dosdevDefaultCommand=   appPath+"/dosdev.exe";
+        cygpathCommand=         appPath+"/cygpath.exe";
+        cygpathDefaultCommand=  appPath+"/cygpath.exe";
+        // end of windows stuff ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        
         luckyBackupWindow luckybackup;
         if (!silentMode)
             luckybackup.show();

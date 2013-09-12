@@ -23,7 +23,7 @@ Display a dialog. Schedules profiles via cron
 project version    : Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 08 Nov 12
+last modified      : 11 Sep 13
 
 ===============================================================================================================================
 ===============================================================================================================================
@@ -699,7 +699,9 @@ void scheduleDialog::createCron()
     int x = CronTab.indexOf(luckyEntryStart);
     int y = CronTab.indexOf(luckyEntryEnd) + luckyEntryEnd.size() - x;
     
-     //--------------------windows part - Juan patch ----------------------------------------
+    //--------------------windows part - Juan patch ---------------------------------------------
+    //--------------------Windows 8: Use New-ScheduledTaskTrigger----------------------------
+    //Get-ScheduledTask------New-ScheduledTaskTrigger
     if (WINrunning)
     {
         //windows execute at to delete command
@@ -741,8 +743,7 @@ void scheduleDialog::createCron()
                     batFileName.append(".bat");
                     WinScheduleLine.append(" cmd /c \"");
                     WinScheduleLine.append(batFileName+"\"");
-                    batLine.append("\""+luckyBackupDir+"luckybackup.exe\" -c --no-questions ");
-
+                    batLine.append("\""+luckyBackupDir+"luckybackup_console.exe\" -c --no-questions ");
 
                     if (Schedule[currentSchedule] -> GetSkipCritical())            //append --skip-critical
                         batLine.append("--skip-critical ");

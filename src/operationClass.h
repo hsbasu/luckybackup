@@ -23,7 +23,7 @@
  project version    : Please see "main.cpp" for project version
 
  developer          : luckyb 
- last modified      : 13 Jan 2013
+ last modified      : 11 Sep 2013
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -133,6 +133,8 @@ class operation
         QString GetRemoteUser () const          {return itsRemoteUser;}
         QString GetRemotePassword () const      {return itsRemotePassword;}
         QString GetRemoteSSHPassword () const   {return itsRemoteSSHPassword;}
+        QString GetRemoteSSHPasswordStr () const{return itsRemoteSSHPasswordStr;}
+        QString GetRemoteSSHOptions () const    {return itsRemoteSSHOptions;}
         int GetRemoteSSHPort () const           {return itsRemoteSSHPort;}
 
         bool GetOptionsUpdate () const          {return itsOptionsUpdate;}
@@ -263,6 +265,8 @@ class operation
         void SetRemoteUser (QString RemoteUser)             { itsRemoteUser = RemoteUser;}
         void SetRemotePassword (QString RemotePassword)     { itsRemotePassword = RemotePassword;}
         void SetRemoteSSHPassword (QString RemoteSSHPassword) { itsRemoteSSHPassword = RemoteSSHPassword;}
+        void SetRemoteSSHPasswordStr (QString RemoteSSHPassword) { itsRemoteSSHPasswordStr = RemoteSSHPassword;}
+        void SetRemoteSSHOptions (QString RemoteSSHOptions) { itsRemoteSSHOptions = RemoteSSHOptions;}
         void SetRemoteSSHPort (int RemoteSSHPort)           { itsRemoteSSHPort = RemoteSSHPort;}
 
         // Command options - templates
@@ -355,6 +359,8 @@ class operation
         QString itsRemoteUser;
         QString itsRemotePassword;
         QString itsRemoteSSHPassword;
+        QString itsRemoteSSHPasswordStr;
+        QString itsRemoteSSHOptions;
         int itsRemoteSSHPort;
 
         bool itsOptionsUpdate;

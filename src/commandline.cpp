@@ -19,7 +19,7 @@
      You should have received a copy of the GNU General Public License
      along with luckyBackup.  If not,see <http://www.gnu.org/licenses/>.
  developer      : luckyb 
- last modified  : 23 Feb 2013
+ last modified  : 11 Sep 2013
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -107,11 +107,11 @@ void commandline::rsyncIT()
         if (WINrunning)
         {
             setAppDir(Operation[currentOperation] -> GetLuckyBackupDir());
-            pipeVssFile =  new QFile(Operation[currentOperation] -> GetTempPath()+"\\qt_tempvss"+QString::number(qrand() % (999998) + 1));
+            pipeVssFile =  new QFile(Operation[currentOperation] -> GetTempPath()+SLASH+"qt_tempvss"+QString::number(qrand() % (999998) + 1));
             if (pipeVssFile->open(QIODevice::ReadWrite)){
                 pipeVssFile->close();
             }
-            pipeVssErrFile =  new QFile(Operation[currentOperation] -> GetTempPath()+"\\qt_tempvsserr"+QString::number(qrand() % (999998) + 1));
+            pipeVssErrFile =  new QFile(Operation[currentOperation] -> GetTempPath()+SLASH+"qt_tempvsserr"+QString::number(qrand() % (999998) + 1));
             if (pipeVssErrFile->open(QIODevice::ReadWrite)){
                 pipeVssErrFile->close();
             }
@@ -129,8 +129,9 @@ void commandline::rsyncIT()
             // First calculate the folder where snapshots go
             QStringList tempArguments = Operation[currentOperation] -> GetArgs();
             QString tempSource = tempArguments[tempArguments.size()-2];
-            QString tempDestination = tempArguments[tempArguments.size()-1];
-            QString tempDestinationOrig;
+            QString tempDestination     = tempArguments[tempArguments.size()-1];
+            QString tempDestinationOrig = tempArguments[tempArguments.size()-1]; //windows use
+            QString tempDestinationOrig2;
             QString sourceLast = tempSource;
             
             // win stuff ~~~~~
@@ -145,14 +146,16 @@ void commandline::rsyncIT()
                 sourceLast = calculateLastPath(sourceLast); // This is the lowest dir of the source
                 
                 tempSource.append(SLASH);
-                if (!WINrunning)
-                    tempDestination.append(sourceLast + SLASH);
+                
+                if (WINrunning && RemoteDestUsed)
+                    tempDestination.append(sourceLast + XnixSLASH);
                 else
-                    tempDestination.append(sourceLast.replace("\\",XnixSLASH) + tslash);
+                    tempDestination.append(sourceLast + SLASH);
             }
             
-            if (WINrunning)
-                tempDestination.append (snapDefaultDir.replace("\\",XnixSLASH));
+            tempDestinationOrig2=tempDestination;
+            if (RemoteDestUsed && WINrunning)
+                tempDestination.append (snapDefaultDir.replace(SLASH,XnixSLASH));
             else
                 tempDestination.append (snapDefaultDir);
             
@@ -162,23 +165,24 @@ void commandline::rsyncIT()
             {
                 remoteArgs.append("--protect-args");
                 if ( (Operation[currentOperation]-> GetRemoteModule()) && (Operation[currentOperation] -> GetRemotePassword() != "") )
-                    remoteArgs.append("--password-file=" + ( Operation[currentOperation] -> GetRemotePassword()).replace("\\",XnixSLASH) );
+                    remoteArgs.append("--password-file=" + ( Operation[currentOperation] -> GetRemotePassword()) );
                 if ( Operation[currentOperation] -> GetRemoteSSH())
                 {
+                    QString sshOptions=(Operation[currentOperation] -> GetRemoteSSHOptions()).replace("\"","\\\"")+" -o \"StrictHostKeyChecking no\"  -o \"PasswordAuthentication no\" ";
                     if (WINrunning)
                     {
                         if (
                             Operation[currentOperation] -> GetRemoteSSHPassword() != "")
                             if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
-                              remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\" -i \"" +  Operation[currentOperation] -> GetRemoteSSHPassword() + "\" -p " +
+                              remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" "+sshOptions+" -i \"" +  Operation[currentOperation] -> GetRemoteSSHPassword() + "\" -p " +
                                             countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
                             else
-                              remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\" -i \"" +  Operation[currentOperation] -> GetRemoteSSHPassword() + "\"");
+                              remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" "+sshOptions+" -i \"" +  Operation[currentOperation] -> GetRemoteSSHPassword() + "\"");
                         else
                             if ( Operation[currentOperation] -> GetRemoteSSHPort() != 0)
-                              remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\" -p " + countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
+                              remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" "+sshOptions+" -p " + countStr.setNum( Operation[currentOperation] -> GetRemoteSSHPort()) );
                             else
-                              remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" -o \"StrictHostKeyChecking no\" -o \"PasswordAuthentication no\"");
+                              remoteArgs.append("-e \""+Operation[currentOperation] -> GetSshCommand()+"\" "+sshOptions+"");
                     }
                     else
                     {
@@ -222,6 +226,7 @@ void commandline::rsyncIT()
                     if (RemoteDestUsed)
                         mkdirArgs << remoteArgs;
 
+                    // Add the destination folder
                     mkdirArgs.append(snapEmptyDir);
                     mkdirArgs.append(tempDestinationOrig);
                     if (WINrunning)
@@ -241,6 +246,29 @@ void commandline::rsyncIT()
                         cout << "\n!";
                     else
                         cout << "\n!mkdir error!";
+                    
+                    // Add the destination folder [ + sourceLast +SLASH ]
+                    mkdirArgs.removeLast();
+                    mkdirArgs.append(tempDestinationOrig2);
+                    if (WINrunning)
+                    {
+                        //bool createWinRsyncCommand(tempDirPath,QFile command1,QFile command2,bool vss,QString rsyncArgs,QString source,QString dest);
+                        command2=createWinRsyncCommand(Operation[currentOperation] -> GetTempPath(),false,mkdirArgs,false);
+                        if (command2=="")
+                            cout << "\nfailed to create bat file in mkdirProccess";
+                        else
+                            mkdirProcess -> start (command2);
+                    }
+                    else
+                      mkdirProcess -> start (command,mkdirArgs);
+                    mkdirProcess -> waitForFinished();
+
+                    if ((mkdirProcess -> exitCode()) == 0)
+                        cout << "\n!";
+                    else
+                        cout << "\n!mkdir error!";
+
+                    // Add the destination folder [ + sourceLast +SLASH ] + snapDefaultDir
                     mkdirArgs.removeLast();
                     mkdirArgs.append(tempDestination);
 //                    QTemporaryFile command1(QDir::tempPath()+"\\qt_tempXXXXXX.bat");
@@ -830,8 +858,11 @@ void commandline::rsyncIT()
                 
             
             // close the logfile
-            if (writeToLog)
+            if (writeToLog){
+                QTextStream out(&logfile);
+                out << "<pre>";
                 logfile.close();
+            }
             
             // Update the last execution errors and .changes file if real run
             if (!DryRun)

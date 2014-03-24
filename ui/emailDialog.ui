@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>500</height>
+    <width>540</width>
+    <height>460</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -61,7 +61,7 @@
      </item>
     </layout>
    </item>
-   <item row="2" column="0">
+   <item row="1" column="0">
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
       <widget class="QLabel" name="label_command">
@@ -72,10 +72,32 @@
      </item>
      <item>
       <widget class="QLineEdit" name="lineEdit_command">
+       <property name="maximumSize">
+        <size>
+         <width>120</width>
+         <height>100</height>
+        </size>
+       </property>
        <property name="toolTip">
-        <string>Enter the full command with arguments to run
+        <string>Enter the command to run
 eg
-sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</string>
+sendemail</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_arguments">
+       <property name="text">
+        <string>arguments:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEdit_arguments">
+       <property name="toolTip">
+        <string>Enter arguments of the email command
+eg
+ -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</string>
        </property>
       </widget>
      </item>
@@ -92,7 +114,58 @@ sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</string>
      </item>
     </layout>
    </item>
-   <item row="4" column="0">
+   <item row="2" column="0">
+    <widget class="QGroupBox" name="groupBox_onlySend">
+     <property name="toolTip">
+      <string>Specify the conditions to send an email</string>
+     </property>
+     <property name="title">
+      <string>Conditions</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="1">
+       <widget class="QCheckBox" name="checkBox_conditionError">
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="toolTip">
+         <string>Only send when error(s) occured during a run</string>
+        </property>
+        <property name="text">
+         <string>Error(s) occured</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QCheckBox" name="checkBox_conditionSchedule">
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="toolTip">
+         <string>Only send when profile is scheduled to run</string>
+        </property>
+        <property name="text">
+         <string>Profile is scheduled</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="checkBox_conditionNever">
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="toolTip">
+         <string>Never send an email</string>
+        </property>
+        <property name="text">
+         <string>Never</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="3" column="0">
     <widget class="QGroupBox" name="groupBox_arguments">
      <property name="title">
       <string>Arguments</string>
@@ -178,6 +251,19 @@ sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</string>
           </property>
           <property name="text">
            <string>%e No of errors</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="checkBox_disable_tls">
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="toolTip">
+           <string>If unchecked &quot;TLS auto&quot; is used. Only available for sendemail</string>
+          </property>
+          <property name="text">
+           <string>Disable TLS</string>
           </property>
          </widget>
         </item>
@@ -314,7 +400,7 @@ sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</string>
      </layout>
     </widget>
    </item>
-   <item row="5" column="0">
+   <item row="4" column="0">
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="QPushButton" name="pushButton_test">
@@ -388,57 +474,6 @@ sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</string>
       </widget>
      </item>
     </layout>
-   </item>
-   <item row="3" column="0">
-    <widget class="QGroupBox" name="groupBox_onlySend">
-     <property name="toolTip">
-      <string>Specify the conditions to send an email</string>
-     </property>
-     <property name="title">
-      <string>Conditions</string>
-     </property>
-     <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="1">
-       <widget class="QCheckBox" name="checkBox_conditionError">
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
-        <property name="toolTip">
-         <string>Only send when error(s) occured during a run</string>
-        </property>
-        <property name="text">
-         <string>Error(s) occured</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="2">
-       <widget class="QCheckBox" name="checkBox_conditionSchedule">
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
-        <property name="toolTip">
-         <string>Only send when profile is scheduled to run</string>
-        </property>
-        <property name="text">
-         <string>Profile is scheduled</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QCheckBox" name="checkBox_conditionNever">
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
-        <property name="toolTip">
-         <string>Never send an email</string>
-        </property>
-        <property name="text">
-         <string>Never</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
    </item>
   </layout>
  </widget>
@@ -538,8 +573,8 @@ sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</string>
      <y>115</y>
     </hint>
     <hint type="destinationlabel">
-     <x>255</x>
-     <y>54</y>
+     <x>204</x>
+     <y>71</y>
     </hint>
    </hints>
   </connection>
@@ -554,8 +589,8 @@ sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</string>
      <y>115</y>
     </hint>
     <hint type="destinationlabel">
-     <x>463</x>
-     <y>55</y>
+     <x>529</x>
+     <y>71</y>
     </hint>
    </hints>
   </connection>
@@ -570,8 +605,40 @@ sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</string>
      <y>115</y>
     </hint>
     <hint type="destinationlabel">
-     <x>44</x>
-     <y>403</y>
+     <x>54</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_conditionNever</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_arguments</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>101</x>
+     <y>114</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>247</x>
+     <y>60</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_conditionNever</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lineEdit_arguments</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>101</x>
+     <y>114</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>395</x>
+     <y>60</y>
     </hint>
    </hints>
   </connection>

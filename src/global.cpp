@@ -22,7 +22,7 @@ file containing all variables & functions used globaly
 project version    : Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 11 Sep 2013
+last modified      : 12 Jan 2014
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -87,6 +87,7 @@ bool argumentsTest(int ArgsNo, char **arg)
     
     //currentProfile = profileNameArg;	// currentProfile holds the full path+filename of the current profile
     currentProfile = QString::fromUtf8(profileNameChar);	// currentProfile holds the full path+filename of the current profile
+    
     if ( notXnixRunning )
     {
         profileDir.replace("/",SLASH);
@@ -361,14 +362,21 @@ int loadProfile(QString profileToLoad)
     
     // Init email variables in case profile does not contain them
     if(WINrunning)
+    {       
         emailCommand = emailDefaultWinCommand;
+        emailArguments = emailDefaultWinArguments;
+    }
     else 
+    {
         emailCommand = emailDefaultCommand;
+        emailArguments = emailDefaultArguments;
+    }
     emailBody = emailDefaultBody;
     emailSubject = emailDefaultSubject;
     emailNever = TRUE;
     emailError = FALSE;
     emailSchedule = FALSE;
+    emailTLS = FALSE;
     emailFrom = "";
     emailTo = "";
     emailSMTP = "";
@@ -391,10 +399,12 @@ int loadProfile(QString profileToLoad)
         //input email stuff
         if (ProfileLine.startsWith("[email]"))              emailBody = "";// the profile contains email info, so init this var to start appending
         if (ProfileLine.startsWith("emailCommand="))        emailCommand = ProfileLine.remove("emailCommand=");
+        if (ProfileLine.startsWith("emailArguments="))      emailArguments = ProfileLine.remove("emailArguments=");
         if (ProfileLine.startsWith("emailSubject="))        emailSubject = ProfileLine.remove("emailSubject=");
         if (ProfileLine.startsWith("emailNever="))          emailNever = (ProfileLine.remove("emailNever=")).toInt(&IntOk,10);
         if (ProfileLine.startsWith("emailError="))          emailError = (ProfileLine.remove("emailError=")).toInt(&IntOk,10);
         if (ProfileLine.startsWith("emailSchedule="))       emailSchedule = (ProfileLine.remove("emailSchedule=")).toInt(&IntOk,10);
+        if (ProfileLine.startsWith("emailTLS="))            emailTLS = (ProfileLine.remove("emailTLS=")).toInt(&IntOk,10);
         if (ProfileLine.startsWith("emailFrom="))           emailFrom = ProfileLine.remove("emailFrom=");
         if (ProfileLine.startsWith("emailTo="))             emailTo = ProfileLine.remove("emailTo=");
         if (ProfileLine.startsWith("emailSMTP="))           emailSMTP = ProfileLine.remove("emailSMTP=");
@@ -543,8 +553,7 @@ int loadProfile(QString profileToLoad)
                 if ( !(LastTime == "") && (tempOp -> SnapshotsListIsEmpty()) )
                     tempOp -> AddSnapshotsListItem (LastTime);
                 //3. Remove the first "\n" from the task description
-                tempOp	-> SetDescription(tempOp->GetDescription().remove(0,1));
-
+                tempOp	-> SetDescription(tempOp->GetDescription().remove(0,1));                
                 Operation[currentOperation] = tempOp;	// update the currentOperation
             }
         }
@@ -552,6 +561,17 @@ int loadProfile(QString profileToLoad)
     }
 
     profile.close();
+    
+    // If the email fields are set from a version < 0.48
+    if (tempAppVersion < 0.48)
+    {
+        emailArguments = emailCommand;
+        emailCommand = emailCommand.left(emailCommand.indexOf(" "));
+        emailArguments.remove(emailCommand + " ");
+        
+        saveProfile(profileToLoad);     //save the profile with all new info
+    }
+    
     return 0;
 }
 
@@ -794,10 +814,12 @@ bool saveProfile(QString profileToSave)
     out << "\n[email]\n";
     
     out << "emailCommand="  << emailCommand     << "\n"; //output the full email command with arguments
+    out << "emailArguments="<< emailArguments   << "\n"; //output the full email arguments
     out << "emailSubject="  << emailSubject     << "\n"; //output the email subject
     out << "emailNever="    << emailNever       << "\n"; //output the email never condition
     out << "emailError="    << emailError       << "\n"; //output the email error condition
     out << "emailSchedule=" << emailSchedule    << "\n"; //output the email schedule condition
+    out << "emailTLS="      << emailTLS         << "\n"; //output the TLS option condition
     out << "emailFrom="     << emailFrom        << "\n"; //output the email from
     out << "emailTo="       << emailTo          << "\n"; //output the email To
     out << "emailSMTP="     << emailSMTP        << "\n"; //output the email smtp server
@@ -1604,7 +1626,8 @@ QStringList AppendArguments(operation *operationToAppend)
     }
     if (WINrunning)
     {
-        if (operationToAppend -> GetOptionsVss())           arguments.append("--vss");                  // this option is only visbile at windows 
+        /* disable vss until...
+        if (operationToAppend -> GetOptionsVss())           arguments.append("--vss");                  // this option is only visbile at windows */
         if (operationToAppend -> GetOptionsRestorent())     arguments.append("--restore-nt-streams");   // this option is only visbile at windows 
     }
     if (operationToAppend -> GetOptionsSymlinks())          arguments.append("-l");
@@ -1659,7 +1682,8 @@ QStringList AppendArguments(operation *operationToAppend)
         if (operationToAppend -> GetExcludeMount()){	arguments.append("--exclude=/mnt/*/**");
                                 arguments.append("--exclude=/media/*/**");}
         if (operationToAppend -> GetExcludeLostFound())	arguments.append("--exclude=**/lost+found*/");
-        if (operationToAppend -> GetExcludeSystem()){	arguments.append("--exclude=/var/**");
+        if (operationToAppend -> GetExcludeSystem()){	arguments.append("--exclude=/var/run/**");
+                                arguments.append("--exclude=/run/**");
                                 arguments.append("--exclude=/proc/**");
                                 arguments.append("--exclude=/dev/**");
                                 arguments.append("--exclude=/sys/**");}
@@ -2043,13 +2067,14 @@ QString sendEmailNow (bool testEmail)
     QString returnString = "";      // This is the string that will be finally returned
     
     // Form command to execute (first argument of emailCommand ) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    QString emailCommandExec = emailCommand.left(emailCommand.indexOf(" "));
-    if (WINrunning)
-        emailCommandExec = luckyBackupDir+SLASH+emailCommandExec;
+    //QString emailCommandExec = emailCommand.left(emailCommand.indexOf(" "));
+    QString emailCommandExec = emailCommand;
+    //if (WINrunning)
+    //    emailCommandExec = luckyBackupDir+SLASH+emailCommandExec;
     
     // Calculate arguments and command used from variables ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    QString emailArgs = emailCommand;   emailArgs.remove(emailCommandExec);
-    QStringList emailArgsExec = emailArgs.split(" ",QString::SkipEmptyParts);
+    //QString emailArgs = emailCommand;   emailArgs.remove(emailCommandExec);
+    QStringList emailArgsExec = emailArguments.split(" ",QString::SkipEmptyParts);
     
     // Body & Subject might contain other args inside them. So,replace first ~~~~~~~~~~~
     emailArgsExec.replaceInStrings("%s",emailSubject);          // %s subject
@@ -2292,6 +2317,23 @@ void setTextMessages (QString source,QString dest,bool remoteSource,bool remoteD
             CheckedData.append("<br><font color=magenta>("+QObject::tr("Using remote, check is skipped")+"...)</font>");
             CheckedDataCLI.append(" (Using remote, check is skipped...)");
         }
+        else       // display destination disk free space
+        if (!WINrunning)
+        {
+            QProcess *diskSpace;
+            diskSpace  = new QProcess(0);
+            QStringList diskSpaceArgs;
+            diskSpaceArgs << "-h" << dest;
+            diskSpace -> start ("df",diskSpaceArgs);
+            diskSpace -> waitForFinished();
+            QString diskSpaceString = diskSpace->readAllStandardOutput();
+            if (diskSpaceString.contains("Avail"))
+            {
+                QStringList diskLines = diskSpaceString.split( "\n", QString::SkipEmptyParts );
+                QStringList diskFields = diskLines[1].split(" ", QString::SkipEmptyParts );
+                CheckedData.append(" (" + diskFields[3] +" " + QObject::tr("free", "as in free disk space")  + ")");
+            }
+        }
     }
     
     // task status          ->          [WARNING] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2454,12 +2496,12 @@ QString getMapdrive(){
       }
     return mapdrive;
 }
-
+/*luckyb commended this function out
 //Create execute command in windows ==================================================
 //Modify source and dest with cygpath and analyze vss
 QString createWinMkdirCommand(QString tempPath,bool vss,QStringList rsyncArgs,bool logGui=true){
       rsyncArgs << "";
-      /*
+      
       //return createWinRsyncCommand(tempPath,vss,rsyncArgs,logGui);
       QString logstring="";
       //QFile command1(tempPath+"\\l1qt_temp"+QString::number(qrand() % (999998) + 1) +".bat");
@@ -2509,8 +2551,9 @@ QString createWinMkdirCommand(QString tempPath,bool vss,QStringList rsyncArgs,bo
       outCommand2 << "\nECHO BACKUP OK";
       QString ret=command2.fileName();
       command2.close();
-      */
-}
+      
+   
+}*/
 
 QString createWinRsyncCommand(QString tempPath,bool vss,QStringList rsyncArgs,bool logGui=true){
 //  QFile settingsfile(settingsFile);
@@ -2520,6 +2563,12 @@ QString createWinRsyncCommand(QString tempPath,bool vss,QStringList rsyncArgs,bo
 //      return FALSE;
 //  }
 
+    //luckyb line to avoid compile WARNING
+    vss = logGui;
+    if (vss)
+        vss=TRUE;
+    // end of luckyb lines
+    
 //  showOnlyErrors = ui.checkBox_onlyShowErrors -> isChecked();
     QString logstring="";
     QFile command1(tempPath+SLASH+"l1qt_temp"+QString::number(qrand() % (999998) + 1) +".bat");
@@ -2527,15 +2576,16 @@ QString createWinRsyncCommand(QString tempPath,bool vss,QStringList rsyncArgs,bo
     QTemporaryFile setvar(tempPath+SLASH+"qt_tempXXXXXX.bat");
     QString dest=rsyncArgs.takeLast();
     QString source=rsyncArgs.takeLast();
-    bool srcremote=false;
-    bool dstremote=false;
+    //bool srcremote=false; // luckyb commend to avoid compile WARNING
+    //bool dstremote=false;
     rsyncArgs.replaceInStrings("\"","\\\"");//double escape chars to include in bat
     QString args="\""+rsyncArgs.join("\" \"")+"\"";
-    args.replace("\"--vss\"","");
+/* disable vss until...
+    args.replace("\"--vss\"",""); */
     if (source.contains('@')||source.startsWith(SLASH+SLASH)){
         args.replace("\"--backup-nt-streams\"","");
         vss=false;
-        srcremote=true;
+        //srcremote=true;   // luckyb lines to avoid compile WARNING
         if (source.startsWith("\\\\"))
             source="\\\\"+source;
         //source=source.replace("\\","/");
@@ -2543,7 +2593,7 @@ QString createWinRsyncCommand(QString tempPath,bool vss,QStringList rsyncArgs,bo
     if (dest.contains('@')||dest.startsWith(SLASH+SLASH)){
         args.replace("\"--restore-nt-streams\"","");
         args.append(" \"--chmod=u=rwX\" ");
-        dstremote=true;
+        // dstremote=true;  // luckyb lines to avoid compile WARNING
         //dest=dest.replace("\\","/");
         if (dest.startsWith("\\\\"))
             dest="\\\\"+dest;
@@ -2551,67 +2601,69 @@ QString createWinRsyncCommand(QString tempPath,bool vss,QStringList rsyncArgs,bo
     //source=fixWinPathForRsync(source,srcremote);
     //dest=fixWinPathForRsync(dest,dstremote);
     mapdrive=getMapdrive();
-    if (vss) {
+    /* disable vss until...
+    if (vss)
+    {
         doVss=1;
         logstring=" >> \""+pipeVssFile->fileName()+"\" 2>> \""+pipeVssErrFile->fileName()+"\"";
+    
 
-
-    if (!setvar.open()) // if the settings file cannot be saved (or fails to create)
-    {
-        setvar.close();
-        return "";
-    }
-    setvar.close(); 
-    /*
-    QTemporaryFile logfile;
-    if (!logfile.open())    // if the settings file cannot be saved (or fails to create)
-    {
+        if (!setvar.open()) // if the settings file cannot be saved (or fails to create)
+        {
+            setvar.close();
+            return "";
+        }
+        setvar.close(); 
+        
+        //QTemporaryFile logfile;
+        //if (!logfile.open())    // if the settings file cannot be saved (or fails to create)
+        //{
+        //   logfile.close();
+        //    return "";
+        //}
         logfile.close();
-        return "";
-    }
-    logfile.close();
-    */
-    //write arrays to file
-    if (!command1.open(QIODevice::WriteOnly | QIODevice::Text)) // if the settings file cannot be saved (or fails to create)
-    {
+        
+        //write arrays to file
+        if (!command1.open(QIODevice::WriteOnly | QIODevice::Text)) // if the settings file cannot be saved (or fails to create)
+        {
+            command1.close();
+            return "";
+        }
+
+        QTextStream outCommand1(&command1);
+        outCommand1 << "\n@ECHO OFF";
+        outCommand1 << "\nECHO DOING RSYNC >> \""+pipeVssFile->fileName()+"\" ";
+        //outCommand1 << "\nECHO \"\" > \""+pipeVssErrFile->fileName()+"\"";
+        outCommand1 << "\nSETLOCAL ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION ";
+
+        outCommand1 << "\nCALL "+setvar.fileName();
+
+        outCommand1 << "\n\""+Operation[currentOperation] -> GetDosdevCommand()+"\" "+mapdrive+": %SHADOW_DEVICE_1%  >> \""+pipeVssFile->fileName()+"\" 2>> \""+pipeVssErrFile->fileName()+"\"";
+        outCommand1 << "\n SET SOURCE="+source;
+        if (vss) outCommand1 << "\n SET SOURCE="+mapdrive+"%SOURCE:~1%";
+        if (!source.contains('@')) outCommand1 << "\n\""+Operation[currentOperation] -> GetCygpathCommand()+"\" \"%SOURCE%\"> "+tempPath+SLASH+"_cygpath.tmp";
+        else outCommand1 << "\nECHO "+source+"> "+tempPath+SLASH+"_cygpath.tmp";
+        outCommand1 << "\nSET /p source=< "+tempPath+SLASH+"_cygpath.tmp";
+        if (!dest.contains('@')) outCommand1 << "\n\""+Operation[currentOperation] -> GetCygpathCommand()+"\" \""+dest+"/\"> "+tempPath+SLASH+"_cygpath.tmp";
+        else outCommand1 << "\nECHO "+dest+"> "+tempPath+SLASH+"_cygpath.tmp";
+        outCommand1 << "\nSET /p dest=< "+tempPath+SLASH+"_cygpath.tmp";
+        outCommand1 << "\nSET HOME="+luckyBackupDir;
+        outCommand1 << "\nSET CYGWIN=nodosfilewarning";
+        outCommand1 << "\n\""+Operation[currentOperation] -> GetRsyncCommand()+"\" "+args+" \"!source!\" \"!dest!\"  >> \""+pipeVssFile->fileName()+"\" 2>> \""+pipeVssErrFile->fileName()+"\"";
+        outCommand1 << "\nSET ACTERR=!ERRORLEVEL! ";
+
+        outCommand1 << "\nECHO Backing up completed: !ACTERR!. !DATE! !TIME!  >> \""+pipeVssFile->fileName()+"\"";
+
+        outCommand1 << "\nECHO delete shadow device drive mapping >> \""+pipeVssFile->fileName()+"\" 2>> \""+pipeVssErrFile->fileName()+"\"";
+        outCommand1 << "\n\""+Operation[currentOperation] -> GetDosdevCommand()+"\" -r -d "+mapdrive+": 2>NUL ";
+        //outCommand1 << "\nrem del "+setvar.fileName()+" ";
+        //outCommand1 << "\nrem del %0 ";
+        outCommand1 << "\nIF %ACTERR% GTR 0 ( ";
+        outCommand1 << "\nECHO ERROR on backup.  %DATE% %TIME% >> \""+pipeVssErrFile->fileName()+"\"";
+        outCommand1 << "\nexit 1 ";
+        outCommand1 << "\n) ";
         command1.close();
-        return "";
-    }
-
-    QTextStream outCommand1(&command1);
-    outCommand1 << "\n@ECHO OFF";
-    outCommand1 << "\nECHO DOING RSYNC >> \""+pipeVssFile->fileName()+"\" ";
-    //outCommand1 << "\nECHO \"\" > \""+pipeVssErrFile->fileName()+"\"";
-    outCommand1 << "\nSETLOCAL ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION ";
-
-    outCommand1 << "\nCALL "+setvar.fileName();
-
-    outCommand1 << "\n\""+Operation[currentOperation] -> GetDosdevCommand()+"\" "+mapdrive+": %SHADOW_DEVICE_1%  >> \""+pipeVssFile->fileName()+"\" 2>> \""+pipeVssErrFile->fileName()+"\"";
-    outCommand1 << "\n SET SOURCE="+source;
-    if (vss) outCommand1 << "\n SET SOURCE="+mapdrive+"%SOURCE:~1%";
-    if (!source.contains('@')) outCommand1 << "\n\""+Operation[currentOperation] -> GetCygpathCommand()+"\" \"%SOURCE%\"> "+tempPath+SLASH+"_cygpath.tmp";
-    else outCommand1 << "\nECHO "+source+"> "+tempPath+SLASH+"_cygpath.tmp";
-    outCommand1 << "\nSET /p source=< "+tempPath+SLASH+"_cygpath.tmp";
-    if (!dest.contains('@')) outCommand1 << "\n\""+Operation[currentOperation] -> GetCygpathCommand()+"\" \""+dest+"/\"> "+tempPath+SLASH+"_cygpath.tmp";
-    else outCommand1 << "\nECHO "+dest+"> "+tempPath+SLASH+"_cygpath.tmp";
-    outCommand1 << "\nSET /p dest=< "+tempPath+SLASH+"_cygpath.tmp";
-    outCommand1 << "\nSET HOME="+luckyBackupDir;
-    outCommand1 << "\nSET CYGWIN=nodosfilewarning";
-    outCommand1 << "\n\""+Operation[currentOperation] -> GetRsyncCommand()+"\" "+args+" \"!source!\" \"!dest!\"  >> \""+pipeVssFile->fileName()+"\" 2>> \""+pipeVssErrFile->fileName()+"\"";
-    outCommand1 << "\nSET ACTERR=!ERRORLEVEL! ";
-
-    outCommand1 << "\nECHO Backing up completed: !ACTERR!. !DATE! !TIME!  >> \""+pipeVssFile->fileName()+"\"";
-
-    outCommand1 << "\nECHO delete shadow device drive mapping >> \""+pipeVssFile->fileName()+"\" 2>> \""+pipeVssErrFile->fileName()+"\"";
-    outCommand1 << "\n\""+Operation[currentOperation] -> GetDosdevCommand()+"\" -r -d "+mapdrive+": 2>NUL ";
-    //outCommand1 << "\nrem del "+setvar.fileName()+" ";
-    //outCommand1 << "\nrem del %0 ";
-    outCommand1 << "\nIF %ACTERR% GTR 0 ( ";
-    outCommand1 << "\nECHO ERROR on backup.  %DATE% %TIME% >> \""+pipeVssErrFile->fileName()+"\"";
-    outCommand1 << "\nexit 1 ";
-    outCommand1 << "\n) ";
-    command1.close();
-    }
+    }*/
 
 
     if (!command2.open(QIODevice::WriteOnly | QIODevice::Text)) // if the settings file cannot be saved (or fails to create)
@@ -2625,7 +2677,9 @@ QString createWinRsyncCommand(QString tempPath,bool vss,QStringList rsyncArgs,bo
     outCommand2 << "\nSET tdeleteshadows=y";
     outCommand2 << "\nSET el=0";
     //remove vss and
-    if (vss){
+    /* disable vss until...
+    if (vss)
+    {
         outCommand2 << "\nFOR /F \"tokens=2* delims=[]\" %%A IN ('VER') DO FOR /F \"tokens=2,3 delims=. \" %%B IN (\"%%A\") DO SET WINVER=%%B.%%C";
         outCommand2 << "\nSET WINBIT=x86&&IF \"%PROCESSOR_ARCHITECTURE%\" == \"AMD64\" (SET WINBIT=x64) ELSE IF \"%PROCESSOR_ARCHITEW6432%\" == \"AMD64\" SET WINBIT=x64";
         outCommand2 << "\nIF %WINVER% LSS 5.1 (";
@@ -2673,7 +2727,8 @@ QString createWinRsyncCommand(QString tempPath,bool vss,QStringList rsyncArgs,bo
           outCommand2 << "\nTYPE \""+pipeVssErrFile->fileName()+"\" 1>&2";
           }
     }
-    else {
+    
+    else {*/
         if (!source.contains('@')) outCommand2 << "\n\""+Operation[currentOperation] -> GetCygpathCommand()+"\" \""+source+"\"> "+tempPath+SLASH+"_cygpath.tmp";
         else outCommand2 << "\nECHO "+source+"> "+tempPath+SLASH+"_cygpath.tmp";
         outCommand2 << "\nSET /p source=< "+tempPath+SLASH+"_cygpath.tmp";
@@ -2685,7 +2740,8 @@ QString createWinRsyncCommand(QString tempPath,bool vss,QStringList rsyncArgs,bo
         outCommand2 << "\n \""+Operation[currentOperation] -> GetRsyncCommand()+"\" "+args+" \"%source%\" \"%dest%\" ";
         outCommand2 << "\n  SET el=%ERRORLEVEL%";
         outCommand2 << "\ndel "+tempPath+"/_cygpath.tmp 2>nul";
-      }
+    /* disable vss until...  
+    } */
     outCommand2 << "\n:ennd";
     outCommand2 << "\nIF %el% neq 0 exit /b %el%";
     //outCommand2 << "\ndel \""+command1.fileName().replace("/",SLASH+"")+"\"";

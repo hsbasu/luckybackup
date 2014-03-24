@@ -23,7 +23,7 @@ do everything that deals with commands (rsync & others) execution
 project version	: Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 11 Sep 2013
+last modified      : 10 Feb 2014
 ===============================================================================================================================
 ===============================================================================================================================
 ********************************** DO NOT FORGET TO CHANGE "commandline.cpp:rsyncIT()" ********************************************************
@@ -63,6 +63,8 @@ void luckyBackupWindow::executeNOW ()
     ExecuteAfter=FALSE;
     writeToLog=FALSE;
     errorsFound = 0;		//total error founds during profile execution
+    filesTransfered = 0;    //total bytes transfered during profile execution
+    bytesTransfered = 0;    //total bytes transfered during profile execution
     count = 0;
     currentAfter = 0;
     currentBefore = 0;
@@ -98,12 +100,13 @@ void luckyBackupWindow::executeNOW ()
     connect ( ui.AbortButton, SIGNAL( clicked() ), this, SLOT( abortPressed() ) );	//connect abort pushButton SLOT ----------------
     connect ( ui.DoneButton, SIGNAL( clicked() ), this, SLOT( donePressed() ) );	//connect done pushButton SLOT ----------------
 
-    if (WINrunning)
+/*    if (WINrunning)           // disable VSS until...
     {
-        vssTimer= new QTimer(this);
+      vssTimer= new QTimer(this);
 
         pipeVssFile =  new QFile(tempDirPath+SLASH+"qt_tempvss"+QString::number(qrand() % (999998) + 1));
-        if (pipeVssFile->open(QIODevice::ReadWrite)){
+        if (pipeVssFile->open(QIODevice::ReadWrite))
+        {
             pipeVssFile->close();
 //            if (pipeVssFile->open(QIODevice::ReadOnly | QIODevice::Text))
 //              connect(pipeVssFile,SIGNAL(readyRead()),this,SLOT(appendRsyncVssOutput()));
@@ -114,11 +117,12 @@ void luckyBackupWindow::executeNOW ()
 //            if (pipeVssErrFile->open(QIODevice::ReadOnly | QIODevice::Text))
 //              connect(pipeVssErrFile,SIGNAL(readyRead()),this,SLOT(appendRsyncVssOutput()));
         }
-        if (Operation[currentOperation]->GetOptionsVss()){
-        connect (vssTimer,SIGNAL(timeout()),this,SLOT(appendRsyncVssOutput()));
-        vssTimer->start(vssSleepTime);
+        if (Operation[currentOperation]->GetOptionsVss())
+        {
+            connect (vssTimer,SIGNAL(timeout()),this,SLOT(appendRsyncVssOutput()));
+            vssTimer->start(vssSleepTime);
         }
-    }
+    }*/
       
     syncProcess = new QProcess(this);	//create a new qprocess (for rsync) & connect signals
     connect(syncProcess, SIGNAL(readyReadStandardError()), this, SLOT(appendRsyncOutput()));
@@ -858,11 +862,12 @@ void luckyBackupWindow::procFinished()
     if (ABORTpressed) //this is to prevent segmentation fault when abort button pressed
         return;
 
+    /* Disable VSS until
     if (doVss==1) //reads all log file in vss before finished
     {
         doVss=2;
         return;
-    }
+    }*/
       
     bool RemoteDestUsed = (Operation[currentOperation] -> GetRemoteDestination()) && (Operation[currentOperation] -> GetRemote()); // Is remote dest used ?
     if (ExecuteBefore)		// if the pre-task execution command (process) finished
@@ -1099,10 +1104,14 @@ void luckyBackupWindow::appendRsyncOutput()
     
     //update progressbar--------------------------------------------------------------------------------------------------------
     bool ok;
-    if (outputString.contains("to-check"))	//we will calculate how many files have been proccessed so far
+    if ( (outputString.contains("to-check")) || (outputString.contains("to-chk")) )	//we will calculate how many files have been proccessed so far
     {
         //DoneToTotal_Ref & DoneToTotal_String hold a e.g. "17/84"
-        QStringRef DoneToTotal_Ref = outputString.midRef(outputString.indexOf("check=")+6,outputString.indexOf(")")-outputString.indexOf("check=")-6);
+        QStringRef DoneToTotal_Ref;
+        if (outputString.contains("to-check"))  // if rsync uses "to-check="
+            DoneToTotal_Ref = outputString.midRef(outputString.indexOf("check=")+6,outputString.indexOf(")")-outputString.indexOf("check=")-6);
+        else                                    // if rsync uses "to-chk="
+            DoneToTotal_Ref = outputString.midRef(outputString.indexOf("o-chk=")+6,outputString.indexOf(")")-outputString.indexOf("o-chk=")-6);
         QString DoneToTotal_String = DoneToTotal_Ref.toString();
 
         //Total no files
@@ -1141,8 +1150,33 @@ void luckyBackupWindow::appendRsyncOutput()
         transferring = FALSE;
         deleting = TRUE;
     }
+    
+    // Extraxt some data from the "stats" lines at the end of rsync
+    if ( (outputString.contains("Number of files transferred")) || (outputString.contains("Total bytes sent:")) || (outputString.contains("Number of regular files")) )
+    {
+        // split the outputString to lines
+        QString FilesTransferedString="",BytesTransferedString="";
+        QStringList lines = outputString.split( "\n", QString::SkipEmptyParts );
+        foreach( QString line, lines )
+        {
+            if (line.contains("Number of files transferred:"))
+                FilesTransferedString = line.remove("Number of files transferred: ");          // old rsync report;
+            if (line.contains("Number of regular files transferred:"))
+                FilesTransferedString = line.remove("Number of regular files transferred: ");  // newer rsync report
+            if (line.contains("Total transferred file size:"))
+                BytesTransferedString = line.remove("Total transferred file size: ");           // newer rsync report
+            if (line.contains("Total bytes sent:"))
+                BytesTransferedString = line.remove("Total bytes sent: ");             // old rsync report
+        }
+
+        filesTransfered = filesTransfered + FilesTransferedString.toInt(&ok, 10);
+
+        BytesTransferedString = convertBytes(BytesTransferedString,FALSE);       
+        bytesTransfered = bytesTransfered + BytesTransferedString.toULongLong(&ok, 10);
+    }
 }
 
+/*  disable vss until...
 void luckyBackupWindow::appendRsyncVssOutput()
 {
     appendRsyncVssOutput(vssReadSize);
@@ -1260,6 +1294,7 @@ void luckyBackupWindow::appendRsyncVssOutput(int size)
 
     }
 }
+*/
 //updates Now Doing textBrowser ===============================================================================================================
 void luckyBackupWindow::setNowDoing()
 {
@@ -1327,8 +1362,13 @@ void luckyBackupWindow::setNowDoing()
     {
         NOWexecuting = FALSE;		//this is mainly used if the window close button (or alt+F4) is pressed
 
+        if (filesTransfered == 0)
+            bytesTransfered = 0;
+        
         nowDoingText = 	"<p align=\"center\">"+tr("Elapsed time")+" : <b><font color=red>" + DifTime.toString("hh:mm:ss") +
-                "</font></b><br>========================================="
+                "</font></b><br>" +
+                tr("Total files transfered") + " : <b>" + countStr.setNum(filesTransfered) + "</b> (" + convertBytes(QString::number(bytesTransfered),TRUE) +")<br>"
+                "========================================="
                 "<b><br><font color=blue>"+tr("All tasks completed")+" </font></b>";
         trayMessage =	tr("All tasks completed");
         if (DryRun)
@@ -1574,6 +1614,70 @@ void luckyBackupWindow::nextErrorJump()
         ui.pushButton_previousError -> setEnabled(TRUE);
     
     ui.rsyncOutput -> scrollToAnchor("error" + countStr.setNum(errorCount+1));
+}
+
+// convertBytes (QString,bool)
+// Converts a string of the form 67M to bytes and vice versa (eg 1024 -> 1KB)
+// if bool=FALSE then conversion string->bytes. If bool=TRUE then conversion bytes->string
+// =====================================================================================================
+QString luckyBackupWindow::convertBytes (QString byteLine,bool toWhat)
+{
+    QString returnThis = "";
+    bool ok;
+   
+    if (toWhat)           // convert bytes to string
+    {
+        QString multi = " bytes";
+        double bytesFLOAT = byteLine.toDouble(&ok);
+       
+        if (bytesFLOAT >=  1024)
+        {
+            bytesFLOAT = bytesFLOAT / 1024;
+            multi = "KB";
+        }
+        if (bytesFLOAT >= 1024)
+        {
+            bytesFLOAT = bytesFLOAT / 1024;
+            multi = "MB";
+        }
+        if (bytesFLOAT >= 1024)
+        {
+            bytesFLOAT = bytesFLOAT / 1024;
+            multi = "GB";
+        }
+        if (bytesFLOAT >= 1024)
+        {
+            bytesFLOAT = bytesFLOAT / 1024;
+            multi = "TB";
+        }
+        returnThis = (QString::number(bytesFLOAT));
+        if ( (returnThis.contains(".")) && ((returnThis.lastIndexOf(".") + 3) < returnThis.size()) )
+            returnThis.chop(returnThis.size() - returnThis.lastIndexOf(".") - 3);   // leave only 3 decimal points
+        returnThis = returnThis + multi;
+    }
+    else            // convert string to bytes
+    {
+        unsigned long int multiply = 1;
+        
+        if (byteLine.endsWith("K"))
+            multiply = 1024;
+        if (byteLine.endsWith("M"))
+            multiply = pow(1024,2);
+        if (byteLine.endsWith("G"))
+            multiply = pow(1024,3);
+        if (byteLine.endsWith("T"))
+            multiply = pow(1024,4);
+
+        if (    (byteLine.endsWith("K")) || (byteLine.endsWith("M")) ||
+                (byteLine.endsWith("G")) || (byteLine.endsWith("T")) )
+            byteLine.chop(1);
+        
+        unsigned long long int returnThisNo = byteLine.toDouble(&ok) * multiply;
+        returnThis = QString::number( returnThisNo);
+    }
+
+    return returnThis;
+
 }
 // end of executenow.cpp ---------------------------------------------------------------------------
 

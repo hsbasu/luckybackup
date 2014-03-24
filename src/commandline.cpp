@@ -19,7 +19,7 @@
      You should have received a copy of the GNU General Public License
      along with luckyBackup.  If not,see <http://www.gnu.org/licenses/>.
  developer      : luckyb 
- last modified  : 11 Sep 2013
+ last modified  : 06 Feb 2014
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -32,6 +32,8 @@ commandline::commandline()
 {
     writeToLog=FALSE;
     errorsFound = 0;	// Total number of errors from all tasks (in CLI, only 1 error per task is allowed !!)
+    filesTransfered = 0;    //total bytes transfered during profile execution
+    bytesTransfered = 0;    //total bytes transfered during profile execution
     errorCount = 0;		// Number of errors from one task (max value is 1)
 }
 
@@ -107,6 +109,7 @@ void commandline::rsyncIT()
         if (WINrunning)
         {
             setAppDir(Operation[currentOperation] -> GetLuckyBackupDir());
+            /* disable vss until...
             pipeVssFile =  new QFile(Operation[currentOperation] -> GetTempPath()+SLASH+"qt_tempvss"+QString::number(qrand() % (999998) + 1));
             if (pipeVssFile->open(QIODevice::ReadWrite)){
                 pipeVssFile->close();
@@ -114,7 +117,7 @@ void commandline::rsyncIT()
             pipeVssErrFile =  new QFile(Operation[currentOperation] -> GetTempPath()+SLASH+"qt_tempvsserr"+QString::number(qrand() % (999998) + 1));
             if (pipeVssErrFile->open(QIODevice::ReadWrite)){
                 pipeVssErrFile->close();
-            }
+            }*/
         }
           
         //if --skip-critical is given as argument and the task is CRITICAL

@@ -1,13 +1,20 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Version 0.4.8 :
-* Added vss support (windows)
+* Added support for vss implementation (windows)
 * Added support for nt-streams (windows)
 * Added support for e-mail notifications (windows)
 * Added various libs used for the windows port
+* Added option to disable TLS for email reports
+* Added some (useful) statistics at the end of a profile run
+* Added destination disk free space at information window
 * Minor modifications to "modify task" dialog
 * View of remote places is now available through the "manage backup" dialog
 * Default email options are now loaded when a new profile is created
+* Split of full email command to command & arguments
+* Changed the default exclude "system folders" from "/dev /proc /sys /var" to "/dev /proc /sys /run /var/run"
 * Safety checks of mount-points now include deeper levels in paths than /media/<1st-level>/ and /mnt/<1st-level>/
+* Fixed issue: When one or more items were manually removed from an existing schedule list, LB would delete entries from the bottom of the list instead, when the cronIT button is pressed.
+* Fixed issue: Progress bar did not update normally
 * Fixed issue: Segmentation fault under certain circumstances, when --skip-critical is used as an argument and there exists one or more actual CRITICAL tasks.
 * Fixed issue: Confusion at task list when an item's box state changed.
 * Fixed issue (windows): Warning message regarding the changes.log files during a run

@@ -100,7 +100,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/global.cpp" line="+1067"/>
+        <location filename="../src/global.cpp" line="+1145"/>
         <source>The task list is empty</source>
         <translation>Seznam úkolů je prázdný</translation>
     </message>
@@ -131,7 +131,7 @@
         <translation>Nezařadil jste žádné úkoly</translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+51"/>
         <source>The following included tasks &lt;b&gt;share the same destination directory&lt;/b&gt; (all together or at groups) and at least one of them will backup the contents of a directory</source>
         <translation>Následující zařazené úkoly &lt;b&gt;sdílejí tentýž cílový adresář&lt;/b&gt; (všechny dohromady nebo ve skupinách) a alespoň jeden z nich bude zálohovat obsah adresáře</translation>
     </message>
@@ -146,7 +146,7 @@
         <translation>Zrušte, prosím, označení fajfkou příslušného zařazovacího políčka, nebo změňte všechny typy úkolů na jiný než &apos;&lt;b&gt;Zálohovat obsah adresáře&lt;/b&gt;&apos;, nebo použijte &apos;Zálohovat obsah adresáře&apos; společně s volbou  &apos;&lt;b&gt;Pouze zařadit&lt;/b&gt;&apos;, předtím, než budete pokračovat</translation>
     </message>
     <message>
-        <location line="+593"/>
+        <location line="+674"/>
         <source>pre-task execution of command</source>
         <comment>Full phrase: pre-task execution of command: &lt;COMMAND&gt; starting</comment>
         <translation>Vykonání příkazu před úkolem</translation>
@@ -318,7 +318,7 @@
         <translation>Zálohuje se profil, soubory se zápisy a data snímku</translation>
     </message>
     <message>
-        <location line="+93"/>
+        <location line="+111"/>
         <source>Could not open the logfile</source>
         <translation>Soubor se zápisem nebyl otevřen</translation>
     </message>
@@ -328,7 +328,7 @@
         <translation>Soubor se zápisem neexistuje</translation>
     </message>
     <message>
-        <location line="+63"/>
+        <location line="+78"/>
         <source>The specified command is probably not installed</source>
         <translation>Zadaný příkaz pravděpodobně není nainstalován</translation>
     </message>
@@ -343,7 +343,7 @@
         <translation>Příkaz:   </translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>exit code: </source>
         <translation>Kód ukončení: </translation>
     </message>
@@ -374,13 +374,13 @@
     </message>
     <message>
         <location line="+10"/>
-        <location line="+44"/>
+        <location line="+61"/>
         <location line="+99"/>
         <source>status</source>
         <translation>Stav</translation>
     </message>
     <message>
-        <location line="-143"/>
+        <location line="-160"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
@@ -392,25 +392,31 @@
     </message>
     <message>
         <location line="-14"/>
-        <location line="+91"/>
+        <location line="+108"/>
         <source>Source directory</source>
         <translation>Zdrojový adresář</translation>
     </message>
     <message>
-        <location line="-82"/>
+        <location line="-99"/>
         <location line="+19"/>
         <source>Using remote, check is skipped</source>
         <translation>Používá se vzdálený hostitelský počítač, ověření je přeskočeno</translation>
     </message>
     <message>
         <location line="-9"/>
-        <location line="+87"/>
+        <location line="+104"/>
         <location line="+59"/>
         <source>Destination directory</source>
         <translation>Cílový adresář</translation>
     </message>
     <message>
-        <location line="-129"/>
+        <location line="-137"/>
+        <source>free</source>
+        <comment>as in free disk space</comment>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>WARNING</source>
         <translation>VAROVÁNÍ</translation>
     </message>
@@ -530,7 +536,7 @@
     <message>
         <location line="+1"/>
         <source>See the &apos;License Agreement&apos; tab for more details.</source>
-        <translation>Kvůli dalším podrobnostem si prohlédněte kartu &apos;Licenční ujednání&apos;.</translation>
+        <translation>Kvůli dalším podrobnostem si prohlédněte kartu &apos;Povolení&apos;.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -634,6 +640,16 @@
     </message>
     <message>
         <location line="+2"/>
+        <source>Juan Ramon Alfaro Martinez</source>
+        <translation>Juan Ramon Alfaro Martinez</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Code contributor for remote &amp; vss support regarding the windows port</source>
+        <translation>Přispěvatel kódem pro vzdálenou podporu a podporu vss týkající se přenesení na Windows</translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Jack Fink</source>
         <translation>Jack Fink</translation>
     </message>
@@ -698,6 +714,16 @@
         <translation>Správce balíčku pro Free BSD</translation>
     </message>
     <message>
+        <location line="+2"/>
+        <source>Dimitris Jemos</source>
+        <translation>Dimitris Jemos</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Slackel package maintainer</source>
+        <translation>Správce balíčku pro Slackel</translation>
+    </message>
+    <message>
         <location line="+3"/>
         <source>ex Fedora package maintainer</source>
         <translation>Bývalý správce balíčku Fedora</translation>
@@ -718,24 +744,25 @@
         <translation>Stergios Prosiniklis</translation>
     </message>
     <message>
-        <location line="-57"/>
-        <location line="+58"/>
+        <location line="-63"/>
+        <location line="+64"/>
         <source>Greek manual translator</source>
         <translation>Překladatel grafického uživatelského rozhraní do řečtiny</translation>
     </message>
     <message>
         <location line="+3"/>
         <location line="+3"/>
+        <location line="+3"/>
         <source>German gui translator</source>
         <translation>Překladatel grafického uživatelského rozhraní do němčiny</translation>
     </message>
     <message>
-        <location line="-1"/>
+        <location line="-4"/>
         <source>Wilfried Schobel</source>
         <translation>Wilfried Schobel</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+6"/>
         <source>Sergio Gameiro</source>
         <translation>Sergio Gameiro</translation>
     </message>
@@ -761,23 +788,25 @@
         <translation>Překladatel grafického uživatelského rozhraní do francouštiny a cenný rádce pro balení (a nejen to)</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+11"/>
         <source>Raffaele</source>
         <translation>Raffaele</translation>
     </message>
     <message>
         <location line="-2"/>
         <location line="+3"/>
+        <location line="+3"/>
+        <location line="+3"/>
         <source>Italian gui translator</source>
         <translation>Překladatel grafického uživatelského rozhraní do italštiny</translation>
     </message>
     <message>
-        <location line="-7"/>
+        <location line="-16"/>
         <source>Aurelien Merckel</source>
         <translation>Aurelien Merckel</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+18"/>
         <source>Denis Skorski</source>
         <translation>Denis Skorski</translation>
     </message>
@@ -793,11 +822,17 @@
     </message>
     <message>
         <location line="+1"/>
+        <location line="+3"/>
         <source>Dutch gui translator</source>
         <translation>Překladatel grafického uživatelského rozhraní do nizozemštiny</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="-1"/>
+        <source>Martin Grashoff (linuxrev)</source>
+        <translation>Martin Grashoff (linuxrev)</translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Subhi Honaco</source>
         <translation>Subhi Honaco</translation>
     </message>
@@ -827,7 +862,7 @@
         <translation>Překladatel grafického uživatelského rozhraní do rumunštiny</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+20"/>
         <source>Roger Calvo</source>
         <translation>Roger Calvo</translation>
     </message>
@@ -837,7 +872,7 @@
         <translation>Tomas Vadina</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+18"/>
         <source>Javi Romero</source>
         <translation>Javi Romero</translation>
     </message>
@@ -857,7 +892,7 @@
         <translation>Návrhář grafického uživatelského rozhraní v. 0.3</translation>
     </message>
     <message>
-        <location line="-112"/>
+        <location line="-151"/>
         <source>Dimitris Kalamaras</source>
         <translation>Dimitris Kalamaras</translation>
     </message>
@@ -867,22 +902,54 @@
         <translation>Kdyby nebylo jeho a jeho návodů, nikdy bych nezačal s tímto projektem</translation>
     </message>
     <message>
-        <location line="+63"/>
+        <location line="+59"/>
+        <source>Thomas Glatt</source>
+        <translation>Thomas Glatt</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <location line="+3"/>
         <source>French gui translator</source>
         <translation>Překladatel grafického uživatelského rozhraní do francouzštiny</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="-1"/>
+        <source>Sébastien Bourgain</source>
+        <translation>Sébastien Bourgain</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>pinguinofurioso</source>
+        <translation>pinguinofurioso</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Alessio Ganci</source>
+        <translation>Alessio Ganci</translation>
+    </message>
+    <message>
+        <location line="+24"/>
+        <source>Matej Urbančič</source>
+        <translation>Matej Urbančič</translation>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>Marvin Gomez</source>
         <translation>Marvin Gomez</translation>
     </message>
     <message>
         <location line="+1"/>
+        <location line="+3"/>
         <source>Spanish gui translator</source>
         <translation>Překladatel grafického uživatelského rozhraní do španělštiny</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="-1"/>
+        <source>Antonio Jose Molina</source>
+        <translation>Antonio Jose Molina</translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Fredrik Holmgren</source>
         <translation>Fredrik Holmgren</translation>
     </message>
@@ -910,6 +977,46 @@
         <location line="+1"/>
         <source>Estonian gui translator</source>
         <translation>Překladatel grafického uživatelského rozhraní do estonštiny</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Nicolay Boychev</source>
+        <translation>Nicolay Boychev</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Bulgarian gui translator</source>
+        <translation>Překladatel grafického uživatelského rozhraní do bulharštiny</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Manuel Meixide</source>
+        <translation>Manuel Meixide</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Galician gui translator</source>
+        <translation>Překladatel grafického uživatelského rozhraní do galicijštiny</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Roger Foss</source>
+        <translation>Roger Foss</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Norwegian gui translator</source>
+        <translation>Překladatel grafického uživatelského rozhraní do norštiny</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Pin-hsien Li</source>
+        <translation>Pin-hsien Li</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Chinese (Taiwan) gui translator</source>
+        <translation>Překladatel grafického uživatelského rozhraní do čínštiny (Tchaj-wan)</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -940,6 +1047,16 @@
         <location line="+1"/>
         <source>backupwhenidle python script developer</source>
         <translation>Vývojář pythonovského skriptu backupwhenidle</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Bjorn Rietdijk</source>
+        <translation>Bjorn Rietdijk</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>valuable OS/2 and windows tester</source>
+        <translation>Cenný zkoušeč programu v operačních systémech OS/2 a Windows</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -1071,10 +1188,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+24"/>
         <source>&amp;License Agreement</source>
-        <translation>&amp;Licenční ujednání</translation>
+        <translation>&amp;Povolení</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="-211"/>
+        <location filename="../src/about.cpp" line="-253"/>
         <source>luckyBackup is distributed under the terms of the &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU General Public License&lt;/a&gt;</source>
         <comment>Please leave the tags &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt; &amp; &lt;/a&gt; intact and surrounding the GNU General Public License !!</comment>
         <translation>luckyBackup je šířen za podmínek &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU General Public License&lt;/a&gt;</translation>
@@ -1086,32 +1203,33 @@ p, li { white-space: pre-wrap; }
         <translation>Je to &lt;b&gt;svobodný program&lt;/b&gt;: můžete jej šířit a/nebo upravovat za podmínek GNU General Public License tak, jak jsou zveřejněny Free Software Foundation, verze 3 Licence.</translation>
     </message>
     <message>
-        <location line="+75"/>
+        <location line="+81"/>
         <source>Thomas Janssen</source>
         <translation>Thomas Janssen</translation>
     </message>
     <message>
-        <location line="-5"/>
+        <location line="-8"/>
         <source>Fedora package maintainer (official repo)</source>
         <translation>Správce balíčku pro Fedoru (veřejný sklad)</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+17"/>
         <source>Karsten Jaschultowski</source>
         <translation>Karsten Jaschultowski</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+24"/>
         <source>Francesco Braile</source>
         <translation>Francesco Braile</translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location line="+30"/>
         <source>Andrej Znidarsic</source>
         <translation>Andrej Znidarsic</translation>
     </message>
     <message>
         <location line="+1"/>
+        <location line="+3"/>
         <source>Slovenian gui translator</source>
         <translation>Překladatel grafického uživatelského rozhraní do slovinštiny</translation>
     </message>
@@ -1126,7 +1244,7 @@ p, li { white-space: pre-wrap; }
         <translation>Překladatel grafického uživatelského rozhraní do turečtiny</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+38"/>
         <source>Tito Poquito</source>
         <translation>Tito Poquito</translation>
     </message>
@@ -1136,7 +1254,7 @@ p, li { white-space: pre-wrap; }
         <translation>Správce balíčku pro Slackware (sklad SlackBuilds)</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+26"/>
         <source>...my other half, &lt;b&gt;Dimitra&lt;/b&gt; that bears with me all these times that this project is under development</source>
         <translation>...mojí druhé polovičce, &lt;b&gt;Dimitře&lt;/b&gt;, která je se mnou po celou dobu, co je tento projekt vyvíjen</translation>
     </message>
@@ -1159,17 +1277,8 @@ p, li { white-space: pre-wrap; }
         <translation>Příkaz: </translation>
     </message>
     <message>
-        <location line="+7"/>
-        <source>Enter the full command with arguments to run
-eg
-sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</source>
-        <translation>Zadejte celý příkaz s argumenty ke spuštění.
-Například:
-sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</translation>
-    </message>
-    <message>
-        <location line="+9"/>
-        <location line="+204"/>
+        <location line="+38"/>
+        <location line="+268"/>
         <location line="+14"/>
         <source>Use default</source>
         <extracomment>This means &quot;use the default value for this field&quot;
@@ -1180,7 +1289,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <translation>Použít výchozí</translation>
     </message>
     <message>
-        <location line="-205"/>
+        <location line="-218"/>
         <source>Arguments</source>
         <translation>Argumenty</translation>
     </message>
@@ -1223,6 +1332,16 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <location line="+10"/>
         <source>%e No of errors</source>
         <translation>%e žádné z chyb</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>If unchecked &quot;TLS auto&quot; is used. Only available for sendemail</source>
+        <translation>Pokud je zrušeno zaškrtnutí, použije se &quot;TLS auto&quot;. Dostupné pouze pro sendemail</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Disable TLS</source>
+        <translation>Zakázat TLS</translation>
     </message>
     <message>
         <location line="+25"/>
@@ -1295,12 +1414,35 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <translation>Zrušit</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="-348"/>
         <source>Specify the conditions to send an email</source>
         <translation>Určit podmínky pro posílání elektronických dopisů</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="-38"/>
+        <source>Enter the command to run
+eg
+sendemail</source>
+        <translation>Zadejte příkaz ke spuštění
+např.
+sendemail</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>arguments:</source>
+        <translation>Argumenty:</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Enter arguments of the email command
+eg
+ -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</source>
+        <translation>Zadejte argumenty příkazu pro elektronickou poštu
+např.
+ -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</translation>
+    </message>
+    <message>
+        <location line="+25"/>
         <source>Conditions</source>
         <translation>Podmínky</translation>
     </message>
@@ -1335,7 +1477,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <translation>Nikdy</translation>
     </message>
     <message>
-        <location filename="../src/emailDialog.cpp" line="+124"/>
+        <location filename="../src/emailDialog.cpp" line="+136"/>
         <source>The command field is empty</source>
         <translation>Příkazové pole je prázdné</translation>
     </message>
@@ -1409,7 +1551,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>luckyBackupWindow</name>
     <message>
-        <location filename="../src/executenow.cpp" line="+135"/>
+        <location filename="../src/executenow.cpp" line="+161"/>
         <source>commands output</source>
         <comment>output window label</comment>
         <translation>Výstup příkazů</translation>
@@ -1454,17 +1596,17 @@ p, li { white-space: pre-wrap; }
         <translation>Hotovo</translation>
     </message>
     <message>
-        <location line="-149"/>
-        <location line="+151"/>
-        <location line="+749"/>
+        <location line="-173"/>
+        <location line="+175"/>
+        <location line="+1065"/>
         <location line="+21"/>
-        <location line="+25"/>
+        <location line="+30"/>
         <location line="+1"/>
         <source>simulation mode</source>
         <translation>Režim předstírání</translation>
     </message>
     <message>
-        <location line="-792"/>
+        <location line="-1113"/>
         <source>Could not update last execution time of tasks</source>
         <translation>Nepodařilo se obnovit čas posledního vykonání úkolů</translation>
     </message>
@@ -1491,7 +1633,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Obnovit</translation>
     </message>
     <message>
-        <location line="-195"/>
+        <location line="-219"/>
         <source>execution of profile:</source>
         <comment>tray message - execution of profile: &lt;PROFILENAME&gt; in progress...</comment>
         <translation>Vykonání profilu:</translation>
@@ -1503,7 +1645,7 @@ p, li { white-space: pre-wrap; }
         <translation>Probíhá...</translation>
     </message>
     <message>
-        <location line="+373"/>
+        <location line="+451"/>
         <source>Removed all older snapshots data</source>
         <translation>Odstraněna všechna starší data snímku</translation>
     </message>
@@ -1513,22 +1655,22 @@ p, li { white-space: pre-wrap; }
         <translation>Nepodařilo se odstranit všechna starší data snímku</translation>
     </message>
     <message>
-        <location line="+405"/>
+        <location line="+520"/>
         <source>Unknown error</source>
         <translation>Neznámá chyba</translation>
     </message>
     <message>
-        <location line="+106"/>
+        <location line="+253"/>
         <location line="+5"/>
         <location line="+6"/>
         <location line="+21"/>
-        <location line="+24"/>
-        <location line="+70"/>
+        <location line="+27"/>
+        <location line="+72"/>
         <source>Elapsed time</source>
         <translation>Uplynulý čas</translation>
     </message>
     <message>
-        <location line="-125"/>
+        <location line="-130"/>
         <source>pre-task execution of command</source>
         <translation>Vykonání příkazu před úkolem</translation>
     </message>
@@ -1560,7 +1702,7 @@ p, li { white-space: pre-wrap; }
         <translation>Soubory se mažou</translation>
     </message>
     <message>
-        <location line="+182"/>
+        <location line="+187"/>
         <source>trying to send an email</source>
         <translation>Zkouší se poslání elektronického dopisu</translation>
     </message>
@@ -1570,7 +1712,7 @@ p, li { white-space: pre-wrap; }
         <translation>Systém bude vypnut za 1 minutu</translation>
     </message>
     <message>
-        <location line="-221"/>
+        <location line="-226"/>
         <source>Source</source>
         <translation>Zdroj</translation>
     </message>
@@ -1580,7 +1722,7 @@ p, li { white-space: pre-wrap; }
         <translation>Cíl</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+22"/>
         <location line="+1"/>
         <source>All tasks completed</source>
         <translation>Všechny úkoly byly dokončeny</translation>
@@ -1805,7 +1947,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;%1 %2</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="+766"/>
+        <location filename="../src/luckybackupwindow.cpp" line="+775"/>
         <source>You have asked for a RESTORE task to be created</source>
         <comment>'create restore' message line 1/4</comment>
         <translation>Zažádal jste o to, aby byl vytvořen úkol OBNOVIT</translation>
@@ -1830,13 +1972,13 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/functions.cpp" line="+86"/>
-        <location filename="../src/luckybackupwindow.cpp" line="-424"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-432"/>
         <location line="+70"/>
         <location line="+14"/>
         <location line="+56"/>
         <location line="+85"/>
         <location line="+14"/>
-        <location line="+230"/>
+        <location line="+238"/>
         <location line="+155"/>
         <location line="+269"/>
         <source>ERROR</source>
@@ -1931,12 +2073,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/executenow.cpp" line="+132"/>
         <location filename="../src/functions.cpp" line="+4"/>
-        <location line="+65"/>
+        <location line="+70"/>
         <source>WARNING</source>
         <translation>VAROVÁNÍ</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="-63"/>
+        <location filename="../src/functions.cpp" line="-68"/>
         <source>default profile</source>
         <comment>Information window message. Full phrase: 'default profile &lt;PROFILENAME&gt; could not be saved'.</comment>
         <translation>Výchozí profil</translation>
@@ -1960,7 +2102,7 @@ p, li { white-space: pre-wrap; }
         <translation>byl úspěšně uložen</translation>
     </message>
     <message>
-        <location line="+47"/>
+        <location line="+52"/>
         <source>creating default profile ...</source>
         <comment>Information window message</comment>
         <translation>Vytváří se výchozí profil...</translation>
@@ -1994,7 +2136,7 @@ p, li { white-space: pre-wrap; }
         <translation>Chtěl byste přesto pokračovat?</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="-1150"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-1159"/>
         <source>super user</source>
         <comment>super user is the root user</comment>
         <translation>Superuživatel</translation>
@@ -2005,7 +2147,7 @@ p, li { white-space: pre-wrap; }
         <translation>Režim superuživatele</translation>
     </message>
     <message>
-        <location line="+88"/>
+        <location line="+89"/>
         <source>Welcome to</source>
         <comment>full phrase: 'Welcome to luckyBackup'</comment>
         <translation>Vítejte v</translation>
@@ -2024,12 +2166,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+2"/>
-        <location line="+566"/>
+        <location line="+574"/>
         <source>The name you have entered contains only invalid characters</source>
         <translation>Název, který jste zadal, obsahuje jen neplatné znaky</translation>
     </message>
     <message>
-        <location line="-552"/>
+        <location line="-560"/>
         <location line="+70"/>
         <location line="+156"/>
         <source>Profile</source>
@@ -2182,7 +2324,7 @@ p, li { white-space: pre-wrap; }
         <translation>nastaven na</translation>
     </message>
     <message>
-        <location line="+212"/>
+        <location line="+220"/>
         <source>Import Profile</source>
         <comment>this is a dialog title</comment>
         <translation>Zavedení profilu</translation>
@@ -2226,16 +2368,16 @@ p, li { white-space: pre-wrap; }
         <translation>Soubor nelze najít</translation>
     </message>
     <message>
-        <location line="-311"/>
+        <location line="-319"/>
         <location line="+64"/>
-        <location line="+285"/>
+        <location line="+293"/>
         <source>You have reached the maximum limit of supported tasks</source>
         <translation>Dosáhl jste nejvyšší možné meze podporovaných úkolů</translation>
     </message>
     <message>
-        <location line="-348"/>
+        <location line="-356"/>
         <location line="+64"/>
-        <location line="+285"/>
+        <location line="+293"/>
         <source>You have to remove a task if you wish to add another !!</source>
         <translation>Musíte odstranit úkol, pokud si přejete přidat další!</translation>
     </message>
@@ -2320,12 +2462,7 @@ p, li { white-space: pre-wrap; }
         <translation>Vyberte, prosím, úkol, který bude spravován jako první</translation>
     </message>
     <message>
-        <location line="+79"/>
-        <source>You have only incuded tasks that are going to be skipped</source>
-        <translation>Zařadil jste pouze úkoly, které budou přeskočeny</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+80"/>
         <source>nothing to do</source>
         <translation>Není co dělat</translation>
     </message>
@@ -2340,7 +2477,7 @@ p, li { white-space: pre-wrap; }
         <translation>Nastavení elektronické pošty byla &lt;font color=green&gt;úspěšně obnovena</translation>
     </message>
     <message>
-        <location line="+71"/>
+        <location line="+76"/>
         <source>status</source>
         <translation>Stav</translation>
     </message>
@@ -2444,19 +2581,19 @@ p, li { white-space: pre-wrap; }
         <translation>F5</translation>
     </message>
     <message>
-        <location filename="../src/executenow.cpp" line="-974"/>
+        <location filename="../src/executenow.cpp" line="-1295"/>
         <source>Aborting: Please wait for all processes to be killed</source>
         <translation>Přerušení: Počkejte, prosím, až budou všechny procesy ukončeny</translation>
     </message>
     <message>
-        <location line="+129"/>
+        <location line="+197"/>
         <source>Removing old snapshots and logfiles of task</source>
         <comment>info message displayed during ...data removal
 Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comment>
         <translation>Odstraňují se staré snímky a soubory se zápisy k úkolu</translation>
     </message>
     <message>
-        <location line="+87"/>
+        <location line="+73"/>
         <location line="+12"/>
         <source>Removing</source>
         <translation>Odstraňuje se</translation>
@@ -2468,7 +2605,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Nepodařilo se odstranit</translation>
     </message>
     <message>
-        <location line="+380"/>
+        <location line="+495"/>
         <source>Failed to start</source>
         <comment>this refers to a process</comment>
         <translation>Nepodařilo se spustit</translation>
@@ -2504,7 +2641,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Neznámá chyba</translation>
     </message>
     <message>
-        <location line="+116"/>
+        <location line="+263"/>
         <source>calculating</source>
         <comment>info message displayed during ...calculations</comment>
         <translation>Počítá se</translation>
@@ -2527,12 +2664,17 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Přenáší se soubory</translation>
     </message>
     <message>
-        <location line="+91"/>
+        <location line="+15"/>
+        <source>Total files transfered</source>
+        <translation>Celkový počet přenesených souborů</translation>
+    </message>
+    <message>
+        <location line="+81"/>
         <source>ABORTED</source>
         <translation>Zrušeno</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="-555"/>
+        <location filename="../src/functions.cpp" line="-560"/>
         <source>&amp;Refresh</source>
         <comment>This is a top 'Profile' menu action</comment>
         <translation>&amp;Obnovit</translation>
@@ -2802,19 +2944,19 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     </message>
     <message>
         <location line="+0"/>
-        <location line="+95"/>
+        <location line="+100"/>
         <source>Use the &quot;add&quot; button on the right to get started</source>
         <comment>Please keep the add word inside quotes</comment>
         <translation>Použít tlačítko &quot;Přidat&quot; napravo pro začátek</translation>
     </message>
     <message>
-        <location line="-69"/>
+        <location line="-74"/>
         <source>could not be saved</source>
         <comment>Information window message. Full phrase: '(default) profile &lt;PROFILENAME&gt; could not be saved'</comment>
         <translation>se nepodařilo uložit</translation>
     </message>
     <message>
-        <location line="+61"/>
+        <location line="+66"/>
         <source>default profile</source>
         <comment>Information window message. Full phrase: 'default profile &lt;PROFILENAME&gt; could not be created'.</comment>
         <translation>Výchozí profil</translation>
@@ -2856,7 +2998,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Profil</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="-795"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-808"/>
         <source>Failed to duplicate profile</source>
         <comment>full phrase: 'Failed to duplicate profile &lt;PROFILENAME&gt;'</comment>
         <translation>Nepodařilo se zdvojit profil</translation>
@@ -2896,7 +3038,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Vyberte, prosím, první úkol</translation>
     </message>
     <message>
-        <location line="+230"/>
+        <location line="+238"/>
         <source>Hide information window</source>
         <comment>hide/show information window button tooltip</comment>
         <translation>Skrýt okno s informacemi</translation>
@@ -2908,7 +3050,12 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Ukázat okno s informacemi</translation>
     </message>
     <message>
-        <location line="+378"/>
+        <location line="+287"/>
+        <source>You have only included tasks that are going to be skipped</source>
+        <translation>Zařadil jste pouze úkoly, které budou přeskočeny</translation>
+    </message>
+    <message>
+        <location line="+96"/>
         <source>Manage Task</source>
         <comment>This is a top 'Task' menu action</comment>
         <translation>Spravovat úkol</translation>
@@ -2925,7 +3072,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>&amp;Úkol</translation>
     </message>
     <message>
-        <location filename="../src/executenow.cpp" line="-450"/>
+        <location filename="../src/executenow.cpp" line="-631"/>
         <source>Successfuly created destination directory</source>
         <translation>Cílový adresář úspěšně vytvořen</translation>
     </message>
@@ -2938,7 +3085,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
 <context>
     <name>manageDialog</name>
     <message>
-        <location filename="../src/manage.cpp" line="+87"/>
+        <location filename="../src/manage.cpp" line="+95"/>
         <source>profile</source>
         <translation>Profil</translation>
     </message>
@@ -2988,20 +3135,13 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Zavřít</translation>
     </message>
     <message>
-        <location filename="../src/manage.cpp" line="+130"/>
+        <location filename="../src/manage.cpp" line="+135"/>
         <source>Please select a snapshot from the list</source>
         <comment>Information message</comment>
         <translation>Vyberte, prosím, snímek ze seznamu</translation>
     </message>
     <message>
-        <location line="+20"/>
-        <location line="+8"/>
-        <source>Display of remote places is not supported</source>
-        <comment>Information message</comment>
-        <translation>Zobrazení vzdálených míst není podporováno</translation>
-    </message>
-    <message>
-        <location line="+8"/>
+        <location line="+146"/>
         <source>This directory does not exist</source>
         <translation>Tento adresář neexistuje</translation>
     </message>
@@ -3037,7 +3177,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Zobrazit soubor se zápisem pro vybraný seřizovací úkol</translation>
     </message>
     <message>
-        <location line="+78"/>
+        <location line="+83"/>
         <source>Please wait until the thread is terminated</source>
         <translation>Počkejte, prosím, až bude vlákno ukončeno</translation>
     </message>
@@ -3099,13 +3239,13 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
 <context>
     <name>manageWizard</name>
     <message>
-        <location filename="../src/manageWizard.cpp" line="+62"/>
+        <location filename="../src/manageWizard.cpp" line="+60"/>
         <source>not available</source>
         <comment>refers to a date-time</comment>
         <translation>Nedostupný</translation>
     </message>
     <message>
-        <location line="+346"/>
+        <location line="+361"/>
         <source>Delete backup</source>
         <comment>this is the title of a wizard</comment>
         <translation>Smazat zálohu</translation>
@@ -3124,8 +3264,8 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Cesta</translation>
     </message>
     <message>
-        <location line="-279"/>
-        <location line="+280"/>
+        <location line="-285"/>
+        <location line="+286"/>
         <source>WARNING</source>
         <translation>VAROVÁNÍ</translation>
     </message>
@@ -3184,12 +3324,12 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start' translated<
     <message>
         <location filename="../ui/manageWizard.ui" line="+240"/>
         <location filename="../src/manageWizard.cpp" line="+3"/>
-        <location line="+227"/>
+        <location line="+235"/>
         <source>simulation</source>
         <translation>Předstírání</translation>
     </message>
     <message>
-        <location filename="../src/manageWizard.cpp" line="-222"/>
+        <location filename="../src/manageWizard.cpp" line="-230"/>
         <source>no errors</source>
         <translation>Žádné chyby</translation>
     </message>
@@ -3199,7 +3339,7 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start' translated<
         <translation>Byly nalezeny chyby</translation>
     </message>
     <message>
-        <location line="+212"/>
+        <location line="+220"/>
         <source>Restoring data: main trunk</source>
         <comment>info message displayed during ...data restoration</comment>
         <translation>Obnovují se data: hlavní kmen</translation>
@@ -3262,7 +3402,7 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start' translated<
         <translation>Zrušit</translation>
     </message>
     <message>
-        <location filename="../src/manageWizard.cpp" line="-397"/>
+        <location filename="../src/manageWizard.cpp" line="-411"/>
         <source>The restore directory will become identical to the backup snapshot</source>
         <translation>Obnovovací adresář se stane totožným se snímkem se zálohou</translation>
     </message>
@@ -3280,7 +3420,7 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start translated'<
         <translation>Pokud je informace výše správná, klepněte na &lt;b&gt;začít&lt;/b&gt; pro začátek</translation>
     </message>
     <message>
-        <location line="+113"/>
+        <location line="+119"/>
         <source>success</source>
         <comment>info message displayed after ...logfile deletion</comment>
         <translation>Podařilo se</translation>
@@ -3328,7 +3468,7 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start translated'<
         <translation>Cesta k obnovovacímu adresáři</translation>
     </message>
     <message>
-        <location line="+116"/>
+        <location line="+124"/>
         <source>No snapshot specific data exist. Skipping...</source>
         <comment>info message displayed during ...data restoration/deletion</comment>
         <translation>Neexistují žádná data příznačná pro snímek. Přeskakuje se...</translation>
@@ -3370,7 +3510,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>modifyDialog</name>
     <message>
-        <location filename="../src/modifyDialog.cpp" line="+203"/>
+        <location filename="../src/modifyDialog.cpp" line="+235"/>
         <source>simple</source>
         <translation>Jednoduché volby</translation>
     </message>
@@ -3380,7 +3520,7 @@ p, li { white-space: pre-wrap; }
         <translation>Rozšířené volby</translation>
     </message>
     <message>
-        <location line="+127"/>
+        <location line="+129"/>
         <source>Task name</source>
         <translation>Název úkolu</translation>
     </message>
@@ -3445,12 +3585,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+44"/>
         <location line="+73"/>
-        <location line="+2607"/>
+        <location line="+2724"/>
         <source>browse localy</source>
         <translation>Procházet místně</translation>
     </message>
     <message>
-        <location line="-2654"/>
+        <location line="-2771"/>
         <location line="+31"/>
         <source>Enter the full path of the destination directory (eg /media/backups/SiduxHome/)</source>
         <translation>Zadejte celou cestu k cílovému adresáři (např. /media/backups/SiduxHome/)</translation>
@@ -3461,7 +3601,12 @@ p, li { white-space: pre-wrap; }
         <translation>Cíl:</translation>
     </message>
     <message>
-        <location line="+1984"/>
+        <location line="+1663"/>
+        <source>eg -C4c arcfour,blowfish-cbc</source>
+        <translation>Např. -C4c arcfour,blowfish-cbc</translation>
+    </message>
+    <message>
+        <location line="+383"/>
         <source>With this option rsync will transfer numeric group and user IDs
 rather than using user and group names
 and mapping them at both ends.
@@ -3499,7 +3644,26 @@ a kopírování zařízení přes volbu --devices.
         <translation>Pokusit se o superuživatelské činnosti</translation>
     </message>
     <message>
-        <location line="+531"/>
+        <location line="+22"/>
+        <source>Try to backup open files in windows systems using vss (Only works on windows 2000 and upper)
+(--vss)</source>
+        <translation>Pokusit se zálohovat otevřené soubory v systému Windows pomocí vss (Pracuje jen na Windows 2000 a novějších)
+(--vss)</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Backup open files</source>
+        <translation>Zálohovat otevřené soubory</translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <source>Restore backed-up windows permissions localized in nt-streams 
+(--restore-nt-streams)</source>
+        <translation>Obnovit oprávnění pro zálohy ve Windows umístěné v nt-streams 
+(--restore-nt-streams)</translation>
+    </message>
+    <message>
+        <location line="+535"/>
         <location line="+10"/>
         <source>Repeat any command that fails, x times</source>
         <translation>Opakovat každý příkaz, který selže, x krát</translation>
@@ -3547,7 +3711,7 @@ Ponechejte nezaškrtnuté pro vytvoření adresáře navíc v cíli</translation
         <translation>Zrušit</translation>
     </message>
     <message>
-        <location line="-2950"/>
+        <location line="-3067"/>
         <source>Exclude</source>
         <translation>Vyloučit</translation>
     </message>
@@ -3558,12 +3722,12 @@ Ponechejte nezaškrtnuté pro vytvoření adresáře navíc v cíli</translation
     </message>
     <message>
         <location line="+18"/>
-        <location line="+1550"/>
+        <location line="+1612"/>
         <source>Templates</source>
         <translation>Šablony</translation>
     </message>
     <message>
-        <location line="-1523"/>
+        <location line="-1585"/>
         <source>Exclude all temp folders (**/*tmp*/)</source>
         <translation>Vyloučit všechny složky s dočasnými soubory (**/*tmp*/)</translation>
     </message>
@@ -3593,12 +3757,7 @@ Ponechejte nezaškrtnuté pro vytvoření adresáře navíc v cíli</translation
         <translation>Soubory se zálohou</translation>
     </message>
     <message>
-        <location line="+31"/>
-        <source>Exclude system folders /var, /proc, /dev &amp; /sys (/var/**, /proc/**, /dev/**, /sys/**)</source>
-        <translation>Vyloučit systémové složky /var, /proc, /dev &amp; /sys (/var/**, /proc/**, /dev/**, /sys/**)</translation>
-    </message>
-    <message>
-        <location line="+6"/>
+        <location line="+37"/>
         <source>System folders</source>
         <translation>Systémové složky</translation>
     </message>
@@ -3645,14 +3804,14 @@ Ponechejte nezaškrtnuté pro vytvoření adresáře navíc v cíli</translation
     <message>
         <location line="+3"/>
         <location line="+371"/>
-        <location line="+1220"/>
+        <location line="+1337"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>add</source>
         <translation>Přidat</translation>
     </message>
     <message>
-        <location line="-2153"/>
+        <location line="-2270"/>
         <location line="+31"/>
         <source>Exclude list</source>
         <translation>Seznam vyloučených</translation>
@@ -3704,7 +3863,12 @@ jsoucí za / - odpovídá pouze adresáři, ne řádným souborům, symbolickým
         <translation>Napište popis úkolu</translation>
     </message>
     <message>
-        <location line="+321"/>
+        <location line="+173"/>
+        <source>Exclude system folders /var, /proc, /dev &amp; /sys (/var/run/**, /run/**, /proc/**, /dev/**, /sys/**)</source>
+        <translation>Vyloučit systémové složky /var, /proc, /dev &amp; /sys (/var/run/**, /run/**, /proc/**, /dev/**, /sys/**)</translation>
+    </message>
+    <message>
+        <location line="+148"/>
         <source>Exclude all user&apos;s .gvfs folders (**/.gvfs/)</source>
         <translation>Vyloučit všechny uživatelské složky .gvfs (**/.gvfs/)</translation>
     </message>
@@ -3722,68 +3886,68 @@ jsoucí za / - odpovídá pouze adresáři, ne řádným souborům, symbolickým
     <message>
         <location line="+3"/>
         <location line="+366"/>
-        <location line="+1220"/>
+        <location line="+1337"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>remove</source>
         <translation>Odstranit</translation>
     </message>
     <message>
-        <location line="-2152"/>
+        <location line="-2269"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Edit highlighted inclusion</source>
         <translation>Upravit zvýrazněná zařazení</translation>
     </message>
     <message>
-        <location line="-2163"/>
+        <location line="-2280"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>edit</source>
         <translation>Upravit</translation>
     </message>
     <message>
-        <location line="-2152"/>
+        <location line="-2269"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion up</source>
         <translation>Posunout zvýrazněná zařazení nahoru</translation>
     </message>
     <message>
-        <location line="-2163"/>
+        <location line="-2280"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move up</source>
         <translation>Posunout nahoru</translation>
     </message>
     <message>
-        <location line="-2152"/>
+        <location line="-2269"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion down</source>
         <translation>Posunout zvýrazněná zařazení dolů</translation>
     </message>
     <message>
-        <location line="-2163"/>
+        <location line="-2280"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move down</source>
         <translation>Posunout dolů</translation>
     </message>
     <message>
-        <location line="-2060"/>
+        <location line="-2177"/>
         <source>Include ONLY this list of patterns. Nothing more.
 Please refer to the manual for better understanding of include rules.
 This will disable the exclude feature.</source>
@@ -3889,7 +4053,7 @@ jsoucí za / - odpovídá pouze adresáři, ne řádným souborům, symbolickým
         <translation>Zadejte úplnou cestu k souboru, která obsahuje rsync (nikoli ssh) autentizační heslo (opusťte prázdné, jestliže toto není použitelné/vhodné).</translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+19"/>
         <source>rsync password file:</source>
         <translation>Soubor s heslem rsync:</translation>
     </message>
@@ -3904,7 +4068,7 @@ jsoucí za / - odpovídá pouze adresáři, ne řádným souborům, symbolickým
         <translation>Modul pro vzdálený hostitelský počítač</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+74"/>
         <source>Use ssh as transport shell</source>
         <translation>Použít ssh jako přepravní shell (schránka)</translation>
     </message>
@@ -3914,7 +4078,12 @@ jsoucí za / - odpovídá pouze adresáři, ne řádným souborům, symbolickým
         <translation>ssh</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+75"/>
+        <source>password:</source>
+        <translation>Heslo:</translation>
+    </message>
+    <message>
+        <location line="+91"/>
         <source>Enter the full path of the file that contains the private ssh authentication key (leave blank if not applicable).
 
 Note that you have to do all actions needed for a passwordless ssh remote connection using an OpenSSH key pair</source>
@@ -3923,22 +4092,22 @@ Note that you have to do all actions needed for a passwordless ssh remote connec
 Povšimněte si, že musíte udělat všechny akce, které jsou potřeba pro ssh vzdálené připojení bez hesla za použití OpenSSH páru klíčů</translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="-31"/>
         <source>private key file :</source>
         <translation>Soubor se soukromým klíčem:</translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="-88"/>
         <source>Enter the port you would like to use for the ssh connection (leave blank for default port)</source>
         <translation>Zadejte port (bránu), kterou byste rád použil pro ssh připojení (opusťte prázdné v případě výchozího portu (brány))</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="-25"/>
         <source>port :</source>
         <translation>Port:</translation>
     </message>
     <message>
-        <location line="+30"/>
+        <location line="+267"/>
         <source>Command Options</source>
         <translation>Volby pro příkazy</translation>
     </message>
@@ -3950,27 +4119,7 @@ If you have no idea what these mean, leave them untouched !!</source>
 Pokud nemáte ponětí o tom, co to znamená, ponechte je netknuty!</translation>
     </message>
     <message>
-        <location line="+22"/>
-        <source>backend</source>
-        <translation>Zadní část</translation>
-    </message>
-    <message>
-        <location line="+24"/>
-        <source>rsync</source>
-        <translation>rsync</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>rdiff-backup</source>
-        <translation>Záloha rdiff</translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>rsnapshot</source>
-        <translation>rsnapshot</translation>
-    </message>
-    <message>
-        <location line="+80"/>
+        <location line="+84"/>
         <source>Delete files on the destination that don't exist on the source
 . &quot;Recurse into directories&quot; has to be selected 
 (--delete-after &amp; --delete-excluded if &quot;Exclude&quot; is used)</source>
@@ -4082,7 +4231,7 @@ VAROVÁNÍ: Všechny soubory musí být zařazeny v řadě souborů určených k
         <translation>Nevšímat si souborů na způsob CVS</translation>
     </message>
     <message>
-        <location line="+142"/>
+        <location line="+197"/>
         <source>User defined</source>
         <translation>Stanoveno uživatelem</translation>
     </message>
@@ -4176,7 +4325,7 @@ POZOR: zaškrtněte tuto volbu jen v případě, že jste si opravdu vědom toho
         <translation>Zde zadejte příkaz, který bude vykonán po úkolu, a pak stiskněte tlačítko &quot;Přidat&quot; pro jeho přidání do seznamu níže</translation>
     </message>
     <message>
-        <location filename="../src/modifyDialog.cpp" line="-104"/>
+        <location filename="../src/modifyDialog.cpp" line="-106"/>
         <source>Select source directory</source>
         <comment>file selection dialog title</comment>
         <translation>Vybrat zdrojový adresář</translation>
@@ -4194,13 +4343,14 @@ POZOR: zaškrtněte tuto volbu jen v případě, že jste si opravdu vědom toho
         <translation>Vybrat soubor s heslem rsync</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+7"/>
+        <location line="+2"/>
         <source>Select ssh keyfile</source>
         <comment>file selection dialog title</comment>
         <translation>Vybrat soubor s klíčem ssh</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+5"/>
         <location line="+6"/>
         <source>Select command to be executed</source>
         <comment>file selection dialog title</comment>
@@ -4254,7 +4404,7 @@ POZOR: zaškrtněte tuto volbu jen v případě, že jste si opravdu vědom toho
         <translation>Toto není dovoleno, protože &apos;/&apos; nemá skutečný název</translation>
     </message>
     <message>
-        <location line="-300"/>
+        <location line="-334"/>
         <source>Leave the box checked, to &lt;b&gt;STOP&lt;/b&gt; the execution of running task if this command exits with an error</source>
         <translation>Ponechejte toto okénko zaškrtnuto, aby byl běžící úkol &lt;b&gt;ZASTAVEN&lt;/b&gt;, pokud tento příkaz skončí s chybou</translation>
     </message>
@@ -4265,7 +4415,7 @@ POZOR: zaškrtněte tuto volbu jen v případě, že jste si opravdu vědom toho
         <translation>Použít okénka k &lt;b&gt;ZASTAVENÍ&lt;/b&gt; provádění úkolu při chybě</translation>
     </message>
     <message>
-        <location line="+298"/>
+        <location line="+332"/>
         <source>You have declared the &apos;/&apos; (root) directory as source and have NOT checked the &apos;Do NOT create extra directory&apos; box</source>
         <comment>message box message - line1</comment>
         <translation>Prohlásil jste adresář &apos;/&apos; (root; kořenový) za zdrojový a NEZAŠKRTNUL jste okénko &apos;NEVYTVÁŘET adresář navíc&apos;</translation>
@@ -4386,19 +4536,19 @@ POZOR: zaškrtněte tuto volbu jen v případě, že jste si opravdu vědom toho
         <translation>Tuto vylučovací položku jste již přidal</translation>
     </message>
     <message>
-        <location line="+54"/>
+        <location line="+55"/>
         <source>You have already added this include item</source>
         <comment>message box message</comment>
         <translation>Tuto zařazovací položku jste již přidal</translation>
     </message>
     <message>
-        <location line="+52"/>
+        <location line="+53"/>
         <source>You have already added this option</source>
         <comment>message box message</comment>
         <translation>Tuto volbu položku jste již přidal</translation>
     </message>
     <message>
-        <location line="+265"/>
+        <location line="+266"/>
         <location line="+25"/>
         <location line="+25"/>
         <location line="+25"/>
@@ -4434,7 +4584,7 @@ POZOR: zaškrtněte tuto volbu jen v případě, že jste si opravdu vědom toho
         <translation>Zrušit úpravy</translation>
     </message>
     <message>
-        <location filename="../ui/modifyDialog.ui" line="-1943"/>
+        <location filename="../ui/modifyDialog.ui" line="-2060"/>
         <source>Read exclude patterns from file</source>
         <translation>Císt vylučovací vzorce ze souboru</translation>
     </message>
@@ -4500,14 +4650,19 @@ Projděte si, prosím, návod kvůli lepšímu porozumění zařazovacích pravi
         <translation>Císt zahrnovací vzorce ze souboru</translation>
     </message>
     <message>
-        <location line="+303"/>
-        <location line="+149"/>
-        <location line="+891"/>
+        <location line="+344"/>
+        <location line="+248"/>
+        <location line="+868"/>
         <source>browse locally</source>
         <translation>Procházet místně</translation>
     </message>
     <message>
-        <location line="-393"/>
+        <location line="-835"/>
+        <source>additional options:</source>
+        <translation>Dodatečné volby:</translation>
+    </message>
+    <message>
+        <location line="+387"/>
         <source>Check this is you use a FAT/NTFS partition as destination.
 Data ownership and permissions will NOT be preserved.
 (-t --modify-window=1)</source>
@@ -4521,7 +4676,12 @@ Vlastnická práva k datům a oprávnění NEBUDOU zachována.
         <translation>Cíl je FAT/NTFS</translation>
     </message>
     <message>
-        <location line="+914"/>
+        <location line="+114"/>
+        <source>Restore permissions</source>
+        <translation>Obnovit oprávnění</translation>
+    </message>
+    <message>
+        <location line="+855"/>
         <location line="+22"/>
         <source>Set the total number of backup snapshots to keep</source>
         <translation>Nastavit celkový počet zálohovacích snímků, které se mají uchovat</translation>
@@ -4799,13 +4959,13 @@ např. obsah adresáře &quot;/media/music/Album/&quot;</translation>
     </message>
     <message>
         <location line="+53"/>
-        <location line="+135"/>
-        <location line="+40"/>
+        <location line="+139"/>
+        <location line="+45"/>
         <source>No schedules are declared !!</source>
         <translation>Nebyl prohlášen žádný rozvrh prací!</translation>
     </message>
     <message>
-        <location line="-124"/>
+        <location line="-133"/>
         <source>Unable to create schedule file</source>
         <translation>Neschopen vytvořit soubor s rozvrhem prací</translation>
     </message>
@@ -4831,7 +4991,7 @@ např. obsah adresáře &quot;/media/music/Album/&quot;</translation>
     </message>
     <message>
         <location filename="../ui/scheduleDialog.ui" line="+182"/>
-        <location filename="../src/scheduleDialog.cpp" line="+53"/>
+        <location filename="../src/scheduleDialog.cpp" line="+62"/>
         <source>Profile schedule details</source>
         <translation>Podrobnosti profilu rozvrhu prací</translation>
     </message>
@@ -4846,12 +5006,18 @@ např. obsah adresáře &quot;/media/music/Album/&quot;</translation>
         <translation>Vykonat profil</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
+        <source>hourly at minute </source>
+        <comment>full phrase: Execute profile &lt;PROFILENAME&gt; hourly at minute &lt;MM&gt;</comment>
+        <translation>každou hodinu na minutu</translation>
+    </message>
+    <message>
+        <location line="+4"/>
         <source>at</source>
         <translation> </translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+10"/>
         <source>every</source>
         <translation>každý</translation>
     </message>
@@ -4862,7 +5028,7 @@ např. obsah adresáře &quot;/media/music/Album/&quot;</translation>
         <translation>Den</translation>
     </message>
     <message>
-        <location filename="../ui/scheduleDialog.ui" line="+245"/>
+        <location filename="../ui/scheduleDialog.ui" line="+251"/>
         <location filename="../src/scheduleDialog.cpp" line="-36"/>
         <source>Sunday</source>
         <translation>neděle</translation>
@@ -5092,12 +5258,13 @@ např. obsah adresáře &quot;/media/music/Album/&quot;</translation>
         <translation>Prosinec</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+90"/>
+        <location line="+26"/>
         <source>Unable to create cron file</source>
         <translation>Nelze vytvořit cron soubor</translation>
     </message>
     <message>
-        <location filename="../ui/scheduleDialog.ui" line="-440"/>
+        <location filename="../ui/scheduleDialog.ui" line="-446"/>
         <source>luckyBackup - schedule</source>
         <translation>luckyBackup - rozvrh naplánovaných prací</translation>
     </message>
@@ -5165,7 +5332,12 @@ p, li { white-space: pre-wrap; }
         <translation>Čas (hod:min):</translation>
     </message>
     <message>
-        <location line="+40"/>
+        <location line="+27"/>
+        <source>set this value to -1 for the schedule to occur every hour</source>
+        <translation>Nastavte tuto hodnotu na -1 aby se rozvrh dělal každou hodinu</translation>
+    </message>
+    <message>
+        <location line="+19"/>
         <source>:</source>
         <translation>:</translation>
     </message>
@@ -5423,7 +5595,7 @@ p, li { white-space: pre-wrap; }
         <translation>31</translation>
     </message>
     <message>
-        <location line="-485"/>
+        <location line="-491"/>
         <source>Check this if your machine does not support a graphical environment (eg server)</source>
         <translation>Toto zaškrtněte v případě, že váš stroj nepodporuje grafické prostředí (např. server)</translation>
     </message>
@@ -5433,7 +5605,7 @@ p, li { white-space: pre-wrap; }
         <translation>Režim ovládacího panelu</translation>
     </message>
     <message>
-        <location line="+516"/>
+        <location line="+522"/>
         <source>okay</source>
         <translation>OK</translation>
     </message>
@@ -5453,7 +5625,7 @@ p, li { white-space: pre-wrap; }
         <translation>cronIT!</translation>
     </message>
     <message>
-        <location filename="../src/scheduleDialog.cpp" line="-555"/>
+        <location filename="../src/scheduleDialog.cpp" line="-657"/>
         <location line="+78"/>
         <source>The existent schedule file is not a valid luckyBackup v.</source>
         <comment>v is for version</comment>
@@ -5482,7 +5654,7 @@ p, li { white-space: pre-wrap; }
         <translation>Váš crontab je úspěšně obnoven</translation>
     </message>
     <message>
-        <location line="+91"/>
+        <location line="+100"/>
         <source>no crontab entries exist</source>
         <translation>Nejsou záznamy crontab</translation>
     </message>
@@ -5629,12 +5801,12 @@ p, li { white-space: pre-wrap; }
         <translation>luckyBackup</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+18"/>
         <source>declaration of paths</source>
         <translation>Prohlášení cesty</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+30"/>
         <source>rsync:</source>
         <translation>rsync:</translation>
     </message>
@@ -5646,24 +5818,84 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+10"/>
         <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
         <source>browse locally</source>
         <translation>Procházet místně</translation>
     </message>
     <message>
-        <location line="-47"/>
+        <location line="-367"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
         <location line="+64"/>
         <source>Use default value</source>
         <translation>Použít výchozí hodnotu</translation>
     </message>
     <message>
-        <location line="-46"/>
-        <source>ssh</source>
-        <translation>ssh</translation>
+        <location line="-366"/>
+        <source>ssh:</source>
+        <translation>ssh:</translation>
     </message>
     <message>
         <location line="+19"/>
         <source>Enter the full path of the ssh command</source>
         <translation>Zadejte úplnou cestu příkazu ssh</translation>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>cygpath:</source>
+        <translation>cygpath:</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the cygpath command</source>
+        <translation>Zadejte úplnou cestu příkazu cygpath</translation>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>dosdev:</source>
+        <translation>dosdev:</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the dosdev command</source>
+        <translation>Zadejte úplnou cestu příkazu dosdev</translation>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>main dir:</source>
+        <translation>Hlavní adresář:</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the luckybackup directory</source>
+        <translation>Zadejte úplnou cestu k adresáři s luckybackup</translation>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>vshadow dir:</source>
+        <translation>Adresář vshadow:</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the vshadow directory</source>
+        <translation>Zadejte úplnou cestu k adresáři s vshadow</translation>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>temp dir:</source>
+        <translation>Adresář s dočasnými soubory:</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the temporary directory</source>
+        <translation>Zadejte úplnou cestu k adresáři s dočasnými soubory</translation>
     </message>
     <message>
         <location line="+58"/>
@@ -5676,7 +5908,7 @@ p, li { white-space: pre-wrap; }
         <translation>Zrušit</translation>
     </message>
     <message>
-        <location filename="../src/winDialog.cpp" line="+102"/>
+        <location filename="../src/winDialog.cpp" line="+147"/>
         <source>Select rsync command</source>
         <comment>file selection dialog title</comment>
         <translation>Vybrat příkaz rsync</translation>
@@ -5684,14 +5916,28 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+1"/>
         <location line="+6"/>
+        <location line="+6"/>
+        <location line="+6"/>
         <source>Executable Files (*.exe)</source>
         <translation>Spustitelné soubory (*.exe)</translation>
     </message>
     <message>
-        <location line="-1"/>
+        <location line="-13"/>
         <source>Select ssh command</source>
         <comment>file selection dialog title</comment>
         <translation>Vybrat příkaz ssh</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Select cygpath command</source>
+        <comment>file selection dialog title</comment>
+        <translation>Vybrat příkaz cygpath</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Select dosdev command</source>
+        <comment>file selection dialog title</comment>
+        <translation>Vybrat příkaz dosdev</translation>
     </message>
 </context>
 </TS>

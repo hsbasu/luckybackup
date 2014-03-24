@@ -3,6 +3,14 @@ ISQT4 = $$find(QMAKEVERSION, ^[2-9])
 isEmpty( ISQT4 ) {
 error("Use the qmake include with Qt4.4 or greater, on Debian that is qmake-qt4");
 }
+#check Qt version
+QT_VERSION = $$[QT_VERSION]
+QT_VERSION = $$split(QT_VERSION, ".")
+QT_VER_MAJ = $$member(QT_VERSION, 0)
+QT_VER_MIN = $$member(QT_VERSION, 1)
+
+message( "Qt version" $$[QT_VERSION] )
+message( "Qmake version" $$[QMAKE_VERSION] )
 
 QMAKE_STRIP = echo
 
@@ -36,6 +44,10 @@ INSTALLS += target menu debianmenu pixmap documentation manpage translations lic
 
 system(gzip -c manpage/luckybackup.8 > manpage/luckybackup.8.gz)
 QMAKE_CLEAN = Makefile $${TARGET} manpage/luckybackup.8.gz
+
+greaterThan(QT_VER_MAJ, 4) {
+    QT += widgets
+} 
 
 QT += network
 
@@ -136,25 +148,28 @@ RESOURCES = resources/luckybackup.qrc
 
  
 TRANSLATIONS = translations/luckybackup_ara.ts \
-    translations/luckybackup_bg.ts \
     translations/luckybackup_bs.ts \
+    translations/luckybackup_bg.ts \
     translations/luckybackup_ca.ts \
+    translations/luckybackup_zh_TW.ts \
     translations/luckybackup_cs.ts \
-    translations/luckybackup_de.ts \
-    translations/luckybackup_el.ts \
+    translations/luckybackup_nl.ts \
     translations/luckybackup_en.ts \
-    translations/luckybackup_es.ts \
     translations/luckybackup_et.ts \
     translations/luckybackup_fr.ts \
     translations/luckybackup_gl.ts \
+    translations/luckybackup_de.ts \
+    translations/luckybackup_el.ts \
     translations/luckybackup_it.ts \
-    translations/luckybackup_nl.ts \
+    translations/luckybackup_ja_JP.ts \
+    translations/luckybackup_no.ts \
     translations/luckybackup_pl.ts \
     translations/luckybackup_pt_BR.ts \
     translations/luckybackup_ro.ts \
     translations/luckybackup_ru.ts \
     translations/luckybackup_sk.ts \
     translations/luckybackup_sl.ts \
+    translations/luckybackup_es.ts \
     translations/luckybackup_sv.ts \
-    translations/luckybackup_tr.ts
-
+    translations/luckybackup_tr.ts \
+    translations/luckybackup_vi.ts \

@@ -23,7 +23,7 @@
  project version	: Please see "main.cpp" for project version
 
  developer          : luckyb 
- last modified      : 13 Jan 2013
+ last modified      : 07 Feb 2014
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -101,8 +101,9 @@ class luckyBackupWindow : public QMainWindow
         void abortPressed();		//SLOT when button pressed( see also notYet)
         void donePressed();		//SLOT when done button pressed
         void appendRsyncOutput();	//Display o/p to textbrowser & update logfile
+/*disable vss until...
         void appendRsyncVssOutput();
-        void appendRsyncVssOutput(int size);
+        void appendRsyncVssOutput(int size);*/
         void procFinished();		//SLOT executed when syncProcess is finshed (will start a new syncProcess if any left)
         void procError();        // SLOT for when a process reports an error (eg: failed to start)
         
@@ -186,6 +187,7 @@ class luckyBackupWindow : public QMainWindow
         bool ABORTpressed;      //becomes true if the abort button is pressed
         void finishUp();        // finish up some stuff when all tasks finish either normally or aborted
         void shutDownSystem();  // shutdown the system if the relevant button is pressed
+        QString convertBytes(QString,bool);  // Converts a string of the form of 10GB to bytes and vice versa
         
         //Progress bar variables
         int progress_total;	//Maximum value of progress

@@ -23,7 +23,7 @@ Display a dialog. Schedules profiles via cron
 project version    : Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 11 Sep 13
+last modified      : 03 Feb 14
 
 ===============================================================================================================================
 ===============================================================================================================================
@@ -396,13 +396,17 @@ void scheduleDialog::removePressed()
             return;
     uiS.listWidget_schedule -> takeItem(selected);
 
+    //update the Schedules array by shifting the elements one position to the left
+    for (int i = selected; i < TotalSchedule+1; ++i)
+        Schedule[i] = Schedule[i + 1]; // copy next element left
+        
     TotalSchedule = uiS.listWidget_schedule -> count();	//Get the schedule list size
     if (TotalSchedule == 0)
     {
         noSchedules = TRUE;
         uiS.listWidget_schedule -> addItem(tr("No schedules are declared !!"));
     }
-    changesMade = TRUE;
+    changesMade = TRUE;    
 }
 
 // current button pressed==============================================================================================

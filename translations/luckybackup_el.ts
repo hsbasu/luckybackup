@@ -100,7 +100,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/global.cpp" line="+1067"/>
+        <location filename="../src/global.cpp" line="+1145"/>
         <source>The task list is empty</source>
         <translation>Η λίστα με τις διαδικασίες είναι άδεια</translation>
     </message>
@@ -131,7 +131,7 @@
         <translation>Δεν έχετε συμπεριλάβει καμία διαδικασία</translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+51"/>
         <source>The following included tasks &lt;b&gt;share the same destination directory&lt;/b&gt; (all together or at groups) and at least one of them will backup the contents of a directory</source>
         <translation>Οι παρακάτω διαδικασίες &lt;b&gt;μοιράζονται τον ίδιο κατάλογο προορισμού&lt;/b&gt; (όλες μαζί ή κατά ομάδες) και τουλάχιστον μια από αυτές θα κάνει backup τα περιεχόμενα ενός καταλόγου</translation>
     </message>
@@ -146,7 +146,7 @@
         <translation>Παρακαλώ φύγετε το x από τα κατάλληλα κουτάκια ή αλλάξτε όλους τους τύπους των διαδικασιών σε κάτι διαφορετικό από &apos;&lt;b&gt;Backup περιεχ. καταλόγου&lt;/b&gt;&apos; ή χρησιμοποιήστε &apos;Backup περιεχ. καταλόγου&apos; μαζί με την επιλογή &apos;&lt;b&gt;Συμπ. μόνο&lt;/b&gt;&apos;, πριν προχωρήσετε</translation>
     </message>
     <message>
-        <location line="+593"/>
+        <location line="+674"/>
         <source>pre-task execution of command</source>
         <comment>Full phrase: pre-task execution of command: &lt;COMMAND&gt; starting</comment>
         <translation>Η εκτέλεση της προ-εργασίας εντολής</translation>
@@ -318,7 +318,7 @@
         <translation>Γίνεται backup του προφίλ, των αρχείων log και των δεδομένων στιγμιότυπου</translation>
     </message>
     <message>
-        <location line="+93"/>
+        <location line="+111"/>
         <source>Could not open the logfile</source>
         <translation>Δεν μπόρεσα να ανοίξω το αρχείο log</translation>
     </message>
@@ -328,7 +328,7 @@
         <translation>Το αρχείο log δεν υπάρχει</translation>
     </message>
     <message>
-        <location line="+63"/>
+        <location line="+78"/>
         <source>The specified command is probably not installed</source>
         <translation>Η συγκεκριμένη εντολή δεν έχει εγκατασταθεί</translation>
     </message>
@@ -343,7 +343,7 @@
         <translation>εντολή:</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>exit code: </source>
         <translation>κωδικός εξόδου:</translation>
     </message>
@@ -374,13 +374,13 @@
     </message>
     <message>
         <location line="+10"/>
-        <location line="+44"/>
+        <location line="+61"/>
         <location line="+99"/>
         <source>status</source>
         <translation>κατάσταση</translation>
     </message>
     <message>
-        <location line="-143"/>
+        <location line="-160"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
@@ -392,25 +392,31 @@
     </message>
     <message>
         <location line="-14"/>
-        <location line="+91"/>
+        <location line="+108"/>
         <source>Source directory</source>
         <translation>Κατάλογος πηγής</translation>
     </message>
     <message>
-        <location line="-82"/>
+        <location line="-99"/>
         <location line="+19"/>
         <source>Using remote, check is skipped</source>
         <translation>Χρήση απομακρυσμένου, δεν γίνεται έλεγχος</translation>
     </message>
     <message>
         <location line="-9"/>
-        <location line="+87"/>
+        <location line="+104"/>
         <location line="+59"/>
         <source>Destination directory</source>
         <translation>Κατάλογος προορισμού</translation>
     </message>
     <message>
-        <location line="-129"/>
+        <location line="-137"/>
+        <source>free</source>
+        <comment>as in free disk space</comment>
+        <translation>ελεύθερα</translation>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>WARNING</source>
         <translation>ΠΡΟΕΙΔΟΠΟΙΗΣΗ</translation>
     </message>
@@ -634,6 +640,16 @@
     </message>
     <message>
         <location line="+2"/>
+        <source>Juan Ramon Alfaro Martinez</source>
+        <translation>Juan Ramon Alfaro Martinez</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Code contributor for remote &amp; vss support regarding the windows port</source>
+        <translation>Συνεισφορά με κώδικα αναφορικά με την υποστήριξη για απομακρυσμένες συνδέσεις και vss για την έκδοση windows</translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Jack Fink</source>
         <translation>Jack Fink</translation>
     </message>
@@ -698,6 +714,16 @@
         <translation>Επίσημος συντηρητής των πακέτων για Free BSD</translation>
     </message>
     <message>
+        <location line="+2"/>
+        <source>Dimitris Jemos</source>
+        <translation>Δημήτρης Τζέμος</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Slackel package maintainer</source>
+        <translation>Επίσημος συντηρητής των πακέτων για Slackel</translation>
+    </message>
+    <message>
         <location line="+3"/>
         <source>ex Fedora package maintainer</source>
         <translation>πρώην Επίσημος συντηρητής των πακέτων για Fedora (επίσημο αποθετήριο)</translation>
@@ -718,24 +744,25 @@
         <translation>Stergios Prosiniklis</translation>
     </message>
     <message>
-        <location line="-57"/>
-        <location line="+58"/>
+        <location line="-63"/>
+        <location line="+64"/>
         <source>Greek manual translator</source>
         <translation>Μεταφραστής του εγχειριδίου στα Ελληνικά</translation>
     </message>
     <message>
         <location line="+3"/>
         <location line="+3"/>
+        <location line="+3"/>
         <source>German gui translator</source>
         <translation>Μεταφραστής του γραφικού περιβάλλοντος στα Γερμανικά</translation>
     </message>
     <message>
-        <location line="-1"/>
+        <location line="-4"/>
         <source>Wilfried Schobel</source>
         <translation>Wilfried Schobel</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+6"/>
         <source>Sergio Gameiro</source>
         <translation>Sergio Gameiro</translation>
     </message>
@@ -761,23 +788,25 @@
         <translation>Μεταφραστής του γραφικού περιβάλλοντος στα Γαλλικά και πολύτιμος σύμβουλος πακεταρίσματος</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+11"/>
         <source>Raffaele</source>
         <translation>Raffaele</translation>
     </message>
     <message>
         <location line="-2"/>
         <location line="+3"/>
+        <location line="+3"/>
+        <location line="+3"/>
         <source>Italian gui translator</source>
         <translation>Μεταφραστής του γραφικού περιβάλλοντος στα Ιταλικά</translation>
     </message>
     <message>
-        <location line="-7"/>
+        <location line="-16"/>
         <source>Aurelien Merckel</source>
         <translation>Aurelien Merckel</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+18"/>
         <source>Denis Skorski</source>
         <translation>Denis Skorski</translation>
     </message>
@@ -793,11 +822,17 @@
     </message>
     <message>
         <location line="+1"/>
+        <location line="+3"/>
         <source>Dutch gui translator</source>
         <translation>Μεταφραστής του γραφικού περιβάλλοντος στα Ολλανδικά</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="-1"/>
+        <source>Martin Grashoff (linuxrev)</source>
+        <translation>Martin Grashoff (linuxrev)</translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Subhi Honaco</source>
         <translation>Subhi Honaco</translation>
     </message>
@@ -827,7 +862,7 @@
         <translation>Μεταφραστής του γραφικού περιβάλλοντος στα Ρουμανικά</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+20"/>
         <source>Roger Calvo</source>
         <translation>Roger Calvo</translation>
     </message>
@@ -837,7 +872,7 @@
         <translation>Tomas Vadina</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+18"/>
         <source>Javi Romero</source>
         <translation>Javi Romero</translation>
     </message>
@@ -857,7 +892,7 @@
         <translation>Σχεδιαστής του γραφικού περιβάλλοντος της έκδοσης 0.3</translation>
     </message>
     <message>
-        <location line="-112"/>
+        <location line="-151"/>
         <source>Dimitris Kalamaras</source>
         <translation>Δημήτρης Καλαμάρας</translation>
     </message>
@@ -867,22 +902,54 @@
         <translation>Αν δεν ήταν ο Δημήτρης και οι οδηγοί του, δεν θα είχα ξεκινήσει ποτέ αυτό το project</translation>
     </message>
     <message>
-        <location line="+63"/>
+        <location line="+59"/>
+        <source>Thomas Glatt</source>
+        <translation>Thomas Glatt</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <location line="+3"/>
         <source>French gui translator</source>
         <translation>Μεταφραστής του γραφικού περιβάλλοντος στα Γαλλικά</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="-1"/>
+        <source>Sébastien Bourgain</source>
+        <translation>Sébastien Bourgain</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>pinguinofurioso</source>
+        <translation>pinguinofurioso</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Alessio Ganci</source>
+        <translation>Alessio Ganci</translation>
+    </message>
+    <message>
+        <location line="+24"/>
+        <source>Matej Urbančič</source>
+        <translation>Matej Urbančič</translation>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>Marvin Gomez</source>
         <translation>Marvin Gomez</translation>
     </message>
     <message>
         <location line="+1"/>
+        <location line="+3"/>
         <source>Spanish gui translator</source>
         <translation>Μεταφραστής του γραφικού περιβάλλοντος στα Ισπανικά</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="-1"/>
+        <source>Antonio Jose Molina</source>
+        <translation>Antonio Jose Molina</translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Fredrik Holmgren</source>
         <translation>Fredrik Holmgren</translation>
     </message>
@@ -910,6 +977,46 @@
         <location line="+1"/>
         <source>Estonian gui translator</source>
         <translation>Μεταφραστής του γραφικού περιβάλλοντος στα Εσθονικά</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Nicolay Boychev</source>
+        <translation>Nicolay Boychev</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Bulgarian gui translator</source>
+        <translation>Μεταφραστής του γραφικού περιβάλλοντος στα Βουλγαρικά</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Manuel Meixide</source>
+        <translation>Manuel Meixide</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Galician gui translator</source>
+        <translation>Μεταφραστής του γραφικού περιβάλλοντος στα Γαλικιανά</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Roger Foss</source>
+        <translation>Roger Foss</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Norwegian gui translator</source>
+        <translation>Μεταφραστής του γραφικού περιβάλλοντος στα Νορβηγικά</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Pin-hsien Li</source>
+        <translation>Pin-hsien Li</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Chinese (Taiwan) gui translator</source>
+        <translation>Μεταφραστής του γραφικού περιβάλλοντος στα Κινέζικα (Ταϊβάν)</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -940,6 +1047,16 @@
         <location line="+1"/>
         <source>backupwhenidle python script developer</source>
         <translation>Ανάπτυξη του προγράμματος backupwhenidle σε python</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Bjorn Rietdijk</source>
+        <translation>Bjorn Rietdijk</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>valuable OS/2 and windows tester</source>
+        <translation>Πολύτιμος δοκιμαστής για OS/2 και windows</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -1074,7 +1191,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Άδεια</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="-211"/>
+        <location filename="../src/about.cpp" line="-253"/>
         <source>luckyBackup is distributed under the terms of the &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU General Public License&lt;/a&gt;</source>
         <comment>Please leave the tags &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt; &amp; &lt;/a&gt; intact and surrounding the GNU General Public License !!</comment>
         <translation>Το luckyBackup διανέμεται υπό τους όρους της &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU General Public License&lt;/a&gt;</translation>
@@ -1086,32 +1203,33 @@ p, li { white-space: pre-wrap; }
         <translation>Είναι &lt;b&gt;ελεύθερο λογισμικό&lt;/b&gt;: Μπορείτε να το αναδιανέμετε και/ή τροποποιήσετε υπό τους όρους της GNU General Public License όπως δημοσιεύτηκαν από το Free Software Foundation, έκδοση 3 της άδειας.</translation>
     </message>
     <message>
-        <location line="+75"/>
+        <location line="+81"/>
         <source>Thomas Janssen</source>
         <translation>Thomas Janssen</translation>
     </message>
     <message>
-        <location line="-5"/>
+        <location line="-8"/>
         <source>Fedora package maintainer (official repo)</source>
         <translation>Επίσημος συντηρητής των πακέτων για Fedora (επίσημο αποθετήριο)</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+17"/>
         <source>Karsten Jaschultowski</source>
         <translation>Karsten Jaschultowski</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+24"/>
         <source>Francesco Braile</source>
         <translation>Francesco Braile</translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location line="+30"/>
         <source>Andrej Znidarsic</source>
         <translation>Andrej Znidarsic</translation>
     </message>
     <message>
         <location line="+1"/>
+        <location line="+3"/>
         <source>Slovenian gui translator</source>
         <translation>Μεταφραστής του γραφικού περιβάλλοντος στα Σλοβένικα</translation>
     </message>
@@ -1126,7 +1244,7 @@ p, li { white-space: pre-wrap; }
         <translation>Μεταφραστής του γραφικού περιβάλλοντος στα Τούρκικα</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+38"/>
         <source>Tito Poquito</source>
         <translation>Tito Poquito</translation>
     </message>
@@ -1136,7 +1254,7 @@ p, li { white-space: pre-wrap; }
         <translation>Επίσημος συντηρητής των πακέτων για Slackware (αποθετήριο slackbuilds)</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+26"/>
         <source>...my other half, &lt;b&gt;Dimitra&lt;/b&gt; that bears with me all these times that this project is under development</source>
         <translation>...στο άλλο μου μισό, τη &lt;b&gt;Δήμητρα&lt;/b&gt;, που με ανέχεται κάθε φορά που κάθομαι με τις ώρες (-μέρες, -βδομάδες) στο PC για λόγους ανάπτυξης της εφαρμογής</translation>
     </message>
@@ -1159,17 +1277,8 @@ p, li { white-space: pre-wrap; }
         <translation>Εντολή:</translation>
     </message>
     <message>
-        <location line="+7"/>
-        <source>Enter the full command with arguments to run
-eg
-sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</source>
-        <translation>Εισάγετε την πλήρη εντολή με παραμέτρους
-πχ
-sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</translation>
-    </message>
-    <message>
-        <location line="+9"/>
-        <location line="+204"/>
+        <location line="+38"/>
+        <location line="+268"/>
         <location line="+14"/>
         <source>Use default</source>
         <extracomment>This means &quot;use the default value for this field&quot;
@@ -1180,7 +1289,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <translation>Χρήση προεπιλεγμένου</translation>
     </message>
     <message>
-        <location line="-205"/>
+        <location line="-218"/>
         <source>Arguments</source>
         <translation>Παράμετροι</translation>
     </message>
@@ -1223,6 +1332,16 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <location line="+10"/>
         <source>%e No of errors</source>
         <translation>%e Πλήθος σφαλμάτων</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>If unchecked &quot;TLS auto&quot; is used. Only available for sendemail</source>
+        <translation>Όταν δεν είναι επιλεγμένο χρησιμοποιείται &quot;TLS auto&quot;. Διαθέσιμο μόνο για την εντολή sendemail</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Disable TLS</source>
+        <translation>Απενεργοποίηση TLS</translation>
     </message>
     <message>
         <location line="+25"/>
@@ -1295,12 +1414,33 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <translation>Άκυρο</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="-348"/>
         <source>Specify the conditions to send an email</source>
         <translation>Καθορισμός των συνθηκών αποστολής μηνύματος</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="-38"/>
+        <source>Enter the command to run
+eg
+sendemail</source>
+        <translation>Εισάγετε την εντολή που θα τρέξει πχ sendemail</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>arguments:</source>
+        <translation>παράμετροι:</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Enter arguments of the email command
+eg
+ -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</source>
+        <translation>Εισάγετε τις παραμέτρους της εντολής email
+πχ
+ -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</translation>
+    </message>
+    <message>
+        <location line="+25"/>
         <source>Conditions</source>
         <translation>Συνθήκες</translation>
     </message>
@@ -1335,7 +1475,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <translation>Ποτέ</translation>
     </message>
     <message>
-        <location filename="../src/emailDialog.cpp" line="+124"/>
+        <location filename="../src/emailDialog.cpp" line="+136"/>
         <source>The command field is empty</source>
         <translation>Το πεδίο εντολής είναι κενό</translation>
     </message>
@@ -1409,7 +1549,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>luckyBackupWindow</name>
     <message>
-        <location filename="../src/executenow.cpp" line="+135"/>
+        <location filename="../src/executenow.cpp" line="+161"/>
         <source>commands output</source>
         <comment>output window label</comment>
         <translation>έξοδος εντολών</translation>
@@ -1454,17 +1594,17 @@ p, li { white-space: pre-wrap; }
         <translation>τελείωσε</translation>
     </message>
     <message>
-        <location line="-149"/>
-        <location line="+151"/>
-        <location line="+749"/>
+        <location line="-173"/>
+        <location line="+175"/>
+        <location line="+1065"/>
         <location line="+21"/>
-        <location line="+25"/>
+        <location line="+30"/>
         <location line="+1"/>
         <source>simulation mode</source>
         <translation>Κατάσταση εξομείωσης</translation>
     </message>
     <message>
-        <location line="-792"/>
+        <location line="-1113"/>
         <source>Could not update last execution time of tasks</source>
         <translation>Δεν μπόρεσα να ενημερώσω την τελευταία ώρα εκτέλεσης των διαδικασιών</translation>
     </message>
@@ -1491,7 +1631,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Επαναφορά</translation>
     </message>
     <message>
-        <location line="-195"/>
+        <location line="-219"/>
         <source>execution of profile:</source>
         <comment>tray message - execution of profile: &lt;PROFILENAME&gt; in progress...</comment>
         <translation>εκτέλεση του προφίλ:</translation>
@@ -1503,7 +1643,7 @@ p, li { white-space: pre-wrap; }
         <translation>σε εξέλιξη...</translation>
     </message>
     <message>
-        <location line="+373"/>
+        <location line="+451"/>
         <source>Removed all older snapshots data</source>
         <translation>Έγινε διαγραφή παλαιών στιγμιότυπων κα αρχείων log της εργασίας</translation>
     </message>
@@ -1513,22 +1653,22 @@ p, li { white-space: pre-wrap; }
         <translation>Αποτυχία διαγραφής όλων των παλαιών στιγμιότυπων και αρχείων log της εργασίας</translation>
     </message>
     <message>
-        <location line="+405"/>
+        <location line="+520"/>
         <source>Unknown error</source>
         <translation>Άγνωστο σφάλμα</translation>
     </message>
     <message>
-        <location line="+106"/>
+        <location line="+253"/>
         <location line="+5"/>
         <location line="+6"/>
         <location line="+21"/>
-        <location line="+24"/>
-        <location line="+70"/>
+        <location line="+27"/>
+        <location line="+72"/>
         <source>Elapsed time</source>
         <translation>Χρόνος που πέρασε</translation>
     </message>
     <message>
-        <location line="-125"/>
+        <location line="-130"/>
         <source>pre-task execution of command</source>
         <translation>εκτέλεση της προ-διαδικασίας εντολής</translation>
     </message>
@@ -1560,7 +1700,7 @@ p, li { white-space: pre-wrap; }
         <translation>διαγραφή αρχείων</translation>
     </message>
     <message>
-        <location line="+182"/>
+        <location line="+187"/>
         <source>trying to send an email</source>
         <translation>Προσπάθεια για αποστολή μηνύματος email</translation>
     </message>
@@ -1570,7 +1710,7 @@ p, li { white-space: pre-wrap; }
         <translation>Το σύστημα θα κλείσει σε 1 λεπτό</translation>
     </message>
     <message>
-        <location line="-221"/>
+        <location line="-226"/>
         <source>Source</source>
         <translation>Πηγή</translation>
     </message>
@@ -1580,7 +1720,7 @@ p, li { white-space: pre-wrap; }
         <translation>Προορισμός</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+22"/>
         <location line="+1"/>
         <source>All tasks completed</source>
         <translation>Όλες οι διαδικασίες τελείωσαν</translation>
@@ -1805,7 +1945,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;%1 %2</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="+766"/>
+        <location filename="../src/luckybackupwindow.cpp" line="+775"/>
         <source>You have asked for a RESTORE task to be created</source>
         <comment>'create restore' message line 1/4</comment>
         <translation>Ζητήσατε να δημιουργηθεί μια διαδικασία ΑΠΟΚΑΤΑΣΤΑΣΗΣ</translation>
@@ -1830,13 +1970,13 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/functions.cpp" line="+86"/>
-        <location filename="../src/luckybackupwindow.cpp" line="-424"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-432"/>
         <location line="+70"/>
         <location line="+14"/>
         <location line="+56"/>
         <location line="+85"/>
         <location line="+14"/>
-        <location line="+230"/>
+        <location line="+238"/>
         <location line="+155"/>
         <location line="+269"/>
         <source>ERROR</source>
@@ -1931,12 +2071,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/executenow.cpp" line="+132"/>
         <location filename="../src/functions.cpp" line="+4"/>
-        <location line="+65"/>
+        <location line="+70"/>
         <source>WARNING</source>
         <translation>ΠΡΟΕΙΔΟΠΟΙΗΣΗ</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="-63"/>
+        <location filename="../src/functions.cpp" line="-68"/>
         <source>default profile</source>
         <comment>Information window message. Full phrase: 'default profile &lt;PROFILENAME&gt; could not be saved'.</comment>
         <translation>Το προεπιλεγμένο προφίλ</translation>
@@ -1960,7 +2100,7 @@ p, li { white-space: pre-wrap; }
         <translation>αποθηκεύτηκε με επιτυχία</translation>
     </message>
     <message>
-        <location line="+47"/>
+        <location line="+52"/>
         <source>creating default profile ...</source>
         <comment>Information window message</comment>
         <translation>δημιουργία προεπιλεγμένου προφίλ ...</translation>
@@ -1994,7 +2134,7 @@ p, li { white-space: pre-wrap; }
         <translation>Θέλετε να προχωρήσετε ούτως ή άλλως ?</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="-1150"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-1159"/>
         <source>super user</source>
         <comment>super user is the root user</comment>
         <translation>υπερ-χρήστης</translation>
@@ -2005,7 +2145,7 @@ p, li { white-space: pre-wrap; }
         <translation>κατάσταση υπερ-χρήστη</translation>
     </message>
     <message>
-        <location line="+88"/>
+        <location line="+89"/>
         <source>Welcome to</source>
         <comment>full phrase: 'Welcome to luckyBackup'</comment>
         <translation>Καλώς ήλθατε στο</translation>
@@ -2024,12 +2164,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+2"/>
-        <location line="+566"/>
+        <location line="+574"/>
         <source>The name you have entered contains only invalid characters</source>
         <translation>Το όνομα που εισάγατε περιέχει μόνο μη αποδεκτούς χαρακτήρες</translation>
     </message>
     <message>
-        <location line="-552"/>
+        <location line="-560"/>
         <location line="+70"/>
         <location line="+156"/>
         <source>Profile</source>
@@ -2182,7 +2322,7 @@ p, li { white-space: pre-wrap; }
         <translation>τέθηκε σε</translation>
     </message>
     <message>
-        <location line="+212"/>
+        <location line="+220"/>
         <source>Import Profile</source>
         <comment>this is a dialog title</comment>
         <translation>Εισαγωγή προφίλ</translation>
@@ -2226,16 +2366,16 @@ p, li { white-space: pre-wrap; }
         <translation>Δεν μπόρεσα να βρω το αρχείο</translation>
     </message>
     <message>
-        <location line="-311"/>
+        <location line="-319"/>
         <location line="+64"/>
-        <location line="+285"/>
+        <location line="+293"/>
         <source>You have reached the maximum limit of supported tasks</source>
         <translation>Είστε στο μέγιστο όριο υποστηριζόμενων διαδικασιών</translation>
     </message>
     <message>
-        <location line="-348"/>
+        <location line="-356"/>
         <location line="+64"/>
-        <location line="+285"/>
+        <location line="+293"/>
         <source>You have to remove a task if you wish to add another !!</source>
         <translation>Πρέπει να αφαιρέσετε μια διαδικασία αν θέλετε να προσθέσετε μια άλλη !!</translation>
     </message>
@@ -2320,12 +2460,7 @@ p, li { white-space: pre-wrap; }
         <translation>Παρακαλώ επιλέξτε μια διαδικασία για να διαχειριστείτε πρώτα</translation>
     </message>
     <message>
-        <location line="+79"/>
-        <source>You have only incuded tasks that are going to be skipped</source>
-        <translation>Έχετε συμπεριλάβει μόνο διαδικασίες που θα αγνοηθούν</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+80"/>
         <source>nothing to do</source>
         <translation>Τίποτα να κάνω</translation>
     </message>
@@ -2340,7 +2475,7 @@ p, li { white-space: pre-wrap; }
         <translation>Οι ρυθμίσεις της αλληλογραφίας &lt;font color=green&gt;ανανεώθηκαν επιτυχώς</translation>
     </message>
     <message>
-        <location line="+71"/>
+        <location line="+76"/>
         <source>status</source>
         <translation>κατάσταση</translation>
     </message>
@@ -2444,19 +2579,19 @@ p, li { white-space: pre-wrap; }
         <translation>F5</translation>
     </message>
     <message>
-        <location filename="../src/executenow.cpp" line="-974"/>
+        <location filename="../src/executenow.cpp" line="-1295"/>
         <source>Aborting: Please wait for all processes to be killed</source>
         <translation>Γίνεται ακύρωση: Παρακαλώ περμένετε να τερματιστούν όλες οι διαδικασίες</translation>
     </message>
     <message>
-        <location line="+129"/>
+        <location line="+197"/>
         <source>Removing old snapshots and logfiles of task</source>
         <comment>info message displayed during ...data removal
 Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comment>
         <translation>Γίνεται διαγραφή παλaιών στιγμιότυπων κα αρχείων log της εργασίας</translation>
     </message>
     <message>
-        <location line="+87"/>
+        <location line="+73"/>
         <location line="+12"/>
         <source>Removing</source>
         <translation>Γίνεται αφαίρεση</translation>
@@ -2468,7 +2603,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Αποτυχία αφάιρεσης</translation>
     </message>
     <message>
-        <location line="+380"/>
+        <location line="+495"/>
         <source>Failed to start</source>
         <comment>this refers to a process</comment>
         <translation>Αποτυχία εκκίνησης</translation>
@@ -2504,7 +2639,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Άγνωστο σφάλμα</translation>
     </message>
     <message>
-        <location line="+116"/>
+        <location line="+263"/>
         <source>calculating</source>
         <comment>info message displayed during ...calculations</comment>
         <translation>Γίνεται υπολογισμός</translation>
@@ -2527,12 +2662,17 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Γίνεται μεταφορά αρχείων</translation>
     </message>
     <message>
-        <location line="+91"/>
+        <location line="+15"/>
+        <source>Total files transfered</source>
+        <translation>Σύνολο αρχείων που μεταφέρθηκαν</translation>
+    </message>
+    <message>
+        <location line="+81"/>
         <source>ABORTED</source>
         <translation>ΑΚΥΡΩΘΗΚΕ</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="-555"/>
+        <location filename="../src/functions.cpp" line="-560"/>
         <source>&amp;Refresh</source>
         <comment>This is a top 'Profile' menu action</comment>
         <translation>&amp;Ανανέωση</translation>
@@ -2802,19 +2942,19 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     </message>
     <message>
         <location line="+0"/>
-        <location line="+95"/>
+        <location line="+100"/>
         <source>Use the &quot;add&quot; button on the right to get started</source>
         <comment>Please keep the add word inside quotes</comment>
         <translation>Χρησιμοποιήστε το κουμπί &quot;προσθήκη&quot; στα δεξιά για να ξεκινήσετε</translation>
     </message>
     <message>
-        <location line="-69"/>
+        <location line="-74"/>
         <source>could not be saved</source>
         <comment>Information window message. Full phrase: '(default) profile &lt;PROFILENAME&gt; could not be saved'</comment>
         <translation>δεν ήταν δυνατό να αποθηκευτεί</translation>
     </message>
     <message>
-        <location line="+61"/>
+        <location line="+66"/>
         <source>default profile</source>
         <comment>Information window message. Full phrase: 'default profile &lt;PROFILENAME&gt; could not be created'.</comment>
         <translation>Το προεπιλεγμένο προφίλ</translation>
@@ -2856,7 +2996,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>προφίλ</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="-795"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-808"/>
         <source>Failed to duplicate profile</source>
         <comment>full phrase: 'Failed to duplicate profile &lt;PROFILENAME&gt;'</comment>
         <translation>Αποτυχία δημιουργίας αντιγράφου του προφίλ</translation>
@@ -2896,7 +3036,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Παρακαλώ επιλέξτε μια εργασία</translation>
     </message>
     <message>
-        <location line="+230"/>
+        <location line="+238"/>
         <source>Hide information window</source>
         <comment>hide/show information window button tooltip</comment>
         <translation>Απόκρυψη παραθύρου πληροφοριών</translation>
@@ -2908,7 +3048,12 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Εμφάνιση παραθύρου πληροφοριών</translation>
     </message>
     <message>
-        <location line="+378"/>
+        <location line="+287"/>
+        <source>You have only included tasks that are going to be skipped</source>
+        <translation>Έχετε συμπεριλάβει μόνο εργασίες που θα παραλειφθούν</translation>
+    </message>
+    <message>
+        <location line="+96"/>
         <source>Manage Task</source>
         <comment>This is a top 'Task' menu action</comment>
         <translation>Διαχείριση Εργασίας</translation>
@@ -2925,7 +3070,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>&amp;Εργασία</translation>
     </message>
     <message>
-        <location filename="../src/executenow.cpp" line="-450"/>
+        <location filename="../src/executenow.cpp" line="-631"/>
         <source>Successfuly created destination directory</source>
         <translation>Ο κατάλογος προορισμού δημιουργήθηκε επιτυχώς</translation>
     </message>
@@ -2938,7 +3083,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
 <context>
     <name>manageDialog</name>
     <message>
-        <location filename="../src/manage.cpp" line="+87"/>
+        <location filename="../src/manage.cpp" line="+95"/>
         <source>profile</source>
         <translation>προφίλ</translation>
     </message>
@@ -2988,20 +3133,13 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Κλείσιμο</translation>
     </message>
     <message>
-        <location filename="../src/manage.cpp" line="+130"/>
+        <location filename="../src/manage.cpp" line="+135"/>
         <source>Please select a snapshot from the list</source>
         <comment>Information message</comment>
         <translation>Παρακαλώ επιλέξτε ένα στιγμιότυπο από τη λίστα</translation>
     </message>
     <message>
-        <location line="+20"/>
-        <location line="+8"/>
-        <source>Display of remote places is not supported</source>
-        <comment>Information message</comment>
-        <translation>Η προβολή απομακρυσμένων τοποθεσιών δεν υποστηρίζεται</translation>
-    </message>
-    <message>
-        <location line="+8"/>
+        <location line="+146"/>
         <source>This directory does not exist</source>
         <translation>Αυτός ο κατάλογος δεν υπάρχει</translation>
     </message>
@@ -3037,7 +3175,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Προβολή του αρχείου log της επιλεγμένης εργασίας συγχρονισμού</translation>
     </message>
     <message>
-        <location line="+78"/>
+        <location line="+83"/>
         <source>Please wait until the thread is terminated</source>
         <translation>Παρακαλώ περιμένετε μέχρι να τερματιστεί η εργασία</translation>
     </message>
@@ -3099,13 +3237,13 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
 <context>
     <name>manageWizard</name>
     <message>
-        <location filename="../src/manageWizard.cpp" line="+62"/>
+        <location filename="../src/manageWizard.cpp" line="+60"/>
         <source>not available</source>
         <comment>refers to a date-time</comment>
         <translation>δεν είναι διαθέσιμη</translation>
     </message>
     <message>
-        <location line="+346"/>
+        <location line="+361"/>
         <source>Delete backup</source>
         <comment>this is the title of a wizard</comment>
         <translation>Διαγραφή αντιγράφου ασφαλείας</translation>
@@ -3124,8 +3262,8 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Τοποθεσία</translation>
     </message>
     <message>
-        <location line="-279"/>
-        <location line="+280"/>
+        <location line="-285"/>
+        <location line="+286"/>
         <source>WARNING</source>
         <translation>ΠΡΟΕΙΔΟΠΟΙΗΣΗ</translation>
     </message>
@@ -3184,12 +3322,12 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start' translated<
     <message>
         <location filename="../ui/manageWizard.ui" line="+240"/>
         <location filename="../src/manageWizard.cpp" line="+3"/>
-        <location line="+227"/>
+        <location line="+235"/>
         <source>simulation</source>
         <translation>εξομείωση</translation>
     </message>
     <message>
-        <location filename="../src/manageWizard.cpp" line="-222"/>
+        <location filename="../src/manageWizard.cpp" line="-230"/>
         <source>no errors</source>
         <translation>Δεν βρέθηκαν σφάλματα</translation>
     </message>
@@ -3199,7 +3337,7 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start' translated<
         <translation>βρέθηκαν σφάλματα</translation>
     </message>
     <message>
-        <location line="+212"/>
+        <location line="+220"/>
         <source>Restoring data: main trunk</source>
         <comment>info message displayed during ...data restoration</comment>
         <translation>Γίνεται επαναφορά δεδομένων: κυρίως κορμός</translation>
@@ -3262,7 +3400,7 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start' translated<
         <translation>άκυρο</translation>
     </message>
     <message>
-        <location filename="../src/manageWizard.cpp" line="-397"/>
+        <location filename="../src/manageWizard.cpp" line="-411"/>
         <source>The restore directory will become identical to the backup snapshot</source>
         <translation>Ο κατάλογος επαναφοράς θα γίνει πανομοιότυπος με το στιγμιότυπο του αντιγράφου ασφαλείας</translation>
     </message>
@@ -3280,7 +3418,7 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start translated'<
         <translation>Εάν οι ανωτέρω πληροφορίες είναι σωστές, κάνετε κλικ στο κουμπί&lt;b&gt;έναρξη&lt;/b&gt; για εκκίνηση</translation>
     </message>
     <message>
-        <location line="+113"/>
+        <location line="+119"/>
         <source>success</source>
         <comment>info message displayed after ...logfile deletion</comment>
         <translation>επιτυχία</translation>
@@ -3328,7 +3466,7 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start translated'<
         <translation>Τοποθεσία επαναφοράς</translation>
     </message>
     <message>
-        <location line="+116"/>
+        <location line="+124"/>
         <source>No snapshot specific data exist. Skipping...</source>
         <comment>info message displayed during ...data restoration/deletion</comment>
         <translation>Δεν υπάρχουν συγκεκριμένα δεδομένα στιγμιότυπου. Γίνεται παράκαμψη...</translation>
@@ -3370,7 +3508,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>modifyDialog</name>
     <message>
-        <location filename="../src/modifyDialog.cpp" line="+203"/>
+        <location filename="../src/modifyDialog.cpp" line="+235"/>
         <source>simple</source>
         <translation>απλό</translation>
     </message>
@@ -3380,7 +3518,7 @@ p, li { white-space: pre-wrap; }
         <translation>προχωρημένο</translation>
     </message>
     <message>
-        <location line="+127"/>
+        <location line="+129"/>
         <source>Task name</source>
         <translation>Όνομα Διαδικασίας</translation>
     </message>
@@ -3445,12 +3583,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+44"/>
         <location line="+73"/>
-        <location line="+2607"/>
+        <location line="+2724"/>
         <source>browse localy</source>
         <translation>τοπική περιήγηση</translation>
     </message>
     <message>
-        <location line="-2654"/>
+        <location line="-2771"/>
         <location line="+31"/>
         <source>Enter the full path of the destination directory (eg /media/backups/SiduxHome/)</source>
         <translation>Δώστε το μονοπάτι προς τον κατάλογο προορισμού (πχ /media/backups/siduxHome/)</translation>
@@ -3461,7 +3599,12 @@ p, li { white-space: pre-wrap; }
         <translation>Προορισμός :</translation>
     </message>
     <message>
-        <location line="+1984"/>
+        <location line="+1663"/>
+        <source>eg -C4c arcfour,blowfish-cbc</source>
+        <translation>πχ -C4c arcfour,blowfish-cbc</translation>
+    </message>
+    <message>
+        <location line="+383"/>
         <source>With this option rsync will transfer numeric group and user IDs
 rather than using user and group names
 and mapping them at both ends.
@@ -3497,7 +3640,26 @@ and copying devices via the --devices option.
         <translation>Προσπάθεια για ενέργειες υπερ-χρήστη</translation>
     </message>
     <message>
-        <location line="+531"/>
+        <location line="+22"/>
+        <source>Try to backup open files in windows systems using vss (Only works on windows 2000 and upper)
+(--vss)</source>
+        <translation>Προσπάθησε να πάρεις αντίγραφο ασφαλείας από ανοικτά αρχεία με τη χρήση vss (για έκδοση windows 2000 και μεταγενέστερη)
+(--vss)</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Backup open files</source>
+        <translation>Backup ανοικτών αρχείων</translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <source>Restore backed-up windows permissions localized in nt-streams 
+(--restore-nt-streams)</source>
+        <translation>Επαναφορά αντίγραφων ασφαλείας δικαιωμάτων αρχείων σε windows - nt-streams
+(--restore-nt-streams)</translation>
+    </message>
+    <message>
+        <location line="+535"/>
         <location line="+10"/>
         <source>Repeat any command that fails, x times</source>
         <translation>Επανάληψη οποιασδήποτε εντολής που αποτυγχάνει, x φορές</translation>
@@ -3545,7 +3707,7 @@ Leave unchecked to create an extra directory inside destination</source>
         <translation>Άκυρο</translation>
     </message>
     <message>
-        <location line="-2950"/>
+        <location line="-3067"/>
         <source>Exclude</source>
         <translation>Απόκλεισε</translation>
     </message>
@@ -3556,12 +3718,12 @@ Leave unchecked to create an extra directory inside destination</source>
     </message>
     <message>
         <location line="+18"/>
-        <location line="+1550"/>
+        <location line="+1612"/>
         <source>Templates</source>
         <translation>Προκαθορισμένα</translation>
     </message>
     <message>
-        <location line="-1523"/>
+        <location line="-1585"/>
         <source>Exclude all temp folders (**/*tmp*/)</source>
         <translation>Απόκλεισε όλους τους προσωρινούς φάκελους (**/*tmp*/)</translation>
     </message>
@@ -3591,12 +3753,7 @@ Leave unchecked to create an extra directory inside destination</source>
         <translation>Αρχεία backup</translation>
     </message>
     <message>
-        <location line="+31"/>
-        <source>Exclude system folders /var, /proc, /dev &amp; /sys (/var/**, /proc/**, /dev/**, /sys/**)</source>
-        <translation>Απόκλεισε φακέλους συστήματος /var, /proc, /dev &amp; /sys (/var/**, /proc/**, /dev/**, /sys/**)</translation>
-    </message>
-    <message>
-        <location line="+6"/>
+        <location line="+37"/>
         <source>System folders</source>
         <translation>Φάκελοι συστήματος</translation>
     </message>
@@ -3643,14 +3800,14 @@ Leave unchecked to create an extra directory inside destination</source>
     <message>
         <location line="+3"/>
         <location line="+371"/>
-        <location line="+1220"/>
+        <location line="+1337"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>add</source>
         <translation>Προσθήκη</translation>
     </message>
     <message>
-        <location line="-2153"/>
+        <location line="-2270"/>
         <location line="+31"/>
         <source>Exclude list</source>
         <translation>Λίστα αποκλεισμένων</translation>
@@ -3702,7 +3859,12 @@ trailing / - only directory is matched, not regular files, symlinks or devices</
         <translation>Εισάγετε την περιγραφή της εργασίας</translation>
     </message>
     <message>
-        <location line="+321"/>
+        <location line="+173"/>
+        <source>Exclude system folders /var, /proc, /dev &amp; /sys (/var/run/**, /run/**, /proc/**, /dev/**, /sys/**)</source>
+        <translation>Απόκλεισε φακέλους συστήματος /var, /proc, /dev &amp; /sys (/var/run/**, /run/**, /proc/**, /dev/**, /sys/**)</translation>
+    </message>
+    <message>
+        <location line="+148"/>
         <source>Exclude all user&apos;s .gvfs folders (**/.gvfs/)</source>
         <translation>Απόκλεισε όλους τους καταλόγους χρήστη .gvfs (**/.gvfs/)</translation>
     </message>
@@ -3720,68 +3882,68 @@ trailing / - only directory is matched, not regular files, symlinks or devices</
     <message>
         <location line="+3"/>
         <location line="+366"/>
-        <location line="+1220"/>
+        <location line="+1337"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>remove</source>
         <translation>Αφαίρεση</translation>
     </message>
     <message>
-        <location line="-2152"/>
+        <location line="-2269"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Edit highlighted inclusion</source>
         <translation>Επεξεργασία της επιλογής</translation>
     </message>
     <message>
-        <location line="-2163"/>
+        <location line="-2280"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>edit</source>
         <translation>επεξεργασία</translation>
     </message>
     <message>
-        <location line="-2152"/>
+        <location line="-2269"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion up</source>
         <translation>μετακίνηση της επιλογής επάνω</translation>
     </message>
     <message>
-        <location line="-2163"/>
+        <location line="-2280"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move up</source>
         <translation>μετακίνηση επάνω</translation>
     </message>
     <message>
-        <location line="-2152"/>
+        <location line="-2269"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion down</source>
         <translation>μετακίνηση της επιλογής κάτω</translation>
     </message>
     <message>
-        <location line="-2163"/>
+        <location line="-2280"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move down</source>
         <translation>μετακίνηση κάτω</translation>
     </message>
     <message>
-        <location line="-2060"/>
+        <location line="-2177"/>
         <source>Include ONLY this list of patterns. Nothing more.
 Please refer to the manual for better understanding of include rules.
 This will disable the exclude feature.</source>
@@ -3888,7 +4050,7 @@ trailing / - only directory is matched, not regular files, symlinks or devices</
         <translation>Δώστε το μονοπάτι προς το αρχείο που περιέχει το password για το rsync (όχι το ssh) (αφήστε το κενό αν δεν σας αφορά).</translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+19"/>
         <source>rsync password file:</source>
         <translation>Αρχείο κωδικού rsync:</translation>
     </message>
@@ -3903,7 +4065,7 @@ trailing / - only directory is matched, not regular files, symlinks or devices</
         <translation>Απομακρυσμένη ενότητα</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+74"/>
         <source>Use ssh as transport shell</source>
         <translation>Χρησιμοποιήστε ssh σαν κέλυφος μεταφοράς</translation>
     </message>
@@ -3913,7 +4075,12 @@ trailing / - only directory is matched, not regular files, symlinks or devices</
         <translation>ssh</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+75"/>
+        <source>password:</source>
+        <translation>κωδικός:</translation>
+    </message>
+    <message>
+        <location line="+91"/>
         <source>Enter the full path of the file that contains the private ssh authentication key (leave blank if not applicable).
 
 Note that you have to do all actions needed for a passwordless ssh remote connection using an OpenSSH key pair</source>
@@ -3922,22 +4089,22 @@ Note that you have to do all actions needed for a passwordless ssh remote connec
 Σημειώστε ότι πρέπει να κάνετε όλα τα απαραίτητα βήματα για μια ssh σύνδεση χωρίς password και την χρήση ζεύγους κλειδιών OpenSSH</translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="-31"/>
         <source>private key file :</source>
         <translation>Αρχείο προσωπικού κλειδιού :</translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="-88"/>
         <source>Enter the port you would like to use for the ssh connection (leave blank for default port)</source>
         <translation>Βάλτε το port που θέλετε να χρησιμοποιήσετε για την σύνδεση ssh (αφήστε το κενό για port προεπιλογής)</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="-25"/>
         <source>port :</source>
         <translation>Θύρα :</translation>
     </message>
     <message>
-        <location line="+30"/>
+        <location line="+267"/>
         <source>Command Options</source>
         <translation>Επιλογές εντολής</translation>
     </message>
@@ -3949,27 +4116,7 @@ If you have no idea what these mean, leave them untouched !!</source>
  Εάν δεν έχετε ιδέα τι σημαίνουν αυτά, αφήστε τα απείραχτα !!</translation>
     </message>
     <message>
-        <location line="+22"/>
-        <source>backend</source>
-        <translation>Βασικό εργαλείο</translation>
-    </message>
-    <message>
-        <location line="+24"/>
-        <source>rsync</source>
-        <translation>rsync</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>rdiff-backup</source>
-        <translation>rdiff-backup</translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>rsnapshot</source>
-        <translation>rsnapshot</translation>
-    </message>
-    <message>
-        <location line="+80"/>
+        <location line="+84"/>
         <source>Delete files on the destination that don't exist on the source
 . &quot;Recurse into directories&quot; has to be selected 
 (--delete-after &amp; --delete-excluded if &quot;Exclude&quot; is used)</source>
@@ -4081,7 +4228,7 @@ WARNING: All files have to be included in the transfer set !!
         <translation>Αγνόησε αρχεία με τον τρόπο του CVS</translation>
     </message>
     <message>
-        <location line="+142"/>
+        <location line="+197"/>
         <source>User defined</source>
         <translation>Ορισμένα από τον χρήστη</translation>
     </message>
@@ -4175,7 +4322,7 @@ ATTENTION: check this if you really know what you&apos;re doing</source>
         <translation>Εισάγετε εδώ μια εντολή για να εκτελεστεί μετά από τη διαδικασία και πατήστε το πλήκτρο &quot;προσθήκη&quot; για να το προσθέσετε στην κατωτέρω λίστα</translation>
     </message>
     <message>
-        <location filename="../src/modifyDialog.cpp" line="-104"/>
+        <location filename="../src/modifyDialog.cpp" line="-106"/>
         <source>Select source directory</source>
         <comment>file selection dialog title</comment>
         <translation>Επέλεξε καταλόγο πηγή</translation>
@@ -4193,13 +4340,14 @@ ATTENTION: check this if you really know what you&apos;re doing</source>
         <translation>Επέλεξε αρχείο password για rsync</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+7"/>
+        <location line="+2"/>
         <source>Select ssh keyfile</source>
         <comment>file selection dialog title</comment>
         <translation>Επέλεξε αρχείο κλειδιού ssh</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+5"/>
         <location line="+6"/>
         <source>Select command to be executed</source>
         <comment>file selection dialog title</comment>
@@ -4253,7 +4401,7 @@ ATTENTION: check this if you really know what you&apos;re doing</source>
         <translation>Αυτό δεν επιτρέπεται γιατί το &apos;/&apos; δεν έχει πραγματικό όνομα</translation>
     </message>
     <message>
-        <location line="-300"/>
+        <location line="-334"/>
         <source>Leave the box checked, to &lt;b&gt;STOP&lt;/b&gt; the execution of running task if this command exits with an error</source>
         <translation>Αφήστε το πεδίο τσεκαρισμένο για να &lt;b&gt;ΣΤΑΜΑΤΗΣΕΤΕ&lt;/b&gt; την εκτέλεση της τρέχουσας εργασίας αν η εντολή τελειώσει με σφάλμα</translation>
     </message>
@@ -4264,7 +4412,7 @@ ATTENTION: check this if you really know what you&apos;re doing</source>
         <translation>Χρησιμοποιείστε τα πεδία για να &lt;b&gt;ΣΤΑΜΑΤΗΣΕΤΕ&lt;/b&gt; την εκτέλεση της εργασίας αν υπάρξει σφάλμα</translation>
     </message>
     <message>
-        <location line="+298"/>
+        <location line="+332"/>
         <source>You have declared the &apos;/&apos; (root) directory as source and have NOT checked the &apos;Do NOT create extra directory&apos; box</source>
         <comment>message box message - line1</comment>
         <translation>Έχετε δηλώσει τον ριζικό κατάλογο&quot;/&quot; ως πηγή χωρίς να επιλέξετε το πεδίο &quot;ΜΗ δημιουργήσεις επί πλέον κατάλογο&quot;</translation>
@@ -4385,19 +4533,19 @@ ATTENTION: check this if you really know what you&apos;re doing</source>
         <translation>Έχετε ήδη προσθέσει αυτό το αντικείμενο για εξαίρεση</translation>
     </message>
     <message>
-        <location line="+54"/>
+        <location line="+55"/>
         <source>You have already added this include item</source>
         <comment>message box message</comment>
         <translation>Έχετε ήδη προσθέσει αυτό το αντικείμενο για να συμπεριληφθεί</translation>
     </message>
     <message>
-        <location line="+52"/>
+        <location line="+53"/>
         <source>You have already added this option</source>
         <comment>message box message</comment>
         <translation>Έχετε ήδη προσθέσει αυτήν την επιλογή</translation>
     </message>
     <message>
-        <location line="+265"/>
+        <location line="+266"/>
         <location line="+25"/>
         <location line="+25"/>
         <location line="+25"/>
@@ -4433,7 +4581,7 @@ ATTENTION: check this if you really know what you&apos;re doing</source>
         <translation>ακύρωση επεξεργασίας</translation>
     </message>
     <message>
-        <location filename="../ui/modifyDialog.ui" line="-1943"/>
+        <location filename="../ui/modifyDialog.ui" line="-2060"/>
         <source>Read exclude patterns from file</source>
         <translation>Ανάγνωση σχεδίων αποκλεισμού από αρχείο</translation>
     </message>
@@ -4499,14 +4647,19 @@ Please refer to the manual for better understanding of include rules.</source>
         <translation>Ανάγνωση σχεδίων από αρχείο</translation>
     </message>
     <message>
-        <location line="+303"/>
-        <location line="+149"/>
-        <location line="+891"/>
+        <location line="+344"/>
+        <location line="+248"/>
+        <location line="+868"/>
         <source>browse locally</source>
         <translation>τοπική περιήγηση</translation>
     </message>
     <message>
-        <location line="-393"/>
+        <location line="-835"/>
+        <source>additional options:</source>
+        <translation>πρόσθετες επιλογές:</translation>
+    </message>
+    <message>
+        <location line="+387"/>
         <source>Check this is you use a FAT/NTFS partition as destination.
 Data ownership and permissions will NOT be preserved.
 (-t --modify-window=1)</source>
@@ -4520,7 +4673,12 @@ Data ownership and permissions will NOT be preserved.
         <translation>Ο προορισμός είναι FAT/NTFS</translation>
     </message>
     <message>
-        <location line="+914"/>
+        <location line="+114"/>
+        <source>Restore permissions</source>
+        <translation>Επαναφορά δικαιωμάτων</translation>
+    </message>
+    <message>
+        <location line="+855"/>
         <location line="+22"/>
         <source>Set the total number of backup snapshots to keep</source>
         <translation>Θέσε το πλήθος των στιγμιότυπων αντιγράφων ασφαλείας προς διατήρηση</translation>
@@ -4798,13 +4956,13 @@ eg the contents of the directory &quot;/media/music/Album/&quot;</source>
     </message>
     <message>
         <location line="+53"/>
-        <location line="+135"/>
-        <location line="+40"/>
+        <location line="+139"/>
+        <location line="+45"/>
         <source>No schedules are declared !!</source>
         <translation>Δεν έχει δηλωθεί κανένα πρόγραμμα !!</translation>
     </message>
     <message>
-        <location line="-124"/>
+        <location line="-133"/>
         <source>Unable to create schedule file</source>
         <translation>Ήταν αδύνατη η δημιουργία αρχείου προγραμματισμού</translation>
     </message>
@@ -4830,7 +4988,7 @@ eg the contents of the directory &quot;/media/music/Album/&quot;</source>
     </message>
     <message>
         <location filename="../ui/scheduleDialog.ui" line="+182"/>
-        <location filename="../src/scheduleDialog.cpp" line="+53"/>
+        <location filename="../src/scheduleDialog.cpp" line="+62"/>
         <source>Profile schedule details</source>
         <translation>Λεπτομέρειες προγράμματος προφίλ</translation>
     </message>
@@ -4845,12 +5003,18 @@ eg the contents of the directory &quot;/media/music/Album/&quot;</source>
         <translation>Εκτέλεσε το προφίλ</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
+        <source>hourly at minute </source>
+        <comment>full phrase: Execute profile &lt;PROFILENAME&gt; hourly at minute &lt;MM&gt;</comment>
+        <translation>ωριαία κάθε</translation>
+    </message>
+    <message>
+        <location line="+4"/>
         <source>at</source>
         <translation>στις</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+10"/>
         <source>every</source>
         <translation>κάθε</translation>
     </message>
@@ -4861,7 +5025,7 @@ eg the contents of the directory &quot;/media/music/Album/&quot;</source>
         <translation>ημέρα</translation>
     </message>
     <message>
-        <location filename="../ui/scheduleDialog.ui" line="+245"/>
+        <location filename="../ui/scheduleDialog.ui" line="+251"/>
         <location filename="../src/scheduleDialog.cpp" line="-36"/>
         <source>Sunday</source>
         <translation>Κυριακή</translation>
@@ -5091,12 +5255,13 @@ eg the contents of the directory &quot;/media/music/Album/&quot;</source>
         <translation>Δεκεμβρίου</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+90"/>
+        <location line="+26"/>
         <source>Unable to create cron file</source>
         <translation>Ήταν αδύνατη η δημιουργία αρχείου cron</translation>
     </message>
     <message>
-        <location filename="../ui/scheduleDialog.ui" line="-440"/>
+        <location filename="../ui/scheduleDialog.ui" line="-446"/>
         <source>luckyBackup - schedule</source>
         <translation>luckyBackup - πρόγραμμα</translation>
     </message>
@@ -5164,7 +5329,12 @@ p, li { white-space: pre-wrap; }
         <translation>χρόνος (ώρα:λεπτά) :</translation>
     </message>
     <message>
-        <location line="+40"/>
+        <location line="+27"/>
+        <source>set this value to -1 for the schedule to occur every hour</source>
+        <translation>Θέστε αυτή την τιμή σε -1 για προγραμματισμό κάθε μια ώρα</translation>
+    </message>
+    <message>
+        <location line="+19"/>
         <source>:</source>
         <translation>:</translation>
     </message>
@@ -5422,7 +5592,7 @@ p, li { white-space: pre-wrap; }
         <translation>31</translation>
     </message>
     <message>
-        <location line="-485"/>
+        <location line="-491"/>
         <source>Check this if your machine does not support a graphical environment (eg server)</source>
         <translation>Επιλέξτε αυτό εαν το μηχάνημα σας δεν υποστηρίζει γραφικό περιβάλλον (πχ server)</translation>
     </message>
@@ -5432,7 +5602,7 @@ p, li { white-space: pre-wrap; }
         <translation>κατάσταση κοσνόλας</translation>
     </message>
     <message>
-        <location line="+516"/>
+        <location line="+522"/>
         <source>okay</source>
         <translation>Εντάξει</translation>
     </message>
@@ -5452,7 +5622,7 @@ p, li { white-space: pre-wrap; }
         <translation>cronIT !!</translation>
     </message>
     <message>
-        <location filename="../src/scheduleDialog.cpp" line="-555"/>
+        <location filename="../src/scheduleDialog.cpp" line="-657"/>
         <location line="+78"/>
         <source>The existent schedule file is not a valid luckyBackup v.</source>
         <comment>v is for version</comment>
@@ -5481,7 +5651,7 @@ p, li { white-space: pre-wrap; }
         <translation>Το crontab ενημερώθηκε επιτυχώς</translation>
     </message>
     <message>
-        <location line="+91"/>
+        <location line="+100"/>
         <source>no crontab entries exist</source>
         <translation>Δεν υπάρχουν δεδομένα crontab</translation>
     </message>
@@ -5628,12 +5798,12 @@ p, li { white-space: pre-wrap; }
         <translation>luckyBackup</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+18"/>
         <source>declaration of paths</source>
         <translation>Ορισμός τοποθεσιών</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+30"/>
         <source>rsync:</source>
         <translation>rsync:</translation>
     </message>
@@ -5645,24 +5815,84 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+10"/>
         <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
         <source>browse locally</source>
         <translation>τοπική περιήγηση</translation>
     </message>
     <message>
-        <location line="-47"/>
+        <location line="-367"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
         <location line="+64"/>
         <source>Use default value</source>
         <translation>Χρήση προκαθορισμένης τιμής</translation>
     </message>
     <message>
-        <location line="-46"/>
-        <source>ssh</source>
-        <translation>ssh</translation>
+        <location line="-366"/>
+        <source>ssh:</source>
+        <translation>ssh:</translation>
     </message>
     <message>
         <location line="+19"/>
         <source>Enter the full path of the ssh command</source>
         <translation>Εισάγετε την πλήρη τοποθεσία της εντολής ssh</translation>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>cygpath:</source>
+        <translation>cygpath:</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the cygpath command</source>
+        <translation>Εισάγετε την πλήρη τοποθεσία της εντολής cygpath</translation>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>dosdev:</source>
+        <translation>dosdev:</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the dosdev command</source>
+        <translation>Εισάγετε την πλήρη τοποθεσία της εντολής dosdev</translation>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>main dir:</source>
+        <translation>κυρίως κατάλογος:</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the luckybackup directory</source>
+        <translation>Δώστε το πλήρες μονοπάτι προς τον κατάλογο του luckybackup</translation>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>vshadow dir:</source>
+        <translation>vshadow dir:</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the vshadow directory</source>
+        <translation>Δώστε το πλήρες μονοπάτι προς τον κατάλογο του vshadow</translation>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>temp dir:</source>
+        <translation>προσωρινός κατάλογος:</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the temporary directory</source>
+        <translation>Δώστε το πλήρες μονοπάτι προς τον προσωρινό κατάλογο</translation>
     </message>
     <message>
         <location line="+58"/>
@@ -5675,7 +5905,7 @@ p, li { white-space: pre-wrap; }
         <translation>Ακύρωση</translation>
     </message>
     <message>
-        <location filename="../src/winDialog.cpp" line="+102"/>
+        <location filename="../src/winDialog.cpp" line="+147"/>
         <source>Select rsync command</source>
         <comment>file selection dialog title</comment>
         <translation>Επιλογή εντολής rsync</translation>
@@ -5683,14 +5913,28 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+1"/>
         <location line="+6"/>
+        <location line="+6"/>
+        <location line="+6"/>
         <source>Executable Files (*.exe)</source>
         <translation>Εκτελέσιμα αρχεία (*.exe)</translation>
     </message>
     <message>
-        <location line="-1"/>
+        <location line="-13"/>
         <source>Select ssh command</source>
         <comment>file selection dialog title</comment>
         <translation>Επιλογή εντολής ssh</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Select cygpath command</source>
+        <comment>file selection dialog title</comment>
+        <translation>Επιλογή εντολής cygpath</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Select dosdev command</source>
+        <comment>file selection dialog title</comment>
+        <translation>Επιλογή εντολής dosdev</translation>
     </message>
 </context>
 </TS>

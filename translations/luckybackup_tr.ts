@@ -100,7 +100,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/global.cpp" line="+1067"/>
+        <location filename="../src/global.cpp" line="+1145"/>
         <source>The task list is empty</source>
         <translation>Görev listesi boş</translation>
     </message>
@@ -131,7 +131,7 @@
         <translation>Hiç görev içermediniz</translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+51"/>
         <source>The following included tasks &lt;b&gt;share the same destination directory&lt;/b&gt; (all together or at groups) and at least one of them will backup the contents of a directory</source>
         <translation>Aşağıdaki içerilmiş görevler &lt;b&gt;aynı hedef dizini paylaşmakta&lt;/b&gt; (hep birlikte ya da gruplar halinde) ve en azından bir tanesi bir dizin içeriğini yedekleyecek</translation>
     </message>
@@ -146,7 +146,7 @@
         <translation>Lütfen ilerlemeden önce ilgili içerme kutularını temizleyin ya da tüm görev türlerini &apos;&lt;b&gt;Dizin içeriğini yedekle&lt;/b&gt;&apos;den başka birine değiştirin veya &apos;Dizin içeriğini yedekle&apos; ile &apos;&lt;b&gt;Yalnızca içer&lt;/b&gt;&apos; seçeneğini birlikte kullanın</translation>
     </message>
     <message>
-        <location line="+593"/>
+        <location line="+674"/>
         <source>pre-task execution of command</source>
         <comment>Full phrase: pre-task execution of command: &lt;COMMAND&gt; starting</comment>
         <translation>görev öncesi yürütülen komut</translation>
@@ -318,7 +318,7 @@
         <translation>Profil, kayıt dosyaları ve şipşak veri yedekleniyor</translation>
     </message>
     <message>
-        <location line="+93"/>
+        <location line="+111"/>
         <source>Could not open the logfile</source>
         <translation>Kayıt dosyası açılamıyor</translation>
     </message>
@@ -328,7 +328,7 @@
         <translation>Kayıt dosyası mevcut değil</translation>
     </message>
     <message>
-        <location line="+63"/>
+        <location line="+78"/>
         <source>The specified command is probably not installed</source>
         <translation>Belirtilen komut muhtemelen kurulmamış</translation>
     </message>
@@ -343,7 +343,7 @@
         <translation>komut:</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>exit code: </source>
         <translation>çıkış kodu:</translation>
     </message>
@@ -374,13 +374,13 @@
     </message>
     <message>
         <location line="+10"/>
-        <location line="+44"/>
+        <location line="+61"/>
         <location line="+99"/>
         <source>status</source>
         <translation>durum</translation>
     </message>
     <message>
-        <location line="-143"/>
+        <location line="-160"/>
         <source>OK</source>
         <translation type="unfinished"/>
     </message>
@@ -392,25 +392,31 @@
     </message>
     <message>
         <location line="-14"/>
-        <location line="+91"/>
+        <location line="+108"/>
         <source>Source directory</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-82"/>
+        <location line="-99"/>
         <location line="+19"/>
         <source>Using remote, check is skipped</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location line="-9"/>
-        <location line="+87"/>
+        <location line="+104"/>
         <location line="+59"/>
         <source>Destination directory</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-129"/>
+        <location line="-137"/>
+        <source>free</source>
+        <comment>as in free disk space</comment>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>WARNING</source>
         <translation type="unfinished"/>
     </message>
@@ -634,6 +640,16 @@
     </message>
     <message>
         <location line="+2"/>
+        <source>Juan Ramon Alfaro Martinez</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Code contributor for remote &amp; vss support regarding the windows port</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Jack Fink</source>
         <translation>Jack Fink</translation>
     </message>
@@ -698,6 +714,16 @@
         <translation type="unfinished"/>
     </message>
     <message>
+        <location line="+2"/>
+        <source>Dimitris Jemos</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Slackel package maintainer</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
         <location line="+3"/>
         <source>ex Fedora package maintainer</source>
         <translation type="unfinished"/>
@@ -718,24 +744,25 @@
         <translation>Stergios Prosiniklis</translation>
     </message>
     <message>
-        <location line="-57"/>
-        <location line="+58"/>
+        <location line="-63"/>
+        <location line="+64"/>
         <source>Greek manual translator</source>
         <translation>Yunanca el kitabı çevirmeni</translation>
     </message>
     <message>
         <location line="+3"/>
         <location line="+3"/>
+        <location line="+3"/>
         <source>German gui translator</source>
         <translation>Almanca gui çevirmeni</translation>
     </message>
     <message>
-        <location line="-1"/>
+        <location line="-4"/>
         <source>Wilfried Schobel</source>
         <translation>Wilfried Schobel</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+6"/>
         <source>Sergio Gameiro</source>
         <translation>Sergio Gameiro</translation>
     </message>
@@ -761,23 +788,25 @@
         <translation>Fransızca gui çevirmeni ve değerli paketleme danışmanı (ve daha fazlası)</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+11"/>
         <source>Raffaele</source>
         <translation>Raffaele</translation>
     </message>
     <message>
         <location line="-2"/>
         <location line="+3"/>
+        <location line="+3"/>
+        <location line="+3"/>
         <source>Italian gui translator</source>
         <translation>İtalyanca gui çevirmeni</translation>
     </message>
     <message>
-        <location line="-7"/>
+        <location line="-16"/>
         <source>Aurelien Merckel</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+18"/>
         <source>Denis Skorski</source>
         <translation>Denis Skorski</translation>
     </message>
@@ -793,11 +822,17 @@
     </message>
     <message>
         <location line="+1"/>
+        <location line="+3"/>
         <source>Dutch gui translator</source>
         <translation>Felemenkçe gui çevirmeni</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="-1"/>
+        <source>Martin Grashoff (linuxrev)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Subhi Honaco</source>
         <translation>Subhi Honaco</translation>
     </message>
@@ -827,7 +862,7 @@
         <translation>Romence gui çevirmeni</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+20"/>
         <source>Roger Calvo</source>
         <translation type="unfinished"/>
     </message>
@@ -837,7 +872,7 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+18"/>
         <source>Javi Romero</source>
         <translation>Javi Romero</translation>
     </message>
@@ -857,7 +892,7 @@
         <translation>v.0.3 gui tasarımcısı</translation>
     </message>
     <message>
-        <location line="-112"/>
+        <location line="-151"/>
         <source>Dimitris Kalamaras</source>
         <translation>Dimitris Kalamaras</translation>
     </message>
@@ -867,22 +902,54 @@
         <translation>Eğer o ve onun bilgilendirici rehberleri olmasaydı bu projeyi asla başlatmazdım</translation>
     </message>
     <message>
-        <location line="+63"/>
+        <location line="+59"/>
+        <source>Thomas Glatt</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+13"/>
+        <location line="+3"/>
         <source>French gui translator</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="-1"/>
+        <source>Sébastien Bourgain</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>pinguinofurioso</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Alessio Ganci</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+24"/>
+        <source>Matej Urbančič</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>Marvin Gomez</source>
         <translation>Marvin Gomez</translation>
     </message>
     <message>
         <location line="+1"/>
+        <location line="+3"/>
         <source>Spanish gui translator</source>
         <translation>İspanyolca gui çevirmeni</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="-1"/>
+        <source>Antonio Jose Molina</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Fredrik Holmgren</source>
         <translation>Fredrik Holmgren</translation>
     </message>
@@ -909,6 +976,46 @@
     <message>
         <location line="+1"/>
         <source>Estonian gui translator</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Nicolay Boychev</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Bulgarian gui translator</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Manuel Meixide</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Galician gui translator</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Roger Foss</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Norwegian gui translator</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Pin-hsien Li</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Chinese (Taiwan) gui translator</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -939,6 +1046,16 @@
     <message>
         <location line="+1"/>
         <source>backupwhenidle python script developer</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Bjorn Rietdijk</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>valuable OS/2 and windows tester</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1074,7 +1191,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Lisans Anlaşması</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="-211"/>
+        <location filename="../src/about.cpp" line="-253"/>
         <source>luckyBackup is distributed under the terms of the &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU General Public License&lt;/a&gt;</source>
         <comment>Please leave the tags &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt; &amp; &lt;/a&gt; intact and surrounding the GNU General Public License !!</comment>
         <translation>luckyBackup &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU Genel Kamu Lisansı&lt;/a&gt; koşulları altında dağıtılmaktadır</translation>
@@ -1086,32 +1203,33 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;b&gt;Özgür bir yazılımdır&lt;/b&gt;: Lisansın 3. sürümünde Özgür Yazılım Kurumu&apos;nca yayınlandığı gibi, GNU Genel Kamu Lisansı şartları altında yeniden dağıtabilir ve/veya değiştirebilirsiniz.</translation>
     </message>
     <message>
-        <location line="+75"/>
+        <location line="+81"/>
         <source>Thomas Janssen</source>
         <translation>Thomas Janssen</translation>
     </message>
     <message>
-        <location line="-5"/>
+        <location line="-8"/>
         <source>Fedora package maintainer (official repo)</source>
         <translation>Fedora paket idamecisi (resmi repo)</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+17"/>
         <source>Karsten Jaschultowski</source>
         <translation>Karsten Jaschultowski</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+24"/>
         <source>Francesco Braile</source>
         <translation>Francesco Braile</translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location line="+30"/>
         <source>Andrej Znidarsic</source>
         <translation>Andrej Znidarsic</translation>
     </message>
     <message>
         <location line="+1"/>
+        <location line="+3"/>
         <source>Slovenian gui translator</source>
         <translation>Slovakça gui çevirmeni</translation>
     </message>
@@ -1126,7 +1244,7 @@ p, li { white-space: pre-wrap; }
         <translation>Türkçe gui çevirmeni</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+38"/>
         <source>Tito Poquito</source>
         <translation>Tito Poquito</translation>
     </message>
@@ -1136,7 +1254,7 @@ p, li { white-space: pre-wrap; }
         <translation>slackware paket idamecisi (SlackBuilds Deposu)</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+26"/>
         <source>...my other half, &lt;b&gt;Dimitra&lt;/b&gt; that bears with me all these times that this project is under development</source>
         <translation>bu projenin geliştirme aşaması boyunca bana katlanan, diğer yarım, &lt;b&gt;Dimitra&lt;/b&gt;</translation>
     </message>
@@ -1159,15 +1277,8 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+7"/>
-        <source>Enter the full command with arguments to run
-eg
-sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+9"/>
-        <location line="+204"/>
+        <location line="+38"/>
+        <location line="+268"/>
         <location line="+14"/>
         <source>Use default</source>
         <extracomment>This means &quot;use the default value for this field&quot;
@@ -1178,7 +1289,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-205"/>
+        <location line="-218"/>
         <source>Arguments</source>
         <translation type="unfinished"/>
     </message>
@@ -1221,6 +1332,16 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <location line="+10"/>
         <source>%e No of errors</source>
         <translation>%e hata sayısı</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>If unchecked &quot;TLS auto&quot; is used. Only available for sendemail</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Disable TLS</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+25"/>
@@ -1293,12 +1414,31 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <translation>İptal et</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="-348"/>
         <source>Specify the conditions to send an email</source>
         <translation>Bir eposta gönderme koşullarını belirleyin</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="-38"/>
+        <source>Enter the command to run
+eg
+sendemail</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>arguments:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Enter arguments of the email command
+eg
+ -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+25"/>
         <source>Conditions</source>
         <translation>Koşullar</translation>
     </message>
@@ -1333,7 +1473,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/emailDialog.cpp" line="+124"/>
+        <location filename="../src/emailDialog.cpp" line="+136"/>
         <source>The command field is empty</source>
         <translation type="unfinished"/>
     </message>
@@ -1407,7 +1547,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>luckyBackupWindow</name>
     <message>
-        <location filename="../src/executenow.cpp" line="+135"/>
+        <location filename="../src/executenow.cpp" line="+161"/>
         <source>commands output</source>
         <comment>output window label</comment>
         <translation>komut çıktısı</translation>
@@ -1452,17 +1592,17 @@ p, li { white-space: pre-wrap; }
         <translation>bitti</translation>
     </message>
     <message>
-        <location line="-149"/>
-        <location line="+151"/>
-        <location line="+749"/>
+        <location line="-173"/>
+        <location line="+175"/>
+        <location line="+1065"/>
         <location line="+21"/>
-        <location line="+25"/>
+        <location line="+30"/>
         <location line="+1"/>
         <source>simulation mode</source>
         <translation>benzetim kipi</translation>
     </message>
     <message>
-        <location line="-792"/>
+        <location line="-1113"/>
         <source>Could not update last execution time of tasks</source>
         <translation>Görevlerin son yürütme zamanı güncellenemiyor</translation>
     </message>
@@ -1489,7 +1629,7 @@ p, li { white-space: pre-wrap; }
         <translation>Ge&amp;ri yükle</translation>
     </message>
     <message>
-        <location line="-195"/>
+        <location line="-219"/>
         <source>execution of profile:</source>
         <comment>tray message - execution of profile: &lt;PROFILENAME&gt; in progress...</comment>
         <translation>yürütülen profil:</translation>
@@ -1501,7 +1641,7 @@ p, li { white-space: pre-wrap; }
         <translation>sürüyor...</translation>
     </message>
     <message>
-        <location line="+373"/>
+        <location line="+451"/>
         <source>Removed all older snapshots data</source>
         <translation>Tüm eski şipşak verisi silindi</translation>
     </message>
@@ -1511,22 +1651,22 @@ p, li { white-space: pre-wrap; }
         <translation>tüm eski şipşak verisini silme başarısız</translation>
     </message>
     <message>
-        <location line="+405"/>
+        <location line="+520"/>
         <source>Unknown error</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+106"/>
+        <location line="+253"/>
         <location line="+5"/>
         <location line="+6"/>
         <location line="+21"/>
-        <location line="+24"/>
-        <location line="+70"/>
+        <location line="+27"/>
+        <location line="+72"/>
         <source>Elapsed time</source>
         <translation>Geçen zaman</translation>
     </message>
     <message>
-        <location line="-125"/>
+        <location line="-130"/>
         <source>pre-task execution of command</source>
         <translation>görev öncesi yürütülen komut</translation>
     </message>
@@ -1558,7 +1698,7 @@ p, li { white-space: pre-wrap; }
         <translation>dosyalar siliniyor</translation>
     </message>
     <message>
-        <location line="+182"/>
+        <location line="+187"/>
         <source>trying to send an email</source>
         <translation type="unfinished"/>
     </message>
@@ -1568,7 +1708,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-221"/>
+        <location line="-226"/>
         <source>Source</source>
         <translation>Kaynak</translation>
     </message>
@@ -1578,7 +1718,7 @@ p, li { white-space: pre-wrap; }
         <translation>Hedef</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+22"/>
         <location line="+1"/>
         <source>All tasks completed</source>
         <translation>Tüm görevler tamamlandı</translation>
@@ -1803,7 +1943,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;%1 %2</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="+766"/>
+        <location filename="../src/luckybackupwindow.cpp" line="+775"/>
         <source>You have asked for a RESTORE task to be created</source>
         <comment>'create restore' message line 1/4</comment>
         <translation>Bir GERİ YÜKLEME görevi oluşturulmasını talep ettiniz</translation>
@@ -1828,13 +1968,13 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/functions.cpp" line="+86"/>
-        <location filename="../src/luckybackupwindow.cpp" line="-424"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-432"/>
         <location line="+70"/>
         <location line="+14"/>
         <location line="+56"/>
         <location line="+85"/>
         <location line="+14"/>
-        <location line="+230"/>
+        <location line="+238"/>
         <location line="+155"/>
         <location line="+269"/>
         <source>ERROR</source>
@@ -1929,12 +2069,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/executenow.cpp" line="+132"/>
         <location filename="../src/functions.cpp" line="+4"/>
-        <location line="+65"/>
+        <location line="+70"/>
         <source>WARNING</source>
         <translation>UYARI</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="-63"/>
+        <location filename="../src/functions.cpp" line="-68"/>
         <source>default profile</source>
         <comment>Information window message. Full phrase: 'default profile &lt;PROFILENAME&gt; could not be saved'.</comment>
         <translation>öntanımlı profil</translation>
@@ -1958,7 +2098,7 @@ p, li { white-space: pre-wrap; }
         <translation>başarıyla kaydedildi</translation>
     </message>
     <message>
-        <location line="+47"/>
+        <location line="+52"/>
         <source>creating default profile ...</source>
         <comment>Information window message</comment>
         <translation>öntanımlı profil oluşturuluyor ...</translation>
@@ -1992,7 +2132,7 @@ p, li { white-space: pre-wrap; }
         <translation>Yine de ilerlemek ister misiniz?</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="-1150"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-1159"/>
         <source>super user</source>
         <comment>super user is the root user</comment>
         <translation>süper kullanıcı</translation>
@@ -2003,7 +2143,7 @@ p, li { white-space: pre-wrap; }
         <translation>süper kullanıcı kipi</translation>
     </message>
     <message>
-        <location line="+88"/>
+        <location line="+89"/>
         <source>Welcome to</source>
         <comment>full phrase: 'Welcome to luckyBackup'</comment>
         <translation>Hoşgeldiniz</translation>
@@ -2022,12 +2162,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+2"/>
-        <location line="+566"/>
+        <location line="+574"/>
         <source>The name you have entered contains only invalid characters</source>
         <translation>Girdiğiniz isim yalnızca geçersiz karakterler içeriyor</translation>
     </message>
     <message>
-        <location line="-552"/>
+        <location line="-560"/>
         <location line="+70"/>
         <location line="+156"/>
         <source>Profile</source>
@@ -2180,7 +2320,7 @@ p, li { white-space: pre-wrap; }
         <translation>şuna ayarlandı</translation>
     </message>
     <message>
-        <location line="+212"/>
+        <location line="+220"/>
         <source>Import Profile</source>
         <comment>this is a dialog title</comment>
         <translation>Profili İçe Aktarma</translation>
@@ -2224,16 +2364,16 @@ p, li { white-space: pre-wrap; }
         <translation>Dosya bulunamadı</translation>
     </message>
     <message>
-        <location line="-311"/>
+        <location line="-319"/>
         <location line="+64"/>
-        <location line="+285"/>
+        <location line="+293"/>
         <source>You have reached the maximum limit of supported tasks</source>
         <translation>Maksimum deskteklenebilir görev sınırına eriştiniz</translation>
     </message>
     <message>
-        <location line="-348"/>
+        <location line="-356"/>
         <location line="+64"/>
-        <location line="+285"/>
+        <location line="+293"/>
         <source>You have to remove a task if you wish to add another !!</source>
         <translation>Yenisini eklemek isterseniz bir görevi silmelisiniz!!</translation>
     </message>
@@ -2318,12 +2458,7 @@ p, li { white-space: pre-wrap; }
         <translation>Lütfen önce yönetmek için bir görev seçiniz</translation>
     </message>
     <message>
-        <location line="+79"/>
-        <source>You have only incuded tasks that are going to be skipped</source>
-        <translation>Yalnızca atlanacak görevleri içerdiniz</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+80"/>
         <source>nothing to do</source>
         <translation>yapılacak bir şey yok</translation>
     </message>
@@ -2338,7 +2473,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+71"/>
+        <location line="+76"/>
         <source>status</source>
         <translation>durum</translation>
     </message>
@@ -2434,19 +2569,19 @@ p, li { white-space: pre-wrap; }
         <translation>F5</translation>
     </message>
     <message>
-        <location filename="../src/executenow.cpp" line="-974"/>
+        <location filename="../src/executenow.cpp" line="-1295"/>
         <source>Aborting: Please wait for all processes to be killed</source>
         <translation>Yarıda kesiliyor: Lütfen tüm süreçlerin sonlandırılması için bekleyin</translation>
     </message>
     <message>
-        <location line="+129"/>
+        <location line="+197"/>
         <source>Removing old snapshots and logfiles of task</source>
         <comment>info message displayed during ...data removal
 Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comment>
         <translation>Şu görevin eski şipşak ve kayıt dosyaları siliniyor</translation>
     </message>
     <message>
-        <location line="+87"/>
+        <location line="+73"/>
         <location line="+12"/>
         <source>Removing</source>
         <translation>Siliniyor</translation>
@@ -2458,7 +2593,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>silme başarısız</translation>
     </message>
     <message>
-        <location line="+380"/>
+        <location line="+495"/>
         <source>Failed to start</source>
         <comment>this refers to a process</comment>
         <translation type="unfinished"/>
@@ -2494,7 +2629,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+116"/>
+        <location line="+263"/>
         <source>calculating</source>
         <comment>info message displayed during ...calculations</comment>
         <translation>hesaplanıyor</translation>
@@ -2517,12 +2652,17 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>dosyalar aktarılıyor</translation>
     </message>
     <message>
-        <location line="+91"/>
+        <location line="+15"/>
+        <source>Total files transfered</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+81"/>
         <source>ABORTED</source>
         <translation>YARIDA KESİLDİ</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="-555"/>
+        <location filename="../src/functions.cpp" line="-560"/>
         <source>&amp;Refresh</source>
         <comment>This is a top 'Profile' menu action</comment>
         <translation>&amp;Tazele</translation>
@@ -2792,19 +2932,19 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     </message>
     <message>
         <location line="+0"/>
-        <location line="+95"/>
+        <location line="+100"/>
         <source>Use the &quot;add&quot; button on the right to get started</source>
         <comment>Please keep the add word inside quotes</comment>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-69"/>
+        <location line="-74"/>
         <source>could not be saved</source>
         <comment>Information window message. Full phrase: '(default) profile &lt;PROFILENAME&gt; could not be saved'</comment>
         <translation>kaydedilemedi</translation>
     </message>
     <message>
-        <location line="+61"/>
+        <location line="+66"/>
         <source>default profile</source>
         <comment>Information window message. Full phrase: 'default profile &lt;PROFILENAME&gt; could not be created'.</comment>
         <translation>öntanımlı profil</translation>
@@ -2846,7 +2986,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>profil</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="-795"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-808"/>
         <source>Failed to duplicate profile</source>
         <comment>full phrase: 'Failed to duplicate profile &lt;PROFILENAME&gt;'</comment>
         <translation>Şu profil kopyalanamadı</translation>
@@ -2886,7 +3026,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Lütfen önce bir görev seçiniz</translation>
     </message>
     <message>
-        <location line="+230"/>
+        <location line="+238"/>
         <source>Hide information window</source>
         <comment>hide/show information window button tooltip</comment>
         <translation>Bilgi penceresini gizle</translation>
@@ -2898,7 +3038,12 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Bilgi penceresini göster</translation>
     </message>
     <message>
-        <location line="+378"/>
+        <location line="+287"/>
+        <source>You have only included tasks that are going to be skipped</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+96"/>
         <source>Manage Task</source>
         <comment>This is a top 'Task' menu action</comment>
         <translation>Görev Yönet</translation>
@@ -2915,7 +3060,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>&amp;Görev</translation>
     </message>
     <message>
-        <location filename="../src/executenow.cpp" line="-450"/>
+        <location filename="../src/executenow.cpp" line="-631"/>
         <source>Successfuly created destination directory</source>
         <translation>Hedef dizin başarıyla oluşturuldu</translation>
     </message>
@@ -2928,7 +3073,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
 <context>
     <name>manageDialog</name>
     <message>
-        <location filename="../src/manage.cpp" line="+87"/>
+        <location filename="../src/manage.cpp" line="+95"/>
         <source>profile</source>
         <translation>profil</translation>
     </message>
@@ -2978,20 +3123,13 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Kapat</translation>
     </message>
     <message>
-        <location filename="../src/manage.cpp" line="+130"/>
+        <location filename="../src/manage.cpp" line="+135"/>
         <source>Please select a snapshot from the list</source>
         <comment>Information message</comment>
         <translation>Lütfen listeden bir şipşak seçin</translation>
     </message>
     <message>
-        <location line="+20"/>
-        <location line="+8"/>
-        <source>Display of remote places is not supported</source>
-        <comment>Information message</comment>
-        <translation>Uzak yerlerin görüntülenmesi desteklenmiyor</translation>
-    </message>
-    <message>
-        <location line="+8"/>
+        <location line="+146"/>
         <source>This directory does not exist</source>
         <translation>Bu dizin mevcut değil</translation>
     </message>
@@ -3027,7 +3165,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Seçili eşzamanlama görevinin kayıt dosyasını göster</translation>
     </message>
     <message>
-        <location line="+78"/>
+        <location line="+83"/>
         <source>Please wait until the thread is terminated</source>
         <translation>Lütfen silsile sonlanana dek bekleyin</translation>
     </message>
@@ -3089,13 +3227,13 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
 <context>
     <name>manageWizard</name>
     <message>
-        <location filename="../src/manageWizard.cpp" line="+62"/>
+        <location filename="../src/manageWizard.cpp" line="+60"/>
         <source>not available</source>
         <comment>refers to a date-time</comment>
         <translation>mevcut değil</translation>
     </message>
     <message>
-        <location line="+346"/>
+        <location line="+361"/>
         <source>Delete backup</source>
         <comment>this is the title of a wizard</comment>
         <translation>Yedeği sil</translation>
@@ -3114,8 +3252,8 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Yol</translation>
     </message>
     <message>
-        <location line="-279"/>
-        <location line="+280"/>
+        <location line="-285"/>
+        <location line="+286"/>
         <source>WARNING</source>
         <translation>UYARI</translation>
     </message>
@@ -3174,12 +3312,12 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start' translated<
     <message>
         <location filename="../ui/manageWizard.ui" line="+240"/>
         <location filename="../src/manageWizard.cpp" line="+3"/>
-        <location line="+227"/>
+        <location line="+235"/>
         <source>simulation</source>
         <translation>benzetim</translation>
     </message>
     <message>
-        <location filename="../src/manageWizard.cpp" line="-222"/>
+        <location filename="../src/manageWizard.cpp" line="-230"/>
         <source>no errors</source>
         <translation>hata yok</translation>
     </message>
@@ -3189,7 +3327,7 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start' translated<
         <translation>hatalar bulundu</translation>
     </message>
     <message>
-        <location line="+212"/>
+        <location line="+220"/>
         <source>Restoring data: main trunk</source>
         <comment>info message displayed during ...data restoration</comment>
         <translation>Veri yerine konuyor: ana gövde</translation>
@@ -3252,7 +3390,7 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start' translated<
         <translation>iptal et</translation>
     </message>
     <message>
-        <location filename="../src/manageWizard.cpp" line="-397"/>
+        <location filename="../src/manageWizard.cpp" line="-411"/>
         <source>The restore directory will become identical to the backup snapshot</source>
         <translation>Yerine koyma dizini yedek şipşakla aynı olacak</translation>
     </message>
@@ -3270,7 +3408,7 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start translated'<
         <translation>Eğer yukarıdaki bilgi doğruysa, başlamak için &lt;b&gt;başla&lt;/b&gt;&apos;yı tıklayın</translation>
     </message>
     <message>
-        <location line="+113"/>
+        <location line="+119"/>
         <source>success</source>
         <comment>info message displayed after ...logfile deletion</comment>
         <translation>başarılı</translation>
@@ -3318,7 +3456,7 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start translated'<
         <translation>Yerine koyma yolu</translation>
     </message>
     <message>
-        <location line="+116"/>
+        <location line="+124"/>
         <source>No snapshot specific data exist. Skipping...</source>
         <comment>info message displayed during ...data restoration/deletion</comment>
         <translation>Şipşaka özgün veri yok. Atlanıyor...</translation>
@@ -3360,7 +3498,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>modifyDialog</name>
     <message>
-        <location filename="../src/modifyDialog.cpp" line="+203"/>
+        <location filename="../src/modifyDialog.cpp" line="+235"/>
         <source>simple</source>
         <translation>basit</translation>
     </message>
@@ -3370,7 +3508,7 @@ p, li { white-space: pre-wrap; }
         <translation>ileri düzey</translation>
     </message>
     <message>
-        <location line="+127"/>
+        <location line="+129"/>
         <source>Task name</source>
         <translation>Görev adı</translation>
     </message>
@@ -3435,12 +3573,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+44"/>
         <location line="+73"/>
-        <location line="+2607"/>
+        <location line="+2724"/>
         <source>browse localy</source>
         <translation>yerele göz at</translation>
     </message>
     <message>
-        <location line="-2654"/>
+        <location line="-2771"/>
         <location line="+31"/>
         <source>Enter the full path of the destination directory (eg /media/backups/SiduxHome/)</source>
         <translation>Hedef dizininin tam yolunu (ör: /media/backups/SiduxHome/) girin</translation>
@@ -3451,7 +3589,12 @@ p, li { white-space: pre-wrap; }
         <translation>Hedef :</translation>
     </message>
     <message>
-        <location line="+1984"/>
+        <location line="+1663"/>
+        <source>eg -C4c arcfour,blowfish-cbc</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+383"/>
         <source>With this option rsync will transfer numeric group and user IDs
 rather than using user and group names
 and mapping them at both ends.
@@ -3480,7 +3623,24 @@ and copying devices via the --devices option.
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+531"/>
+        <location line="+22"/>
+        <source>Try to backup open files in windows systems using vss (Only works on windows 2000 and upper)
+(--vss)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Backup open files</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+25"/>
+        <source>Restore backed-up windows permissions localized in nt-streams 
+(--restore-nt-streams)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+535"/>
         <location line="+10"/>
         <source>Repeat any command that fails, x times</source>
         <translation type="unfinished"/>
@@ -3527,7 +3687,7 @@ Leave unchecked to create an extra directory inside destination</source>
         <translation>İptal et</translation>
     </message>
     <message>
-        <location line="-2950"/>
+        <location line="-3067"/>
         <source>Exclude</source>
         <translation>Hariç tut</translation>
     </message>
@@ -3538,12 +3698,12 @@ Leave unchecked to create an extra directory inside destination</source>
     </message>
     <message>
         <location line="+18"/>
-        <location line="+1550"/>
+        <location line="+1612"/>
         <source>Templates</source>
         <translation>Şablonlar</translation>
     </message>
     <message>
-        <location line="-1523"/>
+        <location line="-1585"/>
         <source>Exclude all temp folders (**/*tmp*/)</source>
         <translation>Tüm temp klasörlerini hariç tut (**/*tmp*/)</translation>
     </message>
@@ -3573,12 +3733,7 @@ Leave unchecked to create an extra directory inside destination</source>
         <translation>Yedekleme dosyaları</translation>
     </message>
     <message>
-        <location line="+31"/>
-        <source>Exclude system folders /var, /proc, /dev &amp; /sys (/var/**, /proc/**, /dev/**, /sys/**)</source>
-        <translation>Sistem klasörlerini hariç tut /var, /proc, /dev &amp; /sys (/var/**, /proc/**, /dev/**, /sys/**)</translation>
-    </message>
-    <message>
-        <location line="+6"/>
+        <location line="+37"/>
         <source>System folders</source>
         <translation>Sistem klasörleri</translation>
     </message>
@@ -3625,14 +3780,14 @@ Leave unchecked to create an extra directory inside destination</source>
     <message>
         <location line="+3"/>
         <location line="+371"/>
-        <location line="+1220"/>
+        <location line="+1337"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>add</source>
         <translation>ekle</translation>
     </message>
     <message>
-        <location line="-2153"/>
+        <location line="-2270"/>
         <location line="+31"/>
         <source>Exclude list</source>
         <translation>Hariç tut listesi</translation>
@@ -3682,7 +3837,12 @@ izleyen / - yalnızca dizin eşleşir, dosya, simgesel link ya da aygıtlar değ
         <translation>Görevin açıklamasını yazın</translation>
     </message>
     <message>
-        <location line="+321"/>
+        <location line="+173"/>
+        <source>Exclude system folders /var, /proc, /dev &amp; /sys (/var/run/**, /run/**, /proc/**, /dev/**, /sys/**)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+148"/>
         <source>Exclude all user&apos;s .gvfs folders (**/.gvfs/)</source>
         <translation type="unfinished"/>
     </message>
@@ -3700,68 +3860,68 @@ izleyen / - yalnızca dizin eşleşir, dosya, simgesel link ya da aygıtlar değ
     <message>
         <location line="+3"/>
         <location line="+366"/>
-        <location line="+1220"/>
+        <location line="+1337"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>remove</source>
         <translation>sil</translation>
     </message>
     <message>
-        <location line="-2152"/>
+        <location line="-2269"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Edit highlighted inclusion</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-2163"/>
+        <location line="-2280"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>edit</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-2152"/>
+        <location line="-2269"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion up</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-2163"/>
+        <location line="-2280"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move up</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-2152"/>
+        <location line="-2269"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion down</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-2163"/>
+        <location line="-2280"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move down</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-2060"/>
+        <location line="-2177"/>
         <source>Include ONLY this list of patterns. Nothing more.
 Please refer to the manual for better understanding of include rules.
 This will disable the exclude feature.</source>
@@ -3866,7 +4026,7 @@ izleyen / - yalnızca dizin eşleşir, dosya, simgesel link ya da aygıtlar değ
         <translation>rsync (ssh değil) kimlik denetleme parolasını içeren dosyanın tam yolunu girin (uygun değilse boş bırakın).</translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+19"/>
         <source>rsync password file:</source>
         <translation>rsync parola dosyası:</translation>
     </message>
@@ -3881,7 +4041,7 @@ izleyen / - yalnızca dizin eşleşir, dosya, simgesel link ya da aygıtlar değ
         <translation>Uzak modül</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+74"/>
         <source>Use ssh as transport shell</source>
         <translation>Aktarım kabuğu olarak ssh kullan</translation>
     </message>
@@ -3891,7 +4051,12 @@ izleyen / - yalnızca dizin eşleşir, dosya, simgesel link ya da aygıtlar değ
         <translation>ssh</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+75"/>
+        <source>password:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+91"/>
         <source>Enter the full path of the file that contains the private ssh authentication key (leave blank if not applicable).
 
 Note that you have to do all actions needed for a passwordless ssh remote connection using an OpenSSH key pair</source>
@@ -3900,22 +4065,22 @@ Note that you have to do all actions needed for a passwordless ssh remote connec
 Bir OpenSSH anahtar çifti kullanarak parolasız uzak ssh bağlantısı kurmak için gereken tüm eylemleri yapmalısınız</translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="-31"/>
         <source>private key file :</source>
         <translation>özel anahtar dosyası :</translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="-88"/>
         <source>Enter the port you would like to use for the ssh connection (leave blank for default port)</source>
         <translation>ssh bağlantısı için kullanmak istediğiniz portu giriniz (öntanımlı port için boş bırakın)</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="-25"/>
         <source>port :</source>
         <translation>port :</translation>
     </message>
     <message>
-        <location line="+30"/>
+        <location line="+267"/>
         <source>Command Options</source>
         <translation>Komut Seçenekleri</translation>
     </message>
@@ -3927,27 +4092,7 @@ If you have no idea what these mean, leave them untouched !!</source>
 Eğer bunun ne amlama geldiği hakkında hiçbir fikriniz yoksa, bu ayarlara dokunmayın !!</translation>
     </message>
     <message>
-        <location line="+22"/>
-        <source>backend</source>
-        <translation>arka uç</translation>
-    </message>
-    <message>
-        <location line="+24"/>
-        <source>rsync</source>
-        <translation>rsync</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>rdiff-backup</source>
-        <translation>rdiff-backup</translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>rsnapshot</source>
-        <translation>rsnapshot</translation>
-    </message>
-    <message>
-        <location line="+80"/>
+        <location line="+84"/>
         <source>Delete files on the destination that don't exist on the source
 . &quot;Recurse into directories&quot; has to be selected 
 (--delete-after &amp; --delete-excluded if &quot;Exclude&quot; is used)</source>
@@ -4057,7 +4202,7 @@ UYARI: Aktarım kümesinde tüm dosyalar içerilmelidir !!
         <translation>Dosyaları CVS tarzında yoksay</translation>
     </message>
     <message>
-        <location line="+142"/>
+        <location line="+197"/>
         <source>User defined</source>
         <translation>Kullanıcı tanımlı</translation>
     </message>
@@ -4151,7 +4296,7 @@ DİKKAT: ne yaptığınızı biliyorsanız bunu işaretleyin</translation>
         <translation>Buraya görevden sonra yürütülecek bir komut girin ve aşağıdaki listeye eklemek için &quot;ekle&quot; düğmesine basın</translation>
     </message>
     <message>
-        <location filename="../src/modifyDialog.cpp" line="-104"/>
+        <location filename="../src/modifyDialog.cpp" line="-106"/>
         <source>Select source directory</source>
         <comment>file selection dialog title</comment>
         <translation>Kaynak dizini seçin</translation>
@@ -4169,13 +4314,14 @@ DİKKAT: ne yaptığınızı biliyorsanız bunu işaretleyin</translation>
         <translation>Rsync parola dosyasını seçin</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+7"/>
+        <location line="+2"/>
         <source>Select ssh keyfile</source>
         <comment>file selection dialog title</comment>
         <translation>Ssh anahtar dosyasını seçin</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+5"/>
         <location line="+6"/>
         <source>Select command to be executed</source>
         <comment>file selection dialog title</comment>
@@ -4229,7 +4375,7 @@ DİKKAT: ne yaptığınızı biliyorsanız bunu işaretleyin</translation>
         <translation>Buna izin verilmez çünkü &apos;/&apos;in gerçek bir ismi yoktur</translation>
     </message>
     <message>
-        <location line="-300"/>
+        <location line="-334"/>
         <source>Leave the box checked, to &lt;b&gt;STOP&lt;/b&gt; the execution of running task if this command exits with an error</source>
         <translation type="unfinished"/>
     </message>
@@ -4240,7 +4386,7 @@ DİKKAT: ne yaptığınızı biliyorsanız bunu işaretleyin</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+298"/>
+        <location line="+332"/>
         <source>You have declared the &apos;/&apos; (root) directory as source and have NOT checked the &apos;Do NOT create extra directory&apos; box</source>
         <comment>message box message - line1</comment>
         <translation type="unfinished"/>
@@ -4361,19 +4507,19 @@ DİKKAT: ne yaptığınızı biliyorsanız bunu işaretleyin</translation>
         <translation>Bu hariç tutulacak ögeyi zaten eklemiştiniz</translation>
     </message>
     <message>
-        <location line="+54"/>
+        <location line="+55"/>
         <source>You have already added this include item</source>
         <comment>message box message</comment>
         <translation>Bu dahil edilecek ögeyi zaten eklemiştiniz</translation>
     </message>
     <message>
-        <location line="+52"/>
+        <location line="+53"/>
         <source>You have already added this option</source>
         <comment>message box message</comment>
         <translation>Bu seçeneği zaten eklemiştiniz</translation>
     </message>
     <message>
-        <location line="+265"/>
+        <location line="+266"/>
         <location line="+25"/>
         <location line="+25"/>
         <location line="+25"/>
@@ -4409,7 +4555,7 @@ DİKKAT: ne yaptığınızı biliyorsanız bunu işaretleyin</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/modifyDialog.ui" line="-1943"/>
+        <location filename="../ui/modifyDialog.ui" line="-2060"/>
         <source>Read exclude patterns from file</source>
         <translation>Hariç tutma desenlerini dosyadan oku</translation>
     </message>
@@ -4475,14 +4621,19 @@ Lütfen içerme kurallarını daha iyi anlamak için el kitabına başvurun.</tr
         <translation>Dahil etme desenlerini dosyadan oku</translation>
     </message>
     <message>
-        <location line="+303"/>
-        <location line="+149"/>
-        <location line="+891"/>
+        <location line="+344"/>
+        <location line="+248"/>
+        <location line="+868"/>
         <source>browse locally</source>
         <translation>yerele göz at</translation>
     </message>
     <message>
-        <location line="-393"/>
+        <location line="-835"/>
+        <source>additional options:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+387"/>
         <source>Check this is you use a FAT/NTFS partition as destination.
 Data ownership and permissions will NOT be preserved.
 (-t --modify-window=1)</source>
@@ -4496,7 +4647,12 @@ Veri aidiyeti ve izinler korunmayacaktır.
         <translation>Hedef FAT/NTFS&apos;tir</translation>
     </message>
     <message>
-        <location line="+914"/>
+        <location line="+114"/>
+        <source>Restore permissions</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+855"/>
         <location line="+22"/>
         <source>Set the total number of backup snapshots to keep</source>
         <translation>Tutulacak toplam yedek şipşaklarını belirleyiniz</translation>
@@ -4774,13 +4930,13 @@ eg the contents of the directory &quot;/media/music/Album/&quot;</source>
     </message>
     <message>
         <location line="+53"/>
-        <location line="+135"/>
-        <location line="+40"/>
+        <location line="+139"/>
+        <location line="+45"/>
         <source>No schedules are declared !!</source>
         <translation>Tarife planlanmamış !!</translation>
     </message>
     <message>
-        <location line="-124"/>
+        <location line="-133"/>
         <source>Unable to create schedule file</source>
         <translation>Tarife dosyası oluşturulamadı</translation>
     </message>
@@ -4806,7 +4962,7 @@ eg the contents of the directory &quot;/media/music/Album/&quot;</source>
     </message>
     <message>
         <location filename="../ui/scheduleDialog.ui" line="+182"/>
-        <location filename="../src/scheduleDialog.cpp" line="+53"/>
+        <location filename="../src/scheduleDialog.cpp" line="+62"/>
         <source>Profile schedule details</source>
         <translation>Profil tarifesi ayrıntıları</translation>
     </message>
@@ -4821,12 +4977,18 @@ eg the contents of the directory &quot;/media/music/Album/&quot;</source>
         <translation>Şu profili</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
+        <source>hourly at minute </source>
+        <comment>full phrase: Execute profile &lt;PROFILENAME&gt; hourly at minute &lt;MM&gt;</comment>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+4"/>
         <source>at</source>
         <translation>saat</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+10"/>
         <source>every</source>
         <translation>her</translation>
     </message>
@@ -4837,7 +4999,7 @@ eg the contents of the directory &quot;/media/music/Album/&quot;</source>
         <translation>gün</translation>
     </message>
     <message>
-        <location filename="../ui/scheduleDialog.ui" line="+245"/>
+        <location filename="../ui/scheduleDialog.ui" line="+251"/>
         <location filename="../src/scheduleDialog.cpp" line="-36"/>
         <source>Sunday</source>
         <translation>Pazar</translation>
@@ -5067,12 +5229,13 @@ eg the contents of the directory &quot;/media/music/Album/&quot;</source>
         <translation>Aralık</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+90"/>
+        <location line="+26"/>
         <source>Unable to create cron file</source>
         <translation>cron dosyası oluşturulamadı</translation>
     </message>
     <message>
-        <location filename="../ui/scheduleDialog.ui" line="-440"/>
+        <location filename="../ui/scheduleDialog.ui" line="-446"/>
         <source>luckyBackup - schedule</source>
         <translation>luckyBackup - tarife</translation>
     </message>
@@ -5140,7 +5303,12 @@ p, li { white-space: pre-wrap; }
         <translation>zaman (saat:dakika) :</translation>
     </message>
     <message>
-        <location line="+40"/>
+        <location line="+27"/>
+        <source>set this value to -1 for the schedule to occur every hour</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+19"/>
         <source>:</source>
         <translation>:</translation>
     </message>
@@ -5398,7 +5566,7 @@ p, li { white-space: pre-wrap; }
         <translation>31</translation>
     </message>
     <message>
-        <location line="-485"/>
+        <location line="-491"/>
         <source>Check this if your machine does not support a graphical environment (eg server)</source>
         <translation>Makineniz grafik ortamı desteklemiyorsa (örneğin: sunucu) bunu işaretleyin</translation>
     </message>
@@ -5408,7 +5576,7 @@ p, li { white-space: pre-wrap; }
         <translation>Konsol Kipi</translation>
     </message>
     <message>
-        <location line="+516"/>
+        <location line="+522"/>
         <source>okay</source>
         <translation>tamam</translation>
     </message>
@@ -5428,7 +5596,7 @@ p, li { white-space: pre-wrap; }
         <translation>cronLA !!</translation>
     </message>
     <message>
-        <location filename="../src/scheduleDialog.cpp" line="-555"/>
+        <location filename="../src/scheduleDialog.cpp" line="-657"/>
         <location line="+78"/>
         <source>The existent schedule file is not a valid luckyBackup v.</source>
         <comment>v is for version</comment>
@@ -5457,7 +5625,7 @@ p, li { white-space: pre-wrap; }
         <translation>crontab&apos;ınız başarıyla güncellendi</translation>
     </message>
     <message>
-        <location line="+91"/>
+        <location line="+100"/>
         <source>no crontab entries exist</source>
         <translation>crontab girdisi yok</translation>
     </message>
@@ -5604,12 +5772,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+18"/>
         <source>declaration of paths</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+30"/>
         <source>rsync:</source>
         <translation type="unfinished"/>
     </message>
@@ -5621,23 +5789,83 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+10"/>
         <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
         <source>browse locally</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-47"/>
+        <location line="-367"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
         <location line="+64"/>
         <source>Use default value</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-46"/>
-        <source>ssh</source>
+        <location line="-366"/>
+        <source>ssh:</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location line="+19"/>
         <source>Enter the full path of the ssh command</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>cygpath:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the cygpath command</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>dosdev:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the dosdev command</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>main dir:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the luckybackup directory</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>vshadow dir:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the vshadow directory</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>temp dir:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the temporary directory</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -5651,7 +5879,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/winDialog.cpp" line="+102"/>
+        <location filename="../src/winDialog.cpp" line="+147"/>
         <source>Select rsync command</source>
         <comment>file selection dialog title</comment>
         <translation type="unfinished"/>
@@ -5659,12 +5887,26 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+1"/>
         <location line="+6"/>
+        <location line="+6"/>
+        <location line="+6"/>
         <source>Executable Files (*.exe)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-1"/>
+        <location line="-13"/>
         <source>Select ssh command</source>
+        <comment>file selection dialog title</comment>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Select cygpath command</source>
+        <comment>file selection dialog title</comment>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Select dosdev command</source>
         <comment>file selection dialog title</comment>
         <translation type="unfinished"/>
     </message>

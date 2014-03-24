@@ -1505,7 +1505,7 @@
 					<LI><P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm; text-decoration: none">
 					<FONT FACE="FreeSans, sans-serif">system folders.</FONT></P>
 					<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm; text-decoration: none">
-					<FONT FACE="FreeSans, sans-serif">These would be <B>/var</B>,
+					<FONT FACE="FreeSans, sans-serif">These would be <B>/var/run</B>, <B>/run</B>, 
 					<B>/proc</B>, <B>/dev </B>and <B>/sys</B><SPAN STYLE="font-weight: normal">.
 					Again, you can use this option if you decide to backup your root
 					folder (“</SPAN><B>/</B>”<SPAN STYLE="font-weight: normal">).
@@ -1515,6 +1515,7 @@
 					<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm; text-decoration: none">
 					<FONT FACE="FreeSans, sans-serif"><SPAN STYLE="font-weight: normal">patterns
 					used: </SPAN><U><SPAN STYLE="font-weight: normal">/var/**</SPAN></U><SPAN STYLE="font-weight: normal">,
+					<U><SPAN STYLE="font-weight: normal">/run/**</SPAN></U><SPAN STYLE="font-weight: normal">,
 					</SPAN><U><SPAN STYLE="font-weight: normal">/proc/**</SPAN></U>
 					<SPAN STYLE="font-weight: normal">, </SPAN><U><SPAN STYLE="font-weight: normal">/dev/**</SPAN></U>
 					<SPAN STYLE="font-weight: normal">&amp; </SPAN><U><SPAN STYLE="font-weight: normal">/sys/**</SPAN></U></FONT></P>
@@ -3563,7 +3564,37 @@
 					you wish to delete all luckyBackup entries from your crontab,
 					open the “schedule dialog”, “remove” everything and
 					click “cronIT”.</FONT></P>
-				</UL>
+			</UL>
+			
+					<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT FACE="FreeSans, sans-serif"><B>5</B>: ubuntu users<br>
+				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT FACE="FreeSans, sans-serif">
+				Ubuntu based distros might not get a icon at the notification area during a scheduled run followed by the error:
+				
+				
+				<br><FONT FACE="FreeSans, sans-serif"><FONT SIZE=2><B><SPAN STYLE="background: #99ccff">
+				Warning: "sni-qt/XXXX" WARN YY:YY:YY.YYY void StatusNotifierItemFactory::connectToSnw() Invalid interface to SNW_SERVICE</b></span></font></font><br>				
+				
+				workaround:<br>
+				Manually add the following text at your crontab just after the time columns:
+				<br><FONT FACE="FreeSans, sans-serif"><FONT SIZE=2><B><SPAN STYLE="background: #99ccff">
+				eval "export $(egrep -z DBUS_SESSION_BUS_ADDRESS /proc/$(pgrep -u $LOGNAME gnome-session)/environ)" &&
+				</b></span></font></font><br>	
+				
+				example crontab line after the above insertion (I know, it's long):		
+			  <br><FONT FACE="FreeSans, sans-serif"><FONT SIZE=2><B><SPAN STYLE="background: #99ccff">
+				0 0 * * *       eval "export $(egrep -z DBUS_SESSION_BUS_ADDRESS /proc/$(pgrep -u $LOGNAME gnome-session)/environ)" && <br>
+				env DISPLAY=:0 /usr/bin/luckybackup --silent --skip-critical /home/luckyb/.luckyBackup/profiles/default.profile > /home/luckyb/.luckyBackup/logs/default-LastCronLog.log 2>&1
+				</b></span></font></font><br>	
+				
+				Furthermore, if you wish the notification to be displayed inside the active window (yes, it can get even longer !!):		
+			  <br><FONT FACE="FreeSans, sans-serif"><FONT SIZE=2><B><SPAN STYLE="background: #99ccff">
+				0 0 * * *       eval "export $(egrep -z DBUS_SESSION_BUS_ADDRESS /proc/$(pgrep -u $LOGNAME gnome-session)/environ)" && <br>
+				gsettings set com.canonical.notify-osd multihead-mode focus-follow && <br>
+				env DISPLAY=:0 /usr/bin/luckybackup --silent --skip-critical /home/luckyb/.luckyBackup/profiles/default.profile > /home/luckyb/.luckyBackup/logs/default-LastCronLog.log 2>&1
+				</b></span></font></font><br>	
+				</FONT></P>
+				
+				
 				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><BR><BR>
 				</P>
 				<P ALIGN=CENTER STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><A NAME="cronItLogFile"></A>
@@ -3576,6 +3607,11 @@
 				The cron logfile can prove handy to extract information about the cronjob itself
 				</FONT></P>
 				
+				
+				<P STYLE="margin-top: 0.1cm; margin-bottom: 0.1cm"><FONT FACE="FreeSans, sans-serif"><B>~/.luckyBackup/logs/PROFILENAME-LastCronLog.log</B><br><br>
+				This is different from the <a href="#normalLog">normal log-file</a> which will be created as well.<br>
+				The cron logfile can prove handy to extract information about the cronjob itself
+				</FONT></P>
 
 
 				<!-- ******************************************** e-mail******************************************************************** -->

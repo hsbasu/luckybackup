@@ -33,7 +33,6 @@
 #include "calcDiffThread.cpp"
 #include "RsyncDirModel.cpp"
 
-
 // class manageDialog Constructor=================================================================================================
 // Displays the manage backups of a task dialog
 manageDialog::manageDialog (QDialog *parent) : QDialog (parent)

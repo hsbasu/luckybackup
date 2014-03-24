@@ -100,7 +100,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/global.cpp" line="+1067"/>
+        <location filename="../src/global.cpp" line="+1145"/>
         <source>The task list is empty</source>
         <translation>De takenlijst is leeg</translation>
     </message>
@@ -131,7 +131,7 @@
         <translation>Je hebt geen taken ingevoegd</translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+51"/>
         <source>The following included tasks &lt;b&gt;share the same destination directory&lt;/b&gt; (all together or at groups) and at least one of them will backup the contents of a directory</source>
         <translation>Deze ingesloten taken &lt;b&gt;hebben dezelfde bestemmingsmap&lt;/b&gt; (samen of als groep) en tenminste één ervan maakt een backup van de inhoud van een map</translation>
     </message>
@@ -146,7 +146,7 @@
         <translation>Verwijder vinkjes bij relevante insluitings-keuzevakjes OF verander alle taken in een ander soort dan &apos;&lt;b&gt;Maak backup van mapinhoud&lt;/b&gt;&apos; OF gebruik &apos;Maak backup van mapinhoud&apos; samen met de &apos;&lt;b&gt;Uitsluitend insluiten&lt;/b&gt;&apos;-optie, voor je verdergaat</translation>
     </message>
     <message>
-        <location line="+593"/>
+        <location line="+674"/>
         <source>pre-task execution of command</source>
         <comment>Full phrase: pre-task execution of command: &lt;COMMAND&gt; starting</comment>
         <translation>opdracht vooraf</translation>
@@ -318,7 +318,7 @@
         <translation>Profiel van backup, logbestanden en snapshotdata</translation>
     </message>
     <message>
-        <location line="+93"/>
+        <location line="+111"/>
         <source>Could not open the logfile</source>
         <translation>Kon het logbestand niet openen</translation>
     </message>
@@ -328,7 +328,7 @@
         <translation>Het logbestand bestaat niet</translation>
     </message>
     <message>
-        <location line="+63"/>
+        <location line="+78"/>
         <source>The specified command is probably not installed</source>
         <translation>De gegeven opdracht is waarschijnlijk niet beschikbaar</translation>
     </message>
@@ -343,7 +343,7 @@
         <translation>opdracht</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>exit code: </source>
         <translation>foutcode:</translation>
     </message>
@@ -374,13 +374,13 @@
     </message>
     <message>
         <location line="+10"/>
-        <location line="+44"/>
+        <location line="+61"/>
         <location line="+99"/>
         <source>status</source>
         <translation>status</translation>
     </message>
     <message>
-        <location line="-143"/>
+        <location line="-160"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
@@ -392,25 +392,31 @@
     </message>
     <message>
         <location line="-14"/>
-        <location line="+91"/>
+        <location line="+108"/>
         <source>Source directory</source>
         <translation>Bronmap</translation>
     </message>
     <message>
-        <location line="-82"/>
+        <location line="-99"/>
         <location line="+19"/>
         <source>Using remote, check is skipped</source>
         <translation>Bij synchroniseren op afstand geen gegevenscontrole</translation>
     </message>
     <message>
         <location line="-9"/>
-        <location line="+87"/>
+        <location line="+104"/>
         <location line="+59"/>
         <source>Destination directory</source>
         <translation>Bestemmingsmap</translation>
     </message>
     <message>
-        <location line="-129"/>
+        <location line="-137"/>
+        <source>free</source>
+        <comment>as in free disk space</comment>
+        <translation>vrij</translation>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>WARNING</source>
         <translation>WAARSCHUWING</translation>
     </message>
@@ -634,6 +640,16 @@
     </message>
     <message>
         <location line="+2"/>
+        <source>Juan Ramon Alfaro Martinez</source>
+        <translation>Juan Ramon Alfaro Martinez</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Code contributor for remote &amp; vss support regarding the windows port</source>
+        <translation>Bijdrager van code voor remote &amp; vss support vor de Windows-port</translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Jack Fink</source>
         <translation>Jack Fink</translation>
     </message>
@@ -698,9 +714,19 @@
         <translation>Free BSD package maintainer</translation>
     </message>
     <message>
+        <location line="+2"/>
+        <source>Dimitris Jemos</source>
+        <translation>Dimitris Jemos</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Slackel package maintainer</source>
+        <translation>Slackel package maintainer</translation>
+    </message>
+    <message>
         <location line="+3"/>
         <source>ex Fedora package maintainer</source>
-        <translation>Fedora ex-package maintainer</translation>
+        <translation>ex-Fedora package maintainer</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -718,24 +744,25 @@
         <translation>Stergios Prosiniklis</translation>
     </message>
     <message>
-        <location line="-57"/>
-        <location line="+58"/>
+        <location line="-63"/>
+        <location line="+64"/>
         <source>Greek manual translator</source>
         <translation>Vertaler van de Griekse handleiding</translation>
     </message>
     <message>
         <location line="+3"/>
         <location line="+3"/>
+        <location line="+3"/>
         <source>German gui translator</source>
         <translation>Duitse GUI-vertaler</translation>
     </message>
     <message>
-        <location line="-1"/>
+        <location line="-4"/>
         <source>Wilfried Schobel</source>
         <translation>Wilfried Schobel</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+6"/>
         <source>Sergio Gameiro</source>
         <translation>Sergio Gameiro</translation>
     </message>
@@ -761,23 +788,25 @@
         <translation>Franse GUI-vertaler en gewaardeerd package-adviseur (en niet alleen dat)</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+11"/>
         <source>Raffaele</source>
         <translation>Raffaele</translation>
     </message>
     <message>
         <location line="-2"/>
         <location line="+3"/>
+        <location line="+3"/>
+        <location line="+3"/>
         <source>Italian gui translator</source>
         <translation>Italiaanse GUI-vertaler</translation>
     </message>
     <message>
-        <location line="-7"/>
+        <location line="-16"/>
         <source>Aurelien Merckel</source>
         <translation>Aurelien Merckel</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+18"/>
         <source>Denis Skorski</source>
         <translation>Denis Skorski</translation>
     </message>
@@ -793,11 +822,17 @@
     </message>
     <message>
         <location line="+1"/>
+        <location line="+3"/>
         <source>Dutch gui translator</source>
         <translation>Nederlandse GUI-vertaler</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="-1"/>
+        <source>Martin Grashoff (linuxrev)</source>
+        <translation>Martin Grashoff (linuxrev)</translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Subhi Honaco</source>
         <translation>Subhi Honaco</translation>
     </message>
@@ -827,7 +862,7 @@
         <translation>Roemeense GUI-vertaler</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+20"/>
         <source>Roger Calvo</source>
         <translation>Roger Calvo</translation>
     </message>
@@ -837,7 +872,7 @@
         <translation>Tomas Vadina</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+18"/>
         <source>Javi Romero</source>
         <translation>Javi Romero</translation>
     </message>
@@ -857,7 +892,7 @@
         <translation>v.0.3 GUI-ontwerper</translation>
     </message>
     <message>
-        <location line="-112"/>
+        <location line="-151"/>
         <source>Dimitris Kalamaras</source>
         <translation>Dimitris Kalamaras</translation>
     </message>
@@ -867,22 +902,54 @@
         <translation>Als het niet door hem en zijn tutorials kwam, zou ik nooit aan dit project begonnen zijn.</translation>
     </message>
     <message>
-        <location line="+63"/>
+        <location line="+59"/>
+        <source>Thomas Glatt</source>
+        <translation>Thomas Glatt</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <location line="+3"/>
         <source>French gui translator</source>
         <translation>Franse GUI-vertaler</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="-1"/>
+        <source>Sébastien Bourgain</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>pinguinofurioso</source>
+        <translation>pinguinofurioso</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Alessio Ganci</source>
+        <translation>Alessio Ganci</translation>
+    </message>
+    <message>
+        <location line="+24"/>
+        <source>Matej Urbančič</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>Marvin Gomez</source>
         <translation>Marvin Gomez</translation>
     </message>
     <message>
         <location line="+1"/>
+        <location line="+3"/>
         <source>Spanish gui translator</source>
         <translation>Spaanse GUI-vertaler</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="-1"/>
+        <source>Antonio Jose Molina</source>
+        <translation>Antonio Jose Molina</translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Fredrik Holmgren</source>
         <translation>Fredrik Holmgren</translation>
     </message>
@@ -910,6 +977,46 @@
         <location line="+1"/>
         <source>Estonian gui translator</source>
         <translation>Estische GUI-vertaler</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Nicolay Boychev</source>
+        <translation>Nicolay Boychev</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Bulgarian gui translator</source>
+        <translation>Bulgaarse GUI-vertaler</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Manuel Meixide</source>
+        <translation>Manuel Meixide</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Galician gui translator</source>
+        <translation>Galicische GUI-vertaler</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Roger Foss</source>
+        <translation>Roger Foss</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Norwegian gui translator</source>
+        <translation>Noorse GUI-vertaler</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Pin-hsien Li</source>
+        <translation>Pin-hsien Li</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Chinese (Taiwan) gui translator</source>
+        <translation>Taiwanees-Chinese GUI-vertaler</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -940,6 +1047,16 @@
         <location line="+1"/>
         <source>backupwhenidle python script developer</source>
         <translation>BackupWhenIdle Python-scriptontwikkelaar</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Bjorn Rietdijk</source>
+        <translation>Bjorn Rietdijk</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>valuable OS/2 and windows tester</source>
+        <translation>Gewaardeerde OS/2- en Windows-tester</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -1074,7 +1191,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Licentieovereenkomst</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="-211"/>
+        <location filename="../src/about.cpp" line="-253"/>
         <source>luckyBackup is distributed under the terms of the &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU General Public License&lt;/a&gt;</source>
         <comment>Please leave the tags &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt; &amp; &lt;/a&gt; intact and surrounding the GNU General Public License !!</comment>
         <translation>luckyBackup wordt gedistribueerd onder de voorwaarden van de &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU General Public License&lt;/a&gt;.</translation>
@@ -1086,32 +1203,33 @@ p, li { white-space: pre-wrap; }
         <translation>Het is &lt;b&gt;vrije software&lt;/b&gt;: je kan het herdistributeren en/of wijzigen onder de voorwaarden van de GNU General Public License zoals gepubliceerd door de Free Software Foundation, versie 3 van de licentie.</translation>
     </message>
     <message>
-        <location line="+75"/>
+        <location line="+81"/>
         <source>Thomas Janssen</source>
         <translation>Thomas Janssen</translation>
     </message>
     <message>
-        <location line="-5"/>
+        <location line="-8"/>
         <source>Fedora package maintainer (official repo)</source>
         <translation>Fedora package maintainer (officieel repository)</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+17"/>
         <source>Karsten Jaschultowski</source>
         <translation>Karsten Jaschultowski</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+24"/>
         <source>Francesco Braile</source>
         <translation>Francesco Braile</translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location line="+30"/>
         <source>Andrej Znidarsic</source>
         <translation>Andrej Znidarsic</translation>
     </message>
     <message>
         <location line="+1"/>
+        <location line="+3"/>
         <source>Slovenian gui translator</source>
         <translation>Sloveense GUI-vertaler</translation>
     </message>
@@ -1126,7 +1244,7 @@ p, li { white-space: pre-wrap; }
         <translation>Turkse GUI-vertaler</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+38"/>
         <source>Tito Poquito</source>
         <translation>Tito Poquito</translation>
     </message>
@@ -1136,7 +1254,7 @@ p, li { white-space: pre-wrap; }
         <translation>Slackware package maintainer (SlackBuilds-repository)</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+26"/>
         <source>...my other half, &lt;b&gt;Dimitra&lt;/b&gt; that bears with me all these times that this project is under development</source>
         <translation>...mijn betere helft, &lt;b&gt;Dimitra&lt;/b&gt; die het met mij heeft volgehouden al die tijd dat dit project al duurt.</translation>
     </message>
@@ -1159,15 +1277,8 @@ p, li { white-space: pre-wrap; }
         <translation>opdracht:</translation>
     </message>
     <message>
-        <location line="+7"/>
-        <source>Enter the full command with arguments to run
-eg
-sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</source>
-        <translation>Geef de opdracht met argumenten zoals die uitgevoerd moet worden, bv.: sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</translation>
-    </message>
-    <message>
-        <location line="+9"/>
-        <location line="+204"/>
+        <location line="+38"/>
+        <location line="+268"/>
         <location line="+14"/>
         <source>Use default</source>
         <extracomment>This means &quot;use the default value for this field&quot;
@@ -1178,7 +1289,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <translation>Gebruik standaard</translation>
     </message>
     <message>
-        <location line="-205"/>
+        <location line="-218"/>
         <source>Arguments</source>
         <translation>Argumenten</translation>
     </message>
@@ -1221,6 +1332,16 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <location line="+10"/>
         <source>%e No of errors</source>
         <translation>%e aantal fouten</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>If unchecked &quot;TLS auto&quot; is used. Only available for sendemail</source>
+        <translation>Indien niet geselecteerd wordt &apos;TLS auto&apos; gebruikt. Alleen voor sendemail</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Disable TLS</source>
+        <translation>TLS uitschakelen</translation>
     </message>
     <message>
         <location line="+25"/>
@@ -1293,12 +1414,35 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <translation>Annuleren</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="-348"/>
         <source>Specify the conditions to send an email</source>
         <translation>Specifieer de voorwaarden om een bericht te versturen</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="-38"/>
+        <source>Enter the command to run
+eg
+sendemail</source>
+        <translation>Geef een opdracht om uit te voeren
+bv.
+sendemail</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>arguments:</source>
+        <translation>argumenten:</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Enter arguments of the email command
+eg
+ -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</source>
+        <translation>Geef argumenten voor de email-opdracht
+bv.
+-f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</translation>
+    </message>
+    <message>
+        <location line="+25"/>
         <source>Conditions</source>
         <translation>Voorwaarden</translation>
     </message>
@@ -1333,7 +1477,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <translation>Nooit</translation>
     </message>
     <message>
-        <location filename="../src/emailDialog.cpp" line="+124"/>
+        <location filename="../src/emailDialog.cpp" line="+136"/>
         <source>The command field is empty</source>
         <translation>De opdrachtregel is leeg</translation>
     </message>
@@ -1407,7 +1551,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>luckyBackupWindow</name>
     <message>
-        <location filename="../src/executenow.cpp" line="+135"/>
+        <location filename="../src/executenow.cpp" line="+161"/>
         <source>commands output</source>
         <comment>output window label</comment>
         <translation>uitvoer van opdrachten</translation>
@@ -1452,17 +1596,17 @@ p, li { white-space: pre-wrap; }
         <translation>is voltooid</translation>
     </message>
     <message>
-        <location line="-149"/>
-        <location line="+151"/>
-        <location line="+749"/>
+        <location line="-173"/>
+        <location line="+175"/>
+        <location line="+1065"/>
         <location line="+21"/>
-        <location line="+25"/>
+        <location line="+30"/>
         <location line="+1"/>
         <source>simulation mode</source>
         <translation>simulatiemodus</translation>
     </message>
     <message>
-        <location line="-792"/>
+        <location line="-1113"/>
         <source>Could not update last execution time of tasks</source>
         <translation>Kon de tijd voor het uitvoeren van taken niet bijwerken</translation>
     </message>
@@ -1489,7 +1633,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Herstellen</translation>
     </message>
     <message>
-        <location line="-195"/>
+        <location line="-219"/>
         <source>execution of profile:</source>
         <comment>tray message - execution of profile: &lt;PROFILENAME&gt; in progress...</comment>
         <translation>profiel</translation>
@@ -1501,7 +1645,7 @@ p, li { white-space: pre-wrap; }
         <translation>wordt uitgevoerd...</translation>
     </message>
     <message>
-        <location line="+373"/>
+        <location line="+451"/>
         <source>Removed all older snapshots data</source>
         <translation>Alle oude snapshotdata zijn verwijderd</translation>
     </message>
@@ -1511,22 +1655,22 @@ p, li { white-space: pre-wrap; }
         <translation>verwijderen van alle oude snapshotdata is mislukt</translation>
     </message>
     <message>
-        <location line="+405"/>
+        <location line="+520"/>
         <source>Unknown error</source>
         <translation>Onbekende fout</translation>
     </message>
     <message>
-        <location line="+106"/>
+        <location line="+253"/>
         <location line="+5"/>
         <location line="+6"/>
         <location line="+21"/>
-        <location line="+24"/>
-        <location line="+70"/>
+        <location line="+27"/>
+        <location line="+72"/>
         <source>Elapsed time</source>
         <translation>Verstreken tijd</translation>
     </message>
     <message>
-        <location line="-125"/>
+        <location line="-130"/>
         <source>pre-task execution of command</source>
         <translation>opdracht vooraf wordt uitgevoerd</translation>
     </message>
@@ -1558,7 +1702,7 @@ p, li { white-space: pre-wrap; }
         <translation>bestanden worden verwijderd</translation>
     </message>
     <message>
-        <location line="+182"/>
+        <location line="+187"/>
         <source>trying to send an email</source>
         <translation>proberen bericht te versturen</translation>
     </message>
@@ -1568,7 +1712,7 @@ p, li { white-space: pre-wrap; }
         <translation>Computer wordt over 1 minuut uitgeschakeld</translation>
     </message>
     <message>
-        <location line="-221"/>
+        <location line="-226"/>
         <source>Source</source>
         <translation>Bronmap</translation>
     </message>
@@ -1578,7 +1722,7 @@ p, li { white-space: pre-wrap; }
         <translation>Bestemmingsmap</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+22"/>
         <location line="+1"/>
         <source>All tasks completed</source>
         <translation>Alle taken voltooid</translation>
@@ -1803,7 +1947,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;%1 %2</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="+766"/>
+        <location filename="../src/luckybackupwindow.cpp" line="+775"/>
         <source>You have asked for a RESTORE task to be created</source>
         <comment>'create restore' message line 1/4</comment>
         <translation>Je hebt gevraagd om een HERSTEL-taak aan te maken</translation>
@@ -1828,13 +1972,13 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/functions.cpp" line="+86"/>
-        <location filename="../src/luckybackupwindow.cpp" line="-424"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-432"/>
         <location line="+70"/>
         <location line="+14"/>
         <location line="+56"/>
         <location line="+85"/>
         <location line="+14"/>
-        <location line="+230"/>
+        <location line="+238"/>
         <location line="+155"/>
         <location line="+269"/>
         <source>ERROR</source>
@@ -1929,12 +2073,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/executenow.cpp" line="+132"/>
         <location filename="../src/functions.cpp" line="+4"/>
-        <location line="+65"/>
+        <location line="+70"/>
         <source>WARNING</source>
         <translation>WAARSCHUWING</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="-63"/>
+        <location filename="../src/functions.cpp" line="-68"/>
         <source>default profile</source>
         <comment>Information window message. Full phrase: 'default profile &lt;PROFILENAME&gt; could not be saved'.</comment>
         <translation>standaardprofiel</translation>
@@ -1958,7 +2102,7 @@ p, li { white-space: pre-wrap; }
         <translation>is met succes opgeslagen</translation>
     </message>
     <message>
-        <location line="+47"/>
+        <location line="+52"/>
         <source>creating default profile ...</source>
         <comment>Information window message</comment>
         <translation>standaardprofiel wordt aangemaakt...</translation>
@@ -1992,7 +2136,7 @@ p, li { white-space: pre-wrap; }
         <translation>Wil je toch verdergaan?</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="-1150"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-1159"/>
         <source>super user</source>
         <comment>super user is the root user</comment>
         <translation>root (administrator)</translation>
@@ -2003,7 +2147,7 @@ p, li { white-space: pre-wrap; }
         <translation>rootmodus</translation>
     </message>
     <message>
-        <location line="+88"/>
+        <location line="+89"/>
         <source>Welcome to</source>
         <comment>full phrase: 'Welcome to luckyBackup'</comment>
         <translation>Welkom bij</translation>
@@ -2022,12 +2166,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+2"/>
-        <location line="+566"/>
+        <location line="+574"/>
         <source>The name you have entered contains only invalid characters</source>
         <translation>De naam die je hebt gegeven bevat alleen ongeldige tekens</translation>
     </message>
     <message>
-        <location line="-552"/>
+        <location line="-560"/>
         <location line="+70"/>
         <location line="+156"/>
         <source>Profile</source>
@@ -2180,7 +2324,7 @@ p, li { white-space: pre-wrap; }
         <translation>ingesteld als</translation>
     </message>
     <message>
-        <location line="+212"/>
+        <location line="+220"/>
         <source>Import Profile</source>
         <comment>this is a dialog title</comment>
         <translation>Profiel importeren</translation>
@@ -2224,16 +2368,16 @@ p, li { white-space: pre-wrap; }
         <translation>Fout bij het vinden van bestand</translation>
     </message>
     <message>
-        <location line="-311"/>
+        <location line="-319"/>
         <location line="+64"/>
-        <location line="+285"/>
+        <location line="+293"/>
         <source>You have reached the maximum limit of supported tasks</source>
         <translation>Je hebt het maximum van ondersteunde taken bereikt</translation>
     </message>
     <message>
-        <location line="-348"/>
+        <location line="-356"/>
         <location line="+64"/>
-        <location line="+285"/>
+        <location line="+293"/>
         <source>You have to remove a task if you wish to add another !!</source>
         <translation>Je moet een taak verwijderen als je een andere wilt toevoegen!</translation>
     </message>
@@ -2318,12 +2462,7 @@ p, li { white-space: pre-wrap; }
         <translation>Selecteer eerst een taak om te beheren</translation>
     </message>
     <message>
-        <location line="+79"/>
-        <source>You have only incuded tasks that are going to be skipped</source>
-        <translation>Je hebt alleen taken ingevoegd die zullen worden overgeslagen</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+80"/>
         <source>nothing to do</source>
         <translation>niets te doen</translation>
     </message>
@@ -2338,7 +2477,7 @@ p, li { white-space: pre-wrap; }
         <translation>e-mailvoorkeuren &lt;font color=green&gt;met succes bijgewerkt</translation>
     </message>
     <message>
-        <location line="+71"/>
+        <location line="+76"/>
         <source>status</source>
         <translation>status</translation>
     </message>
@@ -2442,19 +2581,19 @@ p, li { white-space: pre-wrap; }
         <translation>F5</translation>
     </message>
     <message>
-        <location filename="../src/executenow.cpp" line="-974"/>
+        <location filename="../src/executenow.cpp" line="-1295"/>
         <source>Aborting: Please wait for all processes to be killed</source>
         <translation>Wordt afgebroken: wacht tot alle processen zijn gestopt</translation>
     </message>
     <message>
-        <location line="+129"/>
+        <location line="+197"/>
         <source>Removing old snapshots and logfiles of task</source>
         <comment>info message displayed during ...data removal
 Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comment>
         <translation>Bezig met verwijderen van oude snapshots en logbestanden van de taak</translation>
     </message>
     <message>
-        <location line="+87"/>
+        <location line="+73"/>
         <location line="+12"/>
         <source>Removing</source>
         <translation>Bezig met verwijderen</translation>
@@ -2466,7 +2605,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>verwijderen mislukt</translation>
     </message>
     <message>
-        <location line="+380"/>
+        <location line="+495"/>
         <source>Failed to start</source>
         <comment>this refers to a process</comment>
         <translation>Starten mislukt</translation>
@@ -2502,7 +2641,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Onbekende fout</translation>
     </message>
     <message>
-        <location line="+116"/>
+        <location line="+263"/>
         <source>calculating</source>
         <comment>info message displayed during ...calculations</comment>
         <translation>bezig met berekenen</translation>
@@ -2525,12 +2664,17 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>bezig met bestanden verzenden</translation>
     </message>
     <message>
-        <location line="+91"/>
+        <location line="+15"/>
+        <source>Total files transfered</source>
+        <translation>Aantal verzonden bestanden</translation>
+    </message>
+    <message>
+        <location line="+81"/>
         <source>ABORTED</source>
         <translation>AFGEBROKEN</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="-555"/>
+        <location filename="../src/functions.cpp" line="-560"/>
         <source>&amp;Refresh</source>
         <comment>This is a top 'Profile' menu action</comment>
         <translation>&amp;Vernieuwen</translation>
@@ -2800,19 +2944,19 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     </message>
     <message>
         <location line="+0"/>
-        <location line="+95"/>
+        <location line="+100"/>
         <source>Use the &quot;add&quot; button on the right to get started</source>
         <comment>Please keep the add word inside quotes</comment>
         <translation>Gebruik de knop &apos;toevoegen&apos; rechts om te beginnen</translation>
     </message>
     <message>
-        <location line="-69"/>
+        <location line="-74"/>
         <source>could not be saved</source>
         <comment>Information window message. Full phrase: '(default) profile &lt;PROFILENAME&gt; could not be saved'</comment>
         <translation>kon niet worden opgeslagen.</translation>
     </message>
     <message>
-        <location line="+61"/>
+        <location line="+66"/>
         <source>default profile</source>
         <comment>Information window message. Full phrase: 'default profile &lt;PROFILENAME&gt; could not be created'.</comment>
         <translation>standaardprofiel</translation>
@@ -2854,7 +2998,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>profiel</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="-795"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-808"/>
         <source>Failed to duplicate profile</source>
         <comment>full phrase: 'Failed to duplicate profile &lt;PROFILENAME&gt;'</comment>
         <translation>Fout bij dupliceren van profiel</translation>
@@ -2894,7 +3038,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Selecteer eerst een taak</translation>
     </message>
     <message>
-        <location line="+230"/>
+        <location line="+238"/>
         <source>Hide information window</source>
         <comment>hide/show information window button tooltip</comment>
         <translation>Informatievenster verbergen</translation>
@@ -2906,7 +3050,12 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Informatievenster tonen</translation>
     </message>
     <message>
-        <location line="+378"/>
+        <location line="+287"/>
+        <source>You have only included tasks that are going to be skipped</source>
+        <translation>Je hebt alleen taken opgegeven die worden overgeslagen</translation>
+    </message>
+    <message>
+        <location line="+96"/>
         <source>Manage Task</source>
         <comment>This is a top 'Task' menu action</comment>
         <translation>Taak beheren</translation>
@@ -2923,7 +3072,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>&amp;Taak</translation>
     </message>
     <message>
-        <location filename="../src/executenow.cpp" line="-450"/>
+        <location filename="../src/executenow.cpp" line="-631"/>
         <source>Successfuly created destination directory</source>
         <translation>Bestemmingsmap met succes aangemaakt</translation>
     </message>
@@ -2936,7 +3085,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
 <context>
     <name>manageDialog</name>
     <message>
-        <location filename="../src/manage.cpp" line="+87"/>
+        <location filename="../src/manage.cpp" line="+95"/>
         <source>profile</source>
         <translation>profiel</translation>
     </message>
@@ -2986,20 +3135,13 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Sluiten</translation>
     </message>
     <message>
-        <location filename="../src/manage.cpp" line="+130"/>
+        <location filename="../src/manage.cpp" line="+135"/>
         <source>Please select a snapshot from the list</source>
         <comment>Information message</comment>
         <translation>Selecteer een snapshot van de lijst</translation>
     </message>
     <message>
-        <location line="+20"/>
-        <location line="+8"/>
-        <source>Display of remote places is not supported</source>
-        <comment>Information message</comment>
-        <translation>Tonen van plaatsen op afstand wordt niet ondersteund</translation>
-    </message>
-    <message>
-        <location line="+8"/>
+        <location line="+146"/>
         <source>This directory does not exist</source>
         <translation>Deze map bestaat niet</translation>
     </message>
@@ -3035,7 +3177,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Bekijk het logbestand van de geselecteerde synchronisatietaak</translation>
     </message>
     <message>
-        <location line="+78"/>
+        <location line="+83"/>
         <source>Please wait until the thread is terminated</source>
         <translation>Wacht tot de reeks is afgesloten</translation>
     </message>
@@ -3097,13 +3239,13 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
 <context>
     <name>manageWizard</name>
     <message>
-        <location filename="../src/manageWizard.cpp" line="+62"/>
+        <location filename="../src/manageWizard.cpp" line="+60"/>
         <source>not available</source>
         <comment>refers to a date-time</comment>
         <translation>niet beschikbaar</translation>
     </message>
     <message>
-        <location line="+346"/>
+        <location line="+361"/>
         <source>Delete backup</source>
         <comment>this is the title of a wizard</comment>
         <translation>Backup verwijderen</translation>
@@ -3122,8 +3264,8 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Pad</translation>
     </message>
     <message>
-        <location line="-279"/>
-        <location line="+280"/>
+        <location line="-285"/>
+        <location line="+286"/>
         <source>WARNING</source>
         <translation>WAARSCHUWING</translation>
     </message>
@@ -3182,12 +3324,12 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start' translated<
     <message>
         <location filename="../ui/manageWizard.ui" line="+240"/>
         <location filename="../src/manageWizard.cpp" line="+3"/>
-        <location line="+227"/>
+        <location line="+235"/>
         <source>simulation</source>
         <translation>simulatie</translation>
     </message>
     <message>
-        <location filename="../src/manageWizard.cpp" line="-222"/>
+        <location filename="../src/manageWizard.cpp" line="-230"/>
         <source>no errors</source>
         <translation>geen fouten</translation>
     </message>
@@ -3197,7 +3339,7 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start' translated<
         <translation>fouten gevonden</translation>
     </message>
     <message>
-        <location line="+212"/>
+        <location line="+220"/>
         <source>Restoring data: main trunk</source>
         <comment>info message displayed during ...data restoration</comment>
         <translation>Bezig data te herstellen: hoofddeel</translation>
@@ -3260,7 +3402,7 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start' translated<
         <translation>annuleren</translation>
     </message>
     <message>
-        <location filename="../src/manageWizard.cpp" line="-397"/>
+        <location filename="../src/manageWizard.cpp" line="-411"/>
         <source>The restore directory will become identical to the backup snapshot</source>
         <translation>De herstelmap zal identiek zijn aan het backupsnapshot</translation>
     </message>
@@ -3278,7 +3420,7 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start translated'<
         <translation>Als de bovenstaande informatie correct is, klik dan op &lt;b&gt;start&lt;/b&gt; om te beginnen</translation>
     </message>
     <message>
-        <location line="+113"/>
+        <location line="+119"/>
         <source>success</source>
         <comment>info message displayed after ...logfile deletion</comment>
         <translation>geslaagd</translation>
@@ -3326,7 +3468,7 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start translated'<
         <translation>herstelpad</translation>
     </message>
     <message>
-        <location line="+116"/>
+        <location line="+124"/>
         <source>No snapshot specific data exist. Skipping...</source>
         <comment>info message displayed during ...data restoration/deletion</comment>
         <translation>Geen specifieke snapshotdata gevonden. Overslaan...</translation>
@@ -3368,7 +3510,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>modifyDialog</name>
     <message>
-        <location filename="../src/modifyDialog.cpp" line="+203"/>
+        <location filename="../src/modifyDialog.cpp" line="+235"/>
         <source>simple</source>
         <translation>eenvoudig</translation>
     </message>
@@ -3378,7 +3520,7 @@ p, li { white-space: pre-wrap; }
         <translation>geavanceerd</translation>
     </message>
     <message>
-        <location line="+127"/>
+        <location line="+129"/>
         <source>Task name</source>
         <translation>Taaknaam</translation>
     </message>
@@ -3443,12 +3585,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+44"/>
         <location line="+73"/>
-        <location line="+2607"/>
+        <location line="+2724"/>
         <source>browse localy</source>
         <translation>lokaal bladeren</translation>
     </message>
     <message>
-        <location line="-2654"/>
+        <location line="-2771"/>
         <location line="+31"/>
         <source>Enter the full path of the destination directory (eg /media/backups/SiduxHome/)</source>
         <translation>Geef het volledige pad van de bestemmingsmap op (bv. /media/backups/SiduxHome/)</translation>
@@ -3459,7 +3601,12 @@ p, li { white-space: pre-wrap; }
         <translation>Bestemmingsmap:</translation>
     </message>
     <message>
-        <location line="+1984"/>
+        <location line="+1663"/>
+        <source>eg -C4c arcfour,blowfish-cbc</source>
+        <translation>bv. -C4c arcfour,blowfish-cbc</translation>
+    </message>
+    <message>
+        <location line="+383"/>
         <source>With this option rsync will transfer numeric group and user IDs
 rather than using user and group names
 and mapping them at both ends.
@@ -3492,7 +3639,26 @@ en apparaten kopiëren via de &apos;--devices&apos;-optie.
         <translation>Probeer rootacties</translation>
     </message>
     <message>
-        <location line="+531"/>
+        <location line="+22"/>
+        <source>Try to backup open files in windows systems using vss (Only works on windows 2000 and upper)
+(--vss)</source>
+        <translation>Probeer geopende bestanden op Windows-systemen te backuppen met vss (alleen op Windows 2000 en hoger)
+(-vss)</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Backup open files</source>
+        <translation>Backup geopende bestanden</translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <source>Restore backed-up windows permissions localized in nt-streams 
+(--restore-nt-streams)</source>
+        <translation>Herstel gebackupte Windows-permissies aanwezig in NT-streams
+(--restore-nt-streams)</translation>
+    </message>
+    <message>
+        <location line="+535"/>
         <location line="+10"/>
         <source>Repeat any command that fails, x times</source>
         <translation>Herhaal elke mislukte opdracht, x maal</translation>
@@ -3540,7 +3706,7 @@ Vink dit NIET aan om een extra map aan te maken in de bestemmingsmap</translatio
         <translation>Annuleren</translation>
     </message>
     <message>
-        <location line="-2950"/>
+        <location line="-3067"/>
         <source>Exclude</source>
         <translation>Uitsluiten</translation>
     </message>
@@ -3551,12 +3717,12 @@ Vink dit NIET aan om een extra map aan te maken in de bestemmingsmap</translatio
     </message>
     <message>
         <location line="+18"/>
-        <location line="+1550"/>
+        <location line="+1612"/>
         <source>Templates</source>
         <translation>Sjablonen</translation>
     </message>
     <message>
-        <location line="-1523"/>
+        <location line="-1585"/>
         <source>Exclude all temp folders (**/*tmp*/)</source>
         <translation>Sluit alle temp-mappen uit (**/*tmp*/)</translation>
     </message>
@@ -3586,12 +3752,7 @@ Vink dit NIET aan om een extra map aan te maken in de bestemmingsmap</translatio
         <translation>Backupbestanden</translation>
     </message>
     <message>
-        <location line="+31"/>
-        <source>Exclude system folders /var, /proc, /dev &amp; /sys (/var/**, /proc/**, /dev/**, /sys/**)</source>
-        <translation>Sluit systeemmappen /var, /proc, /dev en /sys uit (/var/**, /proc/**, /dev/**, /sys/**)</translation>
-    </message>
-    <message>
-        <location line="+6"/>
+        <location line="+37"/>
         <source>System folders</source>
         <translation>Systeemmappen</translation>
     </message>
@@ -3638,14 +3799,14 @@ Vink dit NIET aan om een extra map aan te maken in de bestemmingsmap</translatio
     <message>
         <location line="+3"/>
         <location line="+371"/>
-        <location line="+1220"/>
+        <location line="+1337"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>add</source>
         <translation>toevoegen</translation>
     </message>
     <message>
-        <location line="-2153"/>
+        <location line="-2270"/>
         <location line="+31"/>
         <source>Exclude list</source>
         <translation>Uitsluitingslijst</translation>
@@ -3697,7 +3858,12 @@ trailing / - staat voor de map alleen, zonder bestanden, symbolische links of ap
         <translation>Geef een beschrijving van de taak</translation>
     </message>
     <message>
-        <location line="+321"/>
+        <location line="+173"/>
+        <source>Exclude system folders /var, /proc, /dev &amp; /sys (/var/run/**, /run/**, /proc/**, /dev/**, /sys/**)</source>
+        <translation>Systeemmappen uitsluiten: /var, /proc, /dev &amp; /sys (/var/run/**, /run/**, /proc/**, /dev/**, /sys/**)</translation>
+    </message>
+    <message>
+        <location line="+148"/>
         <source>Exclude all user&apos;s .gvfs folders (**/.gvfs/)</source>
         <translation>Sluit alle &apos;.gvfs&apos;-mappen van de gebruiker uit (**/.gvfs/)</translation>
     </message>
@@ -3715,68 +3881,68 @@ trailing / - staat voor de map alleen, zonder bestanden, symbolische links of ap
     <message>
         <location line="+3"/>
         <location line="+366"/>
-        <location line="+1220"/>
+        <location line="+1337"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>remove</source>
         <translation>verwijderen</translation>
     </message>
     <message>
-        <location line="-2152"/>
+        <location line="-2269"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Edit highlighted inclusion</source>
         <translation>Bewerk geselecteerde insluiting</translation>
     </message>
     <message>
-        <location line="-2163"/>
+        <location line="-2280"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>edit</source>
         <translation>bewerken</translation>
     </message>
     <message>
-        <location line="-2152"/>
+        <location line="-2269"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion up</source>
         <translation>Verplaatst geselecteerde insluiting naar boven</translation>
     </message>
     <message>
-        <location line="-2163"/>
+        <location line="-2280"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move up</source>
         <translation>naar boven verplaatsen</translation>
     </message>
     <message>
-        <location line="-2152"/>
+        <location line="-2269"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion down</source>
         <translation>Verplaats geselecteerde insluiting naar beneden</translation>
     </message>
     <message>
-        <location line="-2163"/>
+        <location line="-2280"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move down</source>
         <translation>naar beneden verplaatsen</translation>
     </message>
     <message>
-        <location line="-2060"/>
+        <location line="-2177"/>
         <source>Include ONLY this list of patterns. Nothing more.
 Please refer to the manual for better understanding of include rules.
 This will disable the exclude feature.</source>
@@ -3882,7 +4048,7 @@ trailing / - staat voor de map alleen, zonder bestanden, symbolische links of ap
         <translation>Geef het volledige pad van het bestand met het rsync- (NIET het ssh-) authenticatie-wachtwoord (leeg laten indien niet van toepassing).</translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+19"/>
         <source>rsync password file:</source>
         <translation>rsync-wachtwoordbestand:</translation>
     </message>
@@ -3897,7 +4063,7 @@ trailing / - staat voor de map alleen, zonder bestanden, symbolische links of ap
         <translation>Remote module</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+74"/>
         <source>Use ssh as transport shell</source>
         <translation>Gebruik ssh als transportshell</translation>
     </message>
@@ -3907,7 +4073,12 @@ trailing / - staat voor de map alleen, zonder bestanden, symbolische links of ap
         <translation>ssh</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+75"/>
+        <source>password:</source>
+        <translation>wachtwoord:</translation>
+    </message>
+    <message>
+        <location line="+91"/>
         <source>Enter the full path of the file that contains the private ssh authentication key (leave blank if not applicable).
 
 Note that you have to do all actions needed for a passwordless ssh remote connection using an OpenSSH key pair</source>
@@ -3915,22 +4086,22 @@ Note that you have to do all actions needed for a passwordless ssh remote connec
 Vergeet niet dat alle acties voor een wachtwoordvrije ssh-verbinding een OpenSSH sleutelset vereisen</translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="-31"/>
         <source>private key file :</source>
         <translation>Persoonlijke sleutelbestand:</translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="-88"/>
         <source>Enter the port you would like to use for the ssh connection (leave blank for default port)</source>
         <translation>Geef de poort die je wilt gebruiken voor de ssh-verbinding (leeg laten voor standaardpoort)</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="-25"/>
         <source>port :</source>
         <translation>poort:</translation>
     </message>
     <message>
-        <location line="+30"/>
+        <location line="+267"/>
         <source>Command Options</source>
         <translation>Opdrachtopties</translation>
     </message>
@@ -3942,27 +4113,7 @@ If you have no idea what these mean, leave them untouched !!</source>
 Als je geen idee hebt wat dit betekent, blijf er dan vanaf!</translation>
     </message>
     <message>
-        <location line="+22"/>
-        <source>backend</source>
-        <translation>backend</translation>
-    </message>
-    <message>
-        <location line="+24"/>
-        <source>rsync</source>
-        <translation>rsync</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>rdiff-backup</source>
-        <translation>rdiff-backup</translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>rsnapshot</source>
-        <translation>rsnapshot</translation>
-    </message>
-    <message>
-        <location line="+80"/>
+        <location line="+84"/>
         <source>Delete files on the destination that don't exist on the source
 . &quot;Recurse into directories&quot; has to be selected 
 (--delete-after &amp; --delete-excluded if &quot;Exclude&quot; is used)</source>
@@ -4073,7 +4224,7 @@ WAARSCHUWING: Alle bestanden moeten ingesloten zijn in de verzend-reeks!
         <translation>Negeer bestanden op de CVS-manier</translation>
     </message>
     <message>
-        <location line="+142"/>
+        <location line="+197"/>
         <source>User defined</source>
         <translation>Door gebruiker gedefinieerd</translation>
     </message>
@@ -4166,7 +4317,7 @@ LET OP: vink dit alleen aan als je echt weet wat je doet!</translation>
         <translation>Geef hier een opdracht om uit te voeren na de taak en klik op de knop &apos;toevoegen&apos; om toe te voegen aan de lijst hieronder</translation>
     </message>
     <message>
-        <location filename="../src/modifyDialog.cpp" line="-104"/>
+        <location filename="../src/modifyDialog.cpp" line="-106"/>
         <source>Select source directory</source>
         <comment>file selection dialog title</comment>
         <translation>Selecteer bronmap</translation>
@@ -4184,13 +4335,14 @@ LET OP: vink dit alleen aan als je echt weet wat je doet!</translation>
         <translation>Selecteer rsync-wachtwoordbestand</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+7"/>
+        <location line="+2"/>
         <source>Select ssh keyfile</source>
         <comment>file selection dialog title</comment>
         <translation>Selecteer ssh-sleutelbestand</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+5"/>
         <location line="+6"/>
         <source>Select command to be executed</source>
         <comment>file selection dialog title</comment>
@@ -4244,7 +4396,7 @@ LET OP: vink dit alleen aan als je echt weet wat je doet!</translation>
         <translation>Dat is niet toegestaan omdat &apos;/&apos; geen echte naam heeft</translation>
     </message>
     <message>
-        <location line="-300"/>
+        <location line="-334"/>
         <source>Leave the box checked, to &lt;b&gt;STOP&lt;/b&gt; the execution of running task if this command exits with an error</source>
         <translation>Laat dit aangevinkt om de uitvoering van een actieve taak te &lt;b&gt;STOPPEN&lt;/b&gt; als deze opdracht eindigt met een fout</translation>
     </message>
@@ -4255,7 +4407,7 @@ LET OP: vink dit alleen aan als je echt weet wat je doet!</translation>
         <translation>gebruik keuzevakjes om taakuitvoering te &lt;b&gt;STOPPEN&lt;/b&gt; bij fout</translation>
     </message>
     <message>
-        <location line="+298"/>
+        <location line="+332"/>
         <source>You have declared the &apos;/&apos; (root) directory as source and have NOT checked the &apos;Do NOT create extra directory&apos; box</source>
         <comment>message box message - line1</comment>
         <translation>Je hebt de map &apos;/&apos; (root) tot bronmap gemaakt, maar NIET &apos;Maak GEEN extra map aan&apos; aangevinkt</translation>
@@ -4376,19 +4528,19 @@ LET OP: vink dit alleen aan als je echt weet wat je doet!</translation>
         <translation>Je hebt dit al toegevoegd bij &apos;uitsluiten&apos;</translation>
     </message>
     <message>
-        <location line="+54"/>
+        <location line="+55"/>
         <source>You have already added this include item</source>
         <comment>message box message</comment>
         <translation>Je hebt dit al toegevoegd bij &apos;insluiten&apos;</translation>
     </message>
     <message>
-        <location line="+52"/>
+        <location line="+53"/>
         <source>You have already added this option</source>
         <comment>message box message</comment>
         <translation>Je hebt deze optie al toegevoegd</translation>
     </message>
     <message>
-        <location line="+265"/>
+        <location line="+266"/>
         <location line="+25"/>
         <location line="+25"/>
         <location line="+25"/>
@@ -4424,7 +4576,7 @@ LET OP: vink dit alleen aan als je echt weet wat je doet!</translation>
         <translation>bewerken annuleren</translation>
     </message>
     <message>
-        <location filename="../ui/modifyDialog.ui" line="-1943"/>
+        <location filename="../ui/modifyDialog.ui" line="-2060"/>
         <source>Read exclude patterns from file</source>
         <translation>Lees uitsluitingspatronen uit bestand</translation>
     </message>
@@ -4490,14 +4642,19 @@ Lees de handleiding voor een beter begrip van de inclusie-regels.</translation>
         <translation>Lees insluitingspatronen uit bestand</translation>
     </message>
     <message>
-        <location line="+303"/>
-        <location line="+149"/>
-        <location line="+891"/>
+        <location line="+344"/>
+        <location line="+248"/>
+        <location line="+868"/>
         <source>browse locally</source>
         <translation>lokaal bladeren</translation>
     </message>
     <message>
-        <location line="-393"/>
+        <location line="-835"/>
+        <source>additional options:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+387"/>
         <source>Check this is you use a FAT/NTFS partition as destination.
 Data ownership and permissions will NOT be preserved.
 (-t --modify-window=1)</source>
@@ -4511,7 +4668,12 @@ Eigenaar en permissies van de data worden NIET bewaard.
         <translation>Bestemmingsmap is FAT/NTFS</translation>
     </message>
     <message>
-        <location line="+914"/>
+        <location line="+114"/>
+        <source>Restore permissions</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+855"/>
         <location line="+22"/>
         <source>Set the total number of backup snapshots to keep</source>
         <translation>Bepaal het aantal backupsnapshots om te bewaren</translation>
@@ -4781,13 +4943,13 @@ eg the contents of the directory &quot;/media/music/Album/&quot;</source>
     </message>
     <message>
         <location line="+53"/>
-        <location line="+135"/>
-        <location line="+40"/>
+        <location line="+139"/>
+        <location line="+45"/>
         <source>No schedules are declared !!</source>
         <translation>Er zijn geen tijdschema&apos;s gemaakt!</translation>
     </message>
     <message>
-        <location line="-124"/>
+        <location line="-133"/>
         <source>Unable to create schedule file</source>
         <translation>Kan het tijdschema niet aanmaken</translation>
     </message>
@@ -4813,7 +4975,7 @@ eg the contents of the directory &quot;/media/music/Album/&quot;</source>
     </message>
     <message>
         <location filename="../ui/scheduleDialog.ui" line="+182"/>
-        <location filename="../src/scheduleDialog.cpp" line="+53"/>
+        <location filename="../src/scheduleDialog.cpp" line="+62"/>
         <source>Profile schedule details</source>
         <translation>Details tijdschema</translation>
     </message>
@@ -4828,12 +4990,18 @@ eg the contents of the directory &quot;/media/music/Album/&quot;</source>
         <translation>Profiel uitvoeren</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
+        <source>hourly at minute </source>
+        <comment>full phrase: Execute profile &lt;PROFILENAME&gt; hourly at minute &lt;MM&gt;</comment>
+        <translation>elk uur op minuut</translation>
+    </message>
+    <message>
+        <location line="+4"/>
         <source>at</source>
         <translation>op</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+10"/>
         <source>every</source>
         <translation>elke</translation>
     </message>
@@ -4844,7 +5012,7 @@ eg the contents of the directory &quot;/media/music/Album/&quot;</source>
         <translation>dag</translation>
     </message>
     <message>
-        <location filename="../ui/scheduleDialog.ui" line="+245"/>
+        <location filename="../ui/scheduleDialog.ui" line="+251"/>
         <location filename="../src/scheduleDialog.cpp" line="-36"/>
         <source>Sunday</source>
         <translation>zondag</translation>
@@ -5074,12 +5242,13 @@ eg the contents of the directory &quot;/media/music/Album/&quot;</source>
         <translation>december</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+90"/>
+        <location line="+26"/>
         <source>Unable to create cron file</source>
         <translation>Kan het cron-bestand niet aanmaken</translation>
     </message>
     <message>
-        <location filename="../ui/scheduleDialog.ui" line="-440"/>
+        <location filename="../ui/scheduleDialog.ui" line="-446"/>
         <source>luckyBackup - schedule</source>
         <translation>luckyBackup - Tijdschema</translation>
     </message>
@@ -5147,7 +5316,12 @@ p, li { white-space: pre-wrap; }
         <translation>tijd (uur:min):</translation>
     </message>
     <message>
-        <location line="+40"/>
+        <location line="+27"/>
+        <source>set this value to -1 for the schedule to occur every hour</source>
+        <translation>zet deze waarde op -1 om de planning ieder uur te herhalen</translation>
+    </message>
+    <message>
+        <location line="+19"/>
         <source>:</source>
         <translation>:</translation>
     </message>
@@ -5405,7 +5579,7 @@ p, li { white-space: pre-wrap; }
         <translation>31</translation>
     </message>
     <message>
-        <location line="-485"/>
+        <location line="-491"/>
         <source>Check this if your machine does not support a graphical environment (eg server)</source>
         <translation>Vink dit aan als je computer geen grafische werkomgeving ondersteunt (bv. een server)</translation>
     </message>
@@ -5415,7 +5589,7 @@ p, li { white-space: pre-wrap; }
         <translation>Console-modus</translation>
     </message>
     <message>
-        <location line="+516"/>
+        <location line="+522"/>
         <source>okay</source>
         <translation>OK</translation>
     </message>
@@ -5435,7 +5609,7 @@ p, li { white-space: pre-wrap; }
         <translation>cronIT!</translation>
     </message>
     <message>
-        <location filename="../src/scheduleDialog.cpp" line="-555"/>
+        <location filename="../src/scheduleDialog.cpp" line="-657"/>
         <location line="+78"/>
         <source>The existent schedule file is not a valid luckyBackup v.</source>
         <comment>v is for version</comment>
@@ -5464,7 +5638,7 @@ p, li { white-space: pre-wrap; }
         <translation>Je crontab is met succes bijgewerkt</translation>
     </message>
     <message>
-        <location line="+91"/>
+        <location line="+100"/>
         <source>no crontab entries exist</source>
         <translation>er zijn geen crontab-entries</translation>
     </message>
@@ -5611,41 +5785,101 @@ p, li { white-space: pre-wrap; }
         <translation>luckyBackup</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+18"/>
         <source>declaration of paths</source>
         <translation>vaststellen van paden</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+30"/>
         <source>rsync:</source>
         <translation>rsync:</translation>
     </message>
     <message>
         <location line="+19"/>
         <source>Enter the full path of the rsync command</source>
-        <translation>Geef het volledige pad van de rsync-opdracht</translation>
+        <translation>Geef het volledige pad naar de rsync-opdracht</translation>
     </message>
     <message>
         <location line="+10"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
         <location line="+64"/>
         <source>browse locally</source>
         <translation>lokaal bladeren</translation>
     </message>
     <message>
-        <location line="-47"/>
+        <location line="-367"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
         <location line="+64"/>
         <source>Use default value</source>
         <translation>Gebruik standaardwaarde</translation>
     </message>
     <message>
-        <location line="-46"/>
-        <source>ssh</source>
-        <translation>ssh</translation>
+        <location line="-366"/>
+        <source>ssh:</source>
+        <translation>ssh:</translation>
     </message>
     <message>
         <location line="+19"/>
         <source>Enter the full path of the ssh command</source>
-        <translation>Geef het volledige pad van de ssh-opdracht</translation>
+        <translation>Geef het volledige pad naar de ssh-opdracht</translation>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>cygpath:</source>
+        <translation>cygpath:</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the cygpath command</source>
+        <translation>Geef het volledige pad naar de cygpath-opdracht</translation>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>dosdev:</source>
+        <translation>dosdev:</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the dosdev command</source>
+        <translation>Geef het volledige pad naar de dosdev-opdracht</translation>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>main dir:</source>
+        <translation>hoofdmap:</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the luckybackup directory</source>
+        <translation>Geef het volledige pad naar de luckyBackup-map</translation>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>vshadow dir:</source>
+        <translation>vshadow-map:</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the vshadow directory</source>
+        <translation>Geef het volledige pad naar de vshadow-map</translation>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>temp dir:</source>
+        <translation>temp-map:</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the temporary directory</source>
+        <translation>Geef het volledige pad naar de tijdelijke map</translation>
     </message>
     <message>
         <location line="+58"/>
@@ -5658,7 +5892,7 @@ p, li { white-space: pre-wrap; }
         <translation>Annuleren</translation>
     </message>
     <message>
-        <location filename="../src/winDialog.cpp" line="+102"/>
+        <location filename="../src/winDialog.cpp" line="+147"/>
         <source>Select rsync command</source>
         <comment>file selection dialog title</comment>
         <translation>Selecteer rsync-opdracht</translation>
@@ -5666,14 +5900,28 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+1"/>
         <location line="+6"/>
+        <location line="+6"/>
+        <location line="+6"/>
         <source>Executable Files (*.exe)</source>
         <translation>Uitvoerbare bestanden (*.exe)</translation>
     </message>
     <message>
-        <location line="-1"/>
+        <location line="-13"/>
         <source>Select ssh command</source>
         <comment>file selection dialog title</comment>
         <translation>Selecteer ssh-opdracht</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Select cygpath command</source>
+        <comment>file selection dialog title</comment>
+        <translation>Selecteer cygpath-opdracht</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Select dosdev command</source>
+        <comment>file selection dialog title</comment>
+        <translation>Selecteer dosdev-opdracht</translation>
     </message>
 </context>
 </TS>

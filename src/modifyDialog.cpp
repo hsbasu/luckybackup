@@ -23,7 +23,7 @@ Display a dialog. Adds a new or modifies an existing operation
  project version    : Please see "main.cpp" for project version
 
  developer          : luckyb 
- last modified      : 11 Sep 2013
+ last modified      : 12 Jan 2014
 
 ===============================================================================================================================
 ===============================================================================================================================
@@ -63,7 +63,9 @@ modifyDialog::modifyDialog (int ItemNo, QDialog *parent) : QDialog (parent)
         uiM.checkBox_restorent  -> setVisible(FALSE);
         uiM.lineEdit_sshPasswordStr -> setVisible(FALSE);
         uiM.lineEdit_sshOptions -> setVisible(FALSE);
-    }     
+    }
+    else
+        uiM.checkBox_vss        -> setEnabled(FALSE);   // disable VSS until a better solution is found
     
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

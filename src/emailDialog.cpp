@@ -22,15 +22,15 @@
 
  project version    : Please see "main.cpp" for project version
 
- developer          : luckyb 
- last modified      : 13 Jan 2013
+ developer          : luckyb
+ last modified      : 06 Feb 2014
 ===============================================================================================================================
 ===============================================================================================================================
 */
 
 #include "emailDialog.h"
 
-// class emailDialog Constructor=================================================================================================
+// class emailDialog Constructor===============================================================================================
 // Displays a dialog to schedule email reports
 emailDialog::emailDialog (QDialog *parent) : QDialog (parent)
 {
@@ -42,6 +42,8 @@ emailDialog::emailDialog (QDialog *parent) : QDialog (parent)
     connect ( uiE.pushButton_ok,        SIGNAL( clicked() ),    this, SLOT( okay() ) );
     connect ( uiE.pushButton_cancel,    SIGNAL( clicked() ),    this, SLOT( cancel() ) );
     connect ( uiE.pushButton_test,      SIGNAL( clicked() ),    this, SLOT( emailTest() ) );
+    connect ( uiE.lineEdit_command,     SIGNAL( textEdited(QString) ),    this, SLOT( enableTLS() ) );
+    connect ( uiE.checkBox_disable_tls, SIGNAL( stateChanged(int) ),    this, SLOT( enableTLS() ) );
     
     //Connect all "revert to default" toolButtons with the revertDefault SLOT
     //Map all the toolButton signals and transmit a different integer depending on the toolbutton
@@ -98,9 +100,15 @@ void emailDialog::revertDefault(const int field)
         //command
         case 0:
             if (WINrunning)
+            {
                 uiE.lineEdit_command        -> setText(emailDefaultWinCommand);
+                uiE.lineEdit_arguments      -> setText(emailDefaultWinArguments);
+            }
             else
+            {
                 uiE.lineEdit_command        -> setText(emailDefaultCommand);
+                uiE.lineEdit_arguments      -> setText(emailDefaultArguments);
+            }
             break;
         //subject
         case 1:
@@ -111,6 +119,7 @@ void emailDialog::revertDefault(const int field)
             uiE.textBrowser_arg_body    -> setText(emailDefaultBody);
             break;
     }
+    enableTLS();
 }
 
 // Check if all fields are ok
@@ -127,6 +136,13 @@ bool emailDialog::checkFields()
         warningMessage.append(tr("The command field is empty") + "!! \n");
         returnVal = FALSE;
     }
+
+    /* This is commented because a command with no arguments (eg a script) is possible to be used
+    if (uiE.lineEdit_arguments -> text() == "")
+    {
+        warningMessage.append(tr("The command arguments field is empty") + "!! \n");
+        returnVal = FALSE;
+    }*/
     
     return returnVal ;
 }
@@ -136,6 +152,7 @@ bool emailDialog::checkFields()
 void emailDialog::fillWindow()
 {
     uiE.lineEdit_command            -> setText(emailCommand);
+    uiE.lineEdit_arguments          -> setText(emailArguments);
     uiE.lineEdit_arg_from           -> setText(emailFrom);
     uiE.lineEdit_arg_to             -> setText(emailTo);
     uiE.lineEdit_arg_subject        -> setText(emailSubject);
@@ -144,6 +161,8 @@ void emailDialog::fillWindow()
     uiE.checkBox_conditionNever     -> setChecked(emailNever);
     uiE.checkBox_conditionError     -> setChecked(emailError);
     uiE.checkBox_conditionSchedule  -> setChecked(emailSchedule);
+    uiE.checkBox_disable_tls        -> setChecked(emailTLS);
+    enableTLS();
 }
 
 // fillVariables
@@ -151,6 +170,7 @@ void emailDialog::fillWindow()
 void emailDialog::fillVariables()
 {
     emailCommand    = uiE.lineEdit_command -> text();
+    emailArguments  = uiE.lineEdit_arguments -> text();
     emailFrom       = uiE.lineEdit_arg_from -> text();
     emailTo         = uiE.lineEdit_arg_to -> text();
     emailSubject    = uiE.lineEdit_arg_subject -> text();
@@ -170,6 +190,7 @@ void emailDialog::fillVariables()
     emailNever      = uiE.checkBox_conditionNever -> isChecked();
     emailError      = uiE.checkBox_conditionError -> isChecked();
     emailSchedule   = uiE.checkBox_conditionSchedule -> isChecked();
+    emailTLS        = uiE.checkBox_disable_tls -> isChecked();
     
 // Windows TESTING purposes for Juan TESTING~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /*  if (WINrunning)
@@ -212,6 +233,27 @@ void emailDialog::emailTest()
     textdialogW.exec();
 }
 
+// enableTLS
+// enable/disable the TLS option
+void emailDialog::enableTLS()
+{
+    QString tlsArgument= "-o tls=no";
+    QString tempEmailArguments  = uiE.lineEdit_arguments -> text();
+    tempEmailArguments.remove(tlsArgument +" ");
+    tempEmailArguments.remove(" " + tlsArgument);
+    
+    //hide or show the "disable TLS" option if "sendemail" is used as command
+    if (uiE.lineEdit_command -> text() == emailDefaultCommand)
+    {
+        uiE.checkBox_disable_tls -> setEnabled(TRUE);
+        if (uiE.checkBox_disable_tls -> isChecked())
+            tempEmailArguments.prepend(tlsArgument + " ");
+    }
+    else
+        uiE.checkBox_disable_tls -> setEnabled(FALSE);
+    
+    uiE.lineEdit_arguments          -> setText(tempEmailArguments);
+}
 // --------------------------------accessors-----------------------------------
 // Return an integer according to different status
 int emailDialog::getGoOn()

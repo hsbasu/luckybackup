@@ -100,7 +100,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/global.cpp" line="+1067"/>
+        <location filename="../src/global.cpp" line="+1145"/>
         <source>The task list is empty</source>
         <translation>La llista de tasques és buida</translation>
     </message>
@@ -131,7 +131,7 @@
         <translation>No heu inclós cap tasca</translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+51"/>
         <source>The following included tasks &lt;b&gt;share the same destination directory&lt;/b&gt; (all together or at groups) and at least one of them will backup the contents of a directory</source>
         <translation>Les tasques següents incloses &lt;b&gt;comparteix la mateixa carpeta de destí&lt;/b&gt; (tot junt o per grups) i almenys una d&apos;elles contindrà la còpia de seguretat d&apos;una carpeta</translation>
     </message>
@@ -146,7 +146,7 @@
         <translation>Desmarqueu les caixes apropiades incloses o canvieu el tipus de tasques a altres que &apos;&lt;b&gt;Còpia de seguretat del contingut de la carpeta&lt;/b&gt;&apos;  o useu &apos;Còpia de seguretat del contingut de la carpeta&apos; junt amb l&apos;opció &apos;&lt;b&gt;Només inclou&lt;/b&gt; abans de procedir</translation>
     </message>
     <message>
-        <location line="+593"/>
+        <location line="+674"/>
         <source>pre-task execution of command</source>
         <comment>Full phrase: pre-task execution of command: &lt;COMMAND&gt; starting</comment>
         <translation>l&apos;execució de la pre-tasca de l&apos;ordre</translation>
@@ -318,7 +318,7 @@
         <translation>S&apos;estan desant les còpies de seguretat dels perfils, dels registres i de les dades de la captura d&apos;imatge</translation>
     </message>
     <message>
-        <location line="+93"/>
+        <location line="+111"/>
         <source>Could not open the logfile</source>
         <translation>No s&apos;ha pogut obrir el fitxer de registre</translation>
     </message>
@@ -328,7 +328,7 @@
         <translation>El fitxer de registre no existeix</translation>
     </message>
     <message>
-        <location line="+63"/>
+        <location line="+78"/>
         <source>The specified command is probably not installed</source>
         <translation>L&apos;ordre especificada probablement no està instal·lada</translation>
     </message>
@@ -343,7 +343,7 @@
         <translation>ordre:   </translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>exit code: </source>
         <translation>codi de sortida:</translation>
     </message>
@@ -374,13 +374,13 @@
     </message>
     <message>
         <location line="+10"/>
-        <location line="+44"/>
+        <location line="+61"/>
         <location line="+99"/>
         <source>status</source>
         <translation>estat</translation>
     </message>
     <message>
-        <location line="-143"/>
+        <location line="-160"/>
         <source>OK</source>
         <translation>Correcte</translation>
     </message>
@@ -392,25 +392,31 @@
     </message>
     <message>
         <location line="-14"/>
-        <location line="+91"/>
+        <location line="+108"/>
         <source>Source directory</source>
         <translation>Carpeta origen</translation>
     </message>
     <message>
-        <location line="-82"/>
+        <location line="-99"/>
         <location line="+19"/>
         <source>Using remote, check is skipped</source>
         <translation>S&apos;està usant remot, s&apos;omet la comprovació</translation>
     </message>
     <message>
         <location line="-9"/>
-        <location line="+87"/>
+        <location line="+104"/>
         <location line="+59"/>
         <source>Destination directory</source>
         <translation>Carpeta de destí</translation>
     </message>
     <message>
-        <location line="-129"/>
+        <location line="-137"/>
+        <source>free</source>
+        <comment>as in free disk space</comment>
+        <translation>lliure</translation>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>WARNING</source>
         <translation>AVÍS</translation>
     </message>
@@ -634,6 +640,16 @@
     </message>
     <message>
         <location line="+2"/>
+        <source>Juan Ramon Alfaro Martinez</source>
+        <translation>Juan Ramon Alfaro Martinez</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Code contributor for remote &amp; vss support regarding the windows port</source>
+        <translation>Contruibueix amb codi per suport remot i vss en el port per a Windows</translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Jack Fink</source>
         <translation>Jack Fink</translation>
     </message>
@@ -698,6 +714,16 @@
         <translation>Mantenidor del paquet FreeBSD</translation>
     </message>
     <message>
+        <location line="+2"/>
+        <source>Dimitris Jemos</source>
+        <translation>Dimitris Jemos</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Slackel package maintainer</source>
+        <translation>Mantenidor de paquets de Slackel</translation>
+    </message>
+    <message>
         <location line="+3"/>
         <source>ex Fedora package maintainer</source>
         <translation>ex mantenidor del paquet Fedora</translation>
@@ -718,24 +744,25 @@
         <translation>Stergios Prosiniklis</translation>
     </message>
     <message>
-        <location line="-57"/>
-        <location line="+58"/>
+        <location line="-63"/>
+        <location line="+64"/>
         <source>Greek manual translator</source>
         <translation>Traductor del manual al grec</translation>
     </message>
     <message>
         <location line="+3"/>
         <location line="+3"/>
+        <location line="+3"/>
         <source>German gui translator</source>
         <translation>Traductor de la IGU a l&apos;alemany</translation>
     </message>
     <message>
-        <location line="-1"/>
+        <location line="-4"/>
         <source>Wilfried Schobel</source>
         <translation>Wilfried Schobel</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+6"/>
         <source>Sergio Gameiro</source>
         <translation>Sergio Gameiro</translation>
     </message>
@@ -761,23 +788,25 @@
         <translation>Traductor de la IGU al francès i assessor de valor d&apos;empaquetament (i més)</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+11"/>
         <source>Raffaele</source>
         <translation>Raffaele</translation>
     </message>
     <message>
         <location line="-2"/>
         <location line="+3"/>
+        <location line="+3"/>
+        <location line="+3"/>
         <source>Italian gui translator</source>
         <translation>Traductor de la IGU a l&apos;italià</translation>
     </message>
     <message>
-        <location line="-7"/>
+        <location line="-16"/>
         <source>Aurelien Merckel</source>
         <translation>Aurelien Merckel</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+18"/>
         <source>Denis Skorski</source>
         <translation>Denis Skorski</translation>
     </message>
@@ -793,11 +822,17 @@
     </message>
     <message>
         <location line="+1"/>
+        <location line="+3"/>
         <source>Dutch gui translator</source>
         <translation>Traductor de la IGU a l&apos;holandès</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="-1"/>
+        <source>Martin Grashoff (linuxrev)</source>
+        <translation>Martin Grashoff (linuxrev)</translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Subhi Honaco</source>
         <translation>Subhi Honaco</translation>
     </message>
@@ -827,7 +862,7 @@
         <translation>Traductor de la IGU al romanès</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+20"/>
         <source>Roger Calvo</source>
         <translation>Roger Calvó</translation>
     </message>
@@ -837,7 +872,7 @@
         <translation>Tomas Vadina</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+18"/>
         <source>Javi Romero</source>
         <translation>Javi Romero</translation>
     </message>
@@ -857,7 +892,7 @@
         <translation>Disenyador de la IGU v0.3</translation>
     </message>
     <message>
-        <location line="-112"/>
+        <location line="-151"/>
         <source>Dimitris Kalamaras</source>
         <translation>Dimitris Kalamaras</translation>
     </message>
@@ -867,22 +902,54 @@
         <translation>Si nos fos per ell i els seus tutorials mai no hauria començat aquest projecte</translation>
     </message>
     <message>
-        <location line="+63"/>
+        <location line="+59"/>
+        <source>Thomas Glatt</source>
+        <translation>Thomas Glatt</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <location line="+3"/>
         <source>French gui translator</source>
         <translation>Traductor de la IGU al Francès</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="-1"/>
+        <source>Sébastien Bourgain</source>
+        <translation>Sébastien Bourgain</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>pinguinofurioso</source>
+        <translation>pinguinofurioso</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Alessio Ganci</source>
+        <translation>Alessio Ganci</translation>
+    </message>
+    <message>
+        <location line="+24"/>
+        <source>Matej Urbančič</source>
+        <translation>Matej Urbančič</translation>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>Marvin Gomez</source>
         <translation>Marvin Gomez</translation>
     </message>
     <message>
         <location line="+1"/>
+        <location line="+3"/>
         <source>Spanish gui translator</source>
         <translation>Traductor de la IGU a l&apos;espanyol</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="-1"/>
+        <source>Antonio Jose Molina</source>
+        <translation>Antonio Jose Molina</translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Fredrik Holmgren</source>
         <translation>Fredrik Holmgren</translation>
     </message>
@@ -910,6 +977,46 @@
         <location line="+1"/>
         <source>Estonian gui translator</source>
         <translation>Traductor de la IGU a l&apos;Estonià</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Nicolay Boychev</source>
+        <translation>Nicolay Boychev</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Bulgarian gui translator</source>
+        <translation>Traductor de la IGU al Búlgar</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Manuel Meixide</source>
+        <translation>Manuel Meixide</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Galician gui translator</source>
+        <translation>Traductor de la IGU al Gallec</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Roger Foss</source>
+        <translation>Roger Foss</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Norwegian gui translator</source>
+        <translation>Traductor de la IGU al noruec</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Pin-hsien Li</source>
+        <translation>Pin-hsien Li</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Chinese (Taiwan) gui translator</source>
+        <translation>Traductor de la IGU al xinès (Taiwan)</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -940,6 +1047,16 @@
         <location line="+1"/>
         <source>backupwhenidle python script developer</source>
         <translation>desenvolupador de l&apos;script de python backupwhenidle</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Bjorn Rietdijk</source>
+        <translation>Bjorn Rietdijk</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>valuable OS/2 and windows tester</source>
+        <translation>provador de valor de OS/2 i Windows</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -1074,7 +1191,7 @@ p, li { white-space: pre-wrap; }
         <translation>Acord de &amp;llicència</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="-211"/>
+        <location filename="../src/about.cpp" line="-253"/>
         <source>luckyBackup is distributed under the terms of the &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU General Public License&lt;/a&gt;</source>
         <comment>Please leave the tags &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt; &amp; &lt;/a&gt; intact and surrounding the GNU General Public License !!</comment>
         <translation>luckyBackup es distribueix en els termes de la &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;Llicència Pública General GNU&lt;/a&gt;</translation>
@@ -1086,32 +1203,33 @@ p, li { white-space: pre-wrap; }
         <translation>És &lt;b&gt;programari lliure&lt;/b&gt;: podeu redistribuïr-lo i/o modificar-lo en els termes de la Llicència Pública General GNU tal i com publica la Free Software Foundation, versió 3 de la llicència.</translation>
     </message>
     <message>
-        <location line="+75"/>
+        <location line="+81"/>
         <source>Thomas Janssen</source>
         <translation>Thomas Janssen</translation>
     </message>
     <message>
-        <location line="-5"/>
+        <location line="-8"/>
         <source>Fedora package maintainer (official repo)</source>
         <translation>Mantenidor de paquets Fedora (repositori oficial)</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+17"/>
         <source>Karsten Jaschultowski</source>
         <translation>Karsten Jaschultowski</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+24"/>
         <source>Francesco Braile</source>
         <translation>Francesco Braile</translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location line="+30"/>
         <source>Andrej Znidarsic</source>
         <translation>Andrej Znidarsic</translation>
     </message>
     <message>
         <location line="+1"/>
+        <location line="+3"/>
         <source>Slovenian gui translator</source>
         <translation>Traductor de la IGU a l&apos;eslovè</translation>
     </message>
@@ -1126,7 +1244,7 @@ p, li { white-space: pre-wrap; }
         <translation>Traductor de la IGU al turc</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+38"/>
         <source>Tito Poquito</source>
         <translation>Tito Poquito</translation>
     </message>
@@ -1136,7 +1254,7 @@ p, li { white-space: pre-wrap; }
         <translation>mantenidor del paquet per Slackware (SlackBuilds Repository)</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+26"/>
         <source>...my other half, &lt;b&gt;Dimitra&lt;/b&gt; that bears with me all these times that this project is under development</source>
         <translation>...la meva mitja taronja, &lt;b&gt;Dimitra&lt;/b&gt; que em dona suport mentre aquest programa està en desenvolupament</translation>
     </message>
@@ -1159,17 +1277,8 @@ p, li { white-space: pre-wrap; }
         <translation>ordre:</translation>
     </message>
     <message>
-        <location line="+7"/>
-        <source>Enter the full command with arguments to run
-eg
-sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</source>
-        <translation>Introduïu les ordres amb els arguments a executar
-per exemple
-sendemail -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</translation>
-    </message>
-    <message>
-        <location line="+9"/>
-        <location line="+204"/>
+        <location line="+38"/>
+        <location line="+268"/>
         <location line="+14"/>
         <source>Use default</source>
         <extracomment>This means &quot;use the default value for this field&quot;
@@ -1180,7 +1289,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <translation>Usa valor per defecte</translation>
     </message>
     <message>
-        <location line="-205"/>
+        <location line="-218"/>
         <source>Arguments</source>
         <translation>Arguments</translation>
     </message>
@@ -1223,6 +1332,16 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <location line="+10"/>
         <source>%e No of errors</source>
         <translation>%e Número d&apos;errors</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>If unchecked &quot;TLS auto&quot; is used. Only available for sendemail</source>
+        <translation>Si no està marcat s&apos;usa &quot;TLS auto&quot;. Només disponible per sendmail</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Disable TLS</source>
+        <translation>Desactiva TLS</translation>
     </message>
     <message>
         <location line="+25"/>
@@ -1295,12 +1414,35 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <translation>Cancel·la</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="-348"/>
         <source>Specify the conditions to send an email</source>
         <translation>Especifiqueu les condicions per enviar un correu electrònic</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="-38"/>
+        <source>Enter the command to run
+eg
+sendemail</source>
+        <translation>Introduïu l&apos;ordre a executar
+per exemple
+sendemail</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>arguments:</source>
+        <translation>arguments:</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Enter arguments of the email command
+eg
+ -f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</source>
+        <translation>Introduïu els arguments de l&apos;ordre de correu
+per exemple
+-f %f -t %t -u &quot;%s&quot; -m &quot;%b&quot; -a %l -s %v</translation>
+    </message>
+    <message>
+        <location line="+25"/>
         <source>Conditions</source>
         <translation>Condicions</translation>
     </message>
@@ -1335,7 +1477,7 @@ This means &quot;use the default value for this field&quot;</extracomment>
         <translation>Mai</translation>
     </message>
     <message>
-        <location filename="../src/emailDialog.cpp" line="+124"/>
+        <location filename="../src/emailDialog.cpp" line="+136"/>
         <source>The command field is empty</source>
         <translation>El camp d&apos;ordres està buit</translation>
     </message>
@@ -1409,7 +1551,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>luckyBackupWindow</name>
     <message>
-        <location filename="../src/executenow.cpp" line="+135"/>
+        <location filename="../src/executenow.cpp" line="+161"/>
         <source>commands output</source>
         <comment>output window label</comment>
         <translation>sortida d&apos;ordres</translation>
@@ -1454,17 +1596,17 @@ p, li { white-space: pre-wrap; }
         <translation>acabat</translation>
     </message>
     <message>
-        <location line="-149"/>
-        <location line="+151"/>
-        <location line="+749"/>
+        <location line="-173"/>
+        <location line="+175"/>
+        <location line="+1065"/>
         <location line="+21"/>
-        <location line="+25"/>
+        <location line="+30"/>
         <location line="+1"/>
         <source>simulation mode</source>
         <translation>mode de simulació</translation>
     </message>
     <message>
-        <location line="-792"/>
+        <location line="-1113"/>
         <source>Could not update last execution time of tasks</source>
         <translation>No s&apos;ha pogut actualitzar el temps d&apos;execució de tasques anteriors</translation>
     </message>
@@ -1491,7 +1633,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Restaura</translation>
     </message>
     <message>
-        <location line="-195"/>
+        <location line="-219"/>
         <source>execution of profile:</source>
         <comment>tray message - execution of profile: &lt;PROFILENAME&gt; in progress...</comment>
         <translation>execució de perfil:</translation>
@@ -1503,7 +1645,7 @@ p, li { white-space: pre-wrap; }
         <translation>en curs...</translation>
     </message>
     <message>
-        <location line="+373"/>
+        <location line="+451"/>
         <source>Removed all older snapshots data</source>
         <translation>S&apos;han eliminat les dades d&apos;anteriors captures d&apos;imatge</translation>
     </message>
@@ -1513,22 +1655,22 @@ p, li { white-space: pre-wrap; }
         <translation>ha fallat en eliminar les dades d&apos;anteriors captures d&apos;imatge</translation>
     </message>
     <message>
-        <location line="+405"/>
+        <location line="+520"/>
         <source>Unknown error</source>
         <translation>Error desconegut</translation>
     </message>
     <message>
-        <location line="+106"/>
+        <location line="+253"/>
         <location line="+5"/>
         <location line="+6"/>
         <location line="+21"/>
-        <location line="+24"/>
-        <location line="+70"/>
+        <location line="+27"/>
+        <location line="+72"/>
         <source>Elapsed time</source>
         <translation>Temps transcorregut</translation>
     </message>
     <message>
-        <location line="-125"/>
+        <location line="-130"/>
         <source>pre-task execution of command</source>
         <translation>execució d&apos;ordres de pre-tasca</translation>
     </message>
@@ -1560,7 +1702,7 @@ p, li { white-space: pre-wrap; }
         <translation>s&apos;estan eliminant fitxers</translation>
     </message>
     <message>
-        <location line="+182"/>
+        <location line="+187"/>
         <source>trying to send an email</source>
         <translation>s&apos;està intentant enviar un correu electrònic</translation>
     </message>
@@ -1570,7 +1712,7 @@ p, li { white-space: pre-wrap; }
         <translation>El sistema s&apos;aturarà en 1 minut</translation>
     </message>
     <message>
-        <location line="-221"/>
+        <location line="-226"/>
         <source>Source</source>
         <translation>Origen</translation>
     </message>
@@ -1580,7 +1722,7 @@ p, li { white-space: pre-wrap; }
         <translation>Destí</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+22"/>
         <location line="+1"/>
         <source>All tasks completed</source>
         <translation>Les tasques s&apos;han completat</translation>
@@ -1805,7 +1947,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;%1 %2</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="+766"/>
+        <location filename="../src/luckybackupwindow.cpp" line="+775"/>
         <source>You have asked for a RESTORE task to be created</source>
         <comment>'create restore' message line 1/4</comment>
         <translation>Heu demanat crear una tasca de RESTAURACIÓ</translation>
@@ -1830,13 +1972,13 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/functions.cpp" line="+86"/>
-        <location filename="../src/luckybackupwindow.cpp" line="-424"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-432"/>
         <location line="+70"/>
         <location line="+14"/>
         <location line="+56"/>
         <location line="+85"/>
         <location line="+14"/>
-        <location line="+230"/>
+        <location line="+238"/>
         <location line="+155"/>
         <location line="+269"/>
         <source>ERROR</source>
@@ -1931,12 +2073,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/executenow.cpp" line="+132"/>
         <location filename="../src/functions.cpp" line="+4"/>
-        <location line="+65"/>
+        <location line="+70"/>
         <source>WARNING</source>
         <translation>AVÍS</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="-63"/>
+        <location filename="../src/functions.cpp" line="-68"/>
         <source>default profile</source>
         <comment>Information window message. Full phrase: 'default profile &lt;PROFILENAME&gt; could not be saved'.</comment>
         <translation>perfil per defecte</translation>
@@ -1960,7 +2102,7 @@ p, li { white-space: pre-wrap; }
         <translation>s&apos;ha desat correctament</translation>
     </message>
     <message>
-        <location line="+47"/>
+        <location line="+52"/>
         <source>creating default profile ...</source>
         <comment>Information window message</comment>
         <translation>S&apos;està creant el perfil per defecte ...</translation>
@@ -1994,7 +2136,7 @@ p, li { white-space: pre-wrap; }
         <translation>Voleu continuar igualment?</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="-1150"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-1159"/>
         <source>super user</source>
         <comment>super user is the root user</comment>
         <translation>super usuari</translation>
@@ -2005,7 +2147,7 @@ p, li { white-space: pre-wrap; }
         <translation>mode super usuari</translation>
     </message>
     <message>
-        <location line="+88"/>
+        <location line="+89"/>
         <source>Welcome to</source>
         <comment>full phrase: 'Welcome to luckyBackup'</comment>
         <translation>Benvingut a</translation>
@@ -2024,12 +2166,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+2"/>
-        <location line="+566"/>
+        <location line="+574"/>
         <source>The name you have entered contains only invalid characters</source>
         <translation>El nom que heu escrit conté només caràcters no vàlids</translation>
     </message>
     <message>
-        <location line="-552"/>
+        <location line="-560"/>
         <location line="+70"/>
         <location line="+156"/>
         <source>Profile</source>
@@ -2182,7 +2324,7 @@ p, li { white-space: pre-wrap; }
         <translation>s&apos;ha establert en</translation>
     </message>
     <message>
-        <location line="+212"/>
+        <location line="+220"/>
         <source>Import Profile</source>
         <comment>this is a dialog title</comment>
         <translation>Importa perfil</translation>
@@ -2226,16 +2368,16 @@ p, li { white-space: pre-wrap; }
         <translation>No s&apos;ha trobat el fitxer</translation>
     </message>
     <message>
-        <location line="-311"/>
+        <location line="-319"/>
         <location line="+64"/>
-        <location line="+285"/>
+        <location line="+293"/>
         <source>You have reached the maximum limit of supported tasks</source>
         <translation>Hau arribat al límit màxim de tasques admeses</translation>
     </message>
     <message>
-        <location line="-348"/>
+        <location line="-356"/>
         <location line="+64"/>
-        <location line="+285"/>
+        <location line="+293"/>
         <source>You have to remove a task if you wish to add another !!</source>
         <translation>Heu d&apos;eliminar una tasca per poder afegir-ne una altra!!</translation>
     </message>
@@ -2320,12 +2462,7 @@ p, li { white-space: pre-wrap; }
         <translation>Seleccioneu una tasca per gestionar-la primer</translation>
     </message>
     <message>
-        <location line="+79"/>
-        <source>You have only incuded tasks that are going to be skipped</source>
-        <translation>Només heu inclós tasques que s&apos;ometran</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+80"/>
         <source>nothing to do</source>
         <translation>res a fer</translation>
     </message>
@@ -2340,7 +2477,7 @@ p, li { white-space: pre-wrap; }
         <translation>Les preferències de correu electrònic s&apos;han &lt;font color=green&gt;actualitzat correctament</translation>
     </message>
     <message>
-        <location line="+71"/>
+        <location line="+76"/>
         <source>status</source>
         <translation>estat</translation>
     </message>
@@ -2444,19 +2581,19 @@ p, li { white-space: pre-wrap; }
         <translation>F5</translation>
     </message>
     <message>
-        <location filename="../src/executenow.cpp" line="-974"/>
+        <location filename="../src/executenow.cpp" line="-1295"/>
         <source>Aborting: Please wait for all processes to be killed</source>
         <translation>S&apos;està cancel·lant: espereu l&apos;eliminació de tots els processos</translation>
     </message>
     <message>
-        <location line="+129"/>
+        <location line="+197"/>
         <source>Removing old snapshots and logfiles of task</source>
         <comment>info message displayed during ...data removal
 Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comment>
         <translation>S&apos;estan eliminant captures d&apos;imatge antigues i els fitxers de registre de la tasca</translation>
     </message>
     <message>
-        <location line="+87"/>
+        <location line="+73"/>
         <location line="+12"/>
         <source>Removing</source>
         <translation>S&apos;està eliminant</translation>
@@ -2468,7 +2605,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>ha fallat en eliminar</translation>
     </message>
     <message>
-        <location line="+380"/>
+        <location line="+495"/>
         <source>Failed to start</source>
         <comment>this refers to a process</comment>
         <translation>Ha fallat en engegar</translation>
@@ -2504,7 +2641,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Error desconegut</translation>
     </message>
     <message>
-        <location line="+116"/>
+        <location line="+263"/>
         <source>calculating</source>
         <comment>info message displayed during ...calculations</comment>
         <translation>s&apos;està calculant</translation>
@@ -2527,12 +2664,17 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>s&apos;estan transferint fitxers</translation>
     </message>
     <message>
-        <location line="+91"/>
+        <location line="+15"/>
+        <source>Total files transfered</source>
+        <translation>Total de fitxers transmesos</translation>
+    </message>
+    <message>
+        <location line="+81"/>
         <source>ABORTED</source>
         <translation>S&apos;HA INTERROMPUT</translation>
     </message>
     <message>
-        <location filename="../src/functions.cpp" line="-555"/>
+        <location filename="../src/functions.cpp" line="-560"/>
         <source>&amp;Refresh</source>
         <comment>This is a top 'Profile' menu action</comment>
         <translation>&amp;Actualitza</translation>
@@ -2802,19 +2944,19 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     </message>
     <message>
         <location line="+0"/>
-        <location line="+95"/>
+        <location line="+100"/>
         <source>Use the &quot;add&quot; button on the right to get started</source>
         <comment>Please keep the add word inside quotes</comment>
         <translation>Useu el botó a la dreta &quot;afegeix&quot; per començar</translation>
     </message>
     <message>
-        <location line="-69"/>
+        <location line="-74"/>
         <source>could not be saved</source>
         <comment>Information window message. Full phrase: '(default) profile &lt;PROFILENAME&gt; could not be saved'</comment>
         <translation>no s&apos;ha pogut desar</translation>
     </message>
     <message>
-        <location line="+61"/>
+        <location line="+66"/>
         <source>default profile</source>
         <comment>Information window message. Full phrase: 'default profile &lt;PROFILENAME&gt; could not be created'.</comment>
         <translation>El perfil per defecte</translation>
@@ -2856,7 +2998,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>el perfil</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="-795"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-808"/>
         <source>Failed to duplicate profile</source>
         <comment>full phrase: 'Failed to duplicate profile &lt;PROFILENAME&gt;'</comment>
         <translation>No s&apos;ha pogut duplicar el perfil</translation>
@@ -2896,7 +3038,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Seleccioneu una tasca primer</translation>
     </message>
     <message>
-        <location line="+230"/>
+        <location line="+238"/>
         <source>Hide information window</source>
         <comment>hide/show information window button tooltip</comment>
         <translation>Amaga la finestra d&apos;informació</translation>
@@ -2908,7 +3050,12 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Mostra la finestra d&apos;informació</translation>
     </message>
     <message>
-        <location line="+378"/>
+        <location line="+287"/>
+        <source>You have only included tasks that are going to be skipped</source>
+        <translation>Només heu inclós tasques que s&apos;ometran</translation>
+    </message>
+    <message>
+        <location line="+96"/>
         <source>Manage Task</source>
         <comment>This is a top 'Task' menu action</comment>
         <translation>Gestió de tasques</translation>
@@ -2925,7 +3072,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>&amp;Tasca</translation>
     </message>
     <message>
-        <location filename="../src/executenow.cpp" line="-450"/>
+        <location filename="../src/executenow.cpp" line="-631"/>
         <source>Successfuly created destination directory</source>
         <translation>La carpeta de destí s&apos;ha creat correctament</translation>
     </message>
@@ -2938,7 +3085,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
 <context>
     <name>manageDialog</name>
     <message>
-        <location filename="../src/manage.cpp" line="+87"/>
+        <location filename="../src/manage.cpp" line="+95"/>
         <source>profile</source>
         <translation>perfil</translation>
     </message>
@@ -2988,20 +3135,13 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>tanca</translation>
     </message>
     <message>
-        <location filename="../src/manage.cpp" line="+130"/>
+        <location filename="../src/manage.cpp" line="+135"/>
         <source>Please select a snapshot from the list</source>
         <comment>Information message</comment>
         <translation>Seleccioneu una captura d&apos;imatge de la llista</translation>
     </message>
     <message>
-        <location line="+20"/>
-        <location line="+8"/>
-        <source>Display of remote places is not supported</source>
-        <comment>Information message</comment>
-        <translation>Mostrar llocs remots no està implementat</translation>
-    </message>
-    <message>
-        <location line="+8"/>
+        <location line="+146"/>
         <source>This directory does not exist</source>
         <translation>Aquesta carpeta no existeix</translation>
     </message>
@@ -3037,7 +3177,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Mostra el fitxer de registre de la tasca se sincronització seleccionada</translation>
     </message>
     <message>
-        <location line="+78"/>
+        <location line="+83"/>
         <source>Please wait until the thread is terminated</source>
         <translation>Espereu que el fil acabi</translation>
     </message>
@@ -3099,13 +3239,13 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
 <context>
     <name>manageWizard</name>
     <message>
-        <location filename="../src/manageWizard.cpp" line="+62"/>
+        <location filename="../src/manageWizard.cpp" line="+60"/>
         <source>not available</source>
         <comment>refers to a date-time</comment>
         <translation>no disponible</translation>
     </message>
     <message>
-        <location line="+346"/>
+        <location line="+361"/>
         <source>Delete backup</source>
         <comment>this is the title of a wizard</comment>
         <translation>Eliminació de còpia de seguretat</translation>
@@ -3124,8 +3264,8 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Camí</translation>
     </message>
     <message>
-        <location line="-279"/>
-        <location line="+280"/>
+        <location line="-285"/>
+        <location line="+286"/>
         <source>WARNING</source>
         <translation>AVÍS</translation>
     </message>
@@ -3184,12 +3324,12 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start' translated<
     <message>
         <location filename="../ui/manageWizard.ui" line="+240"/>
         <location filename="../src/manageWizard.cpp" line="+3"/>
-        <location line="+227"/>
+        <location line="+235"/>
         <source>simulation</source>
         <translation>simulació</translation>
     </message>
     <message>
-        <location filename="../src/manageWizard.cpp" line="-222"/>
+        <location filename="../src/manageWizard.cpp" line="-230"/>
         <source>no errors</source>
         <translation>sense errors</translation>
     </message>
@@ -3199,7 +3339,7 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start' translated<
         <translation>s&apos;han produït errors</translation>
     </message>
     <message>
-        <location line="+212"/>
+        <location line="+220"/>
         <source>Restoring data: main trunk</source>
         <comment>info message displayed during ...data restoration</comment>
         <translation>S&apos;estan restaurant dades: dades principals</translation>
@@ -3262,7 +3402,7 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start' translated<
         <translation>cancel·la</translation>
     </message>
     <message>
-        <location filename="../src/manageWizard.cpp" line="-397"/>
+        <location filename="../src/manageWizard.cpp" line="-411"/>
         <source>The restore directory will become identical to the backup snapshot</source>
         <translation>La carpeta de restauració quedarà igual que en la captura d&apos;imatge de restauració</translation>
     </message>
@@ -3280,7 +3420,7 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start translated'<
         <translation>Si la informació anterior és correcta, feu clic a &lt;b&gt;inici&lt;/b&gt; per començar</translation>
     </message>
     <message>
-        <location line="+113"/>
+        <location line="+119"/>
         <source>success</source>
         <comment>info message displayed after ...logfile deletion</comment>
         <translation>amb èxit</translation>
@@ -3328,7 +3468,7 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start translated'<
         <translation>Camí de restauració</translation>
     </message>
     <message>
-        <location line="+116"/>
+        <location line="+124"/>
         <source>No snapshot specific data exist. Skipping...</source>
         <comment>info message displayed during ...data restoration/deletion</comment>
         <translation>No hi ha dades específiques de la captura d&apos;imatge. S&apos;omet...</translation>
@@ -3370,7 +3510,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>modifyDialog</name>
     <message>
-        <location filename="../src/modifyDialog.cpp" line="+203"/>
+        <location filename="../src/modifyDialog.cpp" line="+235"/>
         <source>simple</source>
         <translation>simple</translation>
     </message>
@@ -3380,7 +3520,7 @@ p, li { white-space: pre-wrap; }
         <translation>avançat</translation>
     </message>
     <message>
-        <location line="+127"/>
+        <location line="+129"/>
         <source>Task name</source>
         <translation>Nom de la tasca</translation>
     </message>
@@ -3445,12 +3585,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+44"/>
         <location line="+73"/>
-        <location line="+2607"/>
+        <location line="+2724"/>
         <source>browse localy</source>
         <translation>navega localment</translation>
     </message>
     <message>
-        <location line="-2654"/>
+        <location line="-2771"/>
         <location line="+31"/>
         <source>Enter the full path of the destination directory (eg /media/backups/SiduxHome/)</source>
         <translation>Escriviu el camí sencer de la carpeta destí (per exemple /media/backups/SiduxHome/)</translation>
@@ -3461,7 +3601,12 @@ p, li { white-space: pre-wrap; }
         <translation>Destí:</translation>
     </message>
     <message>
-        <location line="+1984"/>
+        <location line="+1663"/>
+        <source>eg -C4c arcfour,blowfish-cbc</source>
+        <translation>eg -C4c arcfour,blowfish-cbc</translation>
+    </message>
+    <message>
+        <location line="+383"/>
         <source>With this option rsync will transfer numeric group and user IDs
 rather than using user and group names
 and mapping them at both ends.
@@ -3499,7 +3644,26 @@ i còpia a dispositius amb l&apos;opció --devices.
         <translation>Intenta activitats de superusuari</translation>
     </message>
     <message>
-        <location line="+531"/>
+        <location line="+22"/>
+        <source>Try to backup open files in windows systems using vss (Only works on windows 2000 and upper)
+(--vss)</source>
+        <translation>Prova de fer còpies de seguretat de fitxers oberts en sistemes Windows usant vss (Només funciona en Windows 2000 i superior)
+(-vss)</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Backup open files</source>
+        <translation>Còpia de seguretat de fitxers oberts</translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <source>Restore backed-up windows permissions localized in nt-streams 
+(--restore-nt-streams)</source>
+        <translation>Restableix els permisos Windows de la còpia de seguretat localitzats en nt-streams
+(--restore-nt-streams)</translation>
+    </message>
+    <message>
+        <location line="+535"/>
         <location line="+10"/>
         <source>Repeat any command that fails, x times</source>
         <translation>Repeteix qualsevol ordre que falli, x vegades</translation>
@@ -3547,7 +3711,7 @@ Deixeu-ho sense marcar per crear una carpeta extra al destí</translation>
         <translation>Cancel·la</translation>
     </message>
     <message>
-        <location line="-2950"/>
+        <location line="-3067"/>
         <source>Exclude</source>
         <translation>Exclou</translation>
     </message>
@@ -3558,12 +3722,12 @@ Deixeu-ho sense marcar per crear una carpeta extra al destí</translation>
     </message>
     <message>
         <location line="+18"/>
-        <location line="+1550"/>
+        <location line="+1612"/>
         <source>Templates</source>
         <translation>Plantilles</translation>
     </message>
     <message>
-        <location line="-1523"/>
+        <location line="-1585"/>
         <source>Exclude all temp folders (**/*tmp*/)</source>
         <translation>Exclou les carpetes temporals (**/*tmp*/)</translation>
     </message>
@@ -3593,12 +3757,7 @@ Deixeu-ho sense marcar per crear una carpeta extra al destí</translation>
         <translation>Fitxers de còpia de seguretat</translation>
     </message>
     <message>
-        <location line="+31"/>
-        <source>Exclude system folders /var, /proc, /dev &amp; /sys (/var/**, /proc/**, /dev/**, /sys/**)</source>
-        <translation>Exclou les carpetes del sistema /var, /proc, /dev i /sys (/var/**, /proc/**, /dev/**, /sys/**)</translation>
-    </message>
-    <message>
-        <location line="+6"/>
+        <location line="+37"/>
         <source>System folders</source>
         <translation>Carpetes del sistema</translation>
     </message>
@@ -3645,14 +3804,14 @@ Deixeu-ho sense marcar per crear una carpeta extra al destí</translation>
     <message>
         <location line="+3"/>
         <location line="+371"/>
-        <location line="+1220"/>
+        <location line="+1337"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>add</source>
         <translation>afegeix</translation>
     </message>
     <message>
-        <location line="-2153"/>
+        <location line="-2270"/>
         <location line="+31"/>
         <source>Exclude list</source>
         <translation>Llista d&apos;exclusions</translation>
@@ -3704,7 +3863,12 @@ trailing / - només coincideix la carpeta, no els fitxers normals, enllaços sim
         <translation>Escriviu una descripció per la tasca</translation>
     </message>
     <message>
-        <location line="+321"/>
+        <location line="+173"/>
+        <source>Exclude system folders /var, /proc, /dev &amp; /sys (/var/run/**, /run/**, /proc/**, /dev/**, /sys/**)</source>
+        <translation>Exclou les carpetes del sistema /var, /proc, /dev &amp; /sys (/var/run/**, /run/**, /proc/**, /dev/**, /sys/**)</translation>
+    </message>
+    <message>
+        <location line="+148"/>
         <source>Exclude all user&apos;s .gvfs folders (**/.gvfs/)</source>
         <translation>Exclou totes les carpetes .gvfs d&apos;usuari (**/.gvfs/)</translation>
     </message>
@@ -3722,68 +3886,68 @@ trailing / - només coincideix la carpeta, no els fitxers normals, enllaços sim
     <message>
         <location line="+3"/>
         <location line="+366"/>
-        <location line="+1220"/>
+        <location line="+1337"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>remove</source>
         <translation>elimina</translation>
     </message>
     <message>
-        <location line="-2152"/>
+        <location line="-2269"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Edit highlighted inclusion</source>
         <translation>Edita les inclusions ressaltades</translation>
     </message>
     <message>
-        <location line="-2163"/>
+        <location line="-2280"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>edit</source>
         <translation>edita</translation>
     </message>
     <message>
-        <location line="-2152"/>
+        <location line="-2269"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion up</source>
         <translation>Mou les inclusions ressaltades amunt</translation>
     </message>
     <message>
-        <location line="-2163"/>
+        <location line="-2280"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move up</source>
         <translation>mou amunt</translation>
     </message>
     <message>
-        <location line="-2152"/>
+        <location line="-2269"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>Move highlighted inclusion down</source>
         <translation>Mou les inclusions ressaltades avall</translation>
     </message>
     <message>
-        <location line="-2163"/>
+        <location line="-2280"/>
         <location line="+423"/>
-        <location line="+1163"/>
+        <location line="+1280"/>
         <location line="+279"/>
         <location line="+301"/>
         <source>move down</source>
         <translation>mou avall</translation>
     </message>
     <message>
-        <location line="-2060"/>
+        <location line="-2177"/>
         <source>Include ONLY this list of patterns. Nothing more.
 Please refer to the manual for better understanding of include rules.
 This will disable the exclude feature.</source>
@@ -3890,7 +4054,7 @@ trailing / - només coincideix la carpeta, ni fitxers regulars, ni enllaços sim
         <translation>Escriviu el camí sencer del fitxer que conté la contrasenya d&apos;autenticació (deixeu en blanc si no és aplicable) rsync (no la ssh).</translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+19"/>
         <source>rsync password file:</source>
         <translation>fitxer de contrasenya rsync:</translation>
     </message>
@@ -3905,7 +4069,7 @@ trailing / - només coincideix la carpeta, ni fitxers regulars, ni enllaços sim
         <translation>Mòdul remot</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+74"/>
         <source>Use ssh as transport shell</source>
         <translation>Usa ssh com a intèrpret d&apos;ordres de transport</translation>
     </message>
@@ -3915,7 +4079,12 @@ trailing / - només coincideix la carpeta, ni fitxers regulars, ni enllaços sim
         <translation>ssh</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+75"/>
+        <source>password:</source>
+        <translation>contrasenya:</translation>
+    </message>
+    <message>
+        <location line="+91"/>
         <source>Enter the full path of the file that contains the private ssh authentication key (leave blank if not applicable).
 
 Note that you have to do all actions needed for a passwordless ssh remote connection using an OpenSSH key pair</source>
@@ -3924,22 +4093,22 @@ Note that you have to do all actions needed for a passwordless ssh remote connec
 Observeu que heu de fer totes les accions necessàries per una connexió remota sense contrasenya usant un parell de claus OpenSSH</translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="-31"/>
         <source>private key file :</source>
         <translation>fitxer de clau privada :</translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="-88"/>
         <source>Enter the port you would like to use for the ssh connection (leave blank for default port)</source>
         <translation>Escriviu el port que voleu usar per la connexió ssh (deixeu en blanc pel port per defecte)</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="-25"/>
         <source>port :</source>
         <translation>port :</translation>
     </message>
     <message>
-        <location line="+30"/>
+        <location line="+267"/>
         <source>Command Options</source>
         <translation>Opcions d&apos;ordres</translation>
     </message>
@@ -3951,27 +4120,7 @@ If you have no idea what these mean, leave them untouched !!</source>
 Si no sabeu el que significa, deixeu-ho com està !!</translation>
     </message>
     <message>
-        <location line="+22"/>
-        <source>backend</source>
-        <translation>execució secundària</translation>
-    </message>
-    <message>
-        <location line="+24"/>
-        <source>rsync</source>
-        <translation>rsync</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>rdiff-backup</source>
-        <translation>rdiff-backup</translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>rsnapshot</source>
-        <translation>rsnapshot</translation>
-    </message>
-    <message>
-        <location line="+80"/>
+        <location line="+84"/>
         <source>Delete files on the destination that don't exist on the source
 . &quot;Recurse into directories&quot; has to be selected 
 (--delete-after &amp; --delete-excluded if &quot;Exclude&quot; is used)</source>
@@ -4083,7 +4232,7 @@ AVÍS: Els fitxers han d&apos;estar inclosos en el conjunt de la transferència 
         <translation>Ignora els fitxers a la manera CVS</translation>
     </message>
     <message>
-        <location line="+142"/>
+        <location line="+197"/>
         <source>User defined</source>
         <translation>Definit per l&apos;usuari</translation>
     </message>
@@ -4177,7 +4326,7 @@ ATENCIÓ: marqueu-ho si realment sabeu el que esteu fent</translation>
         <translation>Escriviu aquí l&apos;ordre a executar després de la tasca i premeu el botó &quot;afegeix&quot; per afegir-la a la llista a continuació</translation>
     </message>
     <message>
-        <location filename="../src/modifyDialog.cpp" line="-104"/>
+        <location filename="../src/modifyDialog.cpp" line="-106"/>
         <source>Select source directory</source>
         <comment>file selection dialog title</comment>
         <translation>Seleccioneu la carpeta d&apos;origen</translation>
@@ -4195,13 +4344,14 @@ ATENCIÓ: marqueu-ho si realment sabeu el que esteu fent</translation>
         <translation>Seleccioneu el fitxer contrasenya de rsync</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+7"/>
+        <location line="+2"/>
         <source>Select ssh keyfile</source>
         <comment>file selection dialog title</comment>
         <translation>Seleccioneu el fitxer clau ssh</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+5"/>
         <location line="+6"/>
         <source>Select command to be executed</source>
         <comment>file selection dialog title</comment>
@@ -4255,7 +4405,7 @@ ATENCIÓ: marqueu-ho si realment sabeu el que esteu fent</translation>
         <translation>Això no està permès perquè &apos;/&apos; no té un nom</translation>
     </message>
     <message>
-        <location line="-300"/>
+        <location line="-334"/>
         <source>Leave the box checked, to &lt;b&gt;STOP&lt;/b&gt; the execution of running task if this command exits with an error</source>
         <translation>Deixeu la caixa marcada per &lt;b&gt;ATURA&lt;/b&gt;R l&apos;execució de la tasca en procés si aquesta ordre acaba amb error</translation>
     </message>
@@ -4266,7 +4416,7 @@ ATENCIÓ: marqueu-ho si realment sabeu el que esteu fent</translation>
         <translation>useu la caixa per &lt;b&gt;ATURA&lt;/b&gt;R l&apos;execució de la tasca en cas d&apos;error</translation>
     </message>
     <message>
-        <location line="+298"/>
+        <location line="+332"/>
         <source>You have declared the &apos;/&apos; (root) directory as source and have NOT checked the &apos;Do NOT create extra directory&apos; box</source>
         <comment>message box message - line1</comment>
         <translation>Heu declarat la carpeta &apos;/&apos; com a origen i NO heu fet clic a la caixa &apos;NO creis carpetes extra&apos;</translation>
@@ -4387,19 +4537,19 @@ ATENCIÓ: marqueu-ho si realment sabeu el que esteu fent</translation>
         <translation>Ja heu afegit aquest element d&apos;exclusió</translation>
     </message>
     <message>
-        <location line="+54"/>
+        <location line="+55"/>
         <source>You have already added this include item</source>
         <comment>message box message</comment>
         <translation>Ja heu afegit aquest element d&apos;inclusió</translation>
     </message>
     <message>
-        <location line="+52"/>
+        <location line="+53"/>
         <source>You have already added this option</source>
         <comment>message box message</comment>
         <translation>Ja heu afegit aquesta opció</translation>
     </message>
     <message>
-        <location line="+265"/>
+        <location line="+266"/>
         <location line="+25"/>
         <location line="+25"/>
         <location line="+25"/>
@@ -4435,7 +4585,7 @@ ATENCIÓ: marqueu-ho si realment sabeu el que esteu fent</translation>
         <translation>cancel·la l&apos;edició</translation>
     </message>
     <message>
-        <location filename="../ui/modifyDialog.ui" line="-1943"/>
+        <location filename="../ui/modifyDialog.ui" line="-2060"/>
         <source>Read exclude patterns from file</source>
         <translation>Llegeix els patrons exclosos del fitxer</translation>
     </message>
@@ -4501,14 +4651,19 @@ Adreceu-vos al manual per entendre millor les normes d&apos;inclusió.</translat
         <translation>Llegeix els patrons d&apos;inclusió del fitxer</translation>
     </message>
     <message>
-        <location line="+303"/>
-        <location line="+149"/>
-        <location line="+891"/>
+        <location line="+344"/>
+        <location line="+248"/>
+        <location line="+868"/>
         <source>browse locally</source>
         <translation>navega localment</translation>
     </message>
     <message>
-        <location line="-393"/>
+        <location line="-835"/>
+        <source>additional options:</source>
+        <translation>opcions addicionals:</translation>
+    </message>
+    <message>
+        <location line="+387"/>
         <source>Check this is you use a FAT/NTFS partition as destination.
 Data ownership and permissions will NOT be preserved.
 (-t --modify-window=1)</source>
@@ -4522,7 +4677,12 @@ Els propietaris i permisos no es conservaran.
         <translation>El destí és FAT/NTFS</translation>
     </message>
     <message>
-        <location line="+914"/>
+        <location line="+114"/>
+        <source>Restore permissions</source>
+        <translation>Restableix permisos</translation>
+    </message>
+    <message>
+        <location line="+855"/>
         <location line="+22"/>
         <source>Set the total number of backup snapshots to keep</source>
         <translation>Seleccioneu el nombre total de captures d&apos;imatges de còpia de seguretat a conservar</translation>
@@ -4800,13 +4960,13 @@ per exemple el contingut de la carpeta &quot;/media/music/Album/&quot;</translat
     </message>
     <message>
         <location line="+53"/>
-        <location line="+135"/>
-        <location line="+40"/>
+        <location line="+139"/>
+        <location line="+45"/>
         <source>No schedules are declared !!</source>
         <translation>No hi ha planificacions declarades !!</translation>
     </message>
     <message>
-        <location line="-124"/>
+        <location line="-133"/>
         <source>Unable to create schedule file</source>
         <translation>No s&apos;ha pogut crear el fitxer de planificació</translation>
     </message>
@@ -4832,7 +4992,7 @@ per exemple el contingut de la carpeta &quot;/media/music/Album/&quot;</translat
     </message>
     <message>
         <location filename="../ui/scheduleDialog.ui" line="+182"/>
-        <location filename="../src/scheduleDialog.cpp" line="+53"/>
+        <location filename="../src/scheduleDialog.cpp" line="+62"/>
         <source>Profile schedule details</source>
         <translation>Detalls de la planificació</translation>
     </message>
@@ -4847,12 +5007,18 @@ per exemple el contingut de la carpeta &quot;/media/music/Album/&quot;</translat
         <translation>Executa el perfil</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
+        <source>hourly at minute </source>
+        <comment>full phrase: Execute profile &lt;PROFILENAME&gt; hourly at minute &lt;MM&gt;</comment>
+        <translation>cada hora al minut</translation>
+    </message>
+    <message>
+        <location line="+4"/>
         <source>at</source>
         <translation>a</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+10"/>
         <source>every</source>
         <translation>cada</translation>
     </message>
@@ -4863,7 +5029,7 @@ per exemple el contingut de la carpeta &quot;/media/music/Album/&quot;</translat
         <translation>dia</translation>
     </message>
     <message>
-        <location filename="../ui/scheduleDialog.ui" line="+245"/>
+        <location filename="../ui/scheduleDialog.ui" line="+251"/>
         <location filename="../src/scheduleDialog.cpp" line="-36"/>
         <source>Sunday</source>
         <translation>Diumenge</translation>
@@ -5093,12 +5259,13 @@ per exemple el contingut de la carpeta &quot;/media/music/Album/&quot;</translat
         <translation>desembre</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+90"/>
+        <location line="+26"/>
         <source>Unable to create cron file</source>
         <translation>No s&apos;ha pogut crear el fitxer cron</translation>
     </message>
     <message>
-        <location filename="../ui/scheduleDialog.ui" line="-440"/>
+        <location filename="../ui/scheduleDialog.ui" line="-446"/>
         <source>luckyBackup - schedule</source>
         <translation>luckyBackup - planificador</translation>
     </message>
@@ -5166,7 +5333,12 @@ p, li { white-space: pre-wrap; }
         <translation>hora (hora:minut) :</translation>
     </message>
     <message>
-        <location line="+40"/>
+        <location line="+27"/>
+        <source>set this value to -1 for the schedule to occur every hour</source>
+        <translation>establiu aquest valor a -1 per l&apos;execució programada cada hora</translation>
+    </message>
+    <message>
+        <location line="+19"/>
         <source>:</source>
         <translation>:</translation>
     </message>
@@ -5424,7 +5596,7 @@ p, li { white-space: pre-wrap; }
         <translation>31</translation>
     </message>
     <message>
-        <location line="-485"/>
+        <location line="-491"/>
         <source>Check this if your machine does not support a graphical environment (eg server)</source>
         <translation>Comprova si l&apos;ordinador no permet suport d&apos;entorn gràfic (per exmple: servidor)</translation>
     </message>
@@ -5434,7 +5606,7 @@ p, li { white-space: pre-wrap; }
         <translation>Mode consola</translation>
     </message>
     <message>
-        <location line="+516"/>
+        <location line="+522"/>
         <source>okay</source>
         <translation>D&apos;acord</translation>
     </message>
@@ -5454,7 +5626,7 @@ p, li { white-space: pre-wrap; }
         <translation>cronIT !!</translation>
     </message>
     <message>
-        <location filename="../src/scheduleDialog.cpp" line="-555"/>
+        <location filename="../src/scheduleDialog.cpp" line="-657"/>
         <location line="+78"/>
         <source>The existent schedule file is not a valid luckyBackup v.</source>
         <comment>v is for version</comment>
@@ -5483,7 +5655,7 @@ p, li { white-space: pre-wrap; }
         <translation>El crontab s&apos;ha actualitzat correctament</translation>
     </message>
     <message>
-        <location line="+91"/>
+        <location line="+100"/>
         <source>no crontab entries exist</source>
         <translation>no hi ha entrades al crontab</translation>
     </message>
@@ -5630,12 +5802,12 @@ p, li { white-space: pre-wrap; }
         <translation>luckyBackup</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+18"/>
         <source>declaration of paths</source>
         <translation>desclaració de camins</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+30"/>
         <source>rsync:</source>
         <translation>rsync:</translation>
     </message>
@@ -5647,24 +5819,84 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+10"/>
         <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
         <source>browse locally</source>
         <translation>navega localment</translation>
     </message>
     <message>
-        <location line="-47"/>
+        <location line="-367"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
+        <location line="+64"/>
         <location line="+64"/>
         <source>Use default value</source>
         <translation>Usa el valor predeterminat</translation>
     </message>
     <message>
-        <location line="-46"/>
-        <source>ssh</source>
-        <translation>ssh</translation>
+        <location line="-366"/>
+        <source>ssh:</source>
+        <translation>ssh:</translation>
     </message>
     <message>
         <location line="+19"/>
         <source>Enter the full path of the ssh command</source>
         <translation>Escriviu el camí sencer de l&apos;ordre ssh</translation>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>cygpath:</source>
+        <translation>cygpath:</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the cygpath command</source>
+        <translation>Escriviu el camí sencer de l&apos;ordre cygpath</translation>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>dosdev:</source>
+        <translation>dosdev:</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the dosdev command</source>
+        <translation>Escriviu el camí sencer de l&apos;ordre dosdev</translation>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>main dir:</source>
+        <translation>carpeta principal:</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the luckybackup directory</source>
+        <translation>Escriviu el camí sencer de la carpeta luckybackup</translation>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>vshadow dir:</source>
+        <translation>carpeta vshadow:</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the vshadow directory</source>
+        <translation>Escriviu el camí sencer de la carpeta vshadow</translation>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>temp dir:</source>
+        <translation>carpeta temporal:</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enter the full path of the temporary directory</source>
+        <translation>Escriviu el camí sencer de la carpeta temporal</translation>
     </message>
     <message>
         <location line="+58"/>
@@ -5677,7 +5909,7 @@ p, li { white-space: pre-wrap; }
         <translation>Cancel·la</translation>
     </message>
     <message>
-        <location filename="../src/winDialog.cpp" line="+102"/>
+        <location filename="../src/winDialog.cpp" line="+147"/>
         <source>Select rsync command</source>
         <comment>file selection dialog title</comment>
         <translation>Seleccioneu l&apos;ordre rsync</translation>
@@ -5685,14 +5917,28 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+1"/>
         <location line="+6"/>
+        <location line="+6"/>
+        <location line="+6"/>
         <source>Executable Files (*.exe)</source>
         <translation>Fitxers executables (*.exe)</translation>
     </message>
     <message>
-        <location line="-1"/>
+        <location line="-13"/>
         <source>Select ssh command</source>
         <comment>file selection dialog title</comment>
         <translation>Seleccioneu l&apos;ordre ssh</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Select cygpath command</source>
+        <comment>file selection dialog title</comment>
+        <translation>Seleccioneu l&apos;ordre cygpath</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Select dosdev command</source>
+        <comment>file selection dialog title</comment>
+        <translation>Seleccioneu l&apos;ordre dosdev</translation>
     </message>
 </context>
 </TS>

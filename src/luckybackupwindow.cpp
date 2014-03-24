@@ -23,7 +23,7 @@ cpp file that does all stuff needed when a signal is transmitted (eg button pres
 project version	: Please see "main.cpp" for project version
 
 developer       : luckyb 
-last modified   : 08 Nov 2012
+last modified   : 10 Feb 2014
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -143,6 +143,7 @@ luckyBackupWindow::luckyBackupWindow(QMainWindow *parent) : QMainWindow(parent)
     connect ( ui.pushButton_up, SIGNAL( clicked() ), this, SLOT( moveUp() ) );		//pushbutton up
     connect ( ui.pushButton_down, SIGNAL( clicked() ), this, SLOT( moveDown() ) );		//pushbutton down
     connect ( ui.pushButton_start, SIGNAL( clicked() ), this, SLOT( start() ) );		//pushbutton start
+    //find a way to emit a signal when spacebar is used to change the state of an item.  itemChanged does not seem to work !!
     connect ( ui.listWidget_operations, SIGNAL( itemClicked ( QListWidgetItem*) ), this, SLOT( checkCurrentItem(QListWidgetItem *) ) );
     connect ( ui.listWidget_operations, SIGNAL( itemChanged ( QListWidgetItem*) ), this, SLOT( taskStateChanged() ) );
 

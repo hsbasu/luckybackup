@@ -22,7 +22,7 @@
         project version   : Please see "main.cpp" for project version
 
         developer         : luckyb 
-        last modified     : 12 Aug 2013
+        last modified     : 04 Mar 2014
       ===============================================================================================================================
       ===============================================================================================================================
 */
@@ -65,7 +65,7 @@ void aboutDialog::setAbout()
         tr("using Qt4")+")" + "<br>" +
         tr("Backup & Sync Application")+"<br><br>"
 
-        "(C) 2008-2013,	"+
+        "(C) 2008-2014,	"+
         tr("Loukas Avgeriou") +"<br><br>"
 
         "web:<br>"
@@ -208,7 +208,7 @@ void aboutDialog::setThanks()
         "<b>" + tr("Kenny Verstraete") + "</b><br>" +
         tr("Dutch gui translator") + "<br><br>"
 
-        "<b>" + tr("linuxrev (Martin)") + "</b><br>" +
+        "<b>" + tr("Martin Grashoff (linuxrev)") + "</b><br>" +
         tr("Dutch gui translator") + "<br><br>"
         
         "<b>" + tr("Subhi Honaco") + "</b><br>" +

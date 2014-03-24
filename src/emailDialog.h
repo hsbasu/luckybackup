@@ -23,7 +23,7 @@
  project version    : Please see "main.cpp" for project version
 
  developer          : luckyb 
- last modified      : 10 Feb 2011
+ last modified      : 06 Feb 2014
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -50,6 +50,7 @@ class emailDialog : public QDialog
         void cancel();                  // Cancel pressed
         void revertDefault(const int);  // SLOT to revert a field to the default value
         void emailTest();               // Send an email now, using current fields
+        void enableTLS();               // Enable/disable the TLS option
 
     private:
         Ui::emailDialog uiE;

@@ -23,7 +23,7 @@
  project version    : Please see "main.cpp" for project version
 
  developer          : lucky
- last modified      : 11 Sep 2013
+ last modified      : 06 Feb 2014
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -76,6 +76,8 @@ QString countStr;                                           //this helps display
 QString message="";                                         //this is really handy to hold messages for dialogs
 QString messageCLI="";                                      //this is really handy to hold messages for the Command-Line
 int errorsFound;                                            //count errors when executing rync or pre/post command
+int filesTransfered;                                        //count files transfered when executing rync
+unsigned long long int bytesTransfered;                     //count bytes transfered when executing rync
 
 // Useful variables for operations ---------------------------------------------------------------------------------------------------
 int const maxOperations = 100;                              //The maximum number or operations permitted
@@ -135,9 +137,11 @@ QString fixWinPathForRsync(QString,bool);                        // Fixes a wind
 QString calculateLastPath(QString);                         // Calculates the last part of a path eg path=user@host:destination\path\here -> returns "here"
 
 QString emailCommand;
+QString emailArguments;
 bool    emailNever;
 bool    emailError;
 bool    emailSchedule;
+bool    emailTLS;
 QString emailFrom;
 QString emailTo;
 QString emailSubject;
@@ -148,20 +152,22 @@ QString emailDefaultBody    =   "Profile:      %p"
                                 "\nDate:         %d"
                                 "\nTime:         %i"
                                 "\nErrors found: %e";                   // Holds the default body text
-QString emailDefaultCommand =   "sendemail -f %f -t %t -u %s -m %b -a %l -s %v";     // Holds the default email command
-QString emailDefaultWinCommand ="blat.exe -f %f -to %t -attach %l -subject %s -server %v -body %b";     // Holds the default email command - WINDOWS
+QString emailDefaultCommand    =   "sendemail";     // Holds the default email command
+QString emailDefaultArguments  =   "-f %f -t %t -u %s -m %b -a %l -s %v";     // Holds the default email arguments
+QString emailDefaultWinCommand ="C:\\Program Files (x86)\\luckyBackup\\blat\\blat.exe";     // Holds the default email command - WINDOWS
+QString emailDefaultWinArguments ="-f %f -to %t -s %s -server %v -attach %l -body %b";     // Holds the default email arguments - WINDOWS
 QString sendEmailNow (bool);                                // Send an email after a profile run. bool is TRUE if called for testing purposes
 
 QString rsyncDefaultCommand = "rsync";                      // Holds the default rsync command
 QString sshDefaultCommand = "ssh";                          // Holds the default ssh command
 
 // WINDOWS related variables. Also search variables above for "WINDOWS use"
-//QString rsyncDefaultWinCommand = "c:\\cygwin\\bin\\rsync.exe"; // Holds the default rsync command for windows
-//QString sshDefaultWinCommand = "c:\\cygwin\\bin\\ssh.exe";    // Holds the default ssh command for windows
+QString rsyncDefaultWinCommand = "C:\\Program Files (x86)\\luckyBackup\\cygwin\\rsync.exe"; // Holds the default rsync command for windows
+QString sshDefaultWinCommand = "C:\\Program Files (x86)\\luckyBackup\\cygwin\\ssh.exe";    // Holds the default ssh command for windows
 QString appPath = QCoreApplication::applicationDirPath();           // This is used for windows app path. It's also causing a ...
                                                     //"QCoreApplication::applicationDirPath: Please instantiate the QApplication object first" WARNING message
-QString rsyncDefaultWinCommand = appPath+"/rsync.exe"; // Holds the default rsync command for windows
-QString sshDefaultWinCommand = appPath+"/ssh.exe";             // Holds the default ssh command for windows
+//QString rsyncDefaultWinCommand = appPath+"/rsync.exe"; // Holds the default rsync command for windows
+//QString sshDefaultWinCommand = appPath+"/ssh.exe";             // Holds the default ssh command for windows
 QString mapdrive="w";
 QString vshadowDir=             appPath;
 QString vshadowDefaultDir=      appPath;
@@ -173,6 +179,7 @@ bool isTempDirPath=false;
 QString tempDirPath=QDir::tempPath();
 QString tempDefaultDirPath=QDir::tempPath();
 void setAppDir(QString s);
+/* disable vss until
 int doVss=0;
 int vssPos=0;
 int vssErrPos=0;
@@ -180,8 +187,8 @@ QTimer *vssTimer;
 int vssSleepTime=50;
 int vssReadSize=400;
 QFile *pipeVssFile;
-QFile *pipeVssErrFile;
-QString createWinMkdirCommand(QString tempPath,bool vss,QStringList rsyncArgs,bool logGui);
+QFile *pipeVssErrFile;*/
+//QString createWinMkdirCommand(QString tempPath,bool vss,QStringList rsyncArgs,bool logGui);
 QString createWinRsyncCommand(QString tempPath,bool vss,QStringList rsyncArgs,bool logGui);
 // END of Windows related variables
 

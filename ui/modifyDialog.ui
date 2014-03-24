@@ -511,7 +511,7 @@
                   <cursorShape>PointingHandCursor</cursorShape>
                  </property>
                  <property name="toolTip">
-                  <string>Exclude system folders /var, /proc, /dev &amp; /sys (/var/**, /proc/**, /dev/**, /sys/**)</string>
+                  <string>Exclude system folders /var, /proc, /dev &amp; /sys (/var/run/**, /run/**, /proc/**, /dev/**, /sys/**)</string>
                  </property>
                  <property name="layoutDirection">
                   <enum>Qt::LeftToRight</enum>
@@ -1888,7 +1888,7 @@ Note that you have to do all actions needed for a passwordless ssh remote connec
                       </font>
                      </property>
                      <property name="text">
-                      <string>aditional options:</string>
+                      <string>additional options:</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -2394,7 +2394,7 @@ and copying devices via the --devices option.
 (--restore-nt-streams)</string>
                  </property>
                  <property name="text">
-                  <string>Restore permisions</string>
+                  <string>Restore permissions</string>
                  </property>
                 </widget>
                </item>

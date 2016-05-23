@@ -22,15 +22,188 @@ file containing all variables & functions used globaly
 project version    : Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 12 Jan 2014
+last modified      : 22 May 2016
 ===============================================================================================================================
 ===============================================================================================================================
 */
 
-#include "operationClass.h"
-#include <iostream>
 #include "global.h"
+
+#include <iostream>
 using namespace std;
+
+#include <QProcess>
+#include <QDataStream>
+#include <QTemporaryFile>
+#include <QTextStream>
+
+#include "operationClass.h"
+
+// global Variables declarations ~~~~~~~~~~~~~~~~~
+
+namespace Global {
+
+QString myHome = QDir::homePath();
+QString currentUser;
+QString const appName = "luckyBackup";
+double const appVersion = 0.49;
+QString appVersionString = "0.4.9";
+double const validProfileVersion = 0.21;
+double const validScheduleVersion = 0.34;
+double const validSettingsVersion = 0.3;
+QString luckyBackupDir = myHome + "/."+appName+"/";
+QString luckyBackupDefaultDir = myHome + "/."+appName+"/";
+QString settingsFile = luckyBackupDir + "settings.ini";
+QString profileDir = luckyBackupDir + "profiles/";
+QString defaultProfile = profileDir + "default.profile";
+QString standardDefaultProfile = profileDir + "default.profile";
+QString logDir = luckyBackupDir + "logs/";
+QString logfilename = logDir + "logfile.log";
+QString cronlogString = "LastCronLog.log";
+QString emailLogString = "-email.log";
+QString emailLastLogString = "-email-LastLog.log";
+QString snapDefaultDir = ".luckybackup-snaphots/";
+QString snapChangesDir = luckyBackupDir + "snaps/";
+QString snapEmptyDir = snapChangesDir + "EMPTY/";
+QString snapchangesfilename = snapChangesDir + "changes.log";
+QString snapChangesString = "[changed_data]%i[LB]%n";
+QString scheduleDir = luckyBackupDir + "schedule/";
+QString schedulefilename = scheduleDir + "schedule.dat";
+QString cronfilename = scheduleDir + "luckyCron.txt";
+QString relativeTransDir = "translations/";
+QString systemTransDir = "/usr/share/luckybackup/translations/";
+QDir transDir;
+QTranslator appTranslator;
+QTranslator translator_qt;
+QString locale = QLocale::system().name();
+QString relativeLicense = "license/gpl.html";
+QString systemLicense = "/usr/share/doc/luckybackup/license/gpl.html";
+QString suseLicense = "/usr/share/doc/packages/luckybackup/license/gpl.html";
+QString debianLicense = "/usr/share/common-licenses/GPL-3";
+QString relativeManual = "manual/index.html";
+QString systemManual = "/usr/share/doc/luckybackup/manual/index.html";
+QString suseManual = "/usr/share/doc/packages/luckybackup/manual/index.html";
+
+QString countStr;
+QString message="";
+QString messageCLI="";
+int errorsFound;
+int filesTransfered;
+unsigned long long int bytesTransfered;
+
+// Useful variables for operations ---------------------------------------------------------------------------------------------------
+int const maxOperations = 100;
+int TotalOperations=0;
+int currentOperation=-1;
+int removeCharLimit;
+bool modifyOK=false;
+bool modifyConnected=false;
+bool DryRun=false;
+bool ask=false;
+bool newTaskThisIs = true;
+bool NothingToDo=false;
+bool NothingIncluded=false;
+bool crontabUpdated=false;
+QString currentProfile="";
+QString profileName="";
+QString profileDescription="";
+QFile profile("");
+QFile logfile("");
+QFile snapfile("");
+QString CheckedData;
+QString CheckedDataCLI;
+operation *Operation[maxOperations];
+
+bool console;
+bool NoQuestions;
+bool SkipCritical;
+bool silentMode;
+bool runImmediately;
+bool validation;
+bool KDErunning = false;
+bool GNOMErunning = false;
+bool writeToLog;
+
+QString emailCommand;
+QString emailArguments;
+bool    emailNever;
+bool    emailError;
+bool    emailSchedule;
+bool    emailTLS;
+QString emailFrom;
+QString emailTo;
+QString emailSubject;
+QString emailSMTP;
+QString emailBody;
+QString emailDefaultSubject =   appName + " report";
+QString emailDefaultBody    =   "Profile:      %p"
+                                "\nDate:         %d"
+                                "\nTime:         %i"
+                                "\nErrors found: %e";
+QString emailDefaultCommand    =   "sendemail";
+QString emailDefaultArguments  =   "-f %f -t %t -u %s -m %b -a %l -s %v";
+QString emailDefaultWinCommand ="C:\\Program Files (x86)\\luckyBackup\\blat\\blat.exe";
+QString emailDefaultWinArguments ="-f %f -to %t -s %s -server %v -attach %l -body %b";
+
+QString rsyncDefaultCommand = "rsync";
+QString sshDefaultCommand = "ssh";
+
+// WINDOWS related variables. Also search variables above for "WINDOWS use"
+QString rsyncDefaultWinCommand = "C:\\Program Files (x86)\\luckyBackup\\cygwin\\rsync.exe";
+QString sshDefaultWinCommand = "C:\\Program Files (x86)\\luckyBackup\\cygwin\\ssh.exe";
+QString appPath = QCoreApplication::applicationDirPath();
+//"QCoreApplication::applicationDirPath: Please instantiate the QApplication object first" WARNING message
+//QString rsyncDefaultWinCommand = appPath+"/rsync.exe";
+//QString sshDefaultWinCommand = appPath+"/ssh.exe";
+QString mapdrive="w";
+QString vshadowDir=             appPath;
+QString vshadowDefaultDir=      appPath;
+QString dosdevCommand=          appPath+"/dosdev.exe";
+QString dosdevDefaultCommand=   appPath+"/dosdev.exe";
+QString cygpathCommand=         appPath+"/cygpath.exe";
+QString cygpathDefaultCommand=  appPath+"/cygpath.exe";
+bool isTempDirPath=false;
+QString tempDirPath=QDir::tempPath();
+QString tempDefaultDirPath=QDir::tempPath();
+void setAppDir(QString s);
+/* disable vss until
+  * int doVss=0;
+  * int vssPos=0;
+  * int vssErrPos=0;
+  * QTimer *vssTimer;
+  * int vssSleepTime=50;
+  * int vssReadSize=400;
+  * QFile *pipeVssFile;
+  * QFile *pipeVssErrFile;*/
+//QString createWinMkdirCommand(QString tempPath,bool vss,QStringList rsyncArgs,bool logGui);
+// END of Windows related variables
+
+QString rsyncCommandPath;
+QString sshCommandPath;
+
+QString XnixSLASH = "/";
+
+#ifdef Q_OS_OS2
+bool OS2running = true;
+QString SLASH = "\\";
+#else
+bool OS2running = false;
+QString SLASH = "/";
+#endif
+
+#ifdef Q_OS_WIN32
+bool WINrunning = true;
+#else
+bool WINrunning = false;
+#endif
+
+#if defined Q_OS_OS2 || defined Q_OS_WIN32
+bool notXnixRunning=true;
+#else
+bool notXnixRunning=false;
+#endif
+
+// end of global Variables declarations ~~~~~~~~~~~~~~~~~
 
 // argumentsTest===================================================================================================================
 // tests the arguments given when LB executed at command-line
@@ -44,7 +217,7 @@ bool argumentsTest(int ArgsNo, char **arg)
     runImmediately = FALSE;
     
     if (ArgsNo == 1)		// if just luckybackup is given without argumets just run the gui
-        return TRUE;
+        return true;
 
     int NoOfArgs = ArgsNo-1;	//the number of arguments given minus the command luckybackup
     string stdArgs[7] = { "-c",	"--no-questions",	"--skip-critical",	"--dry-run",	"--silent"};
@@ -54,15 +227,15 @@ bool argumentsTest(int ArgsNo, char **arg)
     while (count < NoOfArgs)
     {
         if (arg[count] == stdArgs[0])
-            { console = TRUE; argCheck = TRUE; }
+            { console = true; argCheck = true; }
         if (arg[count] == stdArgs[1])
-            { NoQuestions = TRUE; console = TRUE; argCheck = TRUE; }
+            { NoQuestions = true; console = true; argCheck = true; }
         if (arg[count] == stdArgs[2])
-            { SkipCritical = TRUE; argCheck = TRUE; }
+            { SkipCritical = true; argCheck = true; }
         if (arg[count] == stdArgs[3])
-            { DryRun = TRUE; argCheck = TRUE; }
+            { DryRun = true; argCheck = true; }
         if (arg[count] == stdArgs[4])
-            { silentMode = TRUE; argCheck = TRUE; }
+            { silentMode = true; argCheck = true; }
         if ((arg[count] == stdArgs[5]) || (arg[count] == stdArgs[6]))
         {
             // what was I thinking ???
@@ -109,8 +282,8 @@ bool argumentsTest(int ArgsNo, char **arg)
     profileName = profileName.right(profileName.size() - profileName.lastIndexOf(SLASH) - 1);
     profileName.chop(8);
     
-    runImmediately = TRUE;
-    return TRUE;	// all arguments ok
+    runImmediately = true;
+    return true;	// all arguments ok
 }
 
 // declareRsyncCommand===================================================================================================================
@@ -209,7 +382,7 @@ bool loadCurrentProfile()
         currentOperation++;
     }
     cout << "\n\n			** Profile loaded successfuly ... **\n\n";
-    return TRUE;
+    return true;
 }
 
 // check_list===================================================================================================================
@@ -238,9 +411,9 @@ bool check_list()
     else
     {
         cout << "\n\n			** Task list looks ok... **\n";
-        return TRUE;
+        return true;
     }
-    return TRUE;
+    return true;
 }
 
 // check_dirs===================================================================================================================
@@ -289,7 +462,7 @@ bool check_dirs()
         cout << "\n\n		** ..nothing to do !! **\n\n";
         return FALSE;
     }
-    return TRUE;
+    return true;
 }
 
 // help===================================================================================================================
@@ -373,7 +546,7 @@ int loadProfile(QString profileToLoad)
     }
     emailBody = emailDefaultBody;
     emailSubject = emailDefaultSubject;
-    emailNever = TRUE;
+    emailNever = true;
     emailError = FALSE;
     emailSchedule = FALSE;
     emailTLS = FALSE;
@@ -516,8 +689,8 @@ int loadProfile(QString profileToLoad)
                     tempOp  -> AddExecuteBeforeListItemState(ProfileLine.remove("ExecuteBeforeListItemState=").toInt(&IntOk,10));
                 else    // if there wasn't such a line -> older version of profile
                 {
-                    tempOp  -> AddExecuteBeforeListItemState(TRUE);
-                    doNotReadNextLine = TRUE;
+                    tempOp  -> AddExecuteBeforeListItemState(true);
+                    doNotReadNextLine = true;
                 }
             }
             
@@ -529,8 +702,8 @@ int loadProfile(QString profileToLoad)
                     tempOp  -> AddExecuteAfterListItemState(ProfileLine.remove("ExecuteAfterListItemState=").toInt(&IntOk,10));
                 else    // if there wasn't such a line -> older version of profile
                 {
-                    tempOp  -> AddExecuteAfterListItemState(TRUE);
-                    doNotReadNextLine = TRUE;
+                    tempOp  -> AddExecuteAfterListItemState(true);
+                    doNotReadNextLine = true;
                 }
             }
             
@@ -967,7 +1140,7 @@ bool saveProfile(QString profileToSave)
     out << "\n[profile end]" << "\n";
 
     profile.close();
-    return TRUE;
+    return true;
 }
 
 
@@ -1056,7 +1229,7 @@ bool exportFullProfile(QString ExportPath, QString exportType)
     if (!(exportProcess -> exitCode() == 0))
         return FALSE;
 
-    return TRUE;
+    return true;
 }
 
 // importFullProfile ====================================================================================================================================
@@ -1137,7 +1310,7 @@ bool checkTaskList()
     message="";
     messageCLI="";
     ask = FALSE;
-    NothingIncluded=TRUE;
+    NothingIncluded=true;
 
     if (TotalOperations==0)						//check if the operations list is empty ------------------------------
     {
@@ -1146,7 +1319,7 @@ bool checkTaskList()
             QObject::tr("nothing to start"));
         messageCLI.append("\nThe task list is empty !!\n"
             "nothing to start !!\n\n");
-        ask = TRUE;
+        ask = true;
         return FALSE;
     }
 
@@ -1170,7 +1343,7 @@ bool checkTaskList()
                     {
                         dirNames.append("* " + Operation[currentOperation]->GetName() + "<br>* " + tempConnect + "<br>");
                         dirNamesCLI.append(Operation[currentOperation]->GetName() + "\n" + tempConnect + "\n\n");
-                        askTemp = TRUE; ask=TRUE;
+                        askTemp = true; ask=true;
                         break;
                     }
                     count++;
@@ -1197,7 +1370,7 @@ bool checkTaskList()
             "..." + QObject::tr("nothing to start"));
         messageCLI.append("\nYou have not included any tasks !!\n\n"
             "nothing to start !!\n\n");
-        ask = TRUE;
+        ask = true;
         return FALSE;
     }
 
@@ -1232,7 +1405,7 @@ bool checkTaskList()
                     {
                         dirNames.append("* " + Operation[currentOperation]->GetName() + "<br>");
                         dirNamesCLI.append(Operation[currentOperation]->GetName() + "\n");
-                        askTemp = TRUE; ask=TRUE;
+                        askTemp = true; ask=true;
                         break;
                     }
                     count++;
@@ -1257,16 +1430,16 @@ bool checkTaskList()
                 "or use 'Backup dir contents' together with the 'Only include' option, before proceeding...\n\n");
     }
 
-    return TRUE;
+    return true;
 }
 
 // checkDeclaredDirs =================================================================================================================================
 //Check if the declared data are ok by calling checkBackupDirs or checkSyncDirs
-//If guiExec is TRUE this is called from the gui, otherwise from console
+//If guiExec is true this is called from the gui, otherwise from console
 bool checkDeclaredDirs(bool guiExec)
 {
     ask=FALSE;
-    NothingToDo = TRUE;
+    NothingToDo = true;
 
     QString source, dest;
 
@@ -1295,8 +1468,8 @@ bool checkDeclaredDirs(bool guiExec)
                 dest=QString(dest.toUtf8());
             }
 
-            Operation[currentOperation] -> SetIncluded(TRUE);
-            Operation[currentOperation] -> SetPerform(TRUE);	//this will change at the next commands
+            Operation[currentOperation] -> SetIncluded(true);
+            Operation[currentOperation] -> SetPerform(true);	//this will change at the next commands
 
             if ( (Operation[currentOperation] -> GetTypeDirContents()) || (Operation[currentOperation] -> GetTypeDirName()) )	
                 checkBackupDirs(source,dest);			//if the operation is of type "backup dir ...'
@@ -1310,7 +1483,7 @@ bool checkDeclaredDirs(bool guiExec)
         }
         currentOperation++;
     }
-    return TRUE;
+    return true;
 }
 
 //===================================================================================================================================================
@@ -1335,7 +1508,7 @@ void checkSyncDirs(QString source, QString dest)
         source.prepend((Operation[currentOperation] -> GetRemoteHost())+":");
         if (Operation[currentOperation] -> GetRemoteUser()!="")
             source.prepend((Operation[currentOperation] -> GetRemoteUser())+"@");
-        remoteSource = TRUE;
+        remoteSource = true;
     }
 
     if ( (Operation[currentOperation] -> GetRemote()) && (Operation[currentOperation] -> GetRemoteDestination()) )
@@ -1345,7 +1518,7 @@ void checkSyncDirs(QString source, QString dest)
         dest.prepend((Operation[currentOperation] -> GetRemoteHost())+":");
         if (Operation[currentOperation] -> GetRemoteUser()!="")
             dest.prepend((Operation[currentOperation] -> GetRemoteUser())+"@");
-        remoteDest = TRUE;
+        remoteDest = true;
     }
 
     QFileInfo dirAFile(source);
@@ -1365,8 +1538,8 @@ void checkSyncDirs(QString source, QString dest)
             Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
         else
             NothingToDo = FALSE;
-        Operation[currentOperation] -> SetSourcePerms(TRUE);
-        ask=TRUE;	//ask the user if he/she wants to continue
+        Operation[currentOperation] -> SetSourcePerms(true);
+        ask=true;	//ask the user if he/she wants to continue
         return;
     }
 
@@ -1374,12 +1547,12 @@ void checkSyncDirs(QString source, QString dest)
     {
         setTextMessages(source,dest,remoteSource,remoteDest,"warning","sync","dest-perms");
 
-        ask=TRUE;	//ask the user if he/she wants to continue
+        ask=true;	//ask the user if he/she wants to continue
         if (!Operation[currentOperation] -> GetByPassWARNING())
             Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
         else
             NothingToDo = FALSE;
-        Operation[currentOperation] -> SetDestPerms(TRUE);
+        Operation[currentOperation] -> SetDestPerms(true);
         return;
     }
 
@@ -1391,11 +1564,11 @@ void checkSyncDirs(QString source, QString dest)
     QStringList dirBList = dirB.entryList(QDir::AllEntries | QDir::Hidden | QDir::NoDotAndDotDot);
     bool dirAIsEmpty, dirBIsEmpty;
     if (dirAList.size() == 0)
-        dirAIsEmpty = TRUE;
+        dirAIsEmpty = true;
     else
         dirAIsEmpty = FALSE;
     if (dirBList.size() == 0)
-        dirBIsEmpty = TRUE;
+        dirBIsEmpty = true;
     else
         dirBIsEmpty = FALSE;
 
@@ -1410,7 +1583,7 @@ void checkSyncDirs(QString source, QString dest)
         setTextMessages(source,dest,remoteSource,remoteDest,"okay","sync","okay");
 
         NothingToDo = FALSE;
-        Operation[currentOperation] -> SetOK(TRUE);
+        Operation[currentOperation] -> SetOK(true);
     }
     
     //is one or both sync dirs non-existent ??									    ->	[ WARNING ]
@@ -1422,8 +1595,8 @@ void checkSyncDirs(QString source, QString dest)
             Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
         else
             NothingToDo = FALSE;
-        Operation[currentOperation] -> SetWARNING(TRUE);
-        ask=TRUE;
+        Operation[currentOperation] -> SetWARNING(true);
+        ask=true;
     }
 
     //Is one or both of the directories empty ??
@@ -1438,20 +1611,20 @@ void checkSyncDirs(QString source, QString dest)
                 Operation[currentOperation] -> SetPerform(FALSE);   //don't perform this operation if the "bypass WARNING" OPTION is disabled
             else
                 NothingToDo = FALSE;
-            Operation[currentOperation] -> SetWARNING(TRUE);
+            Operation[currentOperation] -> SetWARNING(true);
             
         }
         else                //                                                      ->  [ CRITICAL ]
         {
             setTextMessages(source,dest,remoteSource,remoteDest,"critical","sync","sync-empty");
 
-            Operation[currentOperation] -> SetCRITICAL(TRUE);
+            Operation[currentOperation] -> SetCRITICAL(true);
             if (SkipCritical)						// if a --skip-critical is given as argument
                 Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation
             else
                 NothingToDo = FALSE;
         }
-        ask=TRUE;   //ask the user if he/she wants to continue
+        ask=true;   //ask the user if he/she wants to continue
     }
 
 }
@@ -1479,7 +1652,7 @@ void checkBackupDirs(QString source, QString dest)
         source.prepend((Operation[currentOperation] -> GetRemoteHost())+":");
         if (Operation[currentOperation] -> GetRemoteUser()!="")
             source.prepend((Operation[currentOperation] -> GetRemoteUser())+"@");
-        remoteSource = TRUE;
+        remoteSource = true;
     }
     if ( (Operation[currentOperation] -> GetRemote()) && (Operation[currentOperation] -> GetRemoteDestination()) )
     {
@@ -1488,7 +1661,7 @@ void checkBackupDirs(QString source, QString dest)
         dest.prepend((Operation[currentOperation] -> GetRemoteHost())+":");
         if (Operation[currentOperation] -> GetRemoteUser()!="")
             dest.prepend((Operation[currentOperation] -> GetRemoteUser())+"@");
-        remoteDest = TRUE;
+        remoteDest = true;
     }
 
     //If user does not have sufficient permissions for the source or dest, skip it
@@ -1504,8 +1677,8 @@ void checkBackupDirs(QString source, QString dest)
         else
             NothingToDo = FALSE;
 
-        ask=TRUE;	//ask the user if he/she wants to continue
-        Operation[currentOperation] -> SetSourcePerms(TRUE);
+        ask=true;	//ask the user if he/she wants to continue
+        Operation[currentOperation] -> SetSourcePerms(true);
         return;
     }
 
@@ -1517,8 +1690,8 @@ void checkBackupDirs(QString source, QString dest)
             Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
         else
             NothingToDo = FALSE;
-        ask=TRUE;	//ask the user if he/she wants to continue
-        Operation[currentOperation] -> SetDestPerms(TRUE);
+        ask=true;	//ask the user if he/she wants to continue
+        Operation[currentOperation] -> SetDestPerms(true);
         return;
     }
     
@@ -1531,11 +1704,11 @@ void checkBackupDirs(QString source, QString dest)
 
     bool SourceIsEmpty, DestIsEmpty;
     if (sourceList.size() == 0)
-        SourceIsEmpty = TRUE;
+        SourceIsEmpty = true;
     else
         SourceIsEmpty = FALSE;
     if (destList.size() == 0)
-        DestIsEmpty = TRUE;
+        DestIsEmpty = true;
     else
         DestIsEmpty = FALSE;
     
@@ -1551,7 +1724,7 @@ void checkBackupDirs(QString source, QString dest)
         {
             setTextMessages(source,dest,remoteSource,remoteDest,"okay","backup","okay");
             
-            Operation[currentOperation] -> SetOK(TRUE);
+            Operation[currentOperation] -> SetOK(true);
             NothingToDo = FALSE;
         }
         else //The destination directory does not exist or it is empty
@@ -1564,16 +1737,16 @@ void checkBackupDirs(QString source, QString dest)
                     Operation[currentOperation] -> SetPerform(FALSE);   //don't perform this operation if the "bypass WARNING" OPTION is disabled
                 else
                     NothingToDo = FALSE;
-                Operation[currentOperation] -> SetWARNING(TRUE);
-                ask=TRUE;   //ask the user if he/she wants to continue
+                Operation[currentOperation] -> SetWARNING(true);
+                ask=true;   //ask the user if he/she wants to continue
             }
             else    // partition is mounted                                                     ->  [ CRITICAL ]
             {
                 setTextMessages(source,dest,remoteSource,remoteDest,"critical","backup","dest-not-exist");
 
-                ask=TRUE;	//ask the user if he/she wants to continue
+                ask=true;	//ask the user if he/she wants to continue
 
-                Operation[currentOperation] -> SetCRITICAL(TRUE);
+                Operation[currentOperation] -> SetCRITICAL(true);
                 
                 if (SkipCritical)						// if a --skip-critical is given as argument
                     Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation
@@ -1590,8 +1763,8 @@ void checkBackupDirs(QString source, QString dest)
             Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
         else
             NothingToDo = FALSE;
-        Operation[currentOperation] -> SetWARNING(TRUE);
-        ask=TRUE;	//ask the user if he/she wants to continue
+        Operation[currentOperation] -> SetWARNING(true);
+        ask=true;	//ask the user if he/she wants to continue
     }
 
 }
@@ -1665,7 +1838,7 @@ QStringList AppendArguments(operation *operationToAppend)
             arguments.append("--include=*/");
             arguments.append("--exclude=*");
             arguments.append("--prune-empty-dirs");
-            disableExclude=TRUE;
+            disableExclude=true;
         }
     }
     
@@ -1731,7 +1904,7 @@ QStringList AppendArguments(operation *operationToAppend)
             if (WINrunning)   // Bruce patch condition for winpaths~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             {
                 // Commented after Juan's patch
-                //destString = fixWinPathForRsync(destString, TRUE);         //fix destination (which is remote)
+                //destString = fixWinPathForRsync(destString, true);         //fix destination (which is remote)
                 //sourceString =  fixWinPathForRsync(sourceString, FALSE);    //fix source (which is local)
             }
         }
@@ -1744,7 +1917,7 @@ QStringList AppendArguments(operation *operationToAppend)
             if (WINrunning)   // Bruce patch condition for winpaths~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             {
                 // Commented after Juan's patch
-                //sourceString =  fixWinPathForRsync(sourceString, TRUE);     //fix source (which is remote)
+                //sourceString =  fixWinPathForRsync(sourceString, true);     //fix source (which is remote)
                 //destString = fixWinPathForRsync(destString, FALSE);        //fix destination (which is local)
             }
         }
@@ -1857,7 +2030,7 @@ QStringList AppendArguments(operation *operationToAppend)
     // keep snapshot changes files only for backup task types, not sync
     if ( (!validation) && (operationToAppendMaxSnaps > 1) )
     {
-        //Define a file to log new files transfered so that to exclude these when restoring previous snapshots
+        //Define a file to log new files transferred so that to exclude these when restoring previous snapshots
         arguments.append("--log-file=" + snapchangesfilename);
         arguments.append("--log-file-format=" + snapChangesString);
     }
@@ -2022,10 +2195,10 @@ QString logFileUpdate(QString appendTYPE, QString appendTHIS, int currentPrePost
 
 // checkMountPoint =====================================================================================================================================
 // Checks if the given path belongs to a mountpoint structure under /media or /mnt
-// Will also return TRUE for every path that does not start with /media or /mnt
+// Will also return true for every path that does not start with /media or /mnt
 bool checkMountPoint(QString dirPath)
 {
-    bool returnTHISplease = TRUE;
+    bool returnTHISplease = true;
     
     if ( (dirPath.startsWith ("/media", Qt::CaseSensitive )) || (dirPath.startsWith ("/mnt", Qt::CaseSensitive )) )
     {
@@ -2045,7 +2218,7 @@ bool checkMountPoint(QString dirPath)
             // The following means that the given path belongs to a directory structure under /media or /mnt that is a mountpoint
             if (mountProcess -> exitCode() == 0)
             {
-                returnTHISplease = TRUE;
+                returnTHISplease = true;
                 count = ROOTcounts;         // Exit this loop and return true if mount point found
             }
             else
@@ -2061,7 +2234,7 @@ bool checkMountPoint(QString dirPath)
 }
 
 // sendEmailNow =====================================================================================================================================
-// Send an email after a profile run. bool is TRUE if called for testing purposes
+// Send an email after a profile run. bool is true if called for testing purposes
 QString sendEmailNow (bool testEmail)
 {
     QString returnString = "";      // This is the string that will be finally returned
@@ -2088,7 +2261,7 @@ QString sendEmailNow (bool testEmail)
         QFile sendlogfile(argLog);
         
         if (!sendlogfile.open(QIODevice::WriteOnly))    // if the log file to send cannot be opened for writing
-            stopEmail = TRUE;
+            stopEmail = true;
         else
         {
             QTextStream out(&sendlogfile);
@@ -2555,7 +2728,7 @@ QString createWinMkdirCommand(QString tempPath,bool vss,QStringList rsyncArgs,bo
    
 }*/
 
-QString createWinRsyncCommand(QString tempPath,bool vss,QStringList rsyncArgs,bool logGui=true){
+QString createWinRsyncCommand(QString tempPath,bool vss,QStringList rsyncArgs,bool logGui){
 //  QFile settingsfile(settingsFile);
 //  if (!settingsfile.open(QIODevice::WriteOnly))   // if the settings file cannot be saved (or fails to create)
 //  {
@@ -2566,7 +2739,7 @@ QString createWinRsyncCommand(QString tempPath,bool vss,QStringList rsyncArgs,bo
     //luckyb line to avoid compile WARNING
     vss = logGui;
     if (vss)
-        vss=TRUE;
+        vss=true;
     // end of luckyb lines
     
 //  showOnlyErrors = ui.checkBox_onlyShowErrors -> isChecked();
@@ -2766,6 +2939,7 @@ void setAppDir(QString s){
   scheduleDir = luckyBackupDir + "schedule/";         // schedule directory
   schedulefilename = scheduleDir + "schedule.dat";    // cron data filename
   cronfilename = scheduleDir + "luckyCron.txt";       // cron filename
+}
 }
 // end of global.cpp ---------------------------------------------------------------------------
 

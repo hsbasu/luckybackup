@@ -24,13 +24,38 @@
 ** if any conditions of this licensing are not clear to you.
 **
 **********************************************************************/
+/*
+===============================================================================================================================
+    This file is part of "luckyBackup" project
+    Copyright, Loukas Avgeriou
+    luckyBackup is distributed under the terms of the GNU General Public License
+    luckyBackup is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
+    luckyBackup is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with luckyBackup.  If not, see <http://www.gnu.org/licenses/>.
+
+project version    : Please see "main.cpp" for project version
+
+developer          : luckyb 
+last modified      : 22 May 2016
+===============================================================================================================================
+===============================================================================================================================
+*/
 #ifndef __GSTLAPPLI_GUI_UTILS_QDIRDIALOG_H__
 #define __GSTLAPPLI_GUI_UTILS_QDIRDIALOG_H__
 
 //#include <GsTLAppli/gui/common.h>
 
-#include <qfiledialog.h>
+//#include <qfiledialog.h>
+#include <QFileDialog>
 
 class QDirDialog : public QFileDialog {
 

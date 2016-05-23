@@ -22,16 +22,21 @@
  project version    : Please see "main.cpp" for project version
 
  developer          : luckyb 
- last modified      : 11 Sep 2013
+ last modified      : 22 May 2016
 ===============================================================================================================================
 ===============================================================================================================================
 */
 #include "manage.h"
 
-#include "logDialog.cpp"
-#include "manageWizard.cpp"
-#include "calcDiffThread.cpp"
-#include "RsyncDirModel.cpp"
+#include <QCloseEvent>
+#include <QDirModel>
+
+#include "RsyncDirModel.h"
+#include "calcDiffThread.h"
+#include "global.h"
+#include "logDialog.h"
+#include "manageWizard.h"
+#include "operationClass.h"
 
 // class manageDialog Constructor=================================================================================================
 // Displays the manage backups of a task dialog
@@ -179,13 +184,13 @@ void manageDialog::deleteBackup()
 void manageDialog::fixGui()
 {
     // these will become false if dest or source treebrowsers are to be hidden
-    bool destVisible = TRUE;
-    sourceVisible = TRUE;
+    bool destVisible = true;
+    sourceVisible = true;
 
     //Thesw will become false if relevant pushButtons have to be disabled
-    viewLogVisible = TRUE;
-    deleteVisible = TRUE;
-    restoreVisible = TRUE;
+    viewLogVisible = true;
+    deleteVisible = true;
+    restoreVisible = true;
     
     syncTYPE = FALSE;	// This will become true if it is a sync task
     
@@ -410,7 +415,7 @@ void manageDialog::fixGui()
     //if this is a "sync" task
     if (Operation[currentOperation] -> GetTypeSync())
     {
-        syncTYPE = TRUE;
+        syncTYPE = true;
         uiG.label_destination -> setText (tr("sync dir A","full phrase: sync dir a: <DIRECTORY_A>")+ ": ");
         uiG.label_source -> setText (tr("sync dir B","full phrase: sync dir a: <DIRECTORY_b>")+ ": ");
         uiG.pushButton_viewLog -> setToolTip(tr("View the logfile of the selected sync task","'view log' pushbutton tooltip"));
@@ -453,8 +458,8 @@ void manageDialog::hideSourceStuff()
     }
     else
     {
-        uiG.label_source -> setVisible(TRUE);
-        uiG.lineEdit_source -> setVisible(TRUE);
+        uiG.label_source -> setVisible(true);
+        uiG.lineEdit_source -> setVisible(true);
         uiG.treeView_source -> setVisible (sourceVisible);
         uiG.label_sourceError -> setVisible (!sourceVisible);
     }
@@ -498,8 +503,8 @@ void manageDialog::calculateDifferences()
 	{
 		uiG.textBrowser_snapshot -> setText (tr("Please wait until the thread is terminated"));
 		uiG.pushButton_calculate_diffs -> setEnabled(FALSE);
-		calcdiffthread -> setAbort(TRUE);
-		abortCalcThread = TRUE;
+		calcdiffthread -> setAbort(true);
+		abortCalcThread = true;
 		return;
 	}
 	
@@ -511,7 +516,7 @@ void manageDialog::calculateDifferences()
 		uiG.treeView_source -> setVisible (FALSE);
 	}
 	uiG.treeView_browser -> setVisible (FALSE);
-	uiG.textBrowser_snapshot -> setVisible (TRUE);
+	uiG.textBrowser_snapshot -> setVisible (true);
 	
 	if (!snapCalculated.at(CurrentSnapshotNo))	// if the differences have not been calculated yet
 	{
@@ -542,7 +547,7 @@ void manageDialog::calcDiffEnd()
 	if (abortCalcThread)
 		uiG.textBrowser_snapshot -> append ("<p align=\"center\"><font color=red><b>" + tr("Calculations terminated by user") + "</b></font></p>");
 	else
-		snapCalculated.replace(CurrentSnapshotNo, TRUE );
+		snapCalculated.replace(CurrentSnapshotNo, true );
 	
 	abortCalcThread = FALSE;
 	calcdiffthread -> setAbort(FALSE);
@@ -551,8 +556,8 @@ void manageDialog::calcDiffEnd()
 	uiG.pushButton_delete -> setEnabled(deleteVisible);
 	uiG.pushButton_restore -> setEnabled(restoreVisible);
 	uiG.pushButton_viewLog -> setEnabled(viewLogVisible);
-	uiG.pushButton_cancel -> setEnabled(TRUE);
-	uiG.pushButton_calculate_diffs -> setEnabled(TRUE);
+	uiG.pushButton_cancel -> setEnabled(true);
+	uiG.pushButton_calculate_diffs -> setEnabled(true);
 	uiG.pushButton_calculate_diffs -> setText(tr("Calculate differences"));
 	uiG.pushButton_calculate_diffs -> setToolTip(tr("Calculate the differences between the source and the selected snapshot"));
 }

@@ -19,21 +19,27 @@
      You should have received a copy of the GNU General Public License
      along with luckyBackup.  If not,see <http://www.gnu.org/licenses/>.
  developer      : luckyb 
- last modified  : 06 Feb 2014
+ last modified  : 22 May 2016
 ===============================================================================================================================
 ===============================================================================================================================
 */
 
-#include "luckybackupwindow.cpp"
+//#include "luckybackupwindow.cpp"
 #include "commandline.h"
+
+#include <QProcess>
+#include <QTextStream>
+
+#include "global.h"
+#include "operationClass.h"
 
 // class commandline Constructor=================================================================================================
 commandline::commandline()
 {
     writeToLog=FALSE;
     errorsFound = 0;	// Total number of errors from all tasks (in CLI, only 1 error per task is allowed !!)
-    filesTransfered = 0;    //total bytes transfered during profile execution
-    bytesTransfered = 0;    //total bytes transfered during profile execution
+    filesTransfered = 0;    //total bytes transferred during profile execution
+    bytesTransfered = 0;    //total bytes transferred during profile execution
     errorCount = 0;		// Number of errors from one task (max value is 1)
 }
 
@@ -394,7 +400,7 @@ void commandline::rsyncIT()
                         count++;
                     }
                 }
-                // the following is transfered in the very beginning of the actions for !DryRun,
+                // the following is transferred in the very beginning of the actions for !DryRun,
                 /*else        // this is just to create the .snapDefaultDir if it does not to exist so as to copy profile data later...
                 {
                     //we will create the snapshots default directory by using an rsync command with an empty source without --delete option
@@ -444,13 +450,13 @@ void commandline::rsyncIT()
                 logfile.setFileName(logfilename); // this is the current logfile
                 if (logfile.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Append))	//create a new log file
                 {
-                    writeToLog = TRUE;	//& if it's ok
+                    writeToLog = true;	//& if it's ok
                     syncProcess -> setStandardOutputFile(logfilename, QIODevice::Append );
                     syncProcess -> setStandardErrorFile(logfilename, QIODevice::Append );
                 }
                 else
                 {
-                    cout << "\nError writting to log:" << QString(logfilename.toUtf8()).toStdString();
+                    cout << "\nError writing to log:" << QString(logfilename.toUtf8()).toStdString();
                     writeToLog = FALSE;
                 }
                 
@@ -462,7 +468,7 @@ void commandline::rsyncIT()
             // It includes execute before, task & execute after actions
             int repeatTaskOnFailMax = Operation[currentOperation] -> GetRepeatOnFail();    // This holds the number of re-runs to try if the task fails for a reason
             int RunTry = 0; // This run is No... RunTry
-            bool runNOW = TRUE;
+            bool runNOW = true;
             
             //pre-task commands execution ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~        
             count = 0;
@@ -477,7 +483,7 @@ void commandline::rsyncIT()
                 logFileUpdate("pre-starting","",count);	//update the logfile
 
                 RunTry = 0;     // This run of the command is No...
-                runNOW = TRUE;  // run it this time
+                runNOW = true;  // run it this time
                 
                 while ( (RunTry < repeatTaskOnFailMax+1) && (runNOW) )
                 {
@@ -503,11 +509,11 @@ void commandline::rsyncIT()
                         cout << "\nThe process failed to start\n";
                         errorCount++;
                         if (RunTry < repeatTaskOnFailMax+1)
-                            runNOW = TRUE;  // run it another time because of error
+                            runNOW = true;  // run it another time because of error
                             
-                        if ( (Operation[currentOperation] -> GetExecuteBeforeListItemState(count) == TRUE) && (RunTry == repeatTaskOnFailMax) )
+                        if ( (Operation[currentOperation] -> GetExecuteBeforeListItemState(count) == true) && (RunTry == repeatTaskOnFailMax) )
                         {
-                            StopTaskExecution = TRUE;
+                            StopTaskExecution = true;
                             break;
                         }
                     }
@@ -518,10 +524,10 @@ void commandline::rsyncIT()
                     {
                         errorCount++;
                         if (RunTry < repeatTaskOnFailMax+1)
-                            runNOW = TRUE;  // run it another time because of error
-                        if ( (Operation[currentOperation] -> GetExecuteBeforeListItemState(count) == TRUE) && (RunTry == repeatTaskOnFailMax) )
+                            runNOW = true;  // run it another time because of error
+                        if ( (Operation[currentOperation] -> GetExecuteBeforeListItemState(count) == true) && (RunTry == repeatTaskOnFailMax) )
                         {
-                            StopTaskExecution = TRUE;
+                            StopTaskExecution = true;
                             break;
                         }
                     }
@@ -552,7 +558,7 @@ void commandline::rsyncIT()
                     logFileUpdate("rsync-starting-backup", "", 0);
 
                 // Create the destination if it does not exist
-                bool DestCreateFail = FALSE;	 // This will become TRUE if destination does not exist and cannot be created
+                bool DestCreateFail = FALSE;	 // This will become true if destination does not exist and cannot be created
                 
                 rsyncArguments = AppendArguments(Operation[currentOperation]);	//set rsync arguments
                 
@@ -569,7 +575,7 @@ void commandline::rsyncIT()
                     {
                         logFileUpdate("rsync-error", "<br>Failed to create destination directory", 0);
                         cout << "\n\n Failed to create destination directory\n";
-                        DestCreateFail = TRUE;
+                        DestCreateFail = true;
                         errorCount++;
                     }
                 }
@@ -596,7 +602,7 @@ void commandline::rsyncIT()
                             
                         // start the repeat on fail loop for the rsync command (backup or sync1)
                         RunTry = 0;     // This run of the command is No...
-                        runNOW = TRUE;  // run it this time
+                        runNOW = true;  // run it this time
                         while ( (RunTry < repeatTaskOnFailMax+1) && (runNOW) )
                         {
                             runNOW = FALSE;  // do NOT run this another time if it goes ok
@@ -644,7 +650,7 @@ void commandline::rsyncIT()
                                 255 - unexplained error */
                             if (    (syncProcess -> exitCode()==30) || (syncProcess -> exitCode()==35) || (syncProcess -> exitCode()==255) ||
                                     (syncProcess -> exitCode()==12) || (syncProcess -> exitCode()==5) )
-                                runNOW = TRUE;
+                                runNOW = true;
                             
                             RunTry++;
                         }                   // The repeat-on-fail loop
@@ -728,7 +734,7 @@ void commandline::rsyncIT()
 
                             // start the repeat on fail loop for the rsync command (sync2)
                             RunTry = 0;     // This run of the command is No...
-                            runNOW = TRUE;  // run it this time
+                            runNOW = true;  // run it this time
                             while ( (RunTry < repeatTaskOnFailMax+1) && (runNOW) )
                             {
                                 runNOW = FALSE;  // do NOT run this another time if it goes ok
@@ -769,7 +775,7 @@ void commandline::rsyncIT()
                                 // If there is an error repeat the rsync command. Errors
                                 if (    (syncProcess -> exitCode()==30) || (syncProcess -> exitCode()==35) || (syncProcess -> exitCode()==255) ||
                                         (syncProcess -> exitCode()==12) || (syncProcess -> exitCode()==5) || (syncProcess -> exitCode()==23) )
-                                    runNOW = TRUE;
+                                    runNOW = true;
                                 
                                 RunTry++;
                             }                   // The repeat-on-fail loop
@@ -789,7 +795,7 @@ void commandline::rsyncIT()
                             logFileUpdate("post-starting", "", count);
                             
                             RunTry = 0;     // This run of the command is No...
-                            runNOW = TRUE;  // run it this time
+                            runNOW = true;  // run it this time
                             while ( (RunTry < repeatTaskOnFailMax+1) && (runNOW) )
                             {
                                 runNOW = FALSE;  // do NOT run this another time if it goes ok
@@ -813,11 +819,11 @@ void commandline::rsyncIT()
                                     errorCount++;
                                     
                                     if (RunTry < repeatTaskOnFailMax+1)
-                                        runNOW = TRUE;  // run it another time because of error
+                                        runNOW = true;  // run it another time because of error
                                         
-                                    if ( (Operation[currentOperation] -> GetExecuteAfterListItemState(count) == TRUE) && (RunTry == repeatTaskOnFailMax) )
+                                    if ( (Operation[currentOperation] -> GetExecuteAfterListItemState(count) == true) && (RunTry == repeatTaskOnFailMax) )
                                     {
-                                        StopTaskExecution = TRUE;
+                                        StopTaskExecution = true;
                                         break;
                                     }
                                 }
@@ -829,11 +835,11 @@ void commandline::rsyncIT()
                                     errorCount++;
                                     
                                     if (RunTry < repeatTaskOnFailMax+1)
-                                        runNOW = TRUE;  // run it another time because of error
+                                        runNOW = true;  // run it another time because of error
                                         
-                                    if ( (Operation[currentOperation] -> GetExecuteAfterListItemState(count) == TRUE) && (RunTry == repeatTaskOnFailMax) )
+                                    if ( (Operation[currentOperation] -> GetExecuteAfterListItemState(count) == true) && (RunTry == repeatTaskOnFailMax) )
                                     {
-                                        StopTaskExecution = TRUE;
+                                        StopTaskExecution = true;
                                         break;
                                     }
                                 }
@@ -902,7 +908,7 @@ void commandline::thats_all()
     // send an email
     if ( (!emailNever) && (!DryRun) )
     {
-        bool send = TRUE;
+        bool send = true;
         if ( ((emailError) && (errorsFound == 0))   // do not send if the condition "error" is checked and there are no errors
                 ||
             ((emailSchedule) && (!NoQuestions)) )  // do not send if the condition "scheduled" is checked

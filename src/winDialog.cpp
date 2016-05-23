@@ -23,14 +23,21 @@ Class to display a dialog and declare rsync and ssh paths
 project version    : Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 13 Jan 2013
+last modified      : 22 May 2016
 
 ===============================================================================================================================
 ===============================================================================================================================
 */
 
 #include "winDialog.h"
+
+#include <QSignalMapper>
+#include <QDirModel>
+#include <QCompleter>
+#include <QCloseEvent>
+
 #include "qdirdialog.h"
+#include "global.h"
 
 // class winDialog Constructor=================================================================================================
 // Displays a simple dialog with text info, ok-cancel buttons and lineEdits for user input

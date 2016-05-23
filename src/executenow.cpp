@@ -23,11 +23,25 @@ do everything that deals with commands (rsync & others) execution
 project version	: Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 10 Feb 2014
+last modified      : 22 May 2016
 ===============================================================================================================================
 ===============================================================================================================================
 ********************************** DO NOT FORGET TO CHANGE "commandline.cpp:rsyncIT()" ********************************************************
 */
+
+#include <iostream>     // cout
+using namespace std;
+#include <math.h>       // pow
+
+#include <QProcess>
+#include <QTextCodec>
+#include <QTextStream>
+#include <QTime>
+#include <QToolBar>
+
+#include "global.h"
+#include "luckybackupwindow.h"
+#include "operationClass.h"
 
 QProcess *syncProcess;
 QTime StartTime(0,0,0,0);	//find out elapsed time from these;
@@ -39,7 +53,7 @@ void luckyBackupWindow::executeNOW ()
     //Variables initialization
     // do NOT intitialise specific task variables here. Use the executeBeforeTask() function instead
     
-    NOWexecuting = TRUE;		//this is mainly used if the window close button (or alt+F4) is pressed
+    NOWexecuting = true;		//this is mainly used if the window close button (or alt+F4) is pressed
     ABORTpressed = FALSE;		//becomes true if abort button pressed
     //change gui to execute mode !!
     guiModeNormal = FALSE;
@@ -47,7 +61,7 @@ void luckyBackupWindow::executeNOW ()
     (ui.rsyncOutput->document())->setMaximumBlockCount(50000);	// set the maximum block count for the output window to avoid freezing
 
     swapGUI("execution");
-    ui.AbortButton -> setVisible (TRUE);
+    ui.AbortButton -> setVisible (true);
     ui.DoneButton -> setVisible (FALSE);
     ui.rsyncOutput -> setText("");
 
@@ -63,8 +77,8 @@ void luckyBackupWindow::executeNOW ()
     ExecuteAfter=FALSE;
     writeToLog=FALSE;
     errorsFound = 0;		//total error founds during profile execution
-    filesTransfered = 0;    //total bytes transfered during profile execution
-    bytesTransfered = 0;    //total bytes transfered during profile execution
+    filesTransfered = 0;    //total bytes transferred during profile execution
+    bytesTransfered = 0;    //total bytes transferred during profile execution
     count = 0;
     currentAfter = 0;
     currentBefore = 0;
@@ -136,7 +150,7 @@ void luckyBackupWindow::executeNOW ()
     //rsync command & arguments initiation
     command = rsyncCommandPath;
     rsyncArguments.clear();
-    syncAB = TRUE;
+    syncAB = true;
 
     StartTime.start();	//start the timer to measure elapsed time
 
@@ -179,27 +193,27 @@ void luckyBackupWindow::swapGUI(QString GUImode)
         ui.pushButton_exit  -> setVisible (FALSE);
         ui.label            -> setVisible (FALSE);
 
-        ui.AbortButton              -> setVisible (TRUE);
-        ui.DoneButton               -> setVisible (TRUE);
-        ui.rsyncOutput              -> setVisible (TRUE);
+        ui.AbortButton              -> setVisible (true);
+        ui.DoneButton               -> setVisible (true);
+        ui.rsyncOutput              -> setVisible (true);
         //ui.pushButton_InfoCollapse -> setChecked(!IsVisibleInfoWindow);
-        shutdownToolbar-> setVisible (TRUE);
+        shutdownToolbar-> setVisible (true);
         if ( (KDErunning) || (currentUser == "super user") )
-            shutdownToolbar-> setEnabled (TRUE);
+            shutdownToolbar-> setEnabled (true);
         else
             shutdownToolbar-> setEnabled (FALSE);
         ui.nowDoing                 -> setVisible (IsVisibleInfoWindow);
-        ui.OperationProgress        -> setVisible (TRUE);
+        ui.OperationProgress        -> setVisible (true);
         if (QSystemTrayIcon::isSystemTrayAvailable ())
-            ui.pushButton_minimizeToTray	-> setVisible (TRUE);
+            ui.pushButton_minimizeToTray	-> setVisible (true);
         else
             ui.pushButton_minimizeToTray	-> setVisible (FALSE);
-        errorsToolbar-> setVisible (TRUE);
-        ui.pushButton_nextError	-> setVisible (TRUE);
-        ui.pushButton_previousError	-> setVisible (TRUE);
+        errorsToolbar-> setVisible (true);
+        ui.pushButton_nextError	-> setVisible (true);
+        ui.pushButton_previousError	-> setVisible (true);
         ui.pushButton_nextError	-> setEnabled (FALSE);
         ui.pushButton_previousError	-> setEnabled (FALSE);
-        ui.checkBox_onlyShowErrors -> setVisible (TRUE);
+        ui.checkBox_onlyShowErrors -> setVisible (true);
     }
     else		//change gui to normal mode !!
     {
@@ -213,31 +227,31 @@ void luckyBackupWindow::swapGUI(QString GUImode)
         ui.pushButton_previousError -> setVisible (FALSE);
         ui.checkBox_onlyShowErrors  -> setVisible (FALSE);
         
-        ui.pushButton_start	-> setVisible (TRUE);
-        ui.listWidget_operations -> setVisible (TRUE);
+        ui.pushButton_start	-> setVisible (true);
+        ui.listWidget_operations -> setVisible (true);
         ui.pushButton_InfoCollapse -> setChecked(!IsVisibleInfoWindow);
         ui.textBrowser_info	-> setVisible (IsVisibleInfoWindow);
         ui.label_TaskList -> setText(tr("Task list","task list label"));
         ui.frame_operations -> setToolTip(tr("List of all the available tasks","task list tooltip - line1")+"\n"+
                 tr("Use the 'include checkboxes' to include or not a selected task","task list tooltip - line2"));
         
-        ui.pushButton_up    -> setVisible (TRUE);
-        ui.pushButton_down  -> setVisible (TRUE);
-        ui.label_include    -> setVisible (TRUE);
-        ui.menuFile         -> setEnabled (TRUE);
-        ui.menu_Task        -> setEnabled (TRUE);
-        languageMenu        -> setEnabled (TRUE);
-        settingsMenu        -> setEnabled (TRUE);
-        helpMenu            -> setEnabled (TRUE);
+        ui.pushButton_up    -> setVisible (true);
+        ui.pushButton_down  -> setVisible (true);
+        ui.label_include    -> setVisible (true);
+        ui.menuFile         -> setEnabled (true);
+        ui.menu_Task        -> setEnabled (true);
+        languageMenu        -> setEnabled (true);
+        settingsMenu        -> setEnabled (true);
+        helpMenu            -> setEnabled (true);
         profileToolbar      -> setVisible (IsVisibleProfileToolbar);
-        profileComboToolbar -> setEnabled (TRUE);
+        profileComboToolbar -> setEnabled (true);
         shutdownToolbar     -> setVisible (FALSE);
         errorsToolbar     -> setVisible (FALSE);
-        ui.comboBox_profile -> setEnabled (TRUE);
-        ui.groupBox_task    -> setVisible (TRUE);
-        ui.checkBox_DryRun  -> setEnabled (TRUE);
+        ui.comboBox_profile -> setEnabled (true);
+        ui.groupBox_task    -> setVisible (true);
+        ui.checkBox_DryRun  -> setEnabled (true);
         ui.pushButton_exit  -> setVisible (FALSE);	// set this to true to make the exit button visible at normal mode
-        ui.label            -> setVisible (TRUE);
+        ui.label            -> setVisible (true);
     }
 }
 
@@ -245,7 +259,7 @@ void luckyBackupWindow::swapGUI(QString GUImode)
 void luckyBackupWindow::donePressed()
 {
     ui.rsyncOutput -> setText("");
-    guiModeNormal = TRUE;
+    guiModeNormal = true;
     swapGUI("normal");
 
     if (QSystemTrayIcon::isSystemTrayAvailable ())	// this prevents a segfault when system tray is NOT available
@@ -280,7 +294,7 @@ void luckyBackupWindow::abortPressed()
     ui.rsyncOutput->append("<br><br><font color=red>" + tr("Aborting: Please wait for all processes to be killed") + "...</font>");
     ExecuteBefore = FALSE;
     ExecuteAfter = FALSE;
-    ABORTpressed = TRUE;
+    ABORTpressed = true;
     
     syncProcess -> kill();	//kill rsyncProcess
     syncProcess -> waitForFinished();
@@ -313,14 +327,14 @@ void luckyBackupWindow::createTrayIcon()
     //tray icon--------------------------------
     LBtray = new QSystemTrayIcon(QIcon(":/luckyPrefix/luckybackup_96.png"),this);
     LBtray -> setContextMenu(LBtrayMenu);
-    if (isMinimizedToTray == TRUE)
+    if (isMinimizedToTray == true)
     {
         minimizeToTray 	-> setVisible(FALSE);
-        restoreFromTray	-> setVisible(TRUE);
+        restoreFromTray	-> setVisible(true);
     }
     else
     {
-        minimizeToTray 	-> setVisible(TRUE);
+        minimizeToTray 	-> setVisible(true);
         restoreFromTray	-> setVisible(FALSE);
     }
     
@@ -336,9 +350,9 @@ void luckyBackupWindow::minimizeTray()
     if (QSystemTrayIcon::isSystemTrayAvailable ())
     {
         minimizeToTray 	-> setVisible(FALSE);
-        restoreFromTray	-> setVisible(TRUE);
+        restoreFromTray	-> setVisible(true);
     }
-    isMinimizedToTray = TRUE;
+    isMinimizedToTray = true;
     this -> hide();
 }
 // restoreTray =============================================================================================================================
@@ -347,7 +361,7 @@ void luckyBackupWindow::restoreTray()
 {
     if (QSystemTrayIcon::isSystemTrayAvailable ())
     {
-        minimizeToTray 	-> setVisible(TRUE);
+        minimizeToTray 	-> setVisible(true);
         restoreFromTray	-> setVisible(FALSE);
     }
     isMinimizedToTray = FALSE;
@@ -362,7 +376,7 @@ void luckyBackupWindow::LBtrayActivated(QSystemTrayIcon::ActivationReason reason
         case QSystemTrayIcon::Context:
             break;
         case QSystemTrayIcon::Trigger:
-            if (isMinimizedToTray == TRUE)
+            if (isMinimizedToTray == true)
                 restoreTray();
             else
                 minimizeTray();
@@ -371,14 +385,14 @@ void luckyBackupWindow::LBtrayActivated(QSystemTrayIcon::ActivationReason reason
             ;
     }
     
-    if (isMinimizedToTray == TRUE)
+    if (isMinimizedToTray == true)
     {
         minimizeToTray 	-> setVisible(FALSE);
-        restoreFromTray	-> setVisible(TRUE);
+        restoreFromTray	-> setVisible(true);
     }
     else
     {
-        minimizeToTray 	-> setVisible(TRUE);
+        minimizeToTray 	-> setVisible(true);
         restoreFromTray	-> setVisible(FALSE);
     }
 }
@@ -674,7 +688,7 @@ void luckyBackupWindow::executeBeforeTask()
             ( Operation[currentOperation] -> GetSnapshotsListItem(currentSnaps - 1) ) + ".log";
         logfile.setFileName(logfilename); // this is the logfile
         if (logfile.open(QIODevice::WriteOnly | QIODevice::Text))	//create a new log file
-            writeToLog = TRUE;				//& if it's ok set this to TRUE
+            writeToLog = true;				//& if it's ok set this to true
         else
             writeToLog = FALSE;
     }
@@ -694,7 +708,7 @@ void luckyBackupWindow::executeBeforeTask()
     }
     else
     {
-        ExecuteBefore=TRUE;
+        ExecuteBefore=true;
         ExecuteBeforeExitedError = FALSE;
         StopTaskExecution = FALSE;
         ProcReportedError = FALSE;      // This might change as soon as syncprocess will start ()
@@ -747,7 +761,7 @@ void luckyBackupWindow::executeAfterTask()
     }
     else
     {
-        ExecuteAfter=TRUE;
+        ExecuteAfter=true;
         ProcReportedError = FALSE;  // This might change as soon as syncprocess will start ()
         outputInsert = logFileUpdate("post-starting", "", currentAfter);
         ui.rsyncOutput->append(outputInsert);
@@ -795,7 +809,7 @@ void luckyBackupWindow::executeRsync()
             rsyncArguments.removeLast();
             rsyncArguments.append(dirB);	// set SyncDirA & SyncDirB as Arguments
             rsyncArguments.append(dirA);
-            syncAB = TRUE;
+            syncAB = true;
         }
     }
 
@@ -806,7 +820,7 @@ void luckyBackupWindow::executeRsync()
     if ((sync) && (syncAB))
         outputInsert = logFileUpdate("rsync-starting-syncBA", "", 0);
 
-    DestCreateFail = FALSE;	 // This will become TRUE if destination does not exist and cannot be created
+    DestCreateFail = FALSE;	 // This will become true if destination does not exist and cannot be created
     
     if (!sync)
     {
@@ -822,7 +836,7 @@ void luckyBackupWindow::executeRsync()
             {
                 outputInsert.append(logFileUpdate("rsync-error", "<br>" +tr("Failed to create destination directory"), 0));
                 ui.rsyncOutput->append(outputInsert);
-                DestCreateFail = TRUE;
+                DestCreateFail = true;
                 errorsFound++;
                 errorCount++;
                 procFinished();	// Do not proceed any further
@@ -882,12 +896,12 @@ void luckyBackupWindow::procFinished()
         // if the pre-task command exited with an error
         if ((syncProcess -> exitCode() != 0) || (ProcReportedError))
         {
-            ExecuteBeforeExitedError = TRUE;
+            ExecuteBeforeExitedError = true;
             
             if (repeatOnFailTry == repeatOnFailMax) // if the last run of the command just ended
             {
-                if (Operation[currentOperation] -> GetExecuteBeforeListItemState(currentBefore) == TRUE)
-                    StopTaskExecution = TRUE;
+                if (Operation[currentOperation] -> GetExecuteBeforeListItemState(currentBefore) == true)
+                    StopTaskExecution = true;
                 repeatOnFailTry = 0;    // reset the runs counter for a specific command
                 currentBefore++;    //go to the next pre-task execution command
             }
@@ -922,8 +936,8 @@ void luckyBackupWindow::procFinished()
         {    
             if (repeatOnFailTry == repeatOnFailMax) // if the last run of the command just ended
             {
-                if (Operation[currentOperation] -> GetExecuteAfterListItemState(currentAfter) == TRUE)
-                    StopTaskExecution = TRUE;
+                if (Operation[currentOperation] -> GetExecuteAfterListItemState(currentAfter) == true)
+                    StopTaskExecution = true;
                 repeatOnFailTry = 0;     //rest the counter for a specific command
                 currentAfter++;    //go to the next pre-task execution command
             }
@@ -1051,7 +1065,7 @@ void luckyBackupWindow::procFinished()
 // A process reported an error (eg failed to start or crashed etc)
 void luckyBackupWindow::procError()
 {
-    ProcReportedError = TRUE;
+    ProcReportedError = true;
     QProcess::ProcessError commandError = syncProcess -> error();
     QString errorText = tr("Unknown error");
     switch (commandError)
@@ -1134,21 +1148,21 @@ void luckyBackupWindow::appendRsyncOutput()
     }
     if (outputString.contains("building file list"))
     {
-        calculating = TRUE;
+        calculating = true;
         transferring = FALSE;
         deleting = FALSE;
     }
     if (outputString.contains("files to consider"))
     {
         calculating = FALSE;
-        transferring = TRUE;
+        transferring = true;
         deleting = FALSE;
     }
     if (outputString.contains("deleting"))
     {
         calculating = FALSE;
         transferring = FALSE;
-        deleting = TRUE;
+        deleting = true;
     }
     
     // Extraxt some data from the "stats" lines at the end of rsync
@@ -1243,21 +1257,21 @@ void luckyBackupWindow::appendRsyncVssOutput(int size)
             }
             if (outputString.contains("building file list"))
             {
-                calculating = TRUE;
+                calculating = true;
                 transferring = FALSE;
                 deleting = FALSE;
             }
             if (outputString.contains("files to consider"))
             {
                 calculating = FALSE;
-                transferring = TRUE;
+                transferring = true;
                 deleting = FALSE;
             }
             if (outputString.contains("deleting"))
             {
                 calculating = FALSE;
                 transferring = FALSE;
-                deleting = TRUE;
+                deleting = true;
             }
         }
     }
@@ -1367,7 +1381,7 @@ void luckyBackupWindow::setNowDoing()
         
         nowDoingText = 	"<p align=\"center\">"+tr("Elapsed time")+" : <b><font color=red>" + DifTime.toString("hh:mm:ss") +
                 "</font></b><br>" +
-                tr("Total files transfered") + " : <b>" + countStr.setNum(filesTransfered) + "</b> (" + convertBytes(QString::number(bytesTransfered),TRUE) +")<br>"
+                tr("Total files transferred") + " : <b>" + countStr.setNum(filesTransfered) + "</b> (" + convertBytes(QString::number(bytesTransfered),true) +")<br>"
                 "========================================="
                 "<b><br><font color=blue>"+tr("All tasks completed")+" </font></b>";
         trayMessage =	tr("All tasks completed");
@@ -1387,15 +1401,15 @@ void luckyBackupWindow::setNowDoing()
             trayMessage.append("\n" + tr("errors found"));
 
             // initialize jump to next error button 
-            firstScroll=TRUE;
+            firstScroll=true;
             errorCount = 0;
-            ui.pushButton_nextError	-> setEnabled (TRUE);
+            ui.pushButton_nextError	-> setEnabled (true);
         }
         if (!DryRun)
             nowDoingText.append(tr("logfile(s) have been created under directory: ")+ logDir +"<br>");
         nowDoingText.append("=========================================</p>");
         ui.AbortButton -> setVisible (FALSE);
-        ui.DoneButton -> setVisible (TRUE);
+        ui.DoneButton -> setVisible (true);
         ui.pushButton_minimizeToTray	-> setVisible (FALSE);
         
         //update tray baloon
@@ -1420,7 +1434,7 @@ void luckyBackupWindow::setNowDoing()
         if (ui.pushButton_shutdown -> isChecked())
             shutDownSystem();
         
-        if ( (silentMode) && (isMinimizedToTray == TRUE) )		// if --silent is given as argument and the gui is not shown exit the app
+        if ( (silentMode) && (isMinimizedToTray == true) )		// if --silent is given as argument and the gui is not shown exit the app
         {
             //delay the app exit for 3 seconds
             QTime StartSleep(0,0,0,0);
@@ -1446,7 +1460,7 @@ void luckyBackupWindow::setNowDoing()
             nowDoingText.append(tr("logfile(s) have been created under directory: ")+ logDir +"<br>");
         nowDoingText.append("=========================================</p>");
         ui.AbortButton -> setVisible (FALSE);
-        ui.DoneButton -> setVisible (TRUE);
+        ui.DoneButton -> setVisible (true);
         ui.pushButton_minimizeToTray	-> setVisible (FALSE);
         ui.rsyncOutput->append("<br><font color=red><b>" + tr("ABORTED") + " !!</b></font>");
         
@@ -1468,8 +1482,8 @@ void luckyBackupWindow::setNowDoing()
 
         if  (errorsFound > 0)// initialize jump to next error button 
         {
-            firstScroll=TRUE;
-            ui.pushButton_nextError	-> setEnabled (TRUE);
+            firstScroll=true;
+            ui.pushButton_nextError	-> setEnabled (true);
         }
 
         finishUp();
@@ -1500,7 +1514,7 @@ void luckyBackupWindow::setNowDoing()
             }
         }
         
-        if ( (silentMode) && (isMinimizedToTray == TRUE) )		// if --silent is given as argument and the gui is not shown, exit the app
+        if ( (silentMode) && (isMinimizedToTray == true) )		// if --silent is given as argument and the gui is not shown, exit the app
             exit(0);	//quit
     }
     ui.nowDoing -> setText (nowDoingText);
@@ -1516,11 +1530,11 @@ void luckyBackupWindow::finishUp()
         if (!saveProfile(currentProfile))
         {
             savedProfile = FALSE;
-            ui.actionSave -> setEnabled(TRUE);
+            ui.actionSave -> setEnabled(true);
         }
         else
         {
-            savedProfile = TRUE;			//change profile status to "saved"
+            savedProfile = true;			//change profile status to "saved"
             ui.actionSave -> setEnabled(FALSE);
         }
             
@@ -1529,7 +1543,7 @@ void luckyBackupWindow::finishUp()
         // send an email
         if ( (!ABORTpressed) && (!emailNever) )
         {
-            bool send = TRUE;
+            bool send = true;
             if ( ((emailError) && (errorsFound == 0))   // do not send if the condition "error" is checked and there are no errors
                     ||
                 ((emailSchedule) && (!silentMode)) )  // do not send if the condition "scheduled" is checked and profile is not run in silent mode
@@ -1595,7 +1609,7 @@ void luckyBackupWindow::previousErrorJump()
         ui.pushButton_previousError -> setEnabled(FALSE);
     
     if (errorCount < errorsFound-1)	//if the current error is less than the last one within the logfile enable the next button
-        ui.pushButton_nextError -> setEnabled(TRUE);
+        ui.pushButton_nextError -> setEnabled(true);
     
     ui.rsyncOutput -> scrollToAnchor("error" + countStr.setNum(errorCount+1));
 }
@@ -1611,14 +1625,14 @@ void luckyBackupWindow::nextErrorJump()
         ui.pushButton_nextError -> setEnabled(FALSE);
     
     if (errorCount > 0)				// if the current error is greater than the first one within the logfile enable the previous button
-        ui.pushButton_previousError -> setEnabled(TRUE);
+        ui.pushButton_previousError -> setEnabled(true);
     
     ui.rsyncOutput -> scrollToAnchor("error" + countStr.setNum(errorCount+1));
 }
 
 // convertBytes (QString,bool)
 // Converts a string of the form 67M to bytes and vice versa (eg 1024 -> 1KB)
-// if bool=FALSE then conversion string->bytes. If bool=TRUE then conversion bytes->string
+// if bool=FALSE then conversion string->bytes. If bool=true then conversion bytes->string
 // =====================================================================================================
 QString luckyBackupWindow::convertBytes (QString byteLine,bool toWhat)
 {
@@ -1657,7 +1671,7 @@ QString luckyBackupWindow::convertBytes (QString byteLine,bool toWhat)
     }
     else            // convert string to bytes
     {
-        unsigned long int multiply = 1;
+        unsigned long long int multiply = 1;
         
         if (byteLine.endsWith("K"))
             multiply = 1024;

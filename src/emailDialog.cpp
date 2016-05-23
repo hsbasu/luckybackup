@@ -23,12 +23,17 @@
  project version    : Please see "main.cpp" for project version
 
  developer          : luckyb
- last modified      : 06 Feb 2014
+ last modified      : 22 May 2016
 ===============================================================================================================================
 ===============================================================================================================================
 */
 
 #include "emailDialog.h"
+
+#include <QSignalMapper>
+
+#include "textDialog.h"
+#include "global.h"
 
 // class emailDialog Constructor===============================================================================================
 // Displays a dialog to schedule email reports
@@ -125,7 +130,7 @@ void emailDialog::revertDefault(const int field)
 // Check if all fields are ok
 bool emailDialog::checkFields()
 {
-    bool returnVal = TRUE;
+    bool returnVal = true;
     if (uiE.checkBox_conditionNever->isChecked())   // if the never condition is checked, just return. No email will be sent anyway
         return returnVal;
     
@@ -227,7 +232,7 @@ void emailDialog::emailTest()
         return; // do not proceed if something is wrong with the fields (eg command is empty)
     }
     
-    warningMessage = sendEmailNow(TRUE);
+    warningMessage = sendEmailNow(true);
         
     textDialog textdialogW ("emailOutput",warningMessage, this);
     textdialogW.exec();
@@ -245,7 +250,7 @@ void emailDialog::enableTLS()
     //hide or show the "disable TLS" option if "sendemail" is used as command
     if (uiE.lineEdit_command -> text() == emailDefaultCommand)
     {
-        uiE.checkBox_disable_tls -> setEnabled(TRUE);
+        uiE.checkBox_disable_tls -> setEnabled(true);
         if (uiE.checkBox_disable_tls -> isChecked())
             tempEmailArguments.prepend(tlsArgument + " ");
     }

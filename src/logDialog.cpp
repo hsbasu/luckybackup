@@ -23,14 +23,18 @@
  project version	: Please see "main.cpp" for project version
 
  developer          : luckyb 
- last modified      : 27 Aug 2009
+ last modified      : 22 May 2016
 ===============================================================================================================================
 ===============================================================================================================================
 */
 
 
 #include "logDialog.h"
-#include "readLogFile.cpp"
+
+#include <QTimer>
+
+#include "global.h"
+#include "readLogFile.h"
 
 // class logDialog Constructor=================================================================================================
 
@@ -82,11 +86,11 @@ void logDialog::refreshWindow(const QString &newText)
 void logDialog::logReadEnd()
 {
 	if (totalErrors > 0)
-		uiL.button_next -> setEnabled(TRUE);
+		uiL.button_next -> setEnabled(true);
 	uiL.button_close -> setText(tr("close"));
-	uiL.button_close -> setEnabled(TRUE);
+	uiL.button_close -> setEnabled(true);
 	errorCount = 0;		//set current error to be the first of the logfile
-	firstScroll=TRUE;
+	firstScroll=true;
 }
 
 // refreshWindowError =====================================================================================================
@@ -97,7 +101,7 @@ void logDialog::refreshWindowError(const QString &errorText)
 	uiL.button_next -> setEnabled(FALSE);
 	uiL.button_previous -> setEnabled(FALSE);
 	uiL.button_close -> setText(tr("close"));
-	uiL.button_close -> setEnabled(TRUE);
+	uiL.button_close -> setEnabled(true);
 }
 
 // close button pressed=====================================================================================================
@@ -115,7 +119,7 @@ void logDialog::prevError()
 		uiL.button_previous -> setEnabled(FALSE);
 	
 	if (errorCount < totalErrors-1)	//if the current error is less than the last one within the logfile enable the next button
-		uiL.button_next -> setEnabled(TRUE);
+		uiL.button_next -> setEnabled(true);
 	
 	uiL.logView -> scrollToAnchor("error" + countStr.setNum(errorCount+1));
 }
@@ -131,7 +135,7 @@ void logDialog::nextError()
 		uiL.button_next -> setEnabled(FALSE);
 	
 	if (errorCount > 0)				// if the current error is greater than the first one within the logfile enable the previous button
-		uiL.button_previous -> setEnabled(TRUE);
+		uiL.button_previous -> setEnabled(true);
 	
 	uiL.logView -> scrollToAnchor("error" + countStr.setNum(errorCount+1));	//scroll to the current error
 }

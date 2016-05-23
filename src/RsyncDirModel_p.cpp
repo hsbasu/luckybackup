@@ -18,6 +18,8 @@
     along with the luckyBackup project.  If not, see <http://www.gnu.org/licenses/>.
 
 ****************************************************************************/
+// modified on 22 May 2016
+// by luckyb after Lothar's fixes
 
 #include "RsyncDirModel_p.h"
 
@@ -634,7 +636,7 @@ QString FileIconCacheData::createTempFile(const QString& name)
     if(!file.open(QFile::WriteOnly))
         return QString();
 
-    file.write(completeName.toAscii());
+    file.write(completeName.toLatin1());
     file.close();
 
     return completeName;

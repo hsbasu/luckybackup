@@ -84,7 +84,7 @@ class luckyBackupWindow : public QMainWindow
         void taskStateChanged();    //SLOT: Sets the profile state to unsaved if a task checkbox is changed
         void refreshList();         //SLOT: Refresh the operations list when refresh button pressed
         void start();               //SLOT: Open start operations dialog when Button clicked()
-        void modify();              //SLOT: Modify an existing task. Will also save it if bool is TRUE
+        void modify();              //SLOT: Modify an existing task. Will also save it if bool is true
         void add();                 //SLOT: Add a new task
         void remove();              //SLOT: remove highlighted task
         void manage();              //SLOT: Manage existing backups of an existing task
@@ -215,7 +215,7 @@ class luckyBackupWindow : public QMainWindow
         bool ExecuteBeforeExitedError;	// becomes true if a before command exits with an error
         bool StopTaskExecution; // becomes true if we want to stop task execution
         bool ProcReportedError;      //becomes true if any process reports an error (eg failed to start)
-        bool DestCreateFail;		// This will become TRUE if destination does not exist and cannot be created
+        bool DestCreateFail;		// This will become true if destination does not exist and cannot be created
         int repeatOnFailMax;   // This is equal to the number of times a command will run when it fails
         int repeatOnFailTry;        // This is the current run of a command
         int currentBefore;		//count variable for commands to be executed before task

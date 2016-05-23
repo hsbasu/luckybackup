@@ -22,7 +22,7 @@
     along with luckyBackup.  If not, see <http://www.gnu.org/licenses/>.
 
     developer       : luckyb 
-    last modified   : 11 Sep 2013
+    last modified   : 22 May 2015
     ===============================================================================================================================
     ===============================================================================================================================
 */
@@ -35,7 +35,8 @@
 #include <QTranslator>
 
 #include "luckybackupwindow.h"
-#include "commandline.cpp"
+#include "global.h"
+#include "commandline.h"
 
 int main(int argc, char *argv[])
 {
@@ -64,13 +65,19 @@ int main(int argc, char *argv[])
         
         //translation
         QString locale = QLocale::system().name();
+        
+        // Load standard Qt appTranslator
+        translator_qt.load(QString("qt_") + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+        app.installTranslator(&translator_qt);
+        
+        //load LB translator
         transDir.setPath(relativeTransDir);
         if (transDir.exists())
             appTranslator.load(QString("luckybackup_") + locale, relativeTransDir);
         else 
             appTranslator.load(QString("luckybackup_") + locale, systemTransDir);
         app.installTranslator(&appTranslator);
-
+        
         // windows related stuff
         appPath = app.applicationDirPath();  // This is used for windows app path. It's also causing a ...
                                              //"QCoreApplication::applicationDirPath: Please instantiate the QApplication object first" WARNING message

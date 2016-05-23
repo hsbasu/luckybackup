@@ -23,30 +23,28 @@ cpp file that does all stuff needed when a signal is transmitted (eg button pres
 project version	: Please see "main.cpp" for project version
 
 developer       : luckyb 
-last modified   : 10 Feb 2014
+last modified   : 22 May 2016
 ===============================================================================================================================
 ===============================================================================================================================
 */
 
-#include <QtGui>
-
-#include "global.cpp"
-
 //inluded headers ---------------------------------------------------------------
 #include "luckybackupwindow.h"
 
-//inluded sources ---------------------------------------------------------------
-#include "textDialog.cpp"
-#include "winDialog.cpp"
-#include "modifyDialog.cpp"
-#include "helpBrowser.cpp"
-#include "scheduleDialog.cpp"
-#include "emailDialog.cpp"
-#include "about.cpp"
-#include "manage.cpp"
-#include "functions.cpp"
-#include "executenow.cpp"
-#include "patternEditor.cpp"
+#include <QProcess>
+#include <QToolBar>
+#include <QCloseEvent>
+#include <QFileDialog>
+
+#include "helpBrowser.h"
+#include "global.h"
+#include "winDialog.h"
+#include "textDialog.h"
+#include "about.h"
+#include "modifyDialog.h"
+#include "manage.h"
+#include "scheduleDialog.h"
+#include "emailDialog.h"
 
 helpBrowser *helpbrowser;
 
@@ -189,7 +187,7 @@ QMessageBox::warning(this, "luckybackup",       "This is a testing version of <b
     ui.textBrowser_info -> setText(InfoData);	//update the info window
 
     if (DryRun)		// if --dry-run was given as an argument, check the relevant box
-        ui.checkBox_DryRun -> setChecked(TRUE);
+        ui.checkBox_DryRun -> setChecked(true);
 
     if (runImmediately)
         start();
@@ -221,7 +219,7 @@ void luckyBackupWindow::exitApp()
     IsVisibleProfileToolbar = profileToolbar -> isVisible();
     IsVisibleProfileStartToolbar = profileStartToolbar -> isVisible();
     saveSettings();
-    exit(0);	//quit
+    QCoreApplication::exit(0);	//quit
 }
 
 //do the same if the main window close button (or alt+F4) is pressed
@@ -479,7 +477,7 @@ void luckyBackupWindow::deleteCurrentProfile()
 
     if (textdialogQ.getGoOn() > 0)		//if user answers yes
     {
-        savedProfile = TRUE;	//assume the profile is saved
+        savedProfile = true;	//assume the profile is saved
         //try to delete the profile
         if (!profile.remove())
         {
@@ -633,7 +631,7 @@ void luckyBackupWindow::changeProfileDescription()
     
     ui.textBrowser_info -> setText(InfoData);	//update the info window
     savedProfile = FALSE;			//change profile status to "unsaved"
-    ui.actionSave -> setEnabled(TRUE);
+    ui.actionSave -> setEnabled(true);
 }
 
 // duplicateTask ================================================================================================================================
@@ -642,7 +640,7 @@ void luckyBackupWindow::duplicateTask()
 {
     modifyOK = FALSE;
     modifyConnected = FALSE;
-    newTaskThisIs = TRUE;
+    newTaskThisIs = true;
     
     currentOperation = ui.listWidget_operations -> currentRow();		//current task list row number
     if (currentOperation < 0)						//if nothing is selected do nothing
@@ -688,12 +686,12 @@ void luckyBackupWindow::duplicateTask()
 
     saveOrNot=FALSE;
     modify();	//open the modify dialog for the new task, FALSE == do not save the result
-    saveOrNot = TRUE;
+    saveOrNot = true;
 
     if (modifyOK)
     {
         savedProfile = FALSE;			//change profile status to "unsaved"
-        ui.actionSave -> setEnabled(TRUE);
+        ui.actionSave -> setEnabled(true);
     }
     else
     {
@@ -707,7 +705,7 @@ void luckyBackupWindow::duplicateTask()
 //create another operation for RESTORE
 void luckyBackupWindow::AlsoCreateRestore()
 {
-    newTaskThisIs = TRUE;
+    newTaskThisIs = true;
     int oldCurrentOperation = ui.listWidget_operations -> currentRow();	//current task list row number;
 
     if (oldCurrentOperation  < 0)						//if nothing is selected do nothing
@@ -779,17 +777,17 @@ void luckyBackupWindow::AlsoCreateRestore()
                 this);
     textdialogW.exec();
 
-    modifyConnected = TRUE;
+    modifyConnected = true;
     saveOrNot = FALSE;
     modify();	//open the modify dialog for the new operation to make sure everything is ok, FALSE == do not save the result
-    saveOrNot = TRUE;
+    saveOrNot = true;
 
     if (modifyOK)		//connect the operation with its RESTORE duplicate
     {
         Operation[currentOperation] -> SetConnectRestore(Operation[oldCurrentOperation] -> GetName());	
         Operation[oldCurrentOperation] -> SetConnectRestore(Operation[currentOperation] -> GetName());
         savedProfile = FALSE;			//change profile status to "unsaved"
-        ui.actionSave -> setEnabled(TRUE);
+        ui.actionSave -> setEnabled(true);
     }
     else
     {
@@ -939,6 +937,9 @@ void luckyBackupWindow::setLanguage(QAction *action)
         appTranslator.load(QString("luckybackup_") + currentLocale, relativeTransDir);
     else 
         appTranslator.load(QString("luckybackup_") + currentLocale, systemTransDir);
+    
+    translator_qt.load(QString("qt_") + currentLocale,  QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+    
     defaultLanguage = currentLocale;
     retranslateUi();
 }
@@ -953,9 +954,9 @@ void luckyBackupWindow::hideShowInfoWindow()
         ui.pushButton_InfoCollapse -> setToolTip(tr("Hide information window","hide/show information window button tooltip"));
         ui.pushButton_InfoCollapse -> setIcon(QIcon(":/luckyPrefix/collapse.png"));
         if (guiModeNormal)
-            ui.textBrowser_info -> setVisible (TRUE);
+            ui.textBrowser_info -> setVisible (true);
         else
-            ui.nowDoing	-> setVisible (TRUE);
+            ui.nowDoing	-> setVisible (true);
     }
     else
     {
@@ -1007,7 +1008,7 @@ void luckyBackupWindow::add()
 {
     modifyOK = FALSE;
     modifyConnected = FALSE;
-    newTaskThisIs = TRUE;
+    newTaskThisIs = true;
     TotalOperations = ui.listWidget_operations -> count();				//Get the Operations list size
     currentOperation = TotalOperations;
 
@@ -1033,7 +1034,7 @@ void luckyBackupWindow::add()
         checkCurrentItem(ui.listWidget_operations -> currentItem());
         TotalOperations = ui.listWidget_operations -> count();		//set the TotalOperations to what it is now
         savedProfile = FALSE;			//change profile status to "unsaved"
-        ui.actionSave -> setEnabled(TRUE);
+        ui.actionSave -> setEnabled(true);
     }
 }
 
@@ -1054,7 +1055,7 @@ void luckyBackupWindow::modify()
 
     QString tempConnect = Operation[currentOperation] -> GetConnectRestore();
     if ( (tempConnect != "") && (!modifyConnected) )	//the operations is connected and is a not new RESTORE operation
-        modifyConnected = TRUE;
+        modifyConnected = true;
     int connectPosition=0;
     if (tempConnect != "")	//if this op is already connected with another op, (pop up a message & )hold the connection's position
     {
@@ -1090,7 +1091,7 @@ void luckyBackupWindow::modify()
         if (newTaskName != oldTaskName)
             arrangeLogSnap(0,"rename",oldTaskName);
         
-        if (saveOrNot)      // also save the current profile if saveOrNot is TRUE
+        if (saveOrNot)      // also save the current profile if saveOrNot is true
             saveCurrentProfile();     
     }
 }
@@ -1153,7 +1154,7 @@ void luckyBackupWindow::remove()
             }
         }
         savedProfile = FALSE;			//change profile status to "unsaved"
-        ui.actionSave -> setEnabled(TRUE);
+        ui.actionSave -> setEnabled(true);
         
         // add the deleted yask name to this list to be used when profile is saved
         deletedTaskNames << oldTaskName;
@@ -1201,7 +1202,7 @@ void luckyBackupWindow::moveUp()
         ui.listWidget_operations -> setCurrentRow(currentOperation - 1);
         
         savedProfile = FALSE;			//change profile status to "unsaved"
-        ui.actionSave -> setEnabled(TRUE);
+        ui.actionSave -> setEnabled(true);
     }
 }
 
@@ -1226,7 +1227,7 @@ void luckyBackupWindow::moveDown()
         ui.listWidget_operations -> setCurrentRow(currentOperation + 1);
 
         savedProfile = FALSE;			//change profile status to "unsaved"
-        ui.actionSave -> setEnabled(TRUE);
+        ui.actionSave -> setEnabled(true);
     }
 }
 
@@ -1242,7 +1243,7 @@ void luckyBackupWindow::start()
 
     checkDeclared();		//Check if the declared data are ok by calling checkBackupDirs, checkSyncDirs accordingly
 
-    if (NothingToDo == TRUE)	//if there is nothing to Do anyway then just display a message
+    if (NothingToDo == true)	//if there is nothing to Do anyway then just display a message
     {
         InfoData = "<font color=red><b>" + tr("ERROR") + "</b></font><br>" +
                 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br><b>" +
@@ -1285,7 +1286,7 @@ void luckyBackupWindow::email()
         ui.textBrowser_info -> setText(InfoData);
         
         savedProfile = FALSE;           //change profile status to "unsaved"
-        ui.actionSave -> setEnabled(TRUE);
+        ui.actionSave -> setEnabled(true);
     }
     
 }
@@ -1304,14 +1305,14 @@ void luckyBackupWindow::taskStateChanged()
         if (taskClicked)
             taskClicked = FALSE;
         else
-            taskChanged = TRUE;
+            taskChanged = true;
         return;
     }
 
     if ( (taskChanged) && (taskClicked) )
     {
         savedProfile = FALSE;			//change profile status to "unsaved"
-        ui.actionSave -> setEnabled(TRUE);
+        ui.actionSave -> setEnabled(true);
     }
 
     taskClicked = FALSE;
@@ -1322,7 +1323,7 @@ void luckyBackupWindow::taskStateChanged()
 // Checks the currently selected operation (if checked) for validity
 void luckyBackupWindow::checkCurrentItem(QListWidgetItem *thisIsTheCurrentItem)
 {
-    taskClicked = TRUE;	//this is used at taskStateChanged() to determine if a task state is changed
+    taskClicked = true;	//this is used at taskStateChanged() to determine if a task state is changed
 
     InfoData="";
     CheckedData = "";
@@ -1348,7 +1349,7 @@ void luckyBackupWindow::checkCurrentItem(QListWidgetItem *thisIsTheCurrentItem)
     }
     else
     {
-        ui.action_TaskCreateRestore -> setEnabled(TRUE);
+        ui.action_TaskCreateRestore -> setEnabled(true);
         ui.action_TaskManageBackup -> setText(tr("Manage &Backup","This is a top 'Task' menu action"));
         ui.action_TaskManageBackup -> setToolTip(tr("display - restore - delete existing backups of highlighted task",
                             "This is a top 'Task' menu action tooltip"));
@@ -1364,7 +1365,7 @@ void luckyBackupWindow::checkCurrentItem(QListWidgetItem *thisIsTheCurrentItem)
         return;
     }
 
-    Operation[currentOperation] -> SetIncluded(TRUE);	// also set its include state to TRUE
+    Operation[currentOperation] -> SetIncluded(true);	// also set its include state to true
 
     if ( (Operation[currentOperation] -> GetTypeDirContents()) || (Operation[currentOperation] -> GetTypeDirName()) )
         checkBackupDirs(source,dest);			//if the operation is of type "backup dir ...'

@@ -22,7 +22,7 @@
  project version	: Please see "main.cpp" for project version
 
  developer 		: luckyb 
- last modified 		: 03 Mar 2010
+ last modified 		: 22 May 2016
 ===============================================================================================================================
 ===============================================================================================================================
 
@@ -35,6 +35,8 @@
 #include <iostream>
 
 using namespace std;
+
+#include <QString>
 
 //==============================================================================================================
 //Declaration of commandline class (this is the class that runs luckybackup in command line mode)

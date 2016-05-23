@@ -49,7 +49,7 @@ class schedule
             itsWeekDay = 0;
             itsHour = 0;
             itsMinute = 0;
-            itsSkipCritical = TRUE;
+            itsSkipCritical = true;
             itsConsoleMode = FALSE;
             itsReboot = FALSE;
             itsDelayReboot = 3;

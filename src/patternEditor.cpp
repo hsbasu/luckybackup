@@ -23,11 +23,18 @@
  project version	: Please see "main.cpp" for project version
 
  developer 		: luckyb 
- last modified 	: 16 Jan 2012
+ last modified 	: 22 May 2016
 ===============================================================================================================================
 ===============================================================================================================================*/
 
 #include "patternEditor.h"
+
+#include <QSignalMapper>
+#include <QCloseEvent>
+#include <QFileDialog>
+
+#include "global.h"
+#include "textDialog.h"
 
 // class patternEditor Constructor=================================================================================================
 // Displays the pattern editor dialog
@@ -124,12 +131,12 @@ void patternEditor::resetFileds()
     uiP.toolButton_browseFile -> setVisible(FALSE);
     
     uiP.checkBox_directoryContents -> setCheckState(Qt::Unchecked);
-    uiP.radioButton_directorySpecific -> setChecked(TRUE);
+    uiP.radioButton_directorySpecific -> setChecked(true);
     
     uiP.lineEdit_browse -> setText("");
-    uiP.lineEdit_browse -> setEnabled (TRUE);
+    uiP.lineEdit_browse -> setEnabled (true);
     uiP.lineEdit_patternFinal -> setText("");
-    uiP.toolButton_browseDir -> setVisible(TRUE);
+    uiP.toolButton_browseDir -> setVisible(true);
     uiP.label_browse -> setText(tr("directory :"));
 } 
  // browse button pressed=====================================================================================================
@@ -213,9 +220,9 @@ void patternEditor::fillPattern()
     
     if ( (uiP.radioButton_fileSpecific -> isChecked()) || (uiP.radioButton_directorySpecific -> isChecked()) )
     {
-        uiP.lineEdit_browse -> setEnabled(TRUE);
-        uiP.toolButton_browseFile -> setEnabled(TRUE);
-        uiP.toolButton_browseDir -> setEnabled(TRUE);
+        uiP.lineEdit_browse -> setEnabled(true);
+        uiP.toolButton_browseFile -> setEnabled(true);
+        uiP.toolButton_browseDir -> setEnabled(true);
     }
         
     // Read the path lineEdit
@@ -242,9 +249,9 @@ void patternEditor::fillPattern()
     // groupbox NAME actions ------------------------------------------------------------------------------------------------
     if (uiP.lineEdit_nameIsExactly->text()=="")
     {
-        uiP.lineEdit_nameStartsWith -> setEnabled(TRUE);
-        uiP.lineEdit_nameEndsWith -> setEnabled(TRUE);
-        uiP.lineEdit_nameContains -> setEnabled(TRUE);
+        uiP.lineEdit_nameStartsWith -> setEnabled(true);
+        uiP.lineEdit_nameEndsWith -> setEnabled(true);
+        uiP.lineEdit_nameContains -> setEnabled(true);
     }
     else
     {
@@ -276,7 +283,7 @@ void patternEditor::fillPattern()
     // RADIO BUTTONS actions ----------------------------------------------------------------------------------------------------
     if (uiP.radioButton_fileSpecific -> isChecked())	// if file specific radio button is selected
     {
-        uiP.label_browse -> setVisible(TRUE);
+        uiP.label_browse -> setVisible(true);
 
         uiP.label_browse -> setText(tr("file :"));
         if (patternLine.endsWith(SLASH))
@@ -284,21 +291,21 @@ void patternEditor::fillPattern()
     }
     if (uiP.radioButton_directorySpecific -> isChecked())	// if directory specific radio button is selected
     {
-        uiP.label_browse -> setVisible(TRUE);
+        uiP.label_browse -> setVisible(true);
         uiP.label_browse -> setText(tr("directory :"));
         if ((!(patternLine.endsWith(SLASH))) && (!(patternLine == "")) )
             patternLine.append(SLASH);
     }
     if (uiP.radioButton_fileSet -> isChecked())		// if file set radio button is selected
     {
-        uiP.checkBox_pathAbsolute -> setEnabled (TRUE);
+        uiP.checkBox_pathAbsolute -> setEnabled (true);
         uiP.label_browse -> setVisible(FALSE);
         if (patternLine.endsWith(SLASH))
             patternLine.chop(1);
     }
     if (uiP.radioButton_directorySet -> isChecked())	// if directory set radio button is selected
     {
-        uiP.checkBox_pathAbsolute -> setEnabled (TRUE);
+        uiP.checkBox_pathAbsolute -> setEnabled (true);
         uiP.label_browse -> setVisible(FALSE);
         if ( (!(patternLine.endsWith(SLASH))) && (!(patternLine == "")) )
             patternLine.append(SLASH);

@@ -22,12 +22,20 @@ Class to launch a wizard for restore, delete a backup
 project version    : Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 10 Nov 2012
+last modified      : 22 May 2016
 ===============================================================================================================================
 ===============================================================================================================================
 */
 #include "manageWizard.h"
-//#include "logDialog.cpp"
+
+#include <QCloseEvent>
+#include <QFileDialog>
+#include <QProcess>
+#include <QTextCodec>
+
+#include "global.h"
+#include "operationClass.h"
+
 QProcess *commandProcess;
 
 // class manageWizard Constructor=================================================================================================
@@ -44,8 +52,8 @@ manageWizard::manageWizard (QString type, QString SOURCE, QString DEST,  int sna
     procKilled = FALSE;
     writeToLog = FALSE;
     DeleteAfter = FALSE;
-    firstScroll = TRUE;
-    MainRun = TRUE;
+    firstScroll = true;
+    MainRun = true;
     
     QStringList arguments = Operation[currentOperation] -> GetArgs();
     source = SOURCE;	// the full path of the source
@@ -64,7 +72,7 @@ manageWizard::manageWizard (QString type, QString SOURCE, QString DEST,  int sna
 
     QDir snapSpecificDir(dest + snapDefaultDir + time + SLASH);
     if (snapSpecificDir.exists())
-        snapSpecificDirExists = TRUE;
+        snapSpecificDirExists = true;
     else
         snapSpecificDirExists = FALSE;
     
@@ -178,14 +186,14 @@ void manageWizard::startAction()
     DryRun = uiW.checkBox_DryRun -> isChecked();		//set bool DeleteAfter according to checkbox (only applies at RESTORE)
     
     //change the gui
-    uiW.button_next -> setVisible (TRUE);
+    uiW.button_next -> setVisible (true);
     uiW.button_next -> setEnabled (FALSE);
-    uiW.button_previous -> setVisible (TRUE);
+    uiW.button_previous -> setVisible (true);
     uiW.button_previous -> setEnabled (FALSE);
-    uiW.actionView -> setVisible (TRUE);
+    uiW.actionView -> setVisible (true);
     uiW.button_cancel -> setVisible (FALSE);
     uiW.groupBox_title -> setVisible (FALSE);
-    uiW.button_abort -> setVisible (TRUE);
+    uiW.button_abort -> setVisible (true);
     uiW.checkBox_DryRun -> setVisible (FALSE);
     uiW.button_start -> setVisible (FALSE);
     
@@ -201,7 +209,7 @@ void manageWizard::startAction()
         logfile.setFileName(logfilename); // this is the logfile
         
         if (logfile.open(QIODevice::WriteOnly | QIODevice::Text))	//create a new log file
-            writeToLog = TRUE;				//& if it's ok set this to TRUE
+            writeToLog = true;				//& if it's ok set this to true
         else
             writeToLog = FALSE;
     }
@@ -227,7 +235,7 @@ void manageWizard::procFinished()
         QDir snapSpecificDir(dest + snapDefaultDir + time + tslash);
         
         if (snapSpecificDir.exists())
-            snapSpecificDirExists = TRUE;
+            snapSpecificDirExists = true;
         else
             snapSpecificDirExists = FALSE;
         
@@ -242,12 +250,12 @@ void manageWizard::procFinished()
     errorsFound = errorCount;
     errorCount = 0;		// reset the error count
     uiW.button_abort -> setVisible (FALSE);
-    uiW.button_cancel -> setVisible (TRUE);
+    uiW.button_cancel -> setVisible (true);
     uiW.button_cancel -> setText(tr("close"));
     if (errorsFound > 0)
     {
-        firstScroll=TRUE;
-        uiW.button_next -> setEnabled (TRUE);
+        firstScroll=true;
+        uiW.button_next -> setEnabled (true);
     }
     
     // if delete backup just finished normally (not ABORTED) with no errors
@@ -326,7 +334,7 @@ void manageWizard::abortAction()
 {
     if (commandProcess->state() == QProcess::Running)
     {
-        procKilled = TRUE;
+        procKilled = true;
         MainRun = FALSE;
         commandProcess -> kill();	//kill commandProcess
         commandProcess -> waitForFinished();
@@ -382,7 +390,7 @@ void manageWizard::prevError()
         uiW.button_previous -> setEnabled(FALSE);
     
     if (errorCount < errorsFound-1)	//if the current error is less than the last one, enable the next button
-        uiW.button_next -> setEnabled(TRUE);
+        uiW.button_next -> setEnabled(true);
     
     uiW.actionView -> scrollToAnchor("error" + countStr.setNum(errorCount+1));
 }
@@ -399,7 +407,7 @@ void manageWizard::nextError()
         uiW.button_next -> setEnabled(FALSE);
     
     if (errorCount > 0)				// if the current error is greater than the first one enable the previous button
-        uiW.button_previous -> setEnabled(TRUE);
+        uiW.button_previous -> setEnabled(true);
     
     uiW.actionView -> scrollToAnchor("error" + countStr.setNum(errorCount+1));
 }
@@ -541,7 +549,7 @@ void manageWizard::runProcess()
         {
             InfoMessage.append(tr("Restoring data: snapshot files","info message displayed during ...data restoration") + " - " + time);
             if (!snapSpecificDirExists)
-                skipTHIS = TRUE;
+                skipTHIS = true;
         }
         if (DryRun)
             InfoMessage.append(" (" + tr("simulation") + ")");
@@ -556,7 +564,7 @@ void manageWizard::runProcess()
             commandArguments << "-rvf" << dest;
         }
         else
-            skipTHIS = TRUE;
+            skipTHIS = true;
         
     }
 
@@ -580,7 +588,7 @@ void manageWizard::runProcess()
     {
         commandProcess -> start (commandLocal,commandArguments);
         commandProcess -> waitForStarted();
-        procRunning = TRUE;
+        procRunning = true;
     }
 }
 // end of managewizard.cpp ---------------------------------------------------------------------------

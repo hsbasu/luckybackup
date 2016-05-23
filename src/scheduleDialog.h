@@ -23,7 +23,7 @@
  project version    : Please see "main.cpp" for project version
 
  developer          : luckyb 
- last modified      : 09 Feb 2012
+ last modified      : 22 May 2016
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -34,6 +34,7 @@
 //include  header file that qmake produces from "*.ui" created with qt designer
 #include "ui_scheduleDialog.h"
 
+#include <QFile>
 
 //==============================================================================================================
 //Declaration of rsyncDialog class (this will execute rsync and show progress in a dialog)
@@ -71,6 +72,7 @@ class scheduleDialog : public QDialog
 
     private:
         Ui::scheduleDialog uiS;
+        QFile scheduleFile;         //holds the scheduleFile filename
         int currentProfileIndex;    //holds the current profile index inside the combobox
         bool noSchedules;           //becomes true when no schedules are declared
         bool changesMade;           //becomes true if changes are made but no cronIt is pressed

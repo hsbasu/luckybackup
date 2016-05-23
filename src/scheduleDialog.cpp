@@ -23,7 +23,7 @@ Display a dialog. Schedules profiles via cron
 project version    : Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 03 Feb 14
+last modified      : 22 May 2016
 
 ===============================================================================================================================
 ===============================================================================================================================
@@ -31,23 +31,33 @@ last modified      : 03 Feb 14
 
 
 #include "scheduleDialog.h"
+
+#include <QTextStream>
+#include <QTextCodec>
+#include <QMessageBox>
+#include <QProcess>
+
 #include "scheduleClass.h"
+#include "global.h"
+#include "textDialog.h"
 
 int const maxSchedule = 20;		//The maximum number or profiles schedule permitted
 schedule *Schedule[maxSchedule];	//The array that holds name etc of "schedule list"
-QFile scheduleFile (schedulefilename );
+//QFile scheduleFile (schedulefilename );
 QProcess *cronProcess;		//crontab process
 
 // class scheduleDialog Constructor=================================================================================================
 // schedule existing profiles to execute via cron
-scheduleDialog::scheduleDialog (QDialog *parent) : QDialog (parent)
+scheduleDialog::scheduleDialog (QDialog *parent)
+  : QDialog (parent)
+  , scheduleFile(schedulefilename)
 {
     uiS.setupUi(this);
 
     //variables initialization
     TotalSchedule=0;		//The number of available profiles schedulesin "schedule list"- starts from 1
     currentSchedule=0;		//this holds the current row from the "schedule list"- starts from 0
-    noSchedules = TRUE;		//becomes true when no schedules are declared
+    noSchedules = true;		//becomes true when no schedules are declared
     changesMade = FALSE;		//becomes true if changes are made but no cronIt is pressed
 
     //connections ----------------------------------------------------------------------------------------------------
@@ -72,12 +82,12 @@ scheduleDialog::scheduleDialog (QDialog *parent) : QDialog (parent)
 
     //initialize view of widgets
     uiS.groupBox_addProfileSchedule -> setVisible(FALSE);
-    uiS.listWidget_schedule -> setEnabled(TRUE);
-    uiS.pushButton_add -> setEnabled(TRUE);
-    uiS.pushButton_modify -> setEnabled(TRUE);
-    uiS.pushButton_remove -> setEnabled(TRUE);
-    uiS.pushButton_cancel -> setEnabled(TRUE);
-    uiS.pushButton_schedule -> setEnabled(TRUE);
+    uiS.listWidget_schedule -> setEnabled(true);
+    uiS.pushButton_add -> setEnabled(true);
+    uiS.pushButton_modify -> setEnabled(true);
+    uiS.pushButton_remove -> setEnabled(true);
+    uiS.pushButton_cancel -> setEnabled(true);
+    uiS.pushButton_schedule -> setEnabled(true);
     
     //profile combobox initialization
     uiS.comboBox_profile -> clear();
@@ -321,7 +331,7 @@ void scheduleDialog::schedulePressed()
     }
     
     createCron();		//create a cronfile & update user's crontab
-    crontabUpdated = TRUE;
+    crontabUpdated = true;
     changesMade = FALSE;
 
     textDialog textdialogI ("QtInformation",  "<font color=blue><b>" + currentUser + "</b></font><br><br>" +
@@ -352,7 +362,7 @@ void scheduleDialog::addPressed()
         return;
     }
     
-    uiS.groupBox_addProfileSchedule -> setVisible(TRUE);
+    uiS.groupBox_addProfileSchedule -> setVisible(true);
     uiS.listWidget_schedule -> setEnabled(FALSE);
     uiS.groupBox_addProfileSchedule -> setTitle(tr("Add profile schedule"));
     uiS.pushButton_add -> setEnabled(FALSE);
@@ -372,7 +382,7 @@ void scheduleDialog::modifyPressed()
     if ((currentSchedule < 0) || (noSchedules))				//if nothing is selected or no schedules declared, do nothing
         return;
 
-    uiS.groupBox_addProfileSchedule -> setVisible(TRUE);
+    uiS.groupBox_addProfileSchedule -> setVisible(true);
     uiS.groupBox_addProfileSchedule -> setTitle(tr("Modify profile schedule"));
     uiS.listWidget_schedule -> setEnabled(FALSE);
     uiS.pushButton_add -> setEnabled(FALSE);
@@ -403,10 +413,10 @@ void scheduleDialog::removePressed()
     TotalSchedule = uiS.listWidget_schedule -> count();	//Get the schedule list size
     if (TotalSchedule == 0)
     {
-        noSchedules = TRUE;
+        noSchedules = true;
         uiS.listWidget_schedule -> addItem(tr("No schedules are declared !!"));
     }
-    changesMade = TRUE;    
+    changesMade = true;    
 }
 
 // current button pressed==============================================================================================
@@ -437,18 +447,18 @@ void scheduleDialog::modifyCancelPressed()
 {
     uiS.groupBox_addProfileSchedule -> setTitle(tr("Profile schedule details"));
     uiS.groupBox_addProfileSchedule -> setVisible(FALSE);
-    uiS.listWidget_schedule -> setEnabled(TRUE);
-    uiS.pushButton_add -> setEnabled(TRUE);
-    uiS.pushButton_modify -> setEnabled(TRUE);
-    uiS.pushButton_remove -> setEnabled(TRUE);
-    uiS.pushButton_cancel -> setEnabled(TRUE);
-    uiS.pushButton_schedule -> setEnabled(TRUE);
-    uiS.pushButton_viewCrontab -> setEnabled(TRUE);
+    uiS.listWidget_schedule -> setEnabled(true);
+    uiS.pushButton_add -> setEnabled(true);
+    uiS.pushButton_modify -> setEnabled(true);
+    uiS.pushButton_remove -> setEnabled(true);
+    uiS.pushButton_cancel -> setEnabled(true);
+    uiS.pushButton_schedule -> setEnabled(true);
+    uiS.pushButton_viewCrontab -> setEnabled(true);
 
     TotalSchedule = uiS.listWidget_schedule -> count();	//Get the schedule list size
     if (TotalSchedule == 0)
     {
-        noSchedules = TRUE;
+        noSchedules = true;
         uiS.listWidget_schedule -> addItem(tr("No schedules are declared !!"));
     }
 }
@@ -573,7 +583,7 @@ void scheduleDialog::okaySchedulePressed()
     TotalSchedule = uiS.listWidget_schedule -> count();		//set the TotalSchedule to what it is now
 
     modifyCancelPressed();
-    changesMade = TRUE;
+    changesMade = true;
 }
 
 // scheduleText=====================================================================================================
@@ -936,7 +946,7 @@ bool scheduleDialog::saveScheduleFile()
     }
     
     scheduleFile.close();   //close the file
-    return TRUE;
+    return true;
 }
 
 // end of scheduleDialog.cpp ---------------------------------------------------------------------------

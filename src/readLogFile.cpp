@@ -23,13 +23,17 @@
  project version	: Please see "main.cpp" for project version
 
  developer 		: luckyb 
- last modified 		: 27 Aug 2009
+ last modified 		: 22 May 2016
 ===============================================================================================================================
 ===============================================================================================================================
 */
 
 
 #include "readLogFile.h"
+
+#include <QTextStream>
+
+#include "global.h"
 
 // class ReadLogFile Constructor=================================================================================================
 ReadLogFile::ReadLogFile(QObject *parent) : QThread(parent)

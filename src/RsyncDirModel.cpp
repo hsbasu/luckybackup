@@ -18,6 +18,8 @@
     along with the luckyBackup project.  If not, see <http://www.gnu.org/licenses/>.
 
 ****************************************************************************/
+// modified on 22 May 2016
+// by luckyb after Lothar's fixes
 
 #include "RsyncDirModel.h"
 #include "RsyncDirModel_p.h"
@@ -167,9 +169,10 @@ void RsyncDirModel::refresh(const QModelIndex& index)
     }
     else
     {
+        beginResetModel();
         d->topLevelEntries.clear();
         d->lister->list();
-        reset();
+        endResetModel();
     }
 }
 
@@ -278,7 +281,7 @@ QModelIndex RsyncDirModel::index(int row, int col, const QModelIndex& parent) co
     if(!parent.isValid())
     {
         if(!d->topLevelEntries.count())
-            return createIndex(row, col, 0);
+            return createIndex(row, col);
 
         if(row < 0 || row >= d->topLevelEntries.count())
             return QModelIndex();
@@ -388,9 +391,10 @@ void RsyncDirModel::slotListingDone(RsyncEntry* entry)
     }
     else
     {
+        beginResetModel();
         d->topLevelEntries = d->lister->topLevelEntries();
         d->topLevelEntriesFetched = true;
-        reset();
+        endResetModel();
     }
 }
 

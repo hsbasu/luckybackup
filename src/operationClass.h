@@ -23,7 +23,7 @@
  project version    : Please see "main.cpp" for project version
 
  developer          : luckyb 
- last modified      : 11 Sep 2013
+ last modified      : 22 May 2016
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -32,6 +32,7 @@
 #ifndef OPERATIONCLASS_H
 #define OPERATIONCLASS_H
 #include <QDateTime>
+#include <QStringList>
 
 //==============================================================================================================
 //Declaration of operation class (this is the class that holds operation's name & arguments)
@@ -51,7 +52,7 @@ class operation
             itsInclude = FALSE;
             itsIncludeModeNormal = FALSE;
             itsByPassWARNING = FALSE;
-            itsCloneWARNING = TRUE;
+            itsCloneWARNING = true;
             itsRepeatOnFail = 0;
             itsKeepSnapshots = 1;
             itsSnapshotsList.clear();
@@ -223,7 +224,7 @@ class operation
         void SetExclude()                      { if ( ((itsExcludeFromFile) && !(itsExcludeFile=="")) || (itsExcludeTemp)||(itsExcludeCache)||(itsExcludeBackup)||
                                     (itsExcludeMount)||(itsExcludeLostFound)||(itsExcludeSystem)||
                                     (itsExcludeTrash)||(itsExcludeGVFS)||(itsExcludeList.size()>0) )
-                                        itsExclude = TRUE;
+                                        itsExclude = true;
                                     else     itsExclude = FALSE; }
         // Exclude templates
         void SetExcludeTemp(bool ExcludeTemp)               { itsExcludeTemp = ExcludeTemp;}
@@ -244,7 +245,7 @@ class operation
         // Include boolean
         void SetInclude()                      {  if ( ((itsIncludeFromFile) && !(itsIncludeFile=="")) || 
                                             (itsIncludeList.size()>0) )
-                                        itsInclude = TRUE;
+                                        itsInclude = true;
                                     else    itsInclude = FALSE;}
         // Include from file
         void SetIncludeFromFile(bool IncludeFromFile)       { itsIncludeFromFile = IncludeFromFile;}

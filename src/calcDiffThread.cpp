@@ -23,13 +23,19 @@
  project version    : Please see "main.cpp" for project version
 
  developer          : luckyb 
- last modified      : 07 Jun 2011
+ last modified      : 22 May 2016
 ===============================================================================================================================
 ===============================================================================================================================
 */
 
 
 #include "calcDiffThread.h"
+
+#include <QStack>
+#include <QTextStream>
+
+#include "global.h"
+#include "operationClass.h"
 
 // class CalcDiffThread Constructor=================================================================================================
 CalcDiffThread::CalcDiffThread(QObject *parent) : QThread(parent)
@@ -110,7 +116,7 @@ void CalcDiffThread::run ()
         {
             if ( (destFile == removedFiles.at(countDirEntries)) || ((destFile+SLASH) == removedFiles.at(countDirEntries)) )
             {
-                removed = TRUE;
+                removed = true;
                 returnDirContents.removeAt(countReturnEntries);
             }
             countDirEntries++;
@@ -161,7 +167,7 @@ void CalcDiffThread::run ()
                     {
                         returnDirContents.removeAt(countReturnEntries);
                         returnDirContents.insert(countReturnEntries,snapFileInfo);
-                        replaced = TRUE;
+                        replaced = true;
                     }
                     countReturnEntries++;
                 }
@@ -231,8 +237,8 @@ void CalcDiffThread::run ()
             //	The snapshot data will replace the relevant source data, at RESTORE
             if (snapFile == sourceFile)
             {
-                snapMatchesSource.replace(countReturnEntries, TRUE);
-                foundMatchSourceToSnap = TRUE;
+                snapMatchesSource.replace(countReturnEntries, true);
+                foundMatchSourceToSnap = true;
                 if ((snapFileInfo.lastModified() != sourceFileInfo.lastModified()) ||
                 (snapFileInfo.size() != sourceFileInfo.size()))
                 {
@@ -268,7 +274,7 @@ void CalcDiffThread::run ()
     }
 
     // 3. Data that exist at the snapshot but not at the source.
-    // 	These will be transfered over at RESTORE
+    // 	These will be transferred over at RESTORE
     countReturnEntries = 0;
     while (countReturnEntries < snapMatchesSource.size())
     {
@@ -327,7 +333,7 @@ void CalcDiffThread::run ()
         else
         {
             returnString.append(" " + tr("Snapshot data that do NOT exist at the source") + "<br>");
-            returnString.append(" " + tr("These will be transfered over at the source during RESTORE") + "</p>");
+            returnString.append(" " + tr("These will be transferred over at the source during RESTORE") + "</p>");
         }
         returnString.append(existingsnap);
         if (existingsnap.size() > 9900)

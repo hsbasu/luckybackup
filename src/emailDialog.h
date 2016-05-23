@@ -35,7 +35,7 @@
 
 //==============================================================================================================
 //Declaration of emailDialog class
-// accessor function getGoOn returns TRUE or FALSE
+// accessor function getGoOn returns true or FALSE
 class emailDialog : public QDialog
 {
     Q_OBJECT

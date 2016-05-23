@@ -22,11 +22,12 @@
         project version   : Please see "main.cpp" for project version
 
         developer         : luckyb 
-        last modified     : 04 Mar 2014
+        last modified     : 22 May 2016
       ===============================================================================================================================
       ===============================================================================================================================
 */
 #include "about.h"
+#include "global.h"
 
 // class aboutDialog Constructor=================================================================================================
 // Displays a simple about dialog
@@ -58,8 +59,8 @@ void aboutDialog::setTop()
 }
 void aboutDialog::setAbout()
 {
-    uiA.textBrowser_About -> setOpenLinks(TRUE);
-    uiA.textBrowser_About -> setOpenExternalLinks(TRUE);
+    uiA.textBrowser_About -> setOpenLinks(true);
+    uiA.textBrowser_About -> setOpenExternalLinks(true);
 
     Text = 	"<p align=\"center\"><b>"+appName + " " + appVersionString +"</b> ("+
         tr("using Qt4")+")" + "<br>" +
@@ -84,8 +85,8 @@ void aboutDialog::setAbout()
 }
 void aboutDialog::setAuthor()
 {
-    uiA.textBrowser_Author -> setOpenLinks(TRUE);
-    uiA.textBrowser_Author -> setOpenExternalLinks(TRUE);
+    uiA.textBrowser_Author -> setOpenLinks(true);
+    uiA.textBrowser_Author -> setOpenExternalLinks(true);
 
     Text =	"<p align=\"center\"><br><img name=\"luckyb\" src=\":/luckyPrefix/luckyb.png\" width=\"80\" height=\"80\" border=\"0\"><b><br><br>"+
         tr("Loukas Avgeriou") +"</b> (luckyb)<br>"+
@@ -95,8 +96,8 @@ void aboutDialog::setAuthor()
 }
 void aboutDialog::setThanks()
 {
-    uiA.textBrowser_Thanks -> setOpenLinks(TRUE);
-    uiA.textBrowser_Thanks -> setOpenExternalLinks(TRUE);
+    uiA.textBrowser_Thanks -> setOpenLinks(true);
+    uiA.textBrowser_Thanks -> setOpenExternalLinks(true);
 
     Text =	"<p align=\"center\"><b>" + tr("Tom Tryfonidis") + "</b><br>(thanos)<br>" +
         tr("Arch linux package/pkgbuild official maintainer (AUR)") + "<br>" +
@@ -180,7 +181,10 @@ void aboutDialog::setThanks()
 
         "<b>" + tr("Marcio Moraes") + "</b><br>" +
         tr("Portuguese gui translator") + "<br><br>"
-
+        
+         "<b>" + tr("António Correia") + "</b><br>" +
+        tr("Portuguese gui translator") + "<br><br>"
+        
         "<b>" + tr("Julien Cynober") + "</b><br>" +
         tr("French gui translator and valuable packing advisor (and not only)") + "<br><br>"
         
@@ -220,6 +224,9 @@ void aboutDialog::setThanks()
         "<b>" + tr("Adrian Murariu") + "</b><br>" +
         tr("Romanian gui translator") + "<br><br>"
 
+        "<b>" + tr("Angelescu Constantin") + "</b><br>" +
+        tr("Romanian gui reviewer & translator") + "<br><br>"
+        
         "<b>" + tr("Andrej Znidarsic") + "</b><br>" +
         tr("Slovenian gui translator") + "<br><br>"
         
@@ -250,7 +257,7 @@ void aboutDialog::setThanks()
         "<b>" + tr("Nicolay Boychev") + "</b><br>" +
         tr("Bulgarian gui translator") + "<br><br>"
         
-        "<b>" + tr("Manuel Meixide") + "</b><br>" +
+        "<b>" + tr("Marcos Lans") + "</b><br>" +
         tr("Galician gui translator") + "<br><br>"
         
         "<b>" + tr("Roger Foss") + "</b><br>" +
@@ -297,8 +304,8 @@ void aboutDialog::setThanks()
 }
 void aboutDialog::setLicense(QUrl licenseUrl)
 {
-    uiA.textBrowser_License -> setOpenLinks(TRUE);
-    uiA.textBrowser_License -> setOpenExternalLinks(TRUE);
+    uiA.textBrowser_License -> setOpenLinks(true);
+    uiA.textBrowser_License -> setOpenExternalLinks(true);
 
     licenseUrl.setScheme("file");
 
@@ -311,8 +318,8 @@ void aboutDialog::setLicense(QUrl licenseUrl)
 
 void aboutDialog::setSupport()
 {
-    uiA.textBrowser_Support -> setOpenLinks(TRUE);
-    uiA.textBrowser_Support -> setOpenExternalLinks(TRUE);
+    uiA.textBrowser_Support -> setOpenLinks(true);
+    uiA.textBrowser_Support -> setOpenExternalLinks(true);
 
     Text = 	"<p align=\"left\"><b>" + tr("no money") + "</b><br><br>" +
     tr("If you like this app and would like to donate something to me personally, all you have to do is:") + "<ul><li>" +

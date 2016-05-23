@@ -35,7 +35,7 @@ helpBrowser::helpBrowser (QUrl helpUrl, QWidget *parent) : QDialog (parent)
     uiB.setupUi(this);
     //connect okay pushButton SLOTs ----------------
     connect ( uiB.button_ok, SIGNAL( clicked() ), this, SLOT( okay() ) );
-    uiB.browser -> setOpenLinks(TRUE);
+    uiB.browser -> setOpenLinks(true);
     uiB.browser -> setOpenExternalLinks(FALSE);
     uiB.browser -> setSource(helpUrl);
 }

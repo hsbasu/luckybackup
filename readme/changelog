@@ -1,9 +1,14 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Version 0.4.9 :
+* Minor modify dialog fixes
+* Fixed issue: libpng 1.6+ iCCP warnings
+* Fixed issue: compiler warning - overflow in implicit constant conversion
+* Fixed issue: segfault when exiting app at certain circumstances
+* Fixed issue: qfiledialog, QDataStream inclusion
+* Various changes due to Qt5 compatibility
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Version 0.4.8 :
-* Added support for vss implementation (windows)
-* Added support for nt-streams (windows)
-* Added support for e-mail notifications (windows)
-* Added various libs used for the windows port
 * Added option to disable TLS for email reports
 * Added some (useful) statistics at the end of a profile run
 * Added destination disk free space at information window
@@ -13,6 +18,10 @@ Version 0.4.8 :
 * Split of full email command to command & arguments
 * Changed the default exclude "system folders" from "/dev /proc /sys /var" to "/dev /proc /sys /run /var/run"
 * Safety checks of mount-points now include deeper levels in paths than /media/<1st-level>/ and /mnt/<1st-level>/
+* Added support for vss implementation (windows)
+* Added support for nt-streams (windows)
+* Added support for e-mail notifications (windows)
+* Added various libs used for the windows port
 * Fixed issue: When one or more items were manually removed from an existing schedule list, LB would delete entries from the bottom of the list instead, when the cronIT button is pressed.
 * Fixed issue: Progress bar did not update normally
 * Fixed issue: Segmentation fault under certain circumstances, when --skip-critical is used as an argument and there exists one or more actual CRITICAL tasks.

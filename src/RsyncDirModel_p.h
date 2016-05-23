@@ -18,19 +18,22 @@
     along with the luckyBackup project.  If not, see <http://www.gnu.org/licenses/>.
 
 ****************************************************************************/
+// modified on 22 May 2016
+// by luckyb after Lothar's fixes
 
 #ifndef Rsync_DIR_MODEL_P_H
 #define Rsync_DIR_MODEL_P_H
 
 #include <QObject>
 #include <QMetaType>
-#include <QUrlInfo>
 #include <QList>
 #include <QString>
 #include <QUrl>
 #include <QIcon>
 #include <QProcess>
 #include <QTextStream>
+
+#include <qurlinfo.h>
 
 class RsyncEntry;
 class RsyncDirLister;
@@ -48,10 +51,11 @@ public:
     bool isFetching() const;
 
     QString path() const;
-    QUrlInfo urlInfo() const;
+//    QUrlInfo urlInfo() const;
     QIcon icon() const;
 
 //protected:
+    QUrlInfo urlInfo() const;
     RsyncEntry(const QUrlInfo& info);
     RsyncEntry* addUrlInfo(const QUrlInfo& urlInfo);
     void removeUrlInfo(const QUrlInfo& urlInfo);

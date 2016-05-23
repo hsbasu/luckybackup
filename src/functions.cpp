@@ -22,10 +22,18 @@ file containing all functions for luckybackupwindow
 project version	: Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 11 Sep 2013
+last modified      : 22 May 2016
 ===============================================================================================================================
 ===============================================================================================================================
 */
+
+#include <QTextStream>
+#include <QToolBar>
+
+#include "global.h"
+#include "luckybackupwindow.h"
+#include "operationClass.h"
+#include "textDialog.h"
 
 // InitializeVariables =============================================================================================================================
 // variables initialization
@@ -34,9 +42,9 @@ void luckyBackupWindow::InitializeVariables()
     TotalOperations = 0;
     currentOperation=-1;
     NOWexecuting = FALSE;
-    guiModeNormal = TRUE;
+    guiModeNormal = true;
     modifyOK = FALSE;
-    savedProfile = TRUE;
+    savedProfile = true;
     taskClicked = FALSE;
     taskChanged = FALSE;
     GoBack = FALSE;
@@ -45,15 +53,15 @@ void luckyBackupWindow::InitializeVariables()
     defaultLanguage = "en";
     mainWindowWidth = 615;
     mainWindowHeight = 500;
-    AreToolbarsLocked = TRUE;
-    IsVisibleProfileComboToolbar = TRUE;
-    IsVisibleProfileToolbar = TRUE;
-    IsVisibleProfileStartToolbar = TRUE;
+    AreToolbarsLocked = true;
+    IsVisibleProfileComboToolbar = true;
+    IsVisibleProfileToolbar = true;
+    IsVisibleProfileStartToolbar = true;
     IsVisibleToolbarText = FALSE;
-    IsVisibleInfoWindow = TRUE;
+    IsVisibleInfoWindow = true;
     validation = FALSE;
     deletedTaskNames.clear();
-    saveOrNot = TRUE;
+    saveOrNot = true;
     manualChapter = "";
     showOnlyErrors = FALSE;
 
@@ -61,7 +69,7 @@ void luckyBackupWindow::InitializeVariables()
     // kde
     char *isKDE = getenv("KDE_FULL_SESSION");
     if (QString(isKDE) != "")
-        KDErunning = TRUE;
+        KDErunning = true;
     else
         KDErunning = FALSE;
     // if LB is run using kdesu the environmental variable does not work
@@ -74,15 +82,15 @@ void luckyBackupWindow::InitializeVariables()
         kdesuProcess -> start ("/bin/sh",kdesuArgs);
         kdesuProcess -> waitForFinished();
         if (kdesuProcess -> exitCode() == 0)        // there is a root process "kdesu_stub running
-            KDErunning = TRUE;
+            KDErunning = true;
     }*/
 
     // gnome
     char *isGnome = getenv("DESKTOP_SESSION");
     if ((QString(isGnome) == "gnome") || (QString(isGnome) == "GNOME"))
-        GNOMErunning = TRUE;
+        GNOMErunning = true;
     else
-        GNOMErunning = TRUE;
+        GNOMErunning = true;
 
     // translations --------------------------------
     TransDir = "";
@@ -266,7 +274,7 @@ void luckyBackupWindow::retranslateUi()
 // Executes when the app starts & when the list of profiles in ~/.luckybackup/profiles changes
 void luckyBackupWindow::createProfileCombo()
 {
-    GoBack = TRUE;	// the next line will execute function setCurrentProfile. set TRUE to avoid that
+    GoBack = true;	// the next line will execute function setCurrentProfile. set true to avoid that
     ui.comboBox_profile -> clear();
     int currentProfileIndex = -1;
     QDir profiledir(profileDir);
@@ -283,13 +291,13 @@ void luckyBackupWindow::createProfileCombo()
 
         profilename.chop(8);
 
-        GoBack = TRUE;	// the next line will execute function setCurrentProfile. set TRUE to avoid that
+        GoBack = true;	// the next line will execute function setCurrentProfile. set true to avoid that
         ui.comboBox_profile -> addItem (profilename);
     }
     if (currentProfileIndex == -1)	// if no default profile exists
         currentProfileIndex = 0;
 
-    GoBack = TRUE;	// the next line will execute function setCurrentProfile. set TRUE to avoid that
+    GoBack = true;	// the next line will execute function setCurrentProfile. set true to avoid that
     ui.comboBox_profile -> setCurrentIndex(currentProfileIndex);
     GoBack = FALSE;
 
@@ -304,10 +312,10 @@ void luckyBackupWindow::createActions()
     actionAbout = new QAction(QIcon(":/luckyPrefix/about.png"), "About", this);
     
     actionLockToolbars = new QAction("Lock Toolbars",this);
-    actionLockToolbars -> setCheckable(TRUE);
+    actionLockToolbars -> setCheckable(true);
     actionLockToolbars -> setChecked(AreToolbarsLocked);
     actionVisibleToolbarText = new QAction("Labels under icons",this);
-    actionVisibleToolbarText -> setCheckable(TRUE);
+    actionVisibleToolbarText -> setCheckable(true);
     actionVisibleToolbarText -> setChecked(IsVisibleToolbarText);
     
     if (WINrunning)
@@ -460,7 +468,7 @@ bool luckyBackupWindow::checkOperationList()
         ui.textBrowser_info -> setText(message);
         return FALSE;
     }
-    return TRUE;
+    return true;
 }
 
 //checkDeclared ===================================================================================================================================
@@ -469,7 +477,7 @@ bool luckyBackupWindow::checkOperationList()
 void luckyBackupWindow::checkDeclared()
 {
     int currentSelection = ui.listWidget_operations -> currentRow();	//keep the current selection
-    checkDeclaredDirs(TRUE);
+    checkDeclaredDirs(true);
 
     currentOperation = 0;
     CheckedData = "";
@@ -555,7 +563,7 @@ bool luckyBackupWindow::loadCurrentProfile()
     }
 
     // if all went ok (profile loaded) - loadOK == 0
-    savedProfile = TRUE;
+    savedProfile = true;
     ui.actionSave -> setEnabled(FALSE);
     currentOperation = 0;
     while (currentOperation < TotalOperations)	// fill in the task list
@@ -603,7 +611,7 @@ bool luckyBackupWindow::loadCurrentProfile()
     if ( TotalOperations == 0 )
         loadData.append("<br><font color=magenta>" + tr("The task list is empty")+ "<br><b>" + tr("Use the \"add\" button on the right to get started","Please keep the add word inside quotes") + "</b></font><br>");
     
-    return TRUE;	//profile loaded successfuly
+    return true;	//profile loaded successfuly
 }
 
 // saveCurrentprofile ===============================================================================================================================
@@ -629,7 +637,7 @@ bool luckyBackupWindow::saveCurrentProfile()
             
         saveData.append(" <b>" + profileName + "</b> "+ tr("could not be saved","Information window message. Full phrase: '(default) profile <PROFILENAME> could not be saved'") + "<br>" +	"<font color=red>"+ profile.errorString() + "</font>");
         savedProfile = FALSE;
-        ui.actionSave -> setEnabled(TRUE);
+        ui.actionSave -> setEnabled(true);
         return FALSE;
     }
 
@@ -663,10 +671,10 @@ bool luckyBackupWindow::saveCurrentProfile()
         arrangeLogSnap(0,"delete",deletedTaskNames.at(count));
     deletedTaskNames.clear();
     
-    savedProfile = TRUE;			//change profile status to "saved"
+    savedProfile = true;			//change profile status to "saved"
     ui.actionSave -> setEnabled(FALSE);
     
-    return TRUE;
+    return true;
 }
 
 // createCurrentprofile ===============================================================================================================================
@@ -703,7 +711,7 @@ int luckyBackupWindow::createCurrentProfile()
         createData.append(tr("profile","Information window message. Full phrase: 'profile <PROFILENAME> created successfully'") + " <b>" + profileName + "</b> <font color=green>" + tr("created successfully","Information window message. Full phrase: 'profile <PROFILENAME> created successfully'") + " !!</font>");
         createData.append("<br><font color=magenta>" + tr("Use the \"add\" button on the right to get started","Please keep the add word inside quotes") + "</font><br>");
         createProfileCombo();	// update the profile combobox with all existing profiles
-        savedProfile = TRUE;			//change profile status to "saved"
+        savedProfile = true;			//change profile status to "saved"
         ui.actionSave -> setEnabled(FALSE);
         return 1;		// Profile created successfully
     }
@@ -734,7 +742,7 @@ int luckyBackupWindow::isProfileSaved()
                 if (textdialogQ2.getGoOn() == 0)		//if user answers no
                 {
                     int previousIndex = ui.comboBox_profile -> findText (profileName, Qt::MatchExactly);
-                    GoBack = TRUE;	// the next line will execute  function profileComboChanged again. set TRUE to avoid that
+                    GoBack = true;	// the next line will execute  function profileComboChanged again. set true to avoid that
                     ui.comboBox_profile -> setCurrentIndex(previousIndex);
                     return 0;	//profile could not be saved, user says DO NOT proceed
                 }
@@ -799,7 +807,7 @@ bool luckyBackupWindow::saveSettings()
     out << "\n[Settings_file_end]" << "\n";	
 
     settingsfile.close();
-    return TRUE;
+    return true;
 }
 
 //loadSettings ===================================================================================================================================
@@ -875,7 +883,7 @@ bool luckyBackupWindow::loadSettings()
 
     settingsfile.close();
     ui.checkBox_onlyShowErrors -> setChecked(showOnlyErrors);
-    return TRUE;
+    return true;
 }
 
 //loadSettingsQV ===================================================================================================================================
@@ -935,13 +943,13 @@ bool luckyBackupWindow::loadSettingsQV()
     
     saveSettings();     //save the settings file to text format
     
-    return TRUE;
+    return true;
 }
 
 //arrangeLogSnap ===================================================================================================================================
 //Rename-delete-copy logs & snaps when the current profile/task is renamed, deleted,duplicated
 // if a task is deleted, this function is called from saveCurrentProfile()
-// Returns TRUE if everything went ok
+// Returns true if everything went ok
 bool luckyBackupWindow::arrangeLogSnap(bool PorT,QString ActionTaken,QString NameToUse)
 {
     // PorT is "1" for profile and "0" for task

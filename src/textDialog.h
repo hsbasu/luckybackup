@@ -34,7 +34,7 @@
 
 //==============================================================================================================
 //Declaration of textDialog class (this is a simple go -nogo dialog with a textdialog & 2 buttons)
-// accessor function getGoOn returns TRUE or FALSE
+// accessor function getGoOn returns true or FALSE
 class textDialog : public QDialog
 {
 	Q_OBJECT

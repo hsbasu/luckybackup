@@ -14,7 +14,7 @@ message( "Qmake version" $$[QMAKE_VERSION] )
 
 QMAKE_STRIP = echo
 
-VERSION = 0.4.8
+VERSION = 0.4.9
 
 target.path = /usr/bin
 TARGET = luckybackup
@@ -106,6 +106,7 @@ HEADERS	= src/operationClass.h \
     src/winDialog.h \
     src/RsyncDirModel.h \
     src/RsyncDirModel_p.h \
+    src/qurlinfo.h \
     src/qdirdialog.h
  
 FORMS 	= ui/luckybackupwindow.ui \
@@ -142,6 +143,7 @@ SOURCES	= src/modifyDialog.cpp \
     src/main.cpp \
     src/RsyncDirModel.cpp \
     src/RsyncDirModel_p.cpp \
+    src/qurlinfo.cpp \
     src/qdirdialog.cpp
  
 RESOURCES = resources/luckybackup.qrc

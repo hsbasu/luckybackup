@@ -22,7 +22,7 @@
         project version   : Please see "main.cpp" for project version
 
         developer         : luckyb 
-        last modified     : 22 May 2016
+        last modified     : 27 May 2016
       ===============================================================================================================================
       ===============================================================================================================================
 */
@@ -133,6 +133,9 @@ void aboutDialog::setThanks()
         
         "<b>" + tr("Juan Ramon Alfaro Martinez") + "</b><br>" +
         tr("Code contributor for remote & vss support regarding the windows port") + "<br><br>"
+        
+        "<b>" + tr("loh.tar") + "</b><br>" +
+        tr("Code contributor for important fixes, structure improvement and port to Qt5") + "<br><br>"
         
         "<b>" + tr("Jack Fink") + "</b><br>" +
         tr("port to Mac OS X") + "<br><br>"

@@ -62,7 +62,7 @@ RsyncDirModel::RsyncDirModel(QObject* parent): QAbstractItemModel(parent)
 //    connect(syncProcess, SIGNAL (finished(int, QProcess::ExitStatus)), this, SLOT(procFinished()));
 //    connect(syncProcess, SIGNAL (error(QProcess::ProcessError)), this, SLOT(procError()));
 
-//    d->ProcReportedError = FALSE;      // This might change as soon as syncprocess will start ()
+//    d->ProcReportedError = false;      // This might change as soon as syncprocess will start ()
 }
 
 RsyncDirModel::~RsyncDirModel()

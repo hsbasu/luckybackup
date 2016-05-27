@@ -22,7 +22,7 @@
     along with luckyBackup.  If not, see <http://www.gnu.org/licenses/>.
 
     developer       : luckyb 
-    last modified   : 22 May 2015
+    last modified   : 27 May 2015
     ===============================================================================================================================
     ===============================================================================================================================
 */
@@ -38,8 +38,20 @@
 #include "global.h"
 #include "commandline.h"
 
+QCoreApplication* createApplication(int &argc, char *argv[])
+{
+    // just copy&paste from Qt docu http://doc.qt.io/qt-5/qapplication.html
+    for (int i = 1; i < argc; ++i)
+    if (!qstrcmp(argv[i], "-c") || !(qstrcmp(argv[i], "--no-questions")))
+        return new QCoreApplication(argc, argv);
+
+    return new QApplication(argc, argv);
+}
+
 int main(int argc, char *argv[])
 {
+    QScopedPointer<QCoreApplication> app(createApplication(argc, argv));
+
     //arguments test
     if (!argumentsTest(argc,argv))
         return 1;		// error code1: something wrong with the command arguments - app fail to start (or just --help or --version given as args)
@@ -59,16 +71,17 @@ int main(int argc, char *argv[])
     // declare the rsync & ssh commands for use either at console or gui mode
     declareRsyncCommand();
         
-    if (!console)	//execute gui
+//    if (!console)	//execute gui
+    if (qobject_cast<QApplication *>(app.data()))	//execute gui
     {
-        QApplication app(argc, argv);
+//        QApplication app(argc, argv);
         
         //translation
         QString locale = QLocale::system().name();
         
         // Load standard Qt appTranslator
         translator_qt.load(QString("qt_") + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
-        app.installTranslator(&translator_qt);
+        app->installTranslator(&translator_qt);
         
         //load LB translator
         transDir.setPath(relativeTransDir);
@@ -76,10 +89,10 @@ int main(int argc, char *argv[])
             appTranslator.load(QString("luckybackup_") + locale, relativeTransDir);
         else 
             appTranslator.load(QString("luckybackup_") + locale, systemTransDir);
-        app.installTranslator(&appTranslator);
+        app->installTranslator(&appTranslator);
         
         // windows related stuff
-        appPath = app.applicationDirPath();  // This is used for windows app path. It's also causing a ...
+ /*       appPath = app->applicationDirPath();  // This is used for windows app path. It's also causing a ...
                                              //"QCoreApplication::applicationDirPath: Please instantiate the QApplication object first" WARNING message
         rsyncDefaultWinCommand = appPath+"/rsync.exe"; // Holds the default rsync command for windows
         sshDefaultWinCommand = appPath+"/ssh.exe";             // Holds the default ssh command for windows
@@ -90,12 +103,13 @@ int main(int argc, char *argv[])
         dosdevDefaultCommand=   appPath+"/dosdev.exe";
         cygpathCommand=         appPath+"/cygpath.exe";
         cygpathDefaultCommand=  appPath+"/cygpath.exe";
+        */
         // end of windows stuff ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         
         luckyBackupWindow luckybackup;
         if (!silentMode)
             luckybackup.show();
-        return app.exec();
+        return app->exec();
     }
     else
     //execute luckybackup in console mode

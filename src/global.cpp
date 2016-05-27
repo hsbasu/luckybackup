@@ -22,7 +22,7 @@ file containing all variables & functions used globaly
 project version    : Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 22 May 2016
+last modified      : 27 May 2016
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -36,6 +36,7 @@ using namespace std;
 #include <QDataStream>
 #include <QTemporaryFile>
 #include <QTextStream>
+#include <QVariant>
 
 #include "operationClass.h"
 
@@ -149,23 +150,25 @@ QString rsyncDefaultCommand = "rsync";
 QString sshDefaultCommand = "ssh";
 
 // WINDOWS related variables. Also search variables above for "WINDOWS use"
-QString rsyncDefaultWinCommand = "C:\\Program Files (x86)\\luckyBackup\\cygwin\\rsync.exe";
-QString sshDefaultWinCommand = "C:\\Program Files (x86)\\luckyBackup\\cygwin\\ssh.exe";
-QString appPath = QCoreApplication::applicationDirPath();
+//QString rsyncDefaultWinCommand = "C:\\Program Files (x86)\\luckyBackup\\cygwin\\rsync.exe";
+//QString sshDefaultWinCommand = "C:\\Program Files (x86)\\luckyBackup\\cygwin\\ssh.exe";
+QString rsyncDefaultWinCommand = "";
+QString sshDefaultWinCommand = "";
+QString appPath = "";
 //"QCoreApplication::applicationDirPath: Please instantiate the QApplication object first" WARNING message
 //QString rsyncDefaultWinCommand = appPath+"/rsync.exe";
 //QString sshDefaultWinCommand = appPath+"/ssh.exe";
 QString mapdrive="w";
-QString vshadowDir=             appPath;
-QString vshadowDefaultDir=      appPath;
-QString dosdevCommand=          appPath+"/dosdev.exe";
-QString dosdevDefaultCommand=   appPath+"/dosdev.exe";
-QString cygpathCommand=         appPath+"/cygpath.exe";
-QString cygpathDefaultCommand=  appPath+"/cygpath.exe";
+QString vshadowDir=             "";
+QString vshadowDefaultDir=      "";
+QString dosdevCommand=          "";
+QString dosdevDefaultCommand=   "";
+QString cygpathCommand=         "";
+QString cygpathDefaultCommand=  "";
 bool isTempDirPath=false;
 QString tempDirPath=QDir::tempPath();
 QString tempDefaultDirPath=QDir::tempPath();
-void setAppDir(QString s);
+//void setAppDir(QString s);
 /* disable vss until
   * int doVss=0;
   * int vssPos=0;
@@ -209,19 +212,19 @@ bool notXnixRunning=false;
 // tests the arguments given when LB executed at command-line
 bool argumentsTest(int ArgsNo, char **arg)
 {
-    console = FALSE;
-    NoQuestions = FALSE;
-    SkipCritical = FALSE;
-    DryRun = FALSE;
-    silentMode = FALSE;
-    runImmediately = FALSE;
+    console = false;
+    NoQuestions = false;
+    SkipCritical = false;
+    DryRun = false;
+    silentMode = false;
+    runImmediately = false;
     
     if (ArgsNo == 1)		// if just luckybackup is given without argumets just run the gui
         return true;
 
     int NoOfArgs = ArgsNo-1;	//the number of arguments given minus the command luckybackup
     string stdArgs[7] = { "-c",	"--no-questions",	"--skip-critical",	"--dry-run",	"--silent"};
-    bool argCheck = FALSE;	// if a specific argument is ok this becomes true
+    bool argCheck = false;	// if a specific argument is ok this becomes true
 
     int count = 1;
     while (count < NoOfArgs)
@@ -241,21 +244,21 @@ bool argumentsTest(int ArgsNo, char **arg)
             // what was I thinking ???
         }
         if (!argCheck)			// if the argument is unknown
-            { help(); return FALSE;	}	
-        argCheck = FALSE;
+            { help(); return false;	}	
+        argCheck = false;
         count++;
     }
     
     const char *profileNameChar = arg[NoOfArgs];	//const char* used cause argument in terminal is in utf-8 and this helps to convert it to QString
     QString profileNameArg = arg[NoOfArgs];
     if ( (profileNameArg == "--help") || (profileNameArg == "-h") )
-        { help(); return FALSE;}
+        { help(); return false;}
     if ( (profileNameArg == "--version") || (profileNameArg == "-v") )
     {
         cout << "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
         cout << "     You are using luckyBackup version: " << appVersionString.toStdString() <<"\n";
         cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
-        return FALSE;
+        return false;
     }
     
     //currentProfile = profileNameArg;	// currentProfile holds the full path+filename of the current profile
@@ -290,6 +293,19 @@ bool argumentsTest(int ArgsNo, char **arg)
 // declares the rsync and ssh commands (full path for windows)
 void declareRsyncCommand()
 {
+    
+    // WINDOWS related variables
+    appPath = QCoreApplication::applicationDirPath();
+    rsyncDefaultWinCommand = appPath+"/rsync.exe";
+    sshDefaultWinCommand   = appPath+"/ssh.exe";
+    vshadowDir             = appPath;
+    vshadowDefaultDir      = appPath;
+    dosdevCommand          = appPath+"/dosdev.exe";
+    dosdevDefaultCommand   = appPath+"/dosdev.exe";
+    cygpathCommand         = appPath+"/cygpath.exe";
+    cygpathDefaultCommand  = appPath+"/cygpath.exe";
+    // END of Windows related variables
+
     if (notXnixRunning)
     {
         if (WINrunning)
@@ -331,14 +347,14 @@ bool loadCurrentProfile()
         cout << "	** Unable to open profile : " << currentProfileUTF8.toStdString() << " **\n";
         cout << "	" << profile.errorString().toStdString();
         cout << "\n\n";
-        return FALSE;					//do nothing more
+        return false;					//do nothing more
     }
 
     if (loadOK == 2)			// if it is not a valid profile
     {
         cout << "	** The profile you are trying to open is not a valid luckyBackup v."
         << countStr.setNum(appVersion).toStdString() << " profile **\n\n";
-        return FALSE;	//do nothing more
+        return false;	//do nothing more
     }
 
     // if all went ok (profile loaded) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -406,7 +422,7 @@ bool check_list()
     if (ask)
     {
         cout << messageCLI.toStdString();;
-        return FALSE;
+        return false;
     }
     else
     {
@@ -425,9 +441,9 @@ bool check_dirs()
     cout << "				Directories check\n";
     cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
 
-    checkDeclaredDirs(FALSE);
+    checkDeclaredDirs(false);
 
-    if (ask == FALSE)	//if all the dirs are ok prepend  this lines to the dialog message
+    if (ask == false)	//if all the dirs are ok prepend  this lines to the dialog message
     {
         CheckedDataCLI.prepend("\n		(Have in mind that checks are not performed for remote data)\n\n"
         "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
@@ -460,7 +476,7 @@ bool check_dirs()
     if (NothingToDo) //if there is nothing to Do anyway then just display a message
     {
         cout << "\n\n		** ..nothing to do !! **\n\n";
-        return FALSE;
+        return false;
     }
     return true;
 }
@@ -547,9 +563,9 @@ int loadProfile(QString profileToLoad)
     emailBody = emailDefaultBody;
     emailSubject = emailDefaultSubject;
     emailNever = true;
-    emailError = FALSE;
-    emailSchedule = FALSE;
-    emailTLS = FALSE;
+    emailError = false;
+    emailSchedule = false;
+    emailTLS = false;
     emailFrom = "";
     emailTo = "";
     emailSMTP = "";
@@ -599,12 +615,12 @@ int loadProfile(QString profileToLoad)
     while (currentOperation < TotalOperations)
     {
         operation *tempOp = new operation;
-        bool doNotReadNextLine = FALSE;
+        bool doNotReadNextLine = false;
 
         ProfileLine = in.readLine();	// inport the next line
         while ( (!ProfileLine.startsWith("[Task_end]")) && (!in.atEnd()) )
         {
-            doNotReadNextLine = FALSE;
+            doNotReadNextLine = false;
             if (ProfileLine.startsWith("Name="))					tempOp	-> SetName(ProfileLine.remove("Name="));
             if (ProfileLine.startsWith("TaskDescription="))			tempOp	-> SetDescription(tempOp->GetDescription() + "\n" + ProfileLine.remove("TaskDescription="));
             if (ProfileLine.startsWith("Args="))					tempOp	-> AppendArg(ProfileLine.remove("Args="));
@@ -963,7 +979,7 @@ bool saveProfile(QString profileToSave)
     if (!profile.open(QIODevice::WriteOnly))	// if the profile cannot be saved (or fails to create)
     {
         profile.close();
-        return FALSE;
+        return false;
     }
 
     //write arrays to profile file
@@ -1227,7 +1243,7 @@ bool exportFullProfile(QString ExportPath, QString exportType)
     exportProcess -> waitForFinished();
 
     if (!(exportProcess -> exitCode() == 0))
-        return FALSE;
+        return false;
 
     return true;
 }
@@ -1309,7 +1325,7 @@ bool checkTaskList()
     QString tempConnect="";
     message="";
     messageCLI="";
-    ask = FALSE;
+    ask = false;
     NothingIncluded=true;
 
     if (TotalOperations==0)						//check if the operations list is empty ------------------------------
@@ -1320,17 +1336,17 @@ bool checkTaskList()
         messageCLI.append("\nThe task list is empty !!\n"
             "nothing to start !!\n\n");
         ask = true;
-        return FALSE;
+        return false;
     }
 
     //first check if 2 connected operations have been selected for execution--------------------------------------------------------------
-    //set NothingInluded to FALSE if 1 or more operation is included
-    bool askTemp = FALSE;	QString dirNames="";	QString dirNamesCLI="";	currentOperation=0;
+    //set NothingInluded to false if 1 or more operation is included
+    bool askTemp = false;	QString dirNames="";	QString dirNamesCLI="";	currentOperation=0;
     while  (currentOperation < TotalOperations)
     {
         if (Operation[currentOperation] -> GetIncluded())	//if the operations is "included"
         {
-            NothingIncluded = FALSE;
+            NothingIncluded = false;
 
             tempConnect = Operation[currentOperation] -> GetConnectRestore();
             if (tempConnect != "")							//if it is connected to another operation
@@ -1371,11 +1387,11 @@ bool checkTaskList()
         messageCLI.append("\nYou have not included any tasks !!\n\n"
             "nothing to start !!\n\n");
         ask = true;
-        return FALSE;
+        return false;
     }
 
     //check if 2 or more identical destination directories are decleared & "Backup dir contents" is checked -------------------------------
-    currentOperation=0;	askTemp = FALSE;	dirNames="";	dirNamesCLI="";
+    currentOperation=0;	askTemp = false;	dirNames="";	dirNamesCLI="";
     QString dest1="", dest2="";
     //the following loop compares an included operation (currentoperation) with all the other included
     //to check if they share the same destination
@@ -1438,7 +1454,7 @@ bool checkTaskList()
 //If guiExec is true this is called from the gui, otherwise from console
 bool checkDeclaredDirs(bool guiExec)
 {
-    ask=FALSE;
+    ask=false;
     NothingToDo = true;
 
     QString source, dest;
@@ -1448,13 +1464,13 @@ bool checkDeclaredDirs(bool guiExec)
     CheckedDataCLI = "";
     while (currentOperation < TotalOperations)
     {
-        Operation[currentOperation] -> SetOK(FALSE);
-        Operation[currentOperation] -> SetWARNING(FALSE);
-        Operation[currentOperation] -> SetCRITICAL(FALSE);
-        Operation[currentOperation] -> SetSourcePerms(FALSE);
-        Operation[currentOperation] -> SetDestPerms(FALSE);
-        Operation[currentOperation] -> SetDestMounted(FALSE);
-        Operation[currentOperation] -> SetSourceMounted(FALSE);
+        Operation[currentOperation] -> SetOK(false);
+        Operation[currentOperation] -> SetWARNING(false);
+        Operation[currentOperation] -> SetCRITICAL(false);
+        Operation[currentOperation] -> SetSourcePerms(false);
+        Operation[currentOperation] -> SetDestPerms(false);
+        Operation[currentOperation] -> SetDestMounted(false);
+        Operation[currentOperation] -> SetSourceMounted(false);
 
         if (Operation[currentOperation] -> GetIncluded())	//if the operations is "included"
         {
@@ -1478,8 +1494,8 @@ bool checkDeclaredDirs(bool guiExec)
         }
         else
         {
-            Operation[currentOperation] -> SetIncluded(FALSE);
-            Operation[currentOperation] -> SetPerform(FALSE);	
+            Operation[currentOperation] -> SetIncluded(false);
+            Operation[currentOperation] -> SetPerform(false);	
         }
         currentOperation++;
     }
@@ -1490,16 +1506,16 @@ bool checkDeclaredDirs(bool guiExec)
 //Check if the directories to be synced are empty or don't exist
 void checkSyncDirs(QString source, QString dest)
 {
-    Operation[currentOperation] -> SetOK(FALSE);
-    Operation[currentOperation] -> SetWARNING(FALSE);
-    Operation[currentOperation] -> SetCRITICAL(FALSE);
-    Operation[currentOperation] -> SetSourcePerms(FALSE);
-    Operation[currentOperation] -> SetDestPerms(FALSE);
-    Operation[currentOperation] -> SetDestMounted(FALSE);
-    Operation[currentOperation] -> SetSourceMounted(FALSE);
+    Operation[currentOperation] -> SetOK(false);
+    Operation[currentOperation] -> SetWARNING(false);
+    Operation[currentOperation] -> SetCRITICAL(false);
+    Operation[currentOperation] -> SetSourcePerms(false);
+    Operation[currentOperation] -> SetDestPerms(false);
+    Operation[currentOperation] -> SetDestMounted(false);
+    Operation[currentOperation] -> SetSourceMounted(false);
 
-    bool remoteSource = FALSE;
-    bool remoteDest = FALSE;
+    bool remoteSource = false;
+    bool remoteDest = false;
 
     if ( (Operation[currentOperation] -> GetRemote()) && (Operation[currentOperation] -> GetRemoteSource()) )
     {
@@ -1535,9 +1551,9 @@ void checkSyncDirs(QString source, QString dest)
         setTextMessages(source,dest,remoteSource,remoteDest, "warning","sync","source-perms");
 
         if (!Operation[currentOperation] -> GetByPassWARNING())
-            Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
+            Operation[currentOperation] -> SetPerform(false);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
         else
-            NothingToDo = FALSE;
+            NothingToDo = false;
         Operation[currentOperation] -> SetSourcePerms(true);
         ask=true;	//ask the user if he/she wants to continue
         return;
@@ -1549,9 +1565,9 @@ void checkSyncDirs(QString source, QString dest)
 
         ask=true;	//ask the user if he/she wants to continue
         if (!Operation[currentOperation] -> GetByPassWARNING())
-            Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
+            Operation[currentOperation] -> SetPerform(false);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
         else
-            NothingToDo = FALSE;
+            NothingToDo = false;
         Operation[currentOperation] -> SetDestPerms(true);
         return;
     }
@@ -1566,11 +1582,11 @@ void checkSyncDirs(QString source, QString dest)
     if (dirAList.size() == 0)
         dirAIsEmpty = true;
     else
-        dirAIsEmpty = FALSE;
+        dirAIsEmpty = false;
     if (dirBList.size() == 0)
         dirBIsEmpty = true;
     else
-        dirBIsEmpty = FALSE;
+        dirBIsEmpty = false;
 
     // Check if sync dirs A & B are under /media or /mnt and belong to a mountpoint ~~~~~~~~~~~~~~~~~~~~~~~~~~~
     Operation[currentOperation] -> SetDestMounted(checkMountPoint(dest));
@@ -1582,7 +1598,7 @@ void checkSyncDirs(QString source, QString dest)
     {
         setTextMessages(source,dest,remoteSource,remoteDest,"okay","sync","okay");
 
-        NothingToDo = FALSE;
+        NothingToDo = false;
         Operation[currentOperation] -> SetOK(true);
     }
     
@@ -1592,9 +1608,9 @@ void checkSyncDirs(QString source, QString dest)
         setTextMessages(source,dest,remoteSource,remoteDest,"warning","sync","sync-not-exist");
 
         if (!Operation[currentOperation] -> GetByPassWARNING())
-            Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
+            Operation[currentOperation] -> SetPerform(false);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
         else
-            NothingToDo = FALSE;
+            NothingToDo = false;
         Operation[currentOperation] -> SetWARNING(true);
         ask=true;
     }
@@ -1608,9 +1624,9 @@ void checkSyncDirs(QString source, QString dest)
             setTextMessages(source,dest,remoteSource,remoteDest,"warning","sync","sync-not-mounted");
             
             if (!Operation[currentOperation] -> GetByPassWARNING())
-                Operation[currentOperation] -> SetPerform(FALSE);   //don't perform this operation if the "bypass WARNING" OPTION is disabled
+                Operation[currentOperation] -> SetPerform(false);   //don't perform this operation if the "bypass WARNING" OPTION is disabled
             else
-                NothingToDo = FALSE;
+                NothingToDo = false;
             Operation[currentOperation] -> SetWARNING(true);
             
         }
@@ -1620,9 +1636,9 @@ void checkSyncDirs(QString source, QString dest)
 
             Operation[currentOperation] -> SetCRITICAL(true);
             if (SkipCritical)						// if a --skip-critical is given as argument
-                Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation
+                Operation[currentOperation] -> SetPerform(false);	//don't perform this operation
             else
-                NothingToDo = FALSE;
+                NothingToDo = false;
         }
         ask=true;   //ask the user if he/she wants to continue
     }
@@ -1633,16 +1649,16 @@ void checkSyncDirs(QString source, QString dest)
 //Check if the source and destination backup directories are empty or don't exist
 void checkBackupDirs(QString source, QString dest)
 {
-    Operation[currentOperation] -> SetOK(FALSE);
-    Operation[currentOperation] -> SetWARNING(FALSE);
-    Operation[currentOperation] -> SetCRITICAL(FALSE);
-    Operation[currentOperation] -> SetSourcePerms(FALSE);
-    Operation[currentOperation] -> SetDestPerms(FALSE);
-    Operation[currentOperation] -> SetDestMounted(FALSE);
-    Operation[currentOperation] -> SetSourceMounted(FALSE);
+    Operation[currentOperation] -> SetOK(false);
+    Operation[currentOperation] -> SetWARNING(false);
+    Operation[currentOperation] -> SetCRITICAL(false);
+    Operation[currentOperation] -> SetSourcePerms(false);
+    Operation[currentOperation] -> SetDestPerms(false);
+    Operation[currentOperation] -> SetDestMounted(false);
+    Operation[currentOperation] -> SetSourceMounted(false);
 
-    bool remoteSource = FALSE;
-    bool remoteDest = FALSE;
+    bool remoteSource = false;
+    bool remoteDest = false;
 
     //first check if a remote source or dest is used so that to skip checks
     if ( (Operation[currentOperation] -> GetRemote()) && (Operation[currentOperation] -> GetRemoteSource()) )
@@ -1673,9 +1689,9 @@ void checkBackupDirs(QString source, QString dest)
         setTextMessages(source,dest,remoteSource,remoteDest,"warning","backup","source-perms");
 
         if (!Operation[currentOperation] -> GetByPassWARNING())
-            Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
+            Operation[currentOperation] -> SetPerform(false);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
         else
-            NothingToDo = FALSE;
+            NothingToDo = false;
 
         ask=true;	//ask the user if he/she wants to continue
         Operation[currentOperation] -> SetSourcePerms(true);
@@ -1687,9 +1703,9 @@ void checkBackupDirs(QString source, QString dest)
         setTextMessages(source,dest,remoteSource,remoteDest,"warning","backup","dest-perms");
 
         if (!Operation[currentOperation] -> GetByPassWARNING())
-            Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
+            Operation[currentOperation] -> SetPerform(false);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
         else
-            NothingToDo = FALSE;
+            NothingToDo = false;
         ask=true;	//ask the user if he/she wants to continue
         Operation[currentOperation] -> SetDestPerms(true);
         return;
@@ -1706,11 +1722,11 @@ void checkBackupDirs(QString source, QString dest)
     if (sourceList.size() == 0)
         SourceIsEmpty = true;
     else
-        SourceIsEmpty = FALSE;
+        SourceIsEmpty = false;
     if (destList.size() == 0)
         DestIsEmpty = true;
     else
-        DestIsEmpty = FALSE;
+        DestIsEmpty = false;
     
     // Check if source & dest are under /media or /mnt and belong to a mountpoint ~~~~~~~~~~~~~~~~~~~~~~~~~~~
     Operation[currentOperation] -> SetDestMounted(checkMountPoint(dest));
@@ -1725,7 +1741,7 @@ void checkBackupDirs(QString source, QString dest)
             setTextMessages(source,dest,remoteSource,remoteDest,"okay","backup","okay");
             
             Operation[currentOperation] -> SetOK(true);
-            NothingToDo = FALSE;
+            NothingToDo = false;
         }
         else //The destination directory does not exist or it is empty
         {
@@ -1734,9 +1750,9 @@ void checkBackupDirs(QString source, QString dest)
             {
                 setTextMessages(source,dest,remoteSource,remoteDest,"warning","backup","dest-not-mounted");
                 if (!Operation[currentOperation] -> GetByPassWARNING())
-                    Operation[currentOperation] -> SetPerform(FALSE);   //don't perform this operation if the "bypass WARNING" OPTION is disabled
+                    Operation[currentOperation] -> SetPerform(false);   //don't perform this operation if the "bypass WARNING" OPTION is disabled
                 else
-                    NothingToDo = FALSE;
+                    NothingToDo = false;
                 Operation[currentOperation] -> SetWARNING(true);
                 ask=true;   //ask the user if he/she wants to continue
             }
@@ -1749,9 +1765,9 @@ void checkBackupDirs(QString source, QString dest)
                 Operation[currentOperation] -> SetCRITICAL(true);
                 
                 if (SkipCritical)						// if a --skip-critical is given as argument
-                    Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation
+                    Operation[currentOperation] -> SetPerform(false);	//don't perform this operation
                 else
-                    NothingToDo = FALSE;
+                    NothingToDo = false;
             }
         }
     }
@@ -1760,9 +1776,9 @@ void checkBackupDirs(QString source, QString dest)
         setTextMessages(source,dest,remoteSource,remoteDest,"warning","backup","source-not-exist");
 
         if (!Operation[currentOperation] -> GetByPassWARNING())
-            Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
+            Operation[currentOperation] -> SetPerform(false);	//don't perform this operation if the "bypass WARNING" OPTION is disabled
         else
-            NothingToDo = FALSE;
+            NothingToDo = false;
         Operation[currentOperation] -> SetWARNING(true);
         ask=true;	//ask the user if he/she wants to continue
     }
@@ -1818,7 +1834,7 @@ QStringList AppendArguments(operation *operationToAppend)
         count++;
     }
     
-    bool disableExclude=FALSE;
+    bool disableExclude=false;
     //add included items------------------------------------------------------------------------------
     if (operationToAppend -> GetInclude())
     {
@@ -1905,7 +1921,7 @@ QStringList AppendArguments(operation *operationToAppend)
             {
                 // Commented after Juan's patch
                 //destString = fixWinPathForRsync(destString, true);         //fix destination (which is remote)
-                //sourceString =  fixWinPathForRsync(sourceString, FALSE);    //fix source (which is local)
+                //sourceString =  fixWinPathForRsync(sourceString, false);    //fix source (which is local)
             }
         }
         else 
@@ -1918,7 +1934,7 @@ QStringList AppendArguments(operation *operationToAppend)
             {
                 // Commented after Juan's patch
                 //sourceString =  fixWinPathForRsync(sourceString, true);     //fix source (which is remote)
-                //destString = fixWinPathForRsync(destString, FALSE);        //fix destination (which is local)
+                //destString = fixWinPathForRsync(destString, false);        //fix destination (which is local)
             }
         }
 
@@ -1972,8 +1988,8 @@ QStringList AppendArguments(operation *operationToAppend)
         if (WINrunning)
         {
             // Commented after Juan's patch
-            //sourceString =  fixWinPathForRsync(sourceString, FALSE);    //fix local source
-            //destString =    fixWinPathForRsync(destString, FALSE);      //fix local destination
+            //sourceString =  fixWinPathForRsync(sourceString, false);    //fix local source
+            //destString =    fixWinPathForRsync(destString, false);      //fix local destination
         }
         // Bruce patch end ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
     }
@@ -2222,7 +2238,7 @@ bool checkMountPoint(QString dirPath)
                 count = ROOTcounts;         // Exit this loop and return true if mount point found
             }
             else
-                returnTHISplease = FALSE;
+                returnTHISplease = false;
             
             mountpoint = mountpoint.left(mountpoint.lastIndexOf(SLASH,mountpoint.size()-2)+1);    // Cut the right part of the path
             
@@ -2254,7 +2270,7 @@ QString sendEmailNow (bool testEmail)
     emailArgsExec.replaceInStrings("%b",emailBody);             // %b body
     
     // %l or %c logfile filename - Only do this is there exists a %l or %c arguments because many file actions are involved
-    bool stopEmail = FALSE;
+    bool stopEmail = false;
     if ( (emailArgsExec.contains("%l")) || (emailArgsExec.contains("%c")) )
     {
         QString argLog = logDir + profileName + emailLogString;
@@ -2733,7 +2749,7 @@ QString createWinRsyncCommand(QString tempPath,bool vss,QStringList rsyncArgs,bo
 //  if (!settingsfile.open(QIODevice::WriteOnly))   // if the settings file cannot be saved (or fails to create)
 //  {
 //      settingsfile.close();
-//      return FALSE;
+//      return false;
 //  }
 
     //luckyb line to avoid compile WARNING

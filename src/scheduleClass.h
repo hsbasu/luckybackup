@@ -50,8 +50,8 @@ class schedule
             itsHour = 0;
             itsMinute = 0;
             itsSkipCritical = true;
-            itsConsoleMode = FALSE;
-            itsReboot = FALSE;
+            itsConsoleMode = false;
+            itsReboot = false;
             itsDelayReboot = 3;
         }
         ~schedule() {}								//destructor

@@ -139,14 +139,14 @@ bool emailDialog::checkFields()
     if (uiE.lineEdit_command -> text() == "")
     {
         warningMessage.append(tr("The command field is empty") + "!! \n");
-        returnVal = FALSE;
+        returnVal = false;
     }
 
     /* This is commented because a command with no arguments (eg a script) is possible to be used
     if (uiE.lineEdit_arguments -> text() == "")
     {
         warningMessage.append(tr("The command arguments field is empty") + "!! \n");
-        returnVal = FALSE;
+        returnVal = false;
     }*/
     
     return returnVal ;
@@ -255,7 +255,7 @@ void emailDialog::enableTLS()
             tempEmailArguments.prepend(tlsArgument + " ");
     }
     else
-        uiE.checkBox_disable_tls -> setEnabled(FALSE);
+        uiE.checkBox_disable_tls -> setEnabled(false);
     
     uiE.lineEdit_arguments          -> setText(tempEmailArguments);
 }

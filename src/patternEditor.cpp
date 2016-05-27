@@ -41,13 +41,13 @@
 patternEditor::patternEditor (QString sourceRoot, QWidget *parent) : QDialog (parent)
 {
     uiP.setupUi(this);
-    uiP.groupBox_name -> setEnabled (FALSE);
-    uiP.checkBox_pathAbsolute -> setEnabled (FALSE);
-    uiP.checkBox_pathAny -> setEnabled (FALSE);
-    uiP.spinBox_pathDeeper -> setEnabled (FALSE);
-    uiP.label_pathDeeper -> setEnabled (FALSE);
-    uiP.toolButton_browseFile -> setVisible(FALSE);
-    uiP.checkBox_pathAbsolute -> setVisible(FALSE);
+    uiP.groupBox_name -> setEnabled (false);
+    uiP.checkBox_pathAbsolute -> setEnabled (false);
+    uiP.checkBox_pathAny -> setEnabled (false);
+    uiP.spinBox_pathDeeper -> setEnabled (false);
+    uiP.label_pathDeeper -> setEnabled (false);
+    uiP.toolButton_browseFile -> setVisible(false);
+    uiP.checkBox_pathAbsolute -> setVisible(false);
     uiP.label_browse -> setText(tr("directory :"));
     
     anchorSource="";
@@ -116,19 +116,19 @@ void patternEditor::resetFileds()
     uiP.lineEdit_nameStartsWith -> setText("");
     uiP.lineEdit_nameEndsWith -> setText("");
     uiP.lineEdit_nameContains -> setText("");
-    uiP.groupBox_name -> setEnabled (FALSE);
+    uiP.groupBox_name -> setEnabled (false);
     
     uiP.checkBox_pathAbsolute -> setCheckState(Qt::Unchecked);
-    uiP.checkBox_pathAbsolute -> setEnabled (FALSE);
-    uiP.checkBox_pathAbsolute -> setVisible(FALSE);
+    uiP.checkBox_pathAbsolute -> setEnabled (false);
+    uiP.checkBox_pathAbsolute -> setVisible(false);
     
     uiP.checkBox_pathAny -> setCheckState(Qt::Unchecked);
-    uiP.checkBox_pathAny -> setEnabled (FALSE);
+    uiP.checkBox_pathAny -> setEnabled (false);
     uiP.spinBox_pathDeeper -> setValue(0);
-    uiP.spinBox_pathDeeper -> setEnabled (FALSE);
-    uiP.label_pathDeeper -> setEnabled (FALSE);
+    uiP.spinBox_pathDeeper -> setEnabled (false);
+    uiP.label_pathDeeper -> setEnabled (false);
     
-    uiP.toolButton_browseFile -> setVisible(FALSE);
+    uiP.toolButton_browseFile -> setVisible(false);
     
     uiP.checkBox_directoryContents -> setCheckState(Qt::Unchecked);
     uiP.radioButton_directorySpecific -> setChecked(true);
@@ -210,12 +210,12 @@ void patternEditor::fillPattern()
     }
     else
     {
-        uiP.lineEdit_browse -> setEnabled(FALSE);
-        uiP.toolButton_browseFile -> setEnabled(FALSE);
-        uiP.toolButton_browseDir -> setEnabled(FALSE);
-        uiP.label_pathDeeper -> setEnabled(FALSE);
-        uiP.spinBox_pathDeeper -> setEnabled(FALSE);
-        uiP.checkBox_pathAny -> setEnabled(FALSE);
+        uiP.lineEdit_browse -> setEnabled(false);
+        uiP.toolButton_browseFile -> setEnabled(false);
+        uiP.toolButton_browseDir -> setEnabled(false);
+        uiP.label_pathDeeper -> setEnabled(false);
+        uiP.spinBox_pathDeeper -> setEnabled(false);
+        uiP.checkBox_pathAny -> setEnabled(false);
     }
     
     if ( (uiP.radioButton_fileSpecific -> isChecked()) || (uiP.radioButton_directorySpecific -> isChecked()) )
@@ -255,9 +255,9 @@ void patternEditor::fillPattern()
     }
     else
     {
-        uiP.lineEdit_nameStartsWith -> setEnabled(FALSE);
-        uiP.lineEdit_nameEndsWith -> setEnabled(FALSE);
-        uiP.lineEdit_nameContains -> setEnabled(FALSE);
+        uiP.lineEdit_nameStartsWith -> setEnabled(false);
+        uiP.lineEdit_nameEndsWith -> setEnabled(false);
+        uiP.lineEdit_nameContains -> setEnabled(false);
     }
     
     if (uiP.lineEdit_nameIsExactly -> isEnabled())
@@ -299,14 +299,14 @@ void patternEditor::fillPattern()
     if (uiP.radioButton_fileSet -> isChecked())		// if file set radio button is selected
     {
         uiP.checkBox_pathAbsolute -> setEnabled (true);
-        uiP.label_browse -> setVisible(FALSE);
+        uiP.label_browse -> setVisible(false);
         if (patternLine.endsWith(SLASH))
             patternLine.chop(1);
     }
     if (uiP.radioButton_directorySet -> isChecked())	// if directory set radio button is selected
     {
         uiP.checkBox_pathAbsolute -> setEnabled (true);
-        uiP.label_browse -> setVisible(FALSE);
+        uiP.label_browse -> setVisible(false);
         if ( (!(patternLine.endsWith(SLASH))) && (!(patternLine == "")) )
             patternLine.append(SLASH);
     }

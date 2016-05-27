@@ -49,12 +49,12 @@ modifyDialog::modifyDialog (int ItemNo, QDialog *parent) : QDialog (parent)
     stdWindowWidth = 540;
     minWindowHeight = 245;
     maxWindowHeight = 565;
-    uiM.tabWidget_advanced -> setVisible(FALSE);
+    uiM.tabWidget_advanced -> setVisible(false);
     uiM.comboBox_Type -> setCurrentIndex(0);
     this -> resize(stdWindowWidth,minWindowHeight);
     ArrayPosition = ItemNo;
-    validation = FALSE;
-    listItemEditMode = FALSE;
+    validation = false;
+    listItemEditMode = false;
         
     alsoExecuteTooltip = tr("Leave the box checked, to <b>STOP</b> the execution of running task if this command exits with an error");
     QString comLabel= tr("use boxes to <b>STOP</b> task execution on error", "Please leave the bold tags <b></b> intact and surrounding the word STOP translated");
@@ -63,20 +63,20 @@ modifyDialog::modifyDialog (int ItemNo, QDialog *parent) : QDialog (parent)
     
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // Various gui initialization
-    //uiM.toolBox_options         ->setItemEnabled (0,FALSE);    // different backend
+    //uiM.toolBox_options         ->setItemEnabled (0,false);    // different backend
     
     //Disable some stuff when windows is NOT running
     if (!WINrunning)
     {
-        uiM.checkBox_vss        -> setVisible(FALSE);
-        uiM.checkBox_restorent  -> setVisible(FALSE);
-        uiM.lineEdit_sshPasswordStr -> setVisible(FALSE);
-        uiM.lineEdit_sshOptions -> setVisible(FALSE);
-        uiM.label_sshPassword_2 -> setVisible(FALSE);
-        uiM.label_sshPassword_2 -> setVisible(FALSE);
+        uiM.checkBox_vss        -> setVisible(false);
+        uiM.checkBox_restorent  -> setVisible(false);
+        uiM.lineEdit_sshPasswordStr -> setVisible(false);
+        uiM.lineEdit_sshOptions -> setVisible(false);
+        uiM.label_sshPassword_2 -> setVisible(false);
+        uiM.label_sshPassword_2 -> setVisible(false);
     }
     else
-        uiM.checkBox_vss        -> setEnabled(FALSE);   // disable VSS until a better solution is found
+        uiM.checkBox_vss        -> setEnabled(false);   // disable VSS until a better solution is found
     
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -248,7 +248,7 @@ void modifyDialog::advancedPressed(bool advanced)
     }
     else
     {
-        uiM.tabWidget_advanced -> setVisible(FALSE);
+        uiM.tabWidget_advanced -> setVisible(false);
         uiM.pushButton_advanced -> setText(tr("advanced"));
         this -> resize(windowWidth,minWindowHeight);
     }
@@ -257,8 +257,8 @@ void modifyDialog::advancedPressed(bool advanced)
 // cancel button pressed=====================================================================================================
 void modifyDialog::cancelPressed()
 {
-    modifyOK = FALSE;
-    modifyConnected = FALSE;
+    modifyOK = false;
+    modifyConnected = false;
     close();    //emmit a QcloseEvent
 }
 
@@ -374,7 +374,7 @@ void modifyDialog::okayPressed()
     //if name or source or destination is missing do not proceed -----------------------------------------------------------
     if ( (uiM.lineEdit_name -> text() == "") || (uiM.lineEdit_destination -> text() == "") || (uiM.lineEdit_source -> text() == "")  )
     {
-        modifyOK = FALSE;
+        modifyOK = false;
         message.append(/*"<b>"+tr("ERROR","message box message")+":</b> "+*/
                     tr("Please specify the following before proceeding:","message box, message"));
         if (uiM.lineEdit_name -> text() == "")
@@ -389,7 +389,7 @@ void modifyDialog::okayPressed()
     //check if / is declared as source and backup dir by name as operation type ------------------------------------------------
     if ((uiM.lineEdit_source -> text() == "/") && (uiM.comboBox_Type -> currentIndex()==0) && (!uiM.checkBox_backupContents -> isChecked()))
     {
-        modifyOK = FALSE;
+        modifyOK = false;
         message.append(/*"<b>"+tr("ERROR","message box message - line1")+":</b> "+*/
         tr("You have declared the '/' (root) directory as source and have NOT checked the 'Do NOT create extra directory' box","message box message - line1")+"<br>"+
                 tr("That is not allowed because '/' does not have an actual name","message box message - line2")+" !!<br>"
@@ -399,7 +399,7 @@ void modifyDialog::okayPressed()
     if (((uiM.lineEdit_source -> text()).endsWith(":\\")) && (uiM.comboBox_Type -> currentIndex()==0) && (!uiM.checkBox_backupContents -> isChecked())
         && (notXnixRunning) )
     {
-        modifyOK = FALSE;
+        modifyOK = false;
         message.append(/*"<b>"+tr("ERROR","message box message - line1")+":</b> "+*/
         tr("You have declared the root directory of an entire partition as source and have NOT checked the 'Do NOT create extra directory' box","message box message - line1")+"<br>"+
                 tr("That is not allowed because the root partition does not have an actual name","message box message - line2")+" !!<br>"
@@ -412,7 +412,7 @@ void modifyDialog::okayPressed()
     {
         if ( ((uiM.lineEdit_name -> text()) == (Operation[count] -> GetName()) ) && (count != ArrayPosition) )
         {
-            modifyOK = FALSE;
+            modifyOK = false;
             message.append(/*"<b>"+tr("ERROR","message box message - line1")+":</b> "+*/
             tr("The name of the task you requested already exists","message box message - line1")+" !!<br>"
                     "..."+tr("Please specify a different name before proceeding","message box message - line2")+"<br><br>");
@@ -430,7 +430,7 @@ void modifyDialog::okayPressed()
         if ((( (uiM.lineEdit_source -> text()) == (uiM.lineEdit_destination -> text()) )    
         || ( (uiM.lineEdit_source -> text() + SLASH) == (uiM.lineEdit_destination -> text()) )    ) && (!uiM.groupBox_remote -> isChecked()) )
         {
-            modifyOK = FALSE;
+            modifyOK = false;
             message.append(/*"<b>"+tr("ERROR","message box message - line1")+":</b> "+*/
             tr("The source you have declared is identical to the destination","message box message - line1")+" !!<br>"
                     "..."+tr("Please modify at least one of them","message box message - line2")+"<br><br>");
@@ -448,7 +448,7 @@ void modifyDialog::okayPressed()
     //"recursive" has to be checked for --delete-after to operate -------------------------------------------------------------
     if ( (uiM.checkBox_deleteAfter -> isChecked()) && !(uiM.checkBox_recurse -> isChecked()) )
     {
-        modifyOK = FALSE;
+        modifyOK = false;
         message.append(/*"<b>"+tr("ERROR","message box message - line1")+":</b> "+*/
         tr("You have checked the 'delete files on the destination' option","message box message - line2") + "<br>" +
                 tr("without having checked 'Recurse into directories' which is required","message box message - line3")+"<br><br>");
@@ -457,7 +457,7 @@ void modifyDialog::okayPressed()
     //check if "remote" is checked and no hostname is declared -----------------------------------------------------------------
     if ( (uiM.groupBox_remote -> isChecked()) && (uiM.lineEdit_remoteHost -> text() == "") )
     {
-        modifyOK = FALSE;
+        modifyOK = false;
         message.append(/*"<b>"+tr("ERROR","message box message - line1")+":</b>"+*/
                 tr("'Remote Host' is checked, but no remote host name is declared","message box message - line2")+"<br>"+
                 tr("Please specify a remote host name","message box message - line3")+"<br>"+
@@ -485,7 +485,7 @@ void modifyDialog::okayPressed()
                 textdialog.exec();
                 if (textdialog.getGoOn() == 4)        //okay with "Do not show this again" checked
                 {
-                    Operation[ArrayPosition] -> SetCloneWARNING (FALSE);
+                    Operation[ArrayPosition] -> SetCloneWARNING (false);
                     close();
                 }
                 if (textdialog.getGoOn() == 2)        //okay with "Do not show this again" NOT checked
@@ -535,7 +535,7 @@ void modifyDialog::commandPressed()
         "</font><br><font color=magenta>"+ source + " </font><br><font color=magenta>" + dest + "</font><br>", this);
     textdialog.exec();
 
-    validation = FALSE;
+    validation = false;
     //==========================================================================================================================
 }
 
@@ -594,8 +594,8 @@ void modifyDialog::addListItem(const int type)
                 uiM.pushButton_moveUpExclude -> setEnabled (true);
                 uiM.pushButton_moveDownExclude -> setEnabled (true);
                 
-                // set this bool var to FALSE - end of list edit mode
-                listItemEditMode = FALSE;
+                // set this bool var to false - end of list edit mode
+                listItemEditMode = false;
             }
             else
                 uiM.listWidget_exclude -> addItem(text);
@@ -649,8 +649,8 @@ void modifyDialog::addListItem(const int type)
                 uiM.pushButton_moveUpInclude -> setEnabled (true);
                 uiM.pushButton_moveDownInclude -> setEnabled (true);
                 
-                // set this bool var to FALSE - end of list edit mode
-                listItemEditMode = FALSE;
+                // set this bool var to false - end of list edit mode
+                listItemEditMode = false;
             }
             else
                 uiM.listWidget_include -> addItem(text);
@@ -702,8 +702,8 @@ void modifyDialog::addListItem(const int type)
                 uiM.pushButton_moveUpOptions -> setEnabled (true);
                 uiM.pushButton_moveDownOptions -> setEnabled (true);
                 
-                // set this bool var to FALSE - end of list edit mode
-                listItemEditMode = FALSE;
+                // set this bool var to false - end of list edit mode
+                listItemEditMode = false;
             }
             else
                 uiM.listWidget_options -> addItem(text);
@@ -740,8 +740,8 @@ void modifyDialog::addListItem(const int type)
                     uiM.pushButton_moveUpExecuteBefore -> setEnabled (true);
                     uiM.pushButton_moveDownExecuteBefore -> setEnabled (true);
                     
-                    // set this bool var to FALSE - end of list edit mode
-                    listItemEditMode = FALSE;
+                    // set this bool var to false - end of list edit mode
+                    listItemEditMode = false;
                 }
                 else
                 {
@@ -782,8 +782,8 @@ void modifyDialog::addListItem(const int type)
                     uiM.pushButton_moveUpExecuteAfter -> setEnabled (true);
                     uiM.pushButton_moveDownExecuteAfter -> setEnabled (true);
                     
-                    // set this bool var to FALSE - end of list edit mode
-                    listItemEditMode = FALSE;
+                    // set this bool var to false - end of list edit mode
+                    listItemEditMode = false;
                 }
                 else
                 {
@@ -820,7 +820,7 @@ void modifyDialog::removeListItem(const int type)
                 uiM.pushButton_editExclude -> setEnabled (true);
                 uiM.pushButton_moveUpExclude -> setEnabled (true);
                 uiM.pushButton_moveDownExclude -> setEnabled (true);
-                listItemEditMode = FALSE;   // set this bool var to FALSE - end of list edit mode
+                listItemEditMode = false;   // set this bool var to false - end of list edit mode
                 return;
             }
             
@@ -843,7 +843,7 @@ void modifyDialog::removeListItem(const int type)
                 uiM.pushButton_editInclude -> setEnabled (true);
                 uiM.pushButton_moveUpInclude -> setEnabled (true);
                 uiM.pushButton_moveDownInclude -> setEnabled (true);
-                listItemEditMode = FALSE;   // set this bool var to FALSE - end of list edit mode
+                listItemEditMode = false;   // set this bool var to false - end of list edit mode
                 return;
             }
             
@@ -867,7 +867,7 @@ void modifyDialog::removeListItem(const int type)
                 uiM.pushButton_editOptions -> setEnabled (true);
                 uiM.pushButton_moveUpOptions -> setEnabled (true);
                 uiM.pushButton_moveDownOptions -> setEnabled (true);
-                listItemEditMode = FALSE;   // set this bool var to FALSE - end of list edit mode
+                listItemEditMode = false;   // set this bool var to false - end of list edit mode
                 return;
             }
             
@@ -890,7 +890,7 @@ void modifyDialog::removeListItem(const int type)
                 uiM.pushButton_editExecuteBefore -> setEnabled (true);
                 uiM.pushButton_moveUpExecuteBefore -> setEnabled (true);
                 uiM.pushButton_moveDownExecuteBefore -> setEnabled (true);
-                listItemEditMode = FALSE;   // set this bool var to FALSE - end of list edit mode
+                listItemEditMode = false;   // set this bool var to false - end of list edit mode
                 return;
             }
             
@@ -913,7 +913,7 @@ void modifyDialog::removeListItem(const int type)
                 uiM.pushButton_editExecuteAfter -> setEnabled (true);
                 uiM.pushButton_moveUpExecuteAfter -> setEnabled (true);
                 uiM.pushButton_moveDownExecuteAfter -> setEnabled (true);
-                listItemEditMode = FALSE;   // set this bool var to FALSE - end of list edit mode
+                listItemEditMode = false;   // set this bool var to false - end of list edit mode
                 return;
             }
     
@@ -950,9 +950,9 @@ void modifyDialog::editListItem(const int type)
             uiM.pushButton_excludeRemove -> setToolTip(tr("cancel editing"));
             uiM.pushButton_excludeRemove -> setIcon(QIcon(":/luckyPrefix/cancel.png"));
             
-            uiM.pushButton_editExclude -> setEnabled (FALSE);
-            uiM.pushButton_moveUpExclude -> setEnabled (FALSE);
-            uiM.pushButton_moveDownExclude -> setEnabled (FALSE);
+            uiM.pushButton_editExclude -> setEnabled (false);
+            uiM.pushButton_moveUpExclude -> setEnabled (false);
+            uiM.pushButton_moveDownExclude -> setEnabled (false);
             
             selectedText = (uiM.listWidget_exclude -> currentItem()) -> text();  //current list item text
             uiM.lineEdit_excludeAdd -> setText (selectedText);
@@ -975,9 +975,9 @@ void modifyDialog::editListItem(const int type)
             uiM.pushButton_includeRemove -> setToolTip(tr("cancel editing"));
             uiM.pushButton_includeRemove -> setIcon(QIcon(":/luckyPrefix/cancel.png"));
             
-            uiM.pushButton_editInclude -> setEnabled (FALSE);
-            uiM.pushButton_moveUpInclude -> setEnabled (FALSE);
-            uiM.pushButton_moveDownInclude -> setEnabled (FALSE);
+            uiM.pushButton_editInclude -> setEnabled (false);
+            uiM.pushButton_moveUpInclude -> setEnabled (false);
+            uiM.pushButton_moveDownInclude -> setEnabled (false);
             
             selectedText = (uiM.listWidget_include -> currentItem()) -> text();  //current list item text
             uiM.lineEdit_includeAdd -> setText (selectedText);
@@ -1000,9 +1000,9 @@ void modifyDialog::editListItem(const int type)
             uiM.pushButton_optionsRemove -> setToolTip(tr("cancel editing"));
             uiM.pushButton_optionsRemove -> setIcon(QIcon(":/luckyPrefix/cancel.png"));
             
-            uiM.pushButton_editOptions -> setEnabled (FALSE);
-            uiM.pushButton_moveUpOptions -> setEnabled (FALSE);
-            uiM.pushButton_moveDownOptions -> setEnabled (FALSE);
+            uiM.pushButton_editOptions -> setEnabled (false);
+            uiM.pushButton_moveUpOptions -> setEnabled (false);
+            uiM.pushButton_moveDownOptions -> setEnabled (false);
             
             selectedText = (uiM.listWidget_options -> currentItem()) -> text();  //current list item text
             uiM.lineEdit_optionsAdd -> setText (selectedText);
@@ -1025,9 +1025,9 @@ void modifyDialog::editListItem(const int type)
             uiM.pushButton_executeBeforeRemove -> setToolTip(tr("cancel editing"));
             uiM.pushButton_executeBeforeRemove -> setIcon(QIcon(":/luckyPrefix/cancel.png"));
             
-            uiM.pushButton_editExecuteBefore -> setEnabled (FALSE);
-            uiM.pushButton_moveUpExecuteBefore -> setEnabled (FALSE);
-            uiM.pushButton_moveDownExecuteBefore -> setEnabled (FALSE);
+            uiM.pushButton_editExecuteBefore -> setEnabled (false);
+            uiM.pushButton_moveUpExecuteBefore -> setEnabled (false);
+            uiM.pushButton_moveDownExecuteBefore -> setEnabled (false);
             
             selectedText = (uiM.listWidget_executeBefore -> currentItem()) -> text();  //current list item text
             alsoExecuteState = uiM.listWidget_executeBefore -> currentItem() -> checkState();   // current list item check state
@@ -1051,9 +1051,9 @@ void modifyDialog::editListItem(const int type)
             uiM.pushButton_executeAfterRemove -> setToolTip(tr("cancel editing"));
             uiM.pushButton_executeAfterRemove -> setIcon(QIcon(":/luckyPrefix/cancel.png"));
             
-            uiM.pushButton_editExecuteAfter -> setEnabled (FALSE);
-            uiM.pushButton_moveUpExecuteAfter -> setEnabled (FALSE);
-            uiM.pushButton_moveDownExecuteAfter -> setEnabled (FALSE);
+            uiM.pushButton_editExecuteAfter -> setEnabled (false);
+            uiM.pushButton_moveUpExecuteAfter -> setEnabled (false);
+            uiM.pushButton_moveDownExecuteAfter -> setEnabled (false);
             
             selectedText = (uiM.listWidget_executeAfter -> currentItem()) -> text();  //current list item text
             alsoExecuteState = uiM.listWidget_executeAfter -> currentItem() -> checkState();   // current list item check state
@@ -1209,10 +1209,10 @@ void modifyDialog::TaskTypeChanged(int type)
 {
     if (type == 1)
     {
-        uiM.label_snapshotsKeep -> setVisible(FALSE);
-        uiM.spinBox_snapshotsKeep -> setVisible(FALSE);
-        uiM.checkBox_backupContents -> setVisible(FALSE);
-        uiM.checkBox_deleteAfter -> setEnabled (FALSE);
+        uiM.label_snapshotsKeep -> setVisible(false);
+        uiM.spinBox_snapshotsKeep -> setVisible(false);
+        uiM.checkBox_backupContents -> setVisible(false);
+        uiM.checkBox_deleteAfter -> setEnabled (false);
     }
     else
     {
@@ -1233,7 +1233,7 @@ void modifyDialog::disableExcludeTab()
        ((uiM.checkBox_includeFile->isChecked()) && ((uiM.lineEdit_includeFile->text()).size() >0)) ) &&
        (uiM.radioButton_includeOnly -> isChecked()) )
        
-       enableIt = FALSE;
+       enableIt = false;
 
     uiM.toolBox_exclude -> setEnabled (enableIt);
 }
@@ -1272,20 +1272,20 @@ operation *modifyDialog::fillOperationArray()
         if (uiM.checkBox_backupContents -> isChecked())
         {
             pTask -> SetTypeDirContents    ( true );
-            pTask -> SetTypeDirName        ( FALSE );
-            pTask -> SetTypeSync        ( FALSE );
+            pTask -> SetTypeDirName        ( false );
+            pTask -> SetTypeSync        ( false );
         }
         else
         {
-            pTask -> SetTypeDirContents    ( FALSE );
+            pTask -> SetTypeDirContents    ( false );
             pTask -> SetTypeDirName        ( true );
-            pTask -> SetTypeSync        ( FALSE );
+            pTask -> SetTypeSync        ( false );
         }
     }
     if (uiM.comboBox_Type -> currentIndex()==1)
     {
-        pTask -> SetTypeDirContents    ( FALSE );
-        pTask -> SetTypeDirName        ( FALSE );
+        pTask -> SetTypeDirContents    ( false );
+        pTask -> SetTypeDirName        ( false );
         pTask -> SetTypeSync        ( true );
         uiM.spinBox_snapshotsKeep -> setValue (1);    // also set the keep snapshots spinbox to "1" if it is a sync task
     }
@@ -1388,7 +1388,7 @@ operation *modifyDialog::fillOperationArray()
         uiM.listWidget_executeBefore -> setCurrentRow(count);
         pTask -> AddExecuteBeforeListItem((uiM.listWidget_executeBefore -> currentItem()) -> text());
         if ((uiM.listWidget_executeBefore -> currentItem()) -> checkState() == Qt::Checked)
-            tempState = true;   else tempState = FALSE;
+            tempState = true;   else tempState = false;
         pTask -> AddExecuteBeforeListItemState(tempState);
         count++;
     }
@@ -1398,7 +1398,7 @@ operation *modifyDialog::fillOperationArray()
         uiM.listWidget_executeAfter -> setCurrentRow(count);
         pTask -> AddExecuteAfterListItem((uiM.listWidget_executeAfter -> currentItem()) -> text());
         if ((uiM.listWidget_executeAfter -> currentItem()) -> checkState() == Qt::Checked)
-            tempState = true;   else tempState = FALSE;
+            tempState = true;   else tempState = false;
         pTask -> AddExecuteAfterListItemState(tempState);
         count++;
     }
@@ -1434,7 +1434,7 @@ void modifyDialog::fillModifyWindow(operation *pTask)
     if (pTask -> GetTypeSync())
     {
         uiM.comboBox_Type -> setCurrentIndex(1);
-        uiM.checkBox_deleteAfter -> setEnabled (FALSE);
+        uiM.checkBox_deleteAfter -> setEnabled (false);
     }
 
     uiM.lineEdit_source             -> setText    (pTask -> GetSource() );
@@ -1609,7 +1609,7 @@ void modifyDialog::modifyTrailing()
                 destDir.append(SLASH);
         }
         
-        uiM.checkBox_deleteAfter    -> setChecked    (FALSE);
+        uiM.checkBox_deleteAfter    -> setChecked    (false);
         uiM.checkBox_update         -> setChecked    (true);
         uiM.checkBox_ownership      -> setChecked    (true);
         uiM.checkBox_permissions    -> setChecked    (true);

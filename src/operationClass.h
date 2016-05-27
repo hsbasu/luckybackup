@@ -48,22 +48,22 @@ class operation
             itsDestination = "";
             itsConnectRestore = "";
             itsLastExecutionErrors = -1;
-            itsExclude = FALSE;
-            itsInclude = FALSE;
-            itsIncludeModeNormal = FALSE;
-            itsByPassWARNING = FALSE;
+            itsExclude = false;
+            itsInclude = false;
+            itsIncludeModeNormal = false;
+            itsByPassWARNING = false;
             itsCloneWARNING = true;
             itsRepeatOnFail = 0;
             itsKeepSnapshots = 1;
             itsSnapshotsList.clear();
-            itsOptionsFATntfs = FALSE;
-            itsOptionsSuper = FALSE;
-            itsOptionsNumericIDs = FALSE;
-            itsOptionsVss = FALSE;
-            itsOptionsRestorent = FALSE;
-            itsIncludeFromFile = FALSE;
-            itsExcludeFromFile = FALSE;
-            itsExcludeGVFS = FALSE;
+            itsOptionsFATntfs = false;
+            itsOptionsSuper = false;
+            itsOptionsNumericIDs = false;
+            itsOptionsVss = false;
+            itsOptionsRestorent = false;
+            itsIncludeFromFile = false;
+            itsExcludeFromFile = false;
+            itsExcludeGVFS = false;
             itsExecuteBeforeList.clear();
             itsExecuteBeforeListState.clear();
             itsExecuteAfterList.clear();
@@ -225,7 +225,7 @@ class operation
                                     (itsExcludeMount)||(itsExcludeLostFound)||(itsExcludeSystem)||
                                     (itsExcludeTrash)||(itsExcludeGVFS)||(itsExcludeList.size()>0) )
                                         itsExclude = true;
-                                    else     itsExclude = FALSE; }
+                                    else     itsExclude = false; }
         // Exclude templates
         void SetExcludeTemp(bool ExcludeTemp)               { itsExcludeTemp = ExcludeTemp;}
         void SetExcludeCache (bool ExcludeCache)            { itsExcludeCache = ExcludeCache;}
@@ -246,7 +246,7 @@ class operation
         void SetInclude()                      {  if ( ((itsIncludeFromFile) && !(itsIncludeFile=="")) || 
                                             (itsIncludeList.size()>0) )
                                         itsInclude = true;
-                                    else    itsInclude = FALSE;}
+                                    else    itsInclude = false;}
         // Include from file
         void SetIncludeFromFile(bool IncludeFromFile)       { itsIncludeFromFile = IncludeFromFile;}
         // Include mode

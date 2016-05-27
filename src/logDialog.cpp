@@ -98,8 +98,8 @@ void logDialog::logReadEnd()
 void logDialog::refreshWindowError(const QString &errorText)
 {
 	uiL.logView -> setText(errorText);
-	uiL.button_next -> setEnabled(FALSE);
-	uiL.button_previous -> setEnabled(FALSE);
+	uiL.button_next -> setEnabled(false);
+	uiL.button_previous -> setEnabled(false);
 	uiL.button_close -> setText(tr("close"));
 	uiL.button_close -> setEnabled(true);
 }
@@ -116,7 +116,7 @@ void logDialog::prevError()
 	errorCount--;		//decrease the current error by one
 
 	if (errorCount == 0 )		// if the current error is the first within the logfile disable the previous button
-		uiL.button_previous -> setEnabled(FALSE);
+		uiL.button_previous -> setEnabled(false);
 	
 	if (errorCount < totalErrors-1)	//if the current error is less than the last one within the logfile enable the next button
 		uiL.button_next -> setEnabled(true);
@@ -129,10 +129,10 @@ void logDialog::nextError()
 {
 	if (!firstScroll)
 		errorCount++;	// increase the current error by one
-	firstScroll = FALSE;
+	firstScroll = false;
 	
 	if (errorCount == totalErrors-1)		// If the current error is the last within the logfile disable the next button
-		uiL.button_next -> setEnabled(FALSE);
+		uiL.button_next -> setEnabled(false);
 	
 	if (errorCount > 0)				// if the current error is greater than the first one within the logfile enable the previous button
 		uiL.button_previous -> setEnabled(true);

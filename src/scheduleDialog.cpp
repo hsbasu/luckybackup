@@ -58,7 +58,7 @@ scheduleDialog::scheduleDialog (QDialog *parent)
     TotalSchedule=0;		//The number of available profiles schedulesin "schedule list"- starts from 1
     currentSchedule=0;		//this holds the current row from the "schedule list"- starts from 0
     noSchedules = true;		//becomes true when no schedules are declared
-    changesMade = FALSE;		//becomes true if changes are made but no cronIt is pressed
+    changesMade = false;		//becomes true if changes are made but no cronIt is pressed
 
     //connections ----------------------------------------------------------------------------------------------------
     connect(uiS.pushButton_schedule, SIGNAL( pressed() ), this, SLOT(schedulePressed() ) );		//cronIT pushButton
@@ -81,7 +81,7 @@ scheduleDialog::scheduleDialog (QDialog *parent)
     connect(cronProcess, SIGNAL(readyReadStandardOutput()), this, SLOT(appendCrontabOutput()));
 
     //initialize view of widgets
-    uiS.groupBox_addProfileSchedule -> setVisible(FALSE);
+    uiS.groupBox_addProfileSchedule -> setVisible(false);
     uiS.listWidget_schedule -> setEnabled(true);
     uiS.pushButton_add -> setEnabled(true);
     uiS.pushButton_modify -> setEnabled(true);
@@ -272,7 +272,7 @@ scheduleDialog::scheduleDialog (QDialog *parent)
         if (TotalSchedule > 0)
         {
             uiS.listWidget_schedule -> setCurrentRow(0);
-            noSchedules = FALSE;
+            noSchedules = false;
         }
         else
             uiS.listWidget_schedule -> addItem(tr("No schedules are declared !!"));
@@ -332,7 +332,7 @@ void scheduleDialog::schedulePressed()
     
     createCron();		//create a cronfile & update user's crontab
     crontabUpdated = true;
-    changesMade = FALSE;
+    changesMade = false;
 
     textDialog textdialogI ("QtInformation",  "<font color=blue><b>" + currentUser + "</b></font><br><br>" +
                 tr("Your crontab is updated successfully"), this);
@@ -348,7 +348,7 @@ void scheduleDialog::addPressed()
     if (noSchedules)			// if no schedules are declared, remove the info line first
     {
         uiS.listWidget_schedule -> takeItem (0);
-        noSchedules = FALSE;
+        noSchedules = false;
     }
 
     TotalSchedule = uiS.listWidget_schedule -> count();	//Get the schedule list size
@@ -363,14 +363,14 @@ void scheduleDialog::addPressed()
     }
     
     uiS.groupBox_addProfileSchedule -> setVisible(true);
-    uiS.listWidget_schedule -> setEnabled(FALSE);
+    uiS.listWidget_schedule -> setEnabled(false);
     uiS.groupBox_addProfileSchedule -> setTitle(tr("Add profile schedule"));
-    uiS.pushButton_add -> setEnabled(FALSE);
-    uiS.pushButton_modify -> setEnabled(FALSE);
-    uiS.pushButton_remove -> setEnabled(FALSE);
-    uiS.pushButton_cancel -> setEnabled(FALSE);
-    uiS.pushButton_schedule -> setEnabled(FALSE);
-    uiS.pushButton_viewCrontab -> setEnabled(FALSE);
+    uiS.pushButton_add -> setEnabled(false);
+    uiS.pushButton_modify -> setEnabled(false);
+    uiS.pushButton_remove -> setEnabled(false);
+    uiS.pushButton_cancel -> setEnabled(false);
+    uiS.pushButton_schedule -> setEnabled(false);
+    uiS.pushButton_viewCrontab -> setEnabled(false);
     clearScheduleDetails();
 }
 
@@ -384,13 +384,13 @@ void scheduleDialog::modifyPressed()
 
     uiS.groupBox_addProfileSchedule -> setVisible(true);
     uiS.groupBox_addProfileSchedule -> setTitle(tr("Modify profile schedule"));
-    uiS.listWidget_schedule -> setEnabled(FALSE);
-    uiS.pushButton_add -> setEnabled(FALSE);
-    uiS.pushButton_modify -> setEnabled(FALSE);
-    uiS.pushButton_remove -> setEnabled(FALSE);
-    uiS.pushButton_cancel -> setEnabled(FALSE);
-    uiS.pushButton_schedule -> setEnabled(FALSE);
-    uiS.pushButton_viewCrontab -> setEnabled(FALSE);
+    uiS.listWidget_schedule -> setEnabled(false);
+    uiS.pushButton_add -> setEnabled(false);
+    uiS.pushButton_modify -> setEnabled(false);
+    uiS.pushButton_remove -> setEnabled(false);
+    uiS.pushButton_cancel -> setEnabled(false);
+    uiS.pushButton_schedule -> setEnabled(false);
+    uiS.pushButton_viewCrontab -> setEnabled(false);
 }
 
 
@@ -446,7 +446,7 @@ void scheduleDialog::viewCrontab()
 void scheduleDialog::modifyCancelPressed()
 {
     uiS.groupBox_addProfileSchedule -> setTitle(tr("Profile schedule details"));
-    uiS.groupBox_addProfileSchedule -> setVisible(FALSE);
+    uiS.groupBox_addProfileSchedule -> setVisible(false);
     uiS.listWidget_schedule -> setEnabled(true);
     uiS.pushButton_add -> setEnabled(true);
     uiS.pushButton_modify -> setEnabled(true);
@@ -516,7 +516,7 @@ void scheduleDialog::fillDetails()
 // adss a new profile scedule to the list or modifies an existing one
 void scheduleDialog::okaySchedulePressed()
 {
-    noSchedules = FALSE;
+    noSchedules = false;
     schedule *tempOp = new schedule;
 
     //check valid & existent profile*****************************************************
@@ -901,7 +901,7 @@ bool scheduleDialog::saveScheduleFile()
         scheduleFile.remove();
 
     if (!scheduleFile.open(QIODevice::WriteOnly))   //create a new schedule file
-        return FALSE;
+        return false;
     else        //write some stuff to schedule file
     {
         QTextStream out(&scheduleFile);

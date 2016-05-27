@@ -48,10 +48,10 @@ manageWizard::manageWizard (QString type, QString SOURCE, QString DEST,  int sna
     wizard_type = type;
     snapToRestore = snapshotsNo-2;  // This means the previous of the very last snapshot
     
-    procRunning = FALSE;
-    procKilled = FALSE;
-    writeToLog = FALSE;
-    DeleteAfter = FALSE;
+    procRunning = false;
+    procKilled = false;
+    writeToLog = false;
+    DeleteAfter = false;
     firstScroll = true;
     MainRun = true;
     
@@ -74,7 +74,7 @@ manageWizard::manageWizard (QString type, QString SOURCE, QString DEST,  int sna
     if (snapSpecificDir.exists())
         snapSpecificDirExists = true;
     else
-        snapSpecificDirExists = FALSE;
+        snapSpecificDirExists = false;
     
     // delete backup;if this are more than one snapshots available, set dir to delete as snapSpecificDir
     if ((wizard_type == "deleteBackup") && (snapshotsNo > 1))
@@ -187,15 +187,15 @@ void manageWizard::startAction()
     
     //change the gui
     uiW.button_next -> setVisible (true);
-    uiW.button_next -> setEnabled (FALSE);
+    uiW.button_next -> setEnabled (false);
     uiW.button_previous -> setVisible (true);
-    uiW.button_previous -> setEnabled (FALSE);
+    uiW.button_previous -> setEnabled (false);
     uiW.actionView -> setVisible (true);
-    uiW.button_cancel -> setVisible (FALSE);
-    uiW.groupBox_title -> setVisible (FALSE);
+    uiW.button_cancel -> setVisible (false);
+    uiW.groupBox_title -> setVisible (false);
     uiW.button_abort -> setVisible (true);
-    uiW.checkBox_DryRun -> setVisible (FALSE);
-    uiW.button_start -> setVisible (FALSE);
+    uiW.checkBox_DryRun -> setVisible (false);
+    uiW.button_start -> setVisible (false);
     
     // logfile actions if real run is performed - is always true for DELETE actions
     //This is the RESTORE/DELETE logfile
@@ -211,7 +211,7 @@ void manageWizard::startAction()
         if (logfile.open(QIODevice::WriteOnly | QIODevice::Text))	//create a new log file
             writeToLog = true;				//& if it's ok set this to true
         else
-            writeToLog = FALSE;
+            writeToLog = false;
     }
     
     runProcess();
@@ -221,10 +221,10 @@ void manageWizard::startAction()
 // actions when the process is finished
 void manageWizard::procFinished()
 {
-    procRunning = FALSE;
+    procRunning = false;
     if ( (wizard_type == "restoreBackup") && (snapToRestore >= currentSnap ) )
     {
-        MainRun = FALSE;
+        MainRun = false;
 
         time = Operation[currentOperation] -> GetSnapshotsListItem(snapToRestore);
         QString tslash;
@@ -237,7 +237,7 @@ void manageWizard::procFinished()
         if (snapSpecificDir.exists())
             snapSpecificDirExists = true;
         else
-            snapSpecificDirExists = FALSE;
+            snapSpecificDirExists = false;
         
         snapToRestore--;
         
@@ -249,7 +249,7 @@ void manageWizard::procFinished()
     
     errorsFound = errorCount;
     errorCount = 0;		// reset the error count
-    uiW.button_abort -> setVisible (FALSE);
+    uiW.button_abort -> setVisible (false);
     uiW.button_cancel -> setVisible (true);
     uiW.button_cancel -> setText(tr("close"));
     if (errorsFound > 0)
@@ -335,7 +335,7 @@ void manageWizard::abortAction()
     if (commandProcess->state() == QProcess::Running)
     {
         procKilled = true;
-        MainRun = FALSE;
+        MainRun = false;
         commandProcess -> kill();	//kill commandProcess
         commandProcess -> waitForFinished();
     }
@@ -387,7 +387,7 @@ void manageWizard::prevError()
     errorCount--;		//decrease the current error by one
 
     if (errorCount == 0 )		// if the current error is the first disable the previous button
-        uiW.button_previous -> setEnabled(FALSE);
+        uiW.button_previous -> setEnabled(false);
     
     if (errorCount < errorsFound-1)	//if the current error is less than the last one, enable the next button
         uiW.button_next -> setEnabled(true);
@@ -401,10 +401,10 @@ void manageWizard::nextError()
 {
     if (!firstScroll)
         errorCount++;	// increase the current error by one
-    firstScroll = FALSE;
+    firstScroll = false;
     
     if (errorCount == errorsFound-1)		// If the current error is the last, disable the next button
-        uiW.button_next -> setEnabled(FALSE);
+        uiW.button_next -> setEnabled(false);
     
     if (errorCount > 0)				// if the current error is greater than the first one enable the previous button
         uiW.button_previous -> setEnabled(true);
@@ -418,10 +418,10 @@ void manageWizard::nextError()
 // Initialize the gui
 void manageWizard::guiInitialize()
 {
-    uiW.button_next -> setVisible (FALSE);
-    uiW.button_previous -> setVisible (FALSE);
-    uiW.button_abort -> setVisible (FALSE);
-    uiW.actionView -> setVisible (FALSE);
+    uiW.button_next -> setVisible (false);
+    uiW.button_previous -> setVisible (false);
+    uiW.button_abort -> setVisible (false);
+    uiW.actionView -> setVisible (false);
     
     if (wizard_type == "deleteBackup")
     {	
@@ -434,9 +434,9 @@ void manageWizard::guiInitialize()
                     tr("If the information above is correct, click <b>start</b> to begin",
                     "information message - line2.\nPlease leave tags <b></b> intact and surrounding 'start' translated") +
                     ".");
-        uiW.checkBox_DryRun -> setVisible (FALSE);
-        uiW.checkBox_DeleteAfter -> setVisible (FALSE);
-        uiW.pushButton_changeRestore -> setVisible (FALSE);
+        uiW.checkBox_DryRun -> setVisible (false);
+        uiW.checkBox_DeleteAfter -> setVisible (false);
+        uiW.pushButton_changeRestore -> setVisible (false);
     }
     if (wizard_type == "restoreBackup")
     {
@@ -532,7 +532,7 @@ void manageWizard::calcCommandArgs()
 // Run the desired process
 void manageWizard::runProcess()
 {
-    bool skipTHIS = FALSE;
+    bool skipTHIS = false;
     
     // specify command & arguments & append information message
     QString commandLocal =""; commandArguments.clear();   // the local command is used here !!

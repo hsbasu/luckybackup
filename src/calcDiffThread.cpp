@@ -50,8 +50,8 @@ CalcDiffThread::CalcDiffThread(QObject *parent) : QThread(parent)
     source 	= "";
     CurrentSnapshotNo 	= 0;
     currentSnaps 	= 0;
-    syncTYPE 	= FALSE;
-    abortNOW	= FALSE;
+    syncTYPE 	= false;
+    abortNOW	= false;
 }
 
 // class CalcDiffThread Destructor=================================================================================================
@@ -64,7 +64,7 @@ CalcDiffThread::~CalcDiffThread ()
 void CalcDiffThread::run ()
 {
     returnString = "";
-    emit updateViewer(tr("Scanning destination") + "\n\n..." + tr("Please wait"), FALSE);
+    emit updateViewer(tr("Scanning destination") + "\n\n..." + tr("Please wait"), false);
     QFileInfoList returnDirContents = readRecursive(dirToReadString);		//this is the destination as a Qfileinfo list
     
     int countDirEntries=0, countReturnEntries=0;
@@ -111,7 +111,7 @@ void CalcDiffThread::run ()
         destFile.remove(dest, Qt::CaseSensitive);
         
         countDirEntries = 0;
-        bool removed = FALSE;
+        bool removed = false;
         while (countDirEntries < removedFiles.size())
         {
             if ( (destFile == removedFiles.at(countDirEntries)) || ((destFile+SLASH) == removedFiles.at(countDirEntries)) )
@@ -122,7 +122,7 @@ void CalcDiffThread::run ()
             countDirEntries++;
         }
         if (removed)
-            removed = FALSE;
+            removed = false;
         else
             countReturnEntries++;
     }
@@ -138,7 +138,7 @@ void CalcDiffThread::run ()
         QDir currentsnapdir(SnapshotDirectoryToRead);
         if ( (currentsnapdir.exists()) && (!syncTYPE) )
         {
-            emit updateViewer(tr("Scanning snapshot") + " " + SnapshotDirectoryStringToRead + "\n\n..." + tr("Please wait"), FALSE);
+            emit updateViewer(tr("Scanning snapshot") + " " + SnapshotDirectoryStringToRead + "\n\n..." + tr("Please wait"), false);
             QFileInfoList currentsnapdirContents = readRecursive(SnapshotDirectoryToRead); // this is the snapshots directory currently read as a QFileInfo list
             countDirEntries = 0;
             
@@ -150,7 +150,7 @@ void CalcDiffThread::run ()
                 snapFile.remove(SnapshotDirectoryToRead, Qt::CaseSensitive);
 
                 countReturnEntries = 0;
-                bool replaced = FALSE;
+                bool replaced = false;
                 while (countReturnEntries < returnDirContents.size())
                 {
                     QFileInfo localFileInfo = returnDirContents.at(countReturnEntries);
@@ -189,7 +189,7 @@ void CalcDiffThread::run ()
     QList<bool> snapMatchesSource;
     snapMatchesSource.clear();
 
-    emit updateViewer(tr("Scanning source") + "\n\n..." + tr("Please wait"), FALSE);
+    emit updateViewer(tr("Scanning source") + "\n\n..." + tr("Please wait"), false);
     QFileInfoList sourceDirAsList = readRecursive(source);	// This is source as a QFileInfo list
 
     QString calcInfoText = tr("Calculating differences") + "\n\n..." + tr("Please wait") + "\n\n";
@@ -198,14 +198,14 @@ void CalcDiffThread::run ()
     countDirEntries = 0;
     while (countDirEntries < sourceDirAsList.size())
     {
-        bool foundMatchSourceToSnap = FALSE;	// If a file with some filename exists at the source and the snapshot
+        bool foundMatchSourceToSnap = false;	// If a file with some filename exists at the source and the snapshot
         // strip off beginning of source file path
         QFileInfo sourceFileInfo = sourceDirAsList.at(countDirEntries);
         QString sourceFile = sourceFileInfo.filePath();
         if (sourceFile.startsWith(source))
             sourceFile.remove(source, Qt::CaseSensitive);
         
-        emit updateViewer(calcInfoText + countStr.setNum(countDirEntries) + " / " + sourceDirAsListSize, FALSE);		// Give the user sth to watch counting
+        emit updateViewer(calcInfoText + countStr.setNum(countDirEntries) + " / " + sourceDirAsListSize, false);		// Give the user sth to watch counting
         if (abortNOW)
             return;
         
@@ -214,7 +214,7 @@ void CalcDiffThread::run ()
         while (countReturnEntries < returnDirContents.size())
         {
             if (countDirEntries == 0)
-                snapMatchesSource.append(FALSE); // build a <bool> list
+                snapMatchesSource.append(false); // build a <bool> list
 
             //strip off beginning of snapshot file path
             QFileInfo snapFileInfo = returnDirContents.at(countReturnEntries);

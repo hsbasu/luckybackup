@@ -40,9 +40,9 @@
 textDialog::textDialog (const QString type, const QString ReplaceInput, QWidget *parent) : QDialog (parent)
 {
 	uiT.setupUi(this);
-	uiT.checkBox_select -> setVisible(FALSE);
-	uiT.label_warning -> setVisible(FALSE);
-	uiT.textEdit_userInput -> setVisible(FALSE);
+	uiT.checkBox_select -> setVisible(false);
+	uiT.label_warning -> setVisible(false);
+	uiT.textEdit_userInput -> setVisible(false);
 	
 	//connect okay & cancel pushButton SLOTs ----------------
 	connect ( uiT.pushButton_ok, SIGNAL( clicked() ), this, SLOT( okay() ) );
@@ -65,7 +65,7 @@ textDialog::textDialog (const QString type, const QString ReplaceInput, QWidget 
 	}
 	if (type == "ProfileDescription")
 	{
-		uiT.lineEdit_userInput 	-> setVisible(FALSE);
+		uiT.lineEdit_userInput 	-> setVisible(false);
 		uiT.textEdit_userInput -> setVisible(true);
 		this -> resize(640, 480);
 		uiT.label_message 	-> setText(tr("Profile description :"));
@@ -95,14 +95,14 @@ textDialog::textDialog (const QString type, const QString ReplaceInput, QWidget 
 		uiT.checkBox_select -> setVisible(true);
 		uiT.label_warning -> setVisible(true);
 		uiT.checkBox_select -> setText (tr("Do not show this again for this task"));
-		uiT.lineEdit_userInput 	-> setVisible(FALSE);
+		uiT.lineEdit_userInput 	-> setVisible(false);
 		uiT.label_message 	-> setText(tr("You have selected to \"Backup the contents of the source directory\"<br>together with the \"delete files on the destination\" option") +"<br><br>" + tr("BEWARE, if your intention is NOT to clone source to destination !!") +"<br><br>" + 
 				tr("Are you sure you wish to proceed ??") + "<br><br>");
         resize(sizeHint());
 	}
 	if (type == "ValidateDialog")
 	{
-		uiT.lineEdit_userInput 	-> setVisible(FALSE);
+		uiT.lineEdit_userInput 	-> setVisible(false);
 		uiT.label_warning -> setVisible(true);
 		uiT.label_warning -> setPixmap(QPixmap(":/luckyPrefix/validate.png"));
 		uiT.pushButton_cancel -> setText(tr("Copy command to clipboard"));
@@ -113,55 +113,55 @@ textDialog::textDialog (const QString type, const QString ReplaceInput, QWidget 
 	if (type == "ViewCurrentCrontab")
 	{
 		this -> resize(640, 480);
-		uiT.lineEdit_userInput 	-> setVisible(FALSE);
-		uiT.pushButton_cancel -> setVisible(FALSE);
+		uiT.lineEdit_userInput 	-> setVisible(false);
+		uiT.pushButton_cancel -> setVisible(false);
 		uiT.label_message 	-> setText(ReplaceInput);
 	}
 	if (type == "emailOutput")
     {
-        uiT.lineEdit_userInput  -> setVisible(FALSE);
+        uiT.lineEdit_userInput  -> setVisible(false);
         uiT.textEdit_userInput -> setVisible(true);
         this -> resize(640, 480);
         uiT.label_message   -> setText(tr("eMail information"));
         uiT.textEdit_userInput  -> setPlainText(ReplaceInput);
         uiT.textEdit_userInput  -> setReadOnly(true);
-        uiT.pushButton_cancel   -> setVisible(FALSE);
+        uiT.pushButton_cancel   -> setVisible(false);
     }
 	
 	// The next are used instead of standard Qt dialogs for translation reasons
 	if (type == "QtInformation")
 	{
-		uiT.lineEdit_userInput 	-> setVisible(FALSE);
+		uiT.lineEdit_userInput 	-> setVisible(false);
 		uiT.label_warning 	-> setVisible(true);
 		uiT.label_warning 	-> setPixmap(QPixmap(":/luckyPrefix/validate.png"));
 		uiT.label_message 	-> setText(ReplaceInput);
 		
-		uiT.pushButton_cancel 	-> setVisible(FALSE);
+		uiT.pushButton_cancel 	-> setVisible(false);
         resize(sizeHint());
 	}
 	if (type == "QtWarning")
 	{
-		uiT.lineEdit_userInput 	-> setVisible(FALSE);
+		uiT.lineEdit_userInput 	-> setVisible(false);
 		uiT.label_warning 	-> setVisible(true);
 		uiT.label_warning 	-> setPixmap(QPixmap(":/luckyPrefix/warning.png"));
 		uiT.label_message 	-> setText(ReplaceInput);
 		
-		uiT.pushButton_cancel 	-> setVisible(FALSE);
+		uiT.pushButton_cancel 	-> setVisible(false);
         resize(sizeHint());
 	}
 	if (type == "QtCritical")
 	{
-		uiT.lineEdit_userInput 	-> setVisible(FALSE);
+		uiT.lineEdit_userInput 	-> setVisible(false);
 		uiT.label_warning 	-> setVisible(true);
 		uiT.label_warning 	-> setPixmap(QPixmap(":/luckyPrefix/cancel.png"));
 		uiT.label_message 	-> setText(ReplaceInput);
 		
-		uiT.pushButton_cancel 	-> setVisible(FALSE);
+		uiT.pushButton_cancel 	-> setVisible(false);
         resize(sizeHint());
 	}
 	if (type == "QtQuestion")
 	{
-		uiT.lineEdit_userInput 	-> setVisible(FALSE);
+		uiT.lineEdit_userInput 	-> setVisible(false);
 		uiT.label_warning 	-> setVisible(true);
 		uiT.label_warning 	-> setPixmap(QPixmap(":/luckyPrefix/about.png"));
 		uiT.label_message 	-> setText(ReplaceInput);

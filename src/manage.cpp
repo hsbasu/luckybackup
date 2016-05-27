@@ -79,7 +79,7 @@ manageDialog::manageDialog (QDialog *parent) : QDialog (parent)
     uiG.setupUi(this);
     
     calcdiffthread = new CalcDiffThread(this);
-    abortCalcThread = FALSE;
+    abortCalcThread = false;
     connect( calcdiffthread, SIGNAL(updateViewer(const QString, const bool)), this, SLOT(refreshDifWindow(const QString &, const bool &)) );
     connect( calcdiffthread, SIGNAL(terminated()), this, SLOT(calcDiffEnd()));
     connect( calcdiffthread, SIGNAL(finished()), this, SLOT(calcDiffEnd()));
@@ -192,7 +192,7 @@ void manageDialog::fixGui()
     deleteVisible = true;
     restoreVisible = true;
     
-    syncTYPE = FALSE;	// This will become true if it is a sync task
+    syncTYPE = false;	// This will become true if it is a sync task
     
     // Destination - Do all things needed to display the current snapshot only.
     QDir CurrentSnapshotDir(CurrentSnapshotDirectory);
@@ -226,13 +226,13 @@ void manageDialog::fixGui()
     // if a snapshot is not selected 
     if (CurrentSnapshotString == "")
     {
-        viewLogVisible = FALSE;
-        deleteVisible = FALSE;
-        restoreVisible = FALSE;
+        viewLogVisible = false;
+        deleteVisible = false;
+        restoreVisible = false;
 
         if (!Operation[currentOperation] -> GetTypeSync())
         {
-            destVisible = FALSE;
+            destVisible = false;
             uiG.label_destError -> setText("<font color=magenta>" + tr("Please select a snapshot from the list",
                                         "Information message") + "</font>");
         }
@@ -240,7 +240,7 @@ void manageDialog::fixGui()
     
     // if "not available" is selected
     if (CurrentSnapshotString == "not available")
-        viewLogVisible = FALSE;	//disable the "view log" button
+        viewLogVisible = false;	//disable the "view log" button
 
     // _______________________________ source & destination directories checks ____________________________________________
     // ___________________________________________________________________________________________________________________
@@ -252,7 +252,7 @@ void manageDialog::fixGui()
     
     if (sourceRemote)		// If remote is used for source
     {
-        //sourceVisible = FALSE;
+        //sourceVisible = false;
         //uiG.label_sourceError -> setText("<font color=magenta>" + tr("Display of remote places is not supported",
         //                                "Information message") + "</font>");
         
@@ -310,12 +310,12 @@ void manageDialog::fixGui()
     }
     if (destRemote)			// If remote is used for destination
     {
-        //        destVisible = FALSE;
+        //        destVisible = false;
                 
         // ********************** WARNING - Change this when you figure out a way to display/delete remote places *************************************
         //        uiG.label_destError -> setText("<font color=magenta>" + tr("Display of remote places is not supported",
         //                                        "Information message") + "</font>");
-        deleteVisible = FALSE;		//disable the delete button
+        deleteVisible = false;		//disable the delete button
         
         // ~~~~~~~~~~~~~~~~ Juan's patch for dest~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         QStringList remoteArgs;
@@ -378,35 +378,35 @@ void manageDialog::fixGui()
     // If source does not exist (and is not remote)
     if ((!sourceFile.exists()) && (!sourceRemote))
     {
-        sourceVisible = FALSE;
+        sourceVisible = false;
         uiG.label_sourceError -> setText("<font color=red>" + tr("This directory does not exist") + "</font>");
     }
     // If destination does not exist
     if ((!destFile.exists()) && !(destRemote))
     {
-        destVisible = FALSE;
+        destVisible = false;
         uiG.label_destError -> setText("<font color=red>" + tr("This directory does not exist",
                                         "Information message") + "</font>");
         if (CurrentSnapshotString == "not available")
-            deleteVisible = FALSE;	//disable the delete button
-        restoreVisible = FALSE;	//disable the restore button
+            deleteVisible = false;	//disable the delete button
+        restoreVisible = false;	//disable the restore button
     }
     // If source does not have read/enter permissions
     if (((!sourceFile.isReadable()) || (!sourceFile.isExecutable())) && (!sourceRemote) && (sourceFile.exists()))
     {
-        sourceVisible = FALSE;
+        sourceVisible = false;
         uiG.label_sourceError -> setText("<font color=red>" + tr("I do not have sufficient permissions to read this directory",
                                         "Information message") + "</font>");
-        restoreVisible = FALSE;	//disable the restore button
+        restoreVisible = false;	//disable the restore button
     }
     // If destination does not have read/enter permissions
     if (((!destFile.isReadable()) || (!destFile.isExecutable())) && (!destRemote) && (destFile.exists()))
     {
-        destVisible = FALSE;
+        destVisible = false;
         uiG.label_destError -> setText("<font color=red>" + tr("I do not have sufficient permissions to read this directory",
                                         "Information message") + "</font>");
-        deleteVisible = FALSE;		//disable the delete button
-        restoreVisible = FALSE;	//disable the restore button
+        deleteVisible = false;		//disable the delete button
+        restoreVisible = false;	//disable the restore button
     }
 
     // _______________________________ source & destination directories checks END____________________________________________
@@ -419,13 +419,13 @@ void manageDialog::fixGui()
         uiG.label_destination -> setText (tr("sync dir A","full phrase: sync dir a: <DIRECTORY_A>")+ ": ");
         uiG.label_source -> setText (tr("sync dir B","full phrase: sync dir a: <DIRECTORY_b>")+ ": ");
         uiG.pushButton_viewLog -> setToolTip(tr("View the logfile of the selected sync task","'view log' pushbutton tooltip"));
-        deleteVisible = FALSE;
-        restoreVisible = FALSE;
-        uiG.checkBox_viewSource -> setVisible(FALSE);
+        deleteVisible = false;
+        restoreVisible = false;
+        uiG.checkBox_viewSource -> setVisible(false);
     }
 
     // hide or show the treebrowsers - textbrowser
-    uiG.textBrowser_snapshot -> setVisible (FALSE);
+    uiG.textBrowser_snapshot -> setVisible (false);
     uiG.treeView_browser -> setVisible (destVisible);
     uiG.label_destError -> setVisible (!destVisible);
     hideSourceStuff();
@@ -436,7 +436,7 @@ void manageDialog::fixGui()
 
     // Enable the delete button only for the first snapshot in list
     if (CurrentSnapshotNo > 0)
-        deleteVisible = FALSE;
+        deleteVisible = false;
     
     uiG.pushButton_delete -> setEnabled(deleteVisible);
     uiG.pushButton_restore -> setEnabled(restoreVisible);
@@ -451,10 +451,10 @@ void manageDialog::hideSourceStuff()
     
     if (boxState)
     {
-        uiG.label_source -> setVisible(FALSE);
-        uiG.lineEdit_source -> setVisible(FALSE);
-        uiG.label_sourceError -> setVisible (FALSE);
-        uiG.treeView_source -> setVisible (FALSE);
+        uiG.label_source -> setVisible(false);
+        uiG.lineEdit_source -> setVisible(false);
+        uiG.label_sourceError -> setVisible (false);
+        uiG.treeView_source -> setVisible (false);
     }
     else
     {
@@ -502,7 +502,7 @@ void manageDialog::calculateDifferences()
 	if (calcdiffthread -> isRunning())
 	{
 		uiG.textBrowser_snapshot -> setText (tr("Please wait until the thread is terminated"));
-		uiG.pushButton_calculate_diffs -> setEnabled(FALSE);
+		uiG.pushButton_calculate_diffs -> setEnabled(false);
 		calcdiffthread -> setAbort(true);
 		abortCalcThread = true;
 		return;
@@ -511,20 +511,20 @@ void manageDialog::calculateDifferences()
 	// change the gui a bit
 	if (syncTYPE)
 	{
-		uiG.label_source -> setVisible(FALSE);
-		uiG.lineEdit_source -> setVisible(FALSE);
-		uiG.treeView_source -> setVisible (FALSE);
+		uiG.label_source -> setVisible(false);
+		uiG.lineEdit_source -> setVisible(false);
+		uiG.treeView_source -> setVisible (false);
 	}
-	uiG.treeView_browser -> setVisible (FALSE);
+	uiG.treeView_browser -> setVisible (false);
 	uiG.textBrowser_snapshot -> setVisible (true);
 	
 	if (!snapCalculated.at(CurrentSnapshotNo))	// if the differences have not been calculated yet
 	{
 		//disable some gui stuff during calculations
-		uiG.pushButton_delete -> setEnabled(FALSE);
-		uiG.pushButton_restore -> setEnabled(FALSE);
-		uiG.pushButton_viewLog -> setEnabled(FALSE);
-		uiG.pushButton_cancel -> setEnabled(FALSE);
+		uiG.pushButton_delete -> setEnabled(false);
+		uiG.pushButton_restore -> setEnabled(false);
+		uiG.pushButton_viewLog -> setEnabled(false);
+		uiG.pushButton_cancel -> setEnabled(false);
 		uiG.pushButton_calculate_diffs -> setText(tr("STOP"));
 		uiG.pushButton_calculate_diffs -> setToolTip(tr("Stop calculations NOW"));
 		
@@ -549,8 +549,8 @@ void manageDialog::calcDiffEnd()
 	else
 		snapCalculated.replace(CurrentSnapshotNo, true );
 	
-	abortCalcThread = FALSE;
-	calcdiffthread -> setAbort(FALSE);
+	abortCalcThread = false;
+	calcdiffthread -> setAbort(false);
 	
 	// re-enable gui stuff
 	uiG.pushButton_delete -> setEnabled(deleteVisible);
@@ -609,7 +609,7 @@ void manageDialog::updateSnapshots()
 			uiG.listWidget_dates -> addItem (currentSnapTime.toString("yyyy/MM/dd - hh:mm:ss"));
 		
 		calculatedDifferences.append("");
-		snapCalculated.append(FALSE);
+		snapCalculated.append(false);
 		
 		count++;
 	}
@@ -618,7 +618,7 @@ void manageDialog::updateSnapshots()
 	{
 		uiG.listWidget_dates -> addItem (tr("not available","refers to a date-time"));
 		calculatedDifferences.append("");
-		snapCalculated.append(FALSE);
+		snapCalculated.append(false);
 	}
 
 	// select the latest snapshot

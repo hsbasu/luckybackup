@@ -41,13 +41,13 @@ void luckyBackupWindow::InitializeVariables()
 {    
     TotalOperations = 0;
     currentOperation=-1;
-    NOWexecuting = FALSE;
+    NOWexecuting = false;
     guiModeNormal = true;
-    modifyOK = FALSE;
+    modifyOK = false;
     savedProfile = true;
-    taskClicked = FALSE;
-    taskChanged = FALSE;
-    GoBack = FALSE;
+    taskClicked = false;
+    taskChanged = false;
+    GoBack = false;
     InfoData = "";
     InfoInt = 0;
     defaultLanguage = "en";
@@ -57,13 +57,13 @@ void luckyBackupWindow::InitializeVariables()
     IsVisibleProfileComboToolbar = true;
     IsVisibleProfileToolbar = true;
     IsVisibleProfileStartToolbar = true;
-    IsVisibleToolbarText = FALSE;
+    IsVisibleToolbarText = false;
     IsVisibleInfoWindow = true;
-    validation = FALSE;
+    validation = false;
     deletedTaskNames.clear();
     saveOrNot = true;
     manualChapter = "";
-    showOnlyErrors = FALSE;
+    showOnlyErrors = false;
 
     // Running desktop environment
     // kde
@@ -71,7 +71,7 @@ void luckyBackupWindow::InitializeVariables()
     if (QString(isKDE) != "")
         KDErunning = true;
     else
-        KDErunning = FALSE;
+        KDErunning = false;
     // if LB is run using kdesu the environmental variable does not work
     // so we will check if kdesud is running as a process...
     // It is commented because the super use cannot use eg the tray notification anyway, so he/she will use the qt stuff
@@ -299,7 +299,7 @@ void luckyBackupWindow::createProfileCombo()
 
     GoBack = true;	// the next line will execute function setCurrentProfile. set true to avoid that
     ui.comboBox_profile -> setCurrentIndex(currentProfileIndex);
-    GoBack = FALSE;
+    GoBack = false;
 
 }
 
@@ -466,7 +466,7 @@ bool luckyBackupWindow::checkOperationList()
         }
         
         ui.textBrowser_info -> setText(message);
-        return FALSE;
+        return false;
     }
     return true;
 }
@@ -551,7 +551,7 @@ bool luckyBackupWindow::loadCurrentProfile()
         loadData.append("<font color=red><b>" + tr("loading failed","information window message") + "</font></b><br>" +
                 tr("Unable to open profile","information window message. full phrase is 'Unable to open profile <PROFIENAME>'")+" <b>" + profileName + "</b><br><font color=red>"
                 + profile.errorString()) +"</font>";
-        return FALSE;					//do nothing more
+        return false;					//do nothing more
     }
 
     if (loadOK == 2)			// if it is not a valid profile
@@ -559,12 +559,12 @@ bool luckyBackupWindow::loadCurrentProfile()
         loadData.append("<font color=red><b>" + tr("loading failed","information window message") + "</font></b><br>" +
         tr("profile ","information window message. Full phrase is: 'profile <PROFILENAME> is not valid for luckybackup version:X.Y'. BEWARE of the whitespace in the end")
         + "<b>" + profileName + "</b> " + tr("is not valid for","information window message. Full phrase is: 'profile <PROFILENAME> is not valid for luckybackup version:X.Y") + " " + appName +", "+ tr("version:","information window message. Full phrase is: 'profile <PROFILENAME> is not valid for luckybackup version:X.Y") + countStr.setNum(appVersion));
-        return FALSE;	//do nothing more
+        return false;	//do nothing more
     }
 
     // if all went ok (profile loaded) - loadOK == 0
     savedProfile = true;
-    ui.actionSave -> setEnabled(FALSE);
+    ui.actionSave -> setEnabled(false);
     currentOperation = 0;
     while (currentOperation < TotalOperations)	// fill in the task list
     {
@@ -636,9 +636,9 @@ bool luckyBackupWindow::saveCurrentProfile()
             saveData.append(tr("profile","Information window message. Full phrase: 'profile <PROFILENAME> could not be saved'"));
             
         saveData.append(" <b>" + profileName + "</b> "+ tr("could not be saved","Information window message. Full phrase: '(default) profile <PROFILENAME> could not be saved'") + "<br>" +	"<font color=red>"+ profile.errorString() + "</font>");
-        savedProfile = FALSE;
+        savedProfile = false;
         ui.actionSave -> setEnabled(true);
-        return FALSE;
+        return false;
     }
 
     saveData.append(tr("profile","Information window message. Full phrase: 'profile <PROFILENAME> saved successfully'") + " <b>" + profileName + "</b> <font color=green>" + tr("saved successfully","Information window message. Full phrase: 'profile <PROFILENAME> saved successfully'") + " !!</font>");
@@ -672,7 +672,7 @@ bool luckyBackupWindow::saveCurrentProfile()
     deletedTaskNames.clear();
     
     savedProfile = true;			//change profile status to "saved"
-    ui.actionSave -> setEnabled(FALSE);
+    ui.actionSave -> setEnabled(false);
     
     return true;
 }
@@ -712,7 +712,7 @@ int luckyBackupWindow::createCurrentProfile()
         createData.append("<br><font color=magenta>" + tr("Use the \"add\" button on the right to get started","Please keep the add word inside quotes") + "</font><br>");
         createProfileCombo();	// update the profile combobox with all existing profiles
         savedProfile = true;			//change profile status to "saved"
-        ui.actionSave -> setEnabled(FALSE);
+        ui.actionSave -> setEnabled(false);
         return 1;		// Profile created successfully
     }
     return 0;	// profile already exists, just proceed
@@ -766,7 +766,7 @@ bool luckyBackupWindow::saveSettings()
     if (!settingsfile.open(QIODevice::WriteOnly))	// if the settings file cannot be saved (or fails to create)
     {
         settingsfile.close();
-        return FALSE;
+        return false;
     }
 
     showOnlyErrors = ui.checkBox_onlyShowErrors -> isChecked();
@@ -818,7 +818,7 @@ bool luckyBackupWindow::loadSettings()
     if (!settingsfile.open(QIODevice::ReadOnly))        //if the settings file cannot be opened
     {
         settingsfile.close();
-        return FALSE;
+        return false;
     }
 
     QTextStream in(&settingsfile);
@@ -854,7 +854,7 @@ bool luckyBackupWindow::loadSettings()
     if ( (tempAppName != appName) || (tempAppVersion < validSettingsVersion) || (tempFileType != "luckybackup_settings_file") )
     {
         settingsfile.close();
-        return FALSE;
+        return false;
     }
 
     // Read all lines until the [Settings_file_end] tag or end of file if invalid
@@ -894,7 +894,7 @@ bool luckyBackupWindow::loadSettingsQV()
     if (!settingsfile.open(QIODevice::ReadOnly))        //if the settings file cannot be opened
     {
         settingsfile.close();
-        return FALSE;
+        return false;
     }
 
     QDataStream in(&settingsfile);
@@ -916,7 +916,7 @@ bool luckyBackupWindow::loadSettingsQV()
     if ( (tempAppName != appName) || (tempAppVersion < validSettingsVersion) || (tempFileType != "luckybackup_settings_file") )
     {
         settingsfile.close();
-        return FALSE;
+        return false;
     }
 
     in>>v;	vString = v.toString();	in >> v;	//input a label in vString and real data in v
@@ -956,7 +956,7 @@ bool luckyBackupWindow::arrangeLogSnap(bool PorT,QString ActionTaken,QString Nam
     // ActionTaken can become "rename", "delete" ,"duplicate"
     // NameToUse is the new name of the current profile if rename/duplicate or the file to be deleted or the old name of the task that was renamed/deleted
     
-    bool whatToReturn1 = FALSE, whatToReturn2 = FALSE;
+    bool whatToReturn1 = false, whatToReturn2 = false;
     QStringList filtersSnapLog, snapListFiles, logsListFiles;
     if (PorT)       // we're talking about a profile
         filtersSnapLog << profileName + "-*";       // profileName is the old profile name

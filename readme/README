@@ -42,7 +42,7 @@ Backup any directory (source) to another (destination).
 luckyBackup copies over only the changes you've made to the source directory and nothing more.
 You will be surprised when your huge source is backed up in seconds (after the first time !!).
 
-Whatever changes you make to the source iclude adding, moving, deleting, modifing files / directories etc, will have the same effect to the destination.
+Whatever changes you make to the source include adding, moving, deleting, modifing files / directories etc, will have the same effect to the destination.
 
 Owner, group, time stamps, links and permissions of files are preserved.
 
@@ -120,7 +120,7 @@ Installation from Source
 
 IMPORTANT: luckyBackup copies files preserving their permissions, so you should run it with su privileges  if you want to transfer data that a normal user has no authorization on.
 
-Dependancies
+Dependencies
  libqtcore4 (>= 4.4)
  libqtgui4 (>= 4.4)
  libc6 or glibc (>= 2.7-1)

@@ -36,7 +36,7 @@
 // class commandline Constructor=================================================================================================
 commandline::commandline()
 {
-    writeToLog=FALSE;
+    writeToLog=false;
     errorsFound = 0;	// Total number of errors from all tasks (in CLI, only 1 error per task is allowed !!)
     filesTransfered = 0;    //total bytes transferred during profile execution
     bytesTransfered = 0;    //total bytes transferred during profile execution
@@ -128,7 +128,7 @@ void commandline::rsyncIT()
           
         //if --skip-critical is given as argument and the task is CRITICAL
         if ( (Operation[currentOperation] -> GetCRITICAL()) && (SkipCritical) )	
-            Operation[currentOperation] -> SetPerform(FALSE);	//don't perform this operation
+            Operation[currentOperation] -> SetPerform(false);	//don't perform this operation
 
         if ( (Operation[currentOperation] -> GetPerform()) || (Operation[currentOperation] -> GetByPassWARNING()) )
         {
@@ -457,7 +457,7 @@ void commandline::rsyncIT()
                 else
                 {
                     cout << "\nError writing to log:" << QString(logfilename.toUtf8()).toStdString();
-                    writeToLog = FALSE;
+                    writeToLog = false;
                 }
                 
                 // reset the error counter
@@ -472,7 +472,7 @@ void commandline::rsyncIT()
             
             //pre-task commands execution ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~        
             count = 0;
-            bool StopTaskExecution = FALSE;
+            bool StopTaskExecution = false;
             
             while ( (Operation[currentOperation] -> GetExecuteBeforeListSize() > count) && (!StopTaskExecution) )
             {
@@ -487,7 +487,7 @@ void commandline::rsyncIT()
                 
                 while ( (RunTry < repeatTaskOnFailMax+1) && (runNOW) )
                 {
-                    runNOW = FALSE;  // do NOT run this another time if it goes ok
+                    runNOW = false;  // do NOT run this another time if it goes ok
                     
                     if (RunTry > 0)
                     {
@@ -558,7 +558,7 @@ void commandline::rsyncIT()
                     logFileUpdate("rsync-starting-backup", "", 0);
 
                 // Create the destination if it does not exist
-                bool DestCreateFail = FALSE;	 // This will become true if destination does not exist and cannot be created
+                bool DestCreateFail = false;	 // This will become true if destination does not exist and cannot be created
                 
                 rsyncArguments = AppendArguments(Operation[currentOperation]);	//set rsync arguments
                 
@@ -605,7 +605,7 @@ void commandline::rsyncIT()
                         runNOW = true;  // run it this time
                         while ( (RunTry < repeatTaskOnFailMax+1) && (runNOW) )
                         {
-                            runNOW = FALSE;  // do NOT run this another time if it goes ok
+                            runNOW = false;  // do NOT run this another time if it goes ok
                             if (RunTry > 0)
                             {
                                 cout << "\n Repeating execution of rsync command due to failure -  run " << RunTry+1 << " of " << repeatTaskOnFailMax+1 << "\n\n";
@@ -737,7 +737,7 @@ void commandline::rsyncIT()
                             runNOW = true;  // run it this time
                             while ( (RunTry < repeatTaskOnFailMax+1) && (runNOW) )
                             {
-                                runNOW = FALSE;  // do NOT run this another time if it goes ok
+                                runNOW = false;  // do NOT run this another time if it goes ok
                                 if (RunTry > 0)
                                 {
                                     cout << "\n Repeating execution of rsync command due to failure -  run " << RunTry+1 << " of " << repeatTaskOnFailMax+1 << "\n\n";
@@ -798,7 +798,7 @@ void commandline::rsyncIT()
                             runNOW = true;  // run it this time
                             while ( (RunTry < repeatTaskOnFailMax+1) && (runNOW) )
                             {
-                                runNOW = FALSE;  // do NOT run this another time if it goes ok
+                                runNOW = false;  // do NOT run this another time if it goes ok
                                 if (RunTry > 0)
                                 {
                                     cout << "\n Repeating execution of post-rsync command due to failure -  run " << RunTry+1 << " of " << repeatTaskOnFailMax+1 << "\n\n";
@@ -913,7 +913,7 @@ void commandline::thats_all()
                 ||
             ((emailSchedule) && (!NoQuestions)) )  // do not send if the condition "scheduled" is checked
                                                                 // & --no-questions is NOT given as argument
-            send = FALSE;
+            send = false;
         
         // ***** gui mode and "schedule" is covered in executenow.cpp ******
         
@@ -922,7 +922,7 @@ void commandline::thats_all()
             cout << "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
             cout << "trying to send an email\n";
             cout << "       . . .\n\n";
-            cout << sendEmailNow(FALSE).toStdString();
+            cout << sendEmailNow(false).toStdString();
         }
     }
 }

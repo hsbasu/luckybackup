@@ -43,7 +43,7 @@
 
 #include "qurl.h"
 #include "qdir.h"
-#include <limits.h>
+#include "limits.h"
 
 QT_BEGIN_NAMESPACE
 

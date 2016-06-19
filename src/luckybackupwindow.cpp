@@ -23,7 +23,7 @@ cpp file that does all stuff needed when a signal is transmitted (eg button pres
 project version	: Please see "main.cpp" for project version
 
 developer       : luckyb 
-last modified   : 22 May 2016
+last modified   : 19 Jun 2016
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -741,6 +741,8 @@ void luckyBackupWindow::AlsoCreateRestore()
     //Change its name, source, destination, update checkbox, Remote Host radiobuttons
     Operation[currentOperation] -> SetName ("RESTORE - " + (Operation[currentOperation] -> GetName()));
     Operation[currentOperation] -> SetOptionsUpdate(false);
+    Operation[currentOperation] -> SetOptionsDelete(false);
+    Operation[currentOperation] -> SetKeepSnapshots(1);
     Operation[currentOperation] -> SetRemoteDestination(Operation[oldCurrentOperation]-> GetRemoteSource());
     Operation[currentOperation] -> SetRemoteSource(Operation[oldCurrentOperation]-> GetRemoteDestination());
     QString sourceDir	= Operation[oldCurrentOperation] -> GetDestination();
@@ -773,7 +775,7 @@ void luckyBackupWindow::AlsoCreateRestore()
         tr("You have asked for a RESTORE task to be created","'create restore' message line 1/4")+"<br><br>"+
         tr("Please have a good look at the following task properties dialog","'create restore' message line 2/4")+" <br>"+
         tr("and change anything you wish before proceeding","'create restore' message line 3/4")+" <br><br>"+
-        tr("Especially check 'Task name', 'source', 'destination' & 'skip newer destination files' checkbox (advanced)","'create restore' message line 4/4")+"<br>",
+        tr("Please check 'Task name', 'source', 'destination' and especially the 'Delete files on the destination'' & 'skip newer destination files' check-boxes (advanced)","'create restore' message line 4/4")+"<br>",
                 this);
     textdialogW.exec();
 

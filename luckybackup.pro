@@ -1,16 +1,14 @@
-QMAKEVERSION = $$[QMAKE_VERSION]
-ISQT4 = $$find(QMAKEVERSION, ^[2-9])
-isEmpty( ISQT4 ) {
-error("Use the qmake include with Qt4.4 or greater, on Debian that is qmake-qt4");
-}
 #check Qt version
-QT_VERSION = $$[QT_VERSION]
-QT_VERSION = $$split(QT_VERSION, ".")
-QT_VER_MAJ = $$member(QT_VERSION, 0)
-QT_VER_MIN = $$member(QT_VERSION, 1)
 
 message( "Qt version" $$[QT_VERSION] )
 message( "Qmake version" $$[QMAKE_VERSION] )
+
+
+lessThan(QT_MAJOR_VERSION, 5) {
+    lessThan(QT_MINOR_VERSION, 6) {
+      error("Sorry, you need at least Qt version 4.6.0")
+        }
+    }
 
 QMAKE_STRIP = echo
 
@@ -45,7 +43,7 @@ INSTALLS += target menu debianmenu pixmap documentation manpage translations lic
 system(gzip -c manpage/luckybackup.8 > manpage/luckybackup.8.gz)
 QMAKE_CLEAN = Makefile $${TARGET} manpage/luckybackup.8.gz
 
-greaterThan(QT_VER_MAJ, 4) {
+greaterThan(QT_MAJOR_VERSION, 4) {
     QT += widgets
 } 
 

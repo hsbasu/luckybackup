@@ -33,7 +33,7 @@
 #include <QProcess>
 #include <QTextStream>
 
-#include <qurlinfo.h>
+#include "qurlinfo.h"
 
 class RsyncEntry;
 class RsyncDirLister;

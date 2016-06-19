@@ -121,8 +121,8 @@ Installation from Source
 IMPORTANT: luckyBackup copies files preserving their permissions, so you should run it with su privileges  if you want to transfer data that a normal user has no authorization on.
 
 Dependencies
- libqtcore4 (>= 4.4)
- libqtgui4 (>= 4.4)
+ libqtcore4 (>= 4.6)
+ libqtgui4 (>= 4.6)
  libc6 or glibc (>= 2.7-1)
  libgcc1 (>= 4.1.1)
  libstdc++6 (>= 4.1.1)

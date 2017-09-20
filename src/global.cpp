@@ -22,7 +22,7 @@ file containing all variables & functions used globaly
 project version    : Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 27 May 2016
+last modified      : 28 Jul 2016
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -448,7 +448,7 @@ bool check_dirs()
         CheckedDataCLI.prepend("\n		(Have in mind that checks are not performed for remote data)\n\n"
         "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
         CheckedDataCLI.prepend("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
-        "		All data declared apear to be ok - You are ready to go !!"
+        "		All data declared appears to be ok - You are ready to go !!"
         "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
     }
     else			//else prepend the following

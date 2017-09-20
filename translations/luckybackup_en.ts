@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="en_US" sourcelanguage="en">
+<TS version="2.1" language="en_US" sourcelanguage="en">
 <context>
     <name>CalcDiffThread</name>
     <message>
-        <location filename="../src/calcDiffThread.cpp" line="+61"/>
+        <location filename="../src/calcDiffThread.cpp" line="+67"/>
         <source>Scanning destination</source>
         <translation type="unfinished"></translation>
     </message>
@@ -75,7 +75,7 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>These will be transfered over at the source during RESTORE</source>
+        <source>These will be transferred over at the source during RESTORE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -102,7 +102,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/global.cpp" line="+1145"/>
+        <location filename="../src/global.cpp" line="+1334"/>
         <source>The task list is empty</source>
         <translation type="unfinished"></translation>
     </message>
@@ -513,14 +513,22 @@
     </message>
 </context>
 <context>
-    <name>aboutDialog</name>
+    <name>ReadLogFile</name>
     <message>
-        <location filename="../src/about.cpp" line="+65"/>
-        <source>using Qt4</source>
+        <location filename="../src/readLogFile.cpp" line="+56"/>
+        <source>Could not locate the logfile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+8"/>
+        <source>Could not open the logfile</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>aboutDialog</name>
+    <message>
+        <location filename="../src/about.cpp" line="+67"/>
         <source>Backup &amp; Sync Application</source>
         <translation type="unfinished"></translation>
     </message>
@@ -652,6 +660,16 @@
     </message>
     <message>
         <location line="+2"/>
+        <source>loh.tar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Code contributor for important fixes, structure improvement and port to Qt5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Jack Fink</source>
         <translation type="unfinished"></translation>
     </message>
@@ -746,8 +764,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-63"/>
-        <location line="+64"/>
+        <location line="-66"/>
+        <location line="+67"/>
         <source>Greek manual translator</source>
         <translation type="unfinished"></translation>
     </message>
@@ -771,16 +789,17 @@
     <message>
         <location line="+1"/>
         <location line="+3"/>
+        <location line="+3"/>
         <source>Portuguese gui translator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1"/>
+        <location line="-4"/>
         <source>Marcio Moraes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+6"/>
         <source>Julien Cynober</source>
         <translation type="unfinished"></translation>
     </message>
@@ -803,7 +822,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-16"/>
+        <location line="-144"/>
+        <source>using Qt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+122"/>
+        <source>António Correia</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>Aurelien Merckel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -850,17 +879,28 @@
     </message>
     <message>
         <location line="+1"/>
+        <location line="+51"/>
         <source>Arabic gui translator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="-49"/>
         <source>Adrian Murariu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Romanian gui translator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Angelescu Constantin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Romanian gui reviewer &amp; translator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -874,7 +914,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+9"/>
+        <source>Marcos Lans</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+15"/>
         <source>Javi Romero</source>
         <translation type="unfinished"></translation>
     </message>
@@ -894,7 +939,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-151"/>
+        <location line="-166"/>
         <source>Dimitris Kalamaras</source>
         <translation type="unfinished"></translation>
     </message>
@@ -904,12 +949,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+59"/>
+        <location line="+62"/>
         <source>Thomas Glatt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+16"/>
         <location line="+3"/>
         <source>French gui translator</source>
         <translation type="unfinished"></translation>
@@ -930,7 +975,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+27"/>
         <source>Matej Urbančič</source>
         <translation type="unfinished"></translation>
     </message>
@@ -991,12 +1036,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Manuel Meixide</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>Galician gui translator</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1021,7 +1061,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+2"/>
+        <source>Axel Rousseau</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Esperanto gui translator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Omar Anwar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+12"/>
         <source>Michele Dall&apos;Arno</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1189,7 +1244,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="-253"/>
+        <location filename="../src/about.cpp" line="-268"/>
         <source>luckyBackup is distributed under the terms of the &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU General Public License&lt;/a&gt;</source>
         <comment>Please leave the tags &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt; &amp; &lt;/a&gt; intact and surrounding the GNU General Public License !!</comment>
         <translation type="unfinished"></translation>
@@ -1201,7 +1256,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+81"/>
+        <location line="+84"/>
         <source>Thomas Janssen</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1216,12 +1271,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+27"/>
         <source>Francesco Braile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+30"/>
+        <location line="+33"/>
         <source>Andrej Znidarsic</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1242,7 +1297,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+38"/>
+        <location line="+44"/>
         <source>Tito Poquito</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1279,11 +1334,7 @@ p, li { white-space: pre-wrap; }
         <location line="+268"/>
         <location line="+14"/>
         <source>Use default</source>
-        <extracomment>This means &quot;use the default value for this field&quot;
-----------
-This means &quot;use the default value for this field&quot;
-----------
-This means &quot;use the default value for this field&quot;</extracomment>
+        <extracomment>This means &quot;use the default value for this field&quot;</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1471,7 +1522,7 @@ eg
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/emailDialog.cpp" line="+136"/>
+        <location filename="../src/emailDialog.cpp" line="+141"/>
         <source>The command field is empty</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1484,12 +1535,12 @@ eg
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+15"/>
         <source>manual/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+12"/>
         <source>Okay</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1522,7 +1573,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+27"/>
-        <location filename="../src/logDialog.cpp" line="+86"/>
+        <location filename="../src/logDialog.cpp" line="+90"/>
         <location line="+13"/>
         <source>close</source>
         <translation type="unfinished"></translation>
@@ -1541,7 +1592,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>luckyBackupWindow</name>
     <message>
-        <location filename="../src/executenow.cpp" line="+161"/>
+        <location filename="../src/executenow.cpp" line="+175"/>
         <source>commands output</source>
         <comment>output window label</comment>
         <translation type="unfinished"></translation>
@@ -1554,7 +1605,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+58"/>
-        <location filename="../src/functions.cpp" line="+219"/>
+        <location filename="../src/functions.cpp" line="+227"/>
         <source>Task list</source>
         <comment>task list label</comment>
         <translation type="unfinished"></translation>
@@ -1692,7 +1743,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+187"/>
+        <location line="+13"/>
+        <source>Total files transferred</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+174"/>
         <source>trying to send an email</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1955,21 +2011,15 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Especially check &apos;Task name&apos;, &apos;source&apos;, &apos;destination&apos; &amp; &apos;skip newer destination files&apos; checkbox (advanced)</source>
-        <comment>&apos;create restore&apos; message line 4/4</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/functions.cpp" line="+86"/>
-        <location filename="../src/luckybackupwindow.cpp" line="-432"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-433"/>
         <location line="+70"/>
         <location line="+14"/>
         <location line="+56"/>
         <location line="+85"/>
         <location line="+14"/>
-        <location line="+238"/>
-        <location line="+155"/>
+        <location line="+240"/>
+        <location line="+158"/>
         <location line="+269"/>
         <source>ERROR</source>
         <translation type="unfinished"></translation>
@@ -2126,7 +2176,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="-1159"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-1164"/>
         <source>super user</source>
         <comment>super user is the root user</comment>
         <translation type="unfinished"></translation>
@@ -2156,12 +2206,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+2"/>
-        <location line="+574"/>
+        <location line="+576"/>
         <source>The name you have entered contains only invalid characters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-560"/>
+        <location line="-562"/>
         <location line="+70"/>
         <location line="+156"/>
         <source>Profile</source>
@@ -2314,7 +2364,13 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+220"/>
+        <location line="+149"/>
+        <source>Please check &apos;Task name&apos;, &apos;source&apos;, &apos;destination&apos; and especially the &apos;Delete files on the destination&apos;&apos; &amp; &apos;skip newer destination files&apos; check-boxes (advanced)</source>
+        <comment>&apos;create restore&apos; message line 4/4</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+73"/>
         <source>Import Profile</source>
         <comment>this is a dialog title</comment>
         <translation type="unfinished"></translation>
@@ -2352,27 +2408,27 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+63"/>
+        <location line="+66"/>
         <source>Could not locate the file</source>
         <comment>full phrase: &apos;Could not locate the file &lt;FILENAME&gt;&apos;</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-319"/>
+        <location line="-324"/>
         <location line="+64"/>
-        <location line="+293"/>
+        <location line="+298"/>
         <source>You have reached the maximum limit of supported tasks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-356"/>
+        <location line="-361"/>
         <location line="+64"/>
-        <location line="+293"/>
+        <location line="+298"/>
         <source>You have to remove a task if you wish to add another !!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-208"/>
+        <location line="-211"/>
         <source>Select export directory</source>
         <comment>this is a dialog title for selecting a directory to export a profile to</comment>
         <translation type="unfinished"></translation>
@@ -2427,7 +2483,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+123"/>
+        <location line="+126"/>
         <source>Please select a task to modify first</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2646,12 +2702,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+15"/>
-        <source>Total files transfered</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+81"/>
+        <location line="+96"/>
         <source>ABORTED</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2980,7 +3031,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="-808"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-813"/>
         <source>Failed to duplicate profile</source>
         <comment>full phrase: &apos;Failed to duplicate profile &lt;PROFILENAME&gt;&apos;</comment>
         <translation type="unfinished"></translation>
@@ -3020,7 +3071,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+238"/>
+        <location line="+243"/>
         <source>Hide information window</source>
         <comment>hide/show information window button tooltip</comment>
         <translation type="unfinished"></translation>
@@ -3067,7 +3118,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
 <context>
     <name>manageDialog</name>
     <message>
-        <location filename="../src/manage.cpp" line="+95"/>
+        <location filename="../src/manage.cpp" line="+100"/>
         <source>profile</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3221,7 +3272,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
 <context>
     <name>manageWizard</name>
     <message>
-        <location filename="../src/manageWizard.cpp" line="+60"/>
+        <location filename="../src/manageWizard.cpp" line="+68"/>
         <source>not available</source>
         <comment>refers to a date-time</comment>
         <translation type="unfinished"></translation>
@@ -3488,7 +3539,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>modifyDialog</name>
     <message>
-        <location filename="../src/modifyDialog.cpp" line="+235"/>
+        <location filename="../src/modifyDialog.cpp" line="+246"/>
         <source>simple</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3593,7 +3644,7 @@ and mapping them at both ends.
         <source>Use numeric group and user IDs</source>
         <translation type="unfinished"></translation>
     </message>
-    <message utf8="true">
+    <message>
         <location line="+22"/>
         <source>This tells the receiving side to attempt super-user activities
 even if the receiving rsync wasn’t run by the super-user.
@@ -3610,24 +3661,12 @@ and copying devices via the --devices option.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+22"/>
-        <source>Try to backup open files in windows systems using vss (Only works on windows 2000 and upper)
-(--vss)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
+        <location line="+26"/>
         <source>Backup open files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+25"/>
-        <source>Restore backed-up windows permissions localized in nt-streams 
-(--restore-nt-streams)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+535"/>
+        <location line="+560"/>
         <location line="+10"/>
         <source>Repeat any command that fails, x times</source>
         <translation type="unfinished"></translation>
@@ -4306,36 +4345,19 @@ ATTENTION: check this if you really know what you&apos;re doing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+40"/>
-        <source>ERROR</source>
-        <comment>message box message</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+41"/>
         <source>Please specify the following before proceeding:</source>
         <comment>message box, message</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+14"/>
-        <location line="+10"/>
-        <location line="+13"/>
-        <location line="+18"/>
-        <location line="+18"/>
-        <location line="+9"/>
-        <source>ERROR</source>
-        <comment>message box message - line1</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-66"/>
+        <location line="+16"/>
         <source>That is not allowed because &apos;/&apos; does not have an actual name</source>
         <comment>message box message - line2</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-334"/>
+        <location line="-336"/>
         <source>Leave the box checked, to &lt;b&gt;STOP&lt;/b&gt; the execution of running task if this command exits with an error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4346,7 +4368,7 @@ ATTENTION: check this if you really know what you&apos;re doing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+332"/>
+        <location line="+334"/>
         <source>You have declared the &apos;/&apos; (root) directory as source and have NOT checked the &apos;Do NOT create extra directory&apos; box</source>
         <comment>message box message - line1</comment>
         <translation type="unfinished"></translation>
@@ -4395,13 +4417,7 @@ ATTENTION: check this if you really know what you&apos;re doing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+5"/>
-        <source>WARNING</source>
-        <comment>message box message - line1</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+6"/>
         <source>You have declared a destination that is part of the source directory structure</source>
         <comment>message box message - line1</comment>
         <translation type="unfinished"></translation>
@@ -4604,7 +4620,19 @@ Data ownership and permissions will NOT be preserved.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+114"/>
+        <location line="+81"/>
+        <source>Try to backup open files in windows systems using vss (Only works on windows 2003 and upper)
+(--vss)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+29"/>
+        <source>Restore backed-up windows permissions which are located in the NTFS Security Descriptor Stream 
+(--restore-nt-streams)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
         <source>Restore permissions</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4623,7 +4651,7 @@ Data ownership and permissions will NOT be preserved.
 <context>
     <name>patternEditor</name>
     <message>
-        <location filename="../src/patternEditor.cpp" line="+44"/>
+        <location filename="../src/patternEditor.cpp" line="+51"/>
         <location line="+89"/>
         <location line="+155"/>
         <source>directory :</source>
@@ -4862,7 +4890,7 @@ eg the contents of the directory &quot;/media/music/Album/&quot;</source>
 <context>
     <name>scheduleDialog</name>
     <message>
-        <location filename="../src/scheduleDialog.cpp" line="+137"/>
+        <location filename="../src/scheduleDialog.cpp" line="+147"/>
         <location line="+78"/>
         <source>Starting from scratch</source>
         <translation type="unfinished"></translation>
@@ -5609,7 +5637,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>textDialog</name>
     <message>
-        <location filename="../src/textDialog.cpp" line="+52"/>
+        <location filename="../src/textDialog.cpp" line="+56"/>
         <source>Enter the name of the new profile :</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5814,7 +5842,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/winDialog.cpp" line="+147"/>
+        <location filename="../src/winDialog.cpp" line="+154"/>
         <source>Select rsync command</source>
         <comment>file selection dialog title</comment>
         <translation type="unfinished"></translation>

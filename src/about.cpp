@@ -22,7 +22,7 @@
         project version   : Please see "main.cpp" for project version
 
         developer         : luckyb 
-        last modified     : 27 May 2016
+        last modified     : 18 Sep 2017
       ===============================================================================================================================
       ===============================================================================================================================
 */
@@ -63,10 +63,10 @@ void aboutDialog::setAbout()
     uiA.textBrowser_About -> setOpenExternalLinks(true);
 
     Text = 	"<p align=\"center\"><b>"+appName + " " + appVersionString +"</b> ("+
-        tr("using Qt4")+")" + "<br>" +
+        tr("using Qt")+")" + "<br>" +
         tr("Backup & Sync Application")+"<br><br>"
 
-        "(C) 2008-2014,	"+
+        "(C) 2008-2017,	"+
         tr("Loukas Avgeriou") +"<br><br>"
 
         "web:<br>"
@@ -268,6 +268,12 @@ void aboutDialog::setThanks()
         
         "<b>" + tr("Pin-hsien Li") + "</b><br>" +
         tr("Chinese (Taiwan) gui translator") + "<br><br>"
+        
+        "<b>" + tr("Axel Rousseau") + "</b><br>" +
+        tr("Esperanto gui translator") + "<br><br>"
+        
+                "<b>" + tr("Omar Anwar") + "</b><br>" +
+        tr("Arabic gui translator") + "<br><br>"
         
         "<b>" + tr("Javi Romero") + "</b><br>" +
         tr("v0.3 gui designer") + "<br><br>"

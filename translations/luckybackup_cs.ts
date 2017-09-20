@@ -413,7 +413,7 @@
         <location line="-137"/>
         <source>free</source>
         <comment>as in free disk space</comment>
-        <translation type="unfinished"/>
+        <translation>volné</translation>
     </message>
     <message>
         <location line="+8"/>

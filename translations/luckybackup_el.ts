@@ -1,8 +1,10 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="el" sourcelanguage="en" version="2.0">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0" language="el" sourcelanguage="en">
 <context>
     <name>CalcDiffThread</name>
     <message>
-        <location filename="../src/calcDiffThread.cpp" line="+61"/>
+        <location filename="../src/calcDiffThread.cpp" line="+67"/>
         <source>Scanning destination</source>
         <translation>Γίνεται ανάγνωση προορισμού</translation>
     </message>
@@ -73,6 +75,10 @@
     </message>
     <message>
         <location line="+1"/>
+        <source>These will be transferred over at the source during RESTORE</source>
+        <translation>Αυτά θα μεταφερθούν στην πηγή κατά τη διαδικασία ΑΝΑΚΤΗΣΗΣ</translation>
+    </message>
+    <message>
         <source>These will be transfered over at the source during RESTORE</source>
         <translation>Αυτά θα μεταφερθούν στην πηγή κατά τη διαδικασία ΑΝΑΚΤΗΣΗΣ</translation>
     </message>
@@ -100,7 +106,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/global.cpp" line="+1145"/>
+        <location filename="../src/global.cpp" line="+1334"/>
         <source>The task list is empty</source>
         <translation>Η λίστα με τις διαδικασίες είναι άδεια</translation>
     </message>
@@ -511,14 +517,26 @@
     </message>
 </context>
 <context>
+    <name>ReadLogFile</name>
+    <message>
+        <location filename="../src/readLogFile.cpp" line="+56"/>
+        <source>Could not locate the logfile</source>
+        <translation>Δεν μπόρεσα να βρω το αρχείο log</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Could not open the logfile</source>
+        <translation>Δεν μπόρεσα να ανοίξω το αρχείο log</translation>
+    </message>
+</context>
+<context>
     <name>aboutDialog</name>
     <message>
-        <location filename="../src/about.cpp" line="+65"/>
         <source>using Qt4</source>
         <translation>με χρήση Qt4</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location filename="../src/about.cpp" line="+67"/>
         <source>Backup &amp; Sync Application</source>
         <translation>Εφαρμογή για δημιουργία αντιγράφων ασφαλείας &amp; συγχρονισμού</translation>
     </message>
@@ -650,6 +668,16 @@
     </message>
     <message>
         <location line="+2"/>
+        <source>loh.tar</source>
+        <translation>loh.tar</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Code contributor for important fixes, structure improvement and port to Qt5</source>
+        <translation>Συνεισφορά με κώδικα αναφορικά με διόρθωση σφαλμάτων, βελτιώσεις στη δομή και μετάβαση σε Qt5</translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Jack Fink</source>
         <translation>Jack Fink</translation>
     </message>
@@ -744,8 +772,8 @@
         <translation>Stergios Prosiniklis</translation>
     </message>
     <message>
-        <location line="-63"/>
-        <location line="+64"/>
+        <location line="-66"/>
+        <location line="+67"/>
         <source>Greek manual translator</source>
         <translation>Μεταφραστής του εγχειριδίου στα Ελληνικά</translation>
     </message>
@@ -769,16 +797,17 @@
     <message>
         <location line="+1"/>
         <location line="+3"/>
+        <location line="+3"/>
         <source>Portuguese gui translator</source>
         <translation>Μεταφραστής του γραφικού περιβάλλοντος στα Πορτογαλικά</translation>
     </message>
     <message>
-        <location line="-1"/>
+        <location line="-4"/>
         <source>Marcio Moraes</source>
         <translation>Marcio Moraes</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+6"/>
         <source>Julien Cynober</source>
         <translation>Julien Cynober</translation>
     </message>
@@ -801,7 +830,17 @@
         <translation>Μεταφραστής του γραφικού περιβάλλοντος στα Ιταλικά</translation>
     </message>
     <message>
-        <location line="-16"/>
+        <location line="-144"/>
+        <source>using Qt</source>
+        <translation>με χρήση Qt</translation>
+    </message>
+    <message>
+        <location line="+122"/>
+        <source>António Correia</source>
+        <translation>António Correia</translation>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>Aurelien Merckel</source>
         <translation>Aurelien Merckel</translation>
     </message>
@@ -848,17 +887,28 @@
     </message>
     <message>
         <location line="+1"/>
+        <location line="+51"/>
         <source>Arabic gui translator</source>
         <translation>Μεταφραστής του γραφικού περιβάλλοντος στα Αραβικά</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="-49"/>
         <source>Adrian Murariu</source>
         <translation>Adrian Murariu</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Romanian gui translator</source>
+        <translation>Μεταφραστής του γραφικού περιβάλλοντος στα Ρουμανικά</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Angelescu Constantin</source>
+        <translation>Angelescu Constantin</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Romanian gui reviewer &amp; translator</source>
         <translation>Μεταφραστής του γραφικού περιβάλλοντος στα Ρουμανικά</translation>
     </message>
     <message>
@@ -872,7 +922,12 @@
         <translation>Tomas Vadina</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+9"/>
+        <source>Marcos Lans</source>
+        <translation>Marcos Lans</translation>
+    </message>
+    <message>
+        <location line="+15"/>
         <source>Javi Romero</source>
         <translation>Javi Romero</translation>
     </message>
@@ -892,7 +947,7 @@
         <translation>Σχεδιαστής του γραφικού περιβάλλοντος της έκδοσης 0.3</translation>
     </message>
     <message>
-        <location line="-151"/>
+        <location line="-166"/>
         <source>Dimitris Kalamaras</source>
         <translation>Δημήτρης Καλαμάρας</translation>
     </message>
@@ -902,12 +957,12 @@
         <translation>Αν δεν ήταν ο Δημήτρης και οι οδηγοί του, δεν θα είχα ξεκινήσει ποτέ αυτό το project</translation>
     </message>
     <message>
-        <location line="+59"/>
+        <location line="+62"/>
         <source>Thomas Glatt</source>
         <translation>Thomas Glatt</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+16"/>
         <location line="+3"/>
         <source>French gui translator</source>
         <translation>Μεταφραστής του γραφικού περιβάλλοντος στα Γαλλικά</translation>
@@ -928,7 +983,7 @@
         <translation>Alessio Ganci</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+27"/>
         <source>Matej Urbančič</source>
         <translation>Matej Urbančič</translation>
     </message>
@@ -989,12 +1044,11 @@
         <translation>Μεταφραστής του γραφικού περιβάλλοντος στα Βουλγαρικά</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Manuel Meixide</source>
         <translation>Manuel Meixide</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>Galician gui translator</source>
         <translation>Μεταφραστής του γραφικού περιβάλλοντος στα Γαλικιανά</translation>
     </message>
@@ -1019,7 +1073,22 @@
         <translation>Μεταφραστής του γραφικού περιβάλλοντος στα Κινέζικα (Ταϊβάν)</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+2"/>
+        <source>Axel Rousseau</source>
+        <translation>Axel Rousseau</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Esperanto gui translator</source>
+        <translation>Μεταφραστής του γραφικού περιβάλλοντος στα Εσπεράντο</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Omar Anwar</source>
+        <translation>Omar Anwar</translation>
+    </message>
+    <message>
+        <location line="+12"/>
         <source>Michele Dall&apos;Arno</source>
         <translation>Michele Dall&apos;Arno</translation>
     </message>
@@ -1162,7 +1231,7 @@
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'GRArial'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;GRArial&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -1191,7 +1260,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Άδεια</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="-253"/>
+        <location filename="../src/about.cpp" line="-268"/>
         <source>luckyBackup is distributed under the terms of the &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU General Public License&lt;/a&gt;</source>
         <comment>Please leave the tags &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt; &amp; &lt;/a&gt; intact and surrounding the GNU General Public License !!</comment>
         <translation>Το luckyBackup διανέμεται υπό τους όρους της &lt;a href=&quot;http://www.gnu.org/copyleft/gpl.html&quot; target=&quot;_blank&quot;&gt;GNU General Public License&lt;/a&gt;</translation>
@@ -1203,7 +1272,7 @@ p, li { white-space: pre-wrap; }
         <translation>Είναι &lt;b&gt;ελεύθερο λογισμικό&lt;/b&gt;: Μπορείτε να το αναδιανέμετε και/ή τροποποιήσετε υπό τους όρους της GNU General Public License όπως δημοσιεύτηκαν από το Free Software Foundation, έκδοση 3 της άδειας.</translation>
     </message>
     <message>
-        <location line="+81"/>
+        <location line="+84"/>
         <source>Thomas Janssen</source>
         <translation>Thomas Janssen</translation>
     </message>
@@ -1218,12 +1287,12 @@ p, li { white-space: pre-wrap; }
         <translation>Karsten Jaschultowski</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+27"/>
         <source>Francesco Braile</source>
         <translation>Francesco Braile</translation>
     </message>
     <message>
-        <location line="+30"/>
+        <location line="+33"/>
         <source>Andrej Znidarsic</source>
         <translation>Andrej Znidarsic</translation>
     </message>
@@ -1244,7 +1313,7 @@ p, li { white-space: pre-wrap; }
         <translation>Μεταφραστής του γραφικού περιβάλλοντος στα Τούρκικα</translation>
     </message>
     <message>
-        <location line="+38"/>
+        <location line="+44"/>
         <source>Tito Poquito</source>
         <translation>Tito Poquito</translation>
     </message>
@@ -1281,11 +1350,7 @@ p, li { white-space: pre-wrap; }
         <location line="+268"/>
         <location line="+14"/>
         <source>Use default</source>
-        <extracomment>This means &quot;use the default value for this field&quot;
-----------
-This means &quot;use the default value for this field&quot;
-----------
-This means &quot;use the default value for this field&quot;</extracomment>
+        <extracomment>This means &quot;use the default value for this field&quot;</extracomment>
         <translation>Χρήση προεπιλεγμένου</translation>
     </message>
     <message>
@@ -1475,7 +1540,7 @@ eg
         <translation>Ποτέ</translation>
     </message>
     <message>
-        <location filename="../src/emailDialog.cpp" line="+136"/>
+        <location filename="../src/emailDialog.cpp" line="+141"/>
         <source>The command field is empty</source>
         <translation>Το πεδίο εντολής είναι κενό</translation>
     </message>
@@ -1488,12 +1553,12 @@ eg
         <translation>luckyBackup - Βοήθεια</translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+15"/>
         <source>manual/</source>
         <translation>manual/</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+12"/>
         <source>Okay</source>
         <translation>Εντάξει</translation>
     </message>
@@ -1510,7 +1575,7 @@ eg
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Greek Arial'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Greek Arial&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -1530,7 +1595,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+27"/>
-        <location filename="../src/logDialog.cpp" line="+86"/>
+        <location filename="../src/logDialog.cpp" line="+90"/>
         <location line="+13"/>
         <source>close</source>
         <translation>κλείσιμο</translation>
@@ -1549,7 +1614,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>luckyBackupWindow</name>
     <message>
-        <location filename="../src/executenow.cpp" line="+161"/>
+        <location filename="../src/executenow.cpp" line="+175"/>
         <source>commands output</source>
         <comment>output window label</comment>
         <translation>έξοδος εντολών</translation>
@@ -1562,7 +1627,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+58"/>
-        <location filename="../src/functions.cpp" line="+219"/>
+        <location filename="../src/functions.cpp" line="+227"/>
         <source>Task list</source>
         <comment>task list label</comment>
         <translation>Λίστα εργασιών</translation>
@@ -1584,13 +1649,13 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+35"/>
         <source>Execution of profile</source>
-        <comment>full phrase: 'Execution of profile &lt;PROFILENAME&gt; finished'</comment>
+        <comment>full phrase: &apos;Execution of profile &lt;PROFILENAME&gt; finished&apos;</comment>
         <translation>Η εκτέλεση του προφίλ</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>finished</source>
-        <comment>full phrase: 'Execution of profile &lt;PROFILENAME&gt; finished'</comment>
+        <comment>full phrase: &apos;Execution of profile &lt;PROFILENAME&gt; finished&apos;</comment>
         <translation>τελείωσε</translation>
     </message>
     <message>
@@ -1700,7 +1765,12 @@ p, li { white-space: pre-wrap; }
         <translation>διαγραφή αρχείων</translation>
     </message>
     <message>
-        <location line="+187"/>
+        <location line="+13"/>
+        <source>Total files transferred</source>
+        <translation>Σύνολο αρχείων που μεταφέρθηκαν</translation>
+    </message>
+    <message>
+        <location line="+174"/>
         <source>trying to send an email</source>
         <translation>Προσπάθεια για αποστολή μηνύματος email</translation>
     </message>
@@ -1797,13 +1867,13 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+1"/>
         <source>&amp;Handbook</source>
-        <comment>full phrase: 'luckyBackup Handbook'</comment>
+        <comment>full phrase: &apos;luckyBackup Handbook&apos;</comment>
         <translation>&amp;Εγχειρίδιο</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;About</source>
-        <comment>full phrase: 'about luckyBackup'</comment>
+        <comment>full phrase: &apos;about luckyBackup&apos;</comment>
         <translation>&amp;Περί</translation>
     </message>
     <message>
@@ -1814,7 +1884,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+3"/>
         <source>include</source>
-        <comment>label of 'include' checkboxes</comment>
+        <comment>label of &apos;include&apos; checkboxes</comment>
         <translation>Διαθέσιμο</translation>
     </message>
     <message>
@@ -1910,7 +1980,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+1"/>
         <source>Exit</source>
-        <comment>exit button tooltip. full phrase is: 'exit luckybackup'</comment>
+        <comment>exit button tooltip. full phrase is: &apos;exit luckybackup&apos;</comment>
         <translation>Έξοδος από το</translation>
     </message>
     <message>
@@ -1947,37 +2017,36 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/luckybackupwindow.cpp" line="+775"/>
         <source>You have asked for a RESTORE task to be created</source>
-        <comment>'create restore' message line 1/4</comment>
+        <comment>&apos;create restore&apos; message line 1/4</comment>
         <translation>Ζητήσατε να δημιουργηθεί μια διαδικασία ΑΠΟΚΑΤΑΣΤΑΣΗΣ</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Please have a good look at the following task properties dialog</source>
-        <comment>'create restore' message line 2/4</comment>
+        <comment>&apos;create restore&apos; message line 2/4</comment>
         <translation>Παρακαλώ ρίξτε μια ματιά στο διάλογο με τις επιλογές της διαδικασίας</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>and change anything you wish before proceeding</source>
-        <comment>'create restore' message line 3/4</comment>
+        <comment>&apos;create restore&apos; message line 3/4</comment>
         <translation>και αλλάξτε ότι επιθυμείτε πριν προχωρήσετε</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Especially check &apos;Task name&apos;, &apos;source&apos;, &apos;destination&apos; &amp; &apos;skip newer destination files&apos; checkbox (advanced)</source>
-        <comment>'create restore' message line 4/4</comment>
+        <comment>&apos;create restore&apos; message line 4/4</comment>
         <translation>Κοιτάξτε ιδιαίτερα τα &apos;Όνομα διαδικασίας&apos;, &apos;πηγή&apos;, &apos;προορισμός&apos; &amp; &apos;παράβλεψε αρχεία που είναι νεότερα στον προορισμό&apos; κουτάκι (προχωρημένα)</translation>
     </message>
     <message>
         <location filename="../src/functions.cpp" line="+86"/>
-        <location filename="../src/luckybackupwindow.cpp" line="-432"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-433"/>
         <location line="+70"/>
         <location line="+14"/>
         <location line="+56"/>
         <location line="+85"/>
         <location line="+14"/>
-        <location line="+238"/>
-        <location line="+155"/>
+        <location line="+240"/>
+        <location line="+158"/>
         <location line="+269"/>
         <source>ERROR</source>
         <translation>ΣΦΑΛΜΑ</translation>
@@ -2004,31 +2073,31 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="-7"/>
         <source>Unable to open profile</source>
-        <comment>information window message. full phrase is 'Unable to open profile &lt;PROFIENAME&gt;'</comment>
+        <comment>information window message. full phrase is &apos;Unable to open profile &lt;PROFIENAME&gt;&apos;</comment>
         <translation>Ήταν αδύνατο να ανοιχθεί το προφίλ</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>is not valid for</source>
-        <comment>information window message. Full phrase is: 'profile &lt;PROFILENAME&gt; is not valid for luckybackup version:X.Y</comment>
+        <comment>information window message. Full phrase is: &apos;profile &lt;PROFILENAME&gt; is not valid for luckybackup version:X.Y</comment>
         <translation>δεν είναι έγκυρο για το</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>version:</source>
-        <comment>information window message. Full phrase is: 'profile &lt;PROFILENAME&gt; is not valid for luckybackup version:X.Y</comment>
+        <comment>information window message. Full phrase is: &apos;profile &lt;PROFILENAME&gt; is not valid for luckybackup version:X.Y</comment>
         <translation>έκδοση:</translation>
     </message>
     <message>
         <location line="+21"/>
         <source>profile</source>
-        <comment>info window message. full phrase: 'profile &lt;PROFILENAME&gt; loaded successfully'</comment>
+        <comment>info window message. full phrase: &apos;profile &lt;PROFILENAME&gt; loaded successfully&apos;</comment>
         <translation>το προφίλ</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>loaded successfully</source>
-        <comment>info window message. full phrase: 'profile &lt;PROFILENAME&gt; loaded successfully'</comment>
+        <comment>info window message. full phrase: &apos;profile &lt;PROFILENAME&gt; loaded successfully&apos;</comment>
         <translation>φόρτωσε επιτυχώς</translation>
     </message>
     <message>
@@ -2078,25 +2147,25 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/functions.cpp" line="-68"/>
         <source>default profile</source>
-        <comment>Information window message. Full phrase: 'default profile &lt;PROFILENAME&gt; could not be saved'.</comment>
+        <comment>Information window message. Full phrase: &apos;default profile &lt;PROFILENAME&gt; could not be saved&apos;.</comment>
         <translation>Το προεπιλεγμένο προφίλ</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>profile</source>
-        <comment>Information window message. Full phrase: 'profile &lt;PROFILENAME&gt; could not be saved'</comment>
+        <comment>Information window message. Full phrase: &apos;profile &lt;PROFILENAME&gt; could not be saved&apos;</comment>
         <translation>προφίλ</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>profile</source>
-        <comment>Information window message. Full phrase: 'profile &lt;PROFILENAME&gt; saved successfully'</comment>
+        <comment>Information window message. Full phrase: &apos;profile &lt;PROFILENAME&gt; saved successfully&apos;</comment>
         <translation>προφίλ</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>saved successfully</source>
-        <comment>Information window message. Full phrase: 'profile &lt;PROFILENAME&gt; saved successfully'</comment>
+        <comment>Information window message. Full phrase: &apos;profile &lt;PROFILENAME&gt; saved successfully&apos;</comment>
         <translation>αποθηκεύτηκε με επιτυχία</translation>
     </message>
     <message>
@@ -2114,13 +2183,13 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+13"/>
         <source>profile</source>
-        <comment>Information window message. Full phrase: 'profile &lt;PROFILENAME&gt; created successfully'</comment>
+        <comment>Information window message. Full phrase: &apos;profile &lt;PROFILENAME&gt; created successfully&apos;</comment>
         <translation>το προφίλ</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>created successfully</source>
-        <comment>Information window message. Full phrase: 'profile &lt;PROFILENAME&gt; created successfully'</comment>
+        <comment>Information window message. Full phrase: &apos;profile &lt;PROFILENAME&gt; created successfully&apos;</comment>
         <translation>δημιουργήθηκε επιτυχώς</translation>
     </message>
     <message>
@@ -2134,7 +2203,7 @@ p, li { white-space: pre-wrap; }
         <translation>Θέλετε να προχωρήσετε ούτως ή άλλως ?</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="-1159"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-1164"/>
         <source>super user</source>
         <comment>super user is the root user</comment>
         <translation>υπερ-χρήστης</translation>
@@ -2147,33 +2216,33 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+89"/>
         <source>Welcome to</source>
-        <comment>full phrase: 'Welcome to luckyBackup'</comment>
+        <comment>full phrase: &apos;Welcome to luckyBackup&apos;</comment>
         <translation>Καλώς ήλθατε στο</translation>
     </message>
     <message>
         <location line="+20"/>
         <source>English</source>
-        <comment>Do not translate this. Enter here the language of the translation in native characters instead. This is how your translation will appear under the 'language' menu.</comment>
+        <comment>Do not translate this. Enter here the language of the translation in native characters instead. This is how your translation will appear under the &apos;language&apos; menu.</comment>
         <translation>Ελληνικά</translation>
     </message>
     <message>
         <location line="+121"/>
         <source>Failed to create new profile</source>
-        <comment>full phrase: 'Failed to create new profile &lt;PROFILENAME&gt;'</comment>
+        <comment>full phrase: &apos;Failed to create new profile &lt;PROFILENAME&gt;&apos;</comment>
         <translation>Αποτυχία δημιουργίας νέου προφίλ</translation>
     </message>
     <message>
         <location line="+2"/>
-        <location line="+574"/>
+        <location line="+576"/>
         <source>The name you have entered contains only invalid characters</source>
         <translation>Το όνομα που εισάγατε περιέχει μόνο μη αποδεκτούς χαρακτήρες</translation>
     </message>
     <message>
-        <location line="-560"/>
+        <location line="-562"/>
         <location line="+70"/>
         <location line="+156"/>
         <source>Profile</source>
-        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; already exists'</comment>
+        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; already exists&apos;</comment>
         <translation>Το προφίλ</translation>
     </message>
     <message>
@@ -2181,7 +2250,7 @@ p, li { white-space: pre-wrap; }
         <location line="+70"/>
         <location line="+156"/>
         <source>already exists</source>
-        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; already exists'</comment>
+        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; already exists&apos;</comment>
         <translation>ήδη υπάρχει</translation>
     </message>
     <message>
@@ -2196,39 +2265,39 @@ p, li { white-space: pre-wrap; }
         <location line="+70"/>
         <location line="+155"/>
         <source>Failed to replace profile</source>
-        <comment>full phrase: 'Failed to replace profile &lt;PROFILENAME&gt;'</comment>
+        <comment>full phrase: &apos;Failed to replace profile &lt;PROFILENAME&gt;&apos;</comment>
         <translation>Αποτυχία αντικατάστασης του προφίλ</translation>
     </message>
     <message>
         <location line="-193"/>
         <location line="+52"/>
         <source>Failed to rename profile</source>
-        <comment>full phrase: 'Failed to rename profile &lt;PROFILENAME&gt;'</comment>
+        <comment>full phrase: &apos;Failed to rename profile &lt;PROFILENAME&gt;&apos;</comment>
         <translation>Αποτυχία μετονομασίας του προφίλ</translation>
     </message>
     <message>
         <location line="-43"/>
         <location line="+56"/>
         <source>profile</source>
-        <comment>full phrase: 'profile &lt;PROFILENAME&gt; renamed successfully to &lt;NEWPROFILENAME&gt;'</comment>
+        <comment>full phrase: &apos;profile &lt;PROFILENAME&gt; renamed successfully to &lt;NEWPROFILENAME&gt;&apos;</comment>
         <translation>Το προφίλ</translation>
     </message>
     <message>
         <location line="-54"/>
         <source>renamed successfully to</source>
-        <comment>full phrase: 'profile &lt;PROFILENAME&gt; renamed successfully to &lt;NEWPROFILENAME&gt;'</comment>
+        <comment>full phrase: &apos;profile &lt;PROFILENAME&gt; renamed successfully to &lt;NEWPROFILENAME&gt;&apos;</comment>
         <translation>μετονομάστηκε επιτυχώς σε</translation>
     </message>
     <message>
         <location line="+49"/>
         <source>default profile</source>
-        <comment>full phrase: 'default profile &lt;PROFILENAME&gt; renamed successfully to &lt;NEWPROFILENAME&gt;'.</comment>
+        <comment>full phrase: &apos;default profile &lt;PROFILENAME&gt; renamed successfully to &lt;NEWPROFILENAME&gt;&apos;.</comment>
         <translation>Το προεπιλεγμένο προφίλ</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>renamed successfully to</source>
-        <comment>full phrase: '(default) profile &lt;PROFILENAME&gt; renamed successfully to &lt;NEWPROFILENAME&gt;'</comment>
+        <comment>full phrase: &apos;(default) profile &lt;PROFILENAME&gt; renamed successfully to &lt;NEWPROFILENAME&gt;&apos;</comment>
         <translation>μετονομάστηκε επιτυχώς σε</translation>
     </message>
     <message>
@@ -2244,37 +2313,37 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+15"/>
         <source>Are you sure you want to delete the default profile</source>
-        <comment>full phrase: 'Are you sure you want to delete the default profile: &lt;PROFILENAME&gt; ? (a new blank one, with the same name, will be created)'</comment>
+        <comment>full phrase: &apos;Are you sure you want to delete the default profile: &lt;PROFILENAME&gt; ? (a new blank one, with the same name, will be created)&apos;</comment>
         <translation>Είστε σίγουρος/η ότι θέλετε να διαγράψετε το προεπιλεγμένο προφίλ</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>a new blank one, with the same name, will be created</source>
-        <comment>full phrase: 'Are you sure you want to delete the default profile: &lt;PROFILENAME&gt; ? (a new blank one, with the same name, will be created)'</comment>
+        <comment>full phrase: &apos;Are you sure you want to delete the default profile: &lt;PROFILENAME&gt; ? (a new blank one, with the same name, will be created)&apos;</comment>
         <translation>ένα νέο άδειο, με το ίδιο όνομα, θα δημιουργηθεί</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Are you sure you want to delete profile</source>
-        <comment>full phrase: 'Are you sure you want to delete profile: &lt;PROFILENAME&gt; ?'</comment>
+        <comment>full phrase: &apos;Are you sure you want to delete profile: &lt;PROFILENAME&gt; ?&apos;</comment>
         <translation>Είστε σίγουρος/η ότι θέλετε να διαγράψετε το προφίλ</translation>
     </message>
     <message>
         <location line="+13"/>
         <source>Failed to delete profile</source>
-        <comment>full phrase: 'Failed to delete profile &lt;PROFILENAME&gt;'</comment>
+        <comment>full phrase: &apos;Failed to delete profile &lt;PROFILENAME&gt;&apos;</comment>
         <translation>Αποτυχία διαγραφής προφίλ</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Profile</source>
-        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; deleted successfully'</comment>
+        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; deleted successfully&apos;</comment>
         <translation>Το προφίλ</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>deleted successfully</source>
-        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; deleted successfully'</comment>
+        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; deleted successfully&apos;</comment>
         <translation>διαγράφηκε επιτυχώς</translation>
     </message>
     <message>
@@ -2290,13 +2359,13 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+26"/>
         <source>Profile</source>
-        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; set as default'</comment>
+        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; set as default&apos;</comment>
         <translation>Το προφίλ</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>set as default</source>
-        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; set as default'</comment>
+        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; set as default&apos;</comment>
         <translation>τέθηκε ως προεπιλεγμένο</translation>
     </message>
     <message>
@@ -2312,17 +2381,23 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+26"/>
         <source>The description of profile</source>
-        <comment>full phrase: 'The description of profile &lt;PROFILENAME&gt; set to: &lt;DESCRIPTION&gt;'</comment>
+        <comment>full phrase: &apos;The description of profile &lt;PROFILENAME&gt; set to: &lt;DESCRIPTION&gt;&apos;</comment>
         <translation>Η περιγραφή του προφίλ</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>set to</source>
-        <comment>full phrase: 'The description of profile &lt;PROFILENAME&gt; set to: &lt;DESCRIPTION&gt;'</comment>
+        <comment>full phrase: &apos;The description of profile &lt;PROFILENAME&gt; set to: &lt;DESCRIPTION&gt;&apos;</comment>
         <translation>τέθηκε σε</translation>
     </message>
     <message>
-        <location line="+220"/>
+        <location line="+149"/>
+        <source>Please check &apos;Task name&apos;, &apos;source&apos;, &apos;destination&apos; and especially the &apos;Delete files on the destination&apos;&apos; &amp; &apos;skip newer destination files&apos; check-boxes (advanced)</source>
+        <comment>&apos;create restore&apos; message line 4/4</comment>
+        <translation>Κοιτάξτε ιδιαίτερα τα &apos;Όνομα διαδικασίας&apos;, &apos;πηγή&apos;, &apos;προορισμός&apos; και κυρίως τα κουτάκια &apos;Διαγραφή αρχείων στον προορισμό&apos; &amp; &apos;παράβλεψε αρχεία που είναι νεότερα στον προορισμό&apos; (προχωρημένα)</translation>
+    </message>
+    <message>
+        <location line="+73"/>
         <source>Import Profile</source>
         <comment>this is a dialog title</comment>
         <translation>Εισαγωγή προφίλ</translation>
@@ -2332,55 +2407,55 @@ p, li { white-space: pre-wrap; }
         <location line="+29"/>
         <location line="+33"/>
         <source>Failed to import profile</source>
-        <comment>full phrase: 'Failed to import profile &lt;PROFILENAME&gt;'</comment>
+        <comment>full phrase: &apos;Failed to import profile &lt;PROFILENAME&gt;&apos;</comment>
         <translation>Αποτυχία εισαγωγής του προφίλ</translation>
     </message>
     <message>
         <location line="-17"/>
         <source>Profile</source>
-        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; imported successfully as &lt;NEWPROFILENAME&gt; and added at the profile list'</comment>
+        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; imported successfully as &lt;NEWPROFILENAME&gt; and added at the profile list&apos;</comment>
         <translation>Το προφίλ</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>imported successfully</source>
-        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; imported successfully as &lt;NEWPROFILENAME&gt; and added at the profile list'</comment>
+        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; imported successfully as &lt;NEWPROFILENAME&gt; and added at the profile list&apos;</comment>
         <translation>εισήχθη επιτυχώς ως</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>as</source>
-        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; imported successfully as &lt;NEWPROFILENAME&gt; and added at the profile list'</comment>
+        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; imported successfully as &lt;NEWPROFILENAME&gt; and added at the profile list&apos;</comment>
         <translation>ως</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>and added at the profile list</source>
-        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; imported successfully as &lt;NEWPROFILENAME&gt; and added at the profile list'</comment>
+        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; imported successfully as &lt;NEWPROFILENAME&gt; and added at the profile list&apos;</comment>
         <translation>και προστέθηκε στη λίστα με τα προφίλ</translation>
     </message>
     <message>
-        <location line="+63"/>
+        <location line="+66"/>
         <source>Could not locate the file</source>
-        <comment>full phrase: 'Could not locate the file &lt;FILENAME&gt;'</comment>
+        <comment>full phrase: &apos;Could not locate the file &lt;FILENAME&gt;&apos;</comment>
         <translation>Δεν μπόρεσα να βρω το αρχείο</translation>
     </message>
     <message>
-        <location line="-319"/>
+        <location line="-324"/>
         <location line="+64"/>
-        <location line="+293"/>
+        <location line="+298"/>
         <source>You have reached the maximum limit of supported tasks</source>
         <translation>Είστε στο μέγιστο όριο υποστηριζόμενων διαδικασιών</translation>
     </message>
     <message>
-        <location line="-356"/>
+        <location line="-361"/>
         <location line="+64"/>
-        <location line="+293"/>
+        <location line="+298"/>
         <source>You have to remove a task if you wish to add another !!</source>
         <translation>Πρέπει να αφαιρέσετε μια διαδικασία αν θέλετε να προσθέσετε μια άλλη !!</translation>
     </message>
     <message>
-        <location line="-208"/>
+        <location line="-211"/>
         <source>Select export directory</source>
         <comment>this is a dialog title for selecting a directory to export a profile to</comment>
         <translation>Επιλογή καταλόγου εξαγωγής</translation>
@@ -2388,25 +2463,25 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+14"/>
         <source>Failed to export profile</source>
-        <comment>full phrase: 'Failed to export profile &lt;PROFILENAME&gt; to &lt;DIRNAME&gt;'</comment>
+        <comment>full phrase: &apos;Failed to export profile &lt;PROFILENAME&gt; to &lt;DIRNAME&gt;&apos;</comment>
         <translation>Αποτυχία εξαγωγής προφίλ</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>to</source>
-        <comment>full phrase: 'Failed to export profile &lt;PROFILENAME&gt; to &lt;DIRNAME&gt;'</comment>
+        <comment>full phrase: &apos;Failed to export profile &lt;PROFILENAME&gt; to &lt;DIRNAME&gt;&apos;</comment>
         <translation>στο</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Profile</source>
-        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; exported successfully to &lt;DIRNAME&gt;'</comment>
+        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; exported successfully to &lt;DIRNAME&gt;&apos;</comment>
         <translation>Το προφίλ</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>exported successfully to</source>
-        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; exported successfully to &lt;DIRNAME&gt;'</comment>
+        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; exported successfully to &lt;DIRNAME&gt;&apos;</comment>
         <translation>εξήχθη επιτυχώς στο</translation>
     </message>
     <message>
@@ -2435,7 +2510,7 @@ p, li { white-space: pre-wrap; }
         <translation>Παρουσιάστηκαν σφάλματα κατά τη διάρκεια μεταφοράς αρχείων προφίλ</translation>
     </message>
     <message>
-        <location line="+123"/>
+        <location line="+126"/>
         <source>Please select a task to modify first</source>
         <translation>Παρακαλώ επιλέξτε πρώτα μια εργασία για τροποποίηση</translation>
     </message>
@@ -2492,19 +2567,19 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+33"/>
         <source>Task list of profile</source>
-        <comment>full phrase: 'Task list of profile &lt;PROFILENAME&gt; and 'profile' drop-down list refreshed'</comment>
+        <comment>full phrase: &apos;Task list of profile &lt;PROFILENAME&gt; and &apos;profile&apos; drop-down list refreshed&apos;</comment>
         <translation>Η λίστα διαδικασιών του προφίλ</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>and &apos;profile&apos; drop-down list</source>
-        <comment>full phrase: 'Task list of profile &lt;PROFILENAME&gt; and 'profile' drop-down list refreshed'</comment>
+        <comment>full phrase: &apos;Task list of profile &lt;PROFILENAME&gt; and &apos;profile&apos; drop-down list refreshed&apos;</comment>
         <translation>και η λίστα με τα προφίλ</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>refreshed</source>
-        <comment>full phrase: 'Task list of profile &lt;PROFILENAME&gt; and 'profile' drop-down list refreshed'</comment>
+        <comment>full phrase: &apos;Task list of profile &lt;PROFILENAME&gt; and &apos;profile&apos; drop-down list refreshed&apos;</comment>
         <translation>ανανεώθηκαν</translation>
     </message>
     <message>
@@ -2532,7 +2607,7 @@ p, li { white-space: pre-wrap; }
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Bitstream Vera Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Bitstream Vera Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -2545,7 +2620,7 @@ p, li { white-space: pre-wrap; }
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Bitstream Vera Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Bitstream Vera Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -2662,109 +2737,108 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Γίνεται μεταφορά αρχείων</translation>
     </message>
     <message>
-        <location line="+15"/>
         <source>Total files transfered</source>
         <translation>Σύνολο αρχείων που μεταφέρθηκαν</translation>
     </message>
     <message>
-        <location line="+81"/>
+        <location line="+96"/>
         <source>ABORTED</source>
         <translation>ΑΚΥΡΩΘΗΚΕ</translation>
     </message>
     <message>
         <location filename="../src/functions.cpp" line="-560"/>
         <source>&amp;Refresh</source>
-        <comment>This is a top 'Profile' menu action</comment>
+        <comment>This is a top &apos;Profile&apos; menu action</comment>
         <translation>&amp;Ανανέωση</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>De&amp;fault</source>
-        <comment>This is a top 'Profile' menu action</comment>
+        <comment>This is a top &apos;Profile&apos; menu action</comment>
         <translation>&amp;Προεπιλεγμένο</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Set as Default</source>
-        <comment>This is a top 'Profile' menu action tooltip</comment>
+        <comment>This is a top &apos;Profile&apos; menu action tooltip</comment>
         <translation>Θέσε ως προεπιλεγμένο</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;View/Edit Description</source>
-        <comment>This is a top 'Profile' menu action</comment>
+        <comment>This is a top &apos;Profile&apos; menu action</comment>
         <translation>&amp;Προβολή/Επεξεργασία Περιγραφής</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>View/Edit the profile description</source>
-        <comment>This is a top 'Profile' menu action tooltip</comment>
+        <comment>This is a top &apos;Profile&apos; menu action tooltip</comment>
         <translation>Προβολή/Επεξεργασία της περιγραφής προφίλ</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>R&amp;ename</source>
-        <comment>This is a top 'Profile' menu action</comment>
+        <comment>This is a top &apos;Profile&apos; menu action</comment>
         <translation>&amp;Μετονομασία</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;Delete</source>
-        <comment>This is a top 'Profile' menu action</comment>
+        <comment>This is a top &apos;Profile&apos; menu action</comment>
         <translation>&amp;Διαγραφή</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;New</source>
-        <comment>This is a top 'Profile' menu action</comment>
+        <comment>This is a top &apos;Profile&apos; menu action</comment>
         <translation>&amp;Νέο</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;Save</source>
-        <comment>This is a top 'Profile' menu action</comment>
+        <comment>This is a top &apos;Profile&apos; menu action</comment>
         <translation>&amp;Φύλαξε</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>E&amp;xport</source>
-        <comment>This is a top 'Profile' menu action</comment>
+        <comment>This is a top &apos;Profile&apos; menu action</comment>
         <translation>Ε&amp;ξαγωγή</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;Import</source>
-        <comment>This is a top 'Profile' menu action</comment>
+        <comment>This is a top &apos;Profile&apos; menu action</comment>
         <translation>&amp;Εισαγωγή</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>S&amp;chedule</source>
-        <comment>This is a top 'Profile' menu action</comment>
+        <comment>This is a top &apos;Profile&apos; menu action</comment>
         <translation>Προ&amp;γραμματισμός</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>E&amp;mail</source>
-        <comment>This is a top 'Profile' menu action</comment>
+        <comment>This is a top &apos;Profile&apos; menu action</comment>
         <translation>Α&amp;λληλογραφία</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Email report after profile execution</source>
-        <comment>This is a top 'Profile' menu action tooltip</comment>
+        <comment>This is a top &apos;Profile&apos; menu action tooltip</comment>
         <translation>Αποστολή μηνύματος αλληλογραφίας μετά την εκτέλεση του προφίλ</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;Quit</source>
-        <comment>This is a top 'Profile' menu action</comment>
+        <comment>This is a top &apos;Profile&apos; menu action</comment>
         <translation>&amp;Έξοδος</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>D&amp;uplicate</source>
-        <comment>This is a top 'Profile' menu action</comment>
+        <comment>This is a top &apos;Profile&apos; menu action</comment>
         <translation>&amp;Διπλασιασμός</translation>
     </message>
     <message>
@@ -2776,45 +2850,45 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     <message>
         <location line="+1"/>
         <source>&amp;Add</source>
-        <comment>This is a top 'Task' menu action</comment>
+        <comment>This is a top &apos;Task&apos; menu action</comment>
         <translation>&amp;Προσθήκη</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;Remove</source>
-        <comment>This is a top 'Task' menu action</comment>
+        <comment>This is a top &apos;Task&apos; menu action</comment>
         <translation>&amp;Αφαίρεση</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;Modify</source>
-        <comment>This is a top 'Task' menu action</comment>
+        <comment>This is a top &apos;Task&apos; menu action</comment>
         <translation>&amp;Τροποποίηση</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Create D&amp;uplicate task</source>
-        <comment>This is a top 'Task' menu action</comment>
+        <comment>This is a top &apos;Task&apos; menu action</comment>
         <translation>&amp;Δημιουργία αντιγράφου εργασίας</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Create R&amp;estore task</source>
-        <comment>This is a top 'Task' menu action</comment>
+        <comment>This is a top &apos;Task&apos; menu action</comment>
         <translation>Δημιουργία εργασίας ε&amp;παναφοράς</translation>
     </message>
     <message>
         <location line="+1"/>
         <location filename="../src/luckybackupwindow.cpp" line="-45"/>
         <source>Manage &amp;Backup</source>
-        <comment>This is a top 'Task' menu action</comment>
+        <comment>This is a top &apos;Task&apos; menu action</comment>
         <translation>Διαχείριση αντιγράφου ασ&amp;φαλείας</translation>
     </message>
     <message>
         <location line="+1"/>
         <location filename="../src/luckybackupwindow.cpp" line="+1"/>
         <source>display - restore - delete existing backups of highlighted task</source>
-        <comment>This is a top 'Task' menu action tooltip</comment>
+        <comment>This is a top &apos;Task&apos; menu action tooltip</comment>
         <translation>Εμφάνιση - ανάκτηση - διαγραφή υπάρχοντος αντιγράφου ασφαλείας της επιλεγμένης διαδικασίας</translation>
     </message>
     <message>
@@ -2896,13 +2970,13 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     <message>
         <location line="+1"/>
         <source>Dry</source>
-        <comment>simulation checkbox label. Translate this as 'simulation'</comment>
+        <comment>simulation checkbox label. Translate this as &apos;simulation&apos;</comment>
         <translation>Εξομείωση</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>This will perform a &lt;b&gt;simulation run&lt;/b&gt; that doesn&apos;t make any changes (and produces mostly the same output as a real run)</source>
-        <comment>simulation checkbox tooltip - line1. Please leave tags &lt;b&gt; and &lt;/b&gt; intact and surrounding 'simulation run'</comment>
+        <comment>simulation checkbox tooltip - line1. Please leave tags &lt;b&gt; and &lt;/b&gt; intact and surrounding &apos;simulation run&apos;</comment>
         <translation>Με αυτή η επιλογή θα γίνει&lt;b&gt;δοκιμαστική εκτέλεση&lt;/b&gt; χωρίς να πραγματοποιηθούν αλλαγές (και θα παραχθεί η ίδια έξοδος με μια πραγματική εκτέλεση)</translation>
     </message>
     <message>
@@ -2932,7 +3006,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     <message>
         <location line="+295"/>
         <source>profile </source>
-        <comment>information window message. Full phrase is: 'profile &lt;PROFILENAME&gt; is not valid for luckybackup version:X.Y'. BEWARE of the whitespace in the end</comment>
+        <comment>information window message. Full phrase is: &apos;profile &lt;PROFILENAME&gt; is not valid for luckybackup version:X.Y&apos;. BEWARE of the whitespace in the end</comment>
         <translation>Το προφίλ </translation>
     </message>
     <message>
@@ -2950,79 +3024,79 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     <message>
         <location line="-74"/>
         <source>could not be saved</source>
-        <comment>Information window message. Full phrase: '(default) profile &lt;PROFILENAME&gt; could not be saved'</comment>
+        <comment>Information window message. Full phrase: &apos;(default) profile &lt;PROFILENAME&gt; could not be saved&apos;</comment>
         <translation>δεν ήταν δυνατό να αποθηκευτεί</translation>
     </message>
     <message>
         <location line="+66"/>
         <source>default profile</source>
-        <comment>Information window message. Full phrase: 'default profile &lt;PROFILENAME&gt; could not be created'.</comment>
+        <comment>Information window message. Full phrase: &apos;default profile &lt;PROFILENAME&gt; could not be created&apos;.</comment>
         <translation>Το προεπιλεγμένο προφίλ</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>could not be created</source>
-        <comment>Information window message. Full phrase: '(default) profile &lt;PROFILENAME&gt; could not be created'</comment>
+        <comment>Information window message. Full phrase: &apos;(default) profile &lt;PROFILENAME&gt; could not be created&apos;</comment>
         <translation>δεν ήταν δυνατό να δημιουργηθεί</translation>
     </message>
     <message>
         <location line="+21"/>
         <source>Profile</source>
-        <comment>Question dialog message. Full phrase: 'profile &lt;PROFILENAME&gt; is modified'</comment>
+        <comment>Question dialog message. Full phrase: &apos;profile &lt;PROFILENAME&gt; is modified&apos;</comment>
         <translation>Το προφίλ</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>is modified</source>
-        <comment>Question dialog message. Full phrase: 'profile &lt;PROFILENAME&gt; is modified'</comment>
+        <comment>Question dialog message. Full phrase: &apos;profile &lt;PROFILENAME&gt; is modified&apos;</comment>
         <translation>τροποποιήθηκε</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>Profile</source>
-        <comment>Question dialog message. Full phrase: 'profile &lt;PROFILENAME&gt; could not be saved'</comment>
+        <comment>Question dialog message. Full phrase: &apos;profile &lt;PROFILENAME&gt; could not be saved&apos;</comment>
         <translation>Το προφίλ</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>could not be saved</source>
-        <comment>Question dialog message. Full phrase: 'profile &lt;PROFILENAME&gt; could not be saved'</comment>
+        <comment>Question dialog message. Full phrase: &apos;profile &lt;PROFILENAME&gt; could not be saved&apos;</comment>
         <translation>δεν ήταν δυνατό να αποθηκευτεί</translation>
     </message>
     <message>
         <location line="-32"/>
         <source>profile</source>
-        <comment>Information window message. Full phrase: 'profile &lt;PROFILENAME&gt; could not be created'.</comment>
+        <comment>Information window message. Full phrase: &apos;profile &lt;PROFILENAME&gt; could not be created&apos;.</comment>
         <translation>προφίλ</translation>
     </message>
     <message>
-        <location filename="../src/luckybackupwindow.cpp" line="-808"/>
+        <location filename="../src/luckybackupwindow.cpp" line="-813"/>
         <source>Failed to duplicate profile</source>
-        <comment>full phrase: 'Failed to duplicate profile &lt;PROFILENAME&gt;'</comment>
+        <comment>full phrase: &apos;Failed to duplicate profile &lt;PROFILENAME&gt;&apos;</comment>
         <translation>Αποτυχία δημιουργίας αντιγράφου του προφίλ</translation>
     </message>
     <message>
         <location line="+41"/>
         <source>Failed to duplicate profile</source>
-        <comment>full phrase: 'Failed to duplicate profile &lt;PROFILENAME&gt; as &lt;FILENAME&gt;'</comment>
+        <comment>full phrase: &apos;Failed to duplicate profile &lt;PROFILENAME&gt; as &lt;FILENAME&gt;&apos;</comment>
         <translation>Αποτυχία δημιουργίας αντιγράφου του προφίλ</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>as</source>
-        <comment>full phrase: 'Failed to duplicate profile &lt;PROFILENAME&gt; as &lt;FILENAME&gt;'</comment>
+        <comment>full phrase: &apos;Failed to duplicate profile &lt;PROFILENAME&gt; as &lt;FILENAME&gt;&apos;</comment>
         <translation>ως</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>Profile</source>
-        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; duplicated successfully as &lt;FILENAME&gt;'</comment>
+        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; duplicated successfully as &lt;FILENAME&gt;&apos;</comment>
         <translation>Το προφίλ</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>duplicated successfully as</source>
-        <comment>full phrase: 'Profile &lt;PROFILENAME&gt; duplicated successfully as &lt;FILENAME&gt;'</comment>
+        <comment>full phrase: &apos;Profile &lt;PROFILENAME&gt; duplicated successfully as &lt;FILENAME&gt;&apos;</comment>
         <translation>αντιγράφηκε επιτυχώς ως</translation>
     </message>
     <message>
@@ -3036,7 +3110,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <translation>Παρακαλώ επιλέξτε μια εργασία</translation>
     </message>
     <message>
-        <location line="+238"/>
+        <location line="+243"/>
         <source>Hide information window</source>
         <comment>hide/show information window button tooltip</comment>
         <translation>Απόκρυψη παραθύρου πληροφοριών</translation>
@@ -3055,13 +3129,13 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     <message>
         <location line="+96"/>
         <source>Manage Task</source>
-        <comment>This is a top 'Task' menu action</comment>
+        <comment>This is a top &apos;Task&apos; menu action</comment>
         <translation>Διαχείριση Εργασίας</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>display information regarding highlighted task</source>
-        <comment>This is a top 'Task' menu action tooltip</comment>
+        <comment>This is a top &apos;Task&apos; menu action tooltip</comment>
         <translation>Προβολή πληροφοριών που αφορούν την επιλεγμένη εργασία</translation>
     </message>
     <message>
@@ -3083,7 +3157,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
 <context>
     <name>manageDialog</name>
     <message>
-        <location filename="../src/manage.cpp" line="+95"/>
+        <location filename="../src/manage.cpp" line="+100"/>
         <source>profile</source>
         <translation>προφίλ</translation>
     </message>
@@ -3171,7 +3245,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     <message>
         <location line="+1"/>
         <source>View the logfile of the selected sync task</source>
-        <comment>'view log' pushbutton tooltip</comment>
+        <comment>&apos;view log&apos; pushbutton tooltip</comment>
         <translation>Προβολή του αρχείου log της επιλεγμένης εργασίας συγχρονισμού</translation>
     </message>
     <message>
@@ -3237,7 +3311,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
 <context>
     <name>manageWizard</name>
     <message>
-        <location filename="../src/manageWizard.cpp" line="+60"/>
+        <location filename="../src/manageWizard.cpp" line="+68"/>
         <source>not available</source>
         <comment>refers to a date-time</comment>
         <translation>δεν είναι διαθέσιμη</translation>
@@ -3277,7 +3351,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
         <location line="+1"/>
         <source>If the information above is correct, click &lt;b&gt;start&lt;/b&gt; to begin</source>
         <comment>information message - line2.
-Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start' translated</comment>
+Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding &apos;start&apos; translated</comment>
         <translation>Εάν οι ανωτέρω πληροφορίες είναι σωστές, κάνετε κλικ στο κουμπί &lt;b&gt;έναρξη&lt;/b&gt; για εκκίνηση</translation>
     </message>
     <message>
@@ -3414,7 +3488,7 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start' translated<
         <location line="+3"/>
         <source>If the information above is correct, click &lt;b&gt;start&lt;/b&gt; to begin</source>
         <comment>information message - line2.
-Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start translated'</comment>
+Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding &apos;start translated&apos;</comment>
         <translation>Εάν οι ανωτέρω πληροφορίες είναι σωστές, κάνετε κλικ στο κουμπί&lt;b&gt;έναρξη&lt;/b&gt; για εκκίνηση</translation>
     </message>
     <message>
@@ -3496,7 +3570,7 @@ Please leave tags &lt;b&gt;&lt;/b&gt; intact and surrounding 'start translated'<
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'FreeSans'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;FreeSans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -3508,7 +3582,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>modifyDialog</name>
     <message>
-        <location filename="../src/modifyDialog.cpp" line="+235"/>
+        <location filename="../src/modifyDialog.cpp" line="+246"/>
         <source>simple</source>
         <translation>απλό</translation>
     </message>
@@ -3617,7 +3691,7 @@ and mapping them at both ends.
         <source>Use numeric group and user IDs</source>
         <translation> Χρήση αριθμητικών ταυτοτήτων χρήστη και γκρουπ</translation>
     </message>
-    <message utf8="true">
+    <message>
         <location line="+22"/>
         <source>This tells the receiving side to attempt super-user activities
 even if the receiving rsync wasn’t run by the super-user.
@@ -3640,26 +3714,24 @@ and copying devices via the --devices option.
         <translation>Προσπάθεια για ενέργειες υπερ-χρήστη</translation>
     </message>
     <message>
-        <location line="+22"/>
         <source>Try to backup open files in windows systems using vss (Only works on windows 2000 and upper)
 (--vss)</source>
         <translation>Προσπάθησε να πάρεις αντίγραφο ασφαλείας από ανοικτά αρχεία με τη χρήση vss (για έκδοση windows 2000 και μεταγενέστερη)
 (--vss)</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+26"/>
         <source>Backup open files</source>
         <translation>Backup ανοικτών αρχείων</translation>
     </message>
     <message>
-        <location line="+25"/>
         <source>Restore backed-up windows permissions localized in nt-streams 
 (--restore-nt-streams)</source>
         <translation>Επαναφορά αντίγραφων ασφαλείας δικαιωμάτων αρχείων σε windows - nt-streams
 (--restore-nt-streams)</translation>
     </message>
     <message>
-        <location line="+535"/>
+        <location line="+560"/>
         <location line="+10"/>
         <source>Repeat any command that fails, x times</source>
         <translation>Επανάληψη οποιασδήποτε εντολής που αποτυγχάνει, x φορές</translation>
@@ -4117,7 +4189,7 @@ If you have no idea what these mean, leave them untouched !!</source>
     </message>
     <message>
         <location line="+84"/>
-        <source>Delete files on the destination that don't exist on the source
+        <source>Delete files on the destination that don&apos;t exist on the source
 . &quot;Recurse into directories&quot; has to be selected 
 (--delete-after &amp; --delete-excluded if &quot;Exclude&quot; is used)</source>
         <translation>Σβήσε αρχεία που υπάρχουν στον προορισμό αλλά δεν υπάρχουν στην πηγή
@@ -4372,36 +4444,29 @@ ATTENTION: check this if you really know what you&apos;re doing</source>
         <translation>Παρακαλώ προσδιορίστε την πηγή πριν ανοίξετε τον επεξεργαστή σχεδίου</translation>
     </message>
     <message>
-        <location line="+40"/>
         <source>ERROR</source>
         <comment>message box message</comment>
         <translation>ΣΦΑΛΜΑ</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+41"/>
         <source>Please specify the following before proceeding:</source>
         <comment>message box, message</comment>
         <translation>Παρακαλώ διευκρινίστε τα κατωτέρω πριν προχωρήσετε:</translation>
     </message>
     <message>
-        <location line="+14"/>
-        <location line="+10"/>
-        <location line="+13"/>
-        <location line="+18"/>
-        <location line="+18"/>
-        <location line="+9"/>
         <source>ERROR</source>
         <comment>message box message - line1</comment>
         <translation>ΣΦΑΛΜΑ</translation>
     </message>
     <message>
-        <location line="-66"/>
+        <location line="+16"/>
         <source>That is not allowed because &apos;/&apos; does not have an actual name</source>
         <comment>message box message - line2</comment>
         <translation>Αυτό δεν επιτρέπεται γιατί το &apos;/&apos; δεν έχει πραγματικό όνομα</translation>
     </message>
     <message>
-        <location line="-334"/>
+        <location line="-336"/>
         <source>Leave the box checked, to &lt;b&gt;STOP&lt;/b&gt; the execution of running task if this command exits with an error</source>
         <translation>Αφήστε το πεδίο τσεκαρισμένο για να &lt;b&gt;ΣΤΑΜΑΤΗΣΕΤΕ&lt;/b&gt; την εκτέλεση της τρέχουσας εργασίας αν η εντολή τελειώσει με σφάλμα</translation>
     </message>
@@ -4412,7 +4477,7 @@ ATTENTION: check this if you really know what you&apos;re doing</source>
         <translation>Χρησιμοποιείστε τα πεδία για να &lt;b&gt;ΣΤΑΜΑΤΗΣΕΤΕ&lt;/b&gt; την εκτέλεση της εργασίας αν υπάρξει σφάλμα</translation>
     </message>
     <message>
-        <location line="+332"/>
+        <location line="+334"/>
         <source>You have declared the &apos;/&apos; (root) directory as source and have NOT checked the &apos;Do NOT create extra directory&apos; box</source>
         <comment>message box message - line1</comment>
         <translation>Έχετε δηλώσει τον ριζικό κατάλογο&quot;/&quot; ως πηγή χωρίς να επιλέξετε το πεδίο &quot;ΜΗ δημιουργήσεις επί πλέον κατάλογο&quot;</translation>
@@ -4461,13 +4526,12 @@ ATTENTION: check this if you really know what you&apos;re doing</source>
         <translation>Παρακαλώ τροποποιήστε τουλάχιστον ένα από τα δυο</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>WARNING</source>
         <comment>message box message - line1</comment>
         <translation>ΠΡΟΕΙΔΟΠΟΙΗΣΗ</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+6"/>
         <source>You have declared a destination that is part of the source directory structure</source>
         <comment>message box message - line1</comment>
         <translation>Έχετε δηλώσει ένα προορισμό ο οποίος βρίσκεται μέσα στην πηγή</translation>
@@ -4475,7 +4539,7 @@ ATTENTION: check this if you really know what you&apos;re doing</source>
     <message>
         <location line="+2"/>
         <source>&lt;b&gt;Do not forget&lt;/b&gt; to define a directory at the &apos;exclude&apos; groupbox that will contain the destination</source>
-        <comment>message box message - line2. Please leave tag &lt;b&gt;,&lt;/b&gt; intact and surrounding 'do not forget' translated</comment>
+        <comment>message box message - line2. Please leave tag &lt;b&gt;,&lt;/b&gt; intact and surrounding &apos;do not forget&apos; translated</comment>
         <translation>&lt;b&gt;Μην ξεχάσετε&lt;/b&gt; να δηλώσετε έναν κατάλογο στην λίστα &apos;αποκλεισμού&apos; ο οποίος θα περιέχει τον προορισμό</translation>
     </message>
     <message>
@@ -4673,7 +4737,21 @@ Data ownership and permissions will NOT be preserved.
         <translation>Ο προορισμός είναι FAT/NTFS</translation>
     </message>
     <message>
-        <location line="+114"/>
+        <location line="+81"/>
+        <source>Try to backup open files in windows systems using vss (Only works on windows 2003 and upper)
+(--vss)</source>
+        <translation>Προσπάθησε να πάρεις αντίγραφο ασφαλείας από ανοικτά αρχεία με τη χρήση vss (για έκδοση windows 2000 και μεταγενέστερη)
+(--vss)</translation>
+    </message>
+    <message>
+        <location line="+29"/>
+        <source>Restore backed-up windows permissions which are located in the NTFS Security Descriptor Stream 
+(--restore-nt-streams)</source>
+        <translation>Επαναφορά δικαιωμάτων αντίγραφων ασφαλείας αρχείων σε windows - NTFS Security Descriptor Stream
+(--restore-nt-streams)</translation>
+    </message>
+    <message>
+        <location line="+4"/>
         <source>Restore permissions</source>
         <translation>Επαναφορά δικαιωμάτων</translation>
     </message>
@@ -4692,7 +4770,7 @@ Data ownership and permissions will NOT be preserved.
 <context>
     <name>patternEditor</name>
     <message>
-        <location filename="../src/patternEditor.cpp" line="+44"/>
+        <location filename="../src/patternEditor.cpp" line="+51"/>
         <location line="+89"/>
         <location line="+155"/>
         <source>directory :</source>
@@ -4949,7 +5027,7 @@ eg the contents of the directory &quot;/media/music/Album/&quot;</source>
 <context>
     <name>scheduleDialog</name>
     <message>
-        <location filename="../src/scheduleDialog.cpp" line="+137"/>
+        <location filename="../src/scheduleDialog.cpp" line="+147"/>
         <location line="+78"/>
         <source>Starting from scratch</source>
         <translation>Ξεκίνημα από το μηδέν</translation>
@@ -5185,73 +5263,73 @@ eg the contents of the directory &quot;/media/music/Album/&quot;</source>
     <message>
         <location line="-22"/>
         <source>January</source>
-        <comment>full phrase: 'of January'</comment>
+        <comment>full phrase: &apos;of January&apos;</comment>
         <translation>Ιανουαρίου</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>February</source>
-        <comment>full phrase: 'of February'</comment>
+        <comment>full phrase: &apos;of February&apos;</comment>
         <translation>Φεβρουαρίου</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>March</source>
-        <comment>full phrase: 'of March'</comment>
+        <comment>full phrase: &apos;of March&apos;</comment>
         <translation>Μαρτίου</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>April</source>
-        <comment>full phrase: 'of April'</comment>
+        <comment>full phrase: &apos;of April&apos;</comment>
         <translation>Απριλίου</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>May</source>
-        <comment>full phrase: 'of May'</comment>
+        <comment>full phrase: &apos;of May&apos;</comment>
         <translation>Μαϊου</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>June</source>
-        <comment>full phrase: 'of June'</comment>
+        <comment>full phrase: &apos;of June&apos;</comment>
         <translation>Ιουνίου</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>July</source>
-        <comment>full phrase: 'of July'</comment>
+        <comment>full phrase: &apos;of July&apos;</comment>
         <translation>Ιουλίου</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>August</source>
-        <comment>full phrase: 'of August'</comment>
+        <comment>full phrase: &apos;of August&apos;</comment>
         <translation>Αυγούστου</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>September</source>
-        <comment>full phrase: 'of September'</comment>
+        <comment>full phrase: &apos;of September&apos;</comment>
         <translation>Σεπτεμβρίου</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>October</source>
-        <comment>full phrase: 'of October'</comment>
+        <comment>full phrase: &apos;of October&apos;</comment>
         <translation>Οκτωβρίου</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>November</source>
-        <comment>full phrase: 'of November'</comment>
+        <comment>full phrase: &apos;of November&apos;</comment>
         <translation>Νοεμβρίου</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>December</source>
-        <comment>full phrase: 'of December'</comment>
+        <comment>full phrase: &apos;of December&apos;</comment>
         <translation>Δεκεμβρίου</translation>
     </message>
     <message>
@@ -5270,7 +5348,7 @@ eg the contents of the directory &quot;/media/music/Album/&quot;</source>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'DejaVu Sans'; font-size:10pt; font-weight:600; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:10pt; font-weight:600; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#aa0000;&quot;&gt;Profile execution scheduling&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -5700,7 +5778,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>textDialog</name>
     <message>
-        <location filename="../src/textDialog.cpp" line="+52"/>
+        <location filename="../src/textDialog.cpp" line="+56"/>
         <source>Enter the name of the new profile :</source>
         <translation>Δώστε το όνομα του νέου προφίλ :</translation>
     </message>
@@ -5905,7 +5983,7 @@ p, li { white-space: pre-wrap; }
         <translation>Ακύρωση</translation>
     </message>
     <message>
-        <location filename="../src/winDialog.cpp" line="+147"/>
+        <location filename="../src/winDialog.cpp" line="+154"/>
         <source>Select rsync command</source>
         <comment>file selection dialog title</comment>
         <translation>Επιλογή εντολής rsync</translation>

@@ -4,7 +4,7 @@ message( "Qt version" $$[QT_VERSION] )
 message( "Qmake version" $$[QMAKE_VERSION] )
 
 
-lessThan(QT_MAJOR_VERSION, 5) {
+lessThan(QT_MAJOR_VERSION, 4) {
     lessThan(QT_MINOR_VERSION, 6) {
       error("Sorry, you need at least Qt version 4.6.0")
         }
@@ -155,6 +155,7 @@ TRANSLATIONS = translations/luckybackup_ara.ts \
     translations/luckybackup_cs.ts \
     translations/luckybackup_nl.ts \
     translations/luckybackup_en.ts \
+    translations/luckybackup_eo.ts \
     translations/luckybackup_et.ts \
     translations/luckybackup_fr.ts \
     translations/luckybackup_gl.ts \

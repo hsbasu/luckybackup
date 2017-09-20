@@ -1,6 +1,6 @@
---- luckybackup-gnome-su.orig.desktop   2014-03-04 12:51:30.000000000 +0200
-+++ luckybackup-gnome-su.desktop    2014-03-04 12:55:46.000000000 +0200
-@@ -86,7 +86,7 @@
+--- luckybackup-gnome-su.orig.desktop   2017-09-04 12:51:30.000000000 +0200
++++ luckybackup-gnome-su.desktop    2017-09-04 12:55:46.000000000 +0200
+@@ -89,7 +89,7 @@
  Comment[sv]=Säkerhetskopiera och synkronisera din data med hjälp av rsync
  Comment[tr]=rsync gücüyle verinizi yedekleyin & şipşaklayın
  Comment[vi]=Backup & sync your data with the power of rsync

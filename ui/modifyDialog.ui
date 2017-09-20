@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>630</width>
-    <height>570</height>
+    <width>537</width>
+    <height>689</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -58,8 +58,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>610</width>
-        <height>550</height>
+        <width>517</width>
+        <height>669</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_18">
@@ -362,8 +362,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>355</width>
-                <height>122</height>
+                <width>570</width>
+                <height>300</height>
                </rect>
               </property>
               <attribute name="label">
@@ -692,8 +692,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>211</width>
-                <height>253</height>
+                <width>213</width>
+                <height>283</height>
                </rect>
               </property>
               <attribute name="label">
@@ -1975,7 +1975,7 @@ If you have no idea what these mean, leave them untouched !!</string>
                 <x>0</x>
                 <y>0</y>
                 <width>570</width>
-                <height>230</height>
+                <height>300</height>
                </rect>
               </property>
               <attribute name="label">
@@ -2418,8 +2418,8 @@ and copying devices via the --devices option.
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>211</width>
-                <height>217</height>
+                <width>213</width>
+                <height>237</height>
                </rect>
               </property>
               <attribute name="label">
@@ -2667,8 +2667,8 @@ and copying devices via the --devices option.
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>243</width>
-                <height>269</height>
+                <width>570</width>
+                <height>301</height>
                </rect>
               </property>
               <attribute name="label">
@@ -2968,8 +2968,8 @@ ATTENTION: check this if you really know what you're doing</string>
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>211</width>
-                <height>217</height>
+                <width>213</width>
+                <height>239</height>
                </rect>
               </property>
               <attribute name="label">

@@ -23,7 +23,7 @@ Display a dialog. Adds a new or modifies an existing operation
  project version    : Please see "main.cpp" for project version
 
  developer          : luckyb 
- last modified      : 22 May 2016
+ last modified      : 18 Sep 2017
 
 ===============================================================================================================================
 ===============================================================================================================================
@@ -47,8 +47,8 @@ modifyDialog::modifyDialog (int ItemNo, QDialog *parent) : QDialog (parent)
     uiM.setupUi(this);
 
     stdWindowWidth = 540;
-    minWindowHeight = 245;
-    maxWindowHeight = 565;
+    minWindowHeight = 265;      //old value=245
+    maxWindowHeight = 690;      //old value=565
     uiM.tabWidget_advanced -> setVisible(false);
     uiM.comboBox_Type -> setCurrentIndex(0);
     this -> resize(stdWindowWidth,minWindowHeight);

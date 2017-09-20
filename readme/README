@@ -23,7 +23,7 @@ It is simple to use, fast (transfers over only changes made and not all data), s
 Copyright
 ===============================================================================================
 
-Copyright 2008-2016 Loukas Avgeriou
+Copyright 2008-2017 Loukas Avgeriou
 luckyBackup is distributed under the terms of the GNU General Public License
 
 It is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License.
@@ -134,7 +134,7 @@ Dependencies
 $ cd ...../luckyBackup-0.X.Y
 
 3. execute commands:
-$ qmake-qt4 (or just "qmake" if you only use Qt4)
+$ qmake
 $ make
 
 4. Run the app with the command:

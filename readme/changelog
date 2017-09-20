@@ -1,11 +1,11 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Version 0.4.9 :
+* Various changes due to Qt5 compatibility
 * Minor modify dialog fixes
 * Fixed issue: libpng 1.6+ iCCP warnings
 * Fixed issue: compiler warning - overflow in implicit constant conversion
 * Fixed issue: segfault when exiting app at certain circumstances
 * Fixed issue: qfiledialog, QDataStream inclusion
-* Various changes due to Qt5 compatibility
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Version 0.4.8 :

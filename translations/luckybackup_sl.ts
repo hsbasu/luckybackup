@@ -3147,7 +3147,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     </message>
     <message>
         <location filename="../src/executenow.cpp" line="-631"/>
-        <source>Successfuly created destination directory</source>
+        <source>Successfully created destination directory</source>
         <translation>Ciljna mapa je uspešno ustvarjena</translation>
     </message>
     <message>
@@ -3887,7 +3887,7 @@ Leave unchecked to create an extra directory inside destination</source>
 ** - matches anything, including slashes
 ? - matches any character except a slash
 trailing dir_name/*** - matches both the directory &amp; everything in it
-starting / - pattern is anchored to a particular spot in the hierarchy of the transfer (normaly this is the &quot;source&quot;)
+starting / - pattern is anchored to a particular spot in the hierarchy of the transfer (normally this is the &quot;source&quot;)
 trailing / - only directory is matched, not regular files, symlinks or devices</source>
         <translation>Na to mesto vnesite datoteko, mapo ali vzorec in pritisnite gumb &quot;dodaj&quot; za dodajanje na izločitveni seznam.
 * - se sklada s katerokoli neprazno enoto (konča se s poševnico)
@@ -4027,7 +4027,7 @@ This will disable the exclude feature.</source>
 ** - matches anything, including slashes
 ? - matches any character except a slash
 trailing dir_name/*** - matches both the directory &amp; everything in it
-starting / - pattern is anchored to a particular spot in the hierarchy of the transfer (normaly this is the &quot;source&quot;)
+starting / - pattern is anchored to a particular spot in the hierarchy of the transfer (normally this is the &quot;source&quot;)
 trailing / - only directory is matched, not regular files, symlinks or devices</source>
         <translation>Na to mesto vnesite datoteko, mapo ali vzorec in pritisnite gumb &quot;dodaj&quot; za dodajanje na seznam za vključitev
 * - nadomešča katerikoli prazen znak (konča se s poševnico)
@@ -5793,7 +5793,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+7"/>
-        <source>Enter pasword :</source>
+        <source>Enter password :</source>
         <translation>Vnesite geslo:</translation>
     </message>
     <message>

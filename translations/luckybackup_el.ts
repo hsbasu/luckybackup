@@ -75,7 +75,7 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>These will be transferred over at the source during RESTORE</source>
+        <source>These will be transfered over at the source during RESTORE</source>
         <translation>Αυτά θα μεταφερθούν στην πηγή κατά τη διαδικασία ΑΝΑΚΤΗΣΗΣ</translation>
     </message>
     <message>
@@ -3145,7 +3145,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     </message>
     <message>
         <location filename="../src/executenow.cpp" line="-631"/>
-        <source>Successfuly created destination directory</source>
+        <source>Successfully created destination directory</source>
         <translation>Ο κατάλογος προορισμού δημιουργήθηκε επιτυχώς</translation>
     </message>
     <message>

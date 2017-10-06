@@ -77,8 +77,8 @@ void luckyBackupWindow::executeNOW ()
     ExecuteAfter=false;
     writeToLog=false;
     errorsFound = 0;		//total error founds during profile execution
-    filesTransfered = 0;    //total bytes transferred during profile execution
-    bytesTransfered = 0;    //total bytes transferred during profile execution
+    filesTransfered = 0;    //total bytes transfered during profile execution
+    bytesTransfered = 0;    //total bytes transfered during profile execution
     count = 0;
     currentAfter = 0;
     currentBefore = 0;
@@ -831,7 +831,7 @@ void luckyBackupWindow::executeRsync()
         if ( (!destCreate.exists()) && (!RemoteDestUsed) ) // local use ONLY
         {
             if (destCreate.mkpath(dirB))
-                outputInsert.append(logFileUpdate("rsync-standard", "<br>" + tr("Successfuly created destination directory"), 0));
+                outputInsert.append(logFileUpdate("rsync-standard", "<br>" + tr("Successfully created destination directory"), 0));
             else
             {
                 outputInsert.append(logFileUpdate("rsync-error", "<br>" +tr("Failed to create destination directory"), 0));

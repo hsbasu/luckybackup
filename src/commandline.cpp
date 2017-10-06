@@ -38,8 +38,8 @@ commandline::commandline()
 {
     writeToLog=false;
     errorsFound = 0;	// Total number of errors from all tasks (in CLI, only 1 error per task is allowed !!)
-    filesTransfered = 0;    //total bytes transferred during profile execution
-    bytesTransfered = 0;    //total bytes transferred during profile execution
+    filesTransfered = 0;    //total bytes transfered during profile execution
+    bytesTransfered = 0;    //total bytes transfered during profile execution
     errorCount = 0;		// Number of errors from one task (max value is 1)
 }
 
@@ -400,7 +400,7 @@ void commandline::rsyncIT()
                         count++;
                     }
                 }
-                // the following is transferred in the very beginning of the actions for !DryRun,
+                // the following is transfered in the very beginning of the actions for !DryRun,
                 /*else        // this is just to create the .snapDefaultDir if it does not to exist so as to copy profile data later...
                 {
                     //we will create the snapshots default directory by using an rsync command with an empty source without --delete option
@@ -568,8 +568,8 @@ void commandline::rsyncIT()
                 {
                     if (destCreate.mkpath(dirB.toUtf8()))
                     {
-                        logFileUpdate("rsync-standard", "<br>Successfuly created destination directory", 0);
-                        cout << "\n\n Successfuly created destination directory\n";
+                        logFileUpdate("rsync-standard", "<br>Successfully created destination directory", 0);
+                        cout << "\n\n Successfully created destination directory\n";
                     }
                     else
                     {

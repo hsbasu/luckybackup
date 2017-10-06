@@ -73,7 +73,7 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>These will be transfered over at the source during RESTORE</source>
+        <source>These will be transferred over at the source during RESTORE</source>
         <translation>Tato budou během OBNOVY ve zdroji přenesena</translation>
     </message>
     <message>
@@ -1448,12 +1448,12 @@ např.
     </message>
     <message>
         <location line="+9"/>
-        <source>Only send when error(s) occured during a run</source>
+        <source>Only send when error(s) occurred during a run</source>
         <translation>Poslat jen tehdy, když se během spuštění vyskytla chyba(y)</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Error(s) occured</source>
+        <source>Error(s) occurred</source>
         <translation>Vyskytla se chyba(y)</translation>
     </message>
     <message>
@@ -2418,22 +2418,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+53"/>
-        <source>Errors occured during snapshots and logfiles transfer</source>
+        <source>Errors occurred during snapshots and logfiles transfer</source>
         <translation>Během přesunu snímků a souborů se zápisy se vyskytly chyby</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Errors occured during snapshots transfer</source>
+        <source>Errors occurred during snapshots transfer</source>
         <translation>Během přesunu snímků se vyskytly chyby</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Errors occured during logfiles transfer</source>
+        <source>Errors occurred during logfiles transfer</source>
         <translation>Během přesunu souborů se zápisy se vyskytly chyby</translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>Errors occured during the profile file transfer</source>
+        <source>Errors occurred during the profile file transfer</source>
         <translation>Během přesunu souboru s profilem se vyskytly chyby</translation>
     </message>
     <message>
@@ -2665,7 +2665,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     </message>
     <message>
         <location line="+15"/>
-        <source>Total files transfered</source>
+        <source>Total files transferred</source>
         <translation>Celkový počet přenesených souborů</translation>
     </message>
     <message>
@@ -3073,7 +3073,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     </message>
     <message>
         <location filename="../src/executenow.cpp" line="-631"/>
-        <source>Successfuly created destination directory</source>
+        <source>Successfully created destination directory</source>
         <translation>Cílový adresář úspěšně vytvořen</translation>
     </message>
     <message>
@@ -3823,7 +3823,7 @@ Ponechejte nezaškrtnuté pro vytvoření adresáře navíc v cíli</translation
 ** - matches anything, including slashes
 ? - matches any character except a slash
 trailing dir_name/*** - matches both the directory &amp; everything in it
-starting / - pattern is anchored to a particular spot in the hierarchy of the transfer (normaly this is the &quot;source&quot;)
+starting / - pattern is anchored to a particular spot in the hierarchy of the transfer (normally this is the &quot;source&quot;)
 trailing / - only directory is matched, not regular files, symlinks or devices</source>
         <translation>Zde zadejte název souboru, složky nebo vzor, a potom stiskněte tlačítko &quot;přidat&quot;, abyste jej přidali do seznamu vyloučení
 * - odpovídá kterékoli ne-prázdné složce (zastaví se u lomítka)
@@ -3967,7 +3967,7 @@ Toto zakáže funkci vyloučení.</translation>
 ** - matches anything, including slashes
 ? - matches any character except a slash
 trailing dir_name/*** - matches both the directory &amp; everything in it
-starting / - pattern is anchored to a particular spot in the hierarchy of the transfer (normaly this is the &quot;source&quot;)
+starting / - pattern is anchored to a particular spot in the hierarchy of the transfer (normally this is the &quot;source&quot;)
 trailing / - only directory is matched, not regular files, symlinks or devices</source>
         <translation>Zde zadejte název souboru, složky nebo vzor, a potom stiskněte tlačítko &quot;přidat&quot;, abyste jej přidali do seznamu zahrnutí
 * - odpovídá kterékoli ne-prázdné složce (zastaví se u lomítka)
@@ -5729,7 +5729,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+7"/>
-        <source>Enter pasword :</source>
+        <source>Enter password :</source>
         <translation>Zadejte heslo:</translation>
     </message>
     <message>

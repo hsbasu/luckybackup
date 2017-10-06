@@ -1501,12 +1501,12 @@ eg
     </message>
     <message>
         <location line="+9"/>
-        <source>Only send when error(s) occured during a run</source>
+        <source>Only send when error(s) occurred during a run</source>
         <translation>Enviar solo cuando ocurra algún error mientras se ejecuta</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Error(s) occured</source>
+        <source>Error(s) occurred</source>
         <translation>Ha ocurrido algún error</translation>
     </message>
     <message>
@@ -2481,22 +2481,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+53"/>
-        <source>Errors occured during snapshots and logfiles transfer</source>
+        <source>Errors occurred during snapshots and logfiles transfer</source>
         <translation>Errores producidos durante la transferencia de imágenes y archivos de registro</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Errors occured during snapshots transfer</source>
+        <source>Errors occurred during snapshots transfer</source>
         <translation>Errores ocurridos durante la transferencia de imágenes</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Errors occured during logfiles transfer</source>
+        <source>Errors occurred during logfiles transfer</source>
         <translation>Errores ocurridos durante la transferencia de archivos de registro</translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>Errors occured during the profile file transfer</source>
+        <source>Errors occurred during the profile file transfer</source>
         <translation>Errores ocurridos durante la transferencia del fichero del perfil</translation>
     </message>
     <message>
@@ -3131,7 +3131,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     </message>
     <message>
         <location filename="../src/executenow.cpp" line="-631"/>
-        <source>Successfuly created destination directory</source>
+        <source>Successfully created destination directory</source>
         <translation>Creada correctamente la carpeta de destino</translation>
     </message>
     <message>
@@ -3858,7 +3858,7 @@ Dejar sin verificar al crear un directorio extra en el destino</translation>
 ** - matches anything, including slashes
 ? - matches any character except a slash
 trailing dir_name/*** - matches both the directory &amp; everything in it
-starting / - pattern is anchored to a particular spot in the hierarchy of the transfer (normaly this is the &quot;source&quot;)
+starting / - pattern is anchored to a particular spot in the hierarchy of the transfer (normally this is the &quot;source&quot;)
 trailing / - only directory is matched, not regular files, symlinks or devices</source>
         <translation>Introduce aquí el archivo, carpeta o expresión y pulsa el botón &quot;añadir&quot; para añadirlo a la lista de inclusiones
 * - corresponde con cualquier componente no vacio (se detiene en las barras)
@@ -3998,7 +3998,7 @@ This will disable the exclude feature.</source>
 ** - matches anything, including slashes
 ? - matches any character except a slash
 trailing dir_name/*** - matches both the directory &amp; everything in it
-starting / - pattern is anchored to a particular spot in the hierarchy of the transfer (normaly this is the &quot;source&quot;)
+starting / - pattern is anchored to a particular spot in the hierarchy of the transfer (normally this is the &quot;source&quot;)
 trailing / - only directory is matched, not regular files, symlinks or devices</source>
         <translation>Introduce aquí el archivo, carpeta o expresión y pulsa el botón &quot;añadir&quot; para añadirlo a la lista de inclusiones
 * - corresponde con cualquier componente no vacio (se detiene en las barras)
@@ -5744,7 +5744,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+7"/>
-        <source>Enter pasword :</source>
+        <source>Enter password :</source>
         <translation>Introducir contraseña :</translation>
     </message>
     <message>

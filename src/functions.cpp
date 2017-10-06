@@ -611,7 +611,7 @@ bool luckyBackupWindow::loadCurrentProfile()
     if ( TotalOperations == 0 )
         loadData.append("<br><font color=magenta>" + tr("The task list is empty")+ "<br><b>" + tr("Use the \"add\" button on the right to get started","Please keep the add word inside quotes") + "</b></font><br>");
     
-    return true;	//profile loaded successfuly
+    return true;	//profile loaded successfully
 }
 
 // saveCurrentprofile ===============================================================================================================================
@@ -1014,7 +1014,7 @@ bool luckyBackupWindow::arrangeLogSnap(bool PorT,QString ActionTaken,QString Nam
             whatToReturn2 = logfile.copy(logfilename);
     }
     
-    bool whatToReturn = whatToReturn1 && whatToReturn2; // return true if both snaps & log actions finished successfuly
+    bool whatToReturn = whatToReturn1 && whatToReturn2; // return true if both snaps & log actions finished successfully
     return whatToReturn;
 }
 

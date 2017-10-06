@@ -397,7 +397,7 @@ bool loadCurrentProfile()
 
         currentOperation++;
     }
-    cout << "\n\n			** Profile loaded successfuly ... **\n\n";
+    cout << "\n\n			** Profile loaded successfully ... **\n\n";
     return true;
 }
 
@@ -2046,7 +2046,7 @@ QStringList AppendArguments(operation *operationToAppend)
     // keep snapshot changes files only for backup task types, not sync
     if ( (!validation) && (operationToAppendMaxSnaps > 1) )
     {
-        //Define a file to log new files transferred so that to exclude these when restoring previous snapshots
+        //Define a file to log new files transfered so that to exclude these when restoring previous snapshots
         arguments.append("--log-file=" + snapchangesfilename);
         arguments.append("--log-file-format=" + snapChangesString);
     }

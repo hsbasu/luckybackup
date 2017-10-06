@@ -54,7 +54,7 @@ Version 0.4.7 :
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Version 0.4.6 :
 * Fixed issue: Older snapshots restore did not always work as expected
-* Fixed issue: ".changes.log" files sometimes did not update their lines normaly
+* Fixed issue: ".changes.log" files sometimes did not update their lines normally
 * Improved gui. Thank you Michael :)
 * Changed default help browser size
 * Increased the limit of maximum snapshots

@@ -41,7 +41,7 @@ class winDialog : public QDialog
     
     public:
         winDialog (QWidget *parent=0);
-        QString modifySlashes(QString);  // function to change / to \ for OS2 & windows (normaly when file dialog is used)
+        QString modifySlashes(QString);  // function to change / to \ for OS2 & windows (normally when file dialog is used)
 
     private slots:
         void okay();

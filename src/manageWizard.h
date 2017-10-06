@@ -73,7 +73,7 @@ class manageWizard : public QDialog
         bool procKilled;		// this becomes true if a process is aborted
         int errorCount;			// count the errors of the command execution
         bool DRYrun;			// become true if dry-run is checked
-        bool MainRun;			// becomes true when main rsync is run. False when the specific backed up snapshot files are transferred
+        bool MainRun;			// becomes true when main rsync is run. False when the specific backed up snapshot files are transfered
         bool DeleteAfter;		// becomes true if "delete files on the source" is checked
         bool firstScroll;		// becomes false if first time next button pressed
         bool snapSpecificDirExists;	// becomes true if the snapshots specific directory exists

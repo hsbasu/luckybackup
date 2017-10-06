@@ -1513,12 +1513,12 @@ z.B.
     </message>
     <message>
         <location line="+9"/>
-        <source>Only send when error(s) occured during a run</source>
+        <source>Only send when error(s) occurred during a run</source>
         <translation>Sende nur, wenn Fehler während eines Durchlaufs auftraten</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Error(s) occured</source>
+        <source>Error(s) occurred</source>
         <translation>Fehler ist aufgetreten</translation>
     </message>
     <message>
@@ -2493,22 +2493,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+53"/>
-        <source>Errors occured during snapshots and logfiles transfer</source>
+        <source>Errors occurred during snapshots and logfiles transfer</source>
         <translation>Beim Übertragen der Schnappschüsse und Logdaten sind Fehler aufgetreten</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Errors occured during snapshots transfer</source>
+        <source>Errors occurred during snapshots transfer</source>
         <translation>Beim Übertragen der Schnappschüsse sind Fehler aufgetreten</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Errors occured during logfiles transfer</source>
+        <source>Errors occurred during logfiles transfer</source>
         <translation>Beim Übertragen der Logdaten sind Fehler aufgetreten</translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>Errors occured during the profile file transfer</source>
+        <source>Errors occurred during the profile file transfer</source>
         <translation>Beim Übertragen der Profildaten sind Fehler aufgetreten</translation>
     </message>
     <message>
@@ -3147,7 +3147,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     </message>
     <message>
         <location filename="../src/executenow.cpp" line="-631"/>
-        <source>Successfuly created destination directory</source>
+        <source>Successfully created destination directory</source>
         <translation>Erfolgreich erzeugtes Zielverzeichnis</translation>
     </message>
     <message>
@@ -3896,7 +3896,7 @@ Nicht wählen, um ein Zusatzverzeichniss innerhalb des Ziels zu erzeugen</transl
 ** - matches anything, including slashes
 ? - matches any character except a slash
 trailing dir_name/*** - matches both the directory &amp; everything in it
-starting / - pattern is anchored to a particular spot in the hierarchy of the transfer (normaly this is the &quot;source&quot;)
+starting / - pattern is anchored to a particular spot in the hierarchy of the transfer (normally this is the &quot;source&quot;)
 trailing / - only directory is matched, not regular files, symlinks or devices</source>
         <translation>Geben Sie hier eine Datei, ein Verzeichnis oder Muster ein und drücken dann den &quot;Hinzufügen&quot;-Knopf, um es zur Ausnahmeliste hinzuzufügen.
 * - passt auf alle nicht-leeren Komponenten (es stoppt an Schrägstrichen)
@@ -4040,7 +4040,7 @@ Dies wird die Ausnahmen-Funktion abschalten.</translation>
 ** - matches anything, including slashes
 ? - matches any character except a slash
 trailing dir_name/*** - matches both the directory &amp; everything in it
-starting / - pattern is anchored to a particular spot in the hierarchy of the transfer (normaly this is the &quot;source&quot;)
+starting / - pattern is anchored to a particular spot in the hierarchy of the transfer (normally this is the &quot;source&quot;)
 trailing / - only directory is matched, not regular files, symlinks or devices</source>
         <translation>Geben Sie hier eine Datei, ein Verzeichnis oder Muster ein und drücken dann den &quot;Hinzufügen&quot;-Knopf, um es zur Ausnahmeliste hinzuzufügen.
 * - passt auf alle nicht-leeren Komponenten (es stoppt an Schrägstrichen)
@@ -5808,7 +5808,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+7"/>
-        <source>Enter pasword :</source>
+        <source>Enter password :</source>
         <translation>Passwort eingeben:</translation>
     </message>
     <message>

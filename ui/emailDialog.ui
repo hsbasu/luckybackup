@@ -129,10 +129,10 @@ eg
          <cursorShape>PointingHandCursor</cursorShape>
         </property>
         <property name="toolTip">
-         <string>Only send when error(s) occured during a run</string>
+         <string>Only send when error(s) occurred during a run</string>
         </property>
         <property name="text">
-         <string>Error(s) occured</string>
+         <string>Error(s) occurred</string>
         </property>
        </widget>
       </item>

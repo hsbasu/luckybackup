@@ -3147,7 +3147,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     </message>
     <message>
         <location filename="../src/executenow.cpp" line="-631"/>
-        <source>Successfuly created destination directory</source>
+        <source>Successfully created destination directory</source>
         <translation>Directorul destinație a fost creat cu succes</translation>
     </message>
     <message>
@@ -3894,7 +3894,7 @@ Lăsați nebifat pentru a crea un director suplimentar în cadrul destinației</
 ** - matches anything, including slashes
 ? - matches any character except a slash
 trailing dir_name/*** - matches both the directory &amp; everything in it
-starting / - pattern is anchored to a particular spot in the hierarchy of the transfer (normaly this is the &quot;source&quot;)
+starting / - pattern is anchored to a particular spot in the hierarchy of the transfer (normally this is the &quot;source&quot;)
 trailing / - only directory is matched, not regular files, symlinks or devices</source>
         <translation>Introduceți aici fișierul, dosarul sau modelul și apoi apăsați butonul &quot;adaugă&quot; de a le adăuga la lista de excluderi
 * - potrivește orice componentă care nu este goală (se oprește la linii oblice)
@@ -4038,7 +4038,7 @@ Aceasta va dezactiva funcția de excludere.</translation>
 ** - matches anything, including slashes
 ? - matches any character except a slash
 trailing dir_name/*** - matches both the directory &amp; everything in it
-starting / - pattern is anchored to a particular spot in the hierarchy of the transfer (normaly this is the &quot;source&quot;)
+starting / - pattern is anchored to a particular spot in the hierarchy of the transfer (normally this is the &quot;source&quot;)
 trailing / - only directory is matched, not regular files, symlinks or devices</source>
         <translation>Introduceți aici fișierul, dosarul sau modelul și apoi apăsați butonul &quot;adaugă&quot; de a le adăuga la lista de excluderi
 * - potrivește orice componentă care nu este goală (se oprește la linii oblice)

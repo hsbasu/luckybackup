@@ -249,7 +249,7 @@ void winDialog::useDefault(const int type)
 }
 
 // modifySlashes ===========================================================================================================
-// function to change / to \ for windows (normaly when file dialog is used)
+// function to change / to \ for windows (normally when file dialog is used)
 QString winDialog::modifySlashes(QString pathToModify)
 {    
     pathToModify.replace("/",SLASH);

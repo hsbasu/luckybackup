@@ -82,7 +82,7 @@ textDialog::textDialog (const QString type, const QString ReplaceInput, QWidget 
 	}
 	if (type == "password")
 	{
-		uiT.label_message 	-> setText(tr("Enter pasword :"));
+		uiT.label_message 	-> setText(tr("Enter password :"));
 		uiT.lineEdit_userInput 	-> setEchoMode (QLineEdit::Password);
 	}
 	if (type == "passphrase")

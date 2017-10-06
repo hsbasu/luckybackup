@@ -1513,12 +1513,12 @@ till exempel
     </message>
     <message>
         <location line="+9"/>
-        <source>Only send when error(s) occured during a run</source>
+        <source>Only send when error(s) occurred during a run</source>
         <translation>Sänd bara när fel uppkommer vid körning</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Error(s) occured</source>
+        <source>Error(s) occurred</source>
         <translation>Fel har uppstått</translation>
     </message>
     <message>
@@ -2493,22 +2493,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+53"/>
-        <source>Errors occured during snapshots and logfiles transfer</source>
+        <source>Errors occurred during snapshots and logfiles transfer</source>
         <translation>Fel uppkom under överföringen av ögonblicksbilder och loggfiler</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Errors occured during snapshots transfer</source>
+        <source>Errors occurred during snapshots transfer</source>
         <translation>Fel uppkom under överföringen av ögonblicksbilder</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Errors occured during logfiles transfer</source>
+        <source>Errors occurred during logfiles transfer</source>
         <translation>Fel uppkom under överföringen av loggfiler</translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>Errors occured during the profile file transfer</source>
+        <source>Errors occurred during the profile file transfer</source>
         <translation>Fel uppkom under överföringen av profilfilen</translation>
     </message>
     <message>
@@ -3147,7 +3147,7 @@ Full phrase: Removing old snapshots and logfiles of task: &lt;TASKNAME&gt;</comm
     </message>
     <message>
         <location filename="../src/executenow.cpp" line="-631"/>
-        <source>Successfuly created destination directory</source>
+        <source>Successfully created destination directory</source>
         <translation>Skapade destinationskatalog utan fel</translation>
     </message>
     <message>
@@ -3894,7 +3894,7 @@ Lämna okryssad för att skapa en extra katalog inuti destinationen</translation
 ** - matches anything, including slashes
 ? - matches any character except a slash
 trailing dir_name/*** - matches both the directory &amp; everything in it
-starting / - pattern is anchored to a particular spot in the hierarchy of the transfer (normaly this is the &quot;source&quot;)
+starting / - pattern is anchored to a particular spot in the hierarchy of the transfer (normally this is the &quot;source&quot;)
 trailing / - only directory is matched, not regular files, symlinks or devices</source>
         <translation>Ange här filer, mappar eller mönster och tryck sedan på &quot;lägg till&quot;-knappen för att lägga till den till exkluderingslistan
 * - matchar alla icke-tomma komponenter (det stoppar vid snedstreck)
@@ -4038,7 +4038,7 @@ Detta kommer att avaktivera exkluderingsfunktionen.</translation>
 ** - matches anything, including slashes
 ? - matches any character except a slash
 trailing dir_name/*** - matches both the directory &amp; everything in it
-starting / - pattern is anchored to a particular spot in the hierarchy of the transfer (normaly this is the &quot;source&quot;)
+starting / - pattern is anchored to a particular spot in the hierarchy of the transfer (normally this is the &quot;source&quot;)
 trailing / - only directory is matched, not regular files, symlinks or devices</source>
         <translation>Ange här filer, mappar eller mönster och tryck sedan på &quot;lägg till&quot;-knappen för att lägga till den till inkluderingslistan
 * - matchar alla icke-tomma komponenter (det stoppar vid snedstreck)
@@ -5806,7 +5806,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+7"/>
-        <source>Enter pasword :</source>
+        <source>Enter password :</source>
         <translation>Ange lösenord :</translation>
     </message>
     <message>

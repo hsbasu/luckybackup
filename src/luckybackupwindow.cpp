@@ -916,15 +916,15 @@ void luckyBackupWindow::importProfile()
             + tr("and added at the profile list",
             "full phrase: 'Profile <PROFILENAME> imported successfully as <NEWPROFILENAME> and added at the profile list'") + "</font>");
         if (ExitCodeImportProfile == 30)
-            InfoData.append("<br><font color=red>" + tr("Errors occured during snapshots and logfiles transfer") +"</font>");
+            InfoData.append("<br><font color=red>" + tr("Errors occurred during snapshots and logfiles transfer") +"</font>");
         if (ExitCodeImportProfile == 20) 
-            InfoData.append("<br><font color=red>" + tr("Errors occured during snapshots transfer") +"</font>");
+            InfoData.append("<br><font color=red>" + tr("Errors occurred during snapshots transfer") +"</font>");
         if (ExitCodeImportProfile == 10)
-            InfoData.append("<br><font color=red>" + tr("Errors occured during logfiles transfer") +"</font>");
+            InfoData.append("<br><font color=red>" + tr("Errors occurred during logfiles transfer") +"</font>");
     }
     else    // ExitCodeImportProfile == 1
         InfoData = tr("Failed to import profile","full phrase: 'Failed to import profile <PROFILENAME>'")+" <b>" + importProfileName + 
-                    "</b><br><font color=red>" +tr("Errors occured during the profile file transfer") +"</font>";
+                    "</b><br><font color=red>" +tr("Errors occurred during the profile file transfer") +"</font>";
     ui.textBrowser_info -> setText(InfoData);	//update the info window
 }
 

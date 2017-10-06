@@ -23,7 +23,7 @@ Display a dialog. Adds a new or modifies an existing operation
  project version    : Please see "main.cpp" for project version
 
  developer          : luckyb 
- last modified      : 18 Sep 2017
+ last modified      : 05 Oct 2017
 
 ===============================================================================================================================
 ===============================================================================================================================
@@ -49,6 +49,7 @@ modifyDialog::modifyDialog (int ItemNo, QDialog *parent) : QDialog (parent)
     stdWindowWidth = 540;
     minWindowHeight = 265;      //old value=245
     maxWindowHeight = 690;      //old value=565
+
     uiM.tabWidget_advanced -> setVisible(false);
     uiM.comboBox_Type -> setCurrentIndex(0);
     this -> resize(stdWindowWidth,minWindowHeight);
@@ -200,7 +201,7 @@ modifyDialog::modifyDialog (int ItemNo, QDialog *parent) : QDialog (parent)
     
     // ssh password file default value
     // I do not consider this a good idea, because the default option should be a blank field (no ssh key file)
-    // If the user clicks the browse button , he/she will be transferred to the ~/.ssh dir as default
+    // If the user clicks the browse button , he/she will be transfered to the ~/.ssh dir as default
     /*
     if ( (uiM.lineEdit_sshPassword -> text() == "" ) && (!WINrunning) )
     {

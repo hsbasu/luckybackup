@@ -47,7 +47,7 @@ class modifyDialog : public QDialog
         operation *fillOperationArray();	//function to fill the data of an operation array item from the window fields
         void fillModifyWindow(operation*);	//function to fill the window fields from the data of an operation array item
         void modifyTrailing();			//function to add a remove a trailing "/" at the end of the source or dest dir
-        QString modifyOS2Slashes(QString);  // function to change / to \ for OS2 (normaly when file dialog is used)
+        QString modifyOS2Slashes(QString);  // function to change / to \ for OS2 (normally when file dialog is used)
         QStringList StdArguments;		//this variable holds the standard arguments used by rsync
         int ArrayPosition;			//this holds the item's position in the "operation array"
         //bool validation;			//becomes true if "validation check" button is pressed

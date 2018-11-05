@@ -1,4 +1,8 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Version 0.5.0 :
+* Added PolicyKit authorization framework integration
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Version 0.4.9 :
 * Various changes due to Qt5 compatibility
 * Minor modify dialog fixes

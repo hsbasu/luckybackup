@@ -905,12 +905,18 @@ bool luckyBackupWindow::loadSettingsQV()
     QString tempAppName = "asxeto";
     QString tempFileType = "asxeto";
     double tempAppVersion=0;
-    in>>v;	if (v.toString()=="appName")
-        in >> v;	tempAppName = v.toString();	//input the application name & version
-    in>>v;	if (v.toString()=="appVersion")
-        in >> v;	tempAppVersion = v.toDouble();
-    in>>v;	if (v.toString()=="File_Type")
-        in >> v;	tempFileType = v.toString();	//input the file type
+    in>>v;
+    if (v.toString()=="appName")
+        in >> v;	
+    tempAppName = v.toString();	//input the application name & version
+    in>>v;	
+    if (v.toString()=="appVersion")
+        in >> v;
+    tempAppVersion = v.toDouble();
+    in>>v;
+    if (v.toString()=="File_Type")
+        in >> v;
+    tempFileType = v.toString();	//input the file type
 
     //check if the file is a valid luckybackup settings file
     if ( (tempAppName != appName) || (tempAppVersion < validSettingsVersion) || (tempFileType != "luckybackup_settings_file") )

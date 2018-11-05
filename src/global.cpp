@@ -22,7 +22,7 @@ file containing all variables & functions used globaly
 project version    : Please see "main.cpp" for project version
 
 developer          : luckyb 
-last modified      : 28 Jul 2016
+last modified      : 2 Nov 2018
 ===============================================================================================================================
 ===============================================================================================================================
 */
@@ -47,8 +47,8 @@ namespace Global {
 QString myHome = QDir::homePath();
 QString currentUser;
 QString const appName = "luckyBackup";
-double const appVersion = 0.49;
-QString appVersionString = "0.4.9";
+double const appVersion = 0.50;
+QString appVersionString = "0.5.0";
 double const validProfileVersion = 0.21;
 double const validScheduleVersion = 0.34;
 double const validSettingsVersion = 0.3;
@@ -787,10 +787,14 @@ int loadProfileQV(QString profileToLoad)
     QString tempAppName = "asxeto";
     profileDescription = "";
     double tempAppVersion=0;
-    in>>v;	if (v.toString()=="appName")
-        in >> v;	tempAppName = v.toString();	//input the application name & version--------------------------
-    in>>v;	if (v.toString()=="appVersion")
-        in >> v;	tempAppVersion = v.toDouble();
+    in>>v;	
+    if (v.toString()=="appName")
+        in >> v;	
+    tempAppName = v.toString();	//input the application name & version--------------------------
+    in>>v;	
+    if (v.toString()=="appVersion")
+        in >> v;	
+    tempAppVersion = v.toDouble();
 
     if ( (tempAppName != appName) || (tempAppVersion < validProfileVersion) )//check if the file is a valid luckybackup profile
     {
@@ -798,8 +802,10 @@ int loadProfileQV(QString profileToLoad)
         return 2;		//profile is not valid
     }
 
-    in>>v;	if (v.toString()=="TotalOperations")
-        in >> v;	TotalOperations = v.toInt();	//input the size of the operations list
+    in>>v;	
+    if (v.toString()=="TotalOperations")
+        in >> v;	
+    TotalOperations = v.toInt();	//input the size of the operations list
 
     currentOperation = 0;	vString="";
     while (currentOperation < TotalOperations)

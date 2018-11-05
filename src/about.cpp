@@ -22,7 +22,7 @@
         project version   : Please see "main.cpp" for project version
 
         developer         : luckyb 
-        last modified     : 18 Sep 2017
+        last modified     : 2 Nov 2018
       ===============================================================================================================================
       ===============================================================================================================================
 */
@@ -66,7 +66,7 @@ void aboutDialog::setAbout()
         tr("using Qt")+")" + "<br>" +
         tr("Backup & Sync Application")+"<br><br>"
 
-        "(C) 2008-2017,	"+
+        "(C) 2008-2018,	"+
         tr("Loukas Avgeriou") +"<br><br>"
 
         "web:<br>"
@@ -295,6 +295,9 @@ void aboutDialog::setThanks()
 
         "<b>" + tr("Bjorn Rietdijk") + "</b><br>" +
         tr("valuable OS/2 and windows tester") + "<br><br>" +
+        
+        "<b>" + tr("Max Rumpf") + "</b><br>" +
+        tr("PolKit patch provider") + "<br><br>" +
         
         tr("...to all users of the ")+
         "<br><a href=\"http://www.linuxinside.gr/\" target=\"_blank\">Linux Inside</a>, "

@@ -12,16 +12,19 @@ lessThan(QT_MAJOR_VERSION, 4) {
 
 QMAKE_STRIP = echo
 
-VERSION = 0.4.9
+VERSION = 0.5.0
 
 target.path = /usr/bin
 TARGET = luckybackup
 
 menu.path = /usr/share/applications
-menu.files = menu/luckybackup.desktop menu/luckybackup-kde-su.desktop menu/luckybackup-gnome-su.desktop
+menu.files = menu/luckybackup.desktop menu/luckybackup-su.desktop
 
-debianmenu.path = /usr/share/menu
-debianmenu.files = menu/luckybackup
+polkit.path = /usr/share/polkit-1/actions
+polkit.files = menu/net.luckybackup.su.policy
+
+polkitscript.path = /usr/bin
+polkitscript.files = menu/luckybackup-pkexec
 
 pixmap.path = /usr/share/pixmaps
 pixmap.files = menu/luckybackup.xpm menu/luckybackup.png
@@ -30,7 +33,7 @@ documentation.path = /usr/share/doc/luckybackup
 documentation.files = manual
 
 manpage.path = /usr/share/man/man8
-manpage.files = manpage/luckybackup.8.gz
+manpage.files = manpage/luckybackup.8.gz manpage/luckybackup-pkexec.8
 
 translations.path = /usr/share/luckybackup
 translations.files = translations
@@ -38,10 +41,12 @@ translations.files = translations
 license.path = /usr/share/doc/luckybackup
 license.files = license
 
-INSTALLS += target menu debianmenu pixmap documentation manpage translations license
+INSTALLS += target menu polkit polkitscript pixmap documentation manpage translations license
 
 system(gzip -c manpage/luckybackup.8 > manpage/luckybackup.8.gz)
 QMAKE_CLEAN = Makefile $${TARGET} manpage/luckybackup.8.gz
+system(gzip -c manpage/luckybackup-pkexec.8 > manpage/luckybackup-pkexec.8.gz)
+QMAKE_CLEAN = Makefile $${TARGET} manpage/luckybackup-pkexec.8.gz
 
 greaterThan(QT_MAJOR_VERSION, 4) {
     QT += widgets
@@ -58,8 +63,6 @@ ISNOTDEB = $$find(APTGETOP, "command not found")
 
 !isEmpty ( ISFEDORA ) {
     message( "You are running fedora" )
-    message( "Patching the run-as-root menu link..." )
-    system(patch -d menu -p0 <menu/fix-fedora-menu.diff)
  }
 exists( /etc/SuSE-release ) {
     message( "You are running suse" )
@@ -69,13 +72,9 @@ exists( /etc/SuSE-release ) {
  }
 !isEmpty ( ISUBUNTU ) {
     message( "You are running ubuntu" )
-    message( "Patching the run-as-root menu link..." )
-    system(patch -d menu -p0 <menu/fix-ubuntu-menu.diff)
  }
 !isEmpty ( ISNOTDEB ) {
     message( "You are not running a deb based distro" )
-    message( "Removing debian menu installation files..." )
-    INSTALLS -= debianmenu
  }
 win32 {
      message( "You are running windows" )

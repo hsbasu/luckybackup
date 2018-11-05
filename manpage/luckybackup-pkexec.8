@@ -1,0 +1,41 @@
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH LUCKYBACKUP-PKEXEC 8 "2018-11-02"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+\fBluckybackup\fP \- a powerful, fast and reliable backup & sync tool
+.br
+.SH SYNOPSIS
+.B \fBluckybackup-pkexec\fP
+.SH DESCRIPTION
+
+.\" TeX users may be more comfortable with the \fB<whatever>\fP and
+.\" \fI<whatever>\fP escape sequences to invode bold face and italics,
+.\" respectively.
+\fBluckybackup\fP is an application that backs\-up and/or synchronizes any directories with the power of rsync.
+.br
+This command is used to run luckybackup's graphical user interface with super-user privileges, using polkit and pkexec.
+.SH OPTIONS
+No options are used with this command. eg:
+.br
+$ luckybackup-pkexec
+.SH SEE ALSO
+For a complete documentation, please have a look at the application manual
+via the gui main window help menu.
+.SH AUTHOR
+luckybackup was written by <Loukas Avgeriou>.
+.PP
+This manual page was written by luckyb <luckyb69@users.sourceforge.net>,
+for the Debian project (but may be used by others).
